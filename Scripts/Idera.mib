@@ -1,0 +1,118 @@
+IDERA-MIB DEFINITIONS ::= BEGIN
+   
+
+
+IMPORTS
+	TRAP-TYPE
+		FROM RFC-1215
+   	OBJECT-TYPE, enterprises 
+   		FROM RFC1155-SMI
+   	DisplayString
+   		FROM RFC1213-MIB;
+   
+
+
+idera          	OBJECT IDENTIFIER ::= { enterprises 24117 }
+sqlserver         	OBJECT IDENTIFIER ::= { idera 1 }
+sharepoint         	OBJECT IDENTIFIER ::= { idera 2 }
+
+sqldoctor	OBJECT IDENTIFIER ::= { sqlserver 1}
+sqldm		OBJECT IDENTIFIER ::= { sqlserver 2}
+vdb		OBJECT IDENTIFIER ::= { sqlserver 3}
+sqlsafe		OBJECT IDENTIFIER ::= { sqlserver 4}
+spdm		OBJECT IDENTIFIER ::= { sharepoint 5}
+
+-- Idera Traps
+sqldmTrap	TRAP-TYPE
+	ENTERPRISE sqldm
+	VARIABLES { AlertSummary, AlertText, Severity, Instance, Database, Table, Metric, Description, Value, Timestamp, Comments }
+	DESCRIPTION	"This is a TRAP message triggered from the Idera SQLdm product for Microsoft SQL Server."
+	::= 0
+ 
+sqldmTrapTest	TRAP-TYPE
+	ENTERPRISE sqldm
+	VARIABLES { AlertSummary }
+	DESCRIPTION	"This is a test message triggered from the Idera SQLdm  product for Microsoft SQL Server."
+	::= 99 
+
+-- SQLdm Trap Variables
+AlertSummary	OBJECT-TYPE
+	SYNTAX		DisplayString
+	MAX-ACCESS	read-only
+	STATUS		current
+	DESCRIPTION	"Summary text of the alert."
+	::= { sqldm 1 }
+
+AlertText	OBJECT-TYPE
+	SYNTAX		DisplayString
+	MAX-ACCESS	read-only
+	STATUS		current
+	DESCRIPTION	"Full text description of the alert."
+	::= { sqldm 2 }
+
+Metric		OBJECT-TYPE
+	SYNTAX		DisplayString
+	MAX-ACCESS	read-only
+	STATUS		current
+	DESCRIPTION	"SQLdm metric that triggered the alert."
+	::= { sqldm 3 }
+
+Severity	OBJECT-TYPE
+	SYNTAX		DisplayString
+	MAX-ACCESS	read-only
+	STATUS		current
+	DESCRIPTION	"Severity of the alert."
+	::= { sqldm 4 }
+
+Instance	OBJECT-TYPE
+	SYNTAX		DisplayString
+	MAX-ACCESS	read-only
+	STATUS		current
+	DESCRIPTION	"The SQL Server instance that triggered the alert."
+	::= { sqldm 5 }
+
+Database	OBJECT-TYPE
+	SYNTAX		DisplayString
+	MAX-ACCESS	read-only
+	STATUS		current
+	DESCRIPTION	"If applicable to the alert, the database that triggered the alert."
+	::= { sqldm 6 }
+
+Table		OBJECT-TYPE
+	SYNTAX		DisplayString
+	MAX-ACCESS	read-only
+	STATUS		current
+	DESCRIPTION	"If applicable to the alert, the table that triggered the alert."
+	::= { sqldm 7 }
+
+Timestamp	OBJECT-TYPE
+	SYNTAX		DisplayString
+	MAX-ACCESS	read-only
+	STATUS		current
+	DESCRIPTION	"The date and time that the alert was detected."
+	::= { sqldm 8 }
+
+Value		OBJECT-TYPE
+	SYNTAX		DisplayString
+	MAX-ACCESS	read-only
+	STATUS		current
+	DESCRIPTION	"The value detected for the specified metric."
+	::= { sqldm 9 }
+
+Description	OBJECT-TYPE
+	SYNTAX		DisplayString
+	MAX-ACCESS	read-only
+	STATUS		current
+	DESCRIPTION	"Description of the metric."
+	::= { sqldm 10 }
+
+Comments	OBJECT-TYPE
+	SYNTAX		DisplayString
+	MAX-ACCESS	read-only
+	STATUS		current
+	DESCRIPTION	"User specified comments pertaining to the metric."
+	::= { sqldm 11 }
+
+END
+
+

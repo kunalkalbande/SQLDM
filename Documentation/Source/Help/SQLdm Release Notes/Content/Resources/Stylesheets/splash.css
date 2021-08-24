@@ -1,0 +1,147 @@
+/*<meta />*/
+
+p.MyStyle
+{
+	font-family: Arial;
+	font-size: 12pt;
+	margin: 0px;
+}
+
+img
+{
+	border: none;
+}
+
+a.Popup
+{
+	
+}
+
+html
+{
+	padding-bottom: 1px;
+	border: none;
+	background-color: #a9a9a9;
+}
+
+li.Bullet
+{
+	page-break-inside: avoid;
+	color: #ff4905;
+	font-family: arial;
+	padding-bottom: 1pt;
+	padding-top: 1pt;
+	margin-left: 5pt;
+	margin-top: 1pt;
+}
+
+a:hover
+{
+	text-decoration: underline;
+	color: #ff4905;
+}
+
+MadCap|xref:hover
+{
+	color: #ff4905;
+	text-decoration: none;
+}
+
+MadCap|popup:hover
+{
+	color: #ff4905;
+	text-decoration: none;
+}
+
+a:link
+{
+	text-decoration: none;
+	color: #1e90ff;
+}
+
+MadCap|expandingHead:hover
+{
+	color: #ff4905;
+	text-decoration: none;
+}
+
+MadCap|xref:focus
+{
+	text-decoration: none;
+	color: #ff4905;
+}
+
+a:focus
+{
+	text-decoration: none;
+}
+
+MadCap|expandingHead:focus
+{
+	text-decoration: none;
+}
+
+MadCap|dropDownHotspot:focus
+{
+	text-decoration: none;
+}
+
+MadCap|conceptLink:focus
+{
+	text-decoration: none;
+	color: #ff4905;
+}
+
+MadCap|popup:focus
+{
+	text-decoration: none;
+}
+
+MadCap|keywordLink:hover
+{
+	text-decoration: none;
+	color: #ff4905;
+}
+
+MadCap|conceptLink:hover
+{
+	text-decoration: none;
+	color: #ff4905;
+}
+
+MadCap|toggler:hover
+{
+	text-decoration: none;
+}
+
+MadCap|relatedTopics:hover
+{
+	text-decoration: none;
+	color: #ff4905;
+}
+
+MadCap|glossaryTerm:hover
+{
+	text-decoration: none;
+}
+
+MadCap|dropDownHotspot:hover
+{
+	text-decoration: none;
+}
+
+a:visited
+{
+	text-decoration: none;
+}
+
+MadCap|xref
+{
+	color: #ff4905;
+}
+
+table
+{
+	border-spacing: 0px;
+}
+

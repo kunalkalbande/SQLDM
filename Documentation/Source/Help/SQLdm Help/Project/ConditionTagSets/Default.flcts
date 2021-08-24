@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultConditionTagSet>
+  <ConditionTag
+    Comment=""
+    Name="ScreenOnly"
+    BackgroundColor="Blue" />
+  <ConditionTag
+    Comment=""
+    Name="PrintOnly"
+    BackgroundColor="Red" />
+  <ConditionTag
+    BackgroundColor="LightBlue"
+    Name="SEO"
+    Comment="" />
+  <ConditionTag
+    BackgroundColor="LightCoral"
+    Name="Google"
+    Comment="" />
+  <ConditionTag
+    BackgroundColor="#669900"
+    Name="Internal Only"
+    Comment="" />
+  <ConditionTag
+    BackgroundColor="#cc33cc"
+    Name="PDFOnly"
+    Comment="" />
+  <ConditionTag
+    BackgroundColor="#ffd700"
+    Name="Oracle Only"
+    Comment="" />
+  <ConditionTag
+    BackgroundColor="#00ffff"
+    Name="SCOM PDF Only"
+    Comment="" />
+</CatapultConditionTagSet>

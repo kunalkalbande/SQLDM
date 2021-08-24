@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1015" MadCap:lastWidth="721">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Virtualization panel in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Virtualization panel</h1>
+        <p class="Body">
+            <MadCap:keyword term="Virtualization:Dashboard panel;Dashboard:Virtualization;VM;VMware;Virtual;Virtual Machine;Host;ESX;Virtualization;Hyper-V" />The Virtualization panel tracks the performance of your virtual machine or host, depending on the selection in the panel. Unexpected spikes in virtual memory or disk usage may warn you about the beginning of a serious performance issue indicating the need for server maintenance to better handle the ongoing workload. For additional information about how SQLdm works with virtual machines and collects metrics, see <a href="How SQLdm works with a virtual environment.htm" target="_self">How SQLdm works with a virtual environment</a>.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Note that you can customize your Dashboard view to include two Virtualization panels and add one for your virtual machine and the other for your host.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2"><a name="VirtualizationMemoryUsage"></a>Virtual Memory Usage chart</h2>
+        <p class="Body">The Virtual Memory Usage chart displays the amount of memory allocated and used by SQL&#160;Server to the total memory consumed on this VM or host server. The Resources &gt; Memory view allows you to track your usage over a period of time, along with other key memory statistics. For additional information about how SQLdm works with virtual machines and collects metrics, see <a href="How SQLdm works with a virtual environment.htm" target="_self">How SQLdm works with a virtual environment</a>.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Metric</th>
+                    <th class="HeadD-Column2-Header1">Why it is important</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Active</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates  the amount of active memory used by this virtual SQL Server instance.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Ballooned</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates  the amount of ballooned memory on this virtual SQL Server instance. A spike in this value alerts you of the low memory status of the host. </p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Consumed</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the amount of memory consumed by this virtual SQL&#160;Server instance.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Granted</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the amount of memory granted to this virtual SQL&#160;Server instance.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Swapped</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Indicates the amount of swapped memory on this virtual SQL&#160;Server instance. A spike in this value alerts you of the low memory status of the host. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2"><a name="VirtualizationCPUReady"></a>CPU&#160;Ready Wait Time gauge</h2>
+        <p class="Body">The CPU&#160;Ready Wait Time gauge displays the current  gauge value of the vCPU&#160;Ready Time metric available on the Server Details view. Use this metric to determine the length of time that virtual CPU in your virtual machine is waiting on a physical CPU on your host to become available. A spike in this value may indicate over committed physical CPUs on the host server.</p>
+        <h2 class="Heading2"><a name="VirtualizationDiskUsage"></a>Virtual Disk Usage chart</h2>
+        <p class="Body">The Virtual Disk Usage chart displays the amount of data read from and written to disk for the VM or host server during the sample interval. The Resources &gt;&#160;Disk view allows you to track your usage over a period of time, along with other key disk statistics.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Metric</th>
+                    <th class="HeadD-Column2-Header1">Why it is important</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Disk Read</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">A high number of disk reads may indicate that the VM or host server is executing poorly-performing queries.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Disk Write</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">A high number of disk writes may indicate that the VM or host server is running low on allocated memory.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Available alerts</h2>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet"><a href="Alerts/VM CPU Ready Wait Time Alert.htm" target="_self"><a href="Alerts/Host Memory Swap Detected.htm" target="_self">Host Memory Swap Detected Alert</a></a>
+            </li>
+            <li class="Bullet"><a href="Alerts/VM CPU Ready Wait Time Alert.htm" target="_self">VM CPU Ready Wait Time (ms) Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/VM Memory Swap Delay Detected.htm" target="_self">VM Memory Swap Detected Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/VM Reclaimed Ballooned Memory Alert.htm" target="_self">VM Reclaimed/Ballooned Memory (KB) Alert</a>
+            </li>
+        </ul>
+    </body>
+</html>

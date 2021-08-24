@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="3047" MadCap:lastWidth="721">
+    <head>
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Idera SQLdm requirements</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">SQLdm requirements</h1>
+        <p class="Body">
+            <MadCap:keyword term="Requirerments:for trial installs;Requirements:general;Requirements:SQLdm Mobile;Requirements:Idera News Feed;SQLdm Mobile:requirements;Idera News Feed:requirements;Requirements:for production installs" />There are three types of SQLdm installation (Trial, General, and Production). Refer to the following list of requirements for each type of installation. </p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">SQLdm 8.6 requires Microsoft SQL&#160;Server 2005 or above running on the computer that hosts the SQLdm Repository database for all installations.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Tempdb&#160;monitoring is supported on SQL&#160;Server 2005 and above servers only.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Sample installations in large environments</h2>
+        <p class="Body">While this topic provides the minimum requirements for installing SQLdm, users with large environments can benefit from the sample customer installations listed below.</p>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead>
+                <MadCap:dropDownHotspot>Installs 51-100 servers</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+                    <col style="width: 185px;" class="Column-Column1" />
+                    <col style="width: 521px;" class="Column-Column2" />
+                    <thead>
+                        <tr class="Head-Header1">
+                            <th class="HeadE-Column1-Header1">Type</th>
+                            <th class="HeadD-Column2-Header1">In-House Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="Body-Body1">
+                            <td class="BodyE-Column1-Body1">
+                                <p class="TableText">Number of monitored servers</p>
+                            </td>
+                            <td class="BodyD-Column2-Body1">
+                                <p class="TableText">52</p>
+                            </td>
+                        </tr>
+                        <tr class="Body-Body1">
+                            <td class="BodyE-Column1-Body1">
+                                <p class="TableText">Services and Repository installed on same machine</p>
+                            </td>
+                            <td class="BodyD-Column2-Body1">
+                                <ul style="list-style-type: circle;">
+                                    <li class="Bullet">Hyper-V</li>
+                                    <li class="Bullet">4 quad core processors</li>
+                                    <li class="Bullet">14 GB of memory</li>
+                                    <li class="Bullet">Windows 2008 R2 Enterprise</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="Body-Body1">
+                            <td class="BodyE-Column1-Body1">
+                                <p class="TableText">Data storage and grooming options</p>
+                            </td>
+                            <td class="BodyD-Column2-Body1">
+                                <ul style="list-style-type: circle;">
+                                    <li class="Bullet">Repository size: 120 GB</li>
+                                    <li class="Bullet">Retain 60 days of history</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="Body-Body1">
+                            <td class="BodyB-Column1-Body1">
+                                <p class="TableText">Monitoring features</p>
+                            </td>
+                            <td class="BodyA-Column2-Body1">
+                                <p class="TableText">Monitor Windows and SQL&#160;Server performance and error log monitoring</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="Body">&#160;</p>
+                <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+                    <col style="width: 185px;" class="Column-Column1" />
+                    <col style="width: 521px;" class="Column-Column2" />
+                    <thead>
+                        <tr class="Head-Header1">
+                            <th class="HeadE-Column1-Header1">Type</th>
+                            <th class="HeadD-Column2-Header1">In-House Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="Body-Body1">
+                            <td class="BodyE-Column1-Body1">
+                                <p class="TableText">Number of monitored servers</p>
+                            </td>
+                            <td class="BodyD-Column2-Body1">
+                                <p class="TableText">90</p>
+                            </td>
+                        </tr>
+                        <tr class="Body-Body1">
+                            <td class="BodyE-Column1-Body1">
+                                <p class="TableText">Services machine</p>
+                            </td>
+                            <td class="BodyD-Column2-Body1">
+                                <ul style="list-style-type: circle;">
+                                    <li class="Bullet">2 vCPU</li>
+                                    <li class="Bullet">8 GB of memory</li>
+                                    <li class="Bullet">Windows 2008 R2 Enterprise</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="Body-Body1">
+                            <td class="BodyE-Column1-Body1">
+                                <p class="TableText">Services machine</p>
+                            </td>
+                            <td class="BodyD-Column2-Body1">
+                                <ul style="list-style-type: circle;">
+                                    <li class="Bullet">2 vCPU</li>
+                                    <li class="Bullet">8 GB of memory</li>
+                                    <li class="Bullet">Windows 2008 R2 Enterprise</li>
+                                    <li class="Bullet">Repository: SQL&#160;Server 2008 R2</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="Body-Body1">
+                            <td class="BodyE-Column1-Body1">
+                                <p class="TableText">Data storage and grooming options</p>
+                            </td>
+                            <td class="BodyD-Column2-Body1">
+                                <ul style="list-style-type: circle;">
+                                    <li class="Bullet">Repository size: 100 GB</li>
+                                    <li class="Bullet">Retain 60 days of history</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="Body-Body1">
+                            <td class="BodyB-Column1-Body1">
+                                <p class="TableText">Monitoring features</p>
+                            </td>
+                            <td class="BodyA-Column2-Body1">
+                                <p class="TableText">Monitor Windows and SQL&#160;Server performance</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead>
+                <MadCap:dropDownHotspot>Installs 201-300 servers</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+                    <col style="width: 185px;" class="Column-Column1" />
+                    <col style="width: 521px;" class="Column-Column2" />
+                    <thead>
+                        <tr class="Head-Header1">
+                            <th class="HeadE-Column1-Header1">Type</th>
+                            <th class="HeadD-Column2-Header1">In-House Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="Body-Body1">
+                            <td class="BodyE-Column1-Body1">
+                                <p class="TableText">Number of monitored servers</p>
+                            </td>
+                            <td class="BodyD-Column2-Body1">
+                                <p class="TableText">234</p>
+                            </td>
+                        </tr>
+                        <tr class="Body-Body1">
+                            <td class="BodyE-Column1-Body1">
+                                <p class="TableText">Services and Repository installed on same machine</p>
+                            </td>
+                            <td class="BodyD-Column2-Body1">
+                                <ul style="list-style-type: circle;">
+                                    <li class="Bullet">Dell 2950</li>
+                                    <li class="Bullet">2 quad core processors</li>
+                                    <li class="Bullet">16 GB of memory</li>
+                                    <li class="Bullet">Windows 2003</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="Body-Body1">
+                            <td class="BodyE-Column1-Body1">
+                                <p class="TableText">Data storage and grooming options</p>
+                            </td>
+                            <td class="BodyD-Column2-Body1">
+                                <ul style="list-style-type: circle;">
+                                    <li class="Bullet">Repository size: 140 GB</li>
+                                    <li class="Bullet">Retain 30 days of history</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="Body-Body1">
+                            <td class="BodyE-Column1-Body1">
+                                <p class="TableText">Monitoring features</p>
+                            </td>
+                            <td class="BodyD-Column2-Body1">
+                                <p class="TableText">Monitor Windows and SQL&#160;Server performance and use Query Waits for specific periods of diagnostics</p>
+                            </td>
+                        </tr>
+                        <tr class="Body-Body1">
+                            <td class="BodyB-Column1-Body1">
+                                <p class="TableText">Integrations</p>
+                            </td>
+                            <td class="BodyA-Column2-Body1">
+                                <p class="TableText">Send alerts to HP&#160;Open View via a command line program (opcmsg)</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="Body">&#160;</p>
+                <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+                    <col style="width: 185px;" class="Column-Column1" />
+                    <col style="width: 521px;" class="Column-Column2" />
+                    <thead>
+                        <tr class="Head-Header1">
+                            <th class="HeadE-Column1-Header1">Type</th>
+                            <th class="HeadD-Column2-Header1">In-House Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="Body-Body1">
+                            <td class="BodyE-Column1-Body1">
+                                <p class="TableText">Number of monitored servers</p>
+                            </td>
+                            <td class="BodyD-Column2-Body1">
+                                <p class="TableText">274</p>
+                            </td>
+                        </tr>
+                        <tr class="Body-Body1">
+                            <td class="BodyE-Column1-Body1">
+                                <p class="TableText">Services and Repository installed on same machine</p>
+                            </td>
+                            <td class="BodyD-Column2-Body1">
+                                <ul style="list-style-type: circle;">
+                                    <li class="Bullet">4 quad core processors</li>
+                                    <li class="Bullet">128 GB of memory</li>
+                                    <li class="Bullet">Windows 2008 R2</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="Body-Body1">
+                            <td class="BodyE-Column1-Body1">
+                                <p class="TableText">Data storage and grooming options</p>
+                            </td>
+                            <td class="BodyD-Column2-Body1">
+                                <ul style="list-style-type: circle;">
+                                    <li class="Bullet">Repository size: 1.5 TB</li>
+                                    <li class="Bullet">Retain 365 days of history</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="Body-Body1">
+                            <td class="BodyB-Column1-Body1">
+                                <p class="TableText">Monitoring features</p>
+                            </td>
+                            <td class="BodyA-Column2-Body1">
+                                <p class="TableText">Monitor Windows and SQL&#160;Server performance</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <h2 class="Heading2">Trial requirements</h2>
+        <p class="Body">Consider the following requirements when installing all SQLdm components on one computer.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Type</th>
+                    <th class="HeadD-Column2-Header1">Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">SQL Server Standard or Enterprise Edition</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <ul style="list-style-type: circle;">
+                            <li class="Bullet">SQL&#160;Server 2005 SP1 or later</li>
+                            <li class="Bullet">SQL&#160;Server 2008 or later</li>
+                            <li class="Bullet">SQL&#160;Server 2008 R2</li>
+                            <li class="BulletLast">SQL Server 2012</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Hard Disk Space</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">200 MB for all SQLdm components</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Windows Permissions</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Your Windows Logon account includes local Administrator permissions</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">SQL&#160;Server Privileges</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Either a Windows user account or SQL&#160;Server login that includes System Administrator privileges on the monitored SQL&#160;Server instances</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">General requirements</h2>
+        <p class="Body">The following requirements apply for all SQLdm components.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 184px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Type</th>
+                    <th class="HeadD-Column2-Header1">Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">CPU</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">2.0 GHz or higher</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Memory</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">1 GB</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">32-bit Operating System</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <ul style="list-style-type: circle;">
+                            <li class="Bullet">Windows Server 2003 SP2 or later</li>
+                            <li class="Bullet">Windows XP&#160;SP2 or later</li>
+                            <li class="Bullet">Windows Vista Business and Enterprise</li>
+                            <li class="Bullet">Windows 7</li>
+                            <li class="BulletLast">Windows Server 2008 SP1 or later </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">64-bit Operating System</td>
+                    <td class="BodyD-Column2-Body1">
+                        <ul style="list-style-type: circle;">
+                            <li class="Bullet">Windows Server 2003 SP1 or later</li>
+                            <li class="Bullet">Windows XP&#160;Professional X64</li>
+                            <li class="Bullet">Windows 7</li>
+                            <li class="Bullet">Windows Server 2008 or later</li>
+                            <li class="Bullet">Windows Server 2008 R2</li>
+                            <li class="BulletLast">Windows Vista Business and Enterprise</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Port Access</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">5166, 5167</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Client Browser</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Internet Explorer 7.0 or later</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Production requirements</h2>
+        <p class="Body">Consider the following requirements when installing SQLdm in an environment where the components are on separate computers.</p>
+        <p class="DefinitionListTerm">SQLdm Console</p>
+        <ol MadCap:continue="true">
+            <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+                <col style="width: 276px;" class="Column-Column1" />
+                <col style="width: 430px;" class="Column-Column2" />
+                <thead>
+                    <tr class="Head-Header1">
+                        <th class="HeadE-Column1-Header1">Type</th>
+                        <th class="HeadD-Column2-Header1">Requirement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="Body-Body1">
+                        <td class="BodyE-Column1-Body1">
+                            <p class="TableText">Disk Space</p>
+                        </td>
+                        <td class="BodyD-Column2-Body1">
+                            <p class="TableText">40 MB</p>
+                        </td>
+                    </tr>
+                    <tr class="Body-Body1">
+                        <td class="BodyE-Column1-Body1">
+                            <p class="TableText">SQL&#160;Server Permissions</p>
+                        </td>
+                        <td class="BodyD-Column2-Body1">
+                            <p class="TableText">Your Windows logon account includes Read Access to the SQLdm Repository. You can specify a SQL&#160;Server login instead.</p>
+                        </td>
+                    </tr>
+                    <tr class="Body-Body1">
+                        <td class="BodyE-Column1-Body1">
+                            <p class="TableText">Software Framework</p>
+                        </td>
+                        <td class="BodyD-Column2-Body1">
+                            <p class="TableText">Microsoft .NET 4.0 Full</p>
+                        </td>
+                    </tr>
+                    <tr class="Body-Body1">
+                        <th class="BodyB-Column1-Body1">
+                            <p class="TableText">Monitor Resolution</p>
+                        </th>
+                        <th class="BodyA-Column2-Body1">
+                            <p class="TableText">1280 x 1024 with small text for the best viewing of the SQLdm Dashboard</p>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </ol>
+        <p class="DefinitionListTerm">SQLdm Services</p>
+        <ol MadCap:continue="true">
+            <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+                <col style="width: 276px;" class="Column-Column1" />
+                <col style="width: 430px;" class="Column-Column2" />
+                <thead>
+                    <tr class="Head-Header1">
+                        <th class="HeadE-Column1-Header1">Type</th>
+                        <th class="HeadD-Column2-Header1">Requirement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="Body-Body1">
+                        <td class="BodyE-Column1-Body1">
+                            <p class="TableText">Disk Space</p>
+                        </td>
+                        <td class="BodyD-Column2-Body1">
+                            <p class="TableText">50 MB</p>
+                        </td>
+                    </tr>
+                    <tr class="Body-Body1">
+                        <td class="BodyE-Column1-Body1">
+                            <p class="TableText">Collection Service Permissions</p>
+                        </td>
+                        <td class="BodyD-Column2-Body1">
+                            <p class="TableText">System Administrator privileges on the monitored SQL&#160;Server instances</p>
+                        </td>
+                    </tr>
+                    <tr class="Body-Body1">
+                        <td class="BodyB-Column1-Body1">
+                            <p class="TableText">Management Service Permissions</p>
+                        </td>
+                        <td class="BodyA-Column2-Body1">
+                            <p class="TableText">Read and Write privileges on the SQLdm Repository database</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ol>
+        <p class="DefinitionListTerm">SQLdm Repository</p>
+        <ol MadCap:continue="true">
+            <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                            <p class="TableHeadRow">TIP</p>
+                        </td>
+                        <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                            <p class="TableText">SQLdm 7.2 and later includes a repository autogrow setting at 32 MB, which is sufficient for trial and small environments in production. Environments with larger, multi-server installations should change the repository autogrow setting to 250 MB or higher to prevent frequent data file autogrow, which can cause performance problems.</p>
+                            <p class="TableText">Using percentage-based autogrow is not recommended.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ol>
+        <ol MadCap:continue="true">
+            <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+                <col style="width: 276px;" class="Column-Column1" />
+                <col style="width: 430px;" class="Column-Column2" />
+                <thead>
+                    <tr class="Head-Header1">
+                        <th class="HeadE-Column1-Header1">Type</th>
+                        <th class="HeadD-Column2-Header1">Requirement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="Body-Body1">
+                        <td class="BodyE-Column1-Body1">
+                            <p class="TableText">Disk Space</p>
+                        </td>
+                        <td class="BodyD-Column2-Body1">
+                            <p class="TableText">1GB to 3GB for one year of data per monitored SQL&#160;Server instance</p>
+                        </td>
+                    </tr>
+                    <tr class="Body-Body1">
+                        <td class="BodyB-Column1-Body1">
+                            <p class="TableText">SQL&#160;Server Standard or Enterprise Edition</p>
+                        </td>
+                        <td class="BodyA-Column2-Body1">
+                            <ul style="list-style-type: circle;">
+                                <li class="Bullet">SQL Server 2005 SP1 or later</li>
+                                <li class="Bullet">SQL&#160;Server 2008 or later</li>
+                                <li class="Bullet">SQL&#160;Server 2008 R2</li>
+                                <li class="BulletLast">SQL Server 2012 </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ol>
+        <p class="DefinitionListTerm">Monitored SQL&#160;Server Instances</p>
+        <ol MadCap:continue="true">
+            <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+                <col style="width: 276px;" class="Column-Column1" />
+                <col style="width: 430px;" class="Column-Column2" />
+                <thead>
+                    <tr class="Head-Header1">
+                        <th class="HeadE-Column1-Header1">Type</th>
+                        <th class="HeadD-Column2-Header1">Requirement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="Body-Body1">
+                        <td class="BodyB-Column1-Body1">
+                            <p class="TableText">SQL&#160;Server Standard or Enterprise Edition</p>
+                        </td>
+                        <td class="BodyA-Column2-Body1">
+                            <ul style="list-style-type: circle;">
+                                <li class="Bullet">SQL Server 2000 SP4 or later</li>
+                                <li class="Bullet">SQL&#160;Server 2005 SP1 or later</li>
+                                <li class="Bullet">SQL&#160;Server 2008 or later</li>
+                                <li class="Bullet">SQL&#160;Server 2008 R2</li>
+                                <li class="BulletLast">SQL Server 2012 </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ol>
+        <p>&#160;</p>
+        <h2 class="Heading2">SQLdm Management Pack and SCOM support requirements</h2>
+        <p class="Body">The Idera SQLdm Management Pack for integration with SCOM is designed for System Center Operations Manager 2007 R2 and above. For more information about SQLdm MP and SCOM installation, see <a href="Integrate SQLdm with SCOM.htm">Install and configure the SQLdm Management Pack for SCOM</a>.</p>
+        <p class="Body">&#160;</p>
+    </body>
+</html>

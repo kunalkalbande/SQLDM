@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="405" MadCap:lastWidth="833">
+    <head><title>Buffer Cache Hit Ratio (Percent) metric in Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">Buffer Cache Hit Ratio (Percent)</h1>
+        <p class="Body">The Buffer Cache Hit Ratio (Percent) metric calculates the percentage of data pages SQL Server found in memory without reading the data from the disk subsystem.  This value is measured by reading the ‘buffer cache hit ratio’ from <code>sysperfinfo</code>.  The higher this value is the more efficiently the system is running. </p>
+        <h2 class="Heading2">Reduce the percentage of memory used by SQL&#160;Server</h2>
+        <p class="Body">Once SQL Server is up for at least 30 minutes, use the following solutions if values lower than 85% regularly occur:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Add more physical memory (RAM) to the computer. </li>
+            <li class="Bullet"> 
+If your site makes use of extended stored procedures that are infrequently called, then after calling them, issue a <code>DBCC DLLNAME (FREE)</code>. Once an extended stored procedure is called, it remains in memory until SQL Server is shut down even if it is never again called, which then wastes available memory. A <code>DBCC dllname (FREE)</code> releases that memory for use by both the procedure cache and Data Pages, which has a significant positive effect on both the Procedure Cache Hit Ratio and the Buffer Cache Hit Ratio. Execute <span style="font-variant: small-caps;">sp_helpextendedproc</span>  to view the extended stored procedures currently loaded in memory by SQL Server.</li>
+            <li class="Bullet">Allowing SQL&#160;Server to consume more of the available memory, making sure that OS Paging does not increase. 
+</li>
+            <li class="Bullet">Limit SQL Server computers to performing only SQL Server work. Stop any unnecessary programs, such as allowing the computer to act as either a primary or backup domain controller.
+</li>
+            <li class="BulletLast">If the computer is running multiple instances of SQL Server, then consider placing each instance on a separate physical computer.
+</li>
+        </ul>
+    </body>
+</html>

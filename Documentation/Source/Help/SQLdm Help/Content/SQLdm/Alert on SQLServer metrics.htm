@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="8" MadCap:lastHeight="1317" MadCap:lastWidth="721">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Alert on SQL Server metrics using Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Alert on SQL Server Metrics</h1>
+        <p class="Body">
+            <MadCap:keyword term="Alerting" />SQLdm allows you to configure alerts to inform and warn you about approaching issues with your SQL&#160;Server instances. You can view these alerts using the SQLdm Console, the Idera Newsfeed, or SQLdm Mobile.</p>
+        <p class="Body">When an alert threshold is reached, SQLdm can:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Send an email notification</li>
+            <li class="Bullet">Pop up an alert message in your Windows taskbar</li>
+            <li class="Bullet">Write an event to the Windows Event log</li>
+            <li class="Bullet">Generate an event on the Timeline</li>
+            <li class="Bullet">Send the alert message to the Idera Newsfeed Action Provider, which publishes the alert message as a status update on the server wall in the Idera Newsfeed interface and on the Active Alerts view in SQLdm Mobile</li>
+            <li class="BulletLast">Create a new To Do item  (Note that beginning with SQLdm 7.0, the To Do feature is available only to users who had To Do activated in an earlier 6.x version. This version of SQLdm does not support this feature for new users.)</li>
+        </ul>
+        <p class="Body">In response to a set threshold entering the error level, SQLdm can perform one or more of the following actions:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Send an email notification</li>
+            <li class="Bullet">Write an event to the Windows Event log</li>
+            <li class="Bullet">Generate an event on the Timeline</li>
+            <li class="Bullet">Send the alert message to the Idera Newsfeed Action Provider, which publishes the alert message as a status update on the server wall in the Idera Newsfeed interface and on the Active Alerts view in SQLdm Mobile</li>
+            <li class="BulletLast">Create a new To Do item  (Note that beginning with SQLdm 7.0, the To Do feature is available only to users who had To Do activated in an earlier 6.x version. This version of SQLdm does not support this feature for new users.)</li>
+        </ul>
+        <p class="Body">Once you correct the situation triggering the alert, SQLdm alerts you again if the situation recurs.</p>
+        <table style="caption-side: top;border-left-style: solid;border-left-width: 1px;border-left-color: #a1b5b0;border-right-style: solid;border-right-width: 1px;border-right-color: #a1b5b0;border-top-style: solid;border-top-width: 1px;border-top-color: #a1b5b0;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #a1b5b0;border-collapse: collapse;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col />
+            <col style="width: 680px;" />
+            <tr>
+                <td style="background-color: #ff4500;" class="TableStyle_Tip_Style_Body_0_0_RowSep_ColSep">
+                    <p class="TableHeadRow"><span style="color: #ffffff;">TIP</span>
+                    </p>
+                </td>
+                <td class="TableStyle_Tip_Style_Body_0_1_RowSep_ColEnd">
+                    <p class="TableText">On each SQLdm view, columns containing associated alerts are highlighted with their current status color. You can right-click many of these columns and select <span class="GUI_Item">Configure Alert</span> to change the associated thresholds.</p>
+                </td>
+            </tr>
+        </table>
+        <h2 class="Heading2">Database- or disk-level alerts</h2>
+        <p class="Body">SQLdm includes some alerts that allow you to set them at a database or disk level, meaning that you can set different alert thresholds for each database or disk within a monitored SQL&#160;Server instance.</p>
+        <h2 class="Heading2">Alert templates</h2>
+        <p class="Body">SQLdm allows you to configure generic alert settings as a template that you can apply to servers and groups of servers in your organization. Click <span class="GUI_Item">Tools &gt; Alert Configuration Templates</span> and complete the required fields to <a href="Configure Alert Templates.htm" target="_self">configure an alert template</a>.</p>
+        <h2 class="Heading2">Informational alerts</h2>
+        <p class="Body">Informational alerts allow you to set a threshold that, when generated, triggers a status that does not affect the overall status of the server within SQLdm. You can use informational alerts to notify an administrator of the state of a particular metric for a server or trigger secondary processes that could take action to prevent issue escalation.</p>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col>
+            </col>
+            <col style="width: 673px;">
+            </col>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Note that for certain metrics, using the informational alert means that you no longer receive a warning or critical alert for events generated by that metric. Please review the situation before setting up an informational alert.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Idera Newsfeed</h2>
+        <p class="Body">The Idera Newsfeed is a revolutionary new way for DBAs and managers to collaborate, share knowledge, and keep close tabs on your most critical SQL Server issues.  With the Idera Newsfeed, you can quickly share information to stay informed, be more productive and shorten the time to problem resolution.</p>
+        <p class="Body">For more information, see the <a href="http://quack.idera.com/Help/Idera News Feed/1-4/Web" target="_blank">Idera Newsfeed Help</a>.</p>
+        <h2 class="Heading2">SQLdm Mobile</h2>
+        <p class="Body">SQLdm Mobile includes the Idera Newsfeed as well as several dashboard views that define your server health and expose critical alerts. You can access the SQLdm Mobile Web application from most smart phones and mobile devices.</p>
+    </body>
+</html>

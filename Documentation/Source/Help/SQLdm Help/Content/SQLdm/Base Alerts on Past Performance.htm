@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="685" MadCap:lastWidth="858">
+    <head><title>Base alerts on past performance using Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Base alerts on past performance</h1>
+        <p class="Body">
+            <MadCap:keyword term="Alert:threshold" />  One of the most important steps in setting up SQLdm to successfully monitor your SQL&#160;Server instances is the configuration of your alerts so that you only receive alerts on metrics that actually fall outside the typical performance of your environment.</p>
+        <p class="Body"> SQLdm allows you to do this by letting you set a period of time where the metric ranges collected for a set of alerts help determine your alert thresholds. After data collection begins, SQLdm gives you recommendations for tweaking your alert thresholds for the following metrics:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Blocked Sessions (Count)</li>
+            <li class="Bullet">Client Computers (Count)</li>
+            <li class="Bullet">Custom Counters</li>
+            <li class="Bullet">OS&#160;Average Disk Queue Length (Count)</li>
+            <li class="Bullet">OS&#160;Disk Time (Percent)</li>
+            <li class="Bullet">OS&#160;Memory Usage (Percent)</li>
+            <li class="Bullet">OS&#160;Paging (Per Second)</li>
+            <li class="Bullet">OS&#160;Privileged Time (Percent)</li>
+            <li class="Bullet">OS&#160;Processor Queue Length (Count)</li>
+            <li class="Bullet">OS&#160;Processor Time (Percent)</li>
+            <li class="Bullet">OS&#160;User Time (Percent)</li>
+            <li class="Bullet">SQL&#160;Server CPU&#160;Usage (Percent)</li>
+            <li class="BulletLast">SQL&#160;Server Response Time (Milliseconds)</li>
+        </ul>
+        <p class="StepIntro">To configure your alert thresholds:</p>
+        <ol>
+            <li class="NumberedList"><a href="Configure server baseline options.htm" target="_self">Configure the performance baseline</a>.</li>
+            <li class="NumberedList"><a href="View suggested alert thresholds.htm" target="_self">View suggested alert thresholds</a>. Ideally you should wait until the baseline period is over. About 24 hours after collections begin, SQLdm displays a bar in green with black diagonal lines for related alerts on the Alert Configuration window, as shown in the following image. This bar represents you recommended reference range.</li>
+        </ol>
+        <p class="DefinitionListBody">
+            <img src="../Resources/Images/baselinearea2.PNG" />
+        </p>
+        <ol MadCap:continue="true">
+            <li class="NumberedList">As your performance baseline period ends, text appears at the top of your Alert Configuration window regarding available recommendations. Click the Alert Recommendation text to open the Alert Recommendations window for your SQL Server instance. This window allows you to see the thresholds SQLdm recommends based on the data collected during your performance baseline.</li>
+            <li class="NumberedList">Either apply the alert recommendations or tweak your thresholds.</li>
+        </ol>
+    </body>
+</html>

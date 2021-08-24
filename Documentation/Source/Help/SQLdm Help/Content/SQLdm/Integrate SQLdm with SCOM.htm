@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="610" MadCap:lastWidth="802">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Integrate SQLdm with SCOM in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Integrate SQLdm with SCOM</h1>
+        <p class="Body">
+            <MadCap:keyword term="System Center Operations Manager;SCOM;management pack for SCOM" />The Idera SQLdm Management Pack (SQLdm MP) integrates and extends the Microsoft System Center Operations Manager (SCOM) monitoring capabilities by providing database administrators and IT operators with additional insight into the availability and performance of their SQL Server interfaces, all from one console.</p>
+        <p class="Body">SQLdm MP includes automatic discovery of SQLdm installations and of the SQL Server instances managed from those installations. Once discovered, SQLdm MP propagates the current status, health, and events of monitored instances up to SCOM. </p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Note that the Idera SQLdm Management Pack for integration with SCOM&#160;is designed for System Center Operations Manager 2007 R2 and above. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">
+Understanding the SQLdm Management Pack health model</h2>
+        <p class="Body">The SQLdm Management Pack reports the health of each SQL Server instance monitored by SQLdm, as well as the server health of SQLdm itself. The following main characteristics help define the SQLdm health model:
+</p>
+        <p class="DefinitionListTerm">SQLdm Server</p>
+        <p class="DefinitionListBody">The health of SQLdm is tracked by monitoring the state of  three underlying services, using the following three service monitors:<br /></p>
+        <p>&#160;</p>
+        <ul>
+            <li class="Bullet">Collection Service Monitor</li>
+            <li class="Bullet">Management Service Monitor</li>
+            <li class="BulletLast">Predictive Service Monitor</li>
+        </ul>
+        <p class="DefinitionListBody">The automatically discovered Object ID for the SQLdm Service is: Idera.SQLDM.Service</p>
+        <p class="DefinitionListTerm">SQLdm Instance</p>
+        <p class="DefinitionListBody">The health of each SQL server instance being monitored by SQLdm is rolled up by reflecting the Alerts counts opened for that instance within SQLdm.</p>
+        <p class="DefinitionListBody">If a SQL server instance currently has one or more Critical alerts open, then the Health of that instance is recorded as Critical.  If one or more Warning alerts are open, but no Critical alerts show, then the health of the instance is recorded as Warning.</p>
+        <p class="DefinitionListBody">In Health Explorer the Diagnostic Manager Alert status which drove a specific Health state change is recorded and displayed in the State Change Events tab.</p>
+        <p class="DefinitionListBody">The automatically discovered Object ID for a SQL Instance is: Idera.SQLDM.SqlInstance</p>
+    </body>
+</html>

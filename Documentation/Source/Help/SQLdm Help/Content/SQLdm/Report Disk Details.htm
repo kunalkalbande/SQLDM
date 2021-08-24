@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="447" MadCap:lastWidth="888">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Disk Details report in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Disk Details</h1>
+        <p class="Body">The Disk Details report lets you view key disk metrics of a monitored SQL Server instance and specific disk drive over a specified period of time. To successfully monitor OS metrics, make sure that <a href="Enable OS Metrics Monitoring.htm" target="_self">WMI/OLE automation is enabled</a> on the monitored instance. Check <span class="GUI_Item">Show Tabular Data</span> to display results in a single tabular or grid format.</p>
+        <h2 class="Heading2">When to run this report</h2>
+        <p class="Body">You should run the Disk Details report to analyze the six key metrics for disk speed, such as disk time per read or disk reads per second.</p>
+        <h2 class="Heading2">How SQLdm calculates metric values on this report</h2>
+        <p class="Body">Most values on the Disk Details report correlate with the related SQL Server metric.</p>
+        <p class="Body">However, some metric values represent averages over time. Likewise, a few metric values are based on performance algorithms that use multiple statistics to calculate a more accurate metric.</p>
+        <p class="Body">You can access our <a href="http://www.idera.com/support" target="_blank">Customer Service Portal</a> (www.idera.com/support) for more information about the algorithm used to calculate a specific metric.</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">How does SQL diagnostic manager gather statistics from monitored SQL Servers? - Solution #00000055</li>
+            <li class="BulletLast">How to customize existing reports used with Reporting Services?&#160;- Solution #00000307</li>
+        </ul>
+        <p>&#160;</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Customize your report and use the Chart  filter to include either the average or maximum disk details.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

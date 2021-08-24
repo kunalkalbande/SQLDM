@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="324" MadCap:lastWidth="854">
+    <head>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">CXPACKET wait type actions</h1>
+        <p class="Body">
+            <MadCap:keyword term="CXPACKET;wait types" />SQL Server waits provide information about what the database engine is waiting on while extracting queries on a monitored server. While there are many different wait types, CXPACKET waits are a commonly misinterpreted data measurement and require additional clarification.</p>
+        <p class="Body">CXPACKET waits often result when parallelized query threads have an unequal workload, causing a block on the entire query until the longest-running thread is complete. Note that the trigger for the CXPACKET wait occurs not with parallelism, but with the distribution of work on the individual threads.</p>
+        <p class="Body">While you can decrease the number of CXPACKET waits by reducing the MAXDOP on the monitored server, this is often not a recommended course of action as it may cause the wait to disappear and the underlying query to take longer to execute. For example, this issue may result from large parallel table scans, which you can verify using other wait types on the server, such as PAGIOLATCH_XX. This may also result from out-of-date statistics that cause a bad query plan and the unequal workload among threads.</p>
+        <p class="Body">Before adjusting MAXDOP, review your indexes and statistics for accuracy and make sure there are no other underlying issues. If you choose to adjust MAXDOP, recommended settings include 4, 2, or 1. For a NUMA system, use the number of cores available in a single NUMA node. You may want to make these updates on the single query instead of the entire instance to avoid any additional problems.</p>
+    </body>
+</html>

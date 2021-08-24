@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="7" MadCap:lastHeight="393" MadCap:lastWidth="1060">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Monitor the Idera SQLdm database configuration settings</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Monitor database configuration settings</h1>
+        <p class="Body">
+            <MadCap:keyword term="Database:configuration">
+            </MadCap:keyword>The Database Configuration view allows you to view the configuration settings of the databases on the selected SQL&#160;Server instance. This view contains a single grid that includes the configuration settings for all databases on the selected SQL Server instance.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">The columns displayed on the Database Configuration view differ between SQL&#160;Server 2005 and SQL Server 2008 instances.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">You can use the Database Configuration view to analyze configuration differences between databases or databases with incorrect configuration settings.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">If you experience database issues, the Database Configuration view can help you determine if the problem is caused by configuration errors.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Access the Configuration view</h2>
+        <p class="Body">You can open the Configuration view of the SQLdm Databases tab by selecting the appropriate SQL&#160;Server instance, and then clicking <span class="GUI_Item">Databases &gt; Configuration</span>.</p>
+        <h2 class="Heading2">Null values in the Collation and Version columns</h2>
+        <p class="Body">If the database is not started and <span class="Code">AUTO_CLOSE</span> is set to <span class="Code">ON</span>, these columns are set to null until the database is started.</p>
+    </body>
+</html>

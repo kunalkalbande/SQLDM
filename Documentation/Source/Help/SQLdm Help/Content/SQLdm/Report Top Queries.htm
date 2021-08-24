@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="517" MadCap:lastWidth="833">
+    <head><title>Top Queries report in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Top Queries</h1>
+        <p class="Body">The Top Queries report lets you compile a list of queries based on call frequency, duration of execution, CPU usage, and the number of reads and writes performed on the databases hosted by the specified SQL Server instance. You can define minimum thresholds for each of these performance metrics and then see which queries match or exceed the selected values. This report requires that you enabled Query Monitoring in the SQLdm Console and have collected sufficient query data for the specified time period.</p>
+        <p class="Body">When viewing results, note that you can click the SQL&#160;statement to view the <a href="Report Query Statistics.htm" target="_self">Query Statistics report</a>, which provides details on an individual SQL&#160;statement or signature as collected by the Query Monitor.</p>
+        <h2 class="Heading2">When to run this report</h2>
+        <p class="Body">You should run the Top Queries report on a routine basis, such as every week, to proactively identify potential performance issues that may be caused by queries. You can also use this report to track historic performance trends and determine the relationship between query usage and your database performance.</p>
+        <h2 class="Heading2">How SQLdm calculates metric values on this report</h2>
+        <p class="Body">Most values on the Top Queries report correlate with the related SQL Server metric. However, some metric values represent averages over time. Likewise, a few metric values are based on performance algorithms that use multiple statistics to calculate a more accurate metric.</p>
+        <p class="Body">You can access our <a href="http://www.idera.com/support" target="_blank">Customer Service Portal</a> (www.idera.com/support) for more information about the algorithm used to calculate a specific metric.</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">How is the Worst Performing and Most Frequent Queries information gathered? - Solution #00000412</li>
+            <li class="Bullet">How does SQL diagnostic manager gather statistics from monitored SQL Servers? - Solution #00000055</li>
+            <li class="Bullet">How does SQL diagnostic manager calculate the reorganization percentage for database tables? - Solution #00000301</li>
+            <li class="BulletLast">What does the 'Memory Usage' metric in the Console and Reports represent? - Solution #00002237</li>
+        </ul>
+    </body>
+</html>

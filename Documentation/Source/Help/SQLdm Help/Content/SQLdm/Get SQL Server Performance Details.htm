@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="1446" MadCap:lastWidth="571">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Get the SQL Server performance details in Idera SQLdm </title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Get the SQL Server performance details</h1>
+        <p class="Body">
+            <MadCap:keyword term="Monitor:details" />The Details view displays a list of properties for the selected SQL&#160;Server instance, a list of the collected metrics and their characteristics, and provides a chart for you to graphically display metrics selected from the displayed list. For each metric, SQLdm displays the current value, value range for reference, alert status, metric category, thresholds for each alert, and whether the metric is a custom counter. To add a metric to the Details chart, check the check box in the chart column for the appropriate metric.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">All fields highlighted in the <span class="GUI_Item">State </span>column are associated with alerts. Right-click any of these metrics and select <span class="GUI_Item">Configure Alerts</span> to edit the associated thresholds.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Access the Details view</h2>
+        <p class="Body">You can open the Details view of the SQLdm Overview tab by selecting the appropriate SQL&#160;Server instance, and then clicking   <span class="GUI_Item">Overview &gt; Details</span>.</p>
+        <h2 class="Heading2">SQL&#160;Server instance properties area</h2>
+        <p class="Body">The following properties are displayed for the selected monitored SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Version</p>
+        <p class="DefinitionListBody">Indicates the current SQL&#160;Server version including service pack and build information on this SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Edition</p>
+        <p class="DefinitionListBody">Indicates the current SQL&#160;Server edition, including Enterprise, Business Intelligence, or Standard, installed on this SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Running</p>
+        <p class="DefinitionListBody">Indicates the timestamp associated with the most recent restart of this SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Clustered</p>
+        <p class="DefinitionListBody">Indicates whether this SQL&#160;Server instance is part of a cluster. If it is part of a cluster, SQLdm displays the name of the active node.</p>
+        <p class="DefinitionListTerm">Processors</p>
+        <p class="DefinitionListBody">Indicates the total number of processors associated with this SQL&#160;Server instance and how many of these processors are currently in use.</p>
+        <p class="DefinitionListTerm">Host</p>
+        <p class="DefinitionListBody">Indicates the name of the server hosting this SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Host OS</p>
+        <p class="DefinitionListBody">Indicates the current operating system on the server hosting this SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Host Memory</p>
+        <p class="DefinitionListBody">Indicates the total amount of memory on the server hosting this SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Databases</p>
+        <p class="DefinitionListBody">Indicates the current number of databases on this SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Data Size</p>
+        <p class="DefinitionListBody">Indicates the current size of the data on this SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Log Size</p>
+        <p class="DefinitionListBody">Indicates the current size of the log files on this SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">VM&#160;Name</p>
+        <p class="DefinitionListBody">Indicates the name of the virtual machine on which this monitored SQL Server instance is running.</p>
+        <p class="DefinitionListTerm">Virtualization&#160;Host Server</p>
+        <p class="DefinitionListBody">Indicates the name or IP&#160;address of the virtualization host server on which this virtual machine is running.</p>
+        <p class="DefinitionListTerm">Host&#160;Memory</p>
+        <p class="DefinitionListBody">Indicates the total amount of memory on the host server on which this virtual machine is running.</p>
+        <p class="DefinitionListTerm">Host&#160;Physical Processors</p>
+        <p class="DefinitionListBody">Indicates the total number of physical processors associated with the host server on which this virtual machine is running.</p>
+        <p class="DefinitionListTerm">Host&#160;Logical Processors</p>
+        <p class="DefinitionListBody">Indicates the total number of logical processors associated with the&#160;host server on which this virtual machine is running. The number of logical processors is different from the number of physical processors only if the CPU on the&#160;host server supports Hyper-Threading.</p>
+        <h2 class="Heading2">Understanding your chart data and refresh interval</h2>
+        <p class="Body">SQLdm charts provide data whether collected real time or as part of a scheduled collection event. For additional information about how SQLdm displays your chart data, see <a href="Charts.htm" target="_self">Charts</a>. </p>
+    </body>
+</html>

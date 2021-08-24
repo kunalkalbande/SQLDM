@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="8" MadCap:lastHeight="1629" MadCap:lastWidth="794">
+    <head><title>Customize your Idera SQLdm Dashboard view</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Customize your Dashboard view</h1>
+        <p class="Body">
+            <MadCap:keyword term="Design Dashboard;Dashboard;Layout" />The Dashboard view is customizable per monitored SQL&#160;Server instance by selecting the panels that are important to view for that instance. You can customize your Dashboard view for the selected SQL Server instance or as the default for all SQL Server instances added to SQLdm.</p>
+        <h2 class="Heading2">Using the Panel Gallery</h2>
+        <p class="Body">When you install SQLdm, a default Dashboard view is applied to all your SQL Server instances. The Panel Gallery allows you to alter your view so that you can monitor the metrics that are most important. You can access the Panel Gallery by selecting  the appropriate SQL&#160;Server instance from the Servers pane, and then clicking <span class="GUI_Item">Customize</span>. Once in the Dashboard Designer, click a panel in the Panel Gallery for SQLdm to display additional information about that panel.</p>
+        <h2 class="Heading2">Designing a Dashboard view</h2>
+        <p class="Body">When you design a Dashboard view, it is important that you select the metric panels that give you the best information for your selected SQL&#160;Server instance and the current status of that instance. Because SQLdm allows you to create multiple designs, you can create one design with panels specifically for SQL Server 2000 instances and another design for SQL Server 2005 instances. It allows you to create designs that show the most important panels to monitor when certain events trigger alerts.</p>
+        <p class="Body">SQLdm allows you to choose from several different layouts of columns and rows for your dashboard design. You can then drag and drop panels from the Panel Gallery to the actual location in the layout where you want that panel to reside. You can also click, hold, and drag panels to re-arrange their location. When you drag a panel to another position and release the mouse button, the panel you moved switches locations with the existing panel. For example, your design includes the CPU&#160;panel in the upper left corner and the Sessions panel in the lower right corner. Click, hold, and drag the Sessions panel to the upper left corner, and then release. Note that the Sessions panel is in the upper left corner and the CPU&#160;panel is now in the lower right corner. For more information on available designs, see <a href="Design dashboard.htm" target="_self">Design a dashboard view</a>.</p>
+        <p class="Body">SQLdm includes several options for you to use as your Dashboard view. You can also create a design using the available panels, and save the design for other people in your environment to use as their Dashboard view. For more information on available designs, see <a href="Select a dashboard layout.htm" target="_self">Select a dashboard design</a>.</p>
+        <h2 class="Heading2">Saving a design</h2>
+        <p class="Body">Once you are pleased with the selection and positioning of your panels, you can save your design. In the Dashboard Designer, click <span class="GUI_Item">Save</span>. SQLdm allows you to name this design, which is then displayed in the Dashboard Gallery. For additional information about saving a dashboard design, see <a href="Save dashboard.htm" target="_self">Save a dashboard design</a>.</p>
+        <h2 class="Heading2">Understanding how you can apply a dashboard design</h2>
+        <p class="Body">SQLdm allows you to use a design for a single session of the SQLdm Management Console, apply a design to a specific monitored SQL&#160;Server instance, or apply the layout to any other SQL&#160;Server instance including those you add later. You can use a custom Dashboard view in the following situations:</p>
+        <p class="DefinitionListTerm">One-time use</p>
+        <p class="DefinitionListBody">SQLdm allows you to view a custom layout of your Dashboard view for a single session of the SQLdm Management Console. For example, an event in one of your instances triggered an alert. You want to watch the metric that includes statistics relating to this alert, so you access the Panel Gallery in the Dashboard Designer. Drag the panel displaying the alert-related statistics to the top -left corner of your layout, and then close the Dashboard Designer. SQLdm displays a message that you made changes to the current design. Click <span class="GUI_Item">No </span>to use this design only until you close this session of the SQLdm Management Console.</p>
+        <p class="DefinitionListBody">SQLdm keeps that panel in the position of your Dashboard view until you close the SQLdm Management Console session. Even after accessing other areas within SQLdm, when you return to your Dashboard view, the same panel appears in the same location. </p>
+        <p class="DefinitionListBody">When you no longer want that panel foremost in your Dashboard view, simply close the SQLdm Management Console knowing that the default Dashboard view for that instance appears the next time you access SQLdm.</p>
+        <p class="DefinitionListTerm">Set as the default design for one or more instances</p>
+        <p class="DefinitionListBody">While the default Dashboard view includes panels that are important to your monitored SQL&#160;Server instances, the panels may not be in the order in which you want or this design does not include all of the panels you want to view. If there are no existing designs you want to use, access the Panel Gallery to select and move the panels you want to the positions that most suit your needs. </p>
+        <p class="DefinitionListBody">When you are done with your design, click <span class="GUI_Item">Save</span> to make sure you can use this design again. Type a unique name for this design, verify that this SQL&#160;Server instance appears in the <span class="GUI_Item">Selected Servers</span> area. You can add any other SQL&#160;Server instances by selecting the name of that instance, and then clicking <span class="GUI_Item">Add &gt;</span> to move the instance to the Selected Servers area. Once your list of selected instances is complete, click <span class="GUI_Item">OK</span>. Each time you access the Dashboard view for this instance, SQLdm displays the information using this design.</p>
+        <p class="DefinitionListBody">You can also select an existing dashboard design as the default for one or more monitored SQL&#160;Server instances. On the Server Overview tab, click <span class="GUI_Item">Customize</span>, and then in the Dashboard Designer, click <span class="GUI_Item">Select a Dashboard</span>. Scroll through the available designs until you find the one you want to use for this monitored SQL Server instance. Click <span class="GUI_Item">Select</span> and each time you access the Dashboard view for this instance, SQLdm displays the information in this design. </p>
+        <p class="DefinitionListTerm">Set as the default design for all new or unassigned instances</p>
+        <p class="DefinitionListBodyLast">SQLdm allows you to select a design to use as the default for all new or unassigned monitored SQL&#160;Server instances so that you have a consistent format across all of your monitored SQL&#160;Server instances. When saving a dashboard design, check the <span class="GUI_Item">Use this dashboard as my default for new or unassigned servers</span> check box.</p>
+        <h2 class="Heading2">Available panels</h2>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet"><a href="Cache Dashboard.htm" target="_self">Cache panel</a>
+            </li>
+            <li class="Bullet"><a href="CPU Dashboard.htm" target="_self">CPU panel</a>
+            </li>
+            <li class="Bullet"><a href="Custom Counters dashboard.htm" target="_self">Custom Counters panel</a>
+            </li>
+            <li class="Bullet"><a href="Databases Dashboard.htm" target="_self">Databases panel</a>
+            </li>
+            <li class="Bullet"><a href="Disk Dashboard.htm" target="_self">Disk panel</a>
+            </li>
+            <li class="Bullet"><a href="File Activity dashboard.htm" target="_self">File Activity panel</a>
+            </li>
+            <li class="Bullet"><a href="Locks Dashboard.htm" target="_self">Lock Waits panel</a>
+            </li>
+            <li class="Bullet"><a href="Memory Dashboard.htm" target="_self">Memory panel</a>
+            </li>
+            <li class="Bullet"><a href="Network Dashboard.htm" target="_self">Network panel</a>
+            </li>
+            <li class="Bullet"><a href="Server Waits Dashboard.htm" target="_self">Server Waits panel</a>
+            </li>
+            <li class="BulletLast"><a href="Sessions Dashboard.htm" target="_self">Sessions panel</a>
+            </li>
+            <li class="BulletLast"><a href="Tempdb Dashboard.htm" target="_self">Tempdb panel</a>
+            </li>
+            <li class="BulletLast"><a href="Virtualization Dashboard.htm" target="_self">Virtualization panel</a>
+            </li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="340" MadCap:lastWidth="811">
+    <head><title>Configure size remaining using Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure size remaining</h1>
+        <p class="Body">
+            <MadCap:keyword term="Autogrow settings;Autogrow alerts" />SQL Server can automatically expand a database or log when necessary based on a set of parameters. The Autogrow Settings tab of the Advanced Alert Configuration window allows you to specify whether you want to take this autogrowth into account when calculating the remaining space available. </p>
+        <p class="Body">SQLdm allows you to select whether to trigger an alert based on the current database or log used size divided by the maximum possible size. Click <span class="GUI_Item">Yes, alert on the current used size divided by the maximum possible size</span> on the Autogrow Settings page to set the alert to include autogrow or click <span class="GUI_Item">No, alert on the current used size divided by the current file size</span> if you do not want to take SQL&#160;Server autogrowth into consideration.</p>
+        <h2 class="Heading2">Understanding the downside of Autogrow</h2>
+        <p class="Body">You can avoid unnecessary long reads and poor response time from SQL&#160;Server by minimizing the number of autogrow events occurring in your environment. Each time an auto-growth event occurs, SQL Server holds up database processing while looking for disk space for the additional data. Usually this new space is not adjacent to the existing space and causes physical disk fragmentation. As more and more auto-growth events occur, the more the disk becomes fragmented, leading to longer periods while SQL&#160;Server reads the databases.</p>
+    </body>
+</html>

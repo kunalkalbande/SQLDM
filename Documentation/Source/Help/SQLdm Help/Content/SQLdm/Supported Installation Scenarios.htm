@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="941" MadCap:lastWidth="1094">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Idera SQLdm supported installation scenarios</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Supported installation scenarios</h1>
+        <p class="Body">
+            <MadCap:keyword term="Supported Installation Scenarios;Install:supported scenarios;Install:supported configurations;Install:Windows clusters;Install:non-trusted domains;Install:typical process;Non-Trusted Domains:supported install scenarios;Trusted Domains:supported install scenarios;Deployment:supported scenarios;Install:Web farm;SQLdm Mobile:install in Web farm;Clustered Environments:supported scenario" />You can install and deploy SQLdm, SQLdm Mobile, and the Idera Newsfeed to meet your unique SQL Server environment needs. SQLdm also offers a SQLdm Console-only installation in environments that already have SQLdm fully installed. For additional information about this type of installation, see <a href="Deploy SQLdm Console only.htm" target="_self">deploy SQLdm Console only</a>.</p>
+        <p class="Body">The following installation scenario descriptions assume you are deploying SQLdm, SQLdm Mobile, and Idera Newsfeed in your environment.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">In larger environments that contain more than one SQLdm installation, consider dedicating a SQLdm Mobile deployment per each SQLdm application.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">SQLdm supports monitoring virtual SQL&#160;Server instances, such as those using VMware or other virtualization software. For additional information about how SQLdm works with virtualization, see <a href="How SQLdm works with a virtual environment.htm" target="_self">How SQLdm works with a virtual environment</a>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Typical environment</h2>
+        <p class="Body">This configuration includes the following installations:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">SQLdm Console on your workstation</li>
+            <li class="Bullet">SQLdm Mobile Web site on a Web Server for smart phone access</li>
+            <li class="Bullet">SQLdm Mobile &amp; Newsfeed Service on the same computer that hosts the SQLdm Services</li>
+            <li class="BulletLast">SQLdm Mobile Repository and SQLdm Repository on the same SQL Server instance</li>
+        </ul>
+        <h2 class="Heading2">Clustered environment</h2>
+        <p class="Body">You can install and configure SQLdm to monitor virtual SQL Servers. A virtual SQL Server is a SQL Server running on a Microsoft failover cluster managed by Microsoft Cluster Services. </p>
+        <p class="Body">This configuration deploys all SQLdm Services  to your virtual instances. A service-only deployment to a virtual instance includes the following installations:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">SQLdm Console on your workstation (not located in the cluster)</li>
+            <li class="Bullet">SQLdm Mobile Web site on a non-clustered Web Server for smart phone access</li>
+            <li class="Bullet">SQLdm Mobile Repository and SQLdm Repository on the same SQL Server instance</li>
+            <li class="BulletLast">SQLdm Mobile &amp; Newsfeed Service and the SQLdm Services on each cluster node hosting the virtual SQL Server you want to monitor</li>
+        </ul>
+        <h2 class="Heading2">Web farm environment</h2>
+        <p class="Body">You can install SQLdm Mobile in a Web farm to make sure this site remains accessible during a failover situation. </p>
+        <p class="Body">This configuration includes the following installations:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">SQLdm Mobile on a Web Server in the farm</li>
+            <li class="Bullet">Typical SQLdm installation</li>
+            <li class="Bullet">SQLdm Mobile &amp; Newsfeed Service on the same computer that hosts the SQLdm Services</li>
+            <li class="BulletLast">SQLdm Mobile Repository and SQLdm Repository on the same SQL Server instance</li>
+        </ul>
+        <h2 class="Heading2">Non-trusted environment</h2>
+        <p class="Body">You can install and configure SQLdm and SQLdm Mobile to monitor SQL Server instances running in non-trusted domains or workgroups.</p>
+        <p class="Body">This configuration includes the following installations:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">SQLdm Console on your workstation in a trusted or non-trusted domain</li>
+            <li class="Bullet">SQLdm Mobile Web site on a Web Server for smart phone access</li>
+            <li class="Bullet">SQLdm Mobile &amp; Newsfeed Service on the same computer that hosts the SQLdm Services, in a trusted or non-trusted domain</li>
+            <li class="BulletLast">SQLdm Mobile Repository and SQLdm Repository on the same SQL Server instance, in a trusted or non-trusted domain</li>
+        </ul>
+    </body>
+</html>

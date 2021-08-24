@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="3682" MadCap:lastWidth="558">
+    <head><title>How Idera SQLdm works with a virtual environment</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">How SQLdm works with a virtual environment</h1>
+        <p class="Body">
+            <MadCap:keyword term="virtual;VM;virtual machine;ESX;VMware;host;virtualization;Hyper-V" />Virtual environments, such as those provided by by Hyper-V or VMware, allow you to run multiple instances of computers or "virtual machines" on a single, physical host server.  These VMs create a virtual environment that enables IT shops to more fully utilize the hardware they already have, allowissg administrators to maintain fewer physical servers which then consume less power, take up less real estate, and generate less heat.</p>
+        <p class="Body">While there are many advantages to using a virtual environment, there are some disadvantages. One is that a virtual machine currently is not as fast or efficient as a standalone physical machine. Administrators must closely monitor and manage their virtual environments because over-utilized hardware can quickly and severely impact the performance of their servers, which are constantly waiting for physical resources to become available to process their workloads.  </p>
+        <p class="Body">SQLdm includes VM monitoring to allow administrators to get a glimpse of what is going on inside the virtual environment in which their SQL Servers are running, to make sure that their VMs and their host machines are running at peak efficiency. This topic is a general outline of how SQLdm works in a virtual environment and includes links to other areas where you can find additional VM-specific information.</p>
+        <h2 class="Heading2">Using the hypervisor to manage resources</h2>
+        <p class="Body">On the physical server hosting a virtual environment, there is a process called the hypervisor or virtualization manager running in the background. The hypervisor manages the interactions between the virtual machines and the physical hardware, manages resources, and then distributes the physical resources as required by each of the VMs it is hosting. </p>
+        <p class="Body">An administrator can intentionally over commit resources on a physical host with the idea that it is unlikely that all of the VMs need to utilize all of the resources on the host at the same time.  The hypervisor is also affected by this shift, and manages any occasion when all of the active VMs need more physical resources than is available from the host. Note that there are ramifications for the extra processing that is occurring when the hypervisor is taxed. This additional processing is the overhead for a virtual environment and consumes CPU, memory, and network resources.</p>
+        <h2 class="Heading2">How SQLdm collects and presents metrics involving a virtual environment</h2>
+        <p class="Body">The guest operating system on a VM operates no differently than it does when running on a physical machine with full access to all of the resources at its disposal. But the machine hosting the VM operates differently because of the virtual environment.  The physical resources of the host are shared with the other VMs on the host.  Due to the additional overhead of virtualization, and the hypervisor managing contention for resources, the metrics that the guest OS reads as utilization of its resources are not entirely accurate as they do not take into account that virtualization overhead, nor does it measure that it is waiting on physical resources to process its workload.</p>
+        <p class="Body">The image below shows a typical virtualized environment with VMWare.  In this environment, the ESX/ESXi hypervisor on each individual host server collects the performance statistics and reports the data back to a central vCenter Server.  SQLdm then collects that information from the vCenter Server in order to show those statistics along with the other SQL related performance information.</p>
+        <p class="Image">
+            <img src="../Resources/Images/vCenter Connection.jpg" style="width: 541px;height: 466px;" />
+        </p>
+        <p class="Body">In virtualized environment with Hyper-V, the process of how SQLdm collects and presents metrics is slightly different from that of a VMware setup. In this environment, SQLdm collects all the required performance statistics from the Hyper-V host server and virtual machines using the WMI interface.</p>
+        <p class="Body">
+            <img src="../Resources/Images/Hyper-V Connection.jpg" style="width: 558px;height: 503px;" />
+        </p>
+        <p class="Body">SQLdm displays virtual machine and host metrics as collected from the perspective of the physical host.  In other words, these are the “true” physical metrics.  Whereas, the metrics that SQLdm displays for the OS on a virtualized machine are what Microsoft Windows calculates as using without regard to any overhead. For example, SQLdm displays the OS CPU Usage at 35%, but metric displayed for the VM CPU Usage is 38%.  This discrepancy results from the additional overhead within the hypervisor used to run the VM, and the VM is charged for the additional processing.</p>
+        <h2 class="Heading2">Link a monitored virtual SQL&#160;Server instance to the vCenter Server or Hyper-V host server</h2>
+        <p class="Body">To link a monitored virtual SQL&#160;Server instance to the host server that manages your VMs, click <span class="GUI_Item">Tools &gt;&#160;VM&#160;Configuration</span> to access the VM&#160;Configuration window. SQLdm displays the current relationships between your available virtualization host servers and your monitored SQL&#160;Server instances. For more information about linking a monitored virtual SQL&#160;Server instance to a vCenter Server or Hyper-V host server, see <a href="Virtualization Configuration.htm" target="_self">Configure your virtual machine connections</a>.</p>
+        <h2 class="Heading2">VM data collection</h2>
+        <p class="Body">The VM collector connects to your virtualization host server (vCenter Server or Hyper-V host server) during the scheduled refresh for each of your monitored virtual SQL&#160;Server instances. If the SQLdm Management Console is open to the Overview Dashboard or any Resources view for a specific instance,  data is also collected based on the <span class="GUI_Item">Server View Refresh</span> setting in the Console Options page. In this situation, it is possible that the collector connects to the virtualization host server and virtual machines every few seconds. </p>
+        <p class="Body">You can adjust the scheduled refresh rate for a monitored virtual SQL&#160;Server instance by right-clicking the instance name, and then selecting <span class="GUI_Item">Properties</span>.</p>
+        <h2 class="Heading2">Differences in statistics</h2>
+        <p class="Body">You may notice some difference in your statistics, such as SQLdm displaying a higher OS&#160;CPU&#160;usage than your VM&#160;CPU&#160;usage. While the hypervisor manages resources efficiently, it is possible that the demand for physical resources is greater than what is available. For example,  a guest OS on a virtual machine submits a batch of work to a CPU. However, all of the physical CPUs are committed to other work, so there is no physical CPU available on the host to process the work. In this situation, the VM waits for a CPU to become available to process its work. While it is waiting, the guest OS is unaware of the wait and assumes that it is simply taking longer for the CPU to process this batch of work, and the OS thinks it is using more CPU power than it is actually using. </p>
+        <p class="Body">Remember that SQLdm uses the additional overhead of the hypervisor to calculate the VM metrics. In this situation, the hypervisor knows the VM is just waiting for a CPU, so it does not charge the VM for CPU processing power while it is waiting. The result is that the guest OS reports that it is using the additional processing power, however the hypervisor simply reports what is actually used. In this situation, your CPU&#160;usage metrics that are reported by Windows are higher than what is reported by VMware or Hyper-V for that VM.</p>
+        <h2 class="Heading2">Available metrics related to your VMs</h2>
+        <p class="Body">A monitored virtual SQL&#160;Server instance appears in the Servers pane in the same way as a monitored physical SQL&#160;Server instances. Click the appropriate virtual instance, and SQLdm displays the same dashboard panels as for a monitored physical SQL&#160;Server instance, but also include specific metrics for the VM and host server. </p>
+        <p class="Body">The following dashboard panels include VM- or host-related information:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet"><a href="CPU Dashboard.htm" target="_self">CPU panel</a>. Includes VM&#160;and Host usage metrics. The information available in this panel comes from the Server Details and Resources Summary views.</li>
+            <li class="Bullet"><a href="Memory Dashboard.htm" target="_self">Memory panel</a>. Includes the VM&#160;Memory Usage and Host Memory Usage charts. The information available in this panel comes from the Server Details and Resources Summary views.</li>
+            <li class="Bullet"><a href="Network Dashboard.htm" target="_self">Network panel</a>. Includes the VM&#160;Network Usage Throughput and Host Network Usage Throughput charts. The information available in this panel comes from the Server Details and Resources Summary views.</li>
+            <li class="Bullet"><a href="Get Disk Performance Details.htm" target="_self">VM Disk Usage panel</a>. Includes the amount of data read from and written to disk for this VM during the sample interval. The information available in this panel comes from the Resources Disk view.</li>
+            <li class="Bullet"><a href="Get Disk Performance Details.htm" target="_self">Host Disk Usage panel</a>. Includes the amount of data read from and written to disk for this host server during the sample interval. The information available in this panel comes from the Resources Disk view.</li>
+            <li class="BulletLast"><a href="Virtualization Dashboard.htm" target="_self">Virtualization panel</a>. Includes the Virtual Memory Usage and Virtual Disk Usage charts plus the CPU&#160;Ready Wait Time gauge. The information available in this panel comes from the Server Details view.</li>
+        </ul>
+        <p class="Body">Use the available virtualization alerts and VM-related reports  to get the most information regarding your monitored virtual SQL&#160;Server instances and host servers.</p>
+        <h2 class="Heading2">Available VM-related reports</h2>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet"><a href="Report Virtualization Statistics.htm" target="_self">Virtualization Statistics Report</a>
+            </li>
+            <li class="BulletLast"><a href="Report Virtualization Summary.htm" target="_self">Virtualization Summary Report</a>
+            </li>
+        </ul>
+        <h2 class="Heading2">Available virtualization alerts</h2>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet"><a href="Alerts/Host CPU Usage Alert.htm" target="_self">Host CPU Usage Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Host Memory Swap Detected.htm" target="_self">Host Memory Swap Detected Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Host Memory Usage Alert.htm" target="_self">Host Memory Usage Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Host Power State.htm" target="_self">Host Power State Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/VM CPU Ready Wait Time Alert.htm" target="_self">VM CPU Ready Wait Time Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/VM CPU Usage.htm" target="_self">VM CPU Usage Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/VM Host Server Change.htm" target="_self">VM Host Server Change Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/VM Memory Swap Delay Detected.htm" target="_self">VM Memory Swap Delay Detected Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/VM Memory Usage Alert.htm" target="_self">VM Memory Usage Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/VM Power State.htm" target="_self">VM Power State Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/VM Reclaimed Ballooned Memory Alert.htm" target="_self">VM Reclaimed Ballooned Memory Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/VM Resource Configuration Change.htm" target="_self">VM Resource Configuration Change Alert</a>
+            </li>
+            <li class="BulletLast"><a href="Alerts/VM Resource Limits Detected.htm" target="_self">VM Resource Limits Detected Alert</a>
+            </li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="317" MadCap:lastWidth="824">
+    <head><title>Disk Queue Length metric in Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">Disk Queue Length</h1>
+        <p class="Body">The Disk Queue Length metric counts the average number of system requests that are waiting for disk access on the computer hosting the SQL Server instance. The Disk view on the Resources tab allows you to track your Disk Queue Length, along with other key disk statistics, over a period of time on the computer hosting your SQL Server instance.</p>
+        <h2 class="Heading2">Reasons why this metric has no value</h2>
+        <p class="Body">SQLdm is unable to collect the corresponding counter due to one of the following reasons:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">It usually takes two refreshes to begin populating the Disk Queue metric, which occurs within a few seconds.</li>
+            <li class="Bullet">OS&#160;Metrics collection is disabled or not working properly. You must enable OS Metrics collection for SQLdm to collect hardware performance metrics.</li>
+            <li class="Bullet">Lightweight Pooling is enabled. SQLdm cannot collect OS metrics if Lightweight Pooling is enabled on the SQL Server instance.</li>
+            <li class="BulletLast">The counter does not exist on this SQL&#160;Server instance.</li>
+        </ul>
+    </body>
+</html>

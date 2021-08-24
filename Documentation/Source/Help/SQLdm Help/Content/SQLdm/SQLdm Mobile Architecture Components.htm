@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1571" MadCap:lastWidth="859">
+    <head><title>SQLdm Mobile components and architecture including Idera Newsfeed</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">SQLdm Mobile components and architecture including Idera Newsfeed</h1>
+        <p class="Body">
+            <MadCap:keyword term="Authentication Provider;Idera News Feed Platform;Idera News Service;SQLdm Mobile:what it is;Notification Provider;Repository;Idera News Feed:architecture;Idera News Feed:components;SQLdm Mobile:components" />SQLdm Mobile is an easy-to-use, Web-based application that seamlessly integrates into your existing diagnostic and monitoring workflow. The SQLdm Mobile Web site includes many metrics and alerts panels that let you quickly ascertain performance issues in your environment. </p>
+        <p class="Body">SQLdm Mobile also includes the Idera Newsfeed technology. The Newsfeed provides an easy-to-use, social-media-based collaboration tool you can use to solve issues faster while keeping your team appraised of changing server statuses.</p>
+        <p class="Body">Whether you are tied to your desktop, on the go, or managing remote servers, these features can fit your unique monitoring needs.</p>
+        <p class="Body">The SQLdm Mobile architecture easily runs in your SQL Server environment with minimal configuration. All components run outside and separate from SQL Server processes, and do not add to or modify any of your native SQL Server files or services. </p>
+        <h2 class="Heading2">Components</h2>
+        <p class="DefinitionListTerm">Idera Newsfeed for SQLdm</p>
+        <p class="DefinitionListBody">The Idera Newsfeed is a user interface that seamlessly integrates with the SQLdm Console, letting you monitor your instances and collaborate with coworkers at the same time, in real time.</p>
+        <p class="DefinitionListTerm">Idera Newsfeed Platform</p>
+        <p class="DefinitionListBody">The Idera Newsfeed Platform consists of the SQLdm Mobile Repository database and the SQLdm Mobile &amp; Newsfeed Service.</p>
+        <p class="DefinitionListTerm">SQLdm Mobile Repository database</p>
+        <p class="DefinitionListBody">The SQLdm Mobile Repository (Mobile Repository) is a central database that stores your configuration settings, comments and other activity on stories, as well as notifications.  Consider deploying the Mobile Repository to the same computer that hosts your SQLdm Repository.</p>
+        <p class="DefinitionListTerm">SQLdm Mobile &amp; Newsfeed Service</p>
+        <p class="DefinitionListBody">The SQLdm Mobile &amp; Newsfeed Service facilitates communications between the SQLdm Mobile Repository and your SQLdm application. By default, this service is installed on the same computer where you run the SQLdm Mobile &amp;&#160;Newsfeed setup program. Consider SQLdm Mobile &amp; Newsfeed Service  to the same computer that hosts your SQLdm Services, such as the SQLdm Management Service.</p>
+        <p class="DefinitionListTerm">Action Provider</p>
+        <p class="DefinitionListBody">The Idera Newsfeed Action Provider converts SQLdm alerts about a server's status and performance metrics into notification emails that SQLdm Mobile &amp; Newsfeed Service can send to the appropriate people. The setup program installs the action provider on the computer hosting your SQLdm Repository.</p>
+        <p class="DefinitionListTerm">Authentication Provider</p>
+        <p class="DefinitionListBody">The  Idera Newsfeed Authentication Provider is the SQLdm application that the Idera Newsfeed Platform uses to authenticate a user when he or she signs up or logs on. The Idera Newsfeed Platform leverages the application security settings as defined in SQLdm, determining which monitored SQL&#160;Server instances a given user can access.</p>
+        <p class="DefinitionListTerm">SQLdm Mobile Web application (Web site)</p>
+        <p class="DefinitionListBodyLast">The SQLdm Mobile Web site provides access to the same monitoring and collaboration features of the Idera Newsfeed technology via a mobile device, such as a smart phone or iPad. The SQLdm Mobile Web site also includes SQLdm panels so you can quickly check server performance when you are away from your desk.</p>
+        <h2 class="Heading2">Architecture</h2>
+        <p class="Image">
+            <img src="../Resources/Images/SQLdmMobileArch.png" />
+        </p>
+    </body>
+</html>

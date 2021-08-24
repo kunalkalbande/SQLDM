@@ -1,0 +1,1 @@
+This folder is for project documents such as specifications and schedules.

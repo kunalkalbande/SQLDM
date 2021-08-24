@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="2057" MadCap:lastWidth="545">
+    <head>
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>View past performance in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">View past performance</h1>
+        <p class="Body">
+            <MadCap:keyword term="Hyper-V;History Browser;historical snapshot" />The History Browser is intended to provide information pertaining to the state of your SQL&#160;Server instance at the time a standard snapshot is taken. You can use this information to diagnose and resolve issues to keep the issue from happening again. The History Browser allows you to select a historical snapshot collected by the standard refresh and view the data that was collected using almost all the SQL&#160;diagnostic manager real-time views.</p>
+        <p class="Body">By default, Session details and inactive alerts are stored for 31 days while standard metric information is stored for 365 days. You can edit these options on the <a href="Set your Repository grooming schedule.htm">Grooming Options</a> window.</p>
+        <h2 class="Heading2">Access the History Browser</h2>
+        <p class="Body">To access the History Browser, click the <span class="GUI_Item">History Browser</span> button on a supported view, such as <span class="GUI_Item">Overview &gt;&#160;Dashboard</span>.</p>
+        <h2 class="Heading2">Select a specific snapshot in time in the History Browser</h2>
+        <p class="StepIntro">To select a specific snapshot:</p>
+        <ol>
+            <li class="NumberedList">Open the History Browser.</li>
+            <li class="NumberedList">Select the date from the calendar. You can also select the time range to filter the number of snapshots displayed.</li>
+            <li class="NumberedList">Select the corresponding snapshot from the Historical Snapshots list.</li>
+        </ol>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">The icons next to each of the snapshots represent the highest level of alert thresholds violated. These icons can help you identify a specific snapshot. In addition, you can hover over snapshots in the list to see the most critical alerts associated with the snapshot.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Return to Real-Time mode</h2>
+        <p class="Body">To return to Real-Time mode, either click the <span class="GUI_Item">You are currently viewing a historical snapshot. Click here to switch to Real Time Mode.</span> text at the top of the window you are viewing historical data or click the associated text on a non-supported view.</p>
+        <h2 class="Heading2">Alerts with associated views that support historical snapshots</h2>
+        <p class="Body">On the Alerts view, some of the alerts allows you to retrieve the associated view at the time the alert was activated. To access this view, right-click the alerts, and then click <span class="GUI_Item">Show Historical View</span> in the <span class="GUI_Item">Details </span>pane. </p>
+        <p class="Body">The following table displays a list of alerts that provide an associated view in SQLdm.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col class="Column-Column1" />
+            <col class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Alert</th>
+                    <th class="HeadD-Column2-Header1">Associated View</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Average Disk Milliseconds Per Read</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Average Disk Milliseconds Per Transfer</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Average Disk Milliseconds Per Write</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Blocked Sessions (Count)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Sessions</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Blocking Session Wait Time (Seconds)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Sessions</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Client Computers (Count)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Sessions</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Databases Read/Write Errors Occurred</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Databases</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Disk Reads Per Second</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Disk Transfers Per Second</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Disk Writes Per Second</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Host CPU&#160;Usage (Percent)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Host Memory Usage (Percent)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Oldest Open Transactions (Minutes)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Sessions</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">OS&#160;Average Disk Queue Length (Count)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">OS&#160;Average Disk Queue Length Per Disk (Count)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">OS&#160;Disk Time (Percent)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">OS&#160;Disk Time Per Disk (Percent)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">OS&#160;Memory Usage (Percent)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">OS&#160;Paging (Per Second)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">OS&#160;Privileged Time (Percent)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">OS&#160;Processor Queue Length (Count)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">OS&#160;Processor Time (Percent)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Page Life Expectancy</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Server</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Session CPU&#160;Time (Seconds)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Sessions</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">SQL&#160;Server CPU Usage (Percent)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">SQL&#160;Server Memory Usage (Percent)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">SQL&#160;Server Response Time (Milliseconds)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Sessions</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Tempdb Contention (ms)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Databases</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">User Connections (Percent)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Sessions</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">VM&#160;CPU&#160;Usage (Percent)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">VM Memory Usage (Percent)</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Resources</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Views that support historical snapshots</h2>
+        <p class="Body">Users may notify you of SQL&#160;Server problems that have happened in the past. Using the History Browser, you can go back to a point in time and view the state of your system and also compare system states at different points in time. </p>
+        <p class="Body">The following views support historical snapshots:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Overview &gt; Dashboard</li>
+            <li class="Bullet">Overview &gt;&#160;Details</li>
+            <li class="Bullet">Overview &gt; Active Alerts</li>
+            <li class="Bullet">Sessions &gt; Summary</li>
+            <li class="Bullet">Sessions &gt; Details</li>
+            <li class="Bullet">Sessions &gt; Locks</li>
+            <li class="Bullet">Sessions &gt; Blocking</li>
+            <li class="Bullet">Queries &gt; Signature Mode</li>
+            <li class="Bullet">Queries &gt; Statement Mode</li>
+            <li class="Bullet">Queries &gt;&#160;Query History</li>
+            <li class="Bullet">Queries &gt; Query Waits</li>
+            <li class="Bullet">Resources &gt; Summary</li>
+            <li class="Bullet">Resources &gt;&#160;CPU</li>
+            <li class="Bullet">Resources &gt; Memory</li>
+            <li class="Bullet">Resources &gt; Disk</li>
+            <li class="Bullet">Resources &gt; File Activity</li>
+            <li class="Bullet">Resources &gt; Server Waits</li>
+            <li class="Bullet">Databases &gt; Tempdb Summary</li>
+        </ul>
+    </body>
+</html>

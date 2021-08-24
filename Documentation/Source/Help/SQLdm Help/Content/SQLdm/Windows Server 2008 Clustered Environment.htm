@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="2061" MadCap:lastWidth="817">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Deploy Idera SQLdm in a Windows 2008 clustered environment</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Windows Server 2008 clustered environment</h1>
+        <p class="Body">The following instructions guide you through the installation of SQLdm in a Windows Server 2008 based clustered environment.</p>
+        <h2 class="Heading2">Things to consider before you install SQLdm in a clustered environment</h2>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Create a separate cluster resource group to host SQLdm services. A separate group allows the SQLdm services to fail without causing other resources in the group to failover.</li>
+            <li class="Bullet">Before you create this separate cluster resource group, gather a dedicated IP, NetBIOS name, and a dedicated disk for the cluster resource group.</li>
+            <li class="Bullet">SQLdm Collection, Management, and Predictive Analytics services can run as generic services on your newly-created cluster resource group.</li>
+            <li class="BulletLast">The system may request the network Name and network IP as part of cluster configuration.</li>
+        </ul>
+        <h2 class="Heading2">Install SQLdm Services on Cluster Nodes</h2>
+        <p class="Body">You must install the SQLdm services on each cluster node for the services to work correctly when a failure occurs on the primary cluster node hosting the SQLdm services.</p>
+        <p class="StepIntro">To install SQLdm services on cluster nodes:</p>
+        <ol>
+            <li class="NumberedList">Log on with an administrator account to the computer on which you want to install SQLdm.</li>
+            <li class="NumberedList">Run <span class="Code">Setup.exe</span> in the root of the SQLdm installation kit on the first cluster node.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">SQL diagnostic manager</span> on the<span class="GUI_Item"> Quick Start</span> window.</li>
+            <li class="NumberedList">On the <span class="GUI_Item">Welcome</span> window of the setup program, click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Review and accept the license agreement by clicking <span class="GUI_Item">I accept the terms in the license agreement</span>, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Accept the default installation folder, or click <span class="GUI_Item">Change</span> to specify a different folder, and click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Select the <span class="GUI_Item">Typical setup</span> type and click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Select the SQL Server instance and enter a database name.</li>
+            <li class="NumberedList">Enter the service account information and click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Install</span>.</li>
+            <li class="NumberedList">	In Windows Services, stop the SQLdm Management service and set the Startup type to <span class="GUI_Item">Manual</span>.</li>
+            <li class="NumberedList">In Windows Services, stop the SQLdm Collection service and set the Startup type to <span class="GUI_Item">Manual</span>.</li>
+            <li class="NumberedList">In Windows Services, stop the SQLdm Predictive Analytics service and set the Startup type to <span class="GUI_Item">Manual</span>.</li>
+        </ol>
+        <p class="Body">Repeat the previous steps on each cluster node. Point to the SQLdm Repository installed on the first node.</p>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">You cannot perform the installations concurrently, as the installers collide when checking the repository. You must perform the installations sequentially.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Configure the Cluster Resource Group</h2>
+        <p class="Body">Cluster Resource Group settings must be modified to allow SQLdm to recognize the cluster nodes.</p>
+        <p class="StepIntro">To configure the Cluster Resource Group:</p>
+        <ol>
+            <li class="NumberedList">Select a disk that is configured in the Cluster Resource Group and create a directory on that disk that you want to use to hold local data for the services.</li>
+            <li class="NumberedList">On the primary node, edit the registry and add a new key named Default to the key \Software\Idera\SQLdm. In this key add a string value called DataPath. Set its value to the full path to the data directory created in step 1 (as shown in the image at the end of the steps).</li>
+            <li class="NumberedList">In the Failover Cluster Management tool, right-click on <span class="GUI_Item">Services and Applications</span> and select <span class="GUI_Item">Configure a Service or Application</span>.<ul><li class="Bullet">Provide a name for the service</li></ul><ul><li class="Bullet">Select <span class="GUI_Item">Generic Service</span></li></ul><ul><li class="Bullet">Select the SQLdm Management Service</li></ul><ul><li class="Bullet">Enter the network name and IP address for the services</li></ul><ul><li class="Bullet">Select the clustered storage that hosts the path defined in step 1</li></ul><ul><li class="Bullet">Skip the Registry Replication</li></ul><ul><li class="BulletLast">Verify the settings and click <span class="GUI_Item">Next </span>to complete the wizard
+</li></ul></li>
+            <li class="NumberedList">In Services and Applications, click the newly created service name in the Other Resources section and then on the SQLdm Management service and take it offline.</li>
+            <li class="NumberedList">In Services and Applications, right-click on the newly created service and then on the SQLdm Management Service and select Properties.
+<ul><li class="Bullet">On the General tab, select <span class="GUI_Item">Use Network Name</span> for computer name</li></ul><ul><li class="Bullet">On the Dependencies tab, add the name of service and disk, and then click <span class="GUI_Item">Apply</span></li></ul><ul><li class="BulletLast">On the Registry Replication tab, if blank, add  <span class="Code">SOFTWARE\Idera\SQLdm\Default\DataPath</span></li></ul></li>
+            <li class="NumberedList">In Services and Applications, right-click the newly created service and select <span class="GUI_Item">Add a Resource and Generic Service</span>.</li>
+            <li class="NumberedList">Select the SQLdm Collection Service.</li>
+            <li class="NumberedList">Select <span class="GUI_Item">Next </span>and finish out the wizard.</li>
+            <li class="NumberedList">In <span class="GUI_Item">Services and Applications</span>, right-click on the newly created service and then on the <span class="GUI_Item">SQLdm Collection Service</span> and select <span class="GUI_Item">Properties</span>.
+<ul><li class="Bullet">On the General tab, select <span class="GUI_Item">Use Network Name</span> for computer name</li><li class="Bullet">On the Dependencies tab, add name of service and disk, and then click <span class="GUI_Item">Apply</span></li><li class="BulletLast">On the Registry Replication tab, add <span class="Code">SOFTWARE\Idera\SQLdm\Default\DataPath</span></li></ul></li>
+            <li class="NumberedList">In Services and Applications, right-click the newly created service and select <span class="GUI_Item">Add a Resource and Generic Service</span>.</li>
+            <li class="NumberedList">Select the Predictive Analytics service from the list of resources.</li>
+            <li class="NumberedList">Select <span class="GUI_Item">Next </span>and then <span class="GUI_Item">Finish </span>to exit the wizard.</li>
+            <li class="NumberedList">In Services and Applications, click the newly-created service and then on the <span class="GUI_Item">SQLdm Predictive Analytics</span> service and select <span class="GUI_Item">Properties</span>.
+<ul><li class="Bullet">On the General tab, select <span class="GUI_Item">Use Network Name</span> for computer name</li></ul><ul><li class="Bullet">On the Dependencies tab, add the name of the service and disk, and then click <span class="GUI_Item">Apply</span></li></ul><ul><li class="BulletLast">On the Registry Replication tab, if blank, add <span class="Code">SOFTWARE\Idera\SQLdm\Default\DataPath</span></li></ul></li>
+            <li class="NumberedList">In Windows Services, bring the SQLdm Management service resource online.</li>
+            <li class="NumberedList">In Windows Services, bring the SQLdm Collection service resource online.</li>
+            <li class="NumberedList">In Windows Services, bring the SQLdm Predictive Analytics service resource online.</li>
+            <li class="NumberedList">On the active node on which you installed the SQLdm services, use the Management Service Configuration wizard (<span class="GUI_Item">Start &gt; All Programs &gt; Idera &gt; SQL diagnostic manager &gt; Tools &gt; Management Service Configuration Wizard</span>) to force the services to re-register.</li>
+            <li class="NumberedList">Test the configuration from the Management Service Configuration wizard before finishing the wizard.</li>
+        </ol>
+        <p class="DefinitionListBody">
+            <img src="../Resources/Images/regeditnew.png" />
+        </p>
+        <h2 class="Heading2">Complete the Cluster Configuration in SQL diagnostic manager</h2>
+        <p class="Body">Start the SQLdm Desktop Client and select SQLdm Repository. If the SQLdm Repository is clustered make sure to use the virtual server name for the SQL Server hosting the SQLdm Repository.</p>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="812" MadCap:lastWidth="571">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Set Idera SQLdm query monitor options</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Set query monitor options</h1>
+        <p class="Body">
+            <MadCap:keyword term="Query Monitor: options" />The Query Monitor is a standard SQL&#160;Server trace that collects all the events that occur on your SQL&#160;Server instance over a period of time. You can enable this option if you experience query timeouts or other performance issues. The Query Monitor window allows you to enable or disable query monitoring using the <b>Enable the Query Monitor</b> check box. If you enable  the Query Monitor, you can select the settings that are used. The types of poorly-performing queries to capture include: </p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">SQL batches</li>
+            <li class="Bullet">SQL Statements</li>
+            <li class="BulletLast">Stored procedures and triggers</li>
+        </ul>
+        <p class="Body">You can also define specific poorly-performing thresholds such as duration, logical disk reads, CPU usage, and physical disk writes.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">You should enable the Query Monitor for the time period required to diagnose specific issues you experience. When your diagnosis is complete, disable the <b>Enable the Query Monitor</b> option. For more information about query monitoring, see <a href="http://msdn.microsoft.com/en-us/library/ms130214.aspx" target="_blank">SQL&#160;Server Books Online</a>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Access the Query Monitor tab</h2>
+        <p class="Body">You can access the Query Monitor tab of the Monitored SQL&#160;Server Properties window by right-clicking the appropriate SQL&#160;Server instance, and then selecting <span class="GUI_Item">Properties</span>. Click <span class="GUI_Item">Query Monitor</span> when SQLdm displays the Monitored SQL&#160;Server Properties window.</p>
+        <h2 class="Heading2">Diagnosing specific performance issues </h2>
+        <p class="Body">
+            <MadCap:keyword term="Query Monitor:what to capture" />Select the events that help you best diagnose the specific issues occurring with query performance on your SQL&#160;Server instance. Enabling query monitoring can cause SQL&#160;Server performance degradation while it runs. You should enable the Query Monitor only when diagnosing specific query issues. For example, you may want to monitor queries taking a long time to complete, requiring heavy CPU usage, and causing a large number of logical disk reads or physical disk writes, which indicates a memory issue. </p>
+        <p class="Body">SQLdm uses tracing to locate and flag worst-performing T-SQL. SQLdm cannot display binary data in a readable format. If you captured DTS packages, you may see unreadable characters in the Command field of the Tree View. Capturing DTS&#160;data may also adversely affect the performance of the SQL&#160;Server or Data Warehouse you are monitoring.</p>
+        <h2 class="Heading2">Using advanced Query Monitor configuration options</h2>
+        <p class="Body">You can choose the applications, databases and SQL&#160;text you want to include or exclude using the options available on the <a href="Configure Advanced Query Monitor Options.htm" target="_self">Advanced Query Monitor Configuration</a> window. You can access this window by clicking the <span class="GUI_Item">Advanced</span> button on the Query Monitor tab.</p>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="759" MadCap:lastWidth="820">
+    <head><title>Configure alert duration in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure alert duration</h1>
+        <p class="Body">
+            <MadCap:keyword term="Alert Duration" />SQLdm allows you to determine the total time an alert is raised for an event occurring on a specified SQL&#160;Server instance. The Alert Duration tab of the Advanced <MadCap:keyword term="Alert" />Alert Configuration window provides a page for you to enter the duration of the alert in hours and minutes. For the SQL&#160;Server Agent Job Failure metric, you can specify whether you want SQLdm to trigger the alert each time any job fails or to raise an alert only upon the failure of the most recently-executed job.</p>
+        <p class="Body">The metrics that allow for specifying alert duration include the following:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">SQL&#160;Server Agent Job Completion </li>
+            <li class="Bullet">SQL&#160;Server Agent Job Failure </li>
+            <li class="Bullet">SQL&#160;Server Agent Long Running Job (Minutes)</li>
+            <li class="Bullet">SQL&#160;Server Agent Long Running Job (Percent)</li>
+        </ul>
+        <p class="StepIntro">To use ad hoc Alert Configuration to enter how long a job alert remains active:</p>
+        <ol>
+            <li class="NumberedList">In the Navigation page, click <span class="GUI_Item">Servers</span>. </li>
+            <li class="NumberedList">Right-click the appropriate SQL&#160;server instance, and then select <span class="GUI_Item">Configure Alerts</span>.</li>
+            <li class="NumberedList">Select the metric for which you want to configure an alert.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Advanced</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Alert Duration</span>.</li>
+            <li class="NumberedList">Type or use the selection window to enter the alert duration in hours and minutes.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span>.</li>
+            <li class="NumberedList">To accept these changes, click <span class="GUI_Item">OK</span>.</li>
+        </ol>
+        <p class="StepIntro">To use Alert Configuration templates to enter how long a job alert remains active:</p>
+        <ol>
+            <li class="NumberedList">Click <span class="GUI_Item">Tools &gt; Alert Configuration Templates</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">New</span> or select an existing template, and then click <span class="GUI_Item">View/Edit</span>.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you clicked <span class="GUI_Item">New</span></span>, type a name, and then click <span class="GUI_Item">Edit Configuration</span>.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you clicked <span class="GUI_Item">View/Edit</span></span>, click <span class="GUI_Item">Edit Configuration</span>.</li>
+            <li class="NumberedList">Select the metric for which you want to configure an alert.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Advanced</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Alert Duration</span>.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you selected the SQL&#160;Server Agent Job Completion, SQL&#160;Server Agent Long Running Job (Minutes), or SQL&#160;Server Agent Long Running Job (Percent) metric</span>, continue with the next step. <span class="If_Then_Statement">If you selected the SQL&#160;Server Agent Job Failure metric</span>, select <span class="GUI_Item">Anytime a job failure occurs</span> to trigger an alert each time a job failure occurs or select <span class="GUI_Item">Only if the most recent job execution failed</span> if you want to raise an alert only when the most recently-executed job fails.</li>
+            <li class="NumberedList">Type or use the selection window to enter the alert duration in hours and minutes.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span>.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you want SQLdm to replicate your edits to every monitored SQL&#160;Server instance</span>, click <span class="GUI_Item">Yes</span>.</li>
+            <li class="NumberedList">To accept these changes, click <span class="GUI_Item">OK</span>.</li>
+        </ol>
+    </body>
+</html>

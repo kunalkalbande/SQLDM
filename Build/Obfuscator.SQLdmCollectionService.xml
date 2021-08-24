@@ -1,0 +1,58 @@
+<?xml version='1.0'?>
+<!DOCTYPE obfuscator SYSTEM "obfuscator.dtd">
+<obfuscator>
+<module export="false">
+  <file>..\Development\bin\Release\SQLdmCollectionService.exe</file>
+  <name>SQLdmCollectionService</name>
+
+  <namespace rename="false" keeppublic="true">
+    <name>Idera.SQLdm.CollectionService</name>
+  </namespace>
+
+  <namespace rename="false" keeppublic="true">
+    <name>Idera.SQLdm.CollectionService.Configuration</name>
+  </namespace>
+
+  <namespace rename="false">
+    <name>Idera.SQLdm.CollectionService.Helpers</name>
+    <class rename="false" keeppublic="true" keepfields="true">
+      <name>PersistenceManager</name>
+      <method rename="false">
+        <name regex="true">.*</name>
+        <attribute>private static </attribute>
+      </method>
+    </class>
+  </namespace>
+
+  <namespace rename="false">
+    <name>Idera.SQLdm.CollectionService.ManagementService</name>
+  </namespace>
+
+  <namespace rename="false">
+    <name>Idera.SQLdm.CollectionService.Monitoring</name>
+    <class rename="false" keeppublic="true">
+      <name>WorkQueue`1</name>
+    </class>
+    <class rename="false" keeppublic="true">
+      <name>DelegateWorkQueue</name>
+    </class>
+  </namespace>
+
+  <namespace rename="false">
+    <name>Idera.SQLdm.CollectionService.Probes</name>
+  </namespace>
+
+  <namespace rename="false">
+    <name>Idera.SQLdm.CollectionService.Probes.Collectors</name>
+  </namespace>
+
+  <namespace rename="false">
+    <name>Idera.SQLdm.CollectionService.Probes.Sql</name>
+  </namespace>
+
+  <namespace rename="false">
+    <name>Idera.SQLdm.CollectionService.Probes.Sql.Batches</name>
+  </namespace>
+
+</module>
+</obfuscator>

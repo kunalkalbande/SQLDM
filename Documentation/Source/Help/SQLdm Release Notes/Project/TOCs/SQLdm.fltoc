@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Access SQLdm Help"
+    Link="/Content/SQLdm/Main Help.htm" />
+  <TocEntry
+    Title="Welcome to SQLdm Release Notes"
+    Link="/Content/SQLdm/Welcome to SQLdm.htm">
+    <TocEntry
+      Title="What is SQLdm?"
+      Link="/Content/SQLdm/What is SQLdm.htm" />
+    <TocEntry
+      Title="How SQLdm helps"
+      Link="/Content/SQLdm/How SQLdm helps you.htm" />
+    <TocEntry
+      Title="Find answers"
+      Link="/Content/SQLdm/Find answers.htm">
+      <TocEntry
+        Title="Contact Idera"
+        Link="/Content/SQLdm/Contacting Idera.htm"></TocEntry>
+      <TocEntry
+        Title="How to use Help"
+        Link="/Content/SQLdm/Help System.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="About Idera"
+      Link="/Content/SQLdm/About Idera.htm">
+      <TocEntry
+        Title="Idera products"
+        Link="/Content/SQLdm/Idera Products.htm" />
+      <TocEntry
+        Title="Legal notice"
+        Link="/Content/SQLdm/Legal Notice.htm" />
+    </TocEntry>
+  </TocEntry>
+  <TocEntry
+    Title="8.6 Release Notes"
+    Link="/Content/SQLdm/Release notes.htm">
+    <TocEntry
+      Title="New features and fixed issues"
+      Link="/Content/SQLdm/Fixed issues.htm"></TocEntry>
+    <TocEntry
+      Title="Previous features and fixed issues"
+      Link="/Content/SQLdm/Previous features and fixed issues.htm" />
+    <TocEntry
+      Title="Known issues"
+      Link="/Content/SQLdm/Known issues.htm" />
+    <TocEntry
+      Title="Recommended Idera solutions"
+      Link="/Content/SQLdm/Recommended Idera solutions.htm" />
+  </TocEntry>
+</CatapultToc>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="543" MadCap:lastWidth="859">
+    <head><title>Batches Received (Per Second) metric in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Batches Received (Per Second)</h1>
+        <p class="Body">The Batches Received (Per Second) metric counts the total number of batch requests that the SQL&#160;Server computer receives per second. This rate is a measurement of throughput on the processor.</p>
+        <p class="Body">This metric uses the counter <code>Batch requests/sec</code> from the SQL Server <code>SQL Statistics</code> counter object. On SQL Server 2000 instances, this counter is available through <code>sysperfinfo</code>. On SQL&#160;Server 2005 or later instances, this counter is available through <code>sys.dm_os_performance_counters</code>. </p>
+        <p class="Body">To track this metric, use the <a href="../CPU Dashboard.htm">CPU&#160;Call Rates chart</a> in the CPU dashboard of the Server Overview tab.        <![CDATA[  ]]></p>
+        <p class="Body">While this counter has no good or bad value, each of these T-SQL batches must be: 
+</p>
+        <ol>
+            <li class="NumberedList">Transmitted to the server using the network. 
+</li>
+            <li class="NumberedList">Parsed by SQL Server to check syntax. 
+ 	</li>
+            <li class="NumberedList">Have an execution plan compiled. 
+</li>
+            <li class="NumberedList">Executed according to the execution plan. 
+</li>
+            <li class="NumberedList">Have the results transmitted back to the client computer or Web site. 
+</li>
+        </ol>
+        <h2 class="Heading2">Reduce the number and impact of T-SQL&#160;batches</h2>
+        <p class="Body">In this situation, you should reduce the number of T-SQL batches and the impact of each as much as possible by: </p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">	Reducing the size and complexity of the T-SQL by creating a stored procedure containing the commands you want executed and then simply calling it in the T-SQL batch. This approach reduces the size and complexity of the T-SQL batch, which means less network traffic and less CPU time consumed producing a complex execution plan.
+</li>
+            <li class="BulletLast">Once you move most of the T-SQL code into stored procedures, consider grouping as many of those calling T-SQL commands into a single network batch, if possible. Also consider redesigning the application to call only those stored procedures you need to complete an application function all from within one batch rather than sending each EXECUTE statement to execute separately in its own batch. This strategy reduces network queues dramatically as better use is made of the default 4 KB network packet size.
+</li>
+        </ul>
+        <p class="StepIntro">&#160;</p>
+    </body>
+</html>

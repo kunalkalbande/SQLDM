@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1011" MadCap:lastWidth="789" MadCap:ignoredWords="SSMS">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Configure text and expression alerts in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure text and expression alerts</h1>
+        <p class="Body">
+            <MadCap:keyword term="Text Alerts;Expression Alerts" />SQL&#160;Server Agent Log and SQL&#160;Server Error Log metrics allow users to trigger an alert based on certain text or regular expressions. SQLdm provides different levels of alerts so you can select whether you want to generate a critical, warning, or informational alert based on your entered data. You can also limit the size of your logs to decrease your response time and avoid using additional space on your server.</p>
+        <p class="StepIntro">To use ad hoc Alert Configuration to enter text or a regular expression to trigger an alert:</p>
+        <ol>
+            <li class="NumberedList">In the Navigation page, click <span class="GUI_Item">Servers</span>.</li>
+            <li class="NumberedList">Right-click the appropriate SQL&#160;server instance, and then select <span class="GUI_Item">Configure Alerts</span>.</li>
+            <li class="NumberedList">Select the metric for which you want to configure an alert.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Advanced</span>.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you want to trigger an alert for certain text</span>, type the text in the appropriate field. Use semicolons to separate names and a percent (%) character as a wildcard.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you want to trigger an alert for a certain regular expression</span>, type the expression in the appropriate field. Type only one regular expression per line.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span>.</li>
+            <li class="NumberedList">To accept these changes, click <span class="GUI_Item">OK</span>.</li>
+        </ol>
+        <p class="StepIntro">To use Alert Configuration Templates to enter text or a regular expression to trigger an alert:</p>
+        <ol>
+            <li class="NumberedList">Click <span class="GUI_Item">Tools &gt; Alert Configuration Templates</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">New</span> or select an existing template, and then click <span class="GUI_Item">View/Edit</span>.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you clicked <span class="GUI_Item">New</span></span>, type a name, and then click <span class="GUI_Item">Edit Configuration</span>.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you clicked <span class="GUI_Item">View/Edit</span></span>, click <span class="GUI_Item">Edit Configuration</span>.</li>
+            <li class="NumberedList">Select the metric for which you want to configure an alert.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Advanced</span>.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you want to trigger an alert for certain text</span>, type the text in the appropriate field. Use semicolons to separate names and a percent (%) character as a wildcard.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you want to trigger an alert for a certain regular expression</span>, type the expression in the appropriate field. Type only one regular expression per line.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span>.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you want SQLdm to replicate your edits to every monitored SQL&#160;Server instance</span>, click <span class="GUI_Item">Yes</span>.</li>
+            <li class="NumberedList">To accept these changes, click <span class="GUI_Item">OK</span>.</li>
+        </ol>
+        <h2 class="Heading2">Limit the size of a log that SQLdm reads</h2>
+        <p class="Body">In an attempt to improve response time and avoid using unnecessary space on your server, you can designate the maximum size of your SQL&#160;Server Agent log and your SQL&#160;Server Error log that SQLdm reads. When a log reaches the size limit set in the Alert Configuration, it triggers an alert. SQLdm does not display in the Logs view any data from error or agent logs in excess of the size limit. A quick solution to decrease the size of your file is to click Cycle Server Log to <a href="Cycle the Server Log.htm" target="_self">archive the information in the most recent log and start a new log</a>. You can also cycle the log using SSMS. </p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Before cycling your log, it is important to note that if you have a limit set, then the log file deleted is the oldest log file stored. If you want to keep that log file, copy the file elsewhere before cycling the log.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">SQL&#160;Server 2000 users also must restart the SQL&#160;Server Agent Service after cycling the SQL&#160;Server Agent log . The only way to cycle the agent log on SQL&#160;Server is to cycle the agent service. This process results in a new log.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="StepIntro">To adjust the log size limit that SQLdm reads:</p>
+        <ol>
+            <li class="NumberedList">View the Alert Configuration for your monitored SQL&#160;Server instance.</li>
+            <li class="NumberedList">Select either the <span class="GUI_Item">SQL&#160;Server Agent Log</span> or the <span class="GUI_Item">SQL&#160;Server Error Log</span> alert, and then click <span class="GUI_Item">Advanced</span>.</li>
+            <li class="NumberedList">In the Alert Filters tab, adjust the <span class="GUI_Item">Size (MB)</span> field based on what you want for your log size limit.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span>, and then click <span class="GUI_Item">Apply</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK </span>in the confirmation message if you want to apply your change to any other SQL&#160;Server instances, or click <span class="GUI_Item">No</span>.</li>
+        </ol>
+    </body>
+</html>

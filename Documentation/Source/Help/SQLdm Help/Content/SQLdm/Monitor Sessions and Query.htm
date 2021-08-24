@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="4" MadCap:lastHeight="889" MadCap:lastWidth="897">
+    <head><title>Monitor sessions and query performance in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Monitor sessions </h1>
+        <p class="Body">
+            <MadCap:keyword term="Sessions">
+            </MadCap:keyword>The Sessions tab contains the following views:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Summary view where you can view charts for each Sessions statistic.</li>
+            <li class="Bullet">Details view that lets you create charts with the specific data items you need.</li>
+            <li class="Bullet">Locks view that allows you to create charts based on each lock present on your SQL&#160;Server.</li>
+            <li class="BulletLast">Blocking view where you can create charts specific to all the Blocking sessions.</li>
+        </ul>
+        <p class="Body">The Sessions tab provides the following options:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">The ability to diagnose performance bottlenecks caused by blocking or locked sessions.</li>
+            <li class="Bullet">The ability to trace specific sessions to see why the session may be blocking or locked.</li>
+            <li class="BulletLast">The ability to kill sessions to improve system performance.</li>
+        </ul>
+        <h2 class="Heading2">Access the Sessions tab</h2>
+        <p class="Body">SQLdm provides two paths to access the Sessions tab. The first access path is by clicking the appropriate monitored SQL&#160;Server instance, and then clicking the Sessions tab. The second access path is by expanding the Servers tree, and then clicking <span class="GUI_Item">Sessions </span>for the appropriate instance.</p>
+        <h2 class="Heading2">Alerts associated with the Sessions tab</h2>
+        <p class="Body">
+            <MadCap:keyword term="Sessions:alerts;Alerts:sessions" />The following alerts are associated with the Sessions tab:</p>
+        <p class="DefinitionListTerm">Blocked Sessions (Count)</p>
+        <p class="DefinitionListBody">Is the number of sessions blocked by other sessions holding requested locks.</p>
+        <p class="DefinitionListTerm">Blocking Session Wait Time (Seconds)</p>
+        <p class="DefinitionListBody">Is the amount of time (in seconds) that a SQL Server session is blocking other sessions.</p>
+        <p class="DefinitionListTerm">Client Computers (Count)</p>
+        <p class="DefinitionListBody">Is the number of unique client computers connected to the instance.</p>
+        <p class="DefinitionListTerm">Deadlock</p>
+        <p class="DefinitionListBodyLast">Is when two processes are waiting for a resource held by the other process.</p>
+        <p class="DefinitionListTerm">Oldest Open Transaction (Minutes)</p>
+        <p class="DefinitionListBody">Displays the longest amount of time between a transaction using a Being Transaction statement and the corresponding Commit Transaction or Rollback Transaction statement, in minutes.</p>
+        <p class="DefinitionListTerm">Query Monitor Events (Count)</p>
+        <p class="DefinitionListBody">Is the number of queries captured by Query Monitor on the monitored SQL Server instance during the last scheduled refresh.</p>
+        <p class="DefinitionListTerm">Session CPU Time (Seconds)</p>
+        <p class="DefinitionListBody">Provides the CPU time (in seconds) used by a SQL&#160;Server sessions.</p>
+        <p class="DefinitionListTerm">SQL Server Response Time (Milliseconds)</p>
+        <p class="DefinitionListBody">Calculating the sum of the response time (in milliseconds) to send a batch of SQL statements to the server, process the query, and return the results to the SQLdm Console.</p>
+        <p class="DefinitionListTerm">User Connections (Percent)</p>
+        <p class="DefinitionListBody">Is the percentage of user connections allowed that are currently used.</p>
+    </body>
+</html>

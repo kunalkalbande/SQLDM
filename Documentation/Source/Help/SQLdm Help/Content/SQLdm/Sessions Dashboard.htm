@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="565" MadCap:lastWidth="794">
+    <head>
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Sessions panel in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Sessions panel</h1>
+        <p class="Body">
+            <MadCap:keyword term="Sessions:Dashboard panel;Dashboard:Sessions" />The Sessions panel tracks the performance of the active and blocked sessions running on your monitored SQL Server. Unexpected spikes in the number of concurrent blocked sessions may warn you about the beginning of a serious performance issue. Chronically high blocked and deadlocked sessions are a significant performance concern. For additional information, see <a href="Get Sessions Performance Summary.htm" target="_self">how to get the sessions performance summary</a>.</p>
+        <h2 class="Heading2"><a name="SessionsActivityBlocking"></a>Activity &amp;&#160;Blocking chart</h2>
+        <p class="Body">The Activity and Blocking chart shows the total number of active sessions on your monitored SQL Server instance and any blocking or deadlocks that may occur between sessions.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Metric</th>
+                    <th class="HeadD-Column2-Header1">Why it is important</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Active</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates  the number of active sessions on the SQL Server instance.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText"><a href="Metrics/Blocked Sessions.htm">Blocked Sessions</a>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates  the number of sessions on the SQL Server instance being blocked by other sessions holding requested locks.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Lead Blockers</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates sessions that block at least one session, which can then block other sessions.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Total Deadlocks</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Indicates the total number of deadlocks on the SQL&#160;Server instance. A deadlock has no lead blocker and is circular in nature.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2"><a name="SessionsClients"></a>Client Computers gauge</h2>
+        <p class="Body">The Client Computers gauge displays the total number of unique client computers connected to the SQL Server instance.</p>
+        <h2 class="Heading2">Available alerts</h2>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet"><a href="Alerts/Blocked Sessions Alert.htm">Blocked Sessions Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Client Computers Alert.htm">Client Computers Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Deadlock Alert.htm">Total Deadlocks Alert</a>
+            </li>
+        </ul>
+    </body>
+</html>

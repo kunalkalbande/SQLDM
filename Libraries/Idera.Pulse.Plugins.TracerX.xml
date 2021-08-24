@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TracerX>
+	<LogFile>
+		<Directory value="%LOCALAPPDATA%\Idera\Pulse\Logs" />
+		<MaxSizeMb value="10" />
+		<Archives value="3" />
+		<CircularStartSizeKb value="300" />
+		<CircularStartDelaySeconds value="60" />
+	</LogFile>
+	<MaxInternalEventNumber value="200" />
+	<InternalEventOffset value="1000" />
+	<ConsoleFormatString value="{time:HH:mm:ss.fff} {level} {thname} {logger}+{method} {ind}{msg}" />
+	<DebugFormatString value="{time:HH:mm:ss.fff} {level} {thname} {logger}+{method} {ind}{msg}" />
+	<EventLogFormatString value="{time:HH:mm:ss.fff} {thname} {logger}+{method} {msg}"/>
+	<Logger name="Root">
+		<filetracelevel value="debug" />
+		<consoletracelevel value="off" />
+		<eventlogtracelevel value="off" />
+		<debugtracelevel value="on" />
+	</Logger>
+	<Logger name="StandardData">
+		<filetracelevel value="debug" />
+	</Logger>
+</TracerX>

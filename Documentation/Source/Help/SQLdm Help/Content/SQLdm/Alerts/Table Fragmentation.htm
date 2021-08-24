@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="237" MadCap:lastWidth="859">
+    <head><title>Table Fragmentation (Percent) alert in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Table Fragmentation (Percent) alert</h1>
+        <p class="Body">The Table Fragmentation (Percent) alert provides the percentage of fragmented pages in a table. It is the scan density from <code>dbcc showcontig</code> on a clustered index of a table.    If the table does not have a clustered index, table fragmentation is not collected.   If this value exceeds 80%, consider the following remedies:
+
+</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Drop and re-create the clustered index.
+</li>
+            <li class="Bullet">Reorder the leaf-level pages of the index in a logical order.
+</li>
+            <li class="BulletLast">Rebuild the index online.
+</li>
+        </ul>
+        <p class="Body">This alert is raised based on the diagnostic data collection interval specified in Server Properties. For more information, see <a href="../Set general server options.htm" target="_self">Set general server options</a>.</p>
+    </body>
+</html>

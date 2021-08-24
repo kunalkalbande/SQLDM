@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="2711" MadCap:lastWidth="744" MadCap:ignoredWords="recovery_pending;Failover;unhide">
+    <head>
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Monitor AlwaysOn Availability Groups in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Monitor AlwaysOn Availability Groups</h1>
+        <p class="Body">
+            <MadCap:keyword term="Database:AlwaysOn;AlwaysOn Availability Groups;Alerts:availability databases, availability replicas, availability groups" />The AlwaysOn Availability Groups view allows you to monitor availability groups, availability databases, and availability replicas. </p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">If you have configured the AlwaysOn Availability Groups feature on your SQL 2012 Server, SQLdm automatically recognizes the availability databases and starts to monitor them.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">AlwaysOn Availability Groups are part of an integrated solution, introduced in SQL Server 2012 with the goal of achieving the highest level of data availability and disaster recovery for organizations. Availability Groups grant DBAs the ability to automatically or manually failover a group of databases as a single unit with support for up to four secondary replicas. For additional information on availability groups, see the Microsoft document, <a href="http://msdn.microsoft.com/en-us/library/ff877884.aspx" target="_blank">Overview of AlwaysOn Availability Groups (SQL&#160;Server)</a>.</p>
+        <h2 class="Heading2">Access the AlwaysOn Availability Groups view</h2>
+        <p class="Body">You can open the AlwaysOn Availability Groups view by clicking the appropriate monitored SQL Server instance, and then clicking <span class="GUI_Item">Databases &gt; Availability Group</span>.</p>
+        <h2 class="Heading2">Database AlwaysOn Availability Groups statistics</h2>
+        <p class="Body">In this view, you can see the health of all your availability groups, availability databases and monitored availability replicas. </p>
+        <p class="Body">The database table provides the following information for each availability group (as seen in the view by default):</p>
+        <p class="DefinitionListTerm">Database Name</p>
+        <p class="DefinitionListBody">Displays the name of the availability database.</p>
+        <p class="DefinitionListTerm">Group Name</p>
+        <p class="DefinitionListBody">Displays the name of the availability group for which the connected server instance hosts a replica.</p>
+        <p class="DefinitionListTerm">Replica Name</p>
+        <p class="DefinitionListBody">Displays the name of the server instance that hosts the availability replica.</p>
+        <p class="DefinitionListTerm">Failover Mode</p>
+        <p class="DefinitionListBody">Displays the failover mode for which the availability replica is configured. The possible failover modes are automatic or manual.</p>
+        <p class="DefinitionListTerm">Availability Mode</p>
+        <p class="DefinitionListBody">Describes if data synchronization will use either the synchronous-commit or asynchronous-commit availability mode.</p>
+        <p class="DefinitionListTerm">Replica Role</p>
+        <p class="DefinitionListBody">Indicates the current role of the availability replica. Possible values are primary or secondary.</p>
+        <p class="DefinitionListTerm">Synchronization Health</p>
+        <p class="DefinitionListBody">Displays database synchronization state in the availability group. Possible values include: not healthy, partially healthy, and healthy.</p>
+        <p class="DefinitionListTerm">Redo Queue Size (KB)</p>
+        <p class="DefinitionListBody">Displays the amount of log records from log files in KB that need redoing in the secondary replica to complete synchronization.</p>
+        <p class="DefinitionListTerm">Redo Rate (KB/s)</p>
+        <p class="DefinitionListBody">Rate in KB per second at which log records are redone in the secondary database to complete synchronization.</p>
+        <p class="DefinitionListTerm">Log Send Queue Size (KB)</p>
+        <p class="DefinitionListBody">Amount of log records in KB needed to ship to the secondary replica to complete synchronization.</p>
+        <p class="DefinitionListTerm">Log Send Rate (KB/s)</p>
+        <p class="DefinitionListBody">Indicates the rate in KB per second at which log records are being sent to the secondary replica to complete synchronization.</p>
+        <p class="DefinitionListTerm">Listener DNS Name</p>
+        <p class="DefinitionListBody">The network name of the availability group listener.</p>
+        <p class="DefinitionListTerm">Listener IP Address</p>
+        <p class="DefinitionListBody">The IP address reserved for the availability group listener. If the nodes of your Windows cluster are on different subnets you will need an IP address for each of those subnets.</p>
+        <p class="DefinitionListTerm">Failover Readiness</p>
+        <p class="DefinitionListBody">Indicates whether the secondary database is synchronized with the corresponding primary database. Possible values include: True (the database is marked as synchronized and is ready for a failover) and False (the database is not synchronized and not ready for a failover).</p>
+        <p class="DefinitionListTerm">Synchronization Database Status</p>
+        <p class="DefinitionListBody">Indicates whether the availability database is currently synchronized with the primary replica. Possible synchronization states are: not synchronizing, synchronizing, synchronized, reverting, and initializing. </p>
+        <p class="DefinitionListTerm">Database Status</p>
+        <p class="DefinitionListBody">Description of the database state of the availability replica. Possible values include: online, restoring, recovering, recovery_pending, suspect, emergency, and offline.</p>
+        <p class="DefinitionListTerm">Suspended Status</p>
+        <p class="DefinitionListBodyLast">An AlwaysOn availability database is suspended. Possible values are true or false.</p>
+        <p class="DefinitionListTerm">Last Hardened Time</p>
+        <p class="DefinitionListBody">Indicates the time when the log-block identifier was received for the last hardened LSN on the secondary replica.</p>
+        <p class="DefinitionListTerm">Operational Status</p>
+        <p class="DefinitionListBody">Indicates the current operational state of the secondary replica. Possible state values include: pending failover, pending, online, offline, failed, failed no quorum, and NULL.</p>
+        <p class="DefinitionListTerm">Connection Status</p>
+        <p class="DefinitionListBody">Indicates whether a secondary replica is currently connected to the primary replica. Possible values include: connected and disconnected.</p>
+        <p class="DefinitionListTerm">Synchronization Performance (s)</p>
+        <p class="DefinitionListBody">Indicates the time in seconds it takes to synchronize between the primary and secondary replicas.</p>
+        <p class="DefinitionListTerm">Estimated Data Loss (s)</p>
+        <p class="DefinitionListBody">Indicates the time difference in seconds of the last transaction log record in the primary replica and secondary replica. If the primary replica fails, all transaction log records within the time window will be lost. </p>
+        <p class="DefinitionListTerm">Estimated Recovery Time (s)</p>
+        <p class="DefinitionListBody">Indicates the time in seconds it takes to redo the catch-up time. The catch-up time is the time it will take for the secondary replica to catch up with the primary replica.</p>
+        <p class="DefinitionListBody">&#160;</p>
+        <p class="Body">Additional columns available through the <b>Column Chooser</b>:</p>
+        <p class="DefinitionListTerm">Database ID</p>
+        <p class="DefinitionListBody">Identifier of the database, unique within an instance of SQL Server.</p>
+        <p class="DefinitionListTerm">FileStream Send Rate (KB/s)</p>
+        <p class="DefinitionListBody">Indicates the rate of the FileStream in KB per second at which transactions are being sent to the secondary replicas.</p>
+        <p class="DefinitionListTerm">Group ID</p>
+        <p class="DefinitionListBodyLast">Unique identifier (GUID) of the availability group.</p>
+        <p class="DefinitionListTerm">Last Connect Error#</p>
+        <p class="DefinitionListBodyLast">Number of the last connection error.</p>
+        <p class="DefinitionListTerm">Last Connect Error Description</p>
+        <p class="DefinitionListBody">Description of the last connection error.</p>
+        <p class="DefinitionListTerm">Last Connect Error Time</p>
+        <p class="DefinitionListBody">Timestamp of the last connection error.</p>
+        <p class="DefinitionListTerm">Listener Port</p>
+        <p class="DefinitionListBody">The TPC port used by the availability group listener.</p>
+        <p class="DefinitionListTerm">Replica ID</p>
+        <p class="DefinitionListBodyLast">Identifier of the availability replica within the availability group.</p>
+        <p class="DefinitionListBodyLast">&#160;</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">You can hide and unhide  additional columns in the Availability Groups table by right clicking on any header in the grid and selecting a column from the <b>Column Chooser</b> dialog. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Availability Groups charts</h2>
+        <p class="Body">The AlwaysOn Availability Groups view includes charts that display the queue size and transfer rates of different availability groups.</p>
+        <p class="DefinitionListTerm">Queue Size chart</p>
+        <p class="DefinitionListBody">Provides users with graphical details about queues in the AlwaysOn&#160;Availability Groups feature. This chart is a stacked bar chart for the "Log Send Queue Size" and "Redo Queue Size." </p>
+        <p class="DefinitionListTerm">Transfer Rates chart</p>
+        <p class="DefinitionListBodyLast">Provides users with graphical details about data transfer rates for redo and logs. This chart is a line chart for the "Log Send Rate" and "Redo Rate." </p>
+        <h2 class="Heading2">Availability Groups alerts</h2>
+        <p class="Body">To view a list of all available alerts, see <a href="Metric alerts.htm" target="_self">Metric alerts</a>.</p>
+        <h2 class="Heading2">Understand the view colors</h2>
+        <p class="Body">The AlwaysOn Availability Groups view uses a color-based alert system. The following colors are associated with a status and action within SQLdm:</p>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');" class="TableStyle-Idera_Table_Stylesheet" cellspacing="0">
+            <col class="Column-Column1" style="width: 81px;" />
+            <col class="Column-Column2" style="width: 92px;" />
+            <col class="Column-Column1" style="width: 441px;" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">
+                        <p class="TableHeadRow">Color</p>
+                    </th>
+                    <th class="HeadE-Column2-Header1">
+                        <p class="TableHeadRow">Alert Status</p>
+                    </th>
+                    <th class="HeadD-Column1-Header1">
+                        <p class="TableHeadRow">Action</p>
+                    </th>
+                </tr>
+            </thead>
+            <tr class="Body-Body1">
+                <td class="BodyE-Column1-Body1">
+                    <p class="TableText"><span style="color: #32cd32;">Green</span>
+                    </p>
+                </td>
+                <td class="BodyE-Column2-Body1">OK</td>
+                <td class="BodyD-Column1-Body1">
+                    <p class="TableText">Acceptable threshold where SQLdm does not generate an alert.</p>
+                </td>
+            </tr>
+            <tr class="Body-Body1">
+                <td class="BodyE-Column1-Body1">
+                    <p class="TableText"><span style="color: #4169e1;">Blue</span>
+                    </p>
+                </td>
+                <td class="BodyE-Column2-Body1">Informational</td>
+                <td class="BodyD-Column1-Body1">
+                    <p class="TableText">Informational threshold where SQLdm generates an informational alert.</p>
+                </td>
+            </tr>
+            <tr class="Body-Body1">
+                <td class="BodyE-Column1-Body1">
+                    <p class="TableText"><span style="color: #ffd700;">Yellow</span>
+                    </p>
+                </td>
+                <td class="BodyE-Column2-Body1">Warning</td>
+                <td class="BodyD-Column1-Body1">
+                    <p class="TableText">Warning threshold where SQLdm generates a warning alert.</p>
+                </td>
+            </tr>
+            <tr class="Body-Body1">
+                <td class="BodyE-Column1-Body1">
+                    <p class="TableText"><span style="color: #ff0000;">Red</span>
+                    </p>
+                </td>
+                <td class="BodyE-Column2-Body1">Critical</td>
+                <td class="BodyD-Column1-Body1">
+                    <p class="TableText">Critical threshold where SQLdm generates a critical alert.</p>
+                </td>
+            </tr>
+        </table>
+        <p class="Body">&#160;</p>
+    </body>
+</html>

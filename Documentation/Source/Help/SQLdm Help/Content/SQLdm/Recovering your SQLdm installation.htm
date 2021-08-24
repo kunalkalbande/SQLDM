@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="721" MadCap:lastWidth="843">
+    <head><title>Recovering your Idera SLQdm installation</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Recovering your SQLdm installation</h1>
+        <p class="Body">In the event that your existing SQLdm Repository is no longer available, you can recover your SQLdm installation back to the last point a backup occurred.</p>
+        <h2 class="Heading2">Recovering the SQLdm Repository</h2>
+        <p class="Body">To recover lost or damaged data, restore the SQLdm Repository database using the following guidelines:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Perform a full restore</li>
+            <li class="BulletLast">Schedule the restore during off-hours, or times when you expect the least collection activity</li>
+        </ul>
+        <p class="StepIntro">To restore the Repository database:</p>
+        <ol>
+            <li class="NumberedList">Use SQL Server Enterprise Manager or Management Studio to close any open connections to the Repository database.</li>
+            <li class="NumberedList">Use SQL Server Enterprise Manager or Management Studio to take the Repository database offline. If you cannot take the Repository database offline, stop the Collection Service.</li>
+            <li class="NumberedList">Use a tool such as Idera SQLsafe to restore the Repository database using the appropriate backup archive file.</li>
+            <li class="NumberedList">On the computer hosting the SQLdm services, restart the SQLdm Collection and Management services.</li>
+            <li class="NumberedList">On all existing SQLdm consoles, reconnect to the SQLdm Repository by selecting <span class="GUI_Item">File &gt;Connect to SQLdm Repository</span>.</li>
+        </ol>
+        <h2 class="Heading2">Recovering the SQLdm Services</h2>
+        <p class="StepIntro">To install the SQLdm services:</p>
+        <ol>
+            <li class="NumberedList">Log on with an administrator account to the computer on which you want to install the SQLdm services.</li>
+            <li class="NumberedList">Run <span class="Code">Setup.exe</span> in the root of the installation kit.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">SQL diagnostic manager</span> on the<span class="GUI_Item"> Quick Start</span> window.</li>
+            <li class="NumberedList">On the <span class="GUI_Item">Welcome</span> window of the setup program, click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Review and accept the license agreement by clicking <span class="GUI_Item">I accept the terms in the license agreement</span>, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Accept the default folder for your SQLdm installation, or click <span class="GUI_Item">Change</span> to specify a different folder, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Select the <span class="GUI_Item">Custom Install</span> setup type, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Select <span class="GUI_Item">SQLdm Services </span>(also select the <span class="GUI_Item">Desktop Client</span> if you want to run it on the same computer), and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Specify which SQL Server instance is hosting the Repository database, verify that the displayed database name is correct, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Specify the account credentials that you want the SQLdm services to use to connect to the SQLdm Repository and the monitored SQL Server instances, and then click <span class="GUI_Item">Next</span>. This account must belong to the sysadmin role on the SQLdm Repository database and each instance you plan to monitor.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Install</span> to begin your installation.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Finish</span> to exit the setup program.</li>
+        </ol>
+    </body>
+</html>

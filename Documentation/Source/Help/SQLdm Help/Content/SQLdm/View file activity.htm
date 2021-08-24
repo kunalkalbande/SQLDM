@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1119" MadCap:lastWidth="711">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>View Idera SQLdm file activity</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">View file activity</h1>
+        <p class="Body">The File Activity allows you to view the relative activity of your database files, on a file-by-file basis. Each database file is listed in a column that represents the disk or mount point on which the files reside. At the top of each column the overall Reads, Writes, and Transfers per second are listed. Click on an individual file to expand it and view a graph and the activity data specific to that file.</p>
+        <p class="Body">For each database file, the following information is provided:</p>
+        <p class="DefinitionListTerm">Reads and Writes Per Second</p>
+        <p class="DefinitionListBody">The numbers listed are the average number of reads and write operations per second over the period between collections. Collection times are configured on the Server Properties window.</p>
+        <p class="DefinitionListTerm">Activity lights</p>
+        <p class="DefinitionListBody">Read (green) and Write (blue) lights flash with activity.</p>
+        <p class="DefinitionListTerm"> Activity graph</p>
+        <p class="DefinitionListBody">A bar graph under the file name displays  the recent trend of reads and writes per second. This graph expands when you double-click the file. The expanded Activity graph displays the activity trend for the amount of time specified on the Console Options window (<span class="GUI_Item">Tools &gt;&#160;Console Options</span>).</p>
+        <p class="DefinitionListTerm">Activity data</p>
+        <p class="DefinitionListBodyLast">The arrows and the associated data represent the amount of data activity occurring on the file and whether the amount of activity is rising or falling relative to the previous data point.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Right-click a disk column to Expand/Collapse all files for a database, Expand/Collapse all files on a disk, Navigate to Disk view, or Navigate to the Disk Files view.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Access the File Activity view</h2>
+        <p class="Body">You can open the File Activity view of the SQLdm Resources tab by selecting the appropriate SQL&#160;Server instance, and then clicking <span class="GUI_Item">Resources &gt; File Activity</span>.</p>
+        <h2 class="Heading2">Database Files +&#160;Remaining Disk Files</h2>
+        <p class="Body">Database Files +&#160;Remaining Disk Files chart depicts the activity of all the non-SQL&#160;database files and files not included in the File Activity window.</p>
+        <h2 class="Heading2">Use the filter to display vital database activity</h2>
+        <p class="Body">The filters at the top of the File Activity window allow you to limit the amount of data to that data which is most important to you.    </p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">For an accurate filter, use the percent (%)&#160;wildcard character in the <span class="GUI_Item">File Path Like</span> or <span class="GUI_Item">File Name Like</span> field if you do not include the entire name.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="DefinitionListTerm">Filter Drive</p>
+        <p class="DefinitionListBody">Use the <span class="GUI_Item">Drive</span> drop-down to select the drives to display on the File Activity window. You can also enter a file path in the <span class="GUI_Item">File Path Like</span> field to select a subset of drives. This field accepts the percent (%) wildcard character.</p>
+        <p class="DefinitionListTerm">Filter Database</p>
+        <p class="DefinitionListBody">Use the <span class="GUI_Item">Database</span> drop-down to select the databases to display on the File Activity window. You can also enter a file name in the <span class="GUI_Item">File Name Like</span> field to select a subset of databases. This field accepts the percent (%) wildcard character.</p>
+        <p class="DefinitionListTerm">File Type</p>
+        <p class="DefinitionListBody">Check the boxes of the file types to display on the File Activity window.</p>
+        <p class="DefinitionListTerm">Sort By</p>
+        <p class="DefinitionListBody">Select to sort by <b>Database Name</b>, <span class="GUI_Item">File Name</span>, <span class="GUI_Item">Reads Per Second</span>, or <span class="GUI_Item">Writes Per Second</span>.</p>
+        <p class="DefinitionListTerm">Sort Direction</p>
+        <p class="DefinitionListBodyLast">Further sort your data by selecting  <b>Ascending</b> or <b>Descending</b> order.</p>
+        <p class="DefinitionListTerm">&#160;</p>
+        <p class="DefinitionListBodyLast">&#160;</p>
+    </body>
+</html>

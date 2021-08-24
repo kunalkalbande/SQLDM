@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1808" MadCap:lastWidth="845">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Deploy Idera SQLdm Console only</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">Deploy SQLdm in a high availability group</h1>
+        <p class="Body">
+            <MadCap:keyword term="Deploy:SQLdm in high availability group;AlwaysOn high availability group:deploy" />This procedure guides you through the installation of SQLdm in a high availability group.  SQLdm does not support directly installations under this scenario; however, you can deploy the SQLdm Repository in one of the nodes that belongs to a specific availability group and configure <a href="http://technet.microsoft.com/en-us/library/hh213417.aspx#AGlisteners" target="_blank">an availability group listener</a> that serves as a global link between nodes.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Make sure to restart the SQLdm services, apply the newly-generated license using the Manage Licenses button before attempting to apply the license directly using the Management Console or you may encounter issues.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">&#160;</p>
+        <ol>
+            <li class="NumberedList">Deploy the SQLdm Repository targeting a node that is part of an availability group. For example, Node 1\Instance A.</li>
+            <li class="NumberedList">Move the SQLdm Repository to an availability group in the primary replica with Listener Y and port 300 (as example).  To review how to create an availability group, see Microsoft document <a href="http://technet.microsoft.com/en-us/library/gg509118.aspx#ConfigAG" target="_blank">Creating and Configuring a New Availability Group</a>.</li>
+            <li class="NumberedList">A new license key for Listener Y, Port 300 is required. See <a href="Availability Group listener name and port number.htm" target="_self">Capturing an availability group’s listener name and port designation</a> to send your request to <a href="mailto:sales@idera.com" target="_blank">Idera Sales</a>.</li>
+            <li class="NumberedList">Using the SQLdm Management Service Configuration wizard modify the target repository to Listener Y, port 300.</li>
+            <p class="Body">&#160;</p>
+            <img src="../Resources/Images/Mgmt service configuration wizard.png" style="width: 493px;height: 394px;" />
+            <li class="NumberedList">Save changes, and then restart the SQLdm services. This process takes approximately 5 minutes.</li>
+            <p class="Body">&#160;</p>
+            <img src="../Resources/Images/Restarting SQLdm Services.png" style="width: 474px;height: 249px;" />
+            <li class="NumberedList">Upon opening the SQLdm Console, the system recognizes that you are trying to access the selected node without the proper license and throws an error message.</li>
+            <p class="Body">&#160;</p>
+            <img src="../Resources/Images/Manage Licenses.png" style="width: 532px;height: 331px;" />
+            <li class="NumberedList">Click the <b>Manage Licenses</b> button of the error message and type the new license for Listener Y, Port 300.  Open the SQLdm Console, go to <b>Help &gt; Manage Licenses</b> in the Toolbar menu, and the License Keys window displays. Type the new license key in the available space, and then click Enter.</li>
+            <p class="Body">&#160;</p>
+            <p class="Body">
+                <img src="../Resources/Images/License Keys wizard.png" style="width: 709px;height: 316px;" />
+            </p>
+        </ol>
+    </body>
+</html>

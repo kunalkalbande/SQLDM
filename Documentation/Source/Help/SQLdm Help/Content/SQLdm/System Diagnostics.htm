@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1256" MadCap:lastWidth="571">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Idera SQLdm system diagnostics</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">System diagnostics</h1>
+        <p class="Body">The <MadCap:keyword term="System Diagnostics;One-click System Diagnostics" />System Diagnostics window allows you to test the connections between the SQLdm Services and other SQLdm components, as well as collect service and desktop client logs. This connection test is designed to assist you when the location of SQLdm components changes due to a migration.</p>
+        <p class="Body">
+            <img src="../Resources/Images/System diagnostics_07.13.14.gif" style="width: 528px;height: 539px;" />
+        </p>
+        <p class="Body">You can perform the following tests by clicking on the <b>Run Diagnostics</b> button:</p>
+        <p class="DefinitionListTerm">Management Service Tests</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Indent" style="margin-top: 3pt;">GUI&#160;to management service connection</li>
+            <li class="Bullet-Indent">GUI and SQLdm services using the same repository</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Indent-Last">Management service repository connection</li>
+        </ul>
+        <p class="DefinitionListTerm">Collection Service Tests</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Indent" style="margin-top: 3pt;">Management service to collection service connection</li>
+            <li class="Bullet-Indent">Connection service configured to use correct management service</li>
+            <li class="Bullet-Indent">Collection service can connect to management service</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Indent-Last">Collection service heartbeat status</li>
+        </ul>
+        <h2 class="Heading2">One-click System Diagnostics button:</h2>
+        <p class="Body">You can run system diagnostics plus collect service and desktop client logs by clicking on <b>the Run and Gather Logs</b> button. This feature also saves the status of each collected log in a text file.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">In a SQLdm distributed environment, the <b>Run and Gather Logs</b> command, gathers only local logs. To collect all product logs, run this option from the machine where your SQLdm services are installed.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Access the System Diagnostics window:</h2>
+        <p class="Body">To open the System Diagnostics window, select <b>Help &gt; System diagnostics</b> from the Toolbar menu.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">In a console-only installation the <b>Service Configuration Tool</b> button is not available since the SQLdm Management Service Configuration Wizard is installed in the machine where all the SQLdm services reside.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">&#160;</p>
+    </body>
+</html>

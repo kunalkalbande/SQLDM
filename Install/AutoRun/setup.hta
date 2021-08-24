@@ -1,0 +1,533 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Language" content="en-us">
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">		
+		<title>IDERA SQL Diagnostic Manager Quick Start</title>
+
+		<hta:application 
+			ID="oHTA"
+			applicationName="SQLDM Autorun"
+			border="dialog"
+            borderStyle="normal"
+			caption="yes"
+			maximizeButton="no"
+			contextmenu="no"
+			innerborder="no"
+			scroll="no"			 
+			showintaskbar="yes"
+			sysmenu="yes"
+			selection="no"
+			singleInstance="yes"
+			icon="images/App.ico"
+		/>
+
+		<script language="javascript">
+
+		//Platform
+		var platform          = "{platform}";
+		var copyright         = "{copyright}";
+		var appversion        = "{appversion}";
+		var helpversion       = "{helpversion}";
+		var helpurl           = "{helpurl}";
+		var helpversionmobile = "{helpversionmobile}";
+		var helpurlmobile     = "{helpurlmobile}";
+        var webRoot           = "www";
+
+
+        // test values
+        /*
+        webRoot = "staging";
+		platform = "x86";
+		copyright = "Copyright 2002-2012 Idera";
+		appversion = "7.2.0.4911";
+		helpversion = "7-2";
+		helpurl = "http://" + webRoot + ".idera.com/Help/SQLdm/{version}/Web/#{topic}";
+		helpversionmobile = "1-3";
+		helpurlmobile = "http://" + webRoot + ".idera.com/Help/Idera%20News%20Feed/{version}/Mobile/{topic}";		
+        */
+
+
+		//var HELP_REQUIREMENTS        = "SQLdm/SQLdm requirements.htm|WebHelpSkin";
+		//[START]: SQLdm 9.0 (Gaurav Karwal): Changed the URLs for pointing to wiki based help
+		var IDERA_WIKI_BASE_URL ="http://wiki.idera.com";
+		var IDERA_WEBSITE_URL ="http://www.idera.com";
+		var IDERA_WIKI_SUBFOLDER = "x";
+		var PATH_SEPARATOR = "/";
+		var IDERA_SQLDM_WIKI_BASE_PATH = IDERA_WIKI_BASE_URL + PATH_SEPARATOR + IDERA_WIKI_SUBFOLDER + PATH_SEPARATOR;
+
+		var HELP_REQUIREMENTS        = IDERA_SQLDM_WIKI_BASE_PATH + "PwDKAg";//SQLdm 10.0 Product Requirements Wiki Link Change (Ankit Nagpal)
+		var HELP_INSTALL             = IDERA_SQLDM_WIKI_BASE_PATH + "GQA1";//SQLdm 10.0 Installation & Deployment Wiki Link Change (Ankit Nagpal)
+		var HELP_MAIN                = IDERA_SQLDM_WIKI_BASE_PATH + "Qggs"
+		var HELP_REQUIREMENTS_MOBILE = IDERA_SQLDM_WIKI_BASE_PATH + "IwA1";
+		var HELP_INSTALL_MOBILE      = IDERA_SQLDM_WIKI_BASE_PATH + "JAA1";
+		var HELP_MAIN_MOBILE         = IDERA_WEBSITE_URL + "/Help/Idera News Feed/1-4/Mobile/Advanced/";
+		var HELP_SCOM				 = IDERA_SQLDM_WIKI_BASE_PATH + "uQE1";
+		var RN_BASE = IDERA_SQLDM_WIKI_BASE_PATH + "NQDKAg" //SQLdm 10.0 Release Notes Wiki Link Change (Ankit Nagpal)
+		//[END]: SQLdm 9.0 (Gaurav Karwal): Changed the URLs for pointing to wiki based help
+
+		
+		var RN_BASE_MOBILE = "http://" + webRoot + ".idera.com/Help/SQLdm/{version}/RN/#SQLdm/Welcome to SQLdm.htm"
+
+        var PRODUCT_SQLDM     = "SQLdm";
+		var PRODUCT_SQLDM_C   = "SQLdm_c";
+        var PRODUCT_MOBILE    = "Mobile";
+        var PRODUCT_LICENSE   = "License";
+		var PRODUCT_SCOM	  = ".\\SystemCenter\\";
+		var INSTALL_CWF_SQLDM     = ".\\" + platform + "\\SQLDMCWFMasterInstaller.exe";
+        var INSTALL_SQLDM     = ".\\" + platform + "\\SQLDiagnosticManager.exe";
+        var INSTALL_SQLDM_X64 = ".\\" + platform + "\\SQLDiagnosticManager-x64.exe";
+		var INSTALL_SQLDM_C     = ".\\" + platform + "\\SQLDiagnosticManager_c.exe";
+		var INSTALL_SQLDM_X64_C = ".\\" + platform + "\\SQLDiagnosticManager-x64_c.exe";
+        var INSTALL_MOBILE    = ".\\" + platform + "\\SQLdmMobileNewsfeed.exe";
+        var VIEW_LICENSE      = '".\\Documentation\\Idera - Software License Agreement.rtf"';
+
+		// Set the fixed window size.
+		var startWindowWidth  = 646;
+		var startWindowHeight = 550;
+
+        // Set the default start window location.
+        var startWindowLeft = 200;
+        var startWindowTop  = 100;
+
+        // Check if the screen size info is available.
+        if (window.screen) 
+        {
+		    // Calculate the real default window location.
+		    startWindowLeft = (window.screen.availWidth  - startWindowWidth)  / 2;
+		    startWindowTop  = (window.screen.availHeight - startWindowHeight) / 2;
+		}
+
+		// Center the window on the screen.
+		window.moveTo(startWindowLeft, startWindowTop);
+		window.resizeTo(startWindowWidth, startWindowHeight);
+
+		//Check if running from CD or DVD
+		var commandLine = oHTA.commandLine;
+		var oShell      = new ActiveXObject("WScript.Shell");
+		oShell.CurrentDirectory = commandLine.substr(1, commandLine.lastIndexOf("\\"));		
+ 
+		//SQLdm 9.0 (Gaurav Karwal): changed for opening the wiki link
+		function onClickHelp(topic)
+        {
+            return showHelp(topic);
+		}
+
+		//SQLdm 9.0 (Gaurav Karwal): changed for opening the wiki link
+		function onClickHelpMobile(topic) 
+        {
+		    return showHelp(topic);
+		}
+
+		function onClickRN()
+        {
+        	//[START] SQLdm 9.0 (Gaurav Karwal): Changed for pointing to idera wiki
+            //return showHelp(RN_BASE.replace("{version}", helpversion));
+            return showHelp(RN_BASE);
+            //[END] SQLdm 9.0 (Gaurav Karwal): Changed for pointing to idera wiki
+        }
+
+        function onClickRNMobile() 
+        {
+            return showHelp(RN_BASE_MOBILE.replace("{version}", helpversionmobile));
+        }
+
+        function showHelp(link)
+        {
+            window.open(link, "_blank");
+            return false;
+        }
+
+		function onClickLinkApp(app)
+		{ 
+			switch (app)
+            {
+                case PRODUCT_SQLDM:
+                //START: SQLdm 9.0: Gaurav Karwal: commented to launch the wrapper
+                    // if (platform == "x64")
+                    //     //launchApp(INSTALL_SQLDM_X64);
+                    // launchApp(INSTALL_CWF_SQLDM);
+                    // else
+                    //     launchApp(INSTALL_SQLDM);
+                    // break;
+                    launchApp(INSTALL_CWF_SQLDM);
+                    break;
+                //SQLdm 9.0: Gaurav Karwal: commented to launch the wrapper END
+				case PRODUCT_SQLDM_C:
+                    if (platform == "x64")
+                        launchApp(INSTALL_SQLDM_X64_C);
+                    else
+                        launchApp(INSTALL_SQLDM_C);
+                    break;
+                case PRODUCT_MOBILE:
+                    launchApp(INSTALL_MOBILE);
+                    break;
+
+                case PRODUCT_LICENSE:
+                    launchApp(VIEW_LICENSE);
+                    break;
+            }
+		}
+
+        function launchApp(app)
+        {
+            try
+            {
+                var oShell = new ActiveXObject("WScript.Shell");
+                oShell.Run(app);
+            }
+            catch (err)
+            {
+                switch (err.number)
+                {
+                    case -2147023673:
+                        break;
+
+					case -2147023741:
+						var index = app.indexOf(".pdf");
+						
+						if (index != -1)
+						{
+							alert("A PDF reader is required.");
+						}
+						else
+						{
+							throw (err);
+						}
+						break;
+                    default:
+                        throw(err);
+                }
+            }
+        }
+	    </script>
+
+	    <style>
+	        a:link	  { text-decoration: none; color: black }
+		    a:visited { text-decoration: none; color: black }
+		    a:active  { text-decoration: none; color: black }
+		    a:hover	  { text-decoration: underline; color: #95C943;}
+			
+		    body
+		    {
+			    background-image: url('images/background.png');
+			    background-position: center top; 
+			    background-repeat: no-repeat;
+			    padding-top: 80px;
+			    padding-left: 12px;				
+		    }
+			
+		    #mainTable	 	
+		    { 
+			    border: none; 				
+			    width: 100%;
+			    height: 100%;
+		    }
+			
+		    #pageTitle		
+		    { 
+			    font-family: Arial; 
+			    font-size: 13.5pt; 
+			    font-weight: bold;
+			    color: #000000; 
+			    vertical-align: text-middle; 
+			    height: 32px; 
+		    }
+			
+		    .linkHeader		
+		    { 
+			    padding-top: 3px; 
+			    font-family: Arial; 
+			    font-size: 15pt; 
+			    font-weight: bold;
+			    color: #95C943; 
+			    vertical-align: text-top; 
+		    }
+			
+		    .subLinkHeader		
+		    { 
+			    padding-top: 3px; 
+			    font-family: Arial; 
+			    font-size: 11pt; 
+			    font-weight: bold;
+			    vertical-align: text-top; 
+		    }
+			
+		    .linkTitle
+		    {
+			    width: 33%;
+		    }
+			
+		    .linkBody
+		    { 
+			    padding-top: 5px; 
+			    vertical-align: text-top; 
+		    }
+				
+		    .linkText
+		    { 
+			    font-family: Arial; 
+			    font-size: 10pt; 
+			    color: black; 
+			    vertical-align: text-top; 
+			    height: 24px; 
+			    padding-right: 20px;
+			    padding-bottom: 5px; 
+		    }
+			
+		    .footer
+		    {
+			    font-family: Arial; 
+			    font-size: 8pt; 
+			    color: #5A5956; 
+			    vertical-align: text-bottom; 
+			    padding-right: 5px;
+			    padding-left: 5px;
+			    padding-bottom: 2px;
+		    }
+			
+		    .trademark
+		    {
+			    font-family: Arial;
+			    font-size: 8pt;
+			    font-weight: bold;
+			    vertical-align: top;
+		    }
+			
+		    .trademarkSmall
+		    {
+			    font-family: Arial;
+			    font-size: 7pt;
+			    font-weight: bold;
+			    vertical-align: top;
+		    }
+	    </style>
+
+	</head>
+	<body leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0">
+
+        <!-- <center>
+        <table border="0" bordercolor="red" cellpadding="0" cellspacing="0" id="mainTable">
+            <tr>
+				<td valign="top">
+				    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+					    <tr>
+						    <td id="pageTitle">
+							    Welcome to SQL diagnostic manager
+						    </td>
+					    </tr>
+					    <tr>
+						    <td align="left" style="padding: 0px;">
+
+							    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+								    <tr class="linkHeader">
+									    <td class="linkTitle">Prepare</td>
+									    <td class="linkTitle">Install</td>
+									    <td class="linkTitle">More Information</td>
+								    </tr>
+
+								    <tr class="linkBody"> 
+									    <td>										
+										    <table border="0">
+											    <tr><td class="linkText"><a href="#" title="Click here to view instructions for installing SQL diagnostic manager&reg; for the first time." onclick="onClickHelp(HELP_INSTALL);">Installation Instructions</a></td></tr>
+											    <tr><td class="linkText"><a href="#" title="Click here to view system requirements for installing SQL diagnostic manager&reg;." onclick="onClickHelp(HELP_REQUIREMENTS);">Requirements</a></td></tr>
+											    <tr><td class="linkText"><a href="#" title="Click here to view important information about this release of SQL diagnostic manager&reg;." onclick="onClickRN();">Release Notes</a></td></tr>
+										    </table>
+									    </td>
+									    <td>
+										    <table border="0">
+											    <tr><td class="linkText"><a href="#" title="Click here to install SQL diagnostic manager&reg; with the full installer. See installation instructions for only installing the console." onclick="onClickLinkApp(PRODUCT_SQLDM);">SQL diagnostic manager</a></td></tr>-->
+											    <!--<tr><td class="linkText"><a href="#" title="Click here to install only the SQL diagnostic manager&reg; console." onclick="onClickLinkApp(PRODUCT_SQLDM_C);">SQLdm console</a></td></tr>-->
+										    <!-- </table>
+									    </td>
+									    <td>
+										    <table border="0">
+											    <tr><td class="linkText"><a href="#" title="Click here to view general help for SQL diagnostic manager&reg; that provides comprehensive information about the product and its features." onclick="onClickHelp(HELP_MAIN);">Product Documentation</a></td></tr>
+											    <tr><td class="linkText"><a target="_blank" href="http://www.idera.com" title="Click here to visit the Idera home page.">Idera Home Page</a></td></tr>
+											    <tr><td class="linkText"><a target="_blank" href="http://www.idera.com/Support" title="Click here to visit the Idera Technical Support site.">Technical Support Site</a></td></tr>
+											    <tr><td class="linkText"><a href="#" title="Click here to view the Idera software license agreement." onclick="onClickLinkApp(PRODUCT_LICENSE);">License Agreement</a></td></tr>			
+										    </table>
+									    </td>
+								    </tr>
+
+                                    <tr>
+                                        <td colspan="3" class="subLinkHeader">Mobile & Newsfeed</td>
+                                    </tr>
+
+                                    <tr class="linkBody">
+                                        <td style="vertical-align: top;">
+                                            <table border="0">
+											    <tr><td class="linkText"><a href="#" title="Click here to view instructions for installing SQLdm Mobile & Newsfeed for the first time." onclick="onClickHelp(HELP_INSTALL_MOBILE);">Installation Instructions</a></td></tr>
+											    <tr><td class="linkText"><a href="#" title="Click here to view system requirements for installing SQLdm Mobile & Newsfeed." onclick="onClickHelp(HELP_REQUIREMENTS_MOBILE);">Requirements</a></td></tr> -->
+											    <!--<tr><td class="linkText"><a href="#" title="Click here to view important information about this release of SQLdm Mobile & Newsfeed." onclick="onClickRN();">Release Notes</a></td></tr>-->
+						<!-- 				    </table>
+                                        </td>
+                                        <td style="vertical-align: top;">
+                                            <table border="0">
+											    <tr><td class="linkText"><a href="#" title="Click here to install SQLdm Mobile & Newsfeed with the full installer." onclick="onClickLinkApp(PRODUCT_MOBILE);">SQLdm Mobile & Newsfeed</a></td></tr>											    
+										    </table>
+                                        </td>
+                                        <td>
+                                            <table border="0">
+											    <tr><td class="linkText"><a href="#" title="Click here to view general help for SQLdm Mobile & Newsfeed that provides comprehensive information about the product and its features." onclick="onClickHelpMobile(HELP_MAIN_MOBILE);">Product Documentation</a></td></tr>											    
+										    </table>
+                                        </td>
+                                    </tr>
+									
+									<tr>
+										<td colspan="3" class="subLinkHeader">&nbsp;</td>
+									</tr>
+
+									<tr>
+										<td colspan="3" class="subLinkHeader">Microsoft System Center Integration</td>
+									</tr>
+									
+                                    <tr class="linkBody">
+                                        <td style="vertical-align: top;">
+                                            <table border="0">
+											    <tr><td class="linkText"><a href="#" title="Click here to view instructions for installing the System Center integration pack." onclick="launchApp(HELP_SCOM);">Installation Instructions</a></td></tr>
+										    </table>
+                                        </td>
+                                        <td style="vertical-align: top;">
+                                            <table border="0">
+											    <tr><td nowrap class="linkText"><a href="#" title="Click here to get the System Center integration pack." onclick="launchApp(PRODUCT_SCOM);">System Center Integration Pack</a></td></tr>											    
+										    </table>
+                                        </td>
+                                        <td>
+                                            <table border="0">
+											    <tr><td class="linkText">&nbsp;</td></tr>											    
+										    </table>
+                                        </td>
+                                    </tr>	
+
+									<tr>
+										<td colspan="3" class="subLinkHeader">&nbsp;</td>
+									</tr>
+									
+							    </table>
+
+						    </td>					
+					    </tr>
+				    </table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table border="0" width="100%">
+						<tr>
+							<td align="left" class="footer">{copyright}</td>
+							<td align="right" class="footer">{appversion} ({platform})</td>
+						<tr>
+					</table>					
+				</td>
+			</tr>
+		</table>
+        </center> -->
+		
+		<!-- New Layout -->
+		
+		<center>
+        <table border="0" bordercolor="red" cellpadding="0" cellspacing="0" id="mainTable">
+            <tr>
+				<td valign="top">
+				    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+					    <tr>
+						    <td align="left" style="padding: 0px;">
+
+							    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+								    <tr class="linkHeader">
+									    <td class="subLinkHeader">SQL Diagnostic Manager</td>
+									    <td class="subLinkHeader">Product Documentation</td>
+								    </tr>
+
+								    <tr class="linkBody"> 
+									    <td>										
+										    <table border="0">
+											    <tr><td class="linkText"><img style="vertical-align:middle;" src="images/Notes.png"><a href="#" title="Click here to view instructions for installing SQL Diagnostic Manager&reg; for the first time." onclick="onClickHelp(HELP_INSTALL);">Installation Instructions</a></td></tr>
+											    <tr><td class="linkText"><img style="vertical-align:middle;" src="images/Notes.png"><a href="#" title="Click here to view system requirements for installing SQL Diagnostic Manager&reg;." onclick="onClickHelp(HELP_REQUIREMENTS);">Requirements</a></td></tr>
+											    <tr><td class="linkText"><img src="images/Play.png">&nbsp;<a href="#" title="Click here to install SQL Diagnostic Manager&reg; with the full installer. See installation instructions for only installing the console." onclick="onClickLinkApp(PRODUCT_SQLDM);">Install SQL Diagnostic Manager</a></td></tr>
+{OpenComment}												
+											    <tr><td class="linkText"><img src="images/Play.png">&nbsp;<a href="#" title="Click here to install SQL Diagnostic Manager&reg; console only installer." onclick="onClickLinkApp(PRODUCT_SQLDM_C);">Install SQL Diagnostic Manager (Console Only)</a></td></tr>												
+{CloseComment}										
+												<tr><td>&nbsp;</td></tr>
+										    </table>
+									    </td>
+									    <td>
+										    <table border="0">
+											    <tr><td class="linkText"><a href="#" title="Click here to view general help for SQL Diagnostic Manager&reg; that provides comprehensive information about the product and its features." onclick="onClickHelp(HELP_MAIN);">SQLDM User's Guide</a></td></tr>
+												<tr><td class="linkText"><a href="#" title="Click here to view important information about this release of SQL Diagnostic Manager&reg;." onclick="onClickRN();">SQLDM Release Notes</a></td></tr>
+{OpenComment}					
+												<tr><td class="linkText"><a href="#" title="Click here to view general help for SQLDM Mobile & Newsfeed that provides comprehensive information about the product and its features." onclick="onClickHelpMobile(HELP_MAIN_MOBILE);">SQLDM Mobile User's Guide</a></td></tr>
+{CloseComment}
+												
+												<tr><td class="linkText"></td></tr>
+											</table>
+									    </td>
+								    </tr>
+									
+									<tr>
+									   <td colspan="2"></td>
+								    </tr>
+
+									<tr class="linkHeader">
+{OpenComment}									
+									    <td class="subLinkHeader">SQLDM Mobile &amp; Newsfeed</td>
+{CloseComment}									
+									    <td class="subLinkHeader">More Information</td>
+								    </tr>
+									
+									<tr class="linkBody"> 
+{OpenComment}									
+									    <td>										
+										    <table border="0">
+											    <tr><td class="linkText"><img style="vertical-align:middle;" src="images/Notes.png"><a href="#" title="Click here to view instructions for installing SQLDM Mobile & Newsfeed for the first time." onclick="onClickHelp(HELP_INSTALL_MOBILE);">Installation Instructions</a></td></tr>
+											    <tr><td class="linkText"><img style="vertical-align:middle;" src="images/Notes.png"><a href="#" title="Click here to view system requirements for installing SQLDM Mobile & Newsfeed." onclick="onClickHelp(HELP_REQUIREMENTS_MOBILE);">Requirements</a></td></tr>
+											    <tr><td class="linkText"><img src="images/Play.png">&nbsp;<a href="#" title="Click here to install SQLDM Mobile & Newsfeed with the full installer." onclick="onClickLinkApp(PRODUCT_MOBILE);">Install SQLDM Mobile &amp; Newsfeed</a></td></tr>											    
+											</table>
+									    </td>
+{CloseComment}										
+									    <td>
+										    <table border="0">
+											    <tr><td class="linkText"><a target="_blank" href="http://www.idera.com" title="Click here to visit the Idera home page.">Idera Home Page</a></td></tr>
+											    <tr><td class="linkText"><a target="_blank" href="https://idera.secure.force.com/" title="Click here to visit the Idera Technical Support site.">Technical Support Site</a></td></tr>
+											    <tr><td class="linkText"><a target="_blank" href="http://community.idera.com" title="Click here to visit the Idera Community site.">Community Forum</a></td></tr>
+												<tr><td class="linkText"><a href="#" title="Click here to view the Idera software license agreement." onclick="onClickLinkApp(PRODUCT_LICENSE);">License Agreement</a></td></tr>
+										    </table>
+									    </td>
+								    </tr>
+{OpenComment}								
+
+                                    <tr class="linkHeader">
+									    <td class="subLinkHeader">Microsoft System Center Integration</td>
+									</tr>
+									
+									<tr class="linkBody"> 
+									    <td>										
+										    <table border="0">
+											    <tr><td class="linkText"><img style="vertical-align:middle;" src="images/Notes.png"><a href="#" title="Click here to view instructions for installing the System Center integration pack." onclick="launchApp(HELP_SCOM);">Installation Instructions</a></td></tr>
+											    <tr><td nowrap class="linkText"><img src="images/Play.png">&nbsp;<a href="#" title="Click here to get the System Center integration pack." onclick="launchApp(PRODUCT_SCOM);">Install System Center Integration Pack</a></td></tr>
+											</table>
+									    </td>
+								    </tr>	
+{CloseComment}									
+							    </table>
+
+						    </td>					
+					    </tr>
+				    </table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table border="0" width="100%">
+						<tr>
+							<td align="left" class="footer">{copyright}</td>
+							<td align="right" class="footer">{appversion} ({platform})</td>
+						<tr>
+					</table>					
+				</td>
+			</tr>
+		</table>
+        </center>
+
+	</body>
+</html>

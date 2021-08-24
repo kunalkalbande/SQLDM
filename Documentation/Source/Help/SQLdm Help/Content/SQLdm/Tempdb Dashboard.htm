@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="884" MadCap:lastWidth="833">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Tempdb panel in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Tempdb panel</h1>
+        <p class="Body">
+            <MadCap:keyword term="Tempdb:Dashboard panel;Dashboard:Tempdb" />The Tempdb panel tracks the status of the tempdb database on your monitored SQL Server instance. Unexpected spikes in the use of tempdb usage and space may warn you to allocate additional space to prevent tempdb issues from causing a performance issue on your server. For additional information, see <a href="Get the TempDB status summary.htm" target="_self">how to get the tempdb status summary</a>.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Problems with tempdb can cause an entire SQL&#160;Server instance to become inoperable.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2"><a name="TempdbSpaceUsedOverTime"></a>Tempdb Space Used chart</h2>
+        <p class="Body">The Tempdb Space Used chart provides different views of how your database is used over time based on the object type. Tempdb can fill up quickly when you are low on disk space and or have a low maximum size for database growth. In environments where read committed snapshot isolation is in use, long running transactions may also cause rapid growth in tempdb.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 122px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Metric</th>
+                    <th class="HeadD-Column2-Header1">Why it is important</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Internal</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the amount of tempdb space used by internal objects.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Mixed</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the amount of tempdb space used by mixed extents.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">User</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the amount of tempdb space used by user objects.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">Version Store</td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Indicates the amount of tempdb space used by the version store.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2"><a name="TempdbContention"></a>Tempdb Contention chart</h2>
+        <p class="Body">The Tempdb Contention chart provides the latch wait time for the allocation pages of your tempdb. These latch waits are associated with performance degradation for the related queries. Latch contention is usually an indication that you should create additional tempdb data files or if you already have multiple files, make adjustments so they are equally sized. For more information about tempdb contention, see <a href="Monitor your TempDB database.htm" target="_self">Monitor your tempdb database</a>.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 122px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Metric</th>
+                    <th class="HeadD-Column2-Header1">Why it is important</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">GAM&#160;Page</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the latch wait time for the global allocation map pages of tempdb.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">PFS&#160;Page</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the latch wait time for the page free space pages of tempdb.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">SGAM&#160;Page</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Indicates the latch wait time for the shared global allocation map pages of tempdb.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2"><a name="VersionStoreCleanupRate"></a>Version Store Cleanup Rate</h2>
+        <p class="Body">The <span class="GUI_Item">Version Store Cleanup Rate</span> gauge displays the current version store cleanup rate and the version generation rate of the data rows necessary to support snapshot isolation. Maintaining a cleanup rate above or equal to the generation rate helps you avoid filling up tempdb. Note that long-running snapshot isolation transactions prevent cleanup of older entries in the tempdb version store, causing growth which can affect performance and cause tempdb to run out of space. When interpreting this gauge, note that version store cleanup occurs only once per minute while generation may be ongoing. For more information about tempdb version store, see <a href="Monitor your TempDB database.htm" target="_self">Monitor your tempdb database</a>.</p>
+        <h2 class="Heading2">Available alerts</h2>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet"><a href="Alerts/TempDB Contention.htm" target="_self">Tempdb Contention Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Version Store Generation Ratio.htm" target="_self">Version Store Generation Ratio Alert</a>
+            </li>
+            <li class="BulletLast"><a href="Alerts/Version Store Size.htm" target="_self">Version Store Size Alert</a>
+            </li>
+        </ul>
+    </body>
+</html>

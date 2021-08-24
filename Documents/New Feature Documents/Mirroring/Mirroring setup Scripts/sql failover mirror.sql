@@ -1,0 +1,3 @@
+use master
+ALTER DATABASE AdventureWorks SET PARTNER FAILOVER;
+

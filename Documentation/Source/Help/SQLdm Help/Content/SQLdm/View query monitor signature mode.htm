@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="904" MadCap:lastWidth="571">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>View the Idera SQLdm query monitor signature mode</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">View the query monitor signature mode</h1>
+        <p class="Body">The Query Monitor Signature Mode view includes all active query information, automatically reduced to the signatures and grouped accordingly. Note that the parameters are stripped.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">If you want to prevent certain queries from appearing on the Query Monitor views, click Configure <a href="Set query monitor options.htm" target="_self">Query Monitor &gt; Advanced</a> and enter the applications, databases, or SQL&#160;text you want to exclude from the Query Monitor collection.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">The Query Monitor Signature Mode view is the place to start when investigating query performance. It broadly defines queries and trends with a less overwhelming amount of data and allows you to diagnose a query in a general sense. Once you identify a potential problem, you may want to view the <a href="View query monitor statement mode.htm">statement mode</a> view to see why a query is experiencing performance problems for a particular user, and then to the <a href="View query history.htm">query history</a> to see how the query performs over time and the associated trends.</p>
+        <p class="Body">The primary focus of the Signature Mode view is in the charts. The chart type drop-down allows you to pick a chart type to view, while the chart category drop-down allows you to choose to view the data by SQL&#160;Text, Application, or Database.</p>
+        <p class="Body">Use Query filters to narrow the results to only those that most interest you. Do this by selecting the date and time range, the application, user, database, workstation, and the SQL&#160;text you want to include or exclude from your results.</p>
+        <p class="Body">Event Occurrences is a listing of each occurrence of the query and the associated statistics, such as the duration, CPU time, reads, writes, and associated SQL&#160;text.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">If Query Monitor is disabled but Activity Monitor is enabled, SQL statements appearing in the Event Occurrences grid come from the Blocking Session collector. The collector only populates the following fields: Query, SQL text, Occurrences, Event Type, and Average Deadlocks. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">The <b>Exclude Currently Running Queries</b> filter in the Signature Mode view is enabled by default. If you would like to include data with null values in this view, un-check this check box in the Filters section.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Access the Signature Mode view</h2>
+        <p class="Body">You can open the Signature Mode view of the SQLdm Queries tab by selecting the appropriate SQL&#160;Server instance, and then clicking <span class="GUI_Item">Queries &gt; Signature Mode</span>.
+</p>
+        <h2 class="Heading2">Sigma (Σ) character</h2>
+        <p class="Body">The Sigma character indicates that the data in this row is at least partially composed of aggregated data. This means that the data is condensed into a day-length summary and some precision about the individual statements, client computers, and users is suppressed. Rows on this view with the Sigma character may include a mix of aggregated and non-aggregated data.</p>
+        <h2 class="Heading2">Understanding cell colors</h2>
+        <p class="Body">Red in the column indicates that the data in that row represents 20 percent or more of the total data displayed in the list, while yellow indicates that the data in the row represents 5 percent or more of the total data displayed in the list.</p>
+    </body>
+</html>

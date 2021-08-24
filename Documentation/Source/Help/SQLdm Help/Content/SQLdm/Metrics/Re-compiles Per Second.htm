@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="249" MadCap:lastWidth="876">
+    <head><title>Re-compiles (Per Second) metric in Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">Re-compiles (Per Second)</h1>
+        <p class="Body">The Re-compiles (Per Second) metric calculates the rate of re-compiles on your monitored instance, using the counter <code>SQL Re-Compilations/sec</code>from the SQL Server <span class="Code">SQL Statistics</span> counter object.</p>
+        <p class="Body">On SQL Server 2000 instances, this counter is available through <code>sysperfinfo</code> and represents the rate of batch re-compilations per second.</p>
+        <p class="Body">On SQL&#160;Server 2005 or later instances, this counter is available through <code>sys.dm_os_performance_counters</code> and represents the rate of statement-level re-compilations per second.</p>
+        <p class="Body"> Typically, this metric value is low. A high re-compilation rate may be a sign of excessive re-compilation overhead. Causes of re-compiles include various events including schema changes, statistics updates, and explicit calls to <code>WITH RECOMPILE</code>.  Excessive re-compilation impacts you server performance.</p>
+    </body>
+</html>

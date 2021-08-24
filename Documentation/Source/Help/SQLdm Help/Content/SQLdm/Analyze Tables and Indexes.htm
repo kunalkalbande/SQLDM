@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="8" MadCap:lastHeight="1199" MadCap:lastWidth="862">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Analyze tables and indexes in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Analyze tables and indexes</h1>
+        <p class="Body">
+            <MadCap:keyword term="Database:tables and index">
+            </MadCap:keyword>The Tables &amp; Indexes tab allows you to view statistics for all the tables and indexes on a particular database. To see all the tables and indexes for a database, use the database drop-down list to select your database.</p>
+        <p class="Body">Along with displaying statistics, the Tables &amp; Indexes tab includes the ability to update your statistics and rebuild your indexes on the selected table. These options are available by right-clicking a table and selecting the appropriate option from the context menu. To perform these actions on multiple tables, use the buttons on the ribbon.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Table growth statistics are collected on the schedule configured on the Table Statistics tab of the Monitored SQL&#160;Server Properties window. This includes the table fragmentation and size statistics.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">The Tables and Indexes view provides a good way to view the overall health of your tables. In addition, the Tables and Indexes view allows you to rebuild the index for any of your tables that have a high fragmentation percentage.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">The Rebuild Indexes function is enabled for User tables. System tables cannot have indexes rebuilt.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Access the Tables &amp; Indexes view</h2>
+        <p class="Body">You can open the Tables &amp; Indexes view of the SQLdm Databases tab by selecting the appropriate SQL&#160;Server instance, and then clicking <span class="GUI_Item">Databases &gt; Tables &amp; Indexes</span>.</p>
+        <h2 class="Heading2">Use the Table Details section</h2>
+        <p class="Body">The Table Details section of the Table and Indexes view allows you to view various details on the selected table. To update the statistics for your tables, click <span class="GUI_Item">Update Statistics</span> at the top of the view. The following tables are available in the Table Details section: </p>
+        <p class="DefinitionListTerm">Size</p>
+        <p class="DefinitionListBody">Displays the size of the data, text, and indexes associated with the selected table.</p>
+        <p class="DefinitionListTerm">Dependencies</p>
+        <p class="DefinitionListBody">Lists other database objects that the selected table contains references to and other database objects that reference the selected table. In addition to the object name, the type of object and action associated is listed.</p>
+        <p class="DefinitionListTerm">Indexes</p>
+        <p class="DefinitionListBody">Lists the associated indexes and index information for the selected table.</p>
+        <p class="DefinitionListTerm">Index Statistics</p>
+        <p class="DefinitionListBody">Lists the number of columns, average length, average row hits, and row hits percentage for each column in an index associated with the selected table. It also lists the data distribution data values and occurrences of each value.</p>
+        <h2 class="Heading2">Table Size Details chart</h2>
+        <p class="Body">The Table Size Details chart displays the size of each component in a table. To view the Table Size Details chart, select a table from the list and click the Size tab in the Table Details section.</p>
+        <h2 class="Heading2">Analyze table dependencies</h2>
+        <p class="Body">The Table Dependencies tab displays the objects the selected table references and is referenced by, the type of dependency, and the action of the dependency. This allows you to quickly see how the table is utilized and how it is affected by and affects other tables and objects.</p>
+        <h2 class="Heading2">Indexes tab</h2>
+        <p class="Body">The Indexes tab displays all indexes defined for the selected table and an overview of each index. </p>
+        <h2 class="Heading2">Analyze index statistics</h2>
+        <p class="Body">The Tables and Indexes view allows you to see general table and index statistics for the database selected. You can also rebuild indexes for highly fragmented tables and update your statistics, which are displayed in the chart and tables in the Table Details section of the view. For more information, see the Microsoft document, <a href="http://msdn.microsoft.com/en-us/library/ms131037(v=sql.100).aspx/css" target="_blank">Tables and Indexes</a>.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">The Collection Service may not gather fragmentation data for a particular table because:</p>
+                        <ul style="list-style-type: circle;">
+                            <li class="Bullet">Table statistics collection  has not occurred</li>
+                            <li class="Bullet">The database hosting the table was excluded from collection</li>
+                            <li class="Bullet">The table size does not meet the minimum size threshold</li>
+                            <li class="Bullet">The database hosting the table is not accessible</li>
+                            <li class="BulletLast">The table is locked</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

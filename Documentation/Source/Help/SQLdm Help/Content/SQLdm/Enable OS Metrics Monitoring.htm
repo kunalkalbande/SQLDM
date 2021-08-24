@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="1748" MadCap:lastWidth="571">
+    <head><title>Configure OS metrics monitoring in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure OS metrics monitoring</h1>
+        <p class="Body">
+            <MadCap:keyword term="OS metrics;OLE automation;WMI;WMI: configure WMI timeouts" />SQLdm requires that you enable either OLE automation or direct Windows Management Interface (WMI) procedures for monitoring OS metrics. In addition, if your SQL Server instance includes enabled Lightweight Pooling, SQLdm cannot collect OS metrics information. If SQLdm cannot provide OS metrics, a message displays on the Dashboard and Services Summary views providing more information.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">When SQLdm cannot collect OS Metrics due to disabled collection, a bar displays a link to enable OS metric collection procedures for your SQL Server version.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">SQLdm collects metrics that track the performance of the computers that host your monitored SQL Server instances. These metrics include:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">CPU Usage</li>
+            <li class="Bullet">Processor Queue Length</li>
+            <li class="Bullet">Memory Paging</li>
+            <li class="Bullet">Total Memory Usage</li>
+            <li class="Bullet">SQL Server Memory Usage</li>
+            <li class="BulletLast">Disk Queue Length</li>
+        </ul>
+        <h2 class="Heading2">Access the OS&#160;Metrics tab</h2>
+        <p class="Body">You can access the OS&#160;Metrics tab of the Monitor SQL&#160;Server Properties window by right-clicking the appropriate monitored SQL&#160;Server instance, and then selecting <span class="GUI_Item">Properties</span>. Click <span class="GUI_Item">OS&#160;Metrics</span> when SQLdm displays the Monitored SQL&#160;Server Properties window.</p>
+        <h2 class="Heading2">Disabling OS metric collection</h2>
+        <p class="Body">OS&#160;metrics collection is not required in SQLdm. However, if you disable this feature, SQLdm ceases to collect OS&#160;metrics and does not raise any previously-associated alerts. You can easily re-enable OS metric collection at any time if you decide that you want to continue collecting these metrics.</p>
+        <h2 class="Heading2">Permissions necessary for direct WMI&#160;collection</h2>
+        <p class="Body">It is preferred that the WMI user is a local administrator on the monitored SQL&#160;Server instance. However, if you do not want to grant administrator access, use the following steps to configure remote WMI&#160;access in Microsoft Windows:</p>
+        <ol>
+            <li class="NumberedList">Add the user account to the Performance Log Users and Distributed COM users groups.</li>
+            <li class="NumberedList">Grant privileges to WMI.</li>
+        </ol>
+        <p class="Body">You also may need to add the WMI user account to the following policies:</p>
+        <ul>
+            <li class="Bullet">Act as part of the operating system</li>
+            <li class="Bullet">Log on as a batch job</li>
+            <li class="Bullet">Log on as a service</li>
+            <li class="BulletLast">Replace a process level token</li>
+        </ul>
+        <p class="Body">For more information about using a direct WMI&#160;connection, see the Microsoft document, <a href="http://msdn.microsoft.com/en-us/library/aa393266.aspx" target="_blank">Securing a Remote WMI&#160;Connection</a>.</p>
+        <h2 class="Heading2">Configure WMI to run out-of-process</h2>
+        <p class="Body">Edit your specific registry settings to allow WMI&#160;to run out-of-process.</p>
+        <p class="StepIntro">To edit these registry settings, perform the following steps:</p>
+        <ol>
+            <li class="NumberedList">In the cd image of the SQLdm install, open the Scripts folder.</li>
+            <li class="NumberedList">Copy the SQLdmoutofprocoleautomation.reg file onto each of your monitored SQL&#160;Server instances.</li>
+            <li class="NumberedList">Run this file on each of your monitored SQL&#160;Server instances.</li>
+        </ol>
+        <p class="Body">The following problems require user action before SQLdm can begin collecting OS metrics:</p>
+        <p class="DefinitionListTerm">OLE Automation Procedures Disabled</p>
+        <p class="DefinitionListBody">Select the <span class="GUI_Item">Collect Operating System data using OLE&#160;Automation</span> option to enable OLE Automation procedures.</p>
+        <p class="DefinitionListTerm">OLE Automation Procedures Unavailable</p>
+        <p class="DefinitionListBody">The stored procedures associated with OLE Automation are missing on the SQL&#160;Server instance. SQLdm cannot capture OS metrics until these stored procedures are available on the SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">WMI Service Not Running</p>
+        <p class="DefinitionListBody">The WMI Service on the monitored SQL&#160;Server instance may not be running. SQLdm cannot collect OS metrics until this service is started.</p>
+        <p class="DefinitionListTerm">Lightweight Pooling Enabled</p>
+        <p class="DefinitionListBody">This is an advanced feature used in symmetric multiprocessing environments in SQL&#160;Server. SQLdm cannot collect OS metrics until this option is disabled on your monitored SQL&#160;Server instances.</p>
+        <h2 class="Heading2">Configure WMI timeouts</h2>
+        <p class="Body">SQLdm allows you to configure the WMI timeout value.  In some environments customers may experience WMI timeouts when their machine is too busy to respond in a timely manner. Although WMI timeouts should not be ignored and often point to an environmental issue, you can control this value when the behavior displayed is normal in your environment. The default WMI timeout value in SQLdm is of 90 seconds to reduce the amount of intermittent errors. </p>
+        <p class="DefinitionListTerm">To configure the WMI timeout value: </p>
+        <ol>
+            <li>Navigate to the SQLdm install directory</li>
+            <li>Open <code>SQLdmCollectionService.exe.</code>Config</li>
+            <li>Modify the <b>&lt;CollectionService&gt;</b> node under the <b>&lt;Services&gt;</b> node</li>
+            <li>Add <code>wmiQueryTimeOut=”300”</code> as a parameter to this node </li>
+            <li>Save and close file</li>
+            <li>Restart the collection service</li>
+        </ol>
+        <p class="DefinitionListTerm">Sample config entry:</p>
+        <p><code>&lt;Services&gt;</code>
+        </p>
+        <p><code>&lt;CollectionService instanceName="Default" servicePort="5167"</code>
+        </p>
+        <p><code>managementServiceAddress="Server" managementServicePort="5166"</code>
+        </p>
+        <p><code>heartbeatIntervalSeconds="180" wmiQueryTimeOut="300"/&gt;</code>
+        </p>
+        <p><code>&lt;/Services&gt;</code>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,1121 @@
+<?xml version="1.0"?>
+<project name="SQLdm" default="Build.Dev" basedir="..">
+
+	<!-- ***************************************************************************** -->
+	<!--                            Build Targets                                      -->
+	<!-- ***************************************************************************** -->
+	
+	<!-- ********* -->
+	<!-- Build.Dev -->
+	<!-- ********* -->
+	<target name="Build.Dev">
+		<!-- Set build type label used for output directory name -->
+		<property name="SQLdm.BuildType" value="Dev" />
+		
+		<call target="PerforceSyncAll" />
+		<call target="IncrementBuildVersion" />
+		<call target="BuildBinaries" />
+		<call target="BuildInstallers" />
+		<call target="BuildCDImage" />
+		<call target="CopyBuildToDevShare" />
+	</target>
+	
+	<!-- ************** -->
+	<!-- Build.Official -->
+	<!-- ************** -->
+	<target name="Build.Official">	
+		<!-- Set build type label used for output directory name -->
+		<property name="SQLdm.BuildType" value="Official" />
+		
+		<call target="PerforceSyncAll" />
+		<call target="IncrementBuildVersion" />
+		<call target="BuildBinaries" />
+		<call target="BuildInstallers" />
+		<call target="BuildCDImage" />
+		<call target="Perforce.Label" />
+		<call target="Archive" />
+		<call target="CopyBuildToDevShare" />
+		<call target="CopyArchiveToDevShare" />
+	</target>
+	
+	<!-- ***************** -->
+	<!-- Build.Incremental -->
+	<!-- ***************** -->
+	<target name="Build.Incremental">	
+		<!-- Set build type label used for output directory name -->
+		<property name="SQLdm.BuildType" value="Incremental" />
+		
+		<call target="IncrementBuildVersion" />
+		<call target="BuildBinaries" />
+		<call target="BuildInstallers" />
+		<call target="BuildCDImage" />
+		<call target="Perforce.Label" />
+		<call target="Archive" />
+		<call target="CopyBuildToDevShare" />
+		<call target="CopyArchiveToDevShare" />
+	</target>
+	
+	<!-- ******************** -->
+	<!-- Build.InstallersOnly -->
+	<!-- ******************** -->
+	<target name="Build.InstallersOnly">	
+		<!-- Set build type label used for output directory name -->
+		<property name="SQLdm.BuildType" value="InstallersOnly" />
+		
+		<!-- call target="PerforceSyncDoc" NOTE: fetch specific doc files as needed -->
+		<call target="KeepSameBuildVersion" />
+		<call target="BuildInstallers" />
+		<call target="BuildCDImage" />
+		<call target="Perforce.Label" />
+		<!-- <call target="Archive" /> -->
+		<call target="CopyBuildToDevShare" />
+		<!-- <call target="CopyArchiveToDevShare" /> -->
+	</target>
+	
+	
+	<!-- ******************** -->
+	<!-- Build.ConsoleInstallOnly -->
+	<!-- ******************** -->
+	<target name="Build.ConsoleInstallOnly">	
+		<!-- Set build type label used for output directory name -->
+		<property name="SQLdm.BuildType" value="ConsoleInstallOnly" />
+		<property name="ForceConsoleOnly" value="Console" />
+		
+		<!-- call target="PerforceSyncDoc" NOTE: fetch specific doc files as needed -->
+		<call target="KeepSameBuildVersion" />
+		<call target="BuildInstallers" />
+		<call target="BuildCDImage" />
+		<call target="Perforce.Label" />
+		<call target="Archive" />
+		<call target="CopyBuildToDevShare" />
+		<call target="CopyArchiveToDevShare" />
+	</target>
+	
+	<!-- ******************** -->
+	<!-- Build.ConsoleAndTypicalInstall -->
+	<!-- ******************** -->
+	<target name="Build.ConsoleAndTypicalInstall">	
+		<!-- Set build type label used for output directory name -->
+		<property name="SQLdm.BuildType" value="ConsoleAndTypicalInstall" />
+		<property name="ForceConsoleOnly" value="Both" />
+		<call target="PerforceSyncAll" />
+		<call target="IncrementBuildVersion" />
+		<call target="BuildBinaries" />
+		<call target="BuildBothInstallers" />
+		<call target="BuildFullAndConsoleCDImage" />
+		<call target="Perforce.Label" />
+		<call target="Archive" />
+		<call target="CopyBuildToDevShare" />
+		<call target="CopyArchiveToDevShare" />
+	</target>
+	
+	<!-- ***************** -->
+	<!-- Build.CDImageOnly -->
+	<!-- ***************** -->
+	<target name="Build.CDImageOnly">	
+		<!-- Set build type label used for output directory name -->
+		<property name="SQLdm.BuildType" value="CDImageOnly" />
+		
+		<call target="KeepSameBuildVersion" />
+		<call target="BuildCDImage" />
+		<call target="Perforce.Label" />
+		<call target="Archive" />
+		<call target="CopyBuildToDevShare" />
+		<call target="CopyArchiveToDevShare" />
+	</target>
+		
+	<!-- ***************************************************************************** -->
+	<!--                            Setup Nant build properties                        -->
+	<!-- ***************************************************************************** -->
+	<!-- Use TStamp to set a proerty to the the current datetime defining the format -->
+	<tstamp property="Build.DateTime" pattern="MM-dd-yyyy.HHmm" verbose="true" />
+
+	<!-- Nant Properties -->
+	<property name="Framework.Version" value="v4.0.30319"/>
+	<property name="Framework.Install" value="c:/Windows/Microsoft.NET/Framework/${Framework.Version}"/>
+	<property name="nant.settings.currentframework" value="net-4.0"/>
+
+	<property name="Build.StartDate" value="12/1/2007" />
+	<property name="BuildNumberPlaceholder" value="9.88.777.666" />
+	<property name="InstallerTypePlaceholder" value="**TYPICAL**" />
+	<property name="Build.Dev" value="Release" unless="${property::exists('Build.Dev')}" />
+	<property name="Build.Official" value="true" unless="${property::exists('Build.Official')}" />
+	<property name="ForceConsoleOnly" value="Typical" unless="${property::exists('ForceConsoleOnly')}" />
+	
+	
+	<!-- Perforce Information -->
+	<property name="Perforce.Branch" value="//sqldm/main"/>
+	<property name="Perforce.AllView" value="${Perforce.Branch}/..."/>
+	<property name="Perforce.DocView" value="${Perforce.Branch}/Documentation/Build/..."/>
+
+	<!-- SQLdm Directories -->
+	<property name="SQLdm.Build.Root" value="Build"/>
+	<property name="SQLdm.Build.Bin" value="${SQLdm.Build.Root}/Bin"/>
+	<property name="SQLdm.Build.Output" value="${SQLdm.Build.Root}/Output" />
+	<property name="SQLdm.Build.Temp" value="${SQLdm.Build.Root}/Temp" />
+	<property name="SQLdm.Build.Temp.Bin.x86" value="${SQLdm.Build.Temp}/Bin/x86" />
+	<property name="SQLdm.Build.Temp.Bin.x64" value="${SQLdm.Build.Temp}/Bin/x64" />
+	<property name="SQLdm.Build.Temp.Scripts" value="${SQLdm.Build.Temp}/Scripts" />
+	<property name="SQLdm.Build.Temp.Documentation" value="${SQLdm.Build.Temp}/Documentation" />
+	
+	<property name="SQLdm.Development" value="Development"/>
+	<property name="SQLdm.Development.Bin" value="${SQLdm.Development}/Bin" />
+	<property name="SQLdm.Development.Bin.x86.Release" value="${SQLdm.Development.Bin}/Release" />
+	<property name="SQLdm.Development.Bin.x64.Release" value="${SQLdm.Development.Bin}/x64/Release" />
+	<property name="SQLdm.Development.Bin.Scripts" value="${SQLdm.Development.Bin}/Scripts" />
+	<property name="SQLdm.Development.SQLdm" value="${SQLdm.Development}/Idera/SQLdm"/>
+	<property name="SQLdm.Development.SQLdm.Database" value="${SQLdm.Development.SQLdm}/Database" />
+	<property name="SQLdm.Development.SQLdm.OutOfProcOleAutomation" value="${SQLdm.Development.SQLdm}/Utilities/Shipping/OutOfProcOleAutomation" />
+	<property name="SQLdm.Development.SQLdm.CommonMessages2005" value="${SQLdm.Development.SQLdm}/Common/Messages_2005"/>
+	
+	<property name="SQLdm.Install" value="Install"/>
+	<property name="SQLdm.Install.SQLdmCustomActions" value="${SQLdm.Install}/SQLdmCustomActions"/>
+	<property name="SQLdm.Install.InstallShield" value="${SQLdm.Install}/InstallShield"/>
+    <property name="SQLdm.Install.Autorun" value="${SQLdm.Install}/Autorun"/>
+    <property name="SQLdm.Install.Pulse" value="${SQLdm.Install}/Pulse"/>
+	
+	<property name="SQLdm.Documentation" value="Documentation/Build" />
+	
+	<property name="SQLdm.Libraries" value="Libraries" />
+	<property name="SQLdm.Libraries.BBSLicense.x86" value="${SQLdm.Libraries}/BBSLicense/Win32" />
+	<property name="SQLdm.Libraries.BBSLicense.x64" value="${SQLdm.Libraries}/BBSLicense/x64" />
+	<property name="SQLdm.Libraries.SMO.x86" value="${SQLdm.Libraries}/SMO/x86" />
+	<property name="SQLdm.Libraries.SMO.x64" value="${SQLdm.Libraries}/SMO/x64" />
+
+	<!-- SQLmm Directories -->
+	<property name="SQLmm.GABuild" value="\\redhousefs-02\Development\SQLmm\Build\For Build" />
+	<!-- NOTE: Blackberry, WindowsMobile and Documentation folders do not contain anything platform specific -->
+	<property name="SQLmm.GABuild.Blackberry" value="${SQLmm.GABuild}/x86/Full/Blackberry"/>
+	<property name="SQLmm.GABuild.WindowsMobile" value="${SQLmm.GABuild}/x86/Full/WindowsMobile"/>
+	<property name="SQLmm.GABuild.Documentation" value="${SQLmm.GABuild}/x86/Full/Documentation" />
+	<!-- NOTE: Platforma specific install exe folders -->
+	<property name="SQLmm.GABuild.Install.Full" value="${SQLmm.GABuild}/x86/Full/x86/SQLmm.exe" />
+	<property name="SQLmm.GABuild.Install.Full.x64" value="${SQLmm.GABuild}/x64/Full/x64/SQLmm-x64.exe" />
+	
+	<!-- Redistributables -->
+	<property name="SQLdm.Redist" value="Redist"/>
+	
+	<!-- Archiving Info -->
+	<!-- NOTE: make sure that the output dir is not in the source dir folder, can cause zip corruption -->
+	<property name="SQLdm.Archive.SourceDir" value="C:\Perforce\SQLdm"/>
+	<property name="SQLdm.Archive.OutputDir" value="C:\Perforce"/>
+	<property name="SQLdm.DevShare" value="\\redhousefs-02\Development\SQLdm\Builds\MainLine" />
+	<property name="SQLdm.DevShare.DailyBuilds" value="${SQLdm.DevShare}\Builds" />
+	<property name="SQLdm.DevShare.SourceArchives" value="${SQLdm.DevShare}\SourceArchives" />
+
+	<!-- MS CRT Directory -->
+	<property name="MS.x86.CRT" value="C:\Program Files (x86)\Microsoft Visual Studio 8\VC\redist\x86\Microsoft.VC80.CRT" />
+	<property name="MS.x64.CRT" value="C:\Program Files (x86)\Microsoft Visual Studio 8\VC\redist\amd64\Microsoft.VC80.CRT" />
+	
+	<!-- Common Assembly Info -->
+	<!-- property name="AssemblyInfo.Company" value="Idera, a division of BBS Technologies, Inc." /-->
+	<property name="AssemblyInfo.Company" value="Idera, Inc." />
+	<property name="AssemblyInfo.Product" value="Idera SQL diagnostic manager" />
+	<!-- NOTE: Do not put a copyright symbol here.  It will break the script -->
+	<property name="AssemblyInfo.Copyright" value="Copyright (c) Idera, Inc. 2003-2013" />
+
+	<!-- Utility -->
+	<property name="Utility.Sed" value="build/bin/sed.exe"/>
+	<property name="Utility.WinZip" value="C:\Program Files (x86)\WinZip"/>
+	
+	<!-- InstallShield Information -->
+	<property name="InstallShield.Builder" value="C:\Program Files (x86)\Macrovision\IS 11.5 StandaloneBuild"/>
+	<property name="InstallShield.Full.Project" value="SQLdm.ism"/>
+	<property name="InstallShield.Full.Project.x64" value="SQLdm-x64.ism"/>
+	<property name="InstallShield.Full.Temp" value="${SQLdm.Install.InstallShield}/Temp"/>
+	<property name="FullPath.Install.Full" value="${SQLdm.Install.InstallShield}/SQLdm/SQLdm/Release 1/DiskImages/DISK1/SQLDiagnosticManager.exe"/>
+	<property name="FullPath.Install.Full.x64" value="${SQLdm.Install.InstallShield}/SQLdm-x64/SQLdm-x64/Release 1/DiskImages/DISK1/SQLDiagnosticManager-x64.exe"/>
+	
+	<!-- New consoleOnly variables-->
+	<property name="InstallShield.Original.Project" value="SQLdm.orig"/>
+	<property name="InstallShield.Original.Project.x64" value="SQLdm-x64.orig"/>
+	<property name="InstallShield.ConsoleOnly.Project" value="SQLdm_c.ism"/>
+	<property name="InstallShield.ConsoleOnly.Project.x64" value="SQLdm_c-x64.ism"/>
+	<property name="FullPath.Install.ConsoleOnly" value="${SQLdm.Install.InstallShield}/SQLdm/SQLdm/Release 1/DiskImages/DISK1/SQLDiagnosticManager_c.exe"/>
+	<property name="FullPath.Install.ConsoleOnly.x64" value="${SQLdm.Install.InstallShield}/SQLdm-x64/SQLdm-x64/Release 1/DiskImages/DISK1/SQLDiagnosticManager-x64_c.exe"/>
+	
+	<!-- Code-signing information -->
+	<property name="Signing.Dir" value="${SQLdm.Install}/CodeSigning"/>
+	<property name="Signing.Application" value="${Signing.Dir}/signtool.exe"/>
+	<property name="Signing.Key" value="${Signing.Dir}/ideracs.pfx"/>
+	<property name="Signing.TimeStamp" value="http://timestamp.verisign.com/scripts/timstamp.dll"/>
+	<property name="Signing.Password" value="idera*88"/>
+	<property name="Signing.Url" value="http://www.idera.com/"/>
+	<property name="Signing.Name" value=""/>
+	<property name="Signing.Target" value=""/>
+
+	<!-- Additional Product Information -->
+	<property name="Product.Name" value="${AssemblyInfo.Company} ${AssemblyInfo.Product}" />
+	<property name="Product.Name.Simple" value="${AssemblyInfo.Company} SQLdm" />
+	<property name="Product.Url" value="http://www.idera.com/" />
+
+	<!-- Email Properties -->
+	<property name="Email.Server" value="mx.bbstek.com" />
+	<property name="Email.BuildMaster" value="karl.tharalson@idera.com" />
+	<property name="Email.Developers" value="SQLdmBuildNotification@idera.com" />
+	<property name="Email.Barry" value="karl.tharalson@idera.com" />
+	<property name="Email.QA" value="marc.bryant@idera.com" />
+	<property name="Email.From" value="${Email.BuildMaster}" />
+	<property name="Email.Success.To" value="${Email.BuildMaster}; ${Email.Developers}; ${Email.QA}"/>
+	<property name="Email.Failure.To" value="${Email.BuildMaster}; ${Email.Developers}; ${Email.QA}"/>
+	<property name="MailLogger.mailhost" value="${Email.Server}" />
+	<property name="MailLogger.from" value="${Email.From}" />
+	<property name="MailLogger.success.to" value="${Email.Success.To}" />
+	<property name="MailLogger.failure.to" value="${Email.Failure.To}" />
+	<property name="MailLogger.success.subject" value="SQLdm Build ${SQLdm.BuildLabel} (${SQLdm.BuildType}) Available" dynamic="true" />
+	<property name="MailLogger.failure.subject" value="SQLdm Build ${SQLdm.BuildLabel} (${SQLdm.BuildType}) Failed on ${Build.DateTime}"  dynamic="true" />
+	<property name="MailLogger.success.notify" value="true" />
+	<property name="MailLogger.failure.notify" value="true" />
+
+	<!-- Obfuscator -->
+	<property name="obfuscator.application" value="C:\Program Files (x86)\Remotesoft\Obfuscator\bin\obfuscator.exe" />	
+
+	<!-- ***************************************************************************** -->
+	<!--                            Build Steps                                        -->
+	<!-- ***************************************************************************** -->
+
+	<!-- *************** -->
+	<!-- PerforceSyncAll -->
+	<!-- *************** -->
+	<target name="PerforceSyncAll">
+	    <p4sync force="true"  view="${Perforce.AllView}" />
+	</target>
+
+	<!-- *************** -->
+	<!-- PerforceSyncDoc -->
+	<!-- *************** -->
+	<target name="PerforceSyncDoc">
+	    <p4sync force="true"  view="${Perforce.DocView}" />
+	</target>
+	
+	<!-- ************* -->
+	<!-- BuildBinaries -->
+	<!-- ************* -->
+	<target name="BuildBinaries">
+		<call target="GenerateCommonAssemblyInfo" />
+		<call target="CreateBinariesAndScripts" />
+		<call target="Obfuscate" />
+	</target>
+	
+	<!-- *************** -->
+	<!-- BuildInstallers -->
+	<!-- *************** -->
+	<target name="BuildInstallers">
+		<call target="CreateInstallers" />
+	</target>
+	
+	<!-- *************** -->
+	<!-- BuildBothInstallers -->
+	<!-- *************** -->
+	<target name="BuildBothInstallers">
+		<call target="CreateInstallers" />
+		<call target="CreateConsoleOnlyInstallers" />
+	</target>
+	
+	<!-- ************ -->
+	<!-- BuildCDImage -->
+	<!-- ************ -->
+	<target name="BuildCDImage">
+		<call target="SetupVariables" />
+		<call target="CreateCDImage" />
+		<call target="CreateWebInstaller" />
+	</target>
+	
+	<!-- ************ -->
+	<!-- BuildFullAndConsoleCDImage -->
+	<!-- ************ -->
+	<target name="BuildFullAndConsoleCDImage">
+		<call target="SetupVariables" />
+		<call target="CreateFullAndConsoleCDImage" />
+		<call target="CreateWebInstaller" />
+	</target>	
+	
+	<!-- ********************* -->
+	<!-- IncrementBuildVersion -->
+	<!-- ********************* -->
+	<target name="IncrementBuildVersion">
+		<!-- Load the utilities DLL -->
+		<loadtasks assembly="${SQLdm.Build.Bin}/BuildUtilities.dll" />
+
+		<!-- Read the build number in the build.number file and increment it -->
+		<p4edit view="${Perforce.Branch}/Build/build.number"/>
+		<versionex path="${SQLdm.Build.Root}/build.number" startdate="${Build.StartDate}" prefix="SQLdm" buildtype="NoIncrement" revisiontype="Increment" />
+		<p4submit changelist="Update build number" view="${Perforce.Branch}/Build/build.number"/>
+
+		<!-- Set the build label used for P4 labeling, output dir & zip file -->
+		<property name="SQLdm.BuildLabel" value="${SQLdm.version}" />
+		
+	</target>
+	
+	<!-- ******************** -->
+	<!-- KeepSameBuildVersion -->
+	<!-- ******************** -->
+	<target name="KeepSameBuildVersion">
+		<!-- Load the utilities DLL -->
+		<loadtasks assembly="${SQLdm.Build.Bin}/BuildUtilities.dll" />
+
+		<!-- Read the build number in the build.number file (do not increment it) -->
+		<attrib file="${SQLdm.Build.Root}/build.number" readonly="false"/>
+		<versionex path="${SQLdm.Build.Root}/build.number" startdate="${Build.StartDate}" prefix="SQLdm" buildtype="NoIncrement" revisiontype="NoIncrement" />
+		<attrib file="${SQLdm.Build.Root}/build.number" readonly="true"/>
+		
+		<!-- Set the build label used for P4 labeling, output dir & zip file -->
+		<property name="SQLdm.BuildLabel" value="${SQLdm.version}_${SQLdm.BuildLabelIncrementLetter}" />
+	</target>
+	
+	<!-- ************************** -->
+	<!-- GenerateCommonAssemblyInfo -->
+	<!-- ************************** -->
+	<target name="GenerateCommonAssemblyInfo">
+		<property name="CommonAssemblyInfo" value="${SQLdm.Development.SQLdm}/CommonAssemblyInfo.cs" />
+
+		<!-- Set the common assembly info file to read-write -->
+		<attrib file="${CommonAssemblyInfo}" readonly="false" />
+
+		<!-- Generate common assembly info -->
+		<asminfo output="${CommonAssemblyInfo}" language="CSharp">
+			<imports>
+				<import namespace="System.Reflection" />
+			</imports>
+			<attributes>
+				<attribute type="AssemblyCompanyAttribute" value="${AssemblyInfo.Company}" />
+				<attribute type="AssemblyProductAttribute" value="${AssemblyInfo.Product}" />
+				<attribute type="AssemblyCopyrightAttribute" value="${AssemblyInfo.Copyright}" />
+				<attribute type="AssemblyVersionAttribute" value="${SQLdm.version}" />
+			</attributes>
+	    	</asminfo>
+
+    		<!-- Set the common assembly info file to read-only -->
+	    	<attrib file="${CommonAssemblyInfo}" readonly="true" />
+	</target>
+
+	<!-- ************************ -->
+	<!-- CreateBinariesAndScripts -->
+	<!-- ************************ -->
+	<target name="CreateBinariesAndScripts">
+		<!-- Build the SQLdm solution - build x86, x64 and Itanium platforms -->
+	    	<exec program="C:\WINDOWS\microsoft.net\Framework\v4.0.30319\msbuild.exe" workingdir="${SQLdm.Development}">
+	      		<arg value="SQLdm.sln"/>
+	      		<arg value="/p:Configuration=Release"/>
+	    	</exec>
+	    	<exec program="C:\WINDOWS\microsoft.net\Framework\v4.0.30319\msbuild.exe" workingdir="${SQLdm.Development}">
+	      		<arg value="SQLdm.sln"/>
+	      		<arg value="/p:Configuration=Release"/>
+	      		<arg value="/p:Platform=x64"/>
+	    	</exec>
+	    	
+		<!-- Build the Messages DLL using VS 2005 - awkward fix for Windows 2000 support purposes -->
+				<exec program="C:\WINDOWS\microsoft.net\Framework\v2.0.50727\msbuild.exe" workingdir="${SQLdm.Development.SQLdm.CommonMessages2005}">
+	      		<arg value="Idera.SQLdm.Common.Messages.sln"/>
+	      		<arg value="/p:Configuration=Release"/>
+	      		<arg value="/p:Platform=Win32"/>
+	    	</exec>
+				<exec program="C:\WINDOWS\microsoft.net\Framework\v2.0.50727\msbuild.exe" workingdir="${SQLdm.Development.SQLdm.CommonMessages2005}">
+	      		<arg value="Idera.SQLdm.Common.Messages.sln"/>
+	      		<arg value="/p:Configuration=Release"/>
+	      		<arg value="/p:Platform=x64"/>
+	    	</exec>
+		
+		
+		<exec program="C:\WINDOWS\microsoft.net\Framework\v4.0.30319\msbuild.exe" workingdir="${SQLdm.Development}">
+	      		<arg value="SQLdm.sln"/>
+	      		<arg value="/p:Configuration=Release"/>
+	      		<arg value="/p:Platform=x64"/>
+	    	</exec>
+	    		    	
+		<!-- Build the Install custom actions - build x86 platform -->
+	    	<exec program="C:\WINDOWS\microsoft.net\Framework\v2.0.50727\msbuild.exe" workingdir="${SQLdm.Install.SQLdmCustomActions}">
+	      		<arg value="SQLdmCustomActions.sln"/>
+	      		<arg value="/p:Configuration=Release"/>
+	    	</exec>
+	    	
+		<!-- Copy exe, dll and config files to x86 and x64 platform folders
+		     NOTE: Development.Bin.x86 folder contains common C# DLL/exes that
+		           are needed for all platforms.  These files are copied first then
+		           the platform specific files are copied.   The platform specific
+		           C++ DLLs overwrite any files that may already exist.
+		 -->
+		 
+		<!-- Common to all platforms -->
+	    	<copy todir="${SQLdm.Build.Temp.Bin.x86}" flatten="true" overwrite="true" verbose="true">
+			<fileset>
+				<include name="${SQLdm.Development.Bin.x86.Release}/*.dll" />
+				<include name="${SQLdm.Development.Bin.x86.Release}/*.exe" />
+				<include name="${SQLdm.Development.Bin.x86.Release}/*.exe.config" />
+				<include name="${SQLdm.Development.Bin.x86.Release}/*.wav" />
+				<include name="${SQLdm.Development.Bin.x86.Release}/*.ps1xml" />
+				<include name="${SQLdm.Development.Bin.x86.Release}/*.dll-Help.xml" />
+				<include name="${SQLdm.Libraries}/*.exe.config" />
+				<include name="${SQLdm.Libraries}/Infragistics2.Win.AppStylistSupport.v10.3.dll" />
+				<include name="${SQLdm.Libraries}/*.ini" />
+			</fileset>
+	    	</copy>
+	    	<copy todir="${SQLdm.Build.Temp.Bin.x64}" flatten="true" overwrite="true" verbose="true">
+			<fileset>
+				<include name="${SQLdm.Development.Bin.x86.Release}/*.dll" />
+				<include name="${SQLdm.Development.Bin.x86.Release}/*.exe" />
+				<include name="${SQLdm.Development.Bin.x86.Release}/*.exe.config" />
+				<include name="${SQLdm.Development.Bin.x86.Release}/*.wav" />
+				<include name="${SQLdm.Development.Bin.x86.Release}/*.ps1xml" />
+				<include name="${SQLdm.Development.Bin.x86.Release}/*.dll-Help.xml" />
+				<include name="${SQLdm.Libraries}/*.exe.config" />
+				<include name="${SQLdm.Libraries}/Infragistics2.Win.AppStylistSupport.v10.3.dll" />
+				<include name="${SQLdm.Libraries}/*.ini" />
+			</fileset>
+	    	</copy>
+	    	
+		<!-- Platform specific -->
+		
+    	
+	    	<copy todir="${SQLdm.Build.Temp.Bin.x86}" flatten="true" overwrite="true" verbose="true">
+			<fileset>
+				<include name="${MS.x86.CRT}/*"/>
+				<include name="${SQLdm.Libraries.BBSLicense.x86}/*" />
+				<include name="${SQLdm.Libraries.SMO.x86}/*" />
+			</fileset>
+	    	</copy>
+	    	<copy todir="${SQLdm.Build.Temp.Bin.x64}" flatten="true" overwrite="true" verbose="true">
+			<fileset>
+				<include name="${SQLdm.Development.Bin.x64.Release}/*.dll" />
+				<include name="${MS.x64.CRT}/*"/>
+				<include name="${SQLdm.Libraries.BBSLicense.x64}/*" />
+				<include name="${SQLdm.Libraries.SMO.x64}/*" />
+			</fileset>
+	    	</copy>
+	    	
+	    	<!-- Generate database script -->
+	    	<exec program="${SQLdm.Development.SQLdm.Database}\CombineDatabaseScripts.bat" workingdir="${SQLdm.Development.SQLdm.Database}"> </exec>
+			<copy file="${SQLdm.Development.SQLdm.Database}/SQLdmDatabaseInstall.sql" tofile="${SQLdm.Build.Temp.Scripts}/SQLdmDatabaseInstall_${SQLdm.version}.sql"/>
+	</target>
+
+	<!-- ********* -->
+	<!-- Obfuscate -->
+	<!-- ********* -->
+	<target name="Obfuscate">
+	 	<!-- SQLdmCollectionService x86 -->
+		<exec program="${obfuscator.application}">
+			<arg value="-d"/>
+			<arg value="${SQLdm.Build.Temp.Bin.x86}"/>
+			<arg value="-nc"/>
+			<arg value="nondisplayable"/>
+			<arg value="${SQLdm.Build.Root}\Obfuscator.SQLdmCollectionService.xml"/>
+		</exec>
+
+	 	<!-- SQLdmManagementService x86 -->
+		<exec program="${obfuscator.application}">
+			<arg value="-d"/>
+			<arg value="${SQLdm.Build.Temp.Bin.x86}"/>
+			<arg value="-nc"/>
+			<arg value="nondisplayable"/>
+			<arg value="${SQLdm.Build.Root}\Obfuscator.SQLdmManagementService.xml"/>
+		</exec>
+
+		<!-- copy the x86 obfuscated targets to the x64 output directory -->
+	    	<copy todir="${SQLdm.Build.Temp.Bin.x64}" flatten="true" overwrite="true" verbose="true">
+			<fileset>
+				<include name="${SQLdm.Build.Temp.Bin.x86}/SQLdmCollectionService.exe" />
+				<include name="${SQLdm.Build.Temp.Bin.x86}/SQLdmManagementService.exe" />
+			</fileset>
+	    	</copy>
+	</target>
+
+	<!-- *************** -->
+  	<!-- CreateInstallers -->
+	<!-- *************** -->
+	<target name="CreateInstallers">
+		<property name="ForceConsoleOnly" value="Typical" />
+		<!-- *** -->
+		<!-- x86 -->
+		<!-- *** -->
+		<!-- Add version number to the installer x86 -->	    	
+		<attrib file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}" readonly="false"/>
+		<copy file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}" tofile="${SQLdm.Install.InstallShield}\${InstallShield.Original.Project}" overwrite="true" />
+		<move file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}" tofile="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}.old" overwrite="true" />
+		<exec program="${Utility.Sed}">
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}.old"/>
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}"/>
+			<arg value="${BuildNumberPlaceholder}"/>
+			<arg value="${SQLdm.version}"/>
+		</exec>
+		<move file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}" tofile="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}.old" overwrite="true" />
+		<exec program="${Utility.Sed}">
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}.old"/>
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}"/>
+			<arg value="${InstallerTypePlaceholder}"/>
+			<arg value="${ForceConsoleOnly}"/>
+		</exec>
+		<move file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}" tofile="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}.old" overwrite="true" />
+		<exec program="${Utility.Sed}">
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}.old"/>
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}"/>
+			<arg value="\SQLdmDatabaseInstall.sql"/>
+			<arg value="\SQLdmDatabaseInstall_${SQLdm.version}.sql"/>
+		</exec>
+		<attrib file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}" readonly="true"/>
+		
+		<!-- Full Install x86-->
+		<exec program="${InstallShield.Builder}\IsSABld.exe" workingdir="${SQLdm.Install.InstallShield}">
+			<arg value="-c"/>
+			<arg value="COMP"/>
+			<arg value="-p"/>
+			<arg value="${InstallShield.Full.Project}"/>
+			<arg value="-e"/>
+			<arg value="Y"/>
+		</exec>
+		<property name="Signing.Name" value="Idera SQLdm"/>
+		<property name="Signing.Target" value="${FullPath.Install.Full}"/>
+		<call target="SignCode"/>
+		
+		<!-- *** -->
+		<!-- x64 -->
+		<!-- *** -->
+		<!-- Add version number to the installer x64 -->	    	
+		<attrib file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}" readonly="false"/>
+		<copy file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}" tofile="${SQLdm.Install.InstallShield}\${InstallShield.Original.Project.x64}" overwrite="true" />
+		<move file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}" tofile="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}.old" overwrite="true" />
+		<exec program="${Utility.Sed}">
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}.old"/>
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}"/>
+			<arg value="${BuildNumberPlaceholder}"/>
+			<arg value="${SQLdm.version}"/>
+		</exec>
+		<move file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}" tofile="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}.old" overwrite="true" />
+		<exec program="${Utility.Sed}">
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}.old"/>
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}"/>
+			<arg value="${InstallerTypePlaceholder}"/>
+			<arg value="${ForceConsoleOnly}"/>
+		</exec>
+		<move file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}" tofile="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}.old" overwrite="true" />
+		<exec program="${Utility.Sed}">
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}.old"/>
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}"/>
+			<arg value="\SQLdmDatabaseInstall.sql"/>
+			<arg value="\SQLdmDatabaseInstall_${SQLdm.version}.sql"/>
+		</exec>
+		<attrib file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}" readonly="true"/>
+		
+		<!-- Full Install x64 -->
+		<exec program="${InstallShield.Builder}\IsSABld.exe" workingdir="${SQLdm.Install.InstallShield}">
+			<arg value="-c"/>
+			<arg value="COMP"/>
+			<arg value="-p"/>
+			<arg value="${InstallShield.Full.Project.x64}"/>
+			<arg value="-e"/>
+			<arg value="Y"/>
+		</exec>
+		<property name="Signing.Name" value="Idera SQLdm"/>
+		<property name="Signing.Target" value="${FullPath.Install.Full.x64}"/>
+		<call target="SignCode"/>
+		
+	</target>
+	
+	<!-- *************** -->
+  	<!-- CreateConsolOnlyInstallers -->
+	<!-- *************** -->
+	
+	<target name="CreateConsoleOnlyInstallers">
+		<!-- At this point we have 2 full install builds with .exe extentions. -->
+		<property name="ForceConsoleOnly" value="Console" />
+		
+		<!--Save the full signed install files with a .full extention -->
+		
+		<move file="${FullPath.Install.Full}" tofile="${InstallShield.Full.Temp}\${InstallShield.Full.Project}.full" overwrite="true" />
+		<move file="${FullPath.Install.Full.x64}" tofile="${InstallShield.Full.Temp}\${InstallShield.Full.Project.x64}.full" overwrite="true" />
+	
+		<!--Restore the fresh ism's from p4. lose the orig.-->
+		<move file="${SQLdm.Install.InstallShield}\${InstallShield.Original.Project}" tofile="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}" overwrite="true" />
+		<move file="${SQLdm.Install.InstallShield}\${InstallShield.Original.Project.x64}" tofile="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}" overwrite="true" />
+
+		<!-- *** -->
+		<!-- x86 -->
+		<!-- *** -->
+		<!-- Add version number to the installer x86 -->	    	
+		<attrib file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}" readonly="false"/>
+		<move file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}" tofile="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}.old" overwrite="true" />
+		<exec program="${Utility.Sed}">
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}.old"/>
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}"/>
+			<arg value="${BuildNumberPlaceholder}"/>
+			<arg value="${SQLdm.version}"/>
+		</exec>
+		<move file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}" tofile="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}.old" overwrite="true" />
+		<exec program="${Utility.Sed}">
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}.old"/>
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}"/>
+			<arg value="${InstallerTypePlaceholder}"/>
+			<arg value="${ForceConsoleOnly}"/>
+		</exec>
+		<move file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}" tofile="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}.old" overwrite="true" />
+		<exec program="${Utility.Sed}">
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}.old"/>
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}"/>
+			<arg value="\SQLdmDatabaseInstall.sql"/>
+			<arg value="\SQLdmDatabaseInstall_${SQLdm.version}.sql"/>
+		</exec>
+		<attrib file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project}" readonly="true"/>
+		
+		<!-- ConsoleOnly Install x86-->
+		<exec program="${InstallShield.Builder}\IsSABld.exe" workingdir="${SQLdm.Install.InstallShield}">
+			<arg value="-c"/>
+			<arg value="COMP"/>
+			<arg value="-p"/>
+			<arg value="${InstallShield.Full.Project}"/>
+			<arg value="-e"/>
+			<arg value="Y"/>
+		</exec>
+		<property name="Signing.Name" value="Idera SQLdm"/>
+		<property name="Signing.Target" value="${FullPath.Install.Full}"/>
+		<call target="SignCode"/>
+		
+		<!-- *** -->
+		<!-- x64 -->
+		<!-- *** -->
+		<!-- Add version number to the installer x64 -->	    	
+		<attrib file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}" readonly="false"/>
+		<move file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}" tofile="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}.old" overwrite="true" />
+		<exec program="${Utility.Sed}">
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}.old"/>
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}"/>
+			<arg value="${BuildNumberPlaceholder}"/>
+			<arg value="${SQLdm.version}"/>
+		</exec>
+		<move file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}" tofile="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}.old" overwrite="true" />
+		<exec program="${Utility.Sed}">
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}.old"/>
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}"/>
+			<arg value="${InstallerTypePlaceholder}"/>
+			<arg value="${ForceConsoleOnly}"/>
+		</exec>
+		<move file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}" tofile="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}.old" overwrite="true" />
+		<exec program="${Utility.Sed}">
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}.old"/>
+			<arg value="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}"/>
+			<arg value="\SQLdmDatabaseInstall.sql"/>
+			<arg value="\SQLdmDatabaseInstall_${SQLdm.version}.sql"/>
+		</exec>
+		<attrib file="${SQLdm.Install.InstallShield}\${InstallShield.Full.Project.x64}" readonly="true"/>
+		
+		<!-- Full Install x64 -->
+		<exec program="${InstallShield.Builder}\IsSABld.exe" workingdir="${SQLdm.Install.InstallShield}">
+			<arg value="-c"/>
+			<arg value="COMP"/>
+			<arg value="-p"/>
+			<arg value="${InstallShield.Full.Project.x64}"/>
+			<arg value="-e"/>
+			<arg value="Y"/>
+		</exec>
+		<property name="Signing.Name" value="Idera SQLdm"/>
+		<property name="Signing.Target" value="${FullPath.Install.Full.x64}"/>
+		<call target="SignCode"/>
+		
+		<!-- At this point we should have .full and .exe(console)-->
+
+		<!--Move the ouput to consoleonly-->
+		<move file="${FullPath.Install.Full}" tofile="${FullPath.Install.ConsoleOnly}" overwrite="true" />
+		<move file="${FullPath.Install.Full.x64}" tofile="${FullPath.Install.ConsoleOnly.x64}" overwrite="true" />
+		<!--Remove .full extension-->
+		<move file="${InstallShield.Full.Temp}\${InstallShield.Full.Project}.full" tofile="${FullPath.Install.Full}" overwrite="true" />
+		<move file="${InstallShield.Full.Temp}\${InstallShield.Full.Project.x64}.full" tofile="${FullPath.Install.Full.x64}" overwrite="true" />
+		
+	</target>
+	
+	<!-- ******** -->
+  	<!-- SignCode -->
+	<!-- ******** -->
+	
+	<target name="SignCode">
+		<!-- Sign web installation kit -->
+		<exec program="${Signing.Application}">
+			<arg value="sign"/>
+			<arg value="-d"/>
+			<arg value="${Signing.Name}"/>
+			<arg value="-du"/>
+			<arg value="${Signing.Url}"/>
+			<arg value="-f"/>
+			<arg value="${Signing.Key}"/>
+			<arg value="-p"/>
+			<arg value="${Signing.Password}"/>
+			<arg value="-t"/>
+			<arg value="${Signing.TimeStamp}"/>
+			<arg value="${Signing.Target}"/>
+		</exec>
+	</target>
+
+  <!-- ************** -->
+  <!-- SetupVariables -->
+  <!-- ************** -->
+  <target name="SetupVariables">
+    <!-- get the SQLdm help values from the webhelp.ini file-->
+    <foreach item="Line" in="${SQLdm.Libraries}/webhelp.ini" delim="=" property="setting,setting.val" trim="Both">
+      <if test="${string::starts-with(setting, 'Version')}">
+        <property name="help.version" value="${setting.val}"/>
+      </if>
+      <if test="${string::starts-with(setting, 'Online')}">
+        <property name="help.url" value="${setting.val}"/>
+      </if>
+    </foreach>
+    <!-- get the mobile/newsfeed help values from the newsfeedwebhelp.ini file-->
+    <foreach item="Line" in="${SQLdm.Install.Pulse}/newsfeedwebhelp.ini" delim="=" property="setting,setting.val" trim="Both">
+      <if test="${string::starts-with(setting, 'Version')}">
+        <property name="help.version.mobile" value="${setting.val}"/>
+      </if>
+      <if test="${string::starts-with(setting, 'Online')}">
+        <!--<property name="help.url.mobile" value="${setting.val}"/>-->
+		<property name="help.url.mobile" value="http://www.idera.com/Help/Idera%20News%20Feed/{version}/Mobile/{topic}"/>
+      </if>
+    </foreach>
+  </target>
+
+	<!-- ************* -->
+	<!-- CreateCDImage -->
+	<!-- ************* -->
+	<target name="CreateCDImage">
+		<attrib file="${SQLdm.Install.Autorun}/setup.exe" readonly="false" />
+		<property name="Signing.Name" value="Idera SQLdm"/>
+		<property name="Signing.Target" value="${SQLdm.Install.Autorun}/setup.exe"/>
+		<call target="SignCode"/>
+
+		<!-- *** -->
+		<!-- x86 -->
+		<!-- *** -->
+	    	<!-- Copy Installers -->
+	    	<copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x86/Full/x86" flatten="true">
+			<fileset>
+				<include name="${FullPath.Install.Full}"/>
+				<include name="${SQLdm.Install.Pulse}/SQLdmMobileNewsfeed.exe" />
+			</fileset>
+	    	</copy>
+	    	<!-- copy Documentation -->
+	    	<copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x86/Full/Documentation" flatten="true">
+	      		<fileset>
+					<include name="${SQLdm.Documentation}/*" />
+	      		</fileset>
+	    	</copy>
+	    	<!-- copy Database Script -->
+	    	<copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x86/Full/Scripts" flatten="true">
+	      		<fileset>
+				<include name="${SQLdm.Build.Temp.Scripts}/SQLdmDatabaseInstall*.sql" />
+				<include name="${SQLdm.Development.SQLdm.OutOfProcOleAutomation}/SetMonitoredSQLServerOleAutomationOutOfProcess.sql"/>
+				<include name="${SQLdm.Development.SQLdm.OutOfProcOleAutomation}/SQLdmOutOfProcOleAutomation.reg"/>
+	      		</fileset>
+	    	</copy>
+	    	<!-- Copy Autorun -->
+        <copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x86/Full" flatten="true"
+          file="${SQLdm.Install.Autorun}/setup.hta" >
+          <filterchain>
+            <replacestring from="{platform}" to="x86" ignorecase="true" />
+            <replacestring from="{copyright}" to="${AssemblyInfo.Copyright}" ignorecase="true" />
+            <replacestring from="{appversion}" to="${SQLdm.version}" ignorecase="true" />
+            <replacestring from="{helpversion}" to="${help.version}" ignorecase="true" />
+            <replacestring from="{helpurl}" to="${help.url}" ignorecase="true" />
+            <replacestring from="{helpversionmobile}" to="${help.version.mobile}" ignorecase="true" />
+            <replacestring from="{helpurlmobile}" to="${help.url.mobile}" ignorecase="true" />
+          </filterchain>
+        </copy>
+        <copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x86/Full/Images" flatten="true">
+          <fileset>
+            <include name="${SQLdm.Install.Autorun}/Images/*"/>
+          </fileset>
+        </copy>
+        <copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x86/Full" flatten="true">
+          <fileset>
+            <include name="${SQLdm.Install.Autorun}/autorun.inf"/>
+            <include name="${SQLdm.Install.Autorun}/setup.exe"/>
+          </fileset>
+        </copy>
+    <!-- Copy Redist -->
+	    	<!-- Windows Installer is only needed for x86, 64 bit comes with 3.0 or 3.1 -->
+	    	<copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x86/Full/Redist/Windows Installer 3.1" flatten="true">
+			<fileset>
+				<include name="${SQLdm.Redist}/Windows Installer 3.1/*"/>
+			</fileset>
+	    	</copy>
+		
+		<!-- *** -->
+		<!-- x64 -->
+		<!-- *** -->
+	    	<!-- Copy Installers -->
+	    	<copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x64/Full/x64" flatten="true">
+			<fileset>
+				<include name="${FullPath.Install.Full.x64}"/>
+				<include name="${SQLdm.Install.Pulse}/SQLdmMobileNewsfeed.exe" />
+			</fileset>
+	    	</copy>
+	    	<!-- copy Documentation -->
+	    	<copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x64/Full/Documentation" flatten="true">
+	      		<fileset>
+					<include name="${SQLdm.Documentation}/*" />
+	      		</fileset>
+	    	</copy>
+	    	<!-- copy Database Script -->
+	    	<copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x64/Full/Scripts" flatten="true">
+	      		<fileset>
+				<include name="${SQLdm.Build.Temp.Scripts}/SQLdmDatabaseInstall*.sql" />
+				<include name="${SQLdm.Development.SQLdm.OutOfProcOleAutomation}/SetMonitoredSQLServerOleAutomationOutOfProcess.sql"/>
+				<include name="${SQLdm.Development.SQLdm.OutOfProcOleAutomation}/SQLdmOutOfProcOleAutomation.reg"/>
+	      		</fileset>
+	    	</copy>
+	    	<!-- Copy Autorun -->
+        <copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x64/Full" flatten="true"
+          file="${SQLdm.Install.Autorun}/setup.hta" >
+          <filterchain>
+            <replacestring from="{platform}" to="x64" ignorecase="true" />
+            <replacestring from="{copyright}" to="${AssemblyInfo.Copyright}" ignorecase="true" />
+            <replacestring from="{appversion}" to="${SQLdm.version}" ignorecase="true" />
+            <replacestring from="{helpversion}" to="${help.version}" ignorecase="true" />
+            <replacestring from="{helpurl}" to="${help.url}" ignorecase="true" />
+            <replacestring from="{helpversionmobile}" to="${help.version.mobile}" ignorecase="true" />
+            <replacestring from="{helpurlmobile}" to="${help.url.mobile}" ignorecase="true" />
+          </filterchain>
+        </copy>
+        <copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x64/Full/Images" flatten="true">
+          <fileset>
+            <include name="${SQLdm.Install.Autorun}/Images/*"/>
+          </fileset>
+        </copy>
+        <copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x64/Full" flatten="true">
+          <fileset>
+            <include name="${SQLdm.Install.Autorun}/autorun.inf"/>
+            <include name="${SQLdm.Install.Autorun}/setup.exe"/>
+          </fileset>
+        </copy>
+    <!-- Copy Redist -->
+	    	<!-- Windows Installer is only needed for x86, 64 bit comes with 3.0 or 3.1 -->
+	</target>
+
+	<!-- ************* -->
+	<!-- CreateFullAndConsoleCDImage -->
+	<!-- ************* -->
+	<target name="CreateFullAndConsoleCDImage">
+		<attrib file="${SQLdm.Install.Autorun}/setup.exe" readonly="false" />
+		<property name="Signing.Name" value="Idera SQLdm"/>
+		<property name="Signing.Target" value="${SQLdm.Install.Autorun}/setup.exe"/>
+		<call target="SignCode"/>
+
+		<!-- *** -->
+		<!-- x86 -->
+		<!-- *** -->
+	    	<!-- Copy Installers -->
+	    	<copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x86/Full/x86" flatten="true">
+			<fileset>
+				<include name="${FullPath.Install.Full}"/>
+				<include name="${FullPath.Install.ConsoleOnly}"/>
+				<include name="${SQLdm.Install.Pulse}/SQLdmMobileNewsfeed.exe" />
+			</fileset>
+	    	</copy>
+	    	<!-- copy Documentation -->
+	    	<copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x86/Full/Documentation" flatten="true">
+	      		<fileset>
+					<include name="${SQLdm.Documentation}/*" />
+	      		</fileset>
+	    	</copy>
+	    	<!-- copy Database Script -->
+	    	<copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x86/Full/Scripts" flatten="true">
+	      		<fileset>
+				<include name="${SQLdm.Build.Temp.Scripts}/SQLdmDatabaseInstall*.sql" />
+				<include name="${SQLdm.Development.SQLdm.OutOfProcOleAutomation}/SetMonitoredSQLServerOleAutomationOutOfProcess.sql"/>
+				<include name="${SQLdm.Development.SQLdm.OutOfProcOleAutomation}/SQLdmOutOfProcOleAutomation.reg"/>
+	      		</fileset>
+	    	</copy>
+	    	<!-- Copy Autorun -->
+        <copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x86/Full" flatten="true"
+          file="${SQLdm.Install.Autorun}/setup.hta" >
+          <filterchain>
+            <replacestring from="{platform}" to="x86" ignorecase="true" />
+            <replacestring from="{copyright}" to="${AssemblyInfo.Copyright}" ignorecase="true" />
+            <replacestring from="{appversion}" to="${SQLdm.version}" ignorecase="true" />
+            <replacestring from="{helpversion}" to="${help.version}" ignorecase="true" />
+            <replacestring from="{helpurl}" to="${help.url}" ignorecase="true" />
+            <replacestring from="{helpversionmobile}" to="${help.version.mobile}" ignorecase="true" />
+            <replacestring from="{helpurlmobile}" to="${help.url.mobile}" ignorecase="true" />
+          </filterchain>
+        </copy>
+        <copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x86/Full/Images" flatten="true">
+          <fileset>
+            <include name="${SQLdm.Install.Autorun}/Images/*"/>
+          </fileset>
+        </copy>
+        <copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x86/Full" flatten="true">
+          <fileset>
+            <include name="${SQLdm.Install.Autorun}/autorun.inf"/>
+            <include name="${SQLdm.Install.Autorun}/setup.exe"/>
+          </fileset>
+        </copy>
+    <!-- Copy Redist -->
+	    	<!-- Windows Installer is only needed for x86, 64 bit comes with 3.0 or 3.1 -->
+	    	<copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x86/Full/Redist/Windows Installer 3.1" flatten="true">
+			<fileset>
+				<include name="${SQLdm.Redist}/Windows Installer 3.1/*"/>
+			</fileset>
+	    	</copy>
+		
+		<!-- *** -->
+		<!-- x64 -->
+		<!-- *** -->
+	    	<!-- Copy Installers -->
+	    	<copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x64/Full/x64" flatten="true">
+			<fileset>
+				<include name="${FullPath.Install.Full.x64}"/>
+				<include name="${FullPath.Install.ConsoleOnly.x64}"/>
+				<include name="${SQLdm.Install.Pulse}/SQLdmMobileNewsfeed.exe" />
+			</fileset>
+	    	</copy>
+	    	<!-- copy Documentation -->
+	    	<copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x64/Full/Documentation" flatten="true">
+	      		<fileset>
+					<include name="${SQLdm.Documentation}/*" />
+	      		</fileset>
+	    	</copy>
+	    	<!-- copy Database Script -->
+	    	<copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x64/Full/Scripts" flatten="true">
+	      		<fileset>
+				<include name="${SQLdm.Build.Temp.Scripts}/SQLdmDatabaseInstall*.sql" />
+				<include name="${SQLdm.Development.SQLdm.OutOfProcOleAutomation}/SetMonitoredSQLServerOleAutomationOutOfProcess.sql"/>
+				<include name="${SQLdm.Development.SQLdm.OutOfProcOleAutomation}/SQLdmOutOfProcOleAutomation.reg"/>
+	      		</fileset>
+	    	</copy>
+	    	<!-- Copy Autorun -->
+        <copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x64/Full" flatten="true"
+          file="${SQLdm.Install.Autorun}/setup.hta" >
+          <filterchain>
+            <replacestring from="{platform}" to="x64" ignorecase="true" />
+            <replacestring from="{copyright}" to="${AssemblyInfo.Copyright}" ignorecase="true" />
+            <replacestring from="{appversion}" to="${SQLdm.version}" ignorecase="true" />
+            <replacestring from="{helpversion}" to="${help.version}" ignorecase="true" />
+            <replacestring from="{helpurl}" to="${help.url}" ignorecase="true" />
+            <replacestring from="{helpversionmobile}" to="${help.version.mobile}" ignorecase="true" />
+            <replacestring from="{helpurlmobile}" to="${help.url.mobile}" ignorecase="true" />
+          </filterchain>
+        </copy>
+        <copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x64/Full/Images" flatten="true">
+          <fileset>
+            <include name="${SQLdm.Install.Autorun}/Images/*"/>
+          </fileset>
+        </copy>
+        <copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x64/Full" flatten="true">
+          <fileset>
+            <include name="${SQLdm.Install.Autorun}/autorun.inf"/>
+            <include name="${SQLdm.Install.Autorun}/setup.exe"/>
+          </fileset>
+        </copy>
+    <!-- Copy Redist -->
+	    	<!-- Windows Installer is only needed for x86, 64 bit comes with 3.0 or 3.1 -->
+	</target>
+	
+	<!-- ****************** -->
+	<!-- CreateWebInstaller -->
+	<!-- ****************** -->
+	<target name="CreateWebInstaller">
+		<!-- Zip the full solutions-->
+	    	<exec program="${Utility.WinZip}\wzzip">
+	      		<arg value="-a"/>
+	      		<arg value="-p"/>
+	      		<arg value="-r"/>
+	      		<arg value="${SQLdm.Build.Temp}\SQLdm.zip"/>
+	      		<arg value="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x86/Full/*.*"/>
+	    	</exec>
+	    	<exec program="${Utility.WinZip}\wzzip">
+	      		<arg value="-a"/>
+	      		<arg value="-p"/>
+	      		<arg value="-r"/>
+	      		<arg value="${SQLdm.Build.Temp}\SQLdm-x64.zip"/>
+	      		<arg value="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x64/Full/*.*"/>
+	    	</exec>
+	    	
+		<!-- Build absolute packager -->
+	    	<exec program="InstallationKit.bat" workingdir="${SQLdm.Build.Root}"></exec>
+	    	<exec program="InstallationKit-x64.bat" workingdir="${SQLdm.Build.Root}"></exec>
+		
+		<!-- Sign the absolute packager exes -->
+		<property name="Signing.Name" value="Idera SQLdm"/>
+		<property name="Signing.Target" value="${SQLdm.Build.Temp}\IderaSQLdmInstallationKit.exe"/>
+		<call target="SignCode"/>
+		<property name="Signing.Name" value="Idera SQLdm"/>
+		<property name="Signing.Target" value="${SQLdm.Build.Temp}\IderaSQLdmInstallationKit-x64.exe"/>
+		<call target="SignCode"/>
+		
+		<!-- Zip the absolute packager exes (required for Idera web site) -->
+	    	<exec program="${Utility.WinZip}\wzzip">
+	      		<arg value="-a"/>
+	      		<arg value="-p"/>
+	      		<arg value="-r"/>
+	      		<arg value="${SQLdm.Build.Temp}\IderaSQLdmInstallationKit.zip"/>
+	      		<arg value="${SQLdm.Build.Temp}\IderaSQLdmInstallationKit.exe"/>
+	    	</exec>
+	    	<exec program="${Utility.WinZip}\wzzip">
+	      		<arg value="-a"/>
+	      		<arg value="-p"/>
+	      		<arg value="-r"/>
+	      		<arg value="${SQLdm.Build.Temp}\IderaSQLdmInstallationKit-x64.zip"/>
+	      		<arg value="${SQLdm.Build.Temp}\IderaSQLdmInstallationKit-x64.exe"/>
+	    	</exec>
+		
+		<!-- Copy files to the output folder -->
+		<copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x86/Web" flatten="true">
+			<fileset>
+				<include name="${SQLdm.Build.Temp}\IderaSQLdmInstallationKit.zip"/>
+			</fileset>
+		</copy>
+		<copy todir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}/x64/Web" flatten="true">
+			<fileset>
+				<include name="${SQLdm.Build.Temp}\IderaSQLdmInstallationKit-x64.zip"/>
+			</fileset>
+		</copy>
+	</target>
+	
+	<!-- ************** -->
+	<!-- Perforce.Label -->
+	<!-- ************** -->
+	<target name="Perforce.Label">
+		<p4label label="sqldm_${SQLdm.BuildLabel}" view="${Perforce.AllView}"/>
+		<p4labelsync label="sqldm_${SQLdm.BuildLabel}"  view="${Perforce.AllView}"/>
+		<exec program="LockLabel.bat" workingdir="${SQLdm.Build.Root}">
+			<arg value="sqldm_${SQLdm.BuildLabel}"/>
+	    	</exec>
+	</target>
+
+	<!-- ******* -->
+	<!-- Archive -->
+	<!-- ******* -->
+	<target name="Archive">
+		<!-- Zip up the SQLdm folder -->
+	    	<exec program="${Utility.WinZip}\wzzip">
+	      		<arg value="-a"/>
+	      		<arg value="-p"/>
+	      		<arg value="-r"/>
+	      		<arg value="${SQLdm.Archive.OutputDir}/SQLdm_${SQLdm.BuildLabel}.zip"/>
+	      		<arg value="${SQLdm.Archive.SourceDir}/*.*"/>
+	    	</exec>
+	    	
+		<!-- Move the zip file to the output folder, this results in the zip file being moved to the dev builds share -->
+	    	<move todir="${SQLdm.Build.Output}" flatten="true">
+			<fileset>
+				<include name="${SQLdm.Archive.OutputDir}/SQLdm_${SQLdm.BuildLabel}.zip"/>
+			</fileset>
+	    	</move>
+	</target>
+	
+	<!-- ******************* -->
+	<!-- CopyBuildToDevShare -->
+	<!-- ******************* -->
+	<target name="CopyBuildToDevShare">
+	    	<copy todir="${SQLdm.DevShare.DailyBuilds}/${SQLdm.BuildLabel}" flatten="false">
+			<fileset basedir="${SQLdm.Build.Output}/${SQLdm.BuildLabel}">
+				<include name="**"/>
+			</fileset>
+	    	</copy>
+	</target>
+	
+	<!-- ********************* -->
+	<!-- CopyArchiveToDevShare -->
+	<!-- ********************* -->
+	<target name="CopyArchiveToDevShare">
+	    	<copy todir="${SQLdm.DevShare.SourceArchives}" flatten="true">
+			<fileset>
+				<include name="${SQLdm.Build.Output}\SQLdm_${SQLdm.BuildLabel}.zip"/>
+			</fileset>
+	    	</copy>
+	</target>
+	
+</project>

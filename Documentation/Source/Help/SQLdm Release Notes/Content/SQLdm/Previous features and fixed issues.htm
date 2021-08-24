@@ -1,0 +1,677 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="16385" MadCap:lastWidth="571">
+    <head>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">Previous features and fixed issues</h1>
+        <p class="Body">This build includes many fixed issues, including the following updates from previous releases.</p>
+        <h2 class="Heading2">8.5 New features</h2>
+        <h3 class="Heading3">Full support for SQL Server 2014</h3>
+        <p class="Body">SQLdm 8.5 fully supports monitoring of SQL Server 2014 RTM. Users who implement the SQL Server 2014 In-Memory OLTP Engine functionality should note that SQLdm does not support this feature at the moment.  </p>
+        <h3 class="Heading3">Hyper-V support</h3>
+        <p class="Body">SQLdm 8.5 has extended virtual support to Hyper-V, providing users insight into the performance of their virtual system more effectively. Users can track and monitor Hyper-V specific performance metrics for a complete view of the virtualized server and the physical host. For additional information, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/How SQLdm works with a virtual environment.htm|WebHelpSkin" target="_self">How SQLdm works with a virtual environment</a>.  </p>
+        <h3 class="Heading3">Tech Preview of the new SQLdm web console</h3>
+        <p class="Body">In SQLdm 8.5 rapidly and easily identify problems.  The <a href="http://wiki.idera.com/x/poVi" target="_blank">SQLdm web console</a> is designed to provide quick access to the overall status of the SQL Server environment to help diagnose any issues. </p>
+        <ul>
+            <li class="Bullet">Quickly view status of a single instance or instance groups.</li>
+            <li class="Bullet">Access from any connected browser.  No SQLdm Desktop Console required.</li>
+            <li class="Bullet">Stand-alone web application with no need for IIS.</li>
+            <li class="BulletLast">Provide an easy to use web console to non-DBAs without giving access to entire management console so they can check on status of their SQL Server environment.</li>
+        </ul>
+        <p class="Body">To provide feedback on the Tech Preview of the SQLdm web console, access the <a href="http://community.idera.com/DM85TechPreview" target="_blank">Idera community forum</a>.</p>
+        <h2 class="Heading2">Monitoring and alerting enhancements</h2>
+        <h3 class="Heading3">Enhanced alert response usability</h3>
+        <p class="Body">Ability to set up Alert Response that is triggered only after multiple user defined metric thresholds have been breached. For additional information, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Configure automated responses to alerts.htm|WebHelpSkin" target="_self">Configure automated responses to alerts</a>.</p>
+        <h3 class="Heading3">Inclusion filters for Query monitors</h3>
+        <p class="Body">Ability to do query monitoring on selected applications, databases, and SQL text.  For additional information, see <a href="http://www.idera.com/help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Configure Advanced Query Monitor Options.htm|WebHelpSkin" target="_self">Configure advanced query monitor options</a>.</p>
+        <h3 class="Heading3">New filter in the Signature Mode and Statement Mode views</h3>
+        <p>Ability to exclude data returned with null values through the <b>Exclude Currently Running Queries</b> filter in the Signature Mode and Statement Mode views.</p>
+        <h3 class="Heading3">Improved Maintenance Mode flexibility</h3>
+        <p class="Body">Additional monthly option for scheduling maintenance mode on monitored SQL server instances. For details, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Schedule Maintenance Mode.htm|WebHelpSkin" target="_self">Schedule Maintenance Mode</a>.</p>
+        <h3 class="Heading3">Virtualization counters available for custom reports</h3>
+        <p class="Body">Select both Hyper-V and VMware virtualization counters when creating a custom report. For additional information, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Select counter type and counters.htm|WebHelpSkin" target="_self">Select counter type and counters</a>.</p>
+        <h3 class="Heading3">Run one-click System Diagnostics</h3>
+        <p class="Body">Ability to run system diagnostics and collect service and desktop client logs in the System Diagnostics window. See <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/System Diagnostics.htm|WebHelpSkin" target="_self">System Diagnostics</a> for details.</p>
+        <h3 class="Heading3">Deadlock victim details now available in the Deadlock Sessions Report</h3>
+        <p class="Body">The Deadlock Sessions Report of the <b>Sessions&gt;Blocking</b> view includes deadlock victim information by default. Users no longer have to manually add this option through the <b>Column Chooser</b> dialog. For additional information see, <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Analyze Blocked Sessions.htm|WebHelpSkin" target="_self">Analyze blocked sessions</a>.</p>
+        <h3 class="Heading3">Configuration option added to control WMI timeouts</h3>
+        <p class="Body">Configure the WMI timeout value in SQLdm when suitable. For instructions, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Enable OS Metrics Monitoring.htm|WebHelpSkin" target="_self">Configure OS metrics monitoring</a>. </p>
+        <h2 class="Heading2">8.5 Fixed Issues</h2>
+        <h3 class="Heading3">General</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE41332/DE40604</MadCap:conditionalText>An issue causing settings in the Monitored SQL Server Properties window to revert no longer occurs.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE41603</MadCap:conditionalText>This release fixes an issue in deadlock data collection that caused discrepancies in the UTCCollectionDateTime.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">SE</MadCap:conditionalText>An issue causing SQLdm to display an error on the monitored SQL Server 2014 instance when expanding the databases node, no longer occurs.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE40965</MadCap:conditionalText>SQLdm is designed to manage the repository in an availability Group, if the license key is generated for the listener name. This release fixes an issue in services that caused the server name the key is validated against to change. This issue occurred frequently when an availability group failed over between nodes.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE21013</MadCap:conditionalText>Some users may experience Windows console crashes, applying the <b>Microsoft update 2919355</b> solves this issue. For additional information on this solution, see the Microsoft knowledge base articles:<ul><li class="Bullet-Def-Body"><a href="http://support.microsoft.com/kb/2929755/en" target="_blank">Out of memory when you load some image resources in a Windows application</a>.</li><li class="Bullet-Def-Body-Last"><a href="http://support.microsoft.com/kb/2670838" target="_blank">Platform update for Windows 7 SP1 and Windows Server 2008 R2 SP1.</a></li></ul></li>
+        </ul>
+        <h3 class="Heading3">Alerts</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE41213</MadCap:conditionalText>An issue preventing cluster failover alerts to be triggered no longer occurs in SQLdm 8.5.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE40965</MadCap:conditionalText>This release fixes an issue where SQL diagnostic manager returned Blocking Session Wait Time alerts with session 0 and missing information when blocking-process node was empty.</li>
+        </ul>
+        <h3 class="Heading3">Reports</h3>
+        <ul style="list-style-type: circle;">
+            <li>
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE40929</MadCap:conditionalText>This release fixes an issue impeding the VM Statistics report to display correctly.</li>
+            <li>
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">SE</MadCap:conditionalText>An issue preventing users from exporting the Blocking Sessions report in XML no longer occurs.</li>
+            <li>
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE20482</MadCap:conditionalText>An issue preventing the CPU Statistics report to display correctly when being deployed to the Microsoft Reporting Services no longer occurs.</li>
+        </ul>
+        <h2 class="Heading2">8.0.1 New Features</h2>
+        <p class="Body">There are no new features for SQLdm 8.0.1.</p>
+        <h2 class="Heading2">8.0.1 Fixed Issues</h2>
+        <h3 class="Heading3">General</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE20767</MadCap:conditionalText>Users with large Repository databases no longer experience high CPU Usage by the sqlserv.exe process.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE19980</MadCap:conditionalText>An issue causing occasionally negative CPU Delta (ms) and Physical I/O Delta values in the Details view of the SQLdm Sessions tab, when parallel usage of CPU is enabled, no longer occurs.</li>
+        </ul>
+        <h3 class="Heading3">Management Service Log</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE20351</MadCap:conditionalText>An issue causing exceptions in the SQLdm Management Service logs when removing an availability group or replica from Availability Group Topology no longer occurs.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE20448/DE20318/DE20314</MadCap:conditionalText>The exceptions logged for ‘primary and foreign key duplication errors’ no longer occur.</li>
+        </ul>
+        <h3 class="Heading3">AlwaysOn Availability Groups</h3>
+        <ul style="list-style-type: circle;">
+            <li>
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE20450</MadCap:conditionalText>An issue causing deadlock errors after updates to the AlwaysOn Availability Group Topology tables in SQLdm  no longer occurs.</li>
+        </ul>
+        <h3 class="Heading3">Mobile</h3>
+        <ul style="list-style-type: circle;">
+            <li>
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE20451</MadCap:conditionalText>Users who remain logged in the Idera Newsfeed account and upgrade to SQLdm 8.0.1 no longer experience console crashes.</li>
+        </ul>
+        <h2 class="Heading2">8.0 New Features</h2>
+        <h3 class="Heading3">SQLdm now fully supports the AlwaysOn Availability Groups feature of SQL Server 2012</h3>
+        <p class="Body">SQLdm 8.0 now allows DBAs to monitor their availability groups, availability replicas, and availability databases.  Support for this feature comes with:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">An <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Report AlwaysOn Statistics.htm|WebHelpSkin" target="_blank">Availability Group Statistics report</a> that allows you view the historical health of your availability groups, availability replicas, and availability databases.</li>
+            <li class="Bullet">An <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Report AlwaysOn Topology.htm|WebHelpSkin" target="_blank">Availability Group Topology report</a> that allows you to view the current topology of your availability groups configuration.</li>
+            <li class="Bullet">Monitoring of key metrics specific to the AlwaysOn Availability Groups feature.</li>
+            <li class="BulletLast">Queue Size and Transfer Rates charts.</li>
+        </ul>
+        <p class="Body">For additional information on SQLdm and the AlwaysOn Availability Groups feature, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Monitor AlwaysOn AG.htm|WebHelpSkin" target="_blank">Monitor AlwaysOn Availability Groups</a>.</p>
+        <h3 class="Heading3">SQLdm now offers integration with Microsoft System Center Operations Manager (SCOM)</h3>
+        <p class="Body">SQLdm 8.0 now includes the SQLdm Management Pack (SQLdm MP) to enhance the SQL Server monitoring capabilities of Microsoft System Center Operations Manager (SCOM). Detailed alert and status information tracked by SQLdm provides SCOM with a wealth of knowledge not previously available including:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Seamless integration between SQLdm and the SCOM health model and console.</li>
+            <li class="Bullet">More robust overview of your server health and performance through the addition of SQLdm metrics to the current SCOM ability to use availability to determine SQL Agent health.</li>
+            <li class="Bullet">Detailed record of state changes and events that might impact the availability and performance of your server.</li>
+            <li class="Bullet">Instant access to the SQLdm Console from SCOM, providing access to vital insights not readily available using SCOM alone.</li>
+        </ul>
+        <p class="Body">For additional information about using SQLdm with System Center Operations Manager, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Integrate SQLdm with SCOM.htm|WebHelpSkin" target="_blank">Integrate SQLdm with SCOM</a>.</p>
+        <h3 class="Heading3">Change Log Summary report</h3>
+        <p class="Body">The Change Log Summary report allows users to view a list of all actions and configuration changes performed in their SQLdm environment over a specified period of time. For additional information on this report, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Report Change Log Summary.htm|WebHelpSkin" target="_blank">Change Log Summary.</a></p>
+        <h3 class="Heading3">Improved collection of query and non-query activities 
+</h3>
+        <p class="Body">SQLdm 8.0 now allows users to collect solely queries’ performance data through the <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Set query monitor options.htm|WebHelpSkin" target="_blank">Query Monitor tab</a> in the Monitored SQL Server Properties window.  Configure collection of non-query activities such as deadlocks and autogrow events through an independent window, the <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Set non-query monitor options.htm|WebHelpSkin" target="_blank">Activity Monitor tab</a>.
+</p>
+        <h3 class="Heading3">Blocked Process report available in SQLdm</h3>
+        <p class="Body">SQLdm users are now able to view the captured Blocked Process report directly in their SQLdm console. In the Activity Monitor tab, users can configure the Blocked Process Threshold (in seconds) that results in the Blocking Process and Blocked Process details report.  To access this report, users can go to <b>Sessions&gt;Blocking</b> and double click under Block Reports. For more information on this feature, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Set non-query monitor options.htm|WebHelpSkin" target="_blank">Set activity monitor options</a>.</p>
+        <h3 class="Heading3">Improved Maintenance Mode and Snooze Alerts features</h3>
+        <p class="Body">In the SQLdm 8.0 version, applying maintenance mode modifications to a large number of servers at once is possible through the Maintenance Mode command.  Review <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Schedule Maintenance Mode.htm|WebHelpSkin" target="_blank">Schedule Maintenance Mode</a> for details. Also users that want to tackle several alerts, can mass snooze/resume alert generation through the Snooze Alerts/Resume Alerts commands. For additional information, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Pause Alerting.htm|WebHelpSkin" target="_blank">Snooze Alerts</a>.</p>
+        <h3 class="Heading3">SQLdm console supports Operating Systems where FIPS compliance is required</h3>
+        <p class="Body">The SQLdm 8.0 console supports operating systems with enabled system cryptography that use FIPS (Federal Information Processing Standard) complaint algorithms. For more information about FIPS compliance, see the Microsoft document, <a href="http://technet.microsoft.com/en-us/library/cc180745.aspx" target="_blank">FIPS Compliance</a>.</p>
+        <h3 class="Heading3">SQL&#160;Server 2014 experimental support</h3>
+        <p class="Body">SQLdm 8.0 is SQL Server 2014 compatible.  This version of SQLdm is not certified against newer builds of SQL Server and should not be used with these builds in a production environment. Idera provides experimental support while you use your installation in a testing environment to ensure the features you rely on most are working as or better than expected.</p>
+        <p class="Body">Users who implement the SQL Server 2014 In-Memory OLTP Engine functionality should note that SQLdm does not support this feature at the moment.</p>
+        <h2 class="Heading2">8.0 Fixed Issues</h2>
+        <h3 class="Heading3">General</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only"> PR2018633/ DE15216</MadCap:conditionalText>An arithmetic overflow error that converts expression to data type integer in the Query Waits and Session Details views no longer occurs.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only"> PR2018622/ DE15232</MadCap:conditionalText>An issue causing errors related to data retention or data visibility in the History Browser no longer occurs. Note that some views in SQLdm only collect data on demand in the repository after configuration.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only"> DE18578</MadCap:conditionalText>In SQLdm 8.0 users are now able to limit the amount of memory used by the desktop client.</li>
+        </ul>
+        <h3 class="Heading3">Servers</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only"> PR2018594/ DE15263</MadCap:conditionalText>This release fixes an issue that occurred while refreshing the Server Summary view.</li>
+        </ul>
+        <h3 class="Heading3">Databases</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE17697 / DE15265</MadCap:conditionalText> An issue causing errors related to fragmentation collector timeouts or fragmentation statistics collection in the Tables &amp; Indexes view no longer occurs.</li>
+        </ul>
+        <h3 class="Heading3">Services</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE18840</MadCap:conditionalText> This release fixes an issue caused when the collector for the SQL Agent Jobs View could not interpret null values, resulting in job and job steps collection errors.</li>
+        </ul>
+        <h3 class="Heading3">Alerts</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018548 / DE15218</MadCap:conditionalText> The transactions (Per Second) metric now displays correctly in the History Browser when user selects a historical snapshot.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE18142</MadCap:conditionalText> This release fixes an issue where after modifying the advanced configuration settings of the SQL Server Status alert, the Lowered to OK status still showed.</li>
+        </ul>
+        <h3 class="Heading3">Resources</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE3485</MadCap:conditionalText> An issue causing an unknown value in the User/Schema column of the Procedure Cache view no longer occurs.</li>
+        </ul>
+        <h3 class="Heading3">Reports</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE19038</MadCap:conditionalText>An issue preventing users from running the Alert History Report after deployment to Reporting Services no longer occurs.</li>
+        </ul>
+        <h2 class="Heading2">7.5.4 New Features</h2>
+        <h3 class="Heading3">General</h3>
+        <p class="DefinitionListTerm">Charts now properly manage real-time and scheduled collection data in the same time span</p>
+        <p class="DefinitionListBody">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">US1513</MadCap:conditionalText>SQLdm charts provide data whether collected real time or as part of a scheduled collection event. If you pause or leave this view and then return during the same Console session, SQLdm displays the real-time data points as previously viewed, followed by a period of data points from any scheduled collections that occurred while you were away. For additional information  about how SQLdm displays charts, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Charts.htm|WebHelpSkin" target="_blank">Charts</a>.</p>
+        <h3 class="Heading3">Queries</h3>
+        <p class="DefinitionListTerm">Query Waits now located on Queries tab</p>
+        <p class="DefinitionListBody">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">US1677</MadCap:conditionalText>The Query Waits feature is no longer located on the Resources tab but now is available on the Queries tab. For additional information  about Query Waits, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/View query waits.htm|WebHelpSkin" target="_blank">View Query Waits</a>.</p>
+        <h3 class="Heading3">Alerts</h3>
+        <p class="DefinitionListTerm">Manage how the SQLdm Console responds to alert notifications</p>
+        <p class="DefinitionListBody">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018433</MadCap:conditionalText>SQLdm can now play a sound when an event triggers an alert to change states. You can also control how SQLdm displays the resulting alert notification in the Console. For additional information about Console notifications for alerts, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Configuring Notification Settings.htm|WebHelpSkin" target="_blank">Configure notification settings</a>.</p>
+        <p class="DefinitionListTerm">Set SQLdm to notify you of only critical alerts</p>
+        <p class="DefinitionListBody">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018454</MadCap:conditionalText>Use the Notifications section of the Console Options feature to set SQLdm to notify you for only critical alerts. You can select whether you want to view or even play a sound when a critical alert occurs. For additional information about Console notifications for alerts, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Configuring Notification Settings.htm|WebHelpSkin" target="_blank">Configure notification settings</a>.</p>
+        <h3 class="Heading3">Mobile</h3>
+        <p class="DefinitionListTerm">SQLdm Mobile &amp;&#160;Idera Newsfeed now supports IIS 8</p>
+        <p class="DefinitionListBody">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PRPL1688</MadCap:conditionalText>SQLdm Mobile &amp;&#160;Idera Newsfeed now supports IIS 8 on Windows 2012 and Windows 8 environments. For additional information  about SQLdm Mobile &amp;&#160;Idera Newsfeed requirements, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/SQLdm Mobile Requirements.htm|WebHelpSkin" target="_blank">SQLdm Mobile and Idera Newsfeed Requirements</a>.</p>
+        <h2 class="Heading2">7.5.4 Fixed Issues</h2>
+        <h3 class="Heading3">General</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018351 / 2018441</MadCap:conditionalText>SQLdm now responds to the collection filtering set for disk drives to prevent the Collection service from gathering data on non-monitored disks.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018353</MadCap:conditionalText>Users who upgraded to SQLdm 7.5.3, and who collect data using a direct WMI&#160;connection no longer experience an issue causing an instance to stop collecting snapshots.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018450</MadCap:conditionalText>An issue causing errors when the Collection service attempted to collect Table Growth information no longer occurs.</li>
+        </ul>
+        <h3 class="Heading3">Servers</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018304 / DE671</MadCap:conditionalText>SQLdm no longer pauses data point creation in other real-time panels when the user accesses the Timeline view.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018463 / 2018453</MadCap:conditionalText>This release fixes an issue caused when the scheduled refresh did not successfully complete, resulting in missing History Browser snapshots.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018332 / 2018431</MadCap:conditionalText>The SQL&#160;Server Plan Cache object no longer continues to grow with SQLdm queries even with the SQL&#160;Server <span class="GUI_Item">Optimize for ad hoc workloads</span> server configuration option selected.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018220 / 2018439</MadCap:conditionalText>The SQLdm Powershell plug-in now properly puts monitored SQL&#160;Server instances into maintenance mode when selected.</li>
+        </ul>
+        <h3 class="Heading3">Alerts</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018331 / 2018432</MadCap:conditionalText>The Autogrow alert no longer displays the same previous and current data file size when viewing alert details in the Alerts view.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018346 / 2018434</MadCap:conditionalText>SQLdm no longer dismisses certain alerts when SQLdm generates an Unable to Connect, Unable to Monitor, or Paused alerts. These alerts include SQL&#160;Server Agent job alerts, VM&#160;Host Server Change, VM&#160;Resource Configuration Change, Mirroring Server Role Change, and Cluster Failover alerts.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018278 / 2018430</MadCap:conditionalText>SQLdm no longer displays an incorrect percentage in the Database Full (Percent) alert.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018404 / 2018437</MadCap:conditionalText>SQLdm no longer delays generation of some Oldest Open Transaction alerts until the transaction is significantly older than the alert threshold. The alert now triggers immediately when the transaction crosses the threshold.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018419 / 2018469</MadCap:conditionalText>An issue preventing some users from monitoring multiple instances and causing job completion error alerts no longer occurs.</li>
+        </ul>
+        <h3 class="Heading3">Reports</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018260 / 2018435</MadCap:conditionalText>The Server Summary report now correctly displays statistics graphs and grids even when the results include no data for that interval.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018265 / 2018436</MadCap:conditionalText>The Server Statistics report now consistently applies the UTC&#160;offset to both servers when using the report to compare two servers.</li>
+        </ul>
+        <h3 class="Heading3">Counters/Custom Counters</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018335</MadCap:conditionalText>When WMI&#160;counters are unavailable due to a stall, SQLdm now continues to collect available counter data until it hits the connection limit and triggers an alert.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">US1733</MadCap:conditionalText>VM custom counters now close the connection to the vCenter Server immediately after use, thereby avoiding a high number of connections to the server at one time.</li>
+        </ul>
+        <h2 class="Heading2">7.5.3 New Features</h2>
+        <p class="DefinitionListBody">There are no new features for SQLdm 7.5.3.</p>
+        <h2 class="Heading2">7.5.3 Fixed Issues</h2>
+        <h3 class="Heading3">General</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Users who upgrade to SQLdm 7.5.2 no longer experience missed alerts.</li>
+            <li class="Bullet">Users who upgrade from SQLdm 6.2 to a more recent version of SQLdm no longer experience issues upon subsequent upgrades. SQLdm displayed the message, "Query Monitor upgrade paused," in the log and caused excessive connections to the Repository. </li>
+            <li class="Bullet">Users with large databases who upgrade to SQLdm 7.5.2 no longer experience Management Service blockage, causing slow inserts into the Repository. </li>
+            <li class="Bullet">SQLdm now successfully installs and no longer stalls on the splash screen while displaying the message, "Connecting to Repository." </li>
+            <li class="Bullet">The SQLdm Management Service no longer causes high CPU on the Repository.</li>
+        </ul>
+        <h2 class="Heading2">7.5.2 New Features</h2>
+        <p class="DefinitionListBody">There are no new features for SQLdm 7.5.2.</p>
+        <h2 class="Heading2">7.5.2 Fixed Issues</h2>
+        <h3 class="Heading3">General</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018150</MadCap:conditionalText>When upgrading to SQLdm 7.5.x and a timeout occurs while upgrading the database statistics, SQLdm now properly re-submits the query and no longer indicates that it is running without re-starting the stopped upgrade. This issue caused some users to not see older database information.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018137</MadCap:conditionalText>An issue causing the SQLdm console to take a long time to load or time out after upgrading to 7.5 and display the message, "Unable to connect: Timeout expired attempting to open server connection," no longer occurs.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018132</MadCap:conditionalText>Users who upgrade to SQLdm 7.5 no longer experience an issue causing the transaction log file to grow dramatically.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE802/PR2018127</MadCap:conditionalText>An issue with the stored procedure <b>p_GetTagServersAsXML</b> not closing or deallocating a cursor no longer occurs as the stored procedure no longer uses a cursor.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018114</MadCap:conditionalText>An issue with table statistics collection causing a communication problem between the Management Service and the Collection Service is resolved.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017830</MadCap:conditionalText>SQLdm no longer displays an "Arithmetic overflow error" message when refreshing the Server Summary view This issue was caused by a timestamp containing a value greater than the SQL&#160;Server Max Integer value.</li>
+        </ul>
+        <h3 class="Heading3">Overview</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018135</MadCap:conditionalText>An issue causing SQLdm to display some monitored SQL&#160;Server instances more than once in the Servers tree no longer occurs.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018124</MadCap:conditionalText>The CPU&#160;Dashboard panel no longer displays an occasional red "X"&#160;in the Call Rates chart when the panel is resized.</li>
+        </ul>
+        <h3 class="Heading3">Sessions</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018156 and PR2018125</MadCap:conditionalText>SQLdm no longer displays the messages, "Error executing Session List collector: Arithmetic overflow error converting expression to data type int," or "Error processing Session List Collector: Object reference not set to an instance of an object," when some users attempt to access pages in the Sessions view.</li>
+        </ul>
+        <h3 class="Heading3">Resources</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2015933</MadCap:conditionalText>SQLdm no longer displays the error message, "The given key was not present in the dictionary," when a user attempts to view Server Waits.</li>
+        </ul>
+        <h3 class="Heading3">Alerts</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018145</MadCap:conditionalText>SQLdm custom counters now properly trigger alert responses.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018126</MadCap:conditionalText>Deadlock and Autogrow alerts no longer persist after the triggering condition is resolved.</li>
+        </ul>
+        <h3 class="Heading3">Reports</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018146</MadCap:conditionalText>SQLdm no longer displays the message, "Item with the same key has already been added," when some users attempt to run the Top tables by Growth or Top Tables by Fragmentation report.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017709</MadCap:conditionalText>Users can now select the time of day in all SQLdm reports by using the <span class="GUI_Item">Start Hours</span> and <span class="GUI_Item">End Hours</span> fields.</li>
+        </ul>
+        <h2 class="Heading2">7.5.1 New Features</h2>
+        <p class="DefinitionListBody">There are no new features for SQLdm 7.5.1.</p>
+        <h2 class="Heading2">7.5.1 Fixed Issues</h2>
+        <h3 class="Heading3">General</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE718</MadCap:conditionalText>An issue causing an exception error and possibly preventing some users from closing the SQLdm desktop client no longer occurs.</li>
+        </ul>
+        <h3 class="Heading3">Overview</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE742</MadCap:conditionalText>The Memory, Network, and Virtualization panel chart selections are now properly saved when a user saves a Dashboard layout. </li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE707</MadCap:conditionalText>Timeline users who double-click an alert to access the Alerts pane with the selected alert highlighted now receive the proper selected alert information in the Details pane of that view. </li>
+        </ul>
+        <h3 class="Heading3">Sessions</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE724</MadCap:conditionalText>On a case-sensitive server, the Sessions Blocking graph now shows the correct deadlocks in the sessions.</li>
+        </ul>
+        <h3 class="Heading3">Resources</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE691</MadCap:conditionalText>The Query Waits graphs right-click menu options <span class="GUI_Item">View Text</span> and <span class="GUI_Item">View Query History</span> are now operative.</li>
+        </ul>
+        <h3 class="Heading3">Logs</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE681</MadCap:conditionalText>A user interface update fixed an issue causing some Microsoft Windows 7 users to see a cut-off Search window in the Log tab.</li>
+        </ul>
+        <h3 class="Heading3">Alerts</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE713</MadCap:conditionalText>SQLdm and the Windows Event Log now both show accurate metrics for the OS&#160;Disk Free Space (Size) alert.</li>
+        </ul>
+        <h3 class="Heading3">Reports</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE696/DE757</MadCap:conditionalText>Users who attempt to schedule email notifications for some reports no longer receive an error message at the end of the wizard.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE733</MadCap:conditionalText>Generation of the Top Databases report is improved, preventing the report from suffering a time out because of the long load time.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE755</MadCap:conditionalText>Disk Details report users no longer receive an exception message when attempting to run the report with the <span class="GUI_Item">Drive Name</span> field selection of <span class="GUI_Item">All Drives</span>.</li>
+        </ul>
+        <h2 class="Heading2">7.5 New Features</h2>
+        <p class="DefinitionListBody">There are no new features for SQLdm 7.5.</p>
+        <h2 class="Heading2">7.5 Fixed Issues</h2>
+        <h3 class="Heading3">General</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">The SQLdm installer no longer checks your Windows firewall service.  If you have communication issues after installation, verify that ports 5166 and 5167 are open for access in Windows firewall and/or whichever firewall you use.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018104</MadCap:conditionalText>SQLdm now properly aggregates data based on the number of days displayed in the <span class="GUI_Item">Aggregate query data into daily records after X days</span> field in the <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Set your Repository grooming schedule.htm|WebHelpSkin" target="_blank">Grooming Options</a>.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017853</MadCap:conditionalText>Users monitoring disk activity on Windows 2008 and later operating systems no longer have to wait one second per disk for statistics gathering.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017040</MadCap:conditionalText>Users no longer receive false "Unable to connect" alerts for monitored SQL&#160;Server instances known to be online. The server availability check now attempts one connection retry in order to avoid alerting in case of transient network issues.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2016633</MadCap:conditionalText>SQLdm now can send email notifications to Gmail accounts and other email accounts using SSL encryption.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">US780</MadCap:conditionalText>The About Idera SQL&#160;diagnostic manager dialog box no longer includes the <span class="GUI_Item">System Info</span> button.</li>
+        </ul>
+        <h3 class="Heading3">Virtual Machines</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017843</MadCap:conditionalText>An issue in the SQL dm Management Service causing some VM statistics to not display for monitored virtual SQL Server instances no longer occurs.</li>
+        </ul>
+        <h3 class="Heading3">Dashboard</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017883</MadCap:conditionalText>An issue causing the CPU&#160;Dashboard panel to display <span class="GUI_Item">0</span> when a greater value should appear no longer occurs. This issue was caused by SQLdm switching from one counter to another at certain refresh rates when calculating CPU&#160;values.</li>
+        </ul>
+        <h3 class="Heading3">Server Overview</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017738</MadCap:conditionalText>SQLdm no longer attempts to delete a monitored SQL&#160;Server instance in some situations when the user pressed the <span class="GUI_Item">Delete </span>key while in the Server view.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017764</MadCap:conditionalText>An issue causing some users to receive an exception error when attempting to view Server Details after quickly clicking through different panes of the SQLdm Management Console no longer occurs.</li>
+        </ul>
+        <h3 class="Heading3">Sessions</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017772</MadCap:conditionalText>The Y-axis unit of time measurement now appears in the Sessions &gt; Locks Wait Time chart as "ms" (milliseconds).</li>
+        </ul>
+        <h3 class="Heading3">Resources</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2016470</MadCap:conditionalText>Resources &gt; Query Waits times are now in chronological order.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2015933</MadCap:conditionalText>Users no longer receive the error message, "The given key was not present in the dictionary," when attempting to view the Resources &gt; Server Waits view.</li>
+        </ul>
+        <h3 class="Heading3">Databases</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE647</MadCap:conditionalText>SQLdm no longer displays restore activity on the original database instead of the destination database. Now the destination database includes any restore information.</li>
+        </ul>
+        <h3 class="Heading3">Services</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2014967</MadCap:conditionalText>The SQL&#160;Agent Jobs list now retains the open (+) and closed (-) settings after a refresh. This list also remains on the same row after a refresh and no longer jumps to the top of the list.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017149</MadCap:conditionalText>An issue causing the job collector to fail for some users no longer occurs. This issue occurred when the user attempted to filter jobs or job categories with a string that included a single quote character (') in the title.</li>
+        </ul>
+        <h3 class="Heading3">Alerts</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017802</MadCap:conditionalText>The Alerts pane now retains your column sort selection when you return to the pane after visiting another page, as when investigating an individual alert.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017860</MadCap:conditionalText>SQLdm now sends an alert when a cluster failover occurs even when the server appears as offline in the preceding refresh of the SQLdm Collection Service. Previously, this situation would not trigger a cluster failover alert.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017806</MadCap:conditionalText>The Session Tempdb Space Usage (MB)&#160;alert now triggers based on the Total User Space Used and no longer includes the Total Internal Space Used in the calculation. This update fixes an issue where users received an alert that shows a tempdb session using more space than the entire size of tempdb.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017765</MadCap:conditionalText>The Cluster Failover alert no longer displays a timestamp of 1-1-1900 when an event triggers an alert.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017683</MadCap:conditionalText>The Unsubscribed Transactions alert now displays the resulting time in hours, minutes, and seconds for easier comprehension.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017662</MadCap:conditionalText>This release fixes an issue that caused some users to receive alerts stating that the data files are over 1000.00% full.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2015919</MadCap:conditionalText>Users no longer receive multiple email messages for the same alert.</li>
+        </ul>
+        <h3 class="Heading3">Reports</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017848</MadCap:conditionalText>Users no longer receive the error message, "An error occurred while retrieving data for this report. Additional information: Invalid Column name. (Microsoft SQL&#160;Server, Error: 207)," when attempting to run a custom report.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017744</MadCap:conditionalText>An issue causing the Top Queries report to appear empty when the user selected a <span class="GUI_Item">Custom Range</span> older than seven days no longer occurs.</li>
+        </ul>
+        <h3 class="Heading3">Custom Counters</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017822</MadCap:conditionalText>An issue causing some users to receive an error message when attempting to modify an existing custom counter no longer occurs.</li>
+        </ul>
+        <h2 class="Heading2">7.2.2 New Features</h2>
+        <p class="DefinitionListBody">There are no new features for SQLdm 7.2.2.</p>
+        <h2 class="Heading2">7.2.2 Fixed Issues</h2>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">SQLdm 7.2.2 now displays an accurate Physical I/O metric on the Blocking view of the Session tab.</li>
+            <li class="Bullet">SQLdm 7.2.2 no longer displays XML document related error messages to users who upgrade to SQLdm 7.2 with a SQL 2005 repository. To learn more about the cause of this issue, see <a href="http://support.microsoft.com/kb/968914" target="_blank">Microsoft Support Article 968914</a>, "FIX: When you convert a TEXT column to a VARCHAR(MAX) column, an NTEXT column to a NVARCHAR(MAX) column, or an IMAGE column to a VARBINARY(MAX) column, the original NULL values in these columns may become empty strings in SQL Server 2005."</li>
+            <li class="Bullet">An issue causing some users to receive an error message when attempting to view details for a monitored SQL Server instance no longer occurs. When this issue occurred, the results were replaced by a large red X.</li>
+            <li class="Bullet">Both the Alerts and Custom Area views in SQLdm Mobile now display your custom counters regardless of whether you defined unique category names. By default, SQLdm assigns the category “Custom” to all custom counters.</li>
+        </ul>
+        <h2 class="Heading2">7.2.1 New Features</h2>
+        <p class="DefinitionListTerm">SQL&#160;Server 2012 RTM&#160;Support</p>
+        <p class="DefinitionListBody">SQLdm 7.2.1 supports the use of SQL Server 2012 RTM version. Users who implement the SQL Server 2012 AlwaysOn functionality should note that while SQLdm seamlessly monitors servers with this feature enabled, it does not currently administer or diagnose issues with AlwaysOn.</p>
+        <h2 class="Heading2">7.2.1 Fixed Issues</h2>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017734</MadCap:conditionalText>Users who have implemented SQLdm 7.2 with SQL Server 2012 RC0 in a non-production environment may experience issues with data display on the Tempdb Summary and Database Files views after upgrading to SQLdm 7.2.1. Upgrading to SQL Server 2012 RTM their test environment will remedy this issue.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017729</MadCap:conditionalText>SQLdm 7.2.1 no longer displays error messages related to an "XML&#160;document" when users who upgraded to SQLdm 7.2 attempt to access the SQLdm Management Console.</li>
+            <li class="BulletLast">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017693</MadCap:conditionalText>Users who implemented SQLdm 7.2 with SQL Server 2012 RC0 in a non-production environment now receive an accurate name and version number for SQL Server 2012 RTM when viewing the Compatibility Level for a monitored SQL Server 2012 RTM instance.</li>
+        </ul>
+        <h2 class="Heading2">7.2 New Features</h2>
+        <p class="DefinitionListTerm">Monitoring SQL&#160;Server virtual environments</p>
+        <p class="DefinitionListBody">Get complete insight into the performance of your virtualized SQL Server databases. Monitor and track VMware-specific performance counters allowing you to get a complete performance picture of the SQL Server environment. Two VM-related reports provide performance trends and a summary of your virtualized environment. For additional information about configuring the new VM functionality, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Virtualization Configuration.htm|WebHelpSkin" target="_blank">Configure your virtual machine connections</a>.</p>
+        <p class="DefinitionListTerm">SQL&#160;Server 2012 experimental support</p>
+        <p class="DefinitionListBody">SQLdm 7.2 is SQL Server 2012 RC0 compatible.  This version of SQLdm is not certified against newer builds of SQL Server and should not be used with these builds in a production environment.  Idera provides experimental support while you use your installation in a testing environment to ensure the features you rely on most are working as or better than expected. </p>
+        <p class="DefinitionListBody">Users who implement the SQL Server 2012 AlwaysOn functionality should note that while SQLdm seamlessly monitors servers with this feature enabled, it does not currently administer or diagnose issues with AlwaysOn. For additional information about SQLdm and SQL&#160;Server 2012, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/SQLdm requirements.htm|WebHelpSkin" target="_blank">SQLdm Requirements</a>.</p>
+        <p class="DefinitionListTerm">SQLdm Mobile views</p>
+        <p class="DefinitionListBody">SQLdm Mobile features a new server dashboard specifically for tablets and incorporated VMware monitoring data. For additional information about the new SQLdm Mobile features, see <a href="http://www.idera.com/Help/Idera News Feed/1-4/Mobile/Advanced/" target="_blank">SQLdm Mobile Help</a>.</p>
+        <p class="DefinitionListTerm">Reporting on Tempdb Statistics</p>
+        <p class="DefinitionListBody">You can now run the Tempdb Statistics report to quickly identify and keep tabs on tempdb performance-related issues. For additional information about the new tempdb report, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Report Tempdb Statistics.htm|WebHelpSkin" target="_blank">Tempdb Statistics report</a>.</p>
+        <p class="DefinitionListTerm">SQL&#160;Server Memory Usage Percent counter available for custom reports</p>
+        <p class="DefinitionListBody">You can now select the SQL&#160;Server Memory Usage Percent counter when creating a custom report. For additional information about creating a custom report, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Custom Reports.htm|WebHelpSkin" target="_blank">Custom reports</a>.</p>
+        <p class="DefinitionListTerm">Updated alert notification functionality</p>
+        <p class="DefinitionListBody">SQLdm now allows you to suppress system tray notifications when a monitored SQL&#160;Server instance returns to an OK status. Click <span class="GUI_Item">Tools &gt;&#160;Console Options</span>. On the Notifications tab, check the <span class="GUI_Item">Never show console alert notifications when the server status goes to OK</span> checkbox, and then click <span class="GUI_Item">OK</span>. For additional information about the Management Console options, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Configure Console Options.htm|WebHelpSkin" target="_blank">Configure Console Options</a>.</p>
+        <p class="DefinitionListTerm">CPU&#160;Statistics report now available in a custom range of hours</p>
+        <p class="DefinitionListBody">The CPU&#160;Statistics report now includes an option for you to select a custom date range and view results in hours. To select this range, click <span class="GUI_Item">Reports &gt; CPU&#160;Statistics</span>. Select the appropriate monitored SQL&#160;Server instance, and then select <span class="GUI_Item">Custom Range</span> from the <span class="GUI_Item">Period </span>drop-down list. Use the calendar tool to select the range, and then click <span class="GUI_Item">OK</span>. Select <span class="GUI_Item">Hours </span>from the <span class="GUI_Item">Sample </span>drop-down list to view your results in hours. For additional information about the CPU&#160;Statistics report, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Report CPU Statistics.htm|WebHelpSkin" target="_blank">CPU Statistics report</a>.</p>
+        <p class="DefinitionListTerm">Input how long SQLdm waits before raising an alert for a long-running job</p>
+        <p class="DefinitionListBody">Users can now specify a minimum job length for the SQL Server Agent Long Running Job (Percent) alert.  This may be used to prevent alerting on short or trivial jobs. For additional information about configuring job exclusions, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Configure Job Exclusions.htm|WebHelpSkin" target="_blank">Configure Job Exclusions</a>.</p>
+        <h2 class="Heading2">7.2 Fixed Issues</h2>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017644</MadCap:conditionalText>Users with a large number of databases no longer notice a performance issue caused by leaving the SQLdm Dashboard open for a long period of time.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017512</MadCap:conditionalText>The Value Configuration window in SQLdm no longer displays blank column headings but includes alert state icons to easily identify the content. You can access the Value Configuration window by clicking <span class="GUI_Item">Edit </span>on the Alert Configuration window.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017491</MadCap:conditionalText>The Login Time column of the Sessions Details page now uses the local time on the client server for the timestamp. You can access the Sessions Details page by clicking <span class="GUI_Item">Sessions &gt; Details</span> while viewing a monitored SQL&#160;Server instance.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017479</MadCap:conditionalText>SQLdm no longer displays an error message when a user attempts to view tempdb detail for a SQL&#160;Server 2000 monitored instance. Tempdb monitoring is supported for SQL&#160;Server 2005 and above monitored instances only.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017477</MadCap:conditionalText>Table growth collection no longer fails for monitored SQL Server 2000 servers, allowing the Top Table Growth report to function correctly.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017402</MadCap:conditionalText>SQLdm no longer displays an error message when a user attempts to use PowerShell cmdlets to configure Query Monitor.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017304</MadCap:conditionalText>The CLR&#160;Enabled alert now properly functions after triggering an Informational alert.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017251</MadCap:conditionalText>The Export to Excel function on the Tempdb Sessions view no longer fails for users who had cells in the <span class="GUI_Item">Last Command</span> column containing more that 32,767 characters.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017181</MadCap:conditionalText>The Database Statistics report results format is updated and no longer causes any issues in viewing accurate results for users with large databases.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017135</MadCap:conditionalText>SQLdm no longer displays and error message when a user attempts to schedule an email delivery of the Top Tables by Fragmentation report. </li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2016914</MadCap:conditionalText>The Repository now properly saves Query Monitor data while the grooming job runs.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2016844</MadCap:conditionalText>A failure in the SQLdm replication monitoring no longer prevents otherwise successful scheduled refreshes from saving to the repository.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2016801</MadCap:conditionalText>The Table Fragmentation (Percent) alert now changes to gray shading if the alert is raised for more than 12 hours.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2016780</MadCap:conditionalText>Extremely long queries no longer cause the Query Monitor to generate OutOfMemory exceptions on the Collection Service.  These exceptions could previously cause a service crash.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2016732</MadCap:conditionalText>Users no longer experience an error during installation that caused an error when attempting to validate the user account used to perform the install.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2016722</MadCap:conditionalText>Performance updates including query aggregation and grooming changes improve SQLdm data collection and processing efficiency.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2016577</MadCap:conditionalText>SQL Server authentication no longer occasionally fails for users attempting to use a password containing the quotation mark (") special character.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2015491</MadCap:conditionalText>When you delete a database, the system is groomed to removes all references to that database. Now the feature also grooms the deleted database from the [SQLServerDatabaseNames] table.</li>
+        </ul>
+        <h2 class="Heading2">7.1.1 New Features</h2>
+        <p class="DefinitionListBody">There are no new features for SQLdm 7.1.1.</p>
+        <h2 class="Heading2">7.1.1 Fixed Issues</h2>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017375</MadCap:conditionalText>Improvements now allow SQLdm to return data for the Session Details page more quickly and avoid a timeout due to slow or no response.</li>
+        </ul>
+        <h2 class="Heading2">7.1 New Features</h2>
+        <p class="DefinitionListTerm">New SQL&#160;Server dashboard</p>
+        <p class="DefinitionListBody">SQLdm now features a completely redesigned dashboard, which dramatically expands the display of your performance data and simplifies the view of the overall health of a SQL Server instance. For additional information about the new dashboard, see the       <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Get the SQL Server Performance.htm|WebHelpSkin" target="_blank">SQL Server performance overview</a>.</p>
+        <p class="DefinitionListTerm">New Tempdb monitoring</p>
+        <p class="DefinitionListBody">You can now quickly identify and resolve tempdb performance-related issues with the new tempdb monitoring and diagnostic views. For additional information about the new tempdb monitoring functionality, see        <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Get the TempDB status summary.htm|WebHelpSkin" target="_blank">tempdb status summary</a>.</p>
+        <p class="DefinitionListTerm">New SQLdm Mobile views</p>
+        <p class="DefinitionListBody">The following new views in SQLdm Mobile make diagnosing performance issues even easier while you're on the go:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body">Blocking Chain View</li>
+            <li class="Bullet-Def-Body">Sessions &gt; Top Wait Customer View</li>
+            <li class="Bullet-Def-Body-Last">Tempdb Monitoring View</li>
+        </ul>
+        <p class="DefinitionListBody">For additional information about SQLdm Mobile, see <a href="http://www.idera.com/Help/Idera News Feed/1-4/Mobile/Advanced/" target="_blank">SQLdm Mobile Help</a>.</p>
+        <p class="DefinitionListTerm">View and copy SQL Agent Job messages from the Job History list</p>
+        <p class="DefinitionListBody">SQLdm now allows users to view SQL Agent Job messages from the Job History list. Right-click the appropriate job, and then select <span class="GUI_Item">View Message</span>. A copy feature allows you to copy the existing message and then paste it into a different application. For more information about SQL&#160;Agent jobs, see how to <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Monitor SQL Agent Jobs.htm|WebHelpSkin" target="_blank">Monitor SQL Agent Jobs</a>.</p>
+        <h2 class="Heading2">7.1 Fixed Issues</h2>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017112 and 2016916</MadCap:conditionalText>SQLdm Repository timeouts no longer cause the SQLdm services to stop for some users.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017072</MadCap:conditionalText>This release of SQLdm fixes an issue that caused SQLdm to display an error message when some users attempted to configure alerts.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017031, 2016707, 2016597</MadCap:conditionalText>SQLdm performance improvements decrease the amount of time spent waiting for page loading and processes to complete.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017028</MadCap:conditionalText>The CLR Enabled alert now properly retains settings when the user changes the alert state to <span class="GUI_Item">Informational</span>.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017004</MadCap:conditionalText>SQLdm no longer experiences an issue when a user adds servers to a custom view.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2016869</MadCap:conditionalText>Improved collection functionality corrects an issue causing some users to see an incorrect <span class="GUI_Item">SQL CPU Usage</span> statistic.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2016863, 2016817</MadCap:conditionalText>Refreshing the SQL Agent Jobs view no longer deselects all selected rows.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2016862</MadCap:conditionalText>The SQLdm Service Availability chart on the Services tab no longer incorrectly displays, "Unable to monitor" when the server is available.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2016826</MadCap:conditionalText>SQLdm no longer displays an error message when users who upgrade to SQLdm 7.0 attempt to edit their custom counters.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2016825</MadCap:conditionalText>SQLdm no longer displays the error message, "An INSERT EXEC statement cannot be nested," for some users who attempt to run a report when SQLdm Application Security is enabled.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2016755</MadCap:conditionalText>SQLdm users monitoring SQL Server instances by IP address instead of name no longer receive the error message, "The server you are trying to access is not monitored by Idera SQL diagnostic manager," when attempting to view history for a mirrored database.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2016322</MadCap:conditionalText>Users who have clustered servers no longer receive the error message, "Error interpreting Services Collector: Invalid length parameter passed to the substring function" when attempting to use the Show Real Time View function.</li>
+        </ul>
+        <h2 class="Heading2">7.0 New Features</h2>
+        <p class="DefinitionListTerm">New SQLdm Mobile interface</p>
+        <p class="DefinitionListBody">SQLdm now offers a Web application (SQLdm Mobile)&#160;that displays real-time SQL Server performance dashboards on a variety of mobile devices, including iPhone, iPad, Android and Blackberry.
+
+SQLdm Mobile includes the Idera Newsfeed technology. The Idera Newsfeed is a revolutionary new way for DBAs and managers to collaborate, share knowledge, and keep close tabs on their most critical SQL Server issues.</p>
+        <p class="DefinitionListTerm">New Alert Templates</p>
+        <p class="DefinitionListBody">SQLdm now offers alert templates, which allow a user to configure generic alert settings to apply to monitored SQL Servers or groups of servers all at once. You can create and assign alert templates to any of your monitored SQL&#160;server instances.</p>
+        <p class="DefinitionListTerm">New Informational Alerts</p>
+        <p class="DefinitionListBody">Informational alerts allow you to set a threshold that triggers a status that does not affect the overall status of the server within SQLdm. You can use informational alerts to notify an administrator of the state of a particular metric for a server or trigger secondary processes that could take action to prevent issue escalation.</p>
+        <p class="DefinitionListTerm">Improved Alert Response Usability</p>
+        <p class="DefinitionListBody">Alert Response rules, which configure how SQLdm responds when an event triggers an alert, are easier to create and manage due to an updated interface and process. Users can now apply an alert response rule to all metrics quickly and easily. </p>
+        <p class="DefinitionListTerm">Improved Notification Times for Unresponsive SQL Server Instances</p>
+        <p class="DefinitionListBody">SQLdm can now alert you more quickly when one of your monitored SQL Server instances becomes unresponsive for any reason. Although the default is set to 30 seconds, you can adjust the interval at which the Collection Service checks whether your SQL Server instances are “up” or available. If a connection is not confirmed within the specified time, SQLdm creates an Unable to Connect alert.</p>
+        <p class="DefinitionListTerm">Improved Metrics Collection</p>
+        <p class="DefinitionListBody">The Collection Service now:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body">Uses a different SQL&#160;Server metric to determine the CPU Busy Value for instances running SQL&#160;Server 2005 or later. This change prevents timeout errors during the metric collection process.</li>
+            <li class="Bullet-Def-Body">Uses separate processes to collect table growth and fragmentation metrics. This approach ensures quiet time data collection does not delay alerts about other metric thresholds.</li>
+            <li class="Bullet-Def-Body-Last">Is able to efficiently collect error log metrics for SQL&#160;logs that are large or infrequently cycled.</li>
+        </ul>
+        <p class="DefinitionListTerm">Improved Repository Performance</p>
+        <p class="DefinitionListBody">The SQLdm Repository database will perform more efficiently due to the following enhancements:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body">The Repository grooming job now:</li>
+        </ul>
+        <ul>
+            <li class="Bullet-Def-Body" style="margin-left: 45pt;">Calls the index maintenance in a separate step. Using SQL&#160;Server Management Studio, you can now disable this step and then later run your own index maintenance script after the grooming job completes.</li>
+            <li class="Bullet-Def-Body" style="margin-left: 45pt;">Better handles I/O and CPU&#160;demands when processing data.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body-Last">Several stored procedures used by SQLdm Repository were updated.</li>
+        </ul>
+        <p class="DefinitionListTerm">New Reports</p>
+        <p class="DefinitionListBody">SQLdm now offers the following new reports:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body">The Metric Thresholds report is for users who want to view a list of metric thresholds for a monitored SQL&#160;Server instance. The report includes the metric name, description, and threshold for their informational, warning, and critical alerts.</li>
+            <li class="Bullet-Def-Body-Last">The Disk Details report lists key disk metrics for a specific SQL Server instance. This report offers Disk Time Per Read, Disk time Per Transfer, Disk Time Per Write, Disk Reads Per Second, Disk Transfers Per Second, and Disk Writes Per Second.</li>
+        </ul>
+        <h2 class="Heading2">7.0 Fixed Issues</h2>
+        <p class="DefinitionListTerm">Alerting Updates</p>
+        <p class="DefinitionListBody">SQLdm now offers the following updates to alerting:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body">SQLdm now accesses the correct database when a user double-clicks an associated Fragmentation alert on the Active Alerts tab of the SQLdm Today page. When you use this feature, SQLdm displays the affected database information on the Tables &amp; Indexes pane of the Databases tab.</li>
+            <li class="Bullet-Def-Body">Editing an alert response no longer causes SQLdm to display an error message when attempting to save your changes. This issue affected users who manually changed XML detail in the repository, and then attempted to save additional alert response changes using the SQLdm Console.</li>
+            <li class="Bullet-Def-Body">SQLdm now properly captures customer error detail when <span class="GUI_Item">Error: 0, Severity: 19, State: 0</span> occurs. This issue affected users using the SQL Server error log alert.</li>
+            <li class="Bullet-Def-Body">The SQLdm scheduled alert refresh is no longer dependent on table statistics before completing a full refresh and possibly triggering alerts. Because table growth and fragmentation can be long-running processes, SQLdm was delayed in delivering alerts. These items were removed from the scheduled alert refresh for a more responsive alert system.</li>
+            <li class="Bullet-Def-Body-Last">SQLdm now raises an alert when a monitored SQL Server instance does not respond within the default 30 seconds. You can configure the response time in the Server Properties.</li>
+            <li class="Bullet-Def-Body-Last">SQLdm now checks to make sure that the WMI&#160;services are running before trying to connect to a monitored SQL Server instance. If SQLdm detects that previous attempts to connect are causing multiple connections, it will stop monitoring that server and triggers an alert. All real time views in SQLdm will display an error message explaining the issue. SQLdm automatically resumes monitoring once the number of connections drops below the default of 30 connections.</li>
+        </ul>
+        <p class="DefinitionListTerm">Fragmentation Monitoring Updates</p>
+        <p class="DefinitionListBody">SQLdm now offers the following updates to your table fragmentation monitoring:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body-Last">SQLdm now accurately collects table fragmentation data on tables within the entered size range. An issue causing SQLdm to collect table fragmentation data on tables less than the entered minimum size no longer occurs.</li>
+            <li class="Bullet-Def-Body-Last">Large tables no longer cause a block when collecting table fragmentation on a&#160;monitored SQL Server instance. This issue occurred when multiple very large tables were involved. Fragmentation data for populating the reorganization panel on all tables in a database is not collected. The reorganization query in SQLdm 6.1 and SQLdm 6.2 can timeout before table statistics are collected. For more information, refer to Idera Solution 1583.</li>
+        </ul>
+        <p class="DefinitionListTerm">SQL&#160;Server Statistics Updates</p>
+        <p class="DefinitionListBody">SQLdm now offers the following updates to the functionality that collects and analyzes your SQL&#160;Server statistics:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body">The Sessions view now retains any custom filtering when viewing your  Historical Snapshots. Custom filtering across all snapshots helps you quickly determine changes needing your attention.</li>
+            <li class="Bullet-Def-Body">The History Browser on the Queries tab now allows you to scroll when you have large amounts of data.</li>
+            <li class="Bullet-Def-Body">The SQL&#160;Server Physical I/O chart on the Resources tab now displays values in seconds instead of raw values. Displaying results in seconds provides you with more accurate real-time analysis.</li>
+            <li class="Bullet-Def-Body">Users with mirrored databases no longer receive an error message that the mirror is not monitored when the database is actually monitored. This issue affected users viewing their monitored mirrored database information in the real time view on the Mirroring pane of the Databases tab.</li>
+            <li class="Bullet-Def-Body">SQLdm now includes a new counter for collecting CPU&#160;stats. This new counter include a number of improvements over the previous counter, which occasionally suffered an error due to reaching maximum capacity cumulative CPU time.</li>
+            <li class="Bullet-Def-Body">SQLdm no longer displays an error message when a user stops the Session Detail Trace and then refreshes the view. Previously, users received the error message, "Error starting Session Details collector System.InvalidOperationException:&#160;BeginExecuteReader: CommandText property has not been initialized."</li>
+            <li class="Bullet-Def-Body">Users with very large numbers of tables no longer cause the CPU to reach maximum threshold during table statistics collection. New processes allow SQLdm to read large data sets in smaller chunks to avoid collecting unnecessary data and causing a strain on CPU resources.</li>
+            <li class="Bullet-Def-Body">Users working on diagnostics while troubleshooting can now add a configuration file entry to limit the  procedure cache row count. The new key is <span class="GUI_Item">maxRowCountProcedureCache</span>, which has a default  value of 10000.</li>
+            <li class="Bullet-Def-Body">This release includes improvements to the repository grooming process, which fixes grooming of the ServerActivity table and resolves an issue causing occasional deadlocks during grooming.</li>
+        </ul>
+        <p class="DefinitionListTerm">Reporting Updates</p>
+        <p class="DefinitionListBody">SQLdm now offers the following updates to reporting:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body">Unauthorized users can no longer access data for restricted SQL Server instances when viewing a report through SQL Server Reporting Services. This issue affected all users who restrict access to specific instances using Application Security features. This update improves data security and prevents confusion when a user unwittingly views data for the wrong instance.</li>
+            <li class="Bullet-Def-Body">Users can now select up to 10 Windows, SQL&#160;Server, and/or custom counters when creating a custom report. These additional counters provide more flexibility and detail in your reports.</li>
+            <li class="Bullet-Def-Body">If a custom counter contains special characters (&lt;&gt;%-), then your custom report generation fails with the error:&#160;<b>Field names must be CLS-compliant identifiers</b>. A CLS-compliant Custom Counter name uses the following rule: the first character of an identifier can be an uppercase or lowercase, titlecase, modifier, or other letter, or letter  number. The subsequent characters can be any of the previously-mentioned characters, plus  non-spacing or spacing combining marks, decimal numbers, connector  punctuation, and formatting codes.</li>
+        </ul>
+    </body>
+</html>

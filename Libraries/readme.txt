@@ -1,0 +1,1 @@
+This folder is for third-part libraries that are used for development and install.

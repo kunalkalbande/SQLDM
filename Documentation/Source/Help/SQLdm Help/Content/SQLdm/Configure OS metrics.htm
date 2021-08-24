@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="881" MadCap:lastWidth="785">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Configure OS metrics for Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure OS&#160;metric collection</h1>
+        <p class="Body">The Configure OS&#160;Metric Collection window of the Add Servers wizard lets you select which type of operating system metrics collection you want to use or whether you do not want to collect any OS metrics from a SQL&#160;Server instance. SQLdm uses OLE&#160;automation or a direct connection to the Windows Management Interface (WMI) when collecting OS metrics and service status data on clustered SQL&#160;Servers. <span class="GUI_Item">Collect Operating System data using direct WMI</span> is selected by default when adding a new SQL&#160;Server instance. </p>
+        <p class="Body">Select <span class="GUI_Item">Do not collect Operating System data</span> if you do not want to collect these statistics. For additional information about OS&#160;metrics collection, see <a href="Enable OS Metrics Monitoring.htm" target="_self">Configure OS&#160;metrics monitoring</a>.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">SQLdm retains your previous settings upon upgrade if OLE automation is the default for your monitored SQL&#160;Server instance.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">After selecting your method for OS&#160;metrics collection, click <span class="GUI_Item">Next </span>to continue. </p>
+        <h2 class="Heading2">Access the Add Servers wizard</h2>
+        <p class="Body">You can open the Add Servers wizard from the SQLdm Console menu by selecting <span class="GUI_Item">File &gt;&#160;Manage Servers</span>, and then clicking <span class="GUI_Item">Add </span>in the Manage Servers window.</p>
+        <h2 class="Heading2">Permissions necessary for direct WMI&#160;collection</h2>
+        <p class="Body">It is preferred that the WMI user is a local administrator on the monitored SQL&#160;Server instance. However, if you do not want to grant administrator access, use the following steps to configure remote WMI&#160;access in Microsoft Windows:</p>
+        <ol>
+            <li class="NumberedList">Add the user account to the Performance Log Users and Distributed COM users groups.</li>
+            <li class="NumberedList">Grant privileges to WMI.</li>
+        </ol>
+        <p class="Body">You also may need to add the WMI user account to the following policies:</p>
+        <ul>
+            <li class="Bullet">Act as part of the operating system</li>
+            <li class="Bullet">Log on as a batch job</li>
+            <li class="Bullet">Log on as a service</li>
+            <li class="BulletLast">Replace a process level token</li>
+        </ul>
+        <p class="Body">For more information about using a direct WMI&#160;connection, see the Microsoft document, <a href="http://msdn.microsoft.com/en-us/library/aa393266.aspx" target="_blank">Securing a Remote WMI&#160;Connection</a>.</p>
+        <h2 class="Heading2">Disabling OS metric collection</h2>
+        <p class="Body">SQLdm does not require OS&#160;metrics collection. However, if you disable this feature, SQLdm ceases to collect OS&#160;metrics and does not raise any previously-associated alerts. You can easily enable OS metric collection at any time if you decide that you want to continue collecting these metrics.</p>
+        <h2 class="Heading2">Using direct WMI when the collection service is on a different domain than the SQL&#160;Server</h2>
+        <p class="Body">In environments where cross-domain trust security is enforced, data from asynchronous collection is not returned from an untrusted domain to a trusted domain. As a result, the collection service does not receive the data. </p>
+        <p class="Body">If you select <span class="GUI_Item">Collect Operating System data using direct WMI</span> and the machine used for your collection service is in a different domain than your monitored SQL&#160;Server instance, you must make some configuration changes on your collection service machine. If you do not make these changes, change your OS metrics collection to <span class="GUI_Item">Collect Operating System data using OLE&#160;automation</span> if you want OS and disk statistics plus the auto discovery of mount points.</p>
+    </body>
+</html>

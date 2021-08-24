@@ -1,0 +1,1 @@
+msiexec /i "C:\Development\Perforce\sqldm\Main\Install\SQLdmCustomActions\TestSetup\Release\TestSetup.msi" /l*v C:\Development\Perforce\sqldm\Main\Install\SQLdmCustomActions\TestSetup\Release\TestSetup.log

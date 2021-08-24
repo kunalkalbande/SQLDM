@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="387" MadCap:lastWidth="762">
+    <head><title>Deadlock alert in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Deadlock alert</h1>
+        <p class="Body">The Deadlock alert indicates that a deadlock occurred on the monitored server. For this alert to display, enable monitoring of non-query activities with capturing of deadlock events.</p>
+        <p class="Body">Deadlocks occur when a process or several processes attempt to access a resource that the other holds a lock on. Neither task can complete because both processes are attempting to lock the same resource.</p>
+        <p class="Body">SQL&#160;Server chooses one or more deadlock to terminate so that processing can continue.</p>
+        <h2 class="Heading2">Resolve deadlocks</h2>
+        <p class="Body">When a Deadlock Alert occurs, check the Alerts view in SQLdm and select a deadlock alert. The SPID, Hostname, Login Name, Client Application, and Database are listed. </p>
+        <p class="Body">For more information, select <span class="GUI_Item">Show Deadlock Details</span>. This information helps with diagnosing the problem application and includes the option to export deadlock data to view in SQL&#160;Server Management Studio or SQL&#160;Server Profiler. </p>
+    </body>
+</html>

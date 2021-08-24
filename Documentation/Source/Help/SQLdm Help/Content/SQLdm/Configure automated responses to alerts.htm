@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="9" MadCap:lastHeight="3731" MadCap:lastWidth="532">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Configure automated responses to Idera SQLdm alerts</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure automated responses to alerts</h1>
+        <p class="Body">Use the <span class="GUI_Item">Alert Response</span> window to create or modify your new alert response rule. </p>
+        <h2 class="Heading2">Access the Alert Response window</h2>
+        <ol>
+            <li class="NumberedList">Select <span class="GUI_Item">Tools &gt; Alert Actions and Responses</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Add</span> on the Alert Responses tab.</li>
+        </ol>
+        <h2 class="Heading2">Add a new rule</h2>
+        <p class="Body">After you create a new rule, you can then <a href="Create ToDo.htm" target="_self">create a To Do item and assign it to specific users</a> for when the conditions configured in your notification rule are met. Note that beginning with SQLdm 7.0, the To Do feature is available only to users who had To Do activated in an earlier 6.x version. This version of SQLdm does not support this feature for new users.</p>
+        <ol>
+            <li class="NumberedList">Click <span class="GUI_Item">Add</span> on the <span class="GUI_Item">Alert Responses</span> tab of the Alert Actions and Responses dialog box.</li>
+            <li class="NumberedList">Enter a <span class="GUI_Item">Name</span> for the rule.</li>
+            <li class="NumberedList">Check the boxes for the conditions and destinations for the rule.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Enable </span>to activate the associated action. Note that all actions are disabled by default.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you enabled an action</span>, provide any required information for the selected action.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Add </span>to select additional actions to perform in response to the alert. This feature allows you to add multiple instances of certain actions.</li>
+            <li class="NumberedList">Click the hyperlink text to select specific conditions for the rule.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span> when finished.</li>
+        </ol>
+        <h2 class="Heading2">Available conditions</h2>
+        <p class="BodyIndent">
+            <img src="../Resources/Images/Alert Response multiple thresholds_07.13.14.gif" style="width: 509px;height: 562px;" />
+        </p>
+        <p class="BodyIndent">By default, alert response rules are not limited to specific SQL Server instances, metrics, severity levels, and times. You can use conditions to tailor the triggers of your alert responses. The following conditions help you manage alert response rules.</p>
+        <p class="DefinitionListTerm">Where the SQL&#160;Server Instance is in <em>specified list</em></p>
+        <p class="DefinitionListBody">Trigger a response when the listed SQL&#160;Server instance is included in the displayed list. Click <span class="GUI_Item">specified list</span>, and then select one or more instances to include in the alert response trigger. Click <span class="GUI_Item">Select all</span> to include all of the displayed instances.</p>
+        <p class="DefinitionListTerm">Where SQL&#160;Server Instance has a tag in <em>specified list</em></p>
+        <p class="DefinitionListBody">Trigger a response when the listed SQL&#160;Server instance contains a tag in the displayed list. Click <span class="GUI_Item">specified list</span>, and then select one or more tags to include in the alert response trigger. Click <span class="GUI_Item">Select all</span> to include all of the displayed tags.</p>
+        <p class="DefinitionListTerm">Where the metric is in the <em>specified list</em></p>
+        <p class="DefinitionListBody">Trigger a response if the metric is included in the displayed list. Click <span class="GUI_Item">specified list</span>, and then select one or more metrics to include in the alert response trigger. Click <span class="GUI_Item">Select all</span> to include all of the displayed metrics.</p>
+        <p class="DefinitionListTerm">Where all metrics are in the <em>specified list</em></p>
+        <p class="DefinitionListBody">Trigger a response only if multiple metrics are included in the displayed list. Click <b>specified list</b>, and then select multiple metrics to include in the alert response trigger. Click <b>Select all</b> to include all of the displayed metrics.</p>
+        <p class="DefinitionListTerm">Where metric severity has changed</p>
+        <p class="DefinitionListBody">Trigger a response when the metric severity changes regardless of level. Click the displayed severity level, and then select one or more severity levels to include in the alert response trigger.</p>
+        <p class="DefinitionListTerm">Where refresh occurred during a <em>specific time frame</em></p>
+        <p class="DefinitionListBodyLast">Trigger a response if the refresh occurred during the displayed time frame. Click <span class="GUI_Item">during this time</span>, and then select the time and date range to set the alert response trigger time frame.</p>
+        <h2 class="Heading2">Available action providers</h2>
+        <p class="BodyIndent">Action providers allow you to select actions that you want to occur as part of the alert response. By default, all actions are disabled. To enable an action, click <span class="GUI_Item">Enable </span>next to the appropriate action. The following actions help you manage alert response rules.</p>
+        <p class="DefinitionListTerm">Idera Newsfeed Action Provider</p>
+        <p class="DefinitionListBody">Publish the alert message as a status update on the server wall in the Idera Newsfeed interface. For more information, see the <a href="http://quack.idera.com/Help/Idera News Feed/1-4/Web" target="_blank">Idera Newsfeed Help</a>.</p>
+        <p class="DefinitionListTerm">Email (SMTP) Provider</p>
+        <p class="DefinitionListBody">When the criteria for the new alert rule is met, SQLdm sends an alert email message to the SMTP server, which then forwards the message to the specified email address. <a href="Configuring Email Settings.htm" target="_self">Configure your email settings</a> and <a href="Configure network management settings.htm" target="_self">network manager settings</a> to receive these alert email messages.</p>
+        <p class="DefinitionListTerm">Network Management Protocol (SNMP) Trap Message Provider</p>
+        <p class="DefinitionListBody">When the criteria for the new alert rule is met, SQLdm sends an SNMP&#160;Trap message to the network management console based on the <a href="Configuring Email Settings.htm" target="_self">configuration of your email settings</a> and <a href="Configure network management settings.htm" target="_self">network management settings</a>.</p>
+        <p class="DefinitionListTerm">Enable Query Monitor Action Provider</p>
+        <p class="DefinitionListBody">When the criteria for the new alert rule is met, it triggers the Query Monitor to start so that you can collect more information. </p>
+        <p class="DefinitionListBody" style="margin-bottom: 6px;"><span style="color: #ff4905; font-weight: bold;">To enable query monitor as an alert response:</span>
+        </p>
+        <ol>
+            <li class="Bullet-Indent">Add the Enable Query Monitor provider.</li>
+            <li class="Bullet-Indent">Click <span class="GUI_Item">for this time period</span> in the Select Actions section of the Alert Response window.</li>
+            <li class="Bullet-Indent">Select either<span class="GUI_Item"> Enable query monitor </span>to enable the query monitor until it is manually disabled or <span class="GUI_Item">Enable query monitor for a limited time</span>.</li>
+            <li class="Bullet-Indent">Click <span class="GUI_Item">OK</span>.</li>
+        </ol>
+        <p class="DefinitionListTerm">EventLog Action Provider</p>
+        <p class="DefinitionListBody">When the criteria for the new alert rule is met, an entry to the EventLog is created.</p>
+        <p class="DefinitionListTerm">Program Action Provider</p>
+        <p class="DefinitionListBody">When the criteria for the new alert rule is met, you can specify a program for the SQLdm Management Service to run in response to the alert.</p>
+        <p class="DefinitionListBody" style="margin-bottom: 6px;"><span style="color: #ff4905; font-weight: bold;">To start a program as an alert response:</span>
+        </p>
+        <ol>
+            <li class="Bullet-Indent">Add the <span class="GUI_Item">Program Action</span> provider.</li>
+            <li class="Bullet-Indent">Click <span class="GUI_Item">Program</span> in the<span class="GUI_Item"> Select Actions</span> section of the Alert Response window.</li>
+            <li class="Bullet-Indent">Enter a description for the <span class="GUI_Item">Program</span> action.</li>
+            <li class="Bullet-Indent">Enter the full path to the program you want to launch as an alert response. Use the <span class="GUI_Item">More Options</span> drop-down menu to select from common runtime arguments.</li>
+        </ol>
+        <ol MadCap:continue="true">
+            <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                            <p class="TableHeadRow">TIP</p>
+                        </td>
+                        <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                            <p class="TableText">You can run executable (.exe) files only through the Program Action Provider. If you need to run a batch (.bat) file, use <span class="Code">cmd /c run.bat</span>.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ol>
+        <ol start="5">
+            <li class="Bullet-Indent">Enter the full path of the directory in which you want the program to run. </li>
+        </ol>
+        <ol MadCap:continue="true">
+            <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                            <p class="TableHeadRow">TIP</p>
+                        </td>
+                        <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                            <p class="TableText">The <span class="GUI_Item">Start in</span> field is useful when you want a different directory for where an action begins and where the program resides.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ol>
+        <ol start="6">
+            <li class="Bullet-Indent">Click <span class="GUI_Item">Test</span> to make sure that the SQLdm Management Service can run the program.</li>
+            <li class="Bullet-Indent">Click <span class="GUI_Item">OK</span>.</li>
+        </ol>
+        <p class="DefinitionListTerm">SQL&#160;Agent Job Action Provider</p>
+        <p class="DefinitionListBody">When the criteria for the new alert rule is met, you can specify a SQL&#160;Agent Job to run in response to the alert.</p>
+        <p class="BodyIndent"><span style="color: #ff4905; font-weight: bold;">To start a SQL&#160;Agent Job as an alert response:</span>
+        </p>
+        <ol>
+            <li class="Bullet-Indent">Add the SQL&#160;Agent Job Action provider.</li>
+            <li class="Bullet-Indent">Click the <span class="GUI_Item">SQL&#160;Agent Job</span> text in the <span class="GUI_Item">Select Actions</span> field.</li>
+            <li class="Bullet-Indent">Select the SQL&#160;Server instance from the <span class="GUI_Item">Server </span>drop-down list or select <span class="GUI_Item">%(Instance)</span> to run the SQL&#160;Agent Job on the server that caused the alert.</li>
+            <li class="Bullet-Indent">Click <span class="GUI_Item">Browse</span> next to the <span class="GUI_Item">Job Name</span> field.</li>
+            <li class="Bullet-Indent">On the Select Job window, select the SQL&#160;Server instance the SQL&#160;Agent Job is located on and click <span class="GUI_Item">Load</span>.</li>
+            <li class="Bullet-Indent">Select the SQL&#160;Agent job from the list and click <span class="GUI_Item">OK</span>.</li>
+            <li class="Bullet-Indent"><span class="If_Then_Statement">If you want to select a particular Job Step to run</span>, click the <span class="GUI_Item">Browse</span> button in the Job Step window<ol style="list-style-type: lower-alpha;"><li class="Bullet-Indent">In the Select Job Step window click <span class="GUI_Item">Load</span>.</li><li class="Bullet-Indent">Select the Job step from the list and click <span class="GUI_Item">OK</span>.</li></ol></li>
+        </ol>
+        <p class="DefinitionListTerm">SQL&#160;Script Action Provider</p>
+        <p class="DefinitionListBody">When the criteria for the new alert rule is met, you can specify a SQL&#160;Server script to run in response to the alert.</p>
+        <p class="DefinitionListBody"><span style="color: #ff4905; font-weight: bold;">To run a SQL&#160;Script Action Provider as an alert response:</span>&#160;</p>
+        <ol>
+            <li class="Bullet-Indent">Add the SQL&#160;Script Action provider.</li>
+            <li class="Bullet-Indent">Click the <span class="GUI_Item">SQL&#160;Script</span> text in the <span class="GUI_Item">Select Actions</span> field.</li>
+            <li class="Bullet-Indent">Enter a description for the SQL&#160;Script Action in the Description field.</li>
+            <li class="Bullet-Indent">Click <span class="GUI_Item">Browse</span> to select the SQL&#160;Server instance or leave it at the default of <span class="GUI_Item">%(Instance)</span> to run the SQL&#160;Script on the server that caused the alert.</li>
+            <li class="Bullet-Indent">Either type in the T-SQL you want to run when the alert criteria is met, or paste in the T-SQL from another application.</li>
+            <li class="Bullet-Indent">Click <span class="GUI_Item">OK</span>.</li>
+        </ol>
+        <p class="DefinitionListTerm">To Do Action Provider</p>
+        <p class="DefinitionListBody">When the criteria for the new alert rule is met, a To Do list item is created.</p>
+        <ol MadCap:continue="true">
+            <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                            <p class="TableHeadRow">TIP</p>
+                        </td>
+                        <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                            <p class="TableText">Idera is deprecating the To Do list feature  beginning with SQL diagnostic manager 7.0. While users who had To Do activated in an earlier 6.x version can continue to  use To Do items, this version of SQLdm does not support this feature for new users. Current To Do users can reference Idera Solution for information on how to enable the To Do view.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ol>
+        <p class="DefinitionListBody"><span style="color: #ff4905; font-weight: bold;">To create a To Do as an alert response:</span>&#160;&#160;</p>
+        <ol>
+            <li class="Bullet-Indent">Add the To Do action provider.</li>
+            <li class="Bullet-Indent">Click the <span class="GUI_Item">someone</span> text in the <span class="GUI_Item">Select Actions</span> field.</li>
+            <li class="Bullet-Indent">Enter the users to assign the To Do in the <span class="GUI_Item">Users</span> field.</li>
+            <li class="Bullet-Indent">Enter a custom message in the <span class="GUI_Item">Message</span> field or accept the default text.</li>
+            <li class="Bullet-Indent">Click <span class="GUI_Item">OK</span>.</li>
+        </ol>
+        <h2 class="Heading2">Change the condition value</h2>
+        <p class="Body">Click the underlined value and SQLdm displays a list of currently defined items for you to select as the new value. Make the necessary updates, and then click <span class="GUI_Item">OK</span>.</p>
+    </body>
+</html>

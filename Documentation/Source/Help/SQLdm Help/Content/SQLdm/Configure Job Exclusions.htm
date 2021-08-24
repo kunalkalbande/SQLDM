@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="471" MadCap:lastWidth="839">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Configure job exclusions in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure job exclusions</h1>
+        <p class="Body">The Alert Filters tab of the Advanced Alert Configuration window allows you to select jobs or job categories to include or exclude from alerting for the specified metric. Filtering allows you to limit the amount of alert noise generated for&#160;SQL&#160;Server Agent Jobs or Job categories that, for example, are known to run for a long time. </p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">By default, SQLdm alerts on all Jobs. If you check the <span class="GUI_Item">Alert on individual job steps</span> box, all job steps generate alerts. Using the Include filter limits job alerts to only those SQL&#160;Server Agent Job steps that apply to the filter. The Exclude filter limits the job alerts to every SQL&#160;Server Agent Job step except for those included in the Exclude filter.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">The metrics that allow for SQL&#160;Server Agent Job exclusions include the following:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet"><a href="Alerts/Agent Job Completion.htm" target="_self">SQL&#160;Server Agent Job Completion</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/SQL Server Agent Job Failure.htm" target="_self">SQL&#160;Server Agent Job Failure</a>
+            </li>
+            <li class="BulletLast"><a href="Alerts/Agent Long Running Job Min.htm" target="_self">SQL&#160;Server Agent Long Running Job (Minutes)</a>
+            </li>
+            <li class="BulletLast"><a href="Alerts/Agent Long Running Job Per.htm" target="_self">SQL&#160;Server Agent Long Running Job (Percent)</a>
+            </li>
+        </ul>
+        <p class="StepIntro">To filter SQL&#160;Server Agent Job alerts:</p>
+        <ol>
+            <li class="NumberedList">Open the Alert Configuration window and select the alert you want to configure.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Advanced</span>.</li>
+            <li class="NumberedList">Select the <span class="GUI_Item">Job Filters</span> tab.</li>
+            <li class="NumberedList">Check the <span class="GUI_Item">Alert on individual job steps</span> box if you would like an alert for each step in each job.</li>
+            <li class="NumberedList">Click the <span class="GUI_Item">Add</span> button under the Include or Exclude filters.</li>
+            <li class="NumberedList">Enter the <span class="GUI_Item">Job Name</span> or <span class="GUI_Item">Job Categories</span> to include or exclude and click <span class="GUI_Item">OK</span>. Use the percent symbol (%) as a wildcard.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span> to apply your changes.</li>
+        </ol>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="466" MadCap:lastWidth="888">
+    <head><title>Session Statistics report in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Session Statistics</h1>
+        <p class="Body">The Session Statistics report lets you view trends for sessions and network connectivity, such as transactions per minute, on a monitored SQL Server instance over a specified period of time. Check <span class="GUI_Item">Show Tabular Data</span> to display results in a single tabular or grid format.</p>
+        <p class="Body">Check <span class="GUI_Item">Show Baseline</span>  to include baseline data points in the Session Statistics report. For additional information about baseline configuration, see <a target="_self" href="Configure server baseline options.htm">Configure server baseline options</a>.</p>
+        <h2 class="Heading2">When to run this report</h2>
+        <p class="Body">You should run the Session Statistics report to analyze the sessions and network connectivity for a monitored instance. High logins or transactions per minute may indicate a need for increased resources.</p>
+        <h2 class="Heading2">How SQLdm calculates metric values on this report</h2>
+        <p class="Body">Most values on the Session Statistics report correlate with the related SQL Server metric.</p>
+        <p class="Body">However, some metric values represent averages over time. Likewise, a few metric values are based on performance algorithms that use multiple statistics to calculate a more accurate metric.</p>
+        <p class="Body">You can access our <a href="http://www.idera.com/support" target="_blank">Customer Service Portal</a> (www.idera.com/support) for more information about the algorithm used to calculate a specific metric.</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">How is the Worst Performing and Most Frequent Queries information gathered? - Solution #00000412</li>
+            <li class="Bullet">How does SQL diagnostic manager gather statistics from monitored SQL Servers? - Solution #00000055</li>
+            <li class="Bullet">How does SQL diagnostic manager calculate the reorganization percentage for database tables? - Solution #00000301</li>
+            <li class="BulletLast">What does the 'Memory Usage' metric in the console and reports represent? - Solution #00002237</li>
+        </ul>
+    </body>
+</html>

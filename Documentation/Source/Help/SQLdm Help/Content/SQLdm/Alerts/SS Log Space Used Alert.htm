@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="428" MadCap:lastWidth="833">
+    <head><title>Percent of SQL Server Log Space Used (Percent) alert in Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">SQL Server Log Used (Percent) alert</h1>
+        <p class="Body">The SQL&#160;Server Log Used (Percent) alert provides the percentage of allocated disk space used by logs on the SQL Server instance reached an alert threshold. Once the log space is completely filled, all updates to the event log fail.</p>
+        <p class="Body">This alert is raised based on the database metrics collection interval specified in Server Properties. For more information, see <a href="../Set general server options.htm" target="_self">Set general server options</a>.</p>
+        <h2 class="Heading2">Reduce your SQL&#160;Server log space used</h2>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">You can allocate more disk space to the event log, turn on the auto-growth feature for your SQL Server log, or add additional disk space to the computer hosting your SQL Server instance.</li>
+            <li class="Bullet">If autogrowth is turned off for your logs, this alert may indicate the need to either increase the allocated space for logs and/or add disk space to your SQL Server environment.</li>
+            <li class="Bullet">If autogrowth is turned on and you are seeing this alert often, you may need to adjust your autogrowth settings to a higher percentage to improve degraded performance resulting from constant growth adjustments.</li>
+            <li class="Bullet">In certain cases, SQLdm may incorrectly report the file size. This issue occurs when certain columns in the 'sysindexes' table in SQL&#160;Server 2000 become inaccurate and provide SQLdm with incorrect information regarding the number of rows and table size.</li>
+            <li class="Bullet">Use the following T-SQL syntax to correct this issue:
+</li>
+        </ul>
+        <p class="DefinitionListBodyLast">DBCC UPDATEUSAGE ('database_name' )
+GO
+
+</p>
+        <p class="DefinitionListBodyLast">We recommend that you execute this command during non-peak hours as it is server intensive.
+</p>
+    </body>
+</html>

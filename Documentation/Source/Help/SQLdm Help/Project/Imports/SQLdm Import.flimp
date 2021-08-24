@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MsWordImport PreserveSourceStyles="False" KeepSourceLinks="false" ConvertInlineFormatting="True" AddContinuedLinks="false" AddContinuedFromLinks="false" ContinuedLinkFormat="(continued in {title})" ContinuedFromLinkFormat="(continued from {title})" UseMaxCharLimit="false" UseMinCharLimit="false" MaxCharLimit="10000" MinCharLimit="1000" LastCollectTime="03/04/2008 11:13:09" Stylesheet="../../Content/Resources/Stylesheets/Idera Stylesheet.css" LastImport="03/04/2008 11:14:09">
+    <ParagraphStyles>
+        <Map From="Heading1" To="h1.(MS Word Style)" />
+        <Map From="Heading2" To="h2.(MS Word Style)" />
+        <Map From="Heading3" To="h3.(MS Word Style)" />
+        <Map From="Heading4" To="h4.(MS Word Style)" />
+        <Map From="Heading5" To="h5.(MS Word Style)" />
+        <Map From="Heading6" To="h6.(MS Word Style)" />
+        <Map From="Heading 1" To="h1.Heading 1" />
+        <Map From="Heading 2" To="h2.Heading 2" />
+        <Map From="Heading 3" To="h3.Heading 3" />
+        <Map From="Body" To="p.Body" />
+        <Map From="Bullet" To="p.Bullet" />
+        <Map From="Bullet Last" To="p.BulletLast" />
+        <Map From="Definition List Body" To="p.DefinitionListBody" />
+        <Map From="Definition List Term" To="p.DefinitionListTerm" />
+        <Map From="Numbered List" To="p.NumberedList" />
+        <Map From="Question" To="p.Question" />
+        <Map From="Step Intro" To="p.StepIntro" />
+        <Map From="Table Head Row" To="p.TableHeadRow" />
+        <Map From="Table Text" To="p.TableText" />
+    </ParagraphStyles>
+    <CharacterStyles>
+        <Map From="Hyperlink" To="a.(MS Word Style)" />
+        <Map From="Body Char" To="span.Body_Char" />
+        <Map From="Code" To="span.Code" />
+        <Map From="GUI Item" To="span.GUIItem" />
+        <Map From="If Then Statement" To="span.If_Then_Statement" />
+        <Map From="on page x Char" To="span" />
+    </CharacterStyles>
+    <Files>
+        <Url Source="../../../../../../../Projects/new/SQLdm SP2/Source/SQLdm UG Import.doc" AbsoluteSource="file:///C:/Projects/new/SQLdm SP2/Source/SQLdm UG Import.doc" />
+    </Files>
+    <GeneratedFiles>
+        <Url Source="../../Content/SQLdm Import/Set Up the SQLdm Console.htm" TimeStamp="3/4/2008 11:13:10 AM" />
+        <Url Source="../../Content/SQLdm Import/Connect to a SQLdm Repository.htm" TimeStamp="3/4/2008 11:13:10 AM" />
+        <Url Source="../../Content/SQLdm Import/Manage Your SQLdm License.htm" TimeStamp="3/4/2008 11:13:10 AM" />
+        <Url Source="../../Content/SQLdm Import/Using the trial license.htm" TimeStamp="3/4/2008 11:13:10 AM" />
+        <Url Source="../../Content/SQLdm Import/Adding new licenses.htm" TimeStamp="3/4/2008 11:13:10 AM" />
+        <Url Source="../../Content/SQLdm Import/Add Your SQL Server Instances.htm" TimeStamp="3/4/2008 11:13:16 AM" />
+        <Url Source="../../Content/SQLdm Import/Configuring Authentication.htm" TimeStamp="3/4/2008 11:13:10 AM" />
+        <Url Source="../../Content/SQLdm Import/Selecting SQL Server instances.htm" TimeStamp="3/4/2008 11:13:10 AM" />
+        <Url Source="../../Content/SQLdm Import/Configuring SQL diagnostic.htm" TimeStamp="3/4/2008 11:13:10 AM" />
+        <Url Source="../../Content/SQLdm Import/Import Historical Data From.htm" TimeStamp="3/4/2008 11:13:10 AM" />
+        <Url Source="../../Content/SQLdm Import/Specifying the SQLdm Repository.htm" TimeStamp="3/4/2008 11:13:10 AM" />
+        <Url Source="../../Content/SQLdm Import/Selecting SQL Server instances1.htm" TimeStamp="3/4/2008 11:13:10 AM" />
+        <Url Source="../../Content/SQLdm Import/Specifying the import date.htm" TimeStamp="3/4/2008 11:13:10 AM" />
+        <Url Source="../../Content/SQLdm Import/Verifying your import settings.htm" TimeStamp="3/4/2008 11:13:10 AM" />
+        <Url Source="../../Content/SQLdm Import/Viewing the import status.htm" TimeStamp="3/4/2008 11:13:10 AM" />
+        <Url Source="../../Content/SQLdm Import/Select Your Grooming Schedule.htm" TimeStamp="3/4/2008 11:13:10 AM" />
+        <Url Source="../../Content/SQLdm Import/Using the SQLdm Interface.htm" TimeStamp="3/4/2008 11:13:10 AM" />
+        <Url Source="../../Content/SQLdm Import/Navigation Pane.htm" TimeStamp="3/4/2008 11:13:10 AM" />
+        <Url Source="../../Content/SQLdm Import/Configure Console Options.htm" TimeStamp="3/4/2008 11:13:10 AM" />
+        <Url Source="../../Content/SQLdm Import/Defining common properties.htm" TimeStamp="3/4/2008 11:13:10 AM" />
+        <Url Source="../../Content/SQLdm Import/Configuring Notification Settings.htm" TimeStamp="3/4/2008 11:13:10 AM" />
+        <Url Source="../../Content/SQLdm Import/Configuring Help Settings.htm" TimeStamp="3/4/2008 11:13:11 AM" />
+        <Url Source="../../Content/SQLdm Import/Using Refresh and Pause.htm" TimeStamp="3/4/2008 11:13:16 AM" />
+        <Url Source="../../Content/SQLdm Import/Using View Filters.htm" TimeStamp="3/4/2008 11:13:11 AM" />
+        <Url Source="../../Content/SQLdm Import/Using Charts in SQLdm.htm" TimeStamp="3/4/2008 11:13:11 AM" />
+        <Url Source="../../Content/SQLdm Import/Set Up Alerts for Specific.htm" TimeStamp="3/4/2008 11:13:11 AM" />
+        <Url Source="../../Content/SQLdm Import/Configure Alerts for Your.htm" TimeStamp="3/4/2008 11:13:11 AM" />
+        <Url Source="../../Content/SQLdm Import/Set Your Default Alert Configuration.htm" TimeStamp="3/4/2008 11:13:11 AM" />
+        <Url Source="../../Content/SQLdm Import/Specify Notification Rules.htm" TimeStamp="3/4/2008 11:13:11 AM" />
+        <Url Source="../../Content/SQLdm Import/Add a New Notification Rule.htm" TimeStamp="3/4/2008 11:13:11 AM" />
+        <Url Source="../../Content/SQLdm Import/Configuring Email Settings.htm" TimeStamp="3/4/2008 11:13:11 AM" />
+        <Url Source="../../Content/SQLdm Import/Analyze SQL Server Performance.htm" TimeStamp="3/4/2008 11:13:11 AM" />
+        <Url Source="../../Content/SQLdm Import/Organize Your SQL Server Instances.htm" TimeStamp="3/4/2008 11:13:11 AM" />
+        <Url Source="../../Content/SQLdm Import/Use My Views to Monitor Multiple.htm" TimeStamp="3/4/2008 11:13:11 AM" />
+        <Url Source="../../Content/SQLdm Import/Navigate to Your SQL Server.htm" TimeStamp="3/4/2008 11:13:11 AM" />
+        <Url Source="../../Content/SQLdm Import/Get the SQL Server Performance.htm" TimeStamp="3/4/2008 11:13:16 AM" />
+        <Url Source="../../Content/SQLdm Import/Enable OS Metrics Monitoring.htm" TimeStamp="3/4/2008 11:13:12 AM" />
+        <Url Source="../../Content/SQLdm Import/Get the SQL Server Performance1.htm" TimeStamp="3/4/2008 11:13:12 AM" />
+        <Url Source="../../Content/SQLdm Import/Manage SQL Server Configuration.htm" TimeStamp="3/4/2008 11:13:12 AM" />
+        <Url Source="../../Content/SQLdm Import/Manage Your SQL Server Instances.htm" TimeStamp="3/4/2008 11:13:12 AM" />
+        <Url Source="../../Content/SQLdm Import/Edit Your Monitored SQL Server.htm" TimeStamp="3/4/2008 11:13:12 AM" />
+        <Url Source="../../Content/SQLdm Import/General Server Options.htm" TimeStamp="3/4/2008 11:13:12 AM" />
+        <Url Source="../../Content/SQLdm Import/Query Monitor Options.htm" TimeStamp="3/4/2008 11:13:12 AM" />
+        <Url Source="../../Content/SQLdm Import/Edit Table Statistics Options.htm" TimeStamp="3/4/2008 11:13:12 AM" />
+        <Url Source="../../Content/SQLdm Import/Edit Your Management Service.htm" TimeStamp="3/4/2008 11:13:12 AM" />
+        <Url Source="../../Content/SQLdm Import/Take a Monitored SQL Server.htm" TimeStamp="3/4/2008 11:13:12 AM" />
+        <Url Source="../../Content/SQLdm Import/Analyze Database Performance.htm" TimeStamp="3/4/2008 11:13:12 AM" />
+        <Url Source="../../Content/SQLdm Import/Get the Database Status Summary.htm" TimeStamp="3/4/2008 11:13:16 AM" />
+        <Url Source="../../Content/SQLdm Import/Get Database Configuration.htm" TimeStamp="3/4/2008 11:13:13 AM" />
+        <Url Source="../../Content/SQLdm Import/Analyze Database Files.htm" TimeStamp="3/4/2008 11:13:13 AM" />
+        <Url Source="../../Content/SQLdm Import/Get File Statistics.htm" TimeStamp="3/4/2008 11:13:16 AM" />
+        <Url Source="../../Content/SQLdm Import/Get File Group Information.htm" TimeStamp="3/4/2008 11:13:16 AM" />
+        <Url Source="../../Content/SQLdm Import/Get Transaction Log Information.htm" TimeStamp="3/4/2008 11:13:16 AM" />
+        <Url Source="../../Content/SQLdm Import/Get Disk Information.htm" TimeStamp="3/4/2008 11:13:13 AM" />
+        <Url Source="../../Content/SQLdm Import/Analyze Database Backups and.htm" TimeStamp="3/4/2008 11:13:13 AM" />
+        <Url Source="../../Content/SQLdm Import/Analyze Tables and Indexes.htm" TimeStamp="3/4/2008 11:13:13 AM" />
+        <Url Source="../../Content/SQLdm Import/Updating Table Statistics.htm" TimeStamp="3/4/2008 11:13:13 AM" />
+        <Url Source="../../Content/SQLdm Import/Rebuilding Indexes.htm" TimeStamp="3/4/2008 11:13:13 AM" />
+        <Url Source="../../Content/SQLdm Import/Monitor Sessions and Query.htm" TimeStamp="3/4/2008 11:13:16 AM" />
+        <Url Source="../../Content/SQLdm Import/Get your Sessions Performance.htm" TimeStamp="3/4/2008 11:13:16 AM" />
+        <Url Source="../../Content/SQLdm Import/Get Sessions Performance Details.htm" TimeStamp="3/4/2008 11:13:13 AM" />
+        <Url Source="../../Content/SQLdm Import/Analyze Locked Sessions.htm" TimeStamp="3/4/2008 11:13:16 AM" />
+        <Url Source="../../Content/SQLdm Import/Analyze Blocked Sessions.htm" TimeStamp="3/4/2008 11:13:17 AM" />
+        <Url Source="../../Content/SQLdm Import/Monitor Query Performance.htm" TimeStamp="3/4/2008 11:13:17 AM" />
+        <Url Source="../../Content/SQLdm Import/Manage Resources.htm" TimeStamp="3/4/2008 11:13:14 AM" />
+        <Url Source="../../Content/SQLdm Import/Get the Resource Performance.htm" TimeStamp="3/4/2008 11:13:17 AM" />
+        <Url Source="../../Content/SQLdm Import/TIP.htm" TimeStamp="3/4/2008 11:13:17 AM" />
+        <Url Source="../../Content/SQLdm Import/Get CPU Performance Details.htm" TimeStamp="3/4/2008 11:13:17 AM" />
+        <Url Source="../../Content/SQLdm Import/Get Memory Performance Details.htm" TimeStamp="3/4/2008 11:13:17 AM" />
+        <Url Source="../../Content/SQLdm Import/Get Disk Performance Details.htm" TimeStamp="3/4/2008 11:13:17 AM" />
+        <Url Source="../../Content/SQLdm Import/Manage your Procedure Cache.htm" TimeStamp="3/4/2008 11:13:17 AM" />
+        <Url Source="../../Content/SQLdm Import/Manage Services.htm" TimeStamp="3/4/2008 11:13:14 AM" />
+        <Url Source="../../Content/SQLdm Import/Get an Overview of Your Services.htm" TimeStamp="3/4/2008 11:13:17 AM" />
+        <Url Source="../../Content/SQLdm Import/Monitor SQL Agent Jobs.htm" TimeStamp="3/4/2008 11:13:14 AM" />
+        <Url Source="../../Content/SQLdm Import/Monitor Your Full Text Searches.htm" TimeStamp="3/4/2008 11:13:14 AM" />
+        <Url Source="../../Content/SQLdm Import/Analyze Your Replication Information.htm" TimeStamp="3/4/2008 11:13:14 AM" />
+        <Url Source="../../Content/SQLdm Import/Track Alerts and Keep To Do.htm" TimeStamp="3/4/2008 11:13:14 AM" />
+        <Url Source="../../Content/SQLdm Import/Organize Your Alerts.htm" TimeStamp="3/4/2008 11:13:14 AM" />
+        <Url Source="../../Content/SQLdm Import/Manage Your To Do List.htm" TimeStamp="3/4/2008 11:13:14 AM" />
+        <Url Source="../../Content/SQLdm Import/Organize Tasks.htm" TimeStamp="3/4/2008 11:13:14 AM" />
+        <Url Source="../../Content/SQLdm Import/Verify Status of a Task.htm" TimeStamp="3/4/2008 11:13:14 AM" />
+        <Url Source="../../Content/SQLdm Import/Add Comments to a To Do List.htm" TimeStamp="3/4/2008 11:13:14 AM" />
+        <Url Source="../../Content/SQLdm Import/Indicate a Task is Complete.htm" TimeStamp="3/4/2008 11:13:14 AM" />
+        <Url Source="../../Content/SQLdm Import/Grooming Tasks.htm" TimeStamp="3/4/2008 11:13:14 AM" />
+        <Url Source="../../Content/SQLdm Import/Audit Statistics Using Reports.htm" TimeStamp="3/4/2008 11:13:17 AM" />
+        <Url Source="../../Content/SQLdm Import/Understanding Report Filters.htm" TimeStamp="3/4/2008 11:13:15 AM" />
+        <Url Source="../../Content/SQLdm Import/Server Overview Report.htm" TimeStamp="3/4/2008 11:13:15 AM" />
+        <Url Source="../../Content/SQLdm Import/Sessions Performance Report.htm" TimeStamp="3/4/2008 11:13:15 AM" />
+        <Url Source="../../Content/SQLdm Import/Database Overview Report.htm" TimeStamp="3/4/2008 11:13:15 AM" />
+        <Url Source="../../Content/SQLdm Import/CPU Report.htm" TimeStamp="3/4/2008 11:13:15 AM" />
+        <Url Source="../../Content/SQLdm Import/Memory Report.htm" TimeStamp="3/4/2008 11:13:15 AM" />
+        <Url Source="../../Content/SQLdm Import/Disk Report.htm" TimeStamp="3/4/2008 11:13:15 AM" />
+        <Url Source="../../Content/SQLdm Import/Database Growth Report.htm" TimeStamp="3/4/2008 11:13:15 AM" />
+        <Url Source="../../Content/SQLdm Import/Table Growth Report.htm" TimeStamp="3/4/2008 11:13:15 AM" />
+        <Url Source="../../Content/SQLdm Import/Worst Performing Queries Report.htm" TimeStamp="3/4/2008 11:13:17 AM" />
+        <Url Source="../../Content/SQLdm Import/Most Frequent Queries Report.htm" TimeStamp="3/4/2008 11:13:15 AM" />
+        <Url Source="../../Content/SQLdm Import/Diagnose Issues Using Event.htm" TimeStamp="3/4/2008 11:13:15 AM" />
+        <Url Source="../../Content/SQLdm Import/Filter Events.htm" TimeStamp="3/4/2008 11:13:15 AM" />
+        <Url Source="../../Content/SQLdm Import/Search for Specific Events.htm" TimeStamp="3/4/2008 11:13:15 AM" />
+        <Url Source="../../Content/SQLdm Import/Cycle the Server Log.htm" TimeStamp="3/4/2008 11:13:15 AM" />
+        <Url Source="../../Content/SQLdm Import/Configure Logs.htm" TimeStamp="3/4/2008 11:13:15 AM" />
+        <Url Source="../TOCs/SQLdm Import.fltoc" TimeStamp="3/4/2008 11:13:16 AM" />
+    </GeneratedFiles>
+    <NewTopicStyles>
+        <StyleName Name="Heading 1" />
+        <StyleName Name="Heading 2" />
+        <StyleName Name="Heading 3" />
+    </NewTopicStyles>
+    <UsedParagraphStyles>
+        <StyleName Name="Body" />
+        <StyleName Name="Bullet" />
+        <StyleName Name="Bullet Last" />
+        <StyleName Name="Definition List Body" />
+        <StyleName Name="Definition List Term" />
+        <StyleName Name="Heading 1" />
+        <StyleName Name="Heading 2" />
+        <StyleName Name="Heading 3" />
+        <StyleName Name="Numbered List" />
+        <StyleName Name="Question" />
+        <StyleName Name="Step Intro" />
+        <StyleName Name="Table Head Row" />
+        <StyleName Name="Table Text" />
+    </UsedParagraphStyles>
+    <UsedCharacterStyles>
+        <StyleName Name="Body Char" />
+        <StyleName Name="Code" />
+        <StyleName Name="GUI Item" />
+        <StyleName Name="Hyperlink" />
+        <StyleName Name="If Then Statement" />
+        <StyleName Name="on page x Char" />
+    </UsedCharacterStyles>
+</MsWordImport>

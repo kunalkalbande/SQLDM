@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="521" MadCap:lastWidth="794">
+    <head>
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Server Waits panel in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Server Waits panel</h1>
+        <p class="Body">
+            <MadCap:keyword term="Server Waits:Dashboard panel;Dashboard:Server Waits;VM;VMware;Virtual;Virtualization;Host;ESX;Virtual Machine" />The Server Waits panel tracks the total number and time spent on waits affecting your monitored SQL Server. Unexpected spikes in the number of server waits may warn you about the beginning of a serious performance issue. Chronically high server wait times may indicate the need for server maintenance, query tuning, or index updates to better handle the ongoing workload. For additional information, see <a href="View server waits.htm" target="_self">how to view server waits</a>.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Server Waits chart data is not available for monitored servers using SQL&#160;Server 2000. For SQL&#160;Server 2000 users, SQLdm monitors <a href="Locks Dashboard.htm" target="_self">lock waits</a>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2"><a name="ServerWaitsSummary"></a>Server Waits chart</h2>
+        <p class="Body">The Server Waits Chart displays the overall wait time for key areas on your monitored SQL&#160;Server instance.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Metric</th>
+                    <th class="HeadD-Column2-Header1">Why it is important</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText"><a href="Metrics/IO Waits.htm" target="_self">I/O</a>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the amount of input and output occurring on your SQL&#160;Server instance. A consistently high rate may indicate a higher risk of performance issues as the SQL Server processes wait for I/O to become available.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText"><a href="Metrics/Lock Waits.htm">Locks</a>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the wait time caused by locks on databases hosted by this SQL&#160;Server instance.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText"><a href="Metrics/Transaction Log Waits.htm" target="_self">Log</a>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the wait time related to database transaction logs.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText"><a href="Metrics/Memory Waits.htm" target="_self">Memory</a>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates all wait time related to memory operations.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText"><a href="Metrics/Signal Waits.htm" target="_self">Signal</a>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates that a SQL Server process is waiting for CPU&#160;time after the associated resources became available for processing.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText"><a href="Metrics/Other Waits.htm" target="_self">Other</a>
+                        </p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Indicates all lock waits not included in other categories and not excluded from monitoring.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="2001" MadCap:lastWidth="791">
+    <head><title>Deploy Idera Newsfeed to a Windows 2003 cluster</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Deploy the Idera Newsfeed to a Windows 2003 cluster</h1>
+        <p class="Body">
+            <MadCap:keyword term="Install:in Windows 2003 cluster;Clustered Environments:install for Windows 2003" />Use the following instructions to deploy the Idera Newsfeed Platform in a Windows Server 2003 clustered environment.</p>
+        <h2 class="Heading2">Things to consider before you install the Idera Newsfeed Platform in a clustered environment</h2>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Assign the Idera Newsfeed Platform to a new or existing cluster resource group. You may want to create a separate cluster resource group to host the SQLdm Mobile &amp; Newsfeed Service.<ul><li class="Bullet">Creating a new cluster resource group for this deployment allows the service to fail without causing other resources in the cluster to fail over. However, this configuration also requires a new dedicated IP, a new NetBIOS name, and a new dedicated drive.</li><li class="Bullet">Adding the SQLdm Mobile &amp; Newsfeed Service to your existing SQLdm Services resource cluster group makes sure that all four services fail over together, and does not require additional resources.</li></ul></li>
+            <li class="Bullet">The SQLdm Mobile &amp; Newsfeed Service runs as a generic service on the assigned cluster resource group.</li>
+            <li class="Bullet">You may need to provide a Network Name and Network IP during the cluster configuration.</li>
+            <li class="Bullet">When you install the Idera News Platform, you need to provide credentials for the service account and the name of a SQL&#160;Server instance that can host the SQLdm Mobile Repository database. Make sure these components meet the <a href="SQLdm Mobile Requirements.htm">requirements</a>.</li>
+            <li class="BulletLast">Install or upgrade your clustered SQLdm Services to the latest version of SQLdm.</li>
+        </ul>
+        <h2 class="Heading2">Install the Idera Newsfeed Platform on each cluster node</h2>
+        <p class="Body">Install the platform on each cluster node to set up the Idera Newsfeed Platform to work correctly when the primary cluster node fails.</p>
+        <p class="StepIntro">To install Idera Newsfeed Platform:</p>
+        <ol>
+            <li class="NumberedList">Log on using an administrator account.</li>
+            <li class="NumberedList">Run <span class="Code">Setup.exe</span> in the root of the SQLdm installation kit.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">SQLdm Mobile and Newsfeed</span> on the<span class="GUI_Item"> Quick Start</span> window.</li>
+            <li class="NumberedList">On the <span class="GUI_Item">Welcome</span> window of the setup program, click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Review and accept the license agreement by clicking <span class="GUI_Item">I accept the terms in the license agreement</span>, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Select the <span class="GUI_Item">Mobile &amp;&#160;Newsfeed components</span>, and  then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Specify the appropriate credentials for the service account, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Select which SQL Server instance should host the Repository database, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Specify the account that you want the setup program to use to create the Repository database, test the connection, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Indicate which credentials you want the SQLdm Mobile &amp; Newsfeed Service account to use to connect to the Repository database, and then click <span class="GUI_Item">Next</span></li>
+            <li class="NumberedList">Specify which computer hosts your SQLdm Repository, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Install</span>.</li>
+            <li class="NumberedList">In Windows Services, stop the following services, and set their <span class="GUI_Item">Startup type</span> to <code>Manual</code>.<ul style="list-style-type: circle;"><li class="NumberedList"> SQLdm Mobile &amp; Newsfeed Service</li><li class="NumberedList">SQLdm Management Service</li><li class="NumberedList">SQLdm Collector Service</li><li class="NumberedList">SQLdm Predictive Analytics</li></ul></li>
+        </ol>
+        <h2 class="Heading2">Create the cluster resource group (optional)</h2>
+        <p class="Body">For more granular failover control, you can create a dedicated cluster resource group for the Idera Newsfeed Platform.</p>
+        <p class="StepIntro">To create a cluster resource group for the Idera Newsfeed Platform:</p>
+        <ol>
+            <li class="NumberedList">In the Cluster Administrator tool, create the cluster resource group:<ol style="list-style-type: lower-alpha;"><li class="NumberedList">Select <span class="GUI_Item">File &gt; New &gt; Group</span>, and then specify a name and description.</li><li class="NumberedList">Add the nodes that belong to this cluster, and then click <span class="GUI_Item">Finish</span>.</li></ol></li>
+            <li class="NumberedList">Add a disk to the cluster resource group:<ol style="list-style-type: lower-alpha;"><li class="NumberedList">Right-click the group you just created, select <span class="GUI_Item">New &gt; Resource</span>, and then specify a name and description.</li><li class="NumberedList">For the Resource Type, select <span class="GUI_Item">Physical Disk</span>.</li><li class="NumberedList">Select the Idera Newsfeed Platform group.</li><li class="NumberedList">Click <span class="GUI_Item">Next </span>until you get to the last window and click <span class="GUI_Item">Finish</span>.</li></ol></li>
+            <li class="NumberedList">Add an IP&#160;address for the cluster resource group:<ol style="list-style-type: lower-alpha;"><li class="NumberedList">Right-click the group, select <span class="GUI_Item">New &gt;&#160;Resource</span>, and then specify a name and description.</li><li class="NumberedList">Select the Resource type <span class="GUI_Item">IP&#160;Address</span>.</li><li class="NumberedList">Type the IP&#160;address that you acquired for your new cluster resource group.</li><li class="NumberedList">Click<span class="GUI_Item"> Finish</span>.</li></ol></li>
+            <li class="NumberedList">Add the Network Name resource to the cluster resource group:
+                    <ol style="list-style-type: lower-alpha;"><li class="NumberedList">Right-click the group, select <span class="GUI_Item">New &gt;&#160;Resource</span>, and then specify a name and description.</li><li class="NumberedList">Select the resource type <span class="GUI_Item">Network Name</span>.</li><li class="NumberedList">Add the IP&#160;address as a dependency for this release. </li><li class="NumberedList">Specify a name, and then click <span class="GUI_Item">Finish</span>.</li></ol></li>
+        </ol>
+        <h2 class="Heading2">Add the SQLdm Mobile &amp; Newsfeed Service to the appropriate cluster resource group</h2>
+        <p class="Body">On each cluster node, modify the cluster resource group settings to allow the Idera Newsfeed to recognize the cluster nodes.</p>
+        <p class="StepIntro">To add the SQLdm Mobile &amp; Newsfeed Service to your resource cluster group:</p>
+        <ol>
+            <li class="NumberedList">In the Cluster Administrator tool, navigate to the cluster resource group to which you want to add the Idera Newsfeed Service as a resource. You can use the new cluster resource group you previously created, or the cluster resource group you configured for your SQLdm Services.</li>
+            <li class="NumberedList">Select the disk you created for this cluster resource group, and then create a directory on that disk. The SQLdm Mobile &amp; Newsfeed Service uses this folder to store data.</li>
+            <li class="NumberedList">Create an IP Address resource for the SQLdm Mobile &amp; Newsfeed Service.<span class="If_Then_Statement"> If a Network Name is already specified for this cluster resource group</span>,  skip this step.
+             
+                
+                    <ul style="list-style-type: circle;"><li class="Bullet">Create a Network Name resource (it maps to the IP Address)</li><li class="Bullet">Add the IP Address as a dependency</li></ul></li>
+            <li class="NumberedList">Create a Generic Service resource for the SQLdm Mobile &amp; Newsfeed Service.
+            
+                    <ul style="list-style-type: circle;"><li class="Bullet">Add the <span class="GUI_Item">Disk</span> for the shared data as a dependency</li><li class="Bullet">Add the <span class="GUI_Item">Network Name</span> as a dependency</li><li class="Bullet">Specify <span class="Code">SQLdmMobileandNewsService$Default</span> as the name of the service to start</li></ul></li>
+            <li class="NumberedList">After the service is successfully added, update its properties.
+
+                
+                    <ol style="list-style-type: lower-alpha;"><li class="NumberedList">On the Parameters tab, check the <span class="GUI_Item">Use network name for computer name</span> option.</li><li class="NumberedList">On the Registry Replication tab, add the <span class="Code">SOFTWARE\Idera\Idera Newsfeed &amp;&#160;Mobile\DataPath</span> key.</li><li class="NumberedList">Click <span class="GUI_Item">OK</span>.</li></ol></li>
+            <li class="NumberedList">In Windows Services, bring the following services online:<ul style="list-style-type: circle;"><li class="NumberedList">SQLdm Mobile &amp; Newsfeed Service</li><li class="NumberedList">SQLdm Management Service</li><li class="NumberedList">SQLdm Collector Service</li><li class="NumberedList">SQLdm Predictive Analytics</li></ul></li>
+        </ol>
+        <h2 class="Heading2">Test your cluster configuration using the SQLdm Console</h2>
+        <p class="Body">Make sure the SQLdm services can communicate with each other and the Repository databases.</p>
+        <ol>
+            <li class="NumberedList">On the active node of the cluster, use the Management Service Configuration wizard to re-register the services and test your configuration. You can start this tool from the <span class="GUI_Item">Programs</span> menu.</li>
+            <li class="NumberedList">Verify that you are able to create a Newsfeed account and monitor your virtual SQL&#160;Server instances using the News Feed interface in the SQLdm Console.</li>
+        </ol>
+    </body>
+</html>

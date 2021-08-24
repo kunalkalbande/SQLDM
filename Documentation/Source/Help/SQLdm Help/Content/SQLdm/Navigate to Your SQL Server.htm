@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="7" MadCap:lastHeight="1722" MadCap:lastWidth="558">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Navigate to your SQL Server instances in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Navigate to your SQL Server instances</h1>
+        <p class="Body">
+            <MadCap:keyword term="Console:server tree" />The Server tree contains all the SQL Server instances for the selected view, and allows you to drill down to the specific SQL&#160;Server components. Selecting these components opens corresponding views, providing detailed information.</p>
+        <p class="Body">The Server tree also displays tags, which are <a href="Working with Tags.htm">a way of labeling and organizing servers</a>. The tree shows the defined tags and highlights when servers within the tag are in an alert state. Select a tag to show a filtered view of the servers within that tag.</p>
+        <h2 class="Heading2">View alerts on the Server tree</h2>
+        <p class="Body">SQL&#160;Server instances in the Server tree also display status icons. When a SQL&#160;Server instance is associated with a warning or critical metric icon, use your mouse cursor to hover over the server name to view the top three associated alerts. This feature allows you to prioritize your SQL&#160;Server instances and the work that you need to perform.</p>
+        <h2 class="Heading2">Refresh your alerts</h2>
+        <p class="Body">A full refresh of alerts excluding table fragmentation occurs in the following circumstances even if longer collection intervals are defined: </p>
+        <ul>
+            <li class="Bullet">when the collection service starts</li>
+            <li class="Bullet">when the collection service receives a new workload, such as redirecting the Management Service to a new Repository</li>
+            <li class="Bullet">when you add a SQL&#160;Server for collection</li>
+            <li class="Bullet">when a SQL&#160;Server resumes from Maintenance Mode</li>
+            <li class="Bullet">when a user selects Refresh Alerts</li>
+        </ul>
+        <p class="Body">This refresh does not cause collection of non-alertable data, nor cause collection of anything that is disabled.</p>
+        <h2 class="Heading2">Overview tab features</h2>
+        <p class="Body">When you select a SQL&#160;Server instance in the Server tree, the Overview tab opens.</p>
+        <p class="Body">The Overview tab contains the following options:</p>
+        <p class="DefinitionListTerm">Dashboard</p>
+        <p class="DefinitionListBody">The <a href="Get the SQL Server Performance.htm" target="_self">Dashboard view</a> is where you can see a graphical representation of the most important metrics for the selected SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Details</p>
+        <p class="DefinitionListBody">The <a href="Get SQL Server Performance Details.htm" target="_self">Details view</a> lets you view the values of each data item collected and create charts with the specific data items you need.</p>
+        <p class="DefinitionListTerm">Configuration</p>
+        <p class="DefinitionListBody">The <a href="Monitor SQL Server configuration.htm" target="_self">Configuration view</a> allows you to view and control the operational configuration of the monitored SQL Server instance.</p>
+        <p class="DefinitionListTerm">Active Alerts</p>
+        <p class="DefinitionListBody">The <a href="View active alerts for this instance.htm" target="_self">Active Alerts view</a> allows you to view and control the active alerts as of the most recent data collection.</p>
+        <p class="DefinitionListTerm">Timeline</p>
+        <p class="DefinitionListBodyLast">The <a href="View timeline for this instance.htm" target="_self">Timeline view</a> allows you to view all alerts and maintenance mode events as well as the first monitored event for the selected SQL&#160;Server instance.</p>
+        <h2 class="Heading2">Other Servers tree features</h2>
+        <p class="Body">By right-clicking a SQL&#160;Server instance in the Servers tree you can perform the following actions:</p>
+        <p class="DefinitionListTerm">Open</p>
+        <p class="DefinitionListBody">Opens the Dashboard view for the selected monitored SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Refresh Alerts</p>
+        <p class="DefinitionListBody">Gathers the alert status and refreshes the tree view information   for the selected monitored SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Delete</p>
+        <p class="DefinitionListBody">Allows you to delete the SQL&#160;Server instance from your SQLdm installation. When you select <span class="GUI_Item">Delete</span>, SQLdm displays a message asking whether you want to retain the collected data for the SQL&#160;Server instance, and it also allows you to cancel out of the deletion process.</p>
+        <ol MadCap:continue="true">
+            <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                            <p class="TableHeadRow">TIP</p>
+                        </td>
+                        <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                            <p class="TableText">You cannot retrieve collected data once it is deleted from the SQLdm Repository. Use the Delete option with care.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ol>
+        <p class="DefinitionListTerm">Maintenance Mode</p>
+        <p class="DefinitionListBody">Allows you to take an individually monitored SQL&#160;Server instance offline for scheduled maintenance or other reasons.</p>
+        <p class="DefinitionListTerm">Configure Baseline</p>
+        <p class="DefinitionListBody">Allows you to configure the performance baseline for the selected SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Apply Alert Template</p>
+        <p class="DefinitionListBody">Allows you to select an existing alert template to apply to the selected SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Configure Alerts</p>
+        <p class="DefinitionListBody">Allows you to specify the alert criteria for each collected metric on the selected SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Snooze Alerts</p>
+        <p class="DefinitionListBody">Allows you to snooze all the alerts for the selected SQL&#160;Server instance instead of selecting the snooze feature for each alert individually.</p>
+        <p class="DefinitionListTerm">Resume Alerts</p>
+        <p class="DefinitionListBody">Allows you to resume any alerts set to snooze on the selected SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Properties</p>
+        <p class="DefinitionListBodyLast">Allows you to view and edit the collection properties of your SQL Server instance.</p>
+    </body>
+</html>

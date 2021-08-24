@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="2" MadCap:lastHeight="809" MadCap:lastWidth="762">
+    <head><title>Monitor logs using Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Monitor logs</h1>
+        <p class="Body">
+            <MadCap:keyword term="Logs" />The Logs tab allows you view SQL&#160;Server related logs. Use these logs to diagnose SQL&#160;Server problems where a history of events is necessary to form context. The current log is selected by default but you can select archived or even multiple archived logs to view or search. Filter and Search options allow you to locate the areas of the logs that are most important.</p>
+        <h2 class="Heading2">Access the Logs tab</h2>
+        <p class="Body">SQLdm provides two paths to access the Logs tab. The first access path is by clicking the appropriate monitored SQL&#160;Server instance, and then clicking the Logs tab. The second access path is by expanding the Servers tree, and then clicking <span class="GUI_Item">Logs </span>for the appropriate instance.</p>
+        <h2 class="Heading2">Available actions</h2>
+        <p class="DefinitionListTerm">Actions</p>
+        <p class="DefinitionListBody">Click <span class="GUI_Item">Cycle Server Log</span> to <a href="Cycle the Server Log.htm" target="_self">archive the information in the most recent log and start a new log</a>.</p>
+        <p class="DefinitionListBody">Click <span class="GUI_Item">Configure </span>to <a href="Configure Logs.htm" target="_self">determine the number of SQL&#160;Server logs retained by SQL&#160;Server</a>.</p>
+        <p class="DefinitionListTerm">Details section</p>
+        <p class="DefinitionListBody">The Details section provides more information for the selected event.</p>
+        <p class="DefinitionListTerm">Filter</p>
+        <p class="DefinitionListBody">The Filter options allow you to return specific data. Note that these selections work only once you enable log alerts.</p>
+        <p class="DefinitionListTerm">Logs tab</p>
+        <p class="DefinitionListBody">The Logs tab allows you to look at all the events taking place on your SQL Server instance. Each event, when selected, contains detailed information in the Details section of the tab which allows you to diagnose specific issues that occur. </p>
+        <p class="DefinitionListBody">The archive number is the file number associated with the log in SQL Server while the date is the last modified date of the file on disk. If the archive numbers seem out of order, check the error log.</p>
+        <p class="DefinitionListBody"><span class="GUI_Item">For Example</span>: if  one of your SQL Server instances restarts, the event log can tell you the time of the restart. This helps you diagnose issues that occur on your SQL Server instances.</p>
+        <p class="DefinitionListTerm">Search</p>
+        <p class="DefinitionListBody">The Search feature allows you to find information based on text available in the message, message number, or source.</p>
+    </body>
+</html>

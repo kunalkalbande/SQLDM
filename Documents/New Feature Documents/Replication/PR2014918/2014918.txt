@@ -1,0 +1,10 @@
+This code addresses the article count issue at the cost of an additional select on the publisher (union) if the database has been marked as a merge participant in sysdatabases and the relevant merge tables are found in sysobjects.
+
+It is about 60 lines of code.  SQL2000 and SQL2005+ have slightly different selects.
+
+The sysmergesubscriptions table contains an entry for both merge participants. ie. Both the publisher and the subscriber are subscribing to the publication.  We only want one row returned so the where clause in the 2005 batch precludes the local row if there is a remote row.
+In the 2000 batch it only returns the remote row. I would test this sql very carefully with non-subscribed and subscribed sessions to ensure the behavior is predictable and understood.
+
+Points to consider:  If there is no subscriber do we want a row returned?
+Is an unsubscribed merge session worth showing?
+I think it is, in which case we need to look closely at how this is displayed in the topology and also what data is available in the distributor for an unsubscribed replication session. If there is nothing in the distributor for an unsubscribed merge session it will show in the topology but the details will show nothing because all of the details come from the distributor.

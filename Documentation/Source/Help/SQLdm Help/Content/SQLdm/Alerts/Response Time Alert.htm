@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="4" MadCap:lastHeight="323" MadCap:lastWidth="859">
+    <head><title>SQL Server Response Time (Milliseconds) alert in Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">SQL Server Response Time (Milliseconds) alert</h1>
+        <p class="Body">The SQL&#160;Server Response Time (Millisecond) alert provides the time (in milliseconds) SQL diagnostic manager currently needs to send a simple SQL command to the SQL Server instance, have it processed, and receive the returned result set.
+</p>
+        <p class="Body">High response times generally occur when sessions are blocked or when either there is heavy network traffic or network problems or when either the computer the SQLdm Repository or the computer the SQLdm Console is hosted on is running slow due to various problems.</p>
+        <p class="Body">Typically, this value should average below 2000 ms for a well tuned network and server. Average values in excess of 2000 ms indicate either an excessively busy network segment or a stressed SQL Server. </p>
+        <h2 class="Heading2">Reduce your SQL&#160;Server response time</h2>
+        <p class="Body">A common cause to high response times is when sessions are being blocked. To fix this problem, go to the <span class="GUI_Item">Sessions </span>tab and select the <span class="GUI_Item">Blocking </span>view to see if any sessions are blocking. You can then select the session and click either <span class="GUI_Item">Trace Session</span> to see what queries the session is creating and to see what is causing the block, or <span class="GUI_Item">Kill Session</span> to stop it.</p>
+    </body>
+</html>

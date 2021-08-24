@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1028" MadCap:lastWidth="571">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Select virtual machine system counter in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Select virtual machine system counter</h1>
+        <p class="Body">
+            <MadCap:keyword term="virtualization;VM;VMware;virtual machine;ESX;virtual;host;Hyper-V" />The Select Virtual Machine System Counter window of the Add Custom Counter wizard allows you to select the counter you want from a list populated by those counters currently available on an existing monitored SQL&#160;Server host server, or you can enter the counter information manually. </p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">You can select virtual machine counters for both the Hyper-V and VMware server virtualization platforms.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Access the Add Custom Counter wizard</h2>
+        <p class="Body">You can open the Add Custom Counter wizard by clicking <span class="GUI_Item">Administration &gt;&#160;Custom Counters</span>, and then clicking <span class="GUI_Item">Add </span>in the Custom Counters view.</p>
+        <h2 class="Heading2">Select the counter from the list</h2>
+        <p class="Body">As you select from a populated list from those currently available on an existing monitored SQL&#160;Server host, the next drop-down list populates (filtered by your selection). This allows you to quickly find the specific counter you want to add to SQLdm.</p>
+        <p class="Body">
+            <img src="../Resources/Images/Select Virtual Machine System Counter_8.5.gif" style="width: 457px;height: 403px;" />
+        </p>
+        <ol>
+            <li class="NumberedList">Pick the monitored SQL&#160;Server instance to populate counter information from the drop-down list.</li>
+            <li class="NumberedList">Select the object name from the drop-down list.</li>
+            <li class="NumberedList">Select the name of the specific counter you want to add from the drop-down list.</li>
+            <li class="NumberedList">Select the instance (if applicable) from the drop-down list. The instance name is what distinguishes it from other similar objects.</li>
+        </ol>
+        <h2 class="Heading2">Add a counter manually</h2>
+        <p class="Body">If you have the counter information available, you can enter the information quickly by selecting <span class="GUI_Item">Manually enter counter configuration</span>, and then simply pasting or typing the name of the object, counter, and SQL&#160;Server instance into the associated fields. The counter information entered must be exact or the counter does not work correctly.</p>
+    </body>
+</html>

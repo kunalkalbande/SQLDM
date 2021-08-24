@@ -1,0 +1,1 @@
+This folder is primarily for build scripts or other build related files.

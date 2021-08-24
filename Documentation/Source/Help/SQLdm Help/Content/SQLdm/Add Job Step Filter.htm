@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="641" MadCap:lastWidth="820">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Add or edit job filter in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Add or edit job filter</h1>
+        <p class="Body">The Add Job Filter or Edit Job Filter window allows you to create or edit a filter to determine when you want a SQL&#160;Server Agent job condition to raise an alert. </p>
+        <h2 class="Heading2">Access the add or edit job filters</h2>
+        <p class="StepIntro">To access the Add Job Filter or Edit Job Filter window:</p>
+        <ol>
+            <li class="NumberedList">Right-click a SQL&#160;Server instance in the Servers tree.</li>
+            <li class="NumberedList">Select <span class="GUI_Item">Configure Alerts</span>.</li>
+            <li class="NumberedList">Select one of the following alerts:</li>
+        </ol>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body">SQL&#160;Server Agent Job Completion</li>
+            <li class="Bullet-Def-Body">SQL&#160;Server Agent Job Failure</li>
+            <li class="Bullet-Def-Body">SQL&#160;Server Agent Long Running Job (Minutes)</li>
+            <li class="Bullet-Def-Body-Last">SQL&#160;Server Agent Long Running Job (Percent)</li>
+        </ul>
+        <ol start="4">
+            <li class="NumberedList">Click <span class="GUI_Item">Advanced</span>, and select <span class="GUI_Item">Job Filters</span>.</li>
+            <li class="NumberedList">Click<span class="GUI_Item"> Add</span> or <span class="GUI_Item">Edit</span> in either the Include or Exclude list.</li>
+        </ol>
+        <h2 class="Heading2">Use the Job Filters tab</h2>
+        <p class="Body">The Job Filters tab allows you to include or exclude a job by job category, name, or step name if you check <span class="GUI_Item">Alert on individual job steps</span>.</p>
+        <p class="StepIntro">To add a job filter:</p>
+        <ol>
+            <li class="NumberedList">Select <span class="GUI_Item">Like</span> or <span class="GUI_Item">Equals</span> in the Operator drop-down window for either the Job Category, Job Name, or Step Name field.</li>
+            <li class="NumberedList">Enter the value to filter the job for in the Value field or click the <span class="GUI_Item">Browse</span> button to browse for the object you want to filter.</li>
+            <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');caption-side: top;" cellspacing="0">
+                <col />
+                <col />
+                <tbody>
+                    <tr>
+                        <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                            <p class="TableHeadRow">TIP</p>
+                        </td>
+                        <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                            <p class="TableText">Use the percent symbol (%) as a wildcard.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ol>
+        <ol MadCap:continue="true">
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span>.</li>
+            <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                            <p class="TableHeadRow">TIP</p>
+                        </td>
+                        <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                            <p class="TableText">The <span class="GUI_Item">Browse</span> button is only available when adding or editing job step filters for a single SQL&#160;Server instance.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ol>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="1628" MadCap:lastWidth="614">
+    <head><title>Create a migration or recovery plan for Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Create your migration or recovery plan</h1>
+        <p class="Body">Once you decide whether a SQLdm Migration or Recovery is best for your environment, create a plan so that when the time comes, you are prepared and get SQL diagnostic manager up and running as quickly as possible.</p>
+        <h2 class="Heading2">Creating a Migration Plan</h2>
+        <p class="Body">A migration plan details moving the SQLdm Repository and Services to another SQL Server instance, thereby replacing the original components. You can use a migration plan to respond to an immediate maintenance need. Use the procedures and guidelines in this document to implement or modify your migration plan.</p>
+        <h2 class="Heading2">Creating a Recovery Plan</h2>
+        <p class="Body">A disaster recovery plan details the steps to remedy unexpected outages to make sure you can continue monitoring SQL Server activity and performance metrics. This document addresses disaster recovery best-practices for establishing a new Repository.</p>
+        <p class="Body">When you implement SQLdm in your production SQL Server environment, consider preparing a disaster recovery plan to minimize audit data loss should the SQLdm Repository become unavailable. Use the procedures and guidelines covered in this document to implement or modify your disaster recovery plan.</p>
+        <h2 class="Heading2">Understanding the Repository Database</h2>
+        <p class="Body">The SQLdm Repository consists of a SQL Server database named, by default, SQLdmRepository. This database contains the following information:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Performance metrics and statistics collected from your monitored SQL Server instances</li>
+            <li class="Bullet">Configuration settings such as the connection information for the SQLdm Services and alert notification rules</li>
+            <li class="BulletLast">	Alert messages</li>
+        </ul>
+        <p class="Body">By default, the Repository database uses the simple recovery model. When this setting is enabled, SQL Server does not maintain the transaction logs for the database. Likewise, any existing transaction logs are not included in backup data. If your corporate policies require transaction log backups, consider changing the recovery model to full so that transaction logs are maintained and archived.</p>
+        <h2 class="Heading2">Understanding SQLdm Services</h2>
+        <p class="Body">SQLdm has two centralized services, the Management Service and the Collection Service. These two services reside on the same computer.</p>
+        <p class="Body">The Management Service performs the following primary functions:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Provides real-time data to the SQLdm Console</li>
+            <li class="Bullet">Receives historical data from the Collection Service for storage in the Repository</li>
+            <li class="BulletLast">	Raises alerts and sends alert notifications</li>
+        </ul>
+        <p class="Body">The Collection Service performs on-demand and scheduled collection from the monitored SQL Server instances.</p>
+        <h2 class="Heading2">Recovery and Migration Best Practices</h2>
+        <p class="DefinitionListTerm">Verify the Configuration of the Target SQL&#160;Server</p>
+        <p class="DefinitionListBody">When identifying the new SQL&#160;Server instance that you want to host the Repository and Services, make sure this instance meets or exceeds the product requirements as well as these specific requirements.</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body">You can dedicate the target instance to hosting the SQL&#160;diagnostic manager only</li>
+            <li class="Bullet-Def-Body-Last">The target instance runs the same version of SQL&#160;Server software that is currently running on the existing SQLdm computer</li>
+        </ul>
+        <p class="DefinitionListTerm">Back up the Repository Database</p>
+        <p class="DefinitionListBody">Use a tool such as Idera SQLsafe to perform a full backup of the Repository database. If you changed the default recovery model to full, make sure your backup includes all transaction logs.</p>
+        <p class="DefinitionListTerm">Identify how often to backup the Repository database</p>
+        <p class="DefinitionListBody">The frequency at which you backup the Repository database depends on the following factors:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body">How often your alert settings change</li>
+            <li class="Bullet-Def-Body">How often your SQL&#160;Server environment changes as you add new servers and databases or remove older servers and database</li>
+            <li class="Bullet-Def-Body">How much performance data you collect in a given time period</li>
+            <li class="Bullet-Def-Body-Last">How much risk you are willing to incur</li>
+        </ul>
+        <p class="DefinitionListBodyLast">The backup frequency should reflect your maintenance needs and allow you to meet future monitoring requirements.</p>
+        <p class="DefinitionListTerm">Schedule routine backups of the Repository database</p>
+        <p class="DefinitionListBody">After you identify the appropriate backup frequency for your monitoring needs, use a tool such as Idera SQLsafe to schedule routine backups of the Repository database. If you changed the default recovery model to full, make sure your backup includes <span style="color: #ff0000;">all</span> transaction logs.</p>
+        <p class="DefinitionListTerm">Review disaster recovery guidelines</p>
+        <p class="DefinitionListBodyLast">Make sure your recovery strategy includes plans to reinstate the original computer once it is repaired. Consider the following guidelines:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body">To minimize data loss, plan to back up the Repository database on the temporary Repository computer immediately before reinstating the original computer.</li>
+            <li class="Bullet-Def-Body">Use the procedures in this Technical Solution to reinstate the Repository on the original computer and configure the Management Service.</li>
+            <li class="Bullet-Def-Body">To verify all components were reinstated correctly, test your implementation.</li>
+            <li class="Bullet-Def-Body-Last">Uninstall the components you previously implemented on the temporary computer.</li>
+        </ul>
+    </body>
+</html>

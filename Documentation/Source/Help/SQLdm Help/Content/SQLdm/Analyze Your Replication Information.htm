@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="7" MadCap:lastHeight="664" MadCap:lastWidth="845" MadCap:ignoredWords="SQL">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Analyze replication information using Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Analyze replication information</h1>
+        <p class="Body">
+            <MadCap:keyword term="Services:replication;Replication" />The Replication view allows you to analyze data replication details for the selected SQL&#160;Server instance. Included are the topology and key metrics that detail the current state of active subscribed and non-subscribed transactions on all SQL Server instances related to replication on the monitored SQL&#160;Server. For more information about replication, see the Microsoft document,<a href="http://msdn.microsoft.com/en-us/library/ms151198(v=SQL.100).aspx" target="_blank">SQL&#160;Server Replication</a>.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText"><a href="Disable replication statistics collection.htm" target="_self">Collecting replication statistics</a> can have a performance impact on the monitored SQL&#160;Server instance.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Using the Replication view</h2>
+        <p class="Body">The following elements in the Replication view help you make sure that proper replication is occurring and that your data is distributed to the correct subscribers.</p>
+        <p class="DefinitionListTerm">Replication Topology</p>
+        <p class="DefinitionListBody">The Replication topology grid displays all replication sessions in which the selected server is participating, whether it is a publisher, distributor, or subscriber. For merge and snapshot replication, SQLdm must monitor the distributor. For transactional replication, we recommend that you monitor the distributor, publisher, and subscriber for a complete set of metrics. Note that SQLdm displays a subset of data for each monitored participant. Right-click a row or session to navigate to the participant for more information.</p>
+        <p class="DefinitionListTerm">Detailed Overview</p>
+        <p class="DefinitionListBody">The Detailed Overview tab provides an overview of transactional replication specific to the publisher, distributor, and subscriber. In addition, SQLdm also displays an overview of the selected merge replication session gathered from the distributor.</p>
+        <ol MadCap:continue="true">
+            <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                            <p class="TableHeadRow">TIP</p>
+                        </td>
+                        <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                            <p class="TableText">Times displayed in the subscriber grid are local to the subscriber.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ol>
+        <p class="DefinitionListTerm">Non-Subscribed Queue</p>
+        <p class="DefinitionListBody">The Non-Subscribed Queue tab contains  the Entry Date, Subscription Database, Wait Time, and Command contained in the queue of active non-subscribed commands. Once a command exceeds the retention period, SQLdm switches the command to inactive and no longer displays the detail.</p>
+        <h2 class="Heading2">Access the Replication view</h2>
+        <p class="Body">You can open the Replication view of the SQLdm Services tab by selecting the appropriate SQL&#160;Server instance, and then clicking <span class="GUI_Item">Services &gt; Replication</span>.</p>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="501" MadCap:lastWidth="762">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Pause alerts and decrease collection in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Pause alerts and decrease collection</h1>
+        <p class="Body">
+            <MadCap:keyword term="Maintenance Mode" />Maintenance Mode allows you to temporarily stop alert generation and the collection of some performance metrics for the time period that your SQL&#160;Server instance is offline. Using Maintenance Mode allows you to decrease alert notification spam and the collection of unnecessary data.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">It is possible to enable or disable maintenance mode on several SQL Server instances, see <a href="Schedule Maintenance Mode.htm">About Mass Maintenance Mode</a>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Uses for putting a SQL Server instance into Maintenance Mode</h2>
+        <p class="Body">
+            <MadCap:keyword term="Maintenance Mode:why">
+            </MadCap:keyword>Enable Maintenance Mode before you begin any regularly scheduled maintenance or testing on a monitored SQL&#160;Server instance. You can also enable Maintenance Mode when you need to bring a SQL&#160;Server instance offline for unplanned diagnostics.</p>
+        <p class="Body">Be aware that the total number of monitored SQL&#160;Server instances allowed by your license includes monitored instances that are in Maintenance Mode.</p>
+        <h2 class="Heading2">Bring the SQL&#160;Server back online in SQLdm</h2>
+        <p class="Body">
+            <MadCap:keyword term="Maintenance Mode:disable" />Disabling Maintenance Mode allows SQLdm to resume performance statistics collection and alert generation for the selected SQL&#160;Server instance. Before you enable Maintenance Mode, make sure you complete all maintenance and testing on the target SQL&#160;Server instance.</p>
+        <p class="Body">If you have a SQL&#160;Server instance in Maintenance Mode and are ready to bring it back online in SQLdm, click <span class="GUI_Item">Maintenance Mode</span> on the Server Overview tab.</p>
+    </body>
+</html>

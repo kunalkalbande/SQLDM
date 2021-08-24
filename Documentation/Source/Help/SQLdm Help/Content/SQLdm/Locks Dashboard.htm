@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="633" MadCap:lastWidth="1025">
+    <head>
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Lock Waits panel in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Lock Waits panel</h1>
+        <p class="Body">
+            <MadCap:keyword term="Lock Waits:Dashboard panel;Dashboard:Lock Waits" />The Lock Waits panel tracks the total number waits caused when a task is waiting to acquire a lock on your monitored SQL Server. Unexpected spikes in the number of lock waits may warn you about the beginning of a serious performance issue. Chronically high lock wait numbers may indicate the need for server maintenance, query tuning, or index updates to better handle the ongoing workload.  For additional information, see <a href="Analyze Locked Sessions.htm" target="_self">how to analyze locked sessions</a>.</p>
+        <h2 class="Heading2"><a name="LocksNumber"></a>Lock Waits chart</h2>
+        <p class="Body">The Lock Waits chart displays the number of waits and the request type occurring.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Metric</th>
+                    <th class="HeadD-Column2-Header1">Why it is important</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Database</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the time waiting for a database lock.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Extent </p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the time waiting for an extent lock.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">File <em>SQL&#160;Server 2005 and above only</em></p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the time waiting for a file lock.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">HoBT <em>SQL&#160;Server 2005 and above only</em></p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the time waiting for a Heap or BTree lock.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Key <em>SQL&#160;Server 2000 only</em></p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the time waiting for a key lock.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Key/RID <em>SQL&#160;Server 2005 and above only</em></p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the time waiting for a key or RID lock.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Metadata <em>SQL&#160;Server 2005 and above only</em></p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the time waiting for a metadata lock.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Object <em>SQL&#160;Server 2005 and above only</em></p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the time waiting for a object lock.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Page</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the time waiting for a page lock.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">RID <em>SQL&#160;Server 2000 only</em></p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the time waiting for a relative identifier (RID) lock.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Table <em>SQL&#160;Server 2000 only</em></p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Indicates the time waiting for a table lock.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

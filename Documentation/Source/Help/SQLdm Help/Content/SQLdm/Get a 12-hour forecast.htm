@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="427" MadCap:lastWidth="744">
+    <head>
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Get a 12-hour forecast of Idera SQLdm alert activity</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Get a 12-hour forecast of alert activity</h1>
+        <p class="Body">
+            <MadCap:keyword term="Alert Forecasting" />Using current and historical data, SQLdm uses statistical analysis to estimate the likelihood that an event generates a particular alert. This forecasting lets you proactively focus on certain areas in your SQL&#160;Server environment and prevent problems from occurring.</p>
+        <p class="Body">SQLdm begins building forecasting models once you receive three critical or warning alerts for a given metric.</p>
+        <p class="Body">The 12 Hour Forecast is separated into two-hour segments. Each two-hour segment displays the chance of an alert occurrence. Click the associated percentage chance to see the <a href="Alert Forecast Details.htm" target="_self">alert forecast details</a>. This window displays the alerts that may occur over the two-hour time segment.</p>
+        <h2 class="Heading2">12 Hour Forecast icons</h2>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');" cellspacing="0">
+            <col style="width: 30px;" class="Column-Column1" />
+            <col class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Icon</th>
+                    <th class="HeadD-Column2-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="text-align: center;">
+                        <img src="../Resources/Images/OK.png" style="width: 19px;height: 19px;" />
+                        <p>&#160;</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText"><b>OK</b> - There is a low chance (less than 20%) that a warning or critical alert occurs in the two-hour time segment leading to the forecast time.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="text-align: center;">
+                        <img src="../Resources/Images/Warning.png" style="width: 20px;height: 18px;" />
+                        <p>&#160;</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText"><b>Warning</b> - There is a moderate likelihood (less than 50%) that a critical alert occurs, or a high likelihood (50% or higher) that a warning alert occurs, in the two-hour time segment leading to the forecast time.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1" style="text-align: center;">
+                        <img src="../Resources/Images/critical.png" style="width: 20px;height: 20px;" />
+                        <p class="TableHeadRow">&#160;</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText"><b>Critical</b> - There is a very high likelihood (50% or higher) that a critical alert occurs in the two-hour time segment leading to the forecast time.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

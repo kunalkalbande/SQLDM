@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="8" MadCap:lastHeight="1256" MadCap:lastWidth="545">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Monitor query performance in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Monitor query performance</h1>
+        <p class="Body">
+            <MadCap:keyword term="Queries" />Query Monitor is a useful SQL&#160;Server tool that allows you to log and analyze queries. Query Monitor allows you to establish criteria for the queries you wish to capture, and filter those results to analyze the queries returned. Use the Query Monitor when diagnosing poor query performance on your SQL&#160;Server instance. You should monitor queries if your SQL&#160;Server instance performance is poor, as a way to diagnose potential query issues.</p>
+        <h2 class="Heading2">Access the Queries tab</h2>
+        <p class="Body">SQLdm provides two paths to access the Queries tab. The first access path is by clicking the appropriate monitored SQL&#160;Server instance, and then clicking the Queries tab. The second access path is by expanding the Servers tree, and then clicking <span class="GUI_Item">Queries </span>for the appropriate instance.</p>
+        <h2 class="Heading2">Use the Queries tab</h2>
+        <p class="Body">The Queries tab lists each event that occurs in the Query Monitor. For each event, among other details, SQLdm lists the SQL text associated, start and end times, application, user information, and client computer associated with the event. Fields with SQL&#160;text hold 255 characters of text. To view the full SQL&#160;text, right-click the field and then select the appropriate option.</p>
+        <p class="Body">SQLdm automatically assigns a name to each of your queries starting with Query 1. The name provides context to your query when switching from <a href="View query monitor signature mode.htm" target="_self">signature mode</a>, <a href="View query monitor statement mode.htm" target="_self">statement mode</a>, and <a href="View query history.htm" target="_self">query history</a> views.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Query names are not persistent. The names are different on different desktops and in different sessions on the same desktop.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">The <span class="GUI_Item">Event Occurrences</span> chart at the bottom of the view displays the number of T-SQL statements, stored procedures, and SQL batches captured in the trace. </p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Right-click any column heading to pick additional columns to display.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">The Sigma (Σ) character indicates that the data in this row is at least partially composed of aggregated data. This means that the data is condensed into a day-length summary and some precision about the individual statements, client computers, and users is suppressed. Rows on this view with the Sigma character may include a mix of aggregated and non-aggregated data.</p>
+        <h2 class="Heading2">Understand the difference between Signature Mode and Statement Mode</h2>
+        <p class="Body">Signature and Statement modes are two different ways to group and view your queries. You can toggle between each mode to see the differences.</p>
+        <p class="DefinitionListTerm">Signature Mode (default Queries view)</p>
+        <p class="DefinitionListBody">All active queries are automatically reduced to the signatures (parameters are stripped) and grouped accordingly.</p>
+        <p class="DefinitionListTerm">Statement Mode</p>
+        <p class="DefinitionListBodyLast">All queries are presented exactly as they are collected by the Query Monitor Trace.</p>
+        <h2 class="Heading2">Use Filter Settings to customize your view</h2>
+        <p class="Body">Use the Filters section of the Signature Mode, Statement Mode, and Query History views to pick the time range, what to include in the table, and even specific applications, client computers, databases, SQL text, and users to view. </p>
+        <p class="Body">You can access advanced filters by clicking the <span class="GUI_Item">Filter</span> button. These options include the <a href="Configure Advanced Query Monitor Options.htm" target="_self">ability to filter out specific applications, databases and SQL text from your query collection</a>.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">The <b>Exclude Currently Running Queries</b> filter in the Signature Mode and Statement Mode views is enabled by default. If you would like to include data with null values in these views, un-check the <b>Exclude Currently Running Queries</b> check box in the Filters section.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">&#160;</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">You can hide and unhide the Filter and List areas of the Query Monitor views in the ribbon.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="4" MadCap:lastHeight="383" MadCap:lastWidth="914">
+    <head><title>Database Status alert in Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">Database Status alert </h1>
+        <p class="Body">The Database Status alert indicates that the <a href="../Metrics/Database Status.htm">Database Status metric</a> reached an alert status. This status results when the database:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Is inaccessible</li>
+            <li class="Bullet">Has an issue with loading, crashed while loading, has not recovered, in recovery, suspect, or in emergency mode</li>
+            <li class="Bullet">Contains databases sizes in the error threshold</li>
+            <li class="Bullet">Contains logs with sizes in the error threshold</li>
+            <li class="Bullet">Contains tables with reorganization needs in the error threshold</li>
+            <li class="BulletLast">Is transitioning, loading, being check pointed, set as DBO use only, or in single-user mode</li>
+        </ul>
+        <p class="Body">This alert is raised based on the diagnostic data and database metrics collection intervals specified in Server Properties. For more information, see <a href="../Set general server options.htm" target="_self">Set general server options</a>.</p>
+        <h2 class="Heading2">Reduce the number of database status issues</h2>
+        <p class="Body">Navigate to the <span class="GUI_Item">Summary </span>view on the <span class="GUI_Item">Database </span>tab of the SQLdm Console. Look for databases that have a critical or warning status and review what the issue is (the problem  is highlighted either in yellow or red). You may need to rebuild an index, increase allocated file size, or turn on the autogrowth feature for your database or logs.</p>
+    </body>
+</html>

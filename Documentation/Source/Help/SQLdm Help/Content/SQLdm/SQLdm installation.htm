@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="1386" MadCap:lastWidth="558">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Install Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">How to install SQLdm</h1>
+        <p class="Body">
+            <MadCap:keyword term="Install:instructions;Install:Idera News Feed;Install:SQLdm Mobile;SQLdm Mobile:install;Idera News Feed:install" />This procedure guides you through the installation of SQL diagnostic manager.</p>
+        <h2 class="Heading2">Start your install</h2>
+        <p class="Body">You can install SQLdm on any computer that meets or exceeds the <a href="SQLdm requirements.htm">product requirements</a>.</p>
+        <p class="StepIntro">To start installing SQLdm:</p>
+        <ol>
+            <li class="NumberedList">Log on with an administrator account to the computer on which you want to install SQLdm.</li>
+            <li class="NumberedList">Run <span class="Code">Setup.exe</span> in the root of the installation kit.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">SQL diagnostic manager</span> on the<span class="GUI_Item"> Quick Start</span> window.</li>
+            <li class="NumberedList">On the <span class="GUI_Item">Welcome</span> window of the setup program, click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Review the license agreement. To accept this license agreement, click <span class="GUI_Item">I accept the terms in the license agreement</span>, and then click <span class="GUI_Item">Next</span>.</li>
+        </ol>
+        <h2 class="Heading2">Select an installation location and user access</h2>
+        <p class="Body">You can use the default install location or specify a different path. For your first install, we recommend using the default location. By default, the Management Service is also installed in the same location.</p>
+        <p class="Body">Choose whether you want any user or only the current user to access this application, and then click <span class="GUI_Item">Next</span>.</p>
+        <h2 class="Heading2">Begin configuring your install</h2>
+        <p class="Body">For your first install, we recommend using the <span class="GUI_Item">Typical </span>setup type. This setup type installs and configures all required SQLdm components so you can immediately begin monitoring your SQL Server environment. </p>
+        <p class="Body">By default, the setup program installs the Management Service, Collection Service, and Predictive Service on the local computer where you are running the setup program.</p>
+        <h2 class="Heading2">Select a SQL Server instance to use for the Repository database</h2>
+        <p class="Body">The SQLdm Repository is where the collected data, alert information, and alert configuration settings are stored.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">SQLdm 8.6 and later requires Microsoft SQL&#160;Server 2005 running on the computer that hosts the SQLdm Repository database for all installations.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="StepIntro">To specify the SQL Server instance to install the SQLdm Repository on:</p>
+        <ol>
+            <li class="NumberedList">	Click <span class="GUI_Item">Browse</span> to select the SQL Server instance you want to use. The SQL Server window lists SQL Server instances provided by your domain controller. <span class="If_Then_Statement">If you do not see your SQL Server instance in the list</span>, type the host name and instance in the space provided.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">	If your SQL Server environment uses SQL Server Authentication</span>, select the check box and click <span class="GUI_Item">Change</span> to enter SQL Server credentials. By default, SQLdm uses your Windows credentials when connecting to the Repository.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Next</span>.</li>
+        </ol>
+        <h2 class="Heading2">Select a Windows user account to use for the service account</h2>
+        <p class="Body">SQLdm uses the service account to communicate between the monitored SQL Server instance and the SQLdm Repository.</p>
+        <p class="StepIntro">To specify a service account:</p>
+        <ol>
+            <li class="NumberedList">Type appropriate credentials in the provided fields.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Next</span>. SQLdm verifies the connection before continuing.</li>
+        </ol>
+        <h2 class="Heading2">Complete the install</h2>
+        <p class="Body">Click <span class="GUI_Item">Install</span> to indicate that you are ready to complete your install with the configurations you specified.</p>
+        <h2 class="Heading2">Decide whether you want to deploy SQLdm Mobile</h2>
+        <p class="Body">SQLdm Mobile includes the Idera Newsfeed and several dashboard views that define your server health and expose critical alerts. You can access the SQLdm Mobile Web application from most smart phones and mobile devices.</p>
+        <p class="Body">The Idera Newsfeed is a revolutionary new way for DBAs and managers to collaborate, share knowledge, and keep close tabs on your most critical SQL Server issues.  With the Idera Newsfeed, you can quickly share information to stay informed, be more productive and shorten the time to problem resolution.</p>
+        <p class="Body">For more information, review the SQLdm Mobile <a href="SQLdm Mobile Architecture Components.htm">architecture and components</a>, as well as its <a href="SQLdm Mobile Requirements.htm">requirements</a>.</p>
+    </body>
+</html>

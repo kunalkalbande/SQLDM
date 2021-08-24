@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="864" MadCap:lastWidth="558">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Perform a distributed upgrade of IDera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Perform a distributed upgrade</h1>
+        <p class="Body">Use the following procedures to upgrade a distributed SQLdm 8.6 environment.</p>
+        <h2 class="Heading2">Upgrade your SQLdm Repository and/or SQLdm Services</h2>
+        <p class="Body">Install the SQLdm Repository database on a SQL Server instance that <a href="SQLdm requirements.htm" target="_self">meets the product requirements</a>. You do not need to install your Repository in the same domain as the SQLdm Console, but a two-way trust between the target domains must exist. You can install the SQLdm services on the Repository computer (recommended) or a different computer.</p>
+        <table style="caption-side: top;border-left-style: solid;border-left-width: 1px;border-left-color: #a1b5b0;border-right-style: solid;border-right-width: 1px;border-right-color: #a1b5b0;border-top-style: solid;border-top-width: 1px;border-top-color: #a1b5b0;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #a1b5b0;border-collapse: collapse;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col />
+            <col />
+            <tr>
+                <td style="background-color: #ff4500;" class="TableStyle_Tip_Style_Body_0_0_RowSep_ColSep">
+                    <p class="TableHeadRow"><span style="color: #ffffff;">TIP</span>
+                    </p>
+                </td>
+                <td class="TableStyle_Tip_Style_Body_0_1_RowSep_ColEnd">
+                    <p class="TableText">SQLdm 8.6 and later requires Microsoft SQL&#160;Server 2005 running on the computer that hosts the SQLdm Repository database for all installations.</p>
+                </td>
+            </tr>
+        </table>
+        <p class="StepIntro">To upgrade the SQLdm Repository and/or Services:</p>
+        <ol>
+            <li class="NumberedList">Use an administrator account to log on to the computer on which you want to upgrade the SQLdm Repository database and/or Services.</li>
+            <li class="NumberedList">Run <span class="Code">Setup.exe</span> in the root of the installation kit.</li>
+            <li class="NumberedList">On the Idera SQL&#160;diagnostic manager Quick Start window, click <span class="GUI_Item">SQL diagnostic manager</span> under the Install heading.</li>
+            <li class="NumberedList">Read the Upgrade Wizard Welcome window, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Upgrade your Repository by verifying the authentication method and connection credentials, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Upgrade your Service account by specifying the account credentials that you want the SQLdm services to use to connect to the SQLdm Repository and the monitored SQL Server instances, and then click <span class="GUI_Item">Next</span>. This account must belong to the sysadmin role on the Repository database and each instance you plan to monitor.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Upgrade</span> to begin your upgrade.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Finish</span> to exit the upgrade program.</li>
+        </ol>
+        <h2 class="Heading2">Upgrade your SQLdm Console</h2>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">You must have a full installation of SQLdm already running in your environment before attempting to upgrade the SQLdm desktop client console.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="StepIntro">To upgrade the SQLdm Console:</p>
+        <ol>
+            <li class="NumberedList">Use an administrator account to log on to the computer on which you want to upgrade the SQLdm Console.</li>
+            <li class="NumberedList">Navigate to the location where the SQLdm Console file resides in the distribution media.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you use an x64 operating system</span>, run <span class="Code">SQLDiagnosticManager-x64_c.exe</span>.<span class="If_Then_Statement"> If you use an x86 OS</span>, run <span class="Code">SQLDiagnosticManager_c.exe</span>.</li>
+            <li class="NumberedList">On the Welcome window of the setup program, click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Upgrade</span> to begin your upgrade.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Finish</span> to exit the upgrade program.</li>
+        </ol>
+    </body>
+</html>

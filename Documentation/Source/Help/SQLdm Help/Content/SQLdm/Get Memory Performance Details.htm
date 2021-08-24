@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="4" MadCap:lastHeight="939" MadCap:lastWidth="869">
+    <head><title>Get memory performance details in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Get memory performance details</h1>
+        <p class="Body">
+            <MadCap:keyword term="Resources:memory;virtual;virtual machine;virtualization;VM;VMware;ESX;host">
+            </MadCap:keyword>The Memory tab displays the dynamic memory currently in use by SQL&#160;Server as well as how that memory satisfies the requirements of SQL&#160;Server components. For example, you can see what percentage of the total allocated memory is currently used by the procedure cache. You can control the amount of memory SQL&#160;Server uses by either setting a fixed memory value or setting minimum and maximum memory usage values.</p>
+        <p class="Body">Static structures, like procedure headers, use the amount of memory derived from subtracting the sum of the graphed sections displayed on the Memory tab from the total allocated memory, also provided on the Memory tab.</p>
+        <h2 class="Heading2">Access the Memory view</h2>
+        <p class="Body">You can open the Memory view of the SQLdm Resources tab by selecting the appropriate SQL&#160;Server instance, and then clicking <span class="GUI_Item">Resources &gt; Memory</span>.</p>
+        <h2 class="Heading2">Memory tab charts</h2>
+        <p class="Body">The following <a href="Charts.htm" target="_self">charts</a> are available on the Memory tab:</p>
+        <p class="DefinitionListTerm">SQL&#160;Server Memory Usage</p>
+        <p class="DefinitionListBody">Displays the SQL Memory Usage by what is used by SQL Server compared to what is allocated  and the total used.</p>
+        <p class="DefinitionListTerm">VM/Host&#160;Memory Usage</p>
+        <p class="DefinitionListBody">Displays the memory usage by your virtual machine and host as a percentage of total memory available.</p>
+        <p class="DefinitionListTerm">Paging</p>
+        <p class="DefinitionListBody">Displays the memory pages per second.</p>
+        <p class="DefinitionListTerm">SQL Server Memory Areas</p>
+        <p class="DefinitionListBody">Displays the memory usage of the Buffer Cache, Procedure Cache, Connections, Locks, Database, and Optimizer.</p>
+        <p class="DefinitionListTerm">VM Memory Areas</p>
+        <p class="DefinitionListBody">Displays the amount of memory allocated to and used by SQL&#160;Server to the total memory consumed on this virtual machine.</p>
+        <p class="DefinitionListTerm">Host Memory Areas</p>
+        <p class="DefinitionListBody">Displays the amount of memory allocated to and used by SQL&#160;Server to the total memory consumed on this host server.</p>
+        <p class="DefinitionListTerm">Cache Hit Ratios</p>
+        <p class="DefinitionListBody">Displays the hit ratios of the Buffer and Procedure cache.</p>
+        <p class="DefinitionListTerm">Buffer Cache</p>
+        <p class="DefinitionListBody">Displays the buffer cache used by Free and Active pages.</p>
+        <p class="DefinitionListTerm">Procedure Cache</p>
+        <p class="DefinitionListBody">Provides the amount of allocated memory used by dynamic and static stored procedures. Included in this value is the memory used by server side cursors and plans. From the total memory allocated to SQL&#160;Server, the pinned tables, open objects, connections, locks, and free buffer values are subtracted. The remainder is divided between procedure and data cache.</p>
+        <p class="DefinitionListTerm">Page Life Expectancy (sec)</p>
+        <p class="DefinitionListBody">Provides the time in seconds that a page remains in the cache or buffer pool.</p>
+        <h2 class="Heading2">Understanding your chart data and refresh interval</h2>
+        <p class="Body">SQLdm charts provide data whether collected real time or as part of a scheduled collection event. For additional information about how SQLdm displays your chart data, see <a href="Charts.htm" target="_self">Charts</a>. </p>
+    </body>
+</html>

@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="987" MadCap:lastWidth="794">
+    <head>
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Disk panel in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Disk panel</h1>
+        <p class="Body">
+            <MadCap:keyword term="Disk:Dashboard panel;Dashboard:Disk" />The Disk panel tracks the performance of the disk used by your monitored SQL Server. Unexpected spikes in latency, throughput, or SQL&#160;Server IO may warn you about the beginning of a serious performance issue. Chronically high disk metrics can signify an insufficient IO subsystem, or excessive or inefficient IO activity on the server. Use the <span class="GUI_Item">Disk </span>view on the <span class="GUI_Item">Resources </span>tab to track several key disk statistics over a period of time.  For additional information, see <a href="Get Disk Performance Details.htm" target="_self">how to get the disk performance details</a>.</p>
+        <h2 class="Heading2"><a name="DiskLatency"></a>Latency chart</h2>
+        <p class="Body">The <span class="GUI_Item">Disk Latency</span> chart plots the average time (in milliseconds)&#160;required to complete disk reads and writes, tracking the disk IO speed over time.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Metric</th>
+                    <th class="HeadD-Column2-Header1">Why it is important</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Average Disk ms/Read  </p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Higher disk read times impact the ability of SQL queries to retrieve data from your databases.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Average Disk ms/Write  </p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Higher disk write times impact the ability of SQL queries to update your databases, from simple text column modifications to dropping tables.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2"><a name="DiskThroughput"></a>Throughput chart</h2>
+        <p class="Body">The <span class="GUI_Item">Disk Throughput </span>chart plots the number of disk reads and writes over time.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Metric</th>
+                    <th class="HeadD-Column2-Header1">Why it is important</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Disk reads/sec
+</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">A high number of disk reads may indicate that the SQL&#160;Server is executing poorly-performing queries.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Disk writes/sec 
+</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">A high number of disk writes may indicate that the SQL&#160;Server is running low on <a href="Memory Dashboard.htm">allocated memory</a>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2"><a name="DiskPhysicalIO"></a>SQL&#160;Server Physical I/O&#160;chart</h2>
+        <p class="Body">The <span class="GUI_Item">SQL&#160;Server Physical I/O</span>&#160;chart breaks down the SQL Server throughput into its key component pieces, giving you a detailed view of how well SQL&#160;Server is processing your data requests and updates.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Metric</th>
+                    <th class="HeadD-Column2-Header1">Why it is important</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Checkpoint writes</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">A&#160;high number of checkpoint writes may indicate that pages are not written to disk quickly enough for optimal performance.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Lazy writer writes</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">A high number of lazy writer writes may indicate that the SQL&#160;Server is running low on <a href="Memory Dashboard.htm">allocated memory</a>.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1"><a href="Metrics/Page Reads.htm">Page Reads</a>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">A high number of page reads may indicate that the SQL&#160;Server is executing inefficient queries or that you should optimize the database indexes.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1"><a href="Metrics/Page Writes.htm">Page Writes</a>
+                    </td>
+                    <td class="BodyD-Column2-Body1">A high number of page writes may indicate that the SQL&#160;Server is executing inefficient queries or that you should optimize the database indexes.</td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Read ahead reads</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">A high number of read ahead reads may indicate that you should tune your query execution plan or that you should defragment the disk.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Available alerts</h2>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet"><a href="Alerts/Average Disk Milliseconds Per Read Alert.htm" target="_self">Average Disk Milliseconds Per Read Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Average Disk Milliseconds Per Write Alert.htm" target="_self">Average Disk Milliseconds Per Write Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Disk Reads Per Second Alert.htm" target="_self">Disk Reads (Per Second)&#160;Alert</a>
+            </li>
+            <li class="BulletLast"><a href="Alerts/Disk Writes Per Second Alert.htm" target="_self">Disk Writes (Per Second)&#160;Alert</a>
+            </li>
+        </ul>
+    </body>
+</html>

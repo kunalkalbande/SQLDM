@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="667" MadCap:lastWidth="729">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>View Idera SQLdm query history</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">View the query history</h1>
+        <p class="Body">Query History allows you to track the performance of a query over time. To access the Query History view, select the query you want to see on the query <a href="View query monitor statement mode.htm">statement mode</a> or <a href="View query monitor signature mode.htm">signature mode</a> view in the graph. You can also access the Query History view by right-clicking a session on the Session Details view or a Statement on the Query Waits view and selecting Show Query History.</p>
+        <h2 class="Heading2">Access the Query History view</h2>
+        <p class="Body">You can open the Query History view of the SQLdm Queries tab by selecting the appropriate SQL&#160;Server instance, and then clicking <span class="GUI_Item">Queries &gt; Query History</span>.</p>
+        <h2 class="Heading2">View Query History</h2>
+        <ol>
+            <li class="NumberedList">Use the drop-down menu on each chart to view the history of each of the metrics associated with the query. </li>
+            <li class="NumberedList">Click <span class="GUI_Item">View SQL&#160;Text</span> to see the associated query text.</li>
+            <li class="NumberedList"> Click <span class="GUI_Item">Keep Detailed History</span> and SQLdm keeps a detailed history of the query going forward.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Aggregate History</span> to keep an aggregated history for the selected query.</li>
+        </ol>
+        <p class="Body">Use Query filters to narrow the results to only those that most interest you. Do this by selecting the data and time range, the application, user, database, workstation and even the SQL&#160;text you want to include or exclude from your results.</p>
+        <p class="Body">Event Occurrences is a list of each occurrence of the query and the associated statistics, such as the duration, CPU time, reads, writes, and associated SQL&#160;text. Click the Maximize window icon to view a larger version of this list.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">If Query Monitor is disabled but Activity Monitor is enabled, SQL statements appearing in the Event Occurrences grid come from the Blocking Session collector. The collector only populates the following fields: Occurrence, SQL text, Event Type, and Deadlocks. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Sigma (Σ) character</h2>
+        <p class="Body">The Sigma character indicates that the data in this row is aggregated. This means that the data is condensed into a day-length summary and some precision about the individual statements, client computers, and users is suppressed.</p>
+        <h2 class="Heading2">Understanding cell colors</h2>
+        <p class="Body">Red in the column indicates that the data in that row represents 20 percent or more of the total data displayed in the list, while yellow indicates that the data in the row represents five percent or more of the total data displayed in the list.</p>
+    </body>
+</html>

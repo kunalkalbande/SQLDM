@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="4" MadCap:lastHeight="391" MadCap:lastWidth="850">
+    <head><title>SQL Server Batches Received (Per Second) metric in Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">SQL Server Batches Received (Per Second)</h1>
+        <p class="Body"> The SQL&#160;Server Batches Received (Per Second) metric counts the number of T-SQL batches that SQL Server receives for execution every second. This value is measured by reading ‘batch requests/sec’ from <code>sysperfinfo</code>.   While this counter has no good or bad value, each of these T-SQL batches must: </p>
+        <ol>
+            <li class="NumberedList">Be transmitted to the server using the network. </li>
+            <li class="NumberedList">Be parsed by SQL Server to check syntax. 
+</li>
+            <li class="NumberedList">Include a compiled execution plan.
+</li>
+            <li class="NumberedList">Include an executed execution plan. 
+</li>
+            <li class="NumberedList">	Transmit the results back to the client computer or Web. 
+</li>
+        </ol>
+        <p class="Body">You must minimize the number and reduce the impact of these T-SQL batches as much as possible by: 
+</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Reducing the size and complexity of the T-SQL by creating a stored procedure containing the commands you want executed, and then simply calling it in the T-SQL batch. This action reduces the size and complexity of the T-SQL batch, resulting in less network traffic and CPU time consumed producing a complex execution plan.</li>
+            <li class="BulletLast">Grouping as many calling T-SQL commands into a single network batch after you move most of the T-SQL code into stored procedures. Redesign the application to call whatever stored procedures you need to complete an application function all from within one batch rather than sending each EXECUTE statement to execute separately in its own batch. This action dramatically reduces network queues as you make better use of the default network packet size of 4 KB.
+</li>
+        </ul>
+    </body>
+</html>

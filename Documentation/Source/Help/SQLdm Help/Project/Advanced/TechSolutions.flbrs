@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Migrate or Recover Your Installation"
+    Link="/Content/SQLdm/Migrating or Recovering Your Installation.htm">
+    <TocEntry
+      Title="System Diagnostics"
+      Link="/Content/SQLdm/System Diagnostics.htm" />
+    <TocEntry
+      Title="Choosing to migrate or recover SQLdm"
+      Link="/Content/SQLdm/Choosing to migrate or recover SQLdm.htm" />
+    <TocEntry
+      Title="Creating your migration or recovery plan"
+      Link="/Content/SQLdm/Creating your migration or recovery plan.htm" />
+    <TocEntry
+      Title="Recovering your SQLdm installation"
+      Link="/Content/SQLdm/Recovering your SQLdm installation.htm" />
+    <TocEntry
+      Title="Migrating your SQLdm installation"
+      Link="/Content/SQLdm/Migrating your SQLdm installation.htm" />
+    <TocEntry
+      Title="Migrating the SQLdm Repository only"
+      Link="/Content/SQLdm/Migrating the SQLdm Repository only.htm" />
+    <TocEntry
+      Title="Migrating the SQLdm Services only"
+      Link="/Content/SQLdm/Migrating the SQLdm Services only.htm" />
+  </TocEntry>
+  <TocEntry
+    Title="Deploy Idera News Feed in a Clustered Environment"
+    Link="/Content/SQLdm/Deploy INF in Clustered Environment.htm">
+    <TocEntry
+      Title="Windows Server 2003 clustered environment"
+      Link="/Content/SQLdm/Deploy INF Windows 2003 Cluster.htm" />
+    <TocEntry
+      Title="Windows Server 2008 clustered environment"
+      Link="/Content/SQLdm/Deploy INF Windows 2008 Cluster.htm" />
+  </TocEntry>
+  <TocEntry
+    Title="Deploy SQLdm in a Clustered Environment"
+    Link="/Content/SQLdm/Deploying SQLdm in a Clustered Environment.htm">
+    <TocEntry
+      Title="Windows Server 2003 clustered environment"
+      Link="/Content/SQLdm/Windows Server 2003 Clustered Environment.htm" />
+    <TocEntry
+      Title="Windows Server 2008 clustered environment"
+      Link="/Content/SQLdm/Windows Server 2008 Clustered Environment.htm" />
+    <TocEntry
+      Title="Configure alerts for important cluster events"
+      Link="/Content/SQLdm/Configure alerts for important cluster events.htm" />
+  </TocEntry>
+  <TocEntry
+    Title="SQLdm Default Alert ID"
+    Link="/Content/SQLdm/Alert ID.htm" />
+  <TocEntry
+    Title="Troubleshooting WMI Connectivity Issues"
+    Link="/Content/SQLdm/WMI Connection Error.htm" />
+</CatapultToc>

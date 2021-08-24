@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="206" MadCap:lastWidth="838">
+    <head><title>Tempdb Contention (ms) alert in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Tempdb Contention (ms) alert</h1>
+        <p class="Body">The Tempdb Contention (ms) alert provides the latch wait time (in milliseconds) for tempdb allocation maps. The three tracked allocation page types are:</p>
+        <ul>
+            <li> Page free space (PFS)</li>
+            <li>Global allocation map (GAM)</li>
+            <li>Shared global allocation map (SGAM) </li>
+        </ul>
+        <p class="Body">Latch contention of this sort is usually an indication that you need to create more tempdb data files.  In some situation, using Trace Flag 1118 may also alleviate tempdb contention. This alert occurs only on instances running SQL&#160;Server 2005 or above. </p>
+    </body>
+</html>

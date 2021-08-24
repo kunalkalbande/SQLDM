@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="593" MadCap:lastWidth="571">
+    <head><title>Query Wait Statistics report in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Query Wait Statistics</h1>
+        <p class="Body">The Query Wait Statistics report lets you analyze different wait type categories on your SQL Server instance.  By analyzing these waits you can better determine where your biggest bottlenecks are occurring and what changes could have the greatest performance impact. You can select from various wait type categories such as Backup, Excluded, I/O, Lock, Memory, Non-I/O Page Latch, Non-Page Latch, Transaction Log, and Other.</p>
+        <p class="Body">This report requires that you enabled Query Monitoring in the SQLdm Console and have collected sufficient query data for the specified time period.</p>
+        <h2 class="Heading2">When to run this report</h2>
+        <p class="Body">You should run the Query Wait Statistics report on a routine basis, such as every week, to proactively identify potential performance issues that may be caused by queries.</p>
+        <h2 class="Heading2">How SQLdm calculates metric values on this report</h2>
+        <p class="Body">Most values on the Query Wait Statistics report correlate with the related SQL Server metric. However, some metric values represent averages over time. Likewise, a few metric values are based on performance algorithms that use multiple statistics to calculate a more accurate metric.</p>
+        <p class="Body">You can access our <a href="https://idera.secure.force.com/" target="_blank">Customer Service Portal</a> (https://idera.secure.force.com/) for more information about the algorithm used to calculate a specific metric.</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">How is the Worst Performing and Most Frequent Queries information gathered? - Solution #00000412</li>
+            <li class="Bullet">How does SQL diagnostic manager gather statistics from monitored SQL Servers? - Solution #00000055</li>
+            <li class="Bullet">How does SQL diagnostic manager calculate the reorganization percentage for database tables? - Solution #00000301</li>
+            <li class="BulletLast">What does the 'Memory Usage' metric in the Console and Reports represent? - Solution #00002237</li>
+        </ul>
+    </body>
+</html>

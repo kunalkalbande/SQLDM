@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="1191" MadCap:lastWidth="807">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Configure Idera SQLdm alert templates</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure alert templates</h1>
+        <p class="Body">
+            <MadCap:keyword term="Alert Templates" />The Alert Templates window allows you to configure generic alert settings that you can apply to servers and groups of servers in your organization. An event that causes a metric to no longer meet a condition or to exceed a threshold signals SQLdm to raise an alert. Alert templates save you time and help you to avoid mistakes by simplifying alert configuration across your environment. SQLdm displays the default template name and description in bold text.</p>
+        <p class="Body">Applying an alert template to a monitored server overwrites all existing alert configurations. You can make any custom changes to the specific server's alert configuration once the template is applied.  If you make a change to a template that is applied to a server, you must also reapply the template to that server using the <span class="GUI_Item">Apply To</span> button.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Servers are not permanently attached to an applied alert template. SQLdm does not propagate to the monitored server any changes made to the template unless explicitly applied.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">A template allows you to apply the same alert configurations to more than one SQL&#160;Server instance. It helps you avoid simple mistakes such as transposing characters or leaving out metric details that could occur when you manually configure each server. Alert templates also help you roll out changes by making the updates in a single location and then rolling out the changes across your environment. If you are more interested in ad hoc alert configuration, remember that you can use a template to return a server to default settings if you make any changes that you later want to revert.</p>
+        <h2 class="Heading2">Access the Alert Templates window</h2>
+        <p class="Body">You can open the Alert Templates window from the SQLdm Console menu bar by selecting <span class="GUI_Item">Tools &gt;&#160;Alert Configuration Templates</span>.</p>
+        <h2 class="Heading2">Create a new alert template</h2>
+        <p class="Body">Create a new alert template or edit the existing Default Template to suit your needs when alerting on your monitored SQL&#160;Server instances.</p>
+        <p class="StepIntro">To create a new alert template:</p>
+        <ol>
+            <li class="NumberedList">Select <span class="GUI_Item">Tools &gt; Alert Configuration Templates</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">New</span>.</li>
+            <li class="NumberedList">Type a unique name and description.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you want to create a new template based on an existing template</span>, select the name of the existing template from the <span class="GUI_Item">Copy from</span> list.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you want to use this new template as your default template</span>, check <span class="GUI_Item">Default Template</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK&#160;</span>when done.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you want to apply this new template to your existing SQL&#160;Server instances</span>, click <span class="GUI_Item">Yes </span>in the confirmation message box.<span class="If_Then_Statement"> If you do not want to apply your new template to any existing SQL&#160;Server instances at this point</span>, click <span class="GUI_Item">No</span>.</li>
+            <li class="NumberedList"><a href="Configure Default Alert Settings.htm">Configure your alert settings</a>, and then click <span class="GUI_Item">OK</span>.</li>
+        </ol>
+        <h2 class="Heading2">Change an existing template</h2>
+        <p class="Body">SQLdm allows you to make changes to an existing alert template. Select the template from the list, and then click <span class="GUI_Item">View/Edit</span>.  If necessary, you can delete any existing template except for the Default Template. To delete a template, select the template you want to delete, and then click <span class="GUI_Item">Delete</span>.</p>
+        <h2 class="Heading2">Apply template changes to a tag or server</h2>
+        <p class="Body">Once you create a new template or make changes to an existing template, you should apply the updates to your tags or servers. Select the template from the list, click <span class="GUI_Item">Apply To</span>, select a tag or servers to which you want to apply the alert template, and then click <span class="GUI_Item">OK</span>. Note that if the template you are making changes to is already associated with a tag or server, these changes are not automatically applied when you change the template. You must use the <span class="GUI_Item">Apply To</span> button and select the appropriate tag or servers.</p>
+        <h2 class="Heading2">Set a template to use as the default</h2>
+        <p class="Body">You can set an existing template as the default for SQLdm to apply to all new servers added without specifying an alert template. To designate a template as the default, click the template in the list, click <span class="GUI_Item">Set Default</span>, and then click <span class="GUI_Item">OK</span>. If there is only one template in your list, SQLdm uses this template as the default.</p>
+        <h2 class="Heading2">Apply alert templates to individual databases or disks within an instance</h2>
+        <p class="Body">SQLdm includes the ability to apply some alert thresholds on a per-database or per-disk basis within an instance. When you create an alert template and include one of these alerts, you cannot select which database or disk to apply the alert to because that is unknown in a template. For that reason, these alerts apply to all databases and disks within the instance to which it is applied.</p>
+    </body>
+</html>

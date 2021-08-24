@@ -1,0 +1,14 @@
+LIBRARY	"SQLdmCustomActions"
+EXPORTS
+	GetSQLdmServiceAccounts
+	ConfigureManagementService
+	ConfigureRestService
+	UninstallManagementService
+	UninstallRestService
+	ConfigureCollectionService
+	UninstallCollectionService
+	ConfigureAnalyticsService
+	UninstallAnalyticsService	
+	GetClusterInfo
+	ConfigureCollectionServiceStartup
+	ConfigureManagementServiceStartup

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="655" MadCap:lastWidth="1073">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Use application security to manage Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">Use application security to manage SQLdm</h1>
+        <p class="Body">
+            <MadCap:keyword term="Application Security" />
+            <MadCap:keyword term="Security;SQLdm Mobile:security" />In many SQL&#160;Server production environments, there are several different types of users, such as DBAs, Operators, Help Desk Users, Administrators, and Auditors to name a few. Within each of these groups, there may be several sub-groups of responsibility, such as a DBA that manages a certain set of high security databases that other DBAs do not. SQLdm allows you to designate the access both individual users and groups of users have within SQL diagnostic manager.</p>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col>
+            </col>
+            <col style="width: 626px;">
+            </col>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">When Application Security is enabled, the only users who have access to SQLdm are those who belong to the sysadmin role on the SQLdm Repository. All other users must be added to SQLdm.  <![CDATA[          ]]></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Enable Application Security</h2>
+        <p class="Body">Once you enable Application Security, you must add User Permissions for each user you want to give SQLdm access. Based on the assigned permissions, each user can only access a subset of monitored SQL&#160;Server instances. These security settings are enforced in the SQLdm Console, the Idera Newsfeed, and SQLdm Mobile.</p>
+        <p class="Body">Note that users who belong to the sysadmin role on the SQLdm Repository always have Administrator powers.</p>
+        <h2 class="Heading2">Available actions on the Application Security window</h2>
+        <p class="Body">The Application Security window lists each login name and the type of access the login has to SQLdm . The following actions are available on the Application Security window:</p>
+        <p class="DefinitionListTerm">Disable/Enable Application Security</p>
+        <p class="DefinitionListBody">You can toggle Application Security on and off using the associated icon. Disabling Application Security gives all SQLdm users full access to SQLdm.</p>
+        <p class="DefinitionListTerm">Add SQLdm Permissions</p>
+        <p class="DefinitionListBody">You can open the Add SQLdm Permissions wizard by clicking the <span class="GUI_Item">Add</span> button on the Application Security window. This wizard allows you to add SQL&#160;Server Logins, Windows Users and Group accounts and assign them SQLdm view, modify, and administration privileges.</p>
+        <p class="DefinitionListTerm">Edit Login Permissions</p>
+        <p class="DefinitionListBody">Once you add SQLdm Permissions, the Edit Login Permissions window allows you to edit login permissions.</p>
+        <p class="DefinitionListTerm">Delete Login Permissions</p>
+        <p class="DefinitionListBody">Click the <span class="GUI_Item">Delete</span> button to remove the previously added login from SQLdm.</p>
+        <p class="DefinitionListTerm">Enable/Disable Permissions</p>
+        <p class="DefinitionListBody">You can toggle non-system, SQLdm login permissions by checking and un-checking the associated box in the <span class="GUI_Item">Enabled</span> column.</p>
+        <p class="DefinitionListTerm">Export SQLdm Permission Settings to Excel</p>
+        <p class="DefinitionListBody">You can export all your SQLdm Permission settings to Microsoft Excel by right-clicking any user in on the Application Security window and selecting<span class="GUI_Item"> Export to Excel</span>.</p>
+    </body>
+</html>

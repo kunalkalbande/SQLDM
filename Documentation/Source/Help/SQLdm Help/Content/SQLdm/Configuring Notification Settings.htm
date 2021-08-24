@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="4" MadCap:lastHeight="1397" MadCap:lastWidth="859">
+    <head><title>Configure Idera SQLdm notification settings</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure notification settings</h1>
+        <p class="Body">The Notifications tab of the Console Options window allows you to configure when and how the SQLdm Console displays alert notifications. When you select an option to show notifications, SQLdm displays a pop-up notification in your task bar each time it reaches a threshold. </p>
+        <p class="Body">To see an example of a console alert, click <span class="GUI_Item">Preview</span>, and the alert pop-up appears as shown in the following image.</p>
+        <p class="Image">
+            <img src="../Resources/Images/Console Alert.png" style="width: 639px;height: 588px;" />
+        </p>
+        <h2 class="Heading2">Access the Console Options window Notifications tab</h2>
+        <p class="Body">You can open the Notifications tab of the Console Options window from the SQLdm Console by selecting <span class="GUI_Item">Tools &gt;&#160;Console Options</span>, and then selecting the Notifications tab.</p>
+        <h2 class="Heading2">Selecting visual notifications</h2>
+        <p class="Body">SQLdm allows you to select when and for which alert states you receive alert notifications. You can select from the following options regarding when you want SQLdm to display notifications:</p>
+        <p class="DefinitionListTerm">Always show console alert notifications</p>
+        <p class="DefinitionListBody">Provides alert notifications occur after every refresh.</p>
+        <p class="DefinitionListTerm">Only show console alert notifications when a state transition occurs</p>
+        <p class="DefinitionListBody">Limits the alert notifications you receive on refreshes to only those that change states .</p>
+        <p class="DefinitionListTerm">Never show console alert notifications</p>
+        <p class="DefinitionListBodyLast">Prevents the occurrence of all console notifications, but you continue to receive all email alerts. This setting is dependent upon your particular needs and you can modify the alert at any point. If you receive too many notifications, consider limiting notifications to occur only after an alert state transition. However, if you monitor a problematic SQL&#160;Server and want to know when a threshold is met, consider monitoring all alert states.</p>
+        <p class="Body">Select from the following options regarding which alert statuses trigger notifications:</p>
+        <p class="DefinitionListTerm">Show all alert statuses</p>
+        <p class="DefinitionListBody">Display notifications for all alert state changes.</p>
+        <p class="DefinitionListTerm">Show Warning and Critical alerts</p>
+        <p class="DefinitionListBody">Display notifications only when an event triggers a Warning or Critical alert.</p>
+        <p class="DefinitionListTerm">Show Critical alerts only</p>
+        <p class="DefinitionListBody">Display notifications only when an event triggers a Critical alert.</p>
+        <h2 class="Heading2">Selecting audible notifications</h2>
+        <p class="Body">The options in the When should SQLdm play sounds section allow you to toggle whether you want to hear an audible notification along with the alert in SQLdm whenever an event triggers a critical alert. The default <span class="GUI_Item">For all console notifications</span> option helps to let you know of any notification within SQLdm. Select <span class="GUI_Item">Only for critical notifications</span> and SQLdm plays the audible notification only when an event triggers a critical alert.</p>
+    </body>
+</html>

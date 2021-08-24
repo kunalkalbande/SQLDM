@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="345" MadCap:lastWidth="833">
+    <head><title>Disk Time (Percent) metric in Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">Disk Time (Percent)</h1>
+        <p class="Body">The Disk Time (Percent) metric calculates the percentage of elapsed time during which all the disks were busy servicing read and write requests on the SQL Server computer.   This counter is measured by subtracting the Disk Idle Time percent from 100.   The WMI object <span style="font-variant: small-caps;">Win32_PerfRawData_PerfDisk_PhysicalDisk</span> property <span style="font-variant: small-caps;">PercentIdleTime</span> is measured to get Disk Idle Time percent.  </p>
+        <h2 class="Heading2">Reduce disk time</h2>
+        <p class="Body">If this metric value regularly exceeds 75%, consider the following solutions:   <![CDATA[  ]]></p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet"> 
+Check OS Paging to make sure that paging from/to the swap file is not causing these IOs.
+	</li>
+            <li class="Bullet">Distribute the data and logs over more disks. 
+</li>
+            <li class="Bullet">Replace disks with faster disks.</li>
+            <li class="Bullet">Add more memory if the main cause is Disk Reads. 
+</li>
+            <li class="Bullet">Switch from a RAID 5 to RAID 10 solution if Disk Writes make up more than 20% of total disk access. </li>
+            <li class="Bullet">Move non-SQL Server applications to another computer. 
+</li>
+            <li class="BulletLast">If the computer is running multiple instances of SQL Server,  consider placing each instance on a separate computer. </li>
+        </ul>
+    </body>
+</html>

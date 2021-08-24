@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="328" MadCap:lastWidth="833">
+    <head><title>OS Processor Queue Length (Count) alert in Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1"> OS Processor Queue Length (Count) alert</h1>
+        <p class="Body">The OS&#160;Processor Queue Length (Count) alert indicates that the number of threads waiting on the processor reached an alert threshold. A consistently high processor queue length can indicate processor congestion. If your system has multiple processors, you may need to increase your alert thresholds.</p>
+        <h2 class="Heading2">Reduce your OS&#160;processor queue length</h2>
+        <p class="Body">If the Processor Queue Length is often high, consider making one of the following changes: 
+</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Upgrade to faster CPU(s).
+</li>
+            <li class="Bullet">Reduce the number of SQL re-compilations as they are CPU intensive. There are many reasons that an object such as a stored procedure is recompiled, and you can remove most of these reasons by careful coding. See the SQL re-compilations counter for ways to dramatically reduce recompiles. 
+</li>
+            <li class="Bullet">Stop unnecessary programs from running (such as the Print Spooler or activities such as the database server acting as either a BDC or PDC).</li>
+        </ul>
+    </body>
+</html>

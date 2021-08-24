@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="653" MadCap:lastWidth="571">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Top Servers report in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Top Servers</h1>
+        <p class="Body">The Top Servers report identifies your worst performing SQL Server instances based on the number of active alerts for the current  monitored instances, response time, CPU usage, memory usage, and disk usage. </p>
+        <p class="Body">You can further filter your monitored instances by wait time with waits that exceed a defined <b>Wait Threshold</b> in milliseconds.</p>
+        <p class="Body">Use this report to compile a list of instances that need immediate attention.</p>
+        <table class="TableStyle_Tip_Style" style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">A value of N/A indicates that the Collection service failed to collect data due to disabled OS metrics or a non-responsive WMI&#160;server. You must <a href="Enable OS Metrics Monitoring.htm">enable OS&#160;metrics monitoring</a> to receive results.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">When to run this report</h2>
+        <p class="Body">Run the Top Servers report daily to keep ahead of critical issues that can cause an unavailable instance.</p>
+        <h2 class="Heading2">How SQLdm calculates metric values on this report</h2>
+        <p class="Body">Most values on the Top Servers report correlate with the related SQL Server metric. However, some metric values represent averages over time. Likewise, a few metric values are based on performance algorithms that use multiple statistics to calculate a more accurate metric.</p>
+        <p class="Body">You can access our <a href="http://www.idera.com/support" target="_blank">Customer Service Portal</a> (www.idera.com/support) for more information about the algorithm used to calculate a specific metric.</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">How is the Worst Performing and Most Frequent Queries information gathered? - Solution #00000412</li>
+            <li class="Bullet">How does SQL diagnostic manager gather statistics from monitored SQL Servers? - Solution #00000055</li>
+            <li class="Bullet">How does SQL diagnostic manager calculate the reorganization percentage for database tables? - Solution #00000301</li>
+            <li class="BulletLast">What does the 'Memory Usage' metric in the Console and Reports represent? - Solution #00002237</li>
+        </ul>
+    </body>
+</html>

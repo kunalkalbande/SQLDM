@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="667" MadCap:lastWidth="833">
+    <head><title>View the Timeline for this SQL Server instance in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">View the Timeline for this instance</h1>
+        <p class="Body">
+            <MadCap:keyword term="timeline" />The Timeline view provides a chronological chart of events that affect your monitored SQL&#160;Server instance. The view details the point in time for this monitored SQL&#160;Server instance when an alert occurred, including custom counter alerts.</p>
+        <p class="Body">SQLdm displays as many alerts as can fit in the window and uses color codes based on the alert type as shown in the key below the menu. While a single Timeline point can represent more than one alert, the point itself appears in the color of the most critical alert for that time. </p>
+        <p class="Body">Use the filters to pinpoint the information you want to view. If the displayed time frame is not exactly what you want to view, select another period from the <span class="GUI_Item">Filter</span> drop-down list. Notice that the measurement at the bottom of the window changes from hours to days if you switch from a daily option to one over a period of days. Select <span class="GUI_Item">Pick a Day</span> to select a specific day using the calendar. </p>
+        <p class="Body">You can also use the time frame slider at the bottom of the view to zoom in or out by dragging the start and end bars to the desired position. Click the left or right arrows to move your set range to another period in the timeline. SQLdm retains the range size, but changes the results based on the dates within the range.</p>
+        <p class="Body">SQLdm displays alerts on the Timeline in your local time even if the monitored SQL&#160;Server instance where the event occurred is located in a different time zone.</p>
+        <h2 class="Heading2">Access the Timeline view</h2>
+        <p class="Body">You can open the Timeline view of the SQLdm Overview tab by selecting the appropriate SQL&#160;Server instance, and then clicking <span class="GUI_Item">Overview &gt; Timeline</span>.</p>
+        <h2 class="Heading2">Access more alert detail from the Timeline</h2>
+        <p class="DefinitionListTerm">View the total number of alerts at a specific time</p>
+        <p class="DefinitionListBody">When you hover your cursor over a point in the timeline, SQLdm displays the number of alerts for the time displayed in the timestamp.</p>
+        <p class="DefinitionListTerm">Zoom in for more detail</p>
+        <p class="DefinitionListBody">Your alert configuration may cause the Timeline view to appear cluttered in the default settings. Occasionally, a timeline point appears without an attached alert flag to let you know about the associated alert. If you experience these issues, use the time frame slider at the bottom of the view to zoom in for a clearer picture of a set of alerts. </p>
+        <p class="DefinitionListTerm">View alerts</p>
+        <p class="DefinitionListBody">While the Timeline provides your alerts in chronological format, you may want to view more detail about a single alert while using this view. To access the Alerts view from the Timeline, simply right-click the alert and select <span class="GUI_Item">View Alerts</span>. SQLdm displays the view you receive when you click the Alerts pane for a monitored SQL&#160;Server instance.</p>
+    </body>
+</html>

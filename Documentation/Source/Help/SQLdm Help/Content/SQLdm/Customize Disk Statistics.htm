@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="416" MadCap:lastWidth="833">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Customize Idera SQLdm disk statistics</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Customize disk statistics</h1>
+        <p class="Body">Disk drive statistics collection provides the ability for SQLdm to alert on disk drives and database space calculations. By default, SQLdm attempts to auto-discover local disk drives on monitored instances. In some environments, the auto-discovered list may be incomplete or incorrect. The Customize disk drive statistics collection window allows you to turn off the auto-discover feature and manually add the drives for drive statistics collection.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">SQLdm populates the disk drive list using operating system metrics from a WMI call even if your collection is configured to use OLE automation. SQLdm requires you to enter credentials to connect directly to WMI. This functionality lets SQLdm quickly discover mount points while the OLE&#160;automation does not provide such information.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Access the Disk Drives tab</h2>
+        <p class="Body">You can access the Disk Drives tab of the Monitor SQL&#160;Server Properties window by right-clicking the appropriate monitored SQL&#160;Server instance, and then selecting <span class="GUI_Item">Properties</span>. Click <span class="GUI_Item">Disk Drives</span> when SQLdm displays the Monitored SQL&#160;Server Properties window.</p>
+        <h2 class="Heading2">Incomplete disk drive list</h2>
+        <p class="Body">SQLdm automatically discovers local disk drives on your monitored instances. Sometimes this list is incomplete or contain drives that are not related to SQL&#160;Server. If you need to modify this list, clear the <span class="GUI_Item">Discover disk drives</span> check box, and then type the drive information including mount points, if necessary, into the <span class="GUI_Item">Available disk drives</span> field. Select the appropriate drive or drives and then click <span class="GUI_Item">Add </span>to move the drive information to the <span class="GUI_Item">Selected disk drives</span> box. Click <span class="GUI_Item">OK</span>.</p>
+    </body>
+</html>

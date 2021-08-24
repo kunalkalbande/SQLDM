@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="310" MadCap:lastWidth="812">
+    <head><title>Database Full (Percent) alert in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Database Full (Percent) alert</h1>
+        <p class="Body">The Database Full (Percent)&#160;alert provides the percentage of the allowable disk space for the database currently used by the sum of data, text, and indexes.   Allowable disk space for the database is calculated by taking into account the current allocated space, SQLdm auto-growth settings and available disk space.    If this value exceeds 80%, consider replacing disks with bigger disks.</p>
+        <p class="Body">This alert is raised based on the database metrics collection interval specified in Server Properties. For more information, see <a href="../Set general server options.htm" target="_self">Set general server options</a>.</p>
+        <h2 class="Heading2">Calculate the database full percentage using the autogrow settings</h2>
+        <p class="Body">When setting the thresholds for your Database Full (Percent) alert, click <span class="GUI_Item">Advanced &gt;&#160;Autogrow Settings</span> and SQLdm provides a choice for you to calculate your displayed percentage. Select <span class="GUI_Item">Yes, alert on the current used size divided by the maximum possible size</span> to take possible autogrowth into consideration when calculating the database full percentage. Select <span class="GUI_Item">No, alert on the current used size divided by the current file size</span> to calculate the database full percentage based only on the current size of the database disk file.</p>
+    </body>
+</html>

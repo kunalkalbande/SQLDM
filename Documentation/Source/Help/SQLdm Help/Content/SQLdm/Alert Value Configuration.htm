@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="949" MadCap:lastWidth="667">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Configure alert values in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Alert value configuration</h1>
+        <p class="Body">The Value Configuration window allows you to select whether you receive an alert for a particular event based on the selected level for that event. For example, if you select the Critical alert level for <span class="GUI_Item">Offline</span> for Database Status, you receive a Critical Level alert  if the Database is ever offline. The alerts are available as shown in the following image.</p>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');" class="TableStyle-Idera_Table_Stylesheet" cellspacing="0">
+            <col style="width: 90px;" class="Column-Column1" />
+            <col style="width: 254px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">
+                        <p class="TableHeadRow">Alert Level</p>
+                    </th>
+                    <th class="HeadD-Column2-Header1">
+                        <p class="TableHeadRow">Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="text-align: center;">
+                        <img src="../Resources/Images/OK.png" style="width: 22px;height: 22px;" />
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">The selected metric is in an OK state.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="text-align: center;">
+                        <img src="../Resources/Images/Information32x32.png" style="width: 26px;height: 26px;" />
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">The selected metric is in an Informational state.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="text-align: center;">
+                        <img src="../Resources/Images/Warning.png" style="width: 22px;height: 22px;" />
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">The selected metric is in a Warning state.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1" style="text-align: center;">
+                        <img src="../Resources/Images/critical.png" style="width: 22px;height: 22px;" />
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">The selected metric is in a Critical state.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Access the Value Configuration window</h2>
+        <p class="Body">SQLdm displays the Value Configuration window when you attempt to edit values for certain metrics.</p>
+        <p class="StepIntro">To access the Value Configuration window:</p>
+        <ol>
+            <li class="NumberedList">Right-click a monitored SQL&#160;Server instance, and then select <span class="GUI_Item">Configure Alerts</span>.</li>
+            <li class="NumberedList">In the Alert configuration window, select one of the following metrics:</li>
+        </ol>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body">Database Status</li>
+            <li class="Bullet-Def-Body">Mirroring Status</li>
+            <li class="Bullet-Def-Body">OS Metrics Collection Status</li>
+            <li class="Bullet-Def-Body">DTC Status</li>
+            <li class="Bullet-Def-Body">Full-Text Search Status</li>
+            <li class="Bullet-Def-Body">SQL Server Agent Status</li>
+            <li class="Bullet-Def-Body">SQL&#160;Server Status</li>
+            <li class="Bullet-Def-Body-Last">SQL&#160;Server Agent Job Completion</li>
+            <li class="Bullet-Def-Body-Last">Host&#160;Power State</li>
+            <li class="Bullet-Def-Body-Last">VM&#160;Power State</li>
+        </ul>
+        <ol start="3">
+            <li class="NumberedList">Click <span class="GUI_Item">Edit</span>.</li>
+        </ol>
+        <h2 class="Heading2">About informational alerts</h2>
+        <p class="Body">Informational alerts allow you to set a threshold that, when generated, triggers a status that does not affect the overall status of the server within SQLdm. You can use informational alerts to notify an administrator of the state of a particular metric for a server or trigger secondary processes that could take action to prevent issue escalation.</p>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col>
+            </col>
+            <col style="width: 626px;">
+            </col>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Note that for certain metrics, using the informational alert means that you no longer receive a warning or critical alert for events generated by that metric. Please review the situation before setting up an informational alert.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

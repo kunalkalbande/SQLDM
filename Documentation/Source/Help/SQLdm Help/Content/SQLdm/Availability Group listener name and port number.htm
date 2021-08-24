@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="2594" MadCap:lastWidth="579">
+    <head><title>Deploy Idera SQLdm Console only</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">AlwaysOn availability group listener name and port designation</h1>
+        <p class="Body">
+            <MadCap:keyword term="Deploy:SQLdm in high availability group;AlwaysOn high availability group:deploy" />This procedure guides you through the steps necessary to capture an availability group’s listener name and port designation. This information is essential for Idera Sales to generate a special license that allows you to host the SQLdm Repository in an availability group.  As a pre-requisite the SQLdm Repository needs to be hosted in an availability group within the primary replica.</p>
+        <ol>
+            <li class="NumberedList">Within SSMS, go to node that contains the availability group that hosts the SQLdm Repository and is the primary replica.</li>
+            <p class="Body">&#160;</p>
+            <img src="../Resources/Images/Node_1.png" />
+            <li class="NumberedList">Expand the <b>AlwaysOn High Availability</b> folder and then the <b>Availability Groups</b> folder.</li>
+            <p class="Body">&#160;</p>
+            <img src="../Resources/Images/H AG folder_AG.png" />
+            <li class="NumberedList">Expand the availability group that is the primary replica.</li>
+            <p class="Body">&#160;</p>
+            <img src="../Resources/Images/AG_primary replica.png" />
+            <li class="NumberedList">Expand the <b>Availability Group Listeners</b> folder.</li>
+            <p class="Body">&#160;</p>
+            <img src="../Resources/Images/AG Listeners folder.png" />
+            <li class="NumberedList">Right-click the listener, select Properties, and the Availability Group Listener Properties dialog displays.</li>
+            <p class="Body">&#160;</p>
+            <img src="../Resources/Images/AG Properties_dialog.png" />
+            <li class="NumberedList">Send <a href="mailto:sales@idera.com" target="_blank">Idera Sales</a> the <b>Listener DNS Name</b> and <b>Port designation</b> information to obtain a new license to host the SQLdm Repository in an availability group.</li>
+            <p class="Body">&#160;</p>
+            <img src="../Resources/Images/Listener Name_Port.png" style="width: 537px;height: 476px;" />
+        </ol>
+    </body>
+</html>

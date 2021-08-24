@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="743" MadCap:lastWidth="916" MadCap:ignoredWords="servers'">
+    <head>
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Configure your virtual machine host server connection in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure your VM host server connection</h1>
+        <p class="Body">
+            <MadCap:keyword term="Virtualization;VM;VMware;Virtual Machine;ESX;Virtual;Host;vCenter" />The VM Configuration window allows you to add or update connection details for your virtual machine host servers. Complete the access information for the server, and the click <b>Test</b> to make sure you typed the correct access credentials. Click <b>OK</b> after a successful test.</p>
+        <p class="Body">Occasionally, a connection test fails. Make sure you typed accurate information in the appropriate fields, and then click <span class="GUI_Item">Test</span>. If the test fails again, there may be an issue with the server to which you are trying to connect.</p>
+        <h2 class="Heading2">Access the Virtualization Host Configuration window</h2>
+        <p class="Body">To access the Virtualization Host Configuration window, first access the VM Configuration window by selecting <span class="GUI_Item">Tools &gt; VM&#160;Configuration</span>, or by clicking <span class="GUI_Item">VM&#160;Configuration</span> from the Manage Servers window. You can also access this window from the Virtualization tab of the Server Properties window. Once in the VM&#160;Configuration window, click <span class="GUI_Item">New</span>.</p>
+        <h2 class="Heading2">Virtualization host servers' port requirements</h2>
+        <p>The vCenter Server and Hyper-V host server require that you open the ports included in the following tables.</p>
+        <p class="StepIntro">Ports applicable to VMware and Hyper-V</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Port</th>
+                    <th class="HeadD-Column2-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">80</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Required for direct HTTP&#160;connections. Note that this port redirects requests to HTTPS Port 443.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">389</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Active Directory Services for the virtualization server group.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">5989 (TCP)</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">CIM&#160;transaction traffic (Hardware Status).</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="StepIntro">Ports applicable to VMware</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Port</th>
+                    <th class="HeadD-Column2-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">443</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Listens for connection from the vSphere Client, vSphere Web Access Client, and other SDL&#160;clients.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">636</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">SSL&#160;port of the local instance for vCenter Linked Mode.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">902 (UDP)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Used to send data to managed hosts.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">902/903</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Used by the vSphere Client to display virtual machine consoles.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">8080</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">vCenter Management Webservices HTTP.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">8443</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Secure connection for vCenter Management Webservices HTTPS.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">60099</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Used to stream inventory object changes to SDK&#160;clients. Firewall rules for this port on the vCenter Server can be set to block all, except from and to localhosts if the clients are installed on the same host as the vCenter Server service.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

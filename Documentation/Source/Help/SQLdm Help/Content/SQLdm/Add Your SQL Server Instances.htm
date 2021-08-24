@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="590" MadCap:lastWidth="942">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Add your SQL Server instances to Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Add your SQL Server instances</h1>
+        <p class="Body">
+            <MadCap:keyword term="SQL Server Instance:add" />The Add Servers wizard allows you to add the SQL&#160;Server instances you want to monitor. The Add Servers wizard also allows you to configure all the common options you use for monitoring SQL&#160;Server collection settings and <a href="View suggested alert thresholds.htm" target="_self">alerts</a>, and apply an alert template.  </p>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">If you are adding several SQL Server instances and you want to configure the same alert thresholds on each instance, consider <a href="Configure Alert Templates.htm" target="_self">setting up an alert template</a> before adding any of your SQL Server instances<a href="SQLdm requirements.htm" target="_self">&#160;</a>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Access the Add Servers wizard</h2>
+        <p class="Body">You can open the Add Servers wizard from the SQLdm Console menu by selecting <span class="GUI_Item">File &gt;&#160;Manage Servers</span>, and then clicking <span class="GUI_Item">Add </span>in the Manage Servers window.</p>
+        <h2 class="Heading2">Other configurations that need attention when adding a virtualized SQL&#160;Server instance</h2>
+        <p class="Body">If the monitored SQL Server instance you want to add resides on a virtual machine, add the instance using the Add Servers wizard, and then <a href="Virtualization Configuration.htm" target="_self">access the VM Configuration window</a> to associate the instance with the correct virtual machine and host.</p>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Idera recommends that you register individual instances in the Add Servers wizard when looking to monitor availability replicas. Note that registering an Availability Group Listener may result in misleading data due to the failovers between availability replicas.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">About alert templates</h2>
+        <p class="Body">SQLdm allows you to configure generic alert settings as a template that you can apply to servers and groups of servers in your organization. Click <span class="GUI_Item">Tools &gt; Alert Configuration Template</span> and complete the required fields to <a href="Configure Alert Templates.htm" target="_self">configure an alert template</a>.</p>
+        <h2 class="Heading2">Delete a SQL&#160;Server instance</h2>
+        <p class="Body">You can easily delete a SQL&#160;Server instance at any time by right-clicking the appropriate instance, and then selecting <span class="GUI_Item">Delete</span>. SQLdm displays a confirmation message that asks, "Would you like to retain the data collected for the selected instance?" Click <span class="GUI_Item">Yes</span> and SQLdm retains data for the instance and includes it in some reports, such as the Server Inventory report. Click <span class="GUI_Item">No </span>and SQLdm deletes the SQL&#160;Server instance and all related data.</p>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="592" MadCap:lastWidth="1073">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Disk Space Usage Forecast report in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Disk Space Usage Forecast</h1>
+        <p class="Body">The Disk Space Usage Forecast report lets you predict how much disk space you need in the future based on current and historical growth rate trends. For more accurate forecasting, select the largest possible period of historical data and the shortest possible projection into the future. </p>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col>
+            </col>
+            <col style="width: 626px;">
+            </col>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">The Disk Space Usage Forecast report does not display the maximum capacity of the disk. You can use this report to estimate how much space you need, but it does not indicate when existing space runs out.          </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">When to run this report</h2>
+        <p class="Body">Run the Disk Space Usage Forecast report to help anticipate your needs  and plan for future acquisition of disk space.</p>
+        <h2 class="Heading2">Available forecast types</h2>
+        <p class="Body">You can choose Linear or Exponential (Aggressive) forecasting types when you run this report.</p>
+        <p class="Body">Linear forecasting follows the trend of the available data and extends the forecast out in a straight line by the number of forecast units.</p>
+        <p class="Body"> Exponential forecasting tends to exaggerate the trend that exists in the data. This allows you to more easily see if your data (disk space usage) is trending toward or away from a critical threshold. If the rate of growth is not constant, the exponential forecast type gives a more accurate forecast of future growth.</p>
+        <h2 class="Heading2">How SQLdm calculates metric values on this report</h2>
+        <p class="Body">Most values on the Disk Space Usage Forecast report correlate with the related SQL Server metric.</p>
+        <p class="Body">However, some metric values represent averages over time. Likewise, a few metric values are based on performance algorithms that use multiple statistics to calculate a more accurate metric.</p>
+        <p class="Body">You can access our <a href="http://www.idera.com/support" target="_blank">Customer Service Portal</a> (www.idera.com/support) for more information about the algorithm used to calculate a specific metric.</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">How is the Worst Performing and Most Frequent Queries information gathered? - Solution #00000412</li>
+            <li class="Bullet">How does SQL diagnostic manager gather statistics from monitored SQL Servers? - Solution #00000055</li>
+            <li class="Bullet">How does SQL diagnostic manager calculate the reorganization percentage for database tables? - Solution #00000301</li>
+            <li class="BulletLast">What does the 'Memory Usage' metric in the console and reports represent? - Solution #00002237</li>
+        </ul>
+    </body>
+</html>

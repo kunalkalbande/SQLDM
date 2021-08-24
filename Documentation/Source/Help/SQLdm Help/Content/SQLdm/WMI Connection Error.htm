@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1871" MadCap:lastWidth="777">
+    <head><title>Troubleshoot WMI connectivity issues in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Troubleshoot WMI connectivity issues</h1>
+        <p class="Body">
+            <MadCap:keyword term="Collection Service;WMI;RPC traffic" />In order to use WMI, the user account under which the Collection Service runs must have administrator permissions on the remote server. The most frequently encountered problems with WMI relate to RPC traffic failing to get through to the remote computer. Another issue involves DCOM/WMI permissions.</p>
+        <p class="Body">The following links provide additional information about how to troubleshoot WMI connectivity issues:
+</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet"><a href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa393266(v=vs.85).aspx" target="_blank">Securing a remote WMI Connection</a> <![CDATA[ ]]></li>
+            <li class="Bullet"><a href="http://www.microsoft.com/technet/scriptcenter/topics/help/wmi.mspx" target="_blank">Help with Scripts</a>
+            </li>
+        </ul>
+        <h2 class="Heading2">
+Using WbemTest (Windows Management Instrumentation Tester)</h2>
+        <p class="Body">You can use the WbemTest tool to connect to a server and issue WMI queries. Download this tool from Microsoft TechNet to help you test and troubleshoot WMI issues.
+</p>
+        <p class="StepIntro">To use WbemTest:
+</p>
+        <ol>
+            <li class="NumberedList">	Run <span class="GUI_Item">wbemtest.exe</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Connect</span>.
+</li>
+            <li class="NumberedList">In the <span class="GUI_Item">NameSpace text</span> box, enter <span class="GUI_Item">\\server\root\cimv2</span> where server is the name of the server to which you want to connect.
+</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Connect</span>.
+</li>
+            <li class="NumberedList">Click<span class="GUI_Item"> Query</span>.
+</li>
+            <li class="NumberedList">Enter <span class="GUI_Item">select*</span> from win32_process.
+</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Apply</span>.
+</li>
+        </ol>
+        <p class="Body">If WbemTest connects to the remote server and issues the query using WMI, you
+should see a query result with output. In this case, WMI to the required server is working
+and no further action is needed.
+For more information on the Windows Management Instrumentation Tester, refer to the Microsoft document, <a href="http://technet.microsoft.com/en-us/library/cc759703(v=ws.10).aspx" target="_blank">Windows Management Instrumentation Tester overview</a>.
+</p>
+        <p class="Body">If you receive an error message, use the following processes to help identify and resolve the issue.
+</p>
+        <h2 class="Heading2">Error: The RPC Server Is Unavailable</h2>
+        <p class="Body">This error usually indicates that the RPC traffic is not getting to the remote server, or there is no RPC listener on the remote server.
+</p>
+        <p class="StepIntro">To troubleshoot this RPC error:
+</p>
+        <ol>
+            <li class="NumberedList">Make sure that the Remote Procedure Call (RPC) service is running on the remote server.
+</li>
+            <li class="NumberedList">Verify that there is a TCP listener on the remote server by running the netstat -nao command and verifying that there is the following entry: <span class="Code">TCP 0.0.0.0:135 0.0.0.0:0 LISTENING 1304</span></li>
+            <li class="NumberedList" value="3">In the Tools subdirectory, run <span class="Code">rpcping /s &lt;servername&gt; /t ncacn_ip_tcp</span>  where <span class="Code">&lt;servername&gt;</span> is the name of the remote server. This command verifies that RPC can communicate with the remote server and output similar to: </li>
+        </ol>
+        <p class="DefinitionListBody"><span class="Code">Completed 1 calls in 15 ms</span>
+        </p>
+        <p class="DefinitionListBodyLast"><span class="Code">66 T/S or 15.000 ms/T</span>
+        </p>
+        <ol>
+            <li class="NumberedList" value="4">Make sure that  local or internal network firewalls do not block traffic by either disabling the firewall or configuring the Windows firewall to allow incoming RPC traffic.
+</li>
+            <li class="NumberedList">Try to use the remote server IP address instead of the server name. If the IP address works, you may have a DNS issue.
+</li>
+            <li class="NumberedList">If the remote server resides in a different domain, the two domains may not trust each other, or the user account does not have administrator permissions on the remote server/domain.
+</li>
+            <li class="NumberedList">If both computers are in the same domain, and the user account has administrator permissions, try rejoining both computers to the domain.
+</li>
+        </ol>
+        <h2 class="Heading2">Error: Access Denied</h2>
+        <p class="Body">This error can indicate permission issues.
+</p>
+        <p class="StepIntro">To troubleshoot this access error:
+</p>
+        <ol>
+            <li class="NumberedList">If the remote computer is running Windows XP, make sure it is not set to Force Guest. This setting forces impersonation of any connection as Guest.<ol style="list-style-type: lower-alpha;"><li class="NumberedList">Open the Local Security Policy console from Administrative Tools.
+</li><li class="NumberedList">Browse to<span class="GUI_Item"> Security Settings &gt; Local Policies &gt; Security Options</span>.
+</li><li class="NumberedList">Double-click <span class="GUIItem_1">Network Access: Sharing And Security Model For LocalAccounts</span>.
+</li><li class="NumberedList">Change the settings from <span class="Code">Guest Only</span> to Classic.
+</li></ol></li>
+            <li class="NumberedList">Make sure DCOM is enabled on the remote server:
+<ol style="list-style-type: lower-alpha;"><li class="NumberedList">Run <span class="Code">DcomCnfg </span>on the remote server.
+</li><li class="NumberedList">Click<span class="GUI_Item"> Component Services</span>.
+ </li><li class="NumberedList">Expand <span class="GUI_Item">Computers</span>.
+</li><li class="NumberedList">Right click <span class="GUI_Item">My Computer</span> and select <span class="GUI_Item">Properties</span>.
+</li><li class="NumberedList">Click the <span class="GUI_Item">Default Properties</span> tab.
+</li><li class="NumberedList">Make sure <span class="GUI_Item">Enable Distributed COM</span> on this computer is checked.
+</li></ol></li>
+            <li class="NumberedList">Verify the configuration of the correct DCOM remote launch and activation permissions:
+<ol style="list-style-type: lower-alpha;"><li class="NumberedList">Run <span class="Code">DcomCnfg</span> on the remote server.
+</li><li class="NumberedList">Click <span class="GUI_Item">Component Services</span>.
+</li><li class="NumberedList">Expand <span class="GUI_Item">Computers</span>.
+</li><li class="NumberedList">Right click<span class="GUI_Item"> My Computer</span> and select <span class="GUI_Item">Properties</span>.
+</li><li class="NumberedList">Make sure <span class="GUI_Item">Enable Distributed COM</span> on this computer is checked.
+</li><li class="NumberedList">Click the <span class="GUI_Item">Com Security</span> tab.
+</li><li class="NumberedList">Under <span class="GUI_Item">Launch and Activation Permissions</span>, click<span class="GUI_Item"> Edit Limits</span>.
+</li><li class="NumberedList">In the <span class="GUIItem_1">Launch Permissions dialog</span> box, make sure your user account or group is listed in the Groups or user names list. If your user account or group is not listed, click <span class="GUI_Item">Add</span> and add it to the list. </li><li class="NumberedList">In the <span class="GUIItem_1">Launch Permission</span> dialog box, select your user account or group in the Group or user names list. In the <span class="GUIItem_1">Allow</span> column under Permissions for User, select <span class="GUI_Item">Remote Launch</span> and <span class="GUI_Item">Remote Activation</span>, and then click <span class="GUI_Item">OK</span>.
+</li></ol></li>
+            <li class="NumberedList">Make sure the correct DCOM remote access permissions are configured:
+<ol style="list-style-type: lower-alpha;"><li class="NumberedList">Run <span class="Code">DcomCnfg</span> on the remote server.
+</li><li class="NumberedList">Click <span class="GUI_Item">Component Services</span>.
+</li><li class="NumberedList">Expand <span class="GUI_Item">Computers</span>.
+</li><li class="NumberedList">Right click <span class="GUI_Item">My Computer</span> and select <span class="GUI_Item">Properties</span>.
+</li><li class="NumberedList">Make sure <span class="GUIItem_1"><span class="GUI_Item">Enable Distributed COM</span> on this computer</span> is checked.
+</li><li class="NumberedList">Click the <span class="GUI_Item">Com Security</span> tab.
+ </li><li class="NumberedList">Under <span class="GUI_Item">Access Permissions</span>, click <span class="GUI_Item">Edit Limits</span>.
+</li><li class="NumberedList"> In the <span class="GUIItem_1">Access Permission</span> dialog box, select <span class="Code">ANONYMOUS LOGON</span> name in the <span class="GUIItem_1">Group or user names</span> list. 
+In the <span class="GUIItem_1">Allow</span> column under <span class="GUIItem_1">Permissions for User</span>, select <span class="GUI_Item">Remote Access</span>, and then click <span class="GUI_Item">OK</span>.
+</li></ol></li>
+            <li class="NumberedList">Make sure the correct WMI namespace permissions are configured.
+<ol style="list-style-type: lower-alpha;"><li class="NumberedList">Run <span class="Code">wmimgmt.msc</span>.
+</li><li class="NumberedList">Right-click <span class="GUI_Item">WMI Control</span>, and then select <span class="GUI_Item">Connect to another computer</span>.
+ </li><li class="NumberedList">Enter the remote server name, and then click <span class="GUI_Item">OK</span>.
+ </li><li class="NumberedList">Right-click <span class="GUI_Item">WMI Control</span>, and then select <span class="GUI_Item">Properties</span>.
+</li><li class="NumberedList">In the Security tab, select the <span class="Code">namespace</span>, and then click <span class="GUI_Item">Security</span>.
+ </li><li class="NumberedList">Locate the appropriate account, and then check <span class="GUI_Item">Remote Enable</span> in the Permissions list.
+</li></ol></li>
+        </ol>
+    </body>
+</html>

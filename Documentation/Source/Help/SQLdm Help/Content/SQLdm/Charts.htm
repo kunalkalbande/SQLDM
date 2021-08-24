@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="1323" MadCap:lastWidth="858">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Use Idera SQLdm Charts</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Charts</h1>
+        <p class="Body">
+            <MadCap:keyword term="Details view;Charts" />Charts are populated from the point at which you navigate to the window with the chart. This allows you to view real-time charts for the data point selected. Real-time viewing is dependent on your <a href="Configure Console Options.htm" target="_self">refresh interval</a>. Once populated, you can manipulate the type of chart you want to display and export the chart or copy it to the clipboard to paste into other programs.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">In the Server Details view, click the <span class="GUI_Item">Maximize</span> button on the upper-right corner of a chart to display a large version of the chart. The <span class="GUI_Item">Restore</span> button returns the chart to the default view.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Understanding your chart data and refresh interval</h2>
+        <p class="Body">SQLdm charts provide data whether collected in real time or as part of a scheduled collection event. When you open a view, SQLdm begins populating the chart with real-time data collected on the interval specified in the <span class="GUI_Item">Server View Refresh</span> field on the <a href="Configure Console Options.htm" target="_self">Console Options window</a> (<span class="GUI_Item">Tools &gt; Console Options</span>). </p>
+        <p class="Body">If you pause or leave this view and then return during the same Console session, SQLdm displays the real-time data points as previously viewed, followed by a period of data points from any scheduled collections that occurred while you were away. The chart then returns to populating with new real-time data points, as shown in the following image.</p>
+        <p class="Image">
+            <img src="../Resources/Images/Data Backfill.png" />
+        </p>
+        <p class="Body">The amount of time displayed in your charts is set according to the time entered in the <span class="GUI_Item">Show data for the last </span>field on the Console Options window. In addition, the time entered in the <span class="GUI_Item">Keep data for the last</span> field is the amount of historical data that you can scroll back to in your charts.</p>
+        <h2 class="Heading2">Customize your charts</h2>
+        <p class="Body">SQLdm contains charts that are populated by selecting the appropriate data items collected. Once populated, you can manipulate the type of chart you want to display and export the chart or copy it to the clipboard to paste into other programs.</p>
+        <p class="Body">You can personalize charts by right-clicking anywhere inside the chart and selecting <span class="GUI_Item">Toolbar</span> from the menu. The chart toolbar contains the following options:</p>
+        <p class="DefinitionListTerm">Copy To Clipboard</p>
+        <p class="DefinitionListBody">The <span class="GUI_Item">Copy To Clipboard</span> button allows you to copy the chart to your Windows clipboard in various formats.</p>
+        <p class="DefinitionListTerm">Print</p>
+        <p class="DefinitionListBody">The <span class="GUI_Item">Print</span> button allows you to print the chart.</p>
+        <p class="DefinitionListTerm">Gallery</p>
+        <p class="DefinitionListBody">The <span class="GUI_Item">Gallery</span> menu includes a number of options that allow you to change the type of chart used to represent your data.</p>
+        <p class="DefinitionListTerm">Anti-Aliasing</p>
+        <p class="DefinitionListBody">The <span class="GUI_Item">Anti-Aliasing</span> button smoothes the lines between your data points to more easily view your data.</p>
+        <p class="DefinitionListTerm">Palette Selector</p>
+        <p class="DefinitionListBody">The <span class="GUI_Item">Palette Selector</span> menu includes a number of color choices for you to change color scheme of your chart.</p>
+        <p class="DefinitionListTerm">3D/2D</p>
+        <p class="DefinitionListBody">The <span class="GUI_Item">3D/2D</span> toggle lets you choose to view your results in three- or two-dimensional plots. Additional options become active based on your choice and allow you to rotate your view or cluster your results on the z-axis.</p>
+        <p class="DefinitionListTerm">Axes Settings</p>
+        <p class="DefinitionListBody">The <span class="GUI_Item">Axes Settings</span> menu lets you choose how to view each axis, whether to display labels, and additional properties for your view.</p>
+        <p class="DefinitionListTerm">Point Labels</p>
+        <p class="DefinitionListBody">The <span class="GUI_Item">Point Labels</span> toggle lets you choose to view the actual data at each point.</p>
+        <p class="DefinitionListTerm">Data Grid</p>
+        <p class="DefinitionListBody">The <span class="GUI_Item">Data Grid</span> toggle places a table below your chart that displays the data included in your chart.</p>
+        <p class="DefinitionListTerm">Legend Box</p>
+        <p class="DefinitionListBody">The <span class="GUI_Item">Legend Box</span> toggle lets you choose to view a legend for your displayed data.</p>
+        <p class="DefinitionListTerm">Zoom</p>
+        <p class="DefinitionListBody">The <span class="GUI_Item">Zoom</span> button allows you to zoom in on a point in your chart.</p>
+        <p class="DefinitionListTerm">Properties</p>
+        <p class="DefinitionListBodyLast">The <span class="GUI_Item">Properties</span> button displays additional properties for further customization of your chart.</p>
+    </body>
+</html>

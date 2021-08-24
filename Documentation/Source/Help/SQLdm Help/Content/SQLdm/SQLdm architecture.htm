@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="1388" MadCap:lastWidth="558">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Idera SQLdm components and architecture</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">SQLdm components and architecture</h1>
+        <p class="Body">SQLdm consists of a light, unobtrusive architecture that easily runs in your SQL Server environment with minimal configuration. All SQLdm components run outside and separate from SQL Server processes.</p>
+        <h2 class="Heading2">SQLdm Console</h2>
+        <p class="Body">Use the SQLdm Console to:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">View real-time status</li>
+            <li class="Bullet">Configure alert notifications on specific metric thresholds at the server and database levels</li>
+            <li class="Bullet">	View historical reports and manage your To Do list  (Note that beginning with SQLdm 7.0, the To Do feature is available only to users who activated To Do in an earlier 6.x version. This version of SQLdm does not support this feature for new users.)</li>
+            <li class="BulletLast">Perform administrative functions</li>
+        </ul>
+        <p class="Body">The SQLdm Console retrieves historical information directly from the SQLdm Repository. All real-time requests use the SQLdm services to poll the monitored SQL Server.</p>
+        <h2 class="Heading2">SQLdm Services</h2>
+        <p class="Body">SQLdm has three centralized services, the Management Service, the Collection Service, and the Predictive Service. These three services reside on the same computer.</p>
+        <p class="Body">The Management Service performs the following primary functions:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Provides real-time data to the SQLdm Console</li>
+            <li class="Bullet">Receives historical data from the Collection Service for storage in the Repository</li>
+            <li class="BulletLast">Raises alerts and sends alert notifications</li>
+        </ul>
+        <p class="Body">The Collection Service performs on-demand and scheduled collection from the monitored SQL Servers.</p>
+        <p class="Body">The Predictive Service is used for Alert Forecasting and performs the following primary functions:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Calculates the Alert Forecast every hour</li>
+            <li class="Bullet">Builds a forecasting model once a day</li>
+        </ul>
+        <h2 class="Heading2">SQLdm Web Console</h2>
+        <p class="Body">The SQLdm web console is automatically installed upon upgrade or during installation of the 8.5 or higher versions.</p>
+        <p class="DefinitionListTerm">To access the web console:</p>
+        <ol>
+            <li>Open your selected Browser, make sure it is compatible with the SQLdm web console requirements.</li>
+            <li>Type the SQLdm product URL: <b>http://&lt;machinename&gt;:&lt;port&gt;/SQLdm</b> where <b>&lt;machinename&gt;</b> is the name of your host or machine, and &lt;port&gt; is the port specified during installation.</li>
+            <li>When the SQLdm web console launches on your browser, use your Windows user account <b>&lt;domain\user&gt;</b> with the respective password to log into the product.</li>
+        </ol>
+        <p>&#160;</p>
+        <p class="Body">To learn about the new components and architecture, hardware and software requirements, and the required accounts and permissions you need to run the SQLdm web console in your environment, see <a href="http://wiki.idera.com/x/AgCV" target="_blank">Installing and deploying the web console</a>.</p>
+        <h2 class="Heading2">SQLdm Repository</h2>
+        <p class="Body">The SQLdm Repository is a centralized SQL Server database that stores collected metrics on a scheduled basis, historical data, and alerts information. The SQLdm Repository also stores configuration information, such as the credentials used to monitor a registered SQL Server instance.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">SQLdm 8.6 and later requires Microsoft SQL&#160;Server 2005 or above running on the computer that hosts the SQLdm Repository database for all installations.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Authentication in SQLdm</h2>
+        <p class="Body">SQLdm uses the same types of authentication available in the SQL Server security model. When specifying account credentials for the SQLdm services, you can use Windows Authentication or SQL Server Authentication.</p>
+        <p class="Body">When considering which authentication to use, keep in mind that SQL Server Authentication is required when no domain trust exists between the SQLdm Services computer and the computers hosting the monitored SQL Server instances. For example, if the monitored SQL Server instances are located in an untrusted domain or behind a firewall, you must use SQL Server Authentication to successfully deploy SQLdm. In this case, you must use the <span class="GUI_Item">sa </span>account or a SQL Server login that has System Administrator permissions.</p>
+        <p class="Body">For more information about these authentication types and the SQL Server security model, see the Microsoft document, <a href="http://msdn.microsoft.com/en-us/library/bb669066.aspx/css" target="_blank">Authentication in SQL Server</a>.</p>
+    </body>
+</html>

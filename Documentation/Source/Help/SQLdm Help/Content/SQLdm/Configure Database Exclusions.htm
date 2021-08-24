@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="633" MadCap:lastWidth="819">
+    <head><title>Configure database exclusions in Idera SQLdm alert filters</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure alert filters - database exclusions</h1>
+        <p class="Body">The Alert Filters tab of the Advanced Alert Configuration window allows you to select databases to exclude from alerting on the selected metric. You can limit the amount of alert noise generated for very small databases, which tend to report a high fragmentation rate, or databases that are in single user mode and are usually in use.</p>
+        <p class="Body">The alerts that allow for database exclusions include the following:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet"><a href="Alerts/Data File Autogrow.htm" target="_self">Data File Autogrow</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Database Full.htm" target="_self">Database Full (Percent)</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Database Full Size.htm" target="_self">Database Full (Size)</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Database Status Alert.htm" target="_self">Database Status</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Log File Autogrow.htm" target="_self">Log File Autogrow</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Log Full.htm" target="_self">Log Full (Percent)</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Log Full Size.htm" target="_self">Log Full (Size)</a>
+            </li>
+            <li class="BulletLast"><a href="Alerts/Table Fragmentation.htm" target="_self">Table Fragmentation (Percent)</a>
+            </li>
+        </ul>
+        <h2 class="Heading2">Access the Alert Filters tab of the Alert Configuration window</h2>
+        <ol>
+            <li class="NumberedList">Right-click the SQL&#160;Server instance you want to manage and then select <span class="GUI_Item">Configure Alerts</span>.</li>
+            <li class="NumberedList">Select the alert you want to configure.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If the alert is database-specific</span>, select the appropriate database, click <span class="GUI_Item">Edit</span>, and then click <span class="GUI_Item">Advanced</span>.<span class="If_Then_Statement"> If the alert is not database-specific</span>, click <span class="GUI_Item">Advanced</span>.</li>
+            <li class="NumberedList">Click the Alert Filters tab.</li>
+        </ol>
+        <h2 class="Heading2">Exclude a database from an alert</h2>
+        <p class="Body">You can select one or more databases to exclude from alerting on the selected metric.</p>
+        <ol>
+            <li class="NumberedList">Access the Alert Filters tab using the previous steps.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Exclude</span>.</li>
+            <li class="NumberedList">Select one or more databases from the list, and then click <span class="GUI_Item">Exclude</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span>.</li>
+            <li class="NumberedList">To accept these changes, click <span class="GUI_Item">OK</span>.</li>
+        </ol>
+    </body>
+</html>

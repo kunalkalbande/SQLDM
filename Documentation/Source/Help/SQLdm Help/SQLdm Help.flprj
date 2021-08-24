@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultProject Version="1" xml:lang="en-us">
+    <Synchronize>
+        <Mapping ProjectPath="Content/Resources/Images/Mgmt service configuration wizard.png" ExternalPath="file:///C:/Users/claudia ricaldez/Documents/Work files/availability groups hotfix/Mgmt service configuration wizard.png" />
+        <Mapping ProjectPath="Content/Resources/Images/Restarting SQLdm Services.png" ExternalPath="file:///C:/Users/claudia ricaldez/Documents/Work files/availability groups hotfix/Restarting SQLdm Services.png" />
+        <Mapping ProjectPath="Content/Resources/Images/Manage Licenses.png" ExternalPath="file:///C:/Users/claudia ricaldez/Documents/Work files/availability groups hotfix/Manage Licenses.png" />
+        <Mapping ProjectPath="Content/Resources/Images/License Keys wizard.png" ExternalPath="file:///C:/Users/claudia ricaldez/Documents/Work files/availability groups hotfix/License Keys wizard.png" />
+        <Mapping ProjectPath="Content/Resources/Images/Node_1.png" ExternalPath="file:///C:/Users/claudia ricaldez/Documents/Work files/availability groups hotfix/Node_1.png" />
+        <Mapping ProjectPath="Content/Resources/Images/H AG folder_AG.png" ExternalPath="file:///C:/Users/claudia ricaldez/Documents/Work files/availability groups hotfix/H AG folder_AG.png" />
+        <Mapping ProjectPath="Content/Resources/Images/AG_primary replica.png" ExternalPath="file:///C:/Users/claudia ricaldez/Documents/Work files/availability groups hotfix/AG_primary replica.png" />
+        <Mapping ProjectPath="Content/Resources/Images/AG Listeners folder.png" ExternalPath="file:///C:/Users/claudia ricaldez/Documents/Work files/availability groups hotfix/AG Listeners folder.png" />
+        <Mapping ProjectPath="Content/Resources/Images/AG Properties_dialog.png" ExternalPath="file:///C:/Users/claudia ricaldez/Documents/Work files/availability groups hotfix/AG Properties_dialog.png" />
+        <Mapping ProjectPath="Content/Resources/Images/Listener Name_Port.png" ExternalPath="file:///C:/Users/claudia ricaldez/Documents/Work files/availability groups hotfix/Listener Name_Port.png" />
+        <Mapping ProjectPath="Content/Resources/Images/Screenshot_SQLdmHelp_BPT.gif" ExternalPath="file:///C:/Users/claudia ricaldez/Documents/Work files/Blocked Process Threshold/Screenshot_SQLdmHelp_BPT.gif" />
+        <Mapping ProjectPath="Content/Resources/Images/Hyper-V Connection.jpg" ExternalPath="file:///D:/Work files/8.5/Hyper-V/Hyper-V Connection.jpg" />
+        <Mapping ProjectPath="Content/Resources/Images/Alerts for Virtualization_8.5.gif" ExternalPath="file:///D:/Work files/8.5/Hyper-V/Alerts for Virtualization_8.5.gif" />
+        <Mapping ProjectPath="Content/Resources/Images/Adding a virtualization Host server.gif" ExternalPath="file:///D:/Work files/8.5/Hyper-V/Adding a virtualization Host server.gif" />
+        <Mapping ProjectPath="Content/Resources/Images/Linking instances to VMs_8.5.gif" ExternalPath="file:///D:/Work files/8.5/Hyper-V/Linking instances to VMs_8.5.gif" />
+        <Mapping ProjectPath="Content/Resources/Images/Linking instances to VMs_final_8.5.gif" ExternalPath="file:///D:/Work files/8.5/Hyper-V/Linking instances to VMs_final_8.5.gif" />
+        <Mapping ProjectPath="Content/Resources/Images/Select Virtual Machine System Counter_8.5.gif" ExternalPath="file:///D:/Work files/8.5/Hyper-V/Select Virtual Machine System Counter_8.5.gif" />
+        <Mapping ProjectPath="Content/Resources/Images/Monthly maintenance mode_07.13.14.gif" ExternalPath="file:///D:/Work files/8.5/other features/Monthly maintenance mode_07.13.14.gif" />
+        <Mapping ProjectPath="Content/Resources/Images/Alert Response multiple thresholds_07.13.14.gif" ExternalPath="file:///D:/Work files/8.5/other features/Alert Response multiple thresholds_07.13.14.gif" />
+        <Mapping ProjectPath="Content/Resources/Images/Custom reports_07.14.14.gif" ExternalPath="file:///D:/Work files/8.5/other features/Custom reports_07.14.14.gif" />
+        <Mapping ProjectPath="Content/Resources/Images/Maintenance Mode_Monthly_07.15.14.gif" ExternalPath="file:///D:/Work files/8.5/other features/Maintenance Mode_Monthly_07.15.14.gif" />
+        <Mapping ProjectPath="Content/Resources/Images/Deadlock Reports_8.5.gif" ExternalPath="file:///D:/Work files/8.5/other features/Deadlock Reports_8.5.gif" />
+        <Mapping ProjectPath="Content/Resources/Images/Block Reports_8.5.gif" ExternalPath="file:///D:/Work files/8.5/other features/Block Reports_8.5.gif" />
+    </Synchronize>
+</CatapultProject>

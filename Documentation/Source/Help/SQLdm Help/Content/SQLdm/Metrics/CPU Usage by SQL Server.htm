@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="394" MadCap:lastWidth="833">
+    <head><title>SQL Server CPU Usage metric in Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">SQL Server CPU Usage (Percent)</h1>
+        <p class="Body">The SQL&#160;Server CPU&#160;Usage (Percent) metric calculates the percentage of CPU time used by the SQL Server instance. This value is calculated by the percentage of time in a query spent by the I/O, idle, and CPU times on the computer that hosts the SQL Server instance.</p>
+        <p class="Body">To track this metric, use the <a href="../CPU Dashboard.htm">CPU&#160;Usage chart</a> in the CPU dashboard of the Server Overview tab.</p>
+        <h2 class="Heading2">Lower SQL&#160;Server CPU&#160;usage</h2>
+        <p class="Body">  If this value regularly exceeds 75%, consider taking the following actions: 
+</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Reduce the number of SQL re-compilations, as they are CPU intensive. There are many reasons that an object such as a stored procedure is recompiled. You can remove most of these reasons by careful coding.
+</li>
+            <li class="Bullet">Make sure that all T-SQL statements (whether in a Stored Procedure, Trigger, or Ad Hoc statement) that reference objects fully qualify the object referenced. </li>
+        </ul>
+        <p class="DefinitionListBody">For example: <code>SELECT * FROM Northwind.dbo Employees</code> is a fully-qualified object reference whereas <code>SELECT * FROM Employees</code> is a poorly-qualified object. You can reuse the execution plans of fully-qualified objects "as is," whereas plans where you either cannot reuse the not fully-qualified objects or, if they are reused, then they are subject to a highly restrictive <code>COMPILE </code>lock while SQL Server determines if all of the objects referenced in the T-SQL code have the same owners as the execution plan currently in cache. Both of these situations consume a significant amount of CPU time.</p>
+    </body>
+</html>

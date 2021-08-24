@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1736" MadCap:lastWidth="849" MadCap:ignoredWords="queries’;SQL;SCOM;FIPS;OLTP;DBAs;sessions’">
+    <head>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">New features and fixed issues</h1>
+        <p class="Body">SQLdm 8.6 provides the following new features and fixed issues.</p>
+        <h2 class="Heading2">8.6 New features</h2>
+        <h3 class="Heading3">Full support for SQL Server Express instances</h3>
+        <p class="Body">SQLdm 8.6 fully supports monitoring of SQL Server Express instances.  The following editions are supported: SQL Server 2005 Express, 2008, 2008 R2, 2012, and 2014. </p>
+        <h3 class="Heading3">Reporting on Query Wait Statistics</h3>
+        <p class="Body">You can now run the Query Wait Statistics report to quickly analyze different wait type categories on your SQL Server and identify where your biggest bottlenecks are occurring impacting your performance. For additional information about the new Query Waits Statistics report, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Report Query Wait Statistics.htm|WebHelpSkin" target="_blank">Query Waits Statistics report</a>.</p>
+        <h3 class="Heading3">Query Waits information is now extended to the Top Servers and Top Databases reports</h3>
+        <p class="Body">SQLdm has extended Query Waits information to the Top Servers and Top Databases report, providing users insight into the queries on your SQL Server instance that exceed a specific wait threshold.  Users can now view information on Top Servers by wait time and Top Databases by wait time.  For additional information, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Report Top Servers.htm|WebHelpSkin" target="_blank">Top Servers</a> and <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Report Top Databases.htm|WebHelpSkin" target="_blank">Top Databases</a>.</p>
+        <h3 class="Heading3">New database alert for Availability Group Preferred Replica</h3>
+        <p class="Body">SQLdm triggers an <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Availability Group Preferred Replica Unavailability.htm|WebHelpSkin" target="_blank">Availability Group Preferred Replica</a> whenever the primary role changes to a different replica and is unavailable for a defined amount of time in minutes.</p>
+        <h2 class="Heading2"><a name="8v6fixed"></a>8.6 Fixed Issues</h2>
+        <h3 class="Heading3">Upgrade</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE41748</MadCap:conditionalText>Users upgrading from SQL diagnostic manager 8.5 to 8.6 may encounter a message (see image below) that requests closing the Java framework application to proceed with the upgrade process. This framework is in use by the SQLdm WebUI Service of our web console feature. Clicking <b>Ignore</b> allows the upgrade installation process to complete successfully. You can also stop the SQLdm WebUI Service manually and click <b>Retry</b> to proceed with the Upgrade Wizard.</li>
+        </ul>
+        <p style="text-align: center;">
+            <img src="../Resources/Images/upgrade from 8.5_8.6.jpg" style="width: 680px;height: 264px;" />
+        </p>
+        <h3 class="Heading3">General</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE41748</MadCap:conditionalText>This release fixes an issue where scheduled SQLdm Repository grooming failed.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE41438</MadCap:conditionalText>This release fixes an issue that prevented data from being returned on a SQL 2012 instance when selecting the option <b>Use Extended Events (SQL2012 + only)</b> in the Wait Monitoring tab of the Monitored SQL Server Properties window.</li>
+        </ul>
+        <h3 class="Heading3">Views</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE20472</MadCap:conditionalText>An issue causing <b>Data File Spaced Used</b> and <b>Log File Space Used</b> values in the <b>Overview&gt; Details</b> view to vary from the real server values no longer occurs.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE4285</MadCap:conditionalText>This release fixes an issue where the number of sessions displayed in the <b>Sessions &gt;Details</b> view, after applying the <b>Affecting </b></li>
+            <li class="Bullet"><b>Tempdb only</b> filter, does not match the number of sessions in the <b>Databases&gt;Tempdb Summary</b> view.</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE43227</MadCap:conditionalText>An issue preventing disk drive statistics to return in the Disk view of the Resources tab no longer occurs.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE41829</MadCap:conditionalText>This release fixes an issue that caused the Query waits and Query History views to lag displaying data when the frequency of how often the console refreshes data was modified in the <b>Tools &gt; Console Options</b> window.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE43358</MadCap:conditionalText>SQLdm is designed to return the information that you want to view in the Signature Mode, Statement Mode, and Query History views through filters. However, the filter <b>Exclude Currently Running Queries</b> that excludes data returned with null values is not applicable to the Query History view and is now disabled by default.</li>
+        </ul>
+        <h3 class="Heading3">Alerts</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE43243</MadCap:conditionalText>An issue issue causing OS Disk Full (Percent) alerts to trigger for disk drives previously excluded from alerting in the Alert Filters tab of the Advanced Configuration window no longer occurs.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE43305/DE43306</MadCap:conditionalText>This release fixes an issue impeding the Deadlock Sessions report with detailed deadlock information to display when right-clicking (Show Deadlock Details) or double-clicking over a deadlock alert in the Alerts view.  Note that after upgrading to our latest version it is not possible to view deadlock details for alerts generated in SQLdm 8.5 since this issue prevented deadlock information from being stored.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE42986</MadCap:conditionalText>This release fixes an issue impeding the Blocking Sessions report with detailed blocking and blocked sessions’ information to display when right-clicking (Show Block Details) in the Alerts view, double-clicking over a Block report in the Blocking view, or clicking the Show Block Details link in the Details section of the Alert view.  Note that after upgrading to our latest version it is not possible to view block details for alerts generated in SQLdm 8.5 since this issue prevented block information from being stored.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE43292</MadCap:conditionalText>An issue impeding new custom counters to be added in the Administration tab is solved.</li>
+        </ul>
+        <h3 class="Heading3">Console</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE43301</MadCap:conditionalText>This release fixes an issue present after upgrading to SQLdm 8.5 with custom counters that had customized categories.  This issue caused a .NETframework error and the SQLdm console to crash when clicking any monitored server.</li>
+        </ul>
+        <h3 class="Heading3">Dashboard</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE43239</MadCap:conditionalText>An issue preventing the Lock Waits and Tempdb panels from displaying in a customized Dashboard view no longer occurs.</li>
+        </ul>
+        <h3 class="Heading3">Reports</h3>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE41457</MadCap:conditionalText>An issue preventing the Top Queries report to deploy correctly into a Microsoft Reporting Services Server no longer occurs.</li>
+            <li class="Bullet">
+                <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE20099</MadCap:conditionalText>This release fixes an issue where a custom report was deployed into the Microsoft Reporting Services Server instead of the selected report in SQL dm with a similar name.</li>
+        </ul>
+    </body>
+</html>

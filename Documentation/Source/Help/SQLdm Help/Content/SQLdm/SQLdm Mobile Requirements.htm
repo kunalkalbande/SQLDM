@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1617" MadCap:lastWidth="794">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>SQLdm Mobile and Idera Newsfeed requirements</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">SQLdm Mobile and Idera Newsfeed requirements</h1>
+        <p class="Body">
+            <MadCap:keyword term="permissions requirements;software requirements;SQL Server requirements;product requirements:SQL Server;port requirements;product requirements:ports;product requirements:permissions;product requirements:hardware;product requirements:software;requirements:software;requirements:hardware;requirements:permissions;requirements:ports;requirements:mobile device;mobile device requirements;product requirements:mobile device;install:product requirements;hardware requirements;Web Server:requirements" />You can easily install  SQLdm Mobile on any computer that meets or exceeds the following requirements. The SQLdm Mobile installation includes the Idera Newsfeed technology and these related components:    </p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">SQLdm Mobile Web application</li>
+            <li class="Bullet">SQLdm Mobile &amp;&#160;Newsfeed Service</li>
+            <li class="BulletLast">SQLdm Mobile Repository</li>
+        </ul>
+        <p class="Body">For more information, review all the SQLdm Mobile <a href="SQLdm Mobile Architecture Components.htm">components and architecture</a>.</p>
+        <h2 class="Heading2">General requirements for all components</h2>
+        <p class="Body">All SQLdm Mobile components require Microsoft .NET Framework version 4.0 or later.</p>
+        <h2 class="Heading2">Permission requirements</h2>
+        <p class="Body">The SQLdm Mobile &amp; Newsfeed Service account requires the following permissions. By default, setup program assigns the Local System account to the SQLdm Mobile &amp; Newsfeed Service. During install, you can input credentials for a Windows user account or SQL Server login.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Permission</th>
+                    <th class="HeadD-Column2-Header1">Why it's required</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Log on as Service</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Allows the SQLdm Mobile &amp; Newsfeed Service account to run as a service.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Read and write privileges on the SQLdm Mobile Repository database</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Allows the SQLdm Mobile &amp; Newsfeed Service to receive and maintain performance and configuration data in the SQLdm Mobile Repository.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Port requirements</h2>
+        <p class="Body">By default, the SQLdm Mobile components use the following ports.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 99px;" class="Column-Column1" />
+            <col style="width: 93px;" class="Column-Column2" />
+            <col style="width: 183px;" class="Column-Column1" />
+            <col style="width: 350px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Port Number</th>
+                    <th class="HeadE-Column2-Header1">Where</th>
+                    <th class="HeadE-Column1-Header1">Which component uses it</th>
+                    <th class="HeadD-Column2-Header1">Why</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">25</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Mail Server</p>
+                    </td>
+                    <td class="BodyE-Column1-Body1">SQLdm Mobile &amp;&#160;Newsfeed Service</td>
+                    <td class="BodyD-Column2-Body1">Allows the SQLdm Mobile &amp; Newsfeed Service to send notification emails.</td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">80</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Web Server hosting the SQLdm Mobile Web site</p>
+                    </td>
+                    <td class="BodyE-Column1-Body1">SQLdm Mobile Web application</td>
+                    <td class="BodyD-Column2-Body1">Allows access to the SQLdm Mobile screens via a mobile device inside or outside your corporate firewall. By default, IIS&#160;uses port 80 for the local virtual directory, so check your Web Server settings to pick an appropriate port for SQLdm Mobile. You can specify a different port during install or later when you need to change this configuration.</td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">5166<br />5167</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Computer running the SQLdm services</p>
+                    </td>
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">SQLdm services</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Allow communications between SQLdm and the Idera Newsfeed Platform for signup and login authentication.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">5168</p>
+                    </td>
+                    <td class="BodyB-Column2-Body1">
+                        <p class="TableText">Computer running the SQLdm Mobile &amp; Newsfeed Service</p>
+                    </td>
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">SQLdm Mobile &amp;&#160;Newsfeed Service</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Allows communications between the Idera Newsfeed and SQLdm for server status updates.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Mobile device requirements</h2>
+        <p class="Body">You can access SQLdm Mobile on any smart phone or other mobile device that meets these minimum operating system requirements:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Android version 2.1 or later</li>
+            <li class="Bullet">iOS version 3.2 or later</li>
+            <li class="BulletLast">RIM (BlackBerry OS)&#160;version 6.0 or later</li>
+        </ul>
+        <p class="Body">You can run the SQLdm Mobile Web application in a native browser that supports HTML 5, such as Google Chrome or Mozilla Firefox. SQLdm Mobile does not support Microsoft Internet Explorer 8 or earlier.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText"><span class="If_Then_Statement">If you plan to use IE 9 or later to access the SQLdm Mobile Web site</span>, make sure that you disable the <span class="GUI_Item">Display intranet sites in Compatibility View</span> setting. To change this setting, click <span class="GUI_Item">Compatibility View Settings</span> on the <span class="GUI_Item">Tools </span>menu in the IE&#160;browser window.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Web server requirements</h2>
+        <p class="Body">The SQLdm Mobile&#160;Web application requires the following Web Server configuration.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Type of requirement</th>
+                    <th class="HeadD-Column2-Header1">Minimum value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">CPU</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">2.0 GHz</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Memory</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">1 GB</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Disk space</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">21 MB</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Microsoft Internet Information Services (IIS)</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Version 7.0 or later</p>
+                        <p class="TableText">By default, IIS&#160;7 installs with Windows Server 2008. You can enable this role using the native Server Manager.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">To successfully run the SQLdm Mobile Web application, make sure that you enable the <span class="GUI_Item">Common HTTP&#160;Features</span> setting and the following service roles in IIS:</p>
+                        <ul style="list-style-type: circle;">
+                            <li>Static Content Compression</li>
+                            <li>Default Document</li>
+                            <li>Directory Browsing</li>
+                            <li>HTTP&#160;Errors</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Repository requirements</h2>
+        <p class="Body">You can install the SQLdm Mobile Repository on a computer running the following versions of SQL Server software:</p>
+        <ul style="list-style-type: circle;">
+            <li class="BulletLast">SQL&#160;Server 2005 and above</li>
+        </ul>
+        <p class="Body">Keep in mind that the Repository database and corresponding SQLdm Mobile &amp;&#160;Newsfeed Service require 19 MB&#160;of disk space.</p>
+    </body>
+</html>

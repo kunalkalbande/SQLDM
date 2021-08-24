@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="5041" MadCap:lastWidth="571" MadCap:ignoredWords="SQL;vCenter">
+    <head>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">Known issues</h1>
+        <p class="Body">Idera strives to ensure our products provide quality solutions for your SQL Server needs. If you need further assistance with any issue, please contact <a href="https://idera.secure.force.com/" target="_blank">Support</a>. The following issues are known in this version of SQLdm:</p>
+        <h2 class="Heading2">Known issues in version 8.6</h2>
+        <h2 class="Heading2">Alerting</h2>
+        <p class="DefinitionListTerm">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE43810</MadCap:conditionalText>SQL diagnostic manager fails to update statistics for some monitored SQL servers and triggers a persistent alert ‘Unable To Monitor’ for the same.</p>
+        <p class="DefinitionListBody">Users with SQL diagnostic manager version 8.0.1 and later may find that some servers are not returning any statistics due to an issue in the Activity Monitor settings that causes the entire refresh of servers to fail.</p>
+        <p class="DefinitionListTerm">&#160;</p>
+        <p class="DefinitionListTerm">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE41206</MadCap:conditionalText>SQL diagnostic manager fails to update statistics for some monitored SQL servers and triggers a persistent alert ‘Unable To Monitor’ for the same.</p>
+        <p class="DefinitionListBody">Users with SQL diagnostic manager version 8.0.1 and later may find that some servers are not returning any statistics due to an issue in the Activity Monitor settings that causes the entire refresh of servers to fail.</p>
+        <p>&#160;</p>
+        <p class="DefinitionListTerm">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE43024</MadCap:conditionalText>SQL diagnostic manager fails to display one alert response when multiple metric thresholds are breached.</p>
+        <p class="DefinitionListBody">SQL diagnostic manager version 8.5 and later is designed to trigger an alert response only after multiple metric thresholds are breached when the “Where all metrics are in specified list” condition is selected. However, an issue in the “Send a Network Management (SNMP) Trap Message”, “Send an email to recipient”, and “Run the following SQL Script” actions of the Alert Response Window cause these actions to execute several times, resulting in multiple alerts.</p>
+        <p class="DefinitionListTerm">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE43027</MadCap:conditionalText>The action “Run the following program” fails to execute when configuring automated responses to alerts.</p>
+        <p class="DefinitionListBody">Users with SQL diagnostic manager version 8.0 and later may find that when creating an alert response with the associated action “Run the following program” in the Alert Response window, the specified program does not run once the condition is met.</p>
+        <p>&#160;</p>
+        <p class="DefinitionListTerm">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE42976</MadCap:conditionalText>The actions “Write an event to the Windows event log” and “Send an email to recipient” in the Alert Response Window fail to deliver multiple alert statuses.</p>
+        <p class="DefinitionListBody">Users with SQL diagnostic manager version 8.5 and later may find that when creating an alert response with multiple metrics as a condition and associated actions “Write an event to the Windows event log” and/or “Send an email to recipient” in the Alert Response window, the feature fails to deliver complete alert information and displays only one alert status when condition is met.</p>
+        <p class="DefinitionListTerm">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE43056</MadCap:conditionalText>SQL diagnostic manager returns PoweredOff alerts for the VM Power State metric when servers are not turned off.</p>
+        <p class="DefinitionListBody">Some SQLdm users may view PoweredOff alerts when reviewing the generated “VM Power State” alerts for their servers linked to vCenter or Hyper-V host servers. These alerts display even though the servers are not turned off.</p>
+        <p class="DefinitionListTerm">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE43810</MadCap:conditionalText>SQL diagnostic manager fails to stop alert generation after the Availability Group Preferred Replica alert is un-checked.</p>
+        <p class="DefinitionListBody">Users with SQL diagnostic manager version 8.6 that have the Availability Group Preferred Replica alert configured may find that when un-checking the alert in the Alert Configuration window to stop raising the alert, SQLdm continues to generate the alert which also displays in the Alerts View.  Un-checking the configured database in the Configuration tab of the Alert Configuration window solves this issue.</p>
+        <h2 class="Heading2">General</h2>
+        <p class="DefinitionListTerm">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE43066</MadCap:conditionalText>SQL diagnostic manager fails to update fields in the VM Configuration window after the virtualization host server is edited.</p>
+        <p class="DefinitionListBody">Users with SQL diagnostic manager version 8.5  and later may find that fields such as the Virtual Machine name, Type, and Computer Name in the VM Configuration window are not updated correctly after the virtualization host server is changed.</p>
+        <h2 class="Heading2">Known issues in version 8.5</h2>
+        <h2 class="Heading2">General</h2>
+        <p class="DefinitionListTerm">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE43047</MadCap:conditionalText>The Query Monitor trace in SQL diagnostic manager does not return queries in progress.</p>
+        <p class="DefinitionListBody">Users with SQL diagnostic manager version 8.0 and later may find that when using the Query Monitor functionality, the queries returned and displayed do not include queries in progress.</p>
+        <p class="DefinitionListTerm">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE43066</MadCap:conditionalText>SQL&#160;diagnostic manager fails to update fields in the VM&#160;Configuration window after the virtualization host server is edited.</p>
+        <p class="DefinitionListBody">Users with SQL diagnostic manager version 8.5  may find that fields such as the Virtual Machine name, Type, and Computer Name in the VM Configuration window are not updated correctly after the virtualization host server is changed.</p>
+        <h2 class="Heading2">Alerting</h2>
+        <p class="DefinitionListTerm">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE20768, v 8.5</MadCap:conditionalText>SQLdm returns Blocking Session Wait Time alerts with session 0 and missing information when blocking-process node is empty</p>
+        <p class="DefinitionListBody">Some users may experience Blocking Session Wait Time alerts with missing information and session 0 when the blocking-process node is empty in SQL Server. In SQLdm 8.01 and later versions, this issue may occur only if the trace that is collecting blocking data doesn’t return a SPID for a blocking process. </p>
+        <p class="DefinitionListTerm">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE43024</MadCap:conditionalText>SQL diagnostic manager fails to display one alert response when multiple metric thresholds are breached.</p>
+        <p class="DefinitionListBody">SQL diagnostic manager version 8.5 and later is designed to trigger an alert response only after multiple metric thresholds are breached when the “Where all metrics are in specified list” condition is selected. However, an issue in the “Send a Network Management (SNMP) Trap Message”, “Send an email to recipient”, and “Run the following SQL Script” actions of the Alert Response Window cause these actions to execute several times, resulting in multiple alerts.</p>
+        <p class="DefinitionListTerm">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE43027</MadCap:conditionalText>The action “Run the following program” fails to execute when configuring automated responses to alerts.</p>
+        <p class="DefinitionListBody">Users with SQL diagnostic manager version 8.0 and later may find that when creating an alert response with the associated action “Run the following program” in the Alert Response window, the specified program does not run once the condition is met.</p>
+        <p class="DefinitionListTerm">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE42976</MadCap:conditionalText>The actions “Write an event to the Windows event log” and “Send an email to recipient” in the Alert Response Window fail to deliver multiple alert statuses.</p>
+        <p class="DefinitionListBody">Users with SQL diagnostic manager version 8.5 and later may find that when creating an alert response with multiple metrics as a condition and associated actions “Write an event to the Windows event log” and/or “Send an email to recipient” in the Alert Response window, the feature fails to deliver complete alert information and displays only one alert status when condition is met.</p>
+        <p class="DefinitionListTerm">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE43056</MadCap:conditionalText>SQL diagnostic manager returns PoweredOff alerts for the VM Power State metric when servers are not turned off.</p>
+        <p class="DefinitionListBody">Some SQLdm users may view PoweredOff alerts when reviewing the generated “VM Power State” alerts for their servers linked to vCenter or Hyper-V host servers. These alerts display even though the servers are not turned off.</p>
+        <h2 class="Heading2">Known issues in version 8.0</h2>
+        <h2 class="Heading2">Installation and configuration considerations</h2>
+        <p class="DefinitionListTerm">The SQLdm Setup Wizard is interrupted after selecting the SQL server instance on which you want to install the SQLdm Repository</p>
+        <p class="DefinitionListBody">Some users may experience an interruption due to memory corruption in their SQLdm installation after selecting the SQL Server instance on which they want to install their SQLdm Repository. Note that the SQLdm installer does not complete on machines where memory corruption prevents connections to SQL Server. Furthermore, in these types of environments other applications such as SQL Server Management Studio also do not function.</p>
+        <p class="DefinitionListTerm">Negative values received from vCenter as a warning message do not impact VM data collection</p>
+        <p class="DefinitionListBody">Some users may receive negative values from vCenter as a warning message. The message is logged as in the SQLdm Services. Note that this does not have any impact in terms of VM data collection and users are able to view VM and VM Host data.</p>
+        <p class="DefinitionListTerm">Console crashes when upgrading to SQLdm 8.0 while logged in the Idera Newsfeed account</p>
+        <p class="DefinitionListBody">Users who remain logged in the Idera Newsfeed account and upgrade to SQLdm 8.0 may experience console crashes. Note that an upgrade from SQLdm 8.0 to 8.0.1 will solve this issue.</p>
+        <h2 class="Heading2">Previous Known Issues</h2>
+        <h3 class="Heading3">General</h3>
+        <p class="DefinitionListTerm">SQLdm 7.5 no longer supports Microsoft Windows 2000 or the .Net 2.0 framework</p>
+        <p class="DefinitionListBody">SQLdm 7.5 does not support Windows 2000 or the .Net 2.0 framework. While SQLdm 7.2 and prior versions continue to operate with Windows 2000, SQLdm 7.5 and later require the .Net 4.0 Full framework to take advantage of the additional features. For additional information  about supported versions, see <a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/SQLdm requirements.htm|WebHelpSkin" target="_blank">SQLdm requirements</a>.</p>
+        <h3 class="Heading3">Server Overview</h3>
+        <p class="DefinitionListTerm">Timeline refresh causes a memory leak</p>
+        <p class="DefinitionListBody">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE671, v 7.5</MadCap:conditionalText>SQLdm experiences a memory leak when you are viewing the Timeline and click <span class="GUI_Item">Refresh</span>. To free the memory, you must restart the SQLdm Management Console.</p>
+        <h3 class="Heading3">Queries</h3>
+        <p class="DefinitionListTerm">Queries view filter may not properly filter in some situations</p>
+        <p class="DefinitionListBody">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE184, v 7.5</MadCap:conditionalText>In environments with large databases, the Queries view filter may not properly filter if you attempt to change filter properties during a refresh.</p>
+        <h3 class="Heading3">Resources</h3>
+        <p class="DefinitionListTerm">File Activity displays an unhelpful error message when WMI&#160;credentials are invalid</p>
+        <p class="DefinitionListBody">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">DE670, v 7.5</MadCap:conditionalText>SQLdm displays the error message, "An error occurred while refreshing the active view," when you attempt with access the Resources &gt; File Activity view if your WMI&#160;credentials are invalid. If this message appears, verify your WMI&#160;access credentials and try again.</p>
+        <h2 class="Heading2">Installation and configuration considerations</h2>
+        <p class="DefinitionListTerm">SQLdm Repository computer must run Microsoft SQL&#160;Server 2005 or later</p>
+        <p class="DefinitionListBody">SQLdm 7.0 and later require Microsoft SQL&#160;Server 2005 or later running on the computer that hosts the SQLdm Repository database for all installations.</p>
+        <p class="DefinitionListTerm">SQLdm Console only users cannot upgrade to the full version without uninstalling SQLdm</p>
+        <p class="DefinitionListBody">Users who have an installation of SQLdm Console only on a computer can use the upgrade to update their current version of the desktop client console, but cannot use the upgrade program to install the full version of SQLdm.</p>
+        <p class="DefinitionListTerm">Registering a SQL Server instance that uses an Alias Name requires an alias on the host computer</p>
+        <p class="DefinitionListBody">When registering a SQL Server instance using the alias name, an alias must first be created on the computer that hosts the SQLdm Management and Collection Services. If the instance uses Named Pipes, Named Pipes must be enabled in the SQL Server network configuration of the aliased SQL Server instance.</p>
+        <p class="DefinitionListTerm">Management Service does not start when the account permissions are incorrect</p>
+        <p class="DefinitionListBody">If the account you specified for the SQLdm services does not have System Administrator privileges on the SQL Server instance hosting the Repository database, the setup program cannot start the SQLdm Management Service. This issue only occurs during installation.</p>
+        <p class="DefinitionListTerm">Some users  may receive an error message when opening the SQLdm stating that there is no valid license available</p>
+        <p class="DefinitionListBody">To resolve this issue, use the Management Service Configuration wizard to specify credentials for a Windows account or SQL Server login that has System Administrator privileges on the SQL Server instance hosting the Repository database. You can start the Management Service Configuration wizard from the Programs menu.</p>
+        <p class="DefinitionListTerm">SQLdm Reporting does not support Microsoft Reporting Services 2000</p>
+        <p class="DefinitionListBody">SQLdm only supports Microsoft Reporting Services 2005 and later.</p>
+        <p class="DefinitionListTerm">SQLdm requires Predictive Analytics for baseline-related results</p>
+        <p class="DefinitionListBody">SQLdm 7.5 requires the Predictive Analytics Service in order to display baseline-related results. During installations and upgrades, SQLdm installs the Predictive Analytic service with the other included services. If Predictive Analytics is not detected or is disabled, SQLdm cannot generate baseline data for the requested report. The following reports require the Predictive Analysis Service to include baseline-related results:</p>
+        <ul>
+            <li class="Bullet-Def-Body"><a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Report Baseline Statistics.htm|WebHelpSkin" target="_blank">Baseline Statistics</a>
+            </li>
+            <li class="Bullet-Def-Body"><a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Report CPU Statistics.htm|WebHelpSkin" target="_blank">CPU&#160;Statistics</a>
+            </li>
+            <li class="Bullet-Def-Body"><a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Report Memory Statistics.htm|WebHelpSkin" target="_blank">Memory Statistics</a>
+            </li>
+            <li class="Bullet-Def-Body"><a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Report Session Statistics.htm|WebHelpSkin" target="_blank">Sessions Statistics</a>
+            </li>
+            <li class="Bullet-Def-Body"><a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Report Disk Statistics.htm|WebHelpSkin" target="_blank">Disk Statistics</a>
+            </li>
+            <li class="Bullet-Def-Body-Last"><a href="http://www.idera.com/Help/SQLdm/8-6/Web/Default_CSH.htm#/SQLdm/Report Replication Statistics.htm|WebHelpSkin" target="_blank">Replication Statistics</a>
+            </li>
+        </ul>
+        <p class="DefinitionListTerm">Phase out SQLdm mobile manager</p>
+        <p class="DefinitionListBody">Idera is announcing end of life for SQL mobile manager (SQLmm). On October 1, 2012, all support for SQLmm will stop and the SQLmm trial site will be decommissioned. Also, any remaining installations of SQLmm 3.6 or earlier that use the Idera redirectors will no longer work.</p>
+        <p class="DefinitionListBody">To continue using a Web-based monitoring solution that is accessible from your smart phones or tablet devices, upgrade to SQLdm 7.0 or later, and deploy SQLdm Mobile.</p>
+        <p class="DefinitionListBody">Idera discontinued distribution of SQL mobile manager in October 2011.</p>
+        <p class="DefinitionListTerm">SQLdm Mobile does not support Microsoft IIS&#160;Express</p>
+        <p class="DefinitionListBody">SQLdm Mobile requires the standard version of the Microsoft IIS Web Server, version 7.0 or later. For more information, see the SQLdm Mobile requirements.</p>
+        <p class="DefinitionListTerm">SQLdm Mobile &amp;&#160;Newsfeed installation cannot be changed or repaired using Add/Remove Programs</p>
+        <p class="DefinitionListBody">To successfully change or repair your SQLdm Mobile &amp;&#160;Newsfeed installation, uninstall the application and components, and then run the setup program to reinstall your deployment.</p>
+        <p class="DefinitionListTerm">SQLdm may not properly link to vCenter from some monitored virtual SQL Server instances</p>
+        <p class="DefinitionListBody">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017619</MadCap:conditionalText>The SQLdm VM Configuration window displays a list of your monitored virtual SQL Server instances, but the link between an instance and the associated vCenter may not work properly. To access this window, click <span class="GUI_Item">Tools &gt; VM&#160;Configuration</span>.</p>
+        <p class="DefinitionListTerm">VM Host Server Change alert not always triggered when a VM moves from one host server to another</p>
+        <p class="DefinitionListBody">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017421</MadCap:conditionalText>Even if the circumstances warrant SQLdm to trigger the VM&#160;Host Server Change alert, users who have virtual machines  running on an ESX host managed by vCenter 5.0 or later may not receive the alert when they move a VM from one host to another. </p>
+        <p class="DefinitionListTerm">Negative values received from vCenter as a warning message do not impact VM&#160;data collection</p>
+        <p class="DefinitionListBody">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2018389</MadCap:conditionalText>Some users may receive negative values from vCenter as a warning message. The message is logged as in the SQLdm Services. Note that this does not have any impact in terms of VM data collection and users are able to view VM and VM&#160;Host data.</p>
+        <p class="DefinitionListTerm">Query Monitor disregards filter for SQL&#160;Server 2000 users</p>
+        <p class="DefinitionListBody">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PR2017321</MadCap:conditionalText>Some SQL&#160;Server 2000 users may notice that SQLdm Query Monitor includes SQL&#160;diagnostic manager queries in the results even if the <span class="GUI_Item">Exclude SQL&#160;diagnostic manager queries</span> checkbox is checked in the Advanced Query Monitor Configuration window. </p>
+        <p class="DefinitionListTerm">SQLdm Mobile Server Dashboard charts display “Data not available” error</p>
+        <p class="DefinitionListBody">
+            <MadCap:conditionalText MadCap:conditions="Default.Internal Only">PRPL1667</MadCap:conditionalText>This error indicates that SQLdm Mobile was not able to collect all the performance metrics tracked by these charts. This issue is more likely to occur with the I/O and Per Read/Write charts on the Disk dashboard. To correct this issue, use the Microsoft IIS Manager console to restart the SQLdm Mobile Web site (virtual directory).</p>
+        <p class="DefinitionListTerm">Start and Stop service actions not supported for virtual SQL&#160;Server instances</p>
+        <p class="DefinitionListBody">The Start and Stop service actions are not supported for virtual SQL Server instances (instances located on a Windows cluster node). To start or stop a service on a virtual SQL Server 2008 instance, use the Microsoft Failover Cluster Management tool. For SQL Server 2005 or earlier, use the Microsoft Cluster Administrator tool to manage services.</p>
+        <p class="DefinitionListTerm">Gaps between the real-time view and back-filled historical data can be seen on the CPU&#160;view</p>
+        <p class="DefinitionListBody">This occurs only when the CPU view is accessed via the Server tree. To view the information, without any gaps, access the CPU view via the ribbon.</p>
+        <p class="DefinitionListTerm">Free disk space reported as zero on databases with special characters</p>
+        <p class="DefinitionListBody">For servers and path names that include special characters such as % or #, SQLdm may incorrectly report the remaining disk space as zero.</p>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="286" MadCap:lastWidth="1073">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Rebuild indexes in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Rebuild indexes</h1>
+        <p class="Body">
+            <MadCap:keyword term="Indexes:rebuilding">
+            </MadCap:keyword>The Rebuild Indexes option on the Tables and Indexes view allows you to select tables to rebuild. Rebuilding your tables allows you to decrease the amount of fragmentation on a table. High table fragmentation can lead to overall performance bottlenecks on your SQL Server instance.</p>
+        <p class="Body">When you click <span class="GUI_Item">Rebuild Indexes</span> from the SQLdm Console, the <span class="GUI_Item">Select Tables</span> window opens and allows you to choose the table indexes to rebuild. </p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">If you are rebuilding indexes on a very large table the rebuild process could take several minutes to complete. While the rebuild is in process, the table is locked and users are unable to access it. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">Once the indexes are rebuilt, the <span class="GUI_Item">% Fragmentation (Current)</span>  column displays showing you the results.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">If you are rebuilding a very large index, the SQLdm Console checks for the rebuild status for 90 seconds. If the rebuild is not complete after 90 seconds, the <span class="GUI_Item">% Fragmentation (Current)</span> column does not display the new value until the next table statistics collection occurs.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

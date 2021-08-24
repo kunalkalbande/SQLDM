@@ -1,0 +1,1412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Access the SQLdm Release Notes"
+    Link="/Content/SQLdm/Release notes.htm"></TocEntry>
+  <TocEntry
+    Title="Get Started"
+    Link="/Content/SQLdm/Get Started.htm">
+    <TocEntry
+      Title="Upgrade to this release"
+      Link="/Content/SQLdm/Upgrade to this build.htm">
+      <TocEntry
+        Title="Upgrade SQLdm in a clustered environment"
+        Link="/Content/SQLdm/Upgrade SQLdm in a Clustered Environment.htm" />
+      <TocEntry
+        Title="Perform a distributed upgrade"
+        Link="/Content/SQLdm/Perform a distributed upgrade.htm" />
+      <TocEntry
+        Title="Upgrade SQLdm Console only"
+        Link="/Content/SQLdm/Upgrade SQLdm Console only.htm" />
+      <TocEntry
+        Title="Test your deployment"
+        Link="/Content/SQLdm/Testing your deployment.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Welcome to SQLdm"
+      Link="/Content/SQLdm/Welcome to SQLdm.htm">
+      <TocEntry
+        Title="What is SQLdm?"
+        Link="/Content/SQLdm/What is SQLdm.htm" />
+      <TocEntry
+        Title="How does SQLdm help me?"
+        Link="/Content/SQLdm/How SQLdm helps you.htm" />
+      <TocEntry
+        Title="Use the SQLdm interface"
+        Link="/Content/SQLdm/Using the SQLdm Interface.htm">
+        <TocEntry
+          Title="Navigation pane"
+          Link="/Content/SQLdm/Navigation Pane.htm" />
+        <TocEntry
+          Title="View SQLdm Today"
+          Link="/Content/SQLdm/View SQLdm Today.htm" />
+        <TocEntry
+          Title="Refresh and pause views"
+          Link="/Content/SQLdm/Using Refresh and Pause.htm" />
+        <TocEntry
+          Title="Filter views"
+          Link="/Content/SQLdm/Filter views.htm" />
+        <TocEntry
+          Title="Charts"
+          Link="/Content/SQLdm/Charts.htm" />
+        <TocEntry
+          Title="Monitor multiple instances"
+          Link="/Content/SQLdm/Monitor multiple instances.htm" />
+        <TocEntry
+          Title="Server Configuration Properties"
+          Link="/Content/SQLdm/Server configuration properties view.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Find answers"
+        Link="/Content/SQLdm/Find answers.htm" />
+      <TocEntry
+        Title="Customer Support Portal"
+        Link="/Content/SQLdm/Customer Support Portal.htm"
+        ReplaceMergeNode="false" />
+      <TocEntry
+        Title="About Idera"
+        Link="/Content/SQLdm/About Idera.htm">
+        <TocEntry
+          Title="Idera products"
+          Link="/Content/SQLdm/Idera Products.htm" />
+        <TocEntry
+          Title="Contact Idera"
+          Link="/Content/SQLdm/Contacting Idera.htm"></TocEntry>
+        <TocEntry
+          Title="Legal notice"
+          Link="/Content/SQLdm/Legal Notice.htm" />
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="Installation and deployment"
+      Link="/Content/SQLdm/Installation and deployment.htm">
+      <TocEntry
+        Title="Supported installation scenarios"
+        Link="/Content/SQLdm/Supported Installation Scenarios.htm" />
+      <TocEntry
+        Title="Choose your deployment strategy"
+        Link="/Content/SQLdm/Choose your deployment strategy.htm" />
+      <TocEntry
+        Title="How SQLdm works with a virtualized environment"
+        Link="/Content/SQLdm/How SQLdm works with a virtual environment.htm" />
+      <TocEntry
+        Title="Deploy SQLdm only"
+        Link="/Content/SQLdm/Deploy SQLdm.htm">
+        <TocEntry
+          Title="SQLdm components and architecture"
+          Link="/Content/SQLdm/SQLdm architecture.htm"></TocEntry>
+        <TocEntry
+          Title="SQLdm requirements"
+          Link="/Content/SQLdm/SQLdm requirements.htm"></TocEntry>
+        <TocEntry
+          Title="How to install SQLdm"
+          Link="/Content/SQLdm/SQLdm installation.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Deploy SQLdm Mobile or Idera Newsfeed"
+        Link="/Content/SQLdm/Deploy SQLdm Mobile.htm">
+        <TocEntry
+          Title="SQLdm Mobile components and architecture including Idera Newsfeed"
+          Link="/Content/SQLdm/SQLdm Mobile Architecture Components.htm" />
+        <TocEntry
+          Title="SQLdm Mobile and Idera Newsfeed requirements"
+          Link="/Content/SQLdm/SQLdm Mobile Requirements.htm" />
+        <TocEntry
+          Title="How to install SQLdm Mobile and Idera Newsfeed"
+          Link="/Content/SQLdm/Install SQLdm Mobile.htm" />
+        <TocEntry
+          Title="How to install Idera Newsfeed only"
+          Link="/Content/SQLdm/Install INF only.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Deploy SQLdm Console only"
+        Link="/Content/SQLdm/Deploy SQLdm Console only.htm">
+        <TocEntry
+          Title="How to install SQLdm Console only"
+          Link="/Content/SQLdm/SQLdm Console only installation.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Deploy SQLdm in an AlwaysOn availability group"
+        Link="/Content/SQLdm/Deploy SQLdm in a high availability group.htm">
+        <TocEntry
+          Title="AlwaysOn availability group listener name and port designation"
+          Link="/Content/SQLdm/Availability Group listener name and port number.htm" />
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="Configure your deployment"
+      Link="/Content/SQLdm/Configuring SQLdm.htm">
+      <TocEntry
+        Title="Connect to the SQLdm Repository"
+        Link="/Content/SQLdm/Connect to a SQLdm Repository.htm"></TocEntry>
+      <TocEntry
+        Title="Add your SQL Server instances"
+        Link="/Content/SQLdm/Add Your SQL Server Instances.htm">
+        <TocEntry
+          Title="Configure authentication"
+          Link="/Content/SQLdm/Configuring Authentication.htm" />
+        <TocEntry
+          Title="Select instances to monitor"
+          Link="/Content/SQLdm/Select instances to monitor.htm" />
+        <TocEntry
+          Title="Configure data collection"
+          Link="/Content/SQLdm/Configure data collection.htm" />
+        <TocEntry
+          Title="Configure OS metric collection"
+          Link="/Content/SQLdm/Configure OS metrics.htm" />
+        <TocEntry
+          Title="Select an alert template and tags"
+          Link="/Content/SQLdm/Tag Instance.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Configure your virtual machine connections"
+        Link="/Content/SQLdm/Virtualization Configuration.htm">
+        <TocEntry
+          Title="Configure your VM host server connection"
+          Link="/Content/SQLdm/Configure your VM host server connection.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Configure console options"
+        Link="/Content/SQLdm/Configure Console Options.htm">
+        <TocEntry
+          Title="Define common properties"
+          Link="/Content/SQLdm/Defining common properties.htm" />
+        <TocEntry
+          Title="Configure the Alerts view"
+          Link="/Content/SQLdm/Configure Console Options Alerts.htm" />
+        <TocEntry
+          Title="Configure notification settings"
+          Link="/Content/SQLdm/Configuring Notification Settings.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Set your SQLdm Repository grooming schedule"
+        Link="/Content/SQLdm/Set your Repository grooming schedule.htm" />
+      <TocEntry
+        Title="Use custom counters to track metrics"
+        Link="/Content/SQLdm/Use Custom Counters to Track Metrics.htm">
+        <TocEntry
+          Title="Add a custom counter"
+          Link="/Content/SQLdm/Adding a Custom Counter.htm">
+          <TocEntry
+            Title="Select counter type"
+            Link="/Content/SQLdm/Select Counter Type.htm" />
+          <TocEntry
+            Title="Select Windows system counter"
+            Link="/Content/SQLdm/Select Windows System Counter.htm" />
+          <TocEntry
+            Title="Select SQL Server system counter"
+            Link="/Content/SQLdm/Select SQL Server System Counter.htm" />
+          <TocEntry
+            Title="Provide custom SQL script"
+            Link="/Content/SQLdm/Provide Custom SQL Script.htm" />
+          <TocEntry
+            Title="Select virtual machine system counter"
+            Link="/Content/SQLdm/Select Virtual Machine System Counter.htm" />
+          <TocEntry
+            Title="Specify counter value"
+            Link="/Content/SQLdm/Specify counter value.htm"></TocEntry>
+          <TocEntry
+            Title="Specify counter definition"
+            Link="/Content/SQLdm/Specify counter definition.htm" />
+          <TocEntry
+            Title="Configure alert settings for this counter"
+            Link="/Content/SQLdm/Configure Alert Settings.htm" />
+        </TocEntry>
+        <TocEntry
+          Title="Edit a custom counter"
+          Link="/Content/SQLdm/Editing a Custom Counter.htm"></TocEntry>
+        <TocEntry
+          Title="Delete a custom counter"
+          Link="/Content/SQLdm/Deleting a Custom Counter.htm" />
+        <TocEntry
+          Title="Test a custom counter"
+          Link="/Content/SQLdm/Testing a Custom Counter.htm" />
+        <TocEntry
+          Title="Link custom counter to monitored instance"
+          Link="/Content/SQLdm/Linking a Custom Counter.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Work with tags"
+        Link="/Content/SQLdm/Working with Tags.htm">
+        <TocEntry
+          Title="Manage tags"
+          Link="/Content/SQLdm/Manage Tags.htm" />
+        <TocEntry
+          Title="Add a new tag"
+          Link="/Content/SQLdm/Add Tag.htm" />
+        <TocEntry
+          Title="Edit a tag"
+          Link="/Content/SQLdm/Edit Tag.htm" />
+      </TocEntry>
+    </TocEntry>
+  </TocEntry>
+  <TocEntry
+    Title="Monitor SQL Server Performance"
+    Link="/Content/SQLdm/Monitor SQL Server performance.htm">
+    <TocEntry
+      Title="Monitor instances"
+      Link="/Content/SQLdm/Monitor Instances.htm">
+      <TocEntry
+        Title="Navigate to your SQL Server instances"
+        Link="/Content/SQLdm/Navigate to Your SQL Server.htm" />
+      <TocEntry
+        Title="Get the SQL Server performance overview"
+        Link="/Content/SQLdm/Get the SQL Server Performance.htm">
+        <TocEntry
+          Title="Customize your Dashboard view"
+          Link="/Content/SQLdm/Customize your Dashboard view.htm">
+          <TocEntry
+            Title="Design a Dashboard view"
+            Link="/Content/SQLdm/Design dashboard.htm" />
+          <TocEntry
+            Title="Select an existing dashboard design"
+            Link="/Content/SQLdm/Select a dashboard layout.htm" />
+          <TocEntry
+            Title="Save a dashboard design"
+            Link="/Content/SQLdm/Save dashboard.htm" />
+        </TocEntry>
+        <TocEntry
+          Title="Cache panel"
+          Link="/Content/SQLdm/Cache Dashboard.htm" />
+        <TocEntry
+          Title="CPU panel"
+          Link="/Content/SQLdm/CPU Dashboard.htm" />
+        <TocEntry
+          Title="Custom Counters panel"
+          Link="/Content/SQLdm/Custom Counters dashboard.htm" />
+        <TocEntry
+          Title="Databases panel"
+          Link="/Content/SQLdm/Databases Dashboard.htm" />
+        <TocEntry
+          Title="Disk panel"
+          Link="/Content/SQLdm/Disk Dashboard.htm" />
+        <TocEntry
+          Title="File Activity panel"
+          Link="/Content/SQLdm/File Activity dashboard.htm" />
+        <TocEntry
+          Title="Lock Waits panel"
+          Link="/Content/SQLdm/Locks Dashboard.htm" />
+        <TocEntry
+          Title="Memory panel"
+          Link="/Content/SQLdm/Memory Dashboard.htm" />
+        <TocEntry
+          Title="Network panel"
+          Link="/Content/SQLdm/Network Dashboard.htm" />
+        <TocEntry
+          Title="Server Waits panel"
+          Link="/Content/SQLdm/Server Waits Dashboard.htm" />
+        <TocEntry
+          Title="Sessions panel"
+          Link="/Content/SQLdm/Sessions Dashboard.htm" />
+        <TocEntry
+          Title="Tempdb panel"
+          Link="/Content/SQLdm/Tempdb Dashboard.htm" />
+        <TocEntry
+          Title="Virtualization panel"
+          Link="/Content/SQLdm/Virtualization Dashboard.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Get the SQL Server performance details"
+        Link="/Content/SQLdm/Get SQL Server Performance Details.htm" />
+      <TocEntry
+        Title="Monitor SQL Server configuration settings"
+        Link="/Content/SQLdm/Monitor SQL Server configuration.htm">
+        <TocEntry
+          Title="Edit configuration value"
+          Link="/Content/SQLdm/Edit configuration value.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="View active alerts for this instance"
+        Link="/Content/SQLdm/View active alerts for this instance.htm">
+        <TocEntry
+          Title="Get a 12-hour forecast of alert activity"
+          Link="/Content/SQLdm/Get a 12-hour forecast.htm">
+          <TocEntry
+            Title="Alert forecast details"
+            Link="/Content/SQLdm/Alert Forecast Details.htm" />
+        </TocEntry>
+        <TocEntry
+          Title="Snooze alerts"
+          Link="/Content/SQLdm/Pause Alerting.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="View past performance"
+        Link="/Content/SQLdm/View past performance.htm" />
+      <TocEntry
+        Title="Pause alerts and decrease collection"
+        Link="/Content/SQLdm/Take a Monitored SQL Server.htm" />
+      <TocEntry
+        Title="Configure SQLdm monitoring properties"
+        Link="/Content/SQLdm/Configure SQLdm monitoring options.htm">
+        <TocEntry
+          Title="Set general server options"
+          Link="/Content/SQLdm/Set general server options.htm" />
+        <TocEntry
+          Title="Configure server baseline options"
+          Link="/Content/SQLdm/Configure server baseline options.htm">
+          <TocEntry
+            Title="Apply baseline to multiple instances"
+            Link="/Content/SQLdm/Apply baseline to servers.htm" />
+        </TocEntry>
+        <TocEntry
+          Title="Set query monitor options"
+          Link="/Content/SQLdm/Set query monitor options.htm">
+          <TocEntry
+            Title="Configure advanced SQLdm query monitor options"
+            Link="/Content/SQLdm/Configure Advanced Query Monitor Options.htm" />
+        </TocEntry>
+        <TocEntry
+          Title="Set activity monitor options"
+          Link="/Content/SQLdm/Set non-query monitor options.htm" />
+        <TocEntry
+          Title="Disable replication statistics collection"
+          Link="/Content/SQLdm/Disable replication statistics collection.htm" />
+        <TocEntry
+          Title="Edit table statistics options"
+          Link="/Content/SQLdm/Edit Table Statistics Options.htm">
+          <TocEntry
+            Title="Select a database to exclude from table statistics collection"
+            Link="/Content/SQLdm/Select database to exclude from table growth stats.htm" />
+        </TocEntry>
+        <TocEntry
+          Title="Link custom counters"
+          Link="/Content/SQLdm/Link or Tag Custom Counters.htm" />
+        <TocEntry
+          Title="Schedule maintenance mode"
+          Link="/Content/SQLdm/Schedule Maintenance Mode.htm" />
+        <TocEntry
+          Title="Configure OS metrics monitoring"
+          Link="/Content/SQLdm/Enable OS Metrics Monitoring.htm" />
+        <TocEntry
+          Title="Customize disk statistics"
+          Link="/Content/SQLdm/Customize Disk Statistics.htm" />
+        <TocEntry
+          Title="Configure cluster settings"
+          Link="/Content/SQLdm/Configure Cluster Settings.htm"></TocEntry>
+        <TocEntry
+          Title="Configure wait monitoring"
+          Link="/Content/SQLdm/Configure Wait Monitoring.htm">
+          <TocEntry
+            Title="Configure advanced query wait statistics"
+            Link="/Content/SQLdm/Configure Advanced Query Wait Statistics.htm" />
+        </TocEntry>
+        <TocEntry
+          Title="Configure virtualization"
+          Link="/Content/SQLdm/Configure Virtualization.htm" />
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="Monitor sessions"
+      Link="/Content/SQLdm/Monitor Sessions and Query.htm">
+      <TocEntry
+        Title="Get sessions performance summary"
+        Link="/Content/SQLdm/Get Sessions Performance Summary.htm" />
+      <TocEntry
+        Title="Get sessions performance details"
+        Link="/Content/SQLdm/Get Sessions Performance Details.htm" />
+      <TocEntry
+        Title="Analyze locked sessions"
+        Link="/Content/SQLdm/Analyze Locked Sessions.htm" />
+      <TocEntry
+        Title="Analyze blocked sessions"
+        Link="/Content/SQLdm/Analyze Blocked Sessions.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Monitor query performance"
+      Link="/Content/SQLdm/Monitor Query Performance.htm">
+      <TocEntry
+        Title="View the query monitor signature mode"
+        Link="/Content/SQLdm/View query monitor signature mode.htm" />
+      <TocEntry
+        Title="View the query monitor statement mode"
+        Link="/Content/SQLdm/View query monitor statement mode.htm" />
+      <TocEntry
+        Title="View the query history"
+        Link="/Content/SQLdm/View query history.htm" />
+      <TocEntry
+        Title="View the query waits"
+        Link="/Content/SQLdm/View query waits.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Monitor resources"
+      Link="/Content/SQLdm/Monitor resources.htm">
+      <TocEntry
+        Title="Get the resource performance summary"
+        Link="/Content/SQLdm/Get the Resource Performance.htm" />
+      <TocEntry
+        Title="Get CPU performance details"
+        Link="/Content/SQLdm/Get CPU Performance Details.htm" />
+      <TocEntry
+        Title="Get memory performance details"
+        Link="/Content/SQLdm/Get Memory Performance Details.htm" />
+      <TocEntry
+        Title="Get disk performance details"
+        Link="/Content/SQLdm/Get Disk Performance Details.htm" />
+      <TocEntry
+        Title="View file activity"
+        Link="/Content/SQLdm/View file activity.htm" />
+      <TocEntry
+        Title="Manage your procedure cache"
+        Link="/Content/SQLdm/Manage your Procedure Cache.htm" />
+      <TocEntry
+        Title="View server waits"
+        Link="/Content/SQLdm/View server waits.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Monitor databases"
+      Link="/Content/SQLdm/Monitor databases.htm">
+      <TocEntry
+        Title="Get the database status summary"
+        Link="/Content/SQLdm/Get the Database Status Summary.htm" />
+      <TocEntry
+        Title="Monitor AlwaysOn availability groups"
+        Link="/Content/SQLdm/Monitor AlwaysOn AG.htm" />
+      <TocEntry
+        Title="Get the tempdb status summary"
+        Link="/Content/SQLdm/Get the TempDB status summary.htm">
+        <TocEntry
+          Title="Monitor your tempdb database"
+          Link="/Content/SQLdm/Monitor your TempDB database.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Monitor database configuration settings"
+        Link="/Content/SQLdm/Monitor database configuration settings.htm" />
+      <TocEntry
+        Title="View database status"
+        Link="/Content/SQLdm/Database Status.htm" />
+      <TocEntry
+        Title="Analyze database files"
+        Link="/Content/SQLdm/Analyze Database Files.htm">
+        <TocEntry
+          Title="Get file statistics"
+          Link="/Content/SQLdm/Get File Statistics.htm" />
+        <TocEntry
+          Title="Get file group information"
+          Link="/Content/SQLdm/Get File Group Information.htm" />
+        <TocEntry
+          Title="View transaction log information"
+          Link="/Content/SQLdm/Get Transaction Log Information.htm" />
+        <TocEntry
+          Title="Get disk information"
+          Link="/Content/SQLdm/Get Disk Information.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Analyze backups and restores"
+        Link="/Content/SQLdm/Analyze Database Backups and.htm" />
+      <TocEntry
+        Title="Analyze tables and indexes"
+        Link="/Content/SQLdm/Analyze Tables and Indexes.htm">
+        <TocEntry
+          Title="Update table statistics"
+          Link="/Content/SQLdm/Updating Table Statistics.htm" />
+        <TocEntry
+          Title="Rebuild indexes"
+          Link="/Content/SQLdm/Rebuilding Indexes.htm"></TocEntry>
+      </TocEntry>
+      <TocEntry
+        Title="Monitor database mirroring"
+        Link="/Content/SQLdm/Monitor Database Mirroring.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Monitor services"
+      Link="/Content/SQLdm/Monitor services.htm">
+      <TocEntry
+        Title="Get an overview of your services performance"
+        Link="/Content/SQLdm/Get an Overview of Your Services.htm" />
+      <TocEntry
+        Title="Monitor SQL Agent jobs"
+        Link="/Content/SQLdm/Monitor SQL Agent Jobs.htm" />
+      <TocEntry
+        Title="Monitor full text searches"
+        Link="/Content/SQLdm/Monitor Your Full Text Searches.htm" />
+      <TocEntry
+        Title="Analyze replication information"
+        Link="/Content/SQLdm/Analyze Your Replication Information.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Monitor logs"
+      Link="/Content/SQLdm/Monitor logs.htm">
+      <TocEntry
+        Title="Filter SQL Server events"
+        Link="/Content/SQLdm/Filter Events.htm" />
+      <TocEntry
+        Title="Search for SQL Server events"
+        Link="/Content/SQLdm/Search for Specific Events.htm" />
+      <TocEntry
+        Title="Cycle the SQL Server log"
+        Link="/Content/SQLdm/Cycle the Server Log.htm" />
+      <TocEntry
+        Title="Configure logs"
+        Link="/Content/SQLdm/Configure Logs.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="View the Timeline for this instance"
+      Link="/Content/SQLdm/View timeline for this instance.htm"></TocEntry>
+  </TocEntry>
+  <TocEntry
+    Title="Alert on SQL Server Metrics"
+    Link="/Content/SQLdm/Alert on SQLServer metrics.htm">
+    <TocEntry
+      Title="Configure alerts"
+      Link="/Content/SQLdm/Configure Alerts for Your.htm">
+      <TocEntry
+        Title="Configure alert templates"
+        Link="/Content/SQLdm/Configure Alert Templates.htm" />
+      <TocEntry
+        Title="Configure alert template settings"
+        Link="/Content/SQLdm/Configure Default Alert Settings.htm" />
+      <TocEntry
+        Title="Configure database thresholds"
+        Link="/Content/SQLdm/Configure database thresholds.htm" />
+      <TocEntry
+        Title="Configure disk thresholds"
+        Link="/Content/SQLdm/Configure disk thresholds.htm" />
+      <TocEntry
+        Title="Set advanced alert options"
+        Link="/Content/SQLdm/Set advanced alert options.htm">
+        <TocEntry
+          Title="Configure alert duration"
+          Link="/Content/SQLdm/Configure alert duration.htm" />
+        <TocEntry
+          Title="Configure alert suppression"
+          Link="/Content/SQLdm/Configure alert suppression.htm" />
+        <TocEntry
+          Title="Configure disk drive exclusions"
+          Link="/Content/SQLdm/Configure disk drive exclusions.htm" />
+        <TocEntry
+          Title="Configure text and expression alerts"
+          Link="/Content/SQLdm/Configure text and expression alerts.htm" />
+        <TocEntry
+          Title="Configure size remaining"
+          Link="/Content/SQLdm/Configure size remaining.htm" />
+        <TocEntry
+          Title="Configure database exclusions"
+          Link="/Content/SQLdm/Configure Database Exclusions.htm"></TocEntry>
+        <TocEntry
+          Title="Configure job exclusions"
+          Link="/Content/SQLdm/Configure Job Exclusions.htm" />
+        <TocEntry
+          Title="Configure session exclusions"
+          Link="/Content/SQLdm/Configure Session Exclusions.htm" />
+        <TocEntry
+          Title="Configure custom counter suppression"
+          Link="/Content/SQLdm/Configure Custom Counter Suppression.htm" />
+        <TocEntry
+          Title="Add or edit job filter"
+          Link="/Content/SQLdm/Add Job Step Filter.htm" />
+        <TocEntry
+          Title="Alert value configuration"
+          Link="/Content/SQLdm/Alert Value Configuration.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Base alerts on past performance"
+        Link="/Content/SQLdm/Base Alerts on Past Performance.htm">
+        <TocEntry
+          Title="View suggested alert thresholds"
+          Link="/Content/SQLdm/View suggested alert thresholds.htm" />
+        <TocEntry
+          Title="Set recommended alert options"
+          Link="/Content/SQLdm/Set recommended alert options.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Configure alerts for important cluster events"
+        Link="/Content/SQLdm/Configure alerts for important cluster events.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Organize alerts"
+      Link="/Content/SQLdm/Organize Your Alerts.htm"></TocEntry>
+    <TocEntry
+      Title="Configure how SQLdm responds to alerts"
+      Link="/Content/SQLdm/Configure how SQLdm responds to alerts.htm">
+      <TocEntry
+        Title="Configure automated responses to alerts"
+        Link="/Content/SQLdm/Configure automated responses to alerts.htm">
+        <TocEntry
+          Title="Add action provider"
+          Link="/Content/SQLdm/Add action provider.htm">
+          <TocEntry
+            Title="Alert Communications wizard"
+            Link="/Content/SQLdm/Alerts Communication Wizard.htm">
+            <TocEntry
+              Title="Choose provider type"
+              Link="/Content/SQLdm/Choose Provider Type.htm" />
+            <TocEntry
+              Title="Configure email settings"
+              Link="/Content/SQLdm/Configuring Email Settings.htm" />
+            <TocEntry
+              Title="Configure network management settings"
+              Link="/Content/SQLdm/Configure network management settings.htm" />
+            <TocEntry
+              Title="Understanding the Idera MIB"
+              Link="/Content/SQLdm/Understanding the Idera MIB.htm" />
+          </TocEntry>
+        </TocEntry>
+      </TocEntry>
+    </TocEntry>
+  </TocEntry>
+  <TocEntry
+    Title="Report on SQL Server Performance"
+    Link="/Content/SQLdm/Report on SQLServer performances.htm">
+    <TocEntry
+      Title="Report filters"
+      Link="/Content/SQLdm/Report filters.htm" />
+    <TocEntry
+      Title="Monitor reports"
+      Link="/Content/SQLdm/Monitor Reports.htm">
+      <TocEntry
+        Title="Server monitor reports"
+        Link="/Content/SQLdm/Server Monitor Reports.htm">
+        <TocEntry
+          Title="Enterprise Summary"
+          Link="/Content/SQLdm/Report Enterprise Summary.htm" />
+        <TocEntry
+          Title="Server Summary"
+          Link="/Content/SQLdm/Report Server Summary.htm" />
+        <TocEntry
+          Title="Active Alerts"
+          Link="/Content/SQLdm/Report Active Alerts.htm" />
+        <TocEntry
+          Title="Mirroring Summary"
+          Link="/Content/SQLdm/Report DB Mirror Summary.htm" />
+        <TocEntry
+          Title="Metric Thresholds"
+          Link="/Content/SQLdm/Report Metric Thresholds.htm"></TocEntry>
+        <TocEntry
+          Title="Availability Group Topology"
+          Link="/Content/SQLdm/Report AlwaysOn Topology.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Virtualization monitor reports"
+        Link="/Content/SQLdm/Virtualization Monitor Reports.htm">
+        <TocEntry
+          Title="Virtualization Summary"
+          Link="/Content/SQLdm/Report Virtualization Summary.htm" />
+        <TocEntry
+          Title="Virtualization Statistics"
+          Link="/Content/SQLdm/Report Virtualization Statistics.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Activity Monitor Reports"
+        Link="/Content/SQLdm/Activity Monitor Reports.htm">
+        <TocEntry
+          Title="Change Log Summary"
+          Link="/Content/SQLdm/Report Change Log Summary.htm" />
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="Analysis reports"
+      Link="/Content/SQLdm/Analyze Reports.htm">
+      <TocEntry
+        Title="Server analysis reports"
+        Link="/Content/SQLdm/Server Analysis Reports.htm">
+        <TocEntry
+          Title="Top Servers"
+          Link="/Content/SQLdm/Report Top Servers.htm"></TocEntry>
+        <TocEntry
+          Title="Server Statistics"
+          Link="/Content/SQLdm/Report Server Statistics.htm" />
+        <TocEntry
+          Title="Server Inventory"
+          Link="/Content/SQLdm/Report Server Inventory.htm" />
+        <TocEntry
+          Title="Query Overview"
+          Link="/Content/SQLdm/Report Query Overview.htm" />
+        <TocEntry
+          Title="Top Queries"
+          Link="/Content/SQLdm/Report Top Queries.htm">
+          <TocEntry
+            Title="Query Statistics"
+            Link="/Content/SQLdm/Report Query Statistics.htm" />
+        </TocEntry>
+        <TocEntry
+          Title="Alert History"
+          Link="/Content/SQLdm/Report Alert History.htm" />
+        <TocEntry
+          Title="Baseline Statistics"
+          Link="/Content/SQLdm/Report Baseline Statistics.htm" />
+        <TocEntry
+          Title="Query Wait Statistics"
+          Link="/Content/SQLdm/Report Query Wait Statistics.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Database analysis reports"
+        Link="/Content/SQLdm/Database Analysis Reports.htm">
+        <TocEntry
+          Title="Top Databases"
+          Link="/Content/SQLdm/Report Top Databases.htm" />
+        <TocEntry
+          Title="Database Statistics"
+          Link="/Content/SQLdm/Report Database Statistics.htm" />
+        <TocEntry
+          Title="Top Database Applications"
+          Link="/Content/SQLdm/Report Top Database Applications.htm" />
+        <TocEntry
+          Title="Mirroring History"
+          Link="/Content/SQLdm/Report DB Mirror History.htm" />
+        <TocEntry
+          Title="Top Tables by Growth"
+          Link="/Content/SQLdm/Report Top Tables Growth.htm" />
+        <TocEntry
+          Title="Top Tables by Fragmentation"
+          Link="/Content/SQLdm/Report Top Tables Fragmentation.htm" />
+        <TocEntry
+          Title="Tempdb Statistics"
+          Link="/Content/SQLdm/Report Tempdb Statistics.htm" />
+        <TocEntry
+          Title="Transaction Log Statistics"
+          Link="/Content/SQLdm/Report Transaction Log Statistics.htm"></TocEntry>
+        <TocEntry
+          Title="Availability Group Statistics"
+          Link="/Content/SQLdm/Report AlwaysOn Statistics.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Resource analysis reports"
+        Link="/Content/SQLdm/Resource Analysis Reports.htm">
+        <TocEntry
+          Title="Session Statistics"
+          Link="/Content/SQLdm/Report Session Statistics.htm" />
+        <TocEntry
+          Title="CPU Statistics"
+          Link="/Content/SQLdm/Report CPU Statistics.htm" />
+        <TocEntry
+          Title="Disk Details"
+          Link="/Content/SQLdm/Report Disk Details.htm" />
+        <TocEntry
+          Title="Disk Statistics"
+          Link="/Content/SQLdm/Report Disk Statistics.htm" />
+        <TocEntry
+          Title="Replication Statistics"
+          Link="/Content/SQLdm/Report Replication Statistics.htm" />
+        <TocEntry
+          Title="Memory Statistics"
+          Link="/Content/SQLdm/Report Memory Statistics.htm" />
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="Plan reports"
+      Link="/Content/SQLdm/Plan Reports.htm">
+      <TocEntry
+        Title="Disk Space Usage Forecast"
+        Link="/Content/SQLdm/Report Disk Space Usage.htm" />
+      <TocEntry
+        Title="Database Growth Forecast"
+        Link="/Content/SQLdm/Report Database Growth Forecast.htm" />
+      <TocEntry
+        Title="Table Growth Forecast"
+        Link="/Content/SQLdm/Report Table Growth Forecast.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Deploy SQLdm reports to Reporting Services"
+      Link="/Content/SQLdm/Deploy SQLdm Reports to Reporting Services.htm">
+      <TocEntry
+        Title="Select reports to deploy"
+        Link="/Content/SQLdm/Select Reports to Deploy.htm" />
+      <TocEntry
+        Title="Specify a reporting services server and data source"
+        Link="/Content/SQLdm/Specify Report Server and Data Source.htm" />
+      <TocEntry
+        Title="Configure report email notifications"
+        Link="/Content/SQLdm/Configure Report Email Notifications.htm" />
+      <TocEntry
+        Title="View the report deployment summary"
+        Link="/Content/SQLdm/View the Report Deployment Summary.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Custom reports"
+      Link="/Content/SQLdm/Custom Reports.htm">
+      <TocEntry
+        Title="Create a custom report"
+        Link="/Content/SQLdm/Create a custom report.htm">
+        <TocEntry
+          Title="Add or edit a custom report"
+          Link="/Content/SQLdm/Add or edit a custom report.htm" />
+        <TocEntry
+          Title="Select counter type and counters"
+          Link="/Content/SQLdm/Select counter type and counters.htm" />
+        <TocEntry
+          Title="Select counter order"
+          Link="/Content/SQLdm/Select counter order.htm" />
+      </TocEntry>
+    </TocEntry>
+  </TocEntry>
+  <TocEntry
+    Title="Manage SQLdm"
+    Link="/Content/SQLdm/Manage SQL diagnostic manager.htm">
+    <TocEntry
+      Title="Use application security to manage SQLdm"
+      Link="/Content/SQLdm/Use application security to manage SQLdm.htm">
+      <TocEntry
+        Title="Add users to SQLdm"
+        Link="/Content/SQLdm/Add users to SQLdm.htm">
+        <TocEntry
+          Title="Specify user"
+          Link="/Content/SQLdm/Specify user.htm" />
+        <TocEntry
+          Title="Specify permissions"
+          Link="/Content/SQLdm/Specify permissions.htm" />
+        <TocEntry
+          Title="Assign instances to user"
+          Link="/Content/SQLdm/Assign instances to user.htm" />
+        <TocEntry
+          Title="View the Add Permission summary"
+          Link="/Content/SQLdm/View the Add Permission summary.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Edit user permissions"
+        Link="/Content/SQLdm/Edit user permissions.htm">
+        <TocEntry
+          Title="Edit assigned instances"
+          Link="/Content/SQLdm/Edit assigned instances.htm" />
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="Use the Change Log to view SQLdm configuration changes"
+      Link="/Content/SQLdm/Use Change Log.htm" />
+    <TocEntry
+      Title="Use PowerShell to automate SQLdm functions"
+      Link="/Content/SQLdm/Use PowerShell to Manage SQLdm.htm">
+      <TocEntry
+        Title="PowerShell Cmdlets for SQLdm"
+        Link="/Content/SQLdm/PowerShell Commands in SQLdm.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Manage your SQLdm license"
+      Link="/Content/SQLdm/Manage Your SQLdm License.htm">
+      <TocEntry
+        Title="Use the trial license"
+        Link="/Content/SQLdm/Using the trial license.htm" />
+      <TocEntry
+        Title="Add a new license"
+        Link="/Content/SQLdm/Adding new licenses.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Manage your SQL Server instances"
+      Link="/Content/SQLdm/Manage Your SQL Server Instances.htm"></TocEntry>
+    <TocEntry
+      Title="Edit your Management Service configuration"
+      Link="/Content/SQLdm/Edit Your Management Service.htm">
+      <TocEntry
+        Title="Select a SQLServer Instance for the Management Service"
+        Link="/Content/SQLdm/Select a SQLServer Instance for the Management Service.htm" />
+      <TocEntry
+        Title="Select a database for the Management Service"
+        Link="/Content/SQLdm/Select a database for the Management Service.htm" />
+    </TocEntry>
+  </TocEntry>
+  <TocEntry
+    Title="Monitored metrics"
+    Link="/Content/SQLdm/Monitored metrics.htm">
+    <TocEntry
+      Title="Batches Received (Per Second)"
+      Link="/Content/SQLdm/Metrics/Batches Received.htm" />
+    <TocEntry
+      Title="Blocked Sessions (Count)"
+      Link="/Content/SQLdm/Metrics/Blocked Sessions.htm" />
+    <TocEntry
+      Title="Buffer Cache Hit Ratio (Percent)"
+      Link="/Content/SQLdm/Metrics/Buffer Cache Hit Ratio.htm" />
+    <TocEntry
+      Title="Client Computers"
+      Link="/Content/SQLdm/Metrics/Client Computers.htm" />
+    <TocEntry
+      Title="SQL Compilations (Per Second)"
+      Link="/Content/SQLdm/Metrics/CompilesPer Second.htm" />
+    <TocEntry
+      Title="Data Used (Percent)"
+      Link="/Content/SQLdm/Metrics/Data Used.htm" />
+    <TocEntry
+      Title="Database Status"
+      Link="/Content/SQLdm/Metrics/Database Status.htm" />
+    <TocEntry
+      Title="Disk Queue Length"
+      Link="/Content/SQLdm/Metrics/Disk Queue Length.htm" />
+    <TocEntry
+      Title="Disk Time (Percent)"
+      Link="/Content/SQLdm/Metrics/Disk Time.htm" />
+    <TocEntry
+      Title="I/O Waits"
+      Link="/Content/SQLdm/Metrics/IO Waits.htm"></TocEntry>
+    <TocEntry
+      Title="Lock Waits"
+      Link="/Content/SQLdm/Metrics/Lock Waits.htm" />
+    <TocEntry
+      Title="Log Flushes (Per Second)"
+      Link="/Content/SQLdm/Metrics/Log Flushes.htm" />
+    <TocEntry
+      Title="Memory Page Faults (Per Second)"
+      Link="/Content/SQLdm/Metrics/Memory Page Faults.htm" />
+    <TocEntry
+      Title="Memory Paging"
+      Link="/Content/SQLdm/Metrics/Memory Paging.htm" />
+    <TocEntry
+      Title="Memory Waits"
+      Link="/Content/SQLdm/Metrics/Memory Waits.htm" />
+    <TocEntry
+      Title="Other Waits"
+      Link="/Content/SQLdm/Metrics/Other Waits.htm" />
+    <TocEntry
+      Title="Packets Received (Per Second)"
+      Link="/Content/SQLdm/Metrics/Packets Received.htm" />
+    <TocEntry
+      Title="Packets Sent and Received"
+      Link="/Content/SQLdm/Metrics/Packets Sent and Received.htm" />
+    <TocEntry
+      Title="Packets Sent (Per Second)"
+      Link="/Content/SQLdm/Metrics/Packets Sent.htm" />
+    <TocEntry
+      Title="Page Reads (Per Second)"
+      Link="/Content/SQLdm/Metrics/Page Reads.htm" />
+    <TocEntry
+      Title="Page Writes (Per Second)"
+      Link="/Content/SQLdm/Metrics/Page Writes.htm" />
+    <TocEntry
+      Title="Percent of SQL Server Data Space Used"
+      Link="/Content/SQLdm/Metrics/Percent of SQL Server Data.htm" />
+    <TocEntry
+      Title="Percent of SQL Server Log Space Used"
+      Link="/Content/SQLdm/Metrics/Percent of SQL Server Log.htm" />
+    <TocEntry
+      Title="Physical Page Reads and Writes"
+      Link="/Content/SQLdm/Metrics/Physical Page Reads and Writes.htm" />
+    <TocEntry
+      Title="Processor Queue Length"
+      Link="/Content/SQLdm/Metrics/Processor Queue Length.htm" />
+    <TocEntry
+      Title="Re-compiles (Per Second)"
+      Link="/Content/SQLdm/Metrics/Re-compiles Per Second.htm" />
+    <TocEntry
+      Title="Signal Waits"
+      Link="/Content/SQLdm/Metrics/Signal Waits.htm" />
+    <TocEntry
+      Title="SQL Server Batches Received"
+      Link="/Content/SQLdm/Metrics/SQL Server Batches Received.htm" />
+    <TocEntry
+      Title="SQL Server CPU Usage"
+      Link="/Content/SQLdm/Metrics/CPU Usage by SQL Server.htm" />
+    <TocEntry
+      Title="SQL Server Log Space Used (Percent)"
+      Link="/Content/SQLdm/Metrics/Log Used.htm" />
+    <TocEntry
+      Title="SQL Server Memory Usage"
+      Link="/Content/SQLdm/Metrics/SQL Server Memory Usage.htm" />
+    <TocEntry
+      Title="SQL Server Response Time (ms)"
+      Link="/Content/SQLdm/Metrics/Response Time.htm" />
+    <TocEntry
+      Title="Total Memory Usage"
+      Link="/Content/SQLdm/Metrics/Total Memory Usage.htm" />
+    <TocEntry
+      Title="Transaction Log Waits"
+      Link="/Content/SQLdm/Metrics/Transaction Log Waits.htm"></TocEntry>
+    <TocEntry
+      Title="Transactions (Per Second)"
+      Link="/Content/SQLdm/Metrics/Transactions Per Second.htm" />
+    <TocEntry
+      Title="Wait type category - Backup"
+      Link="/Content/SQLdm/Wait-Backup.htm" />
+    <TocEntry
+      Title="Wait type category - I/O Page Latch"
+      Link="/Content/SQLdm/Wait-IO.htm" />
+    <TocEntry
+      Title="Wait type category - Lock"
+      Link="/Content/SQLdm/Wait-Lock.htm" />
+    <TocEntry
+      Title="Wait type category - Memory"
+      Link="/Content/SQLdm/Wait-Memory.htm" />
+    <TocEntry
+      Title="Wait type category - Non-I/O Page Latch"
+      Link="/Content/SQLdm/Wait-Non-IO Page Latch.htm" />
+    <TocEntry
+      Title="Wait type category - Non-Page Latch"
+      Link="/Content/SQLdm/Wait-Non-Page Latch.htm" />
+    <TocEntry
+      Title="Wait type category - Other"
+      Link="/Content/SQLdm/Wait-Other.htm" />
+    <TocEntry
+      Title="Wait type category - Transaction Log"
+      Link="/Content/SQLdm/Wait-Transaction Log.htm" />
+  </TocEntry>
+  <TocEntry
+    Title="Metric alerts"
+    Link="/Content/SQLdm/Metric alerts.htm">
+    <TocEntry
+      Title="Availability Group Estimated Data Loss (Seconds)"
+      Link="/Content/SQLdm/Alerts/Availability Group Estimated Data Loss (Seconds).htm" />
+    <TocEntry
+      Title="Availability Group Estimated Recovery time (Seconds)"
+      Link="/Content/SQLdm/Alerts/Availability Group Estimated Recovery time (Seconds).htm" />
+    <TocEntry
+      Title="Availability Group Log Send Queue Size (KB)"
+      Link="/Content/SQLdm/Alerts/Availability Group Log Send Queue Size (KB).htm" />
+    <TocEntry
+      Title="Availability Group Preferred Replica"
+      Link="/Content/SQLdm/Alerts/Availability Group Preferred Replica.htm" />
+    <TocEntry
+      Title="Availability Group Redo Queue Size (KB)"
+      Link="/Content/SQLdm/Alerts/Availability Group Redo Queue Size (KB).htm" />
+    <TocEntry
+      Title="Availability Group Redo Rate (KB\sec)"
+      Link="/Content/SQLdm/Alerts/Availability Group Redo Rate.htm" />
+    <TocEntry
+      Title="Availability Group Role Change"
+      Link="/Content/SQLdm/Alerts/Availability Group Role Change.htm" />
+    <TocEntry
+      Title="Availability Group Synchronization Health"
+      Link="/Content/SQLdm/Alerts/Availability Group Synchronization Health.htm" />
+    <TocEntry
+      Title="Availability Group Synchronization Performance (Seconds)"
+      Link="/Content/SQLdm/Alerts/Availability Group Synchronization Performance (Seconds).htm" />
+    <TocEntry
+      Title="Average Disk Milliseconds Per Read"
+      Link="/Content/SQLdm/Alerts/Average Disk Milliseconds Per Read Alert.htm" />
+    <TocEntry
+      Title="Average Disk Milliseconds Per Transfer"
+      Link="/Content/SQLdm/Alerts/Average Disk Milliseconds Per Transfer Alert.htm" />
+    <TocEntry
+      Title="Average Disk Milliseconds Per Write"
+      Link="/Content/SQLdm/Alerts/Average Disk Milliseconds Per Write Alert.htm" />
+    <TocEntry
+      Title="Blocked Sessions (Count)"
+      Link="/Content/SQLdm/Alerts/Blocked Sessions Alert.htm"></TocEntry>
+    <TocEntry
+      Title="Blocking Session Wait Time (Seconds)"
+      Link="/Content/SQLdm/Alerts/Blocking Sessions Wait Time.htm" />
+    <TocEntry
+      Title="Client Computers (Count)"
+      Link="/Content/SQLdm/Alerts/Client Computers Alert.htm" />
+    <TocEntry
+      Title="CLR Enabled"
+      Link="/Content/SQLdm/Alerts/CLR Enabled.htm" />
+    <TocEntry
+      Title="Cluster Active Node"
+      Link="/Content/SQLdm/Alerts/Cluster Active Node Alert.htm" />
+    <TocEntry
+      Title="Cluster Failover"
+      Link="/Content/SQLdm/Alerts/Cluster Failover Alert.htm" />
+    <TocEntry
+      Title="Data File Autogrow"
+      Link="/Content/SQLdm/Alerts/Data File Autogrow.htm" />
+    <TocEntry
+      Title="Database Full (Percent)"
+      Link="/Content/SQLdm/Alerts/Database Full.htm" />
+    <TocEntry
+      Title="Database Full (Size)"
+      Link="/Content/SQLdm/Alerts/Database Full Size.htm" />
+    <TocEntry
+      Title="Database Read/Write Error Occurred"
+      Link="/Content/SQLdm/Alerts/Database Read and Write Error.htm" />
+    <TocEntry
+      Title="Database Status"
+      Link="/Content/SQLdm/Alerts/Database Status Alert.htm"></TocEntry>
+    <TocEntry
+      Title="Deadlock"
+      Link="/Content/SQLdm/Alerts/Deadlock Alert.htm"></TocEntry>
+    <TocEntry
+      Title="Disk Reads Per Second"
+      Link="/Content/SQLdm/Alerts/Disk Reads Per Second Alert.htm" />
+    <TocEntry
+      Title="Disk Transfers Per Second"
+      Link="/Content/SQLdm/Alerts/Disk Transfers Per Second Alert.htm" />
+    <TocEntry
+      Title="Disk Writes Per Second"
+      Link="/Content/SQLdm/Alerts/Disk Writes Per Second Alert.htm" />
+    <TocEntry
+      Title="Distribution Latency (Seconds)"
+      Link="/Content/SQLdm/Alerts/Distribution Latency Alert.htm" />
+    <TocEntry
+      Title="DTC Status"
+      Link="/Content/SQLdm/Alerts/DTC Status.htm" />
+    <TocEntry
+      Title="Host CPU Usage (Percent)"
+      Link="/Content/SQLdm/Alerts/Host CPU Usage Alert.htm" />
+    <TocEntry
+      Title="Host Memory Swap Detected"
+      Link="/Content/SQLdm/Alerts/Host Memory Swap Detected.htm" />
+    <TocEntry
+      Title="Host Memory Usage (Percent)"
+      Link="/Content/SQLdm/Alerts/Host Memory Usage Alert.htm" />
+    <TocEntry
+      Title="Host Power State"
+      Link="/Content/SQLdm/Alerts/Host Power State.htm" />
+    <TocEntry
+      Title="Full-Text Search Status"
+      Link="/Content/SQLdm/Alerts/Full-Text Search Status.htm" />
+    <TocEntry
+      Title="Index Row Hits (Percent)"
+      Link="/Content/SQLdm/Alerts/Index Row Hits Percent.htm" />
+    <TocEntry
+      Title="Last Full-Text Catalog Update (Hours)"
+      Link="/Content/SQLdm/Alerts/Last Full Text Catalog Update Hours Alert.htm" />
+    <TocEntry
+      Title="Log File Autogrow"
+      Link="/Content/SQLdm/Alerts/Log File Autogrow.htm" />
+    <TocEntry
+      Title="Log Full (Percent)"
+      Link="/Content/SQLdm/Alerts/Log Full.htm"></TocEntry>
+    <TocEntry
+      Title="Log Full (Size)"
+      Link="/Content/SQLdm/Alerts/Log Full Size.htm" />
+    <TocEntry
+      Title="Longest Running Version Store Transaction (Minutes)"
+      Link="/Content/SQLdm/Alerts/Longest Running Version Store Transaction.htm" />
+    <TocEntry
+      Title="Maintenance Mode Enabled"
+      Link="/Content/SQLdm/Alerts/Maintenance Mode Enabled.htm" />
+    <TocEntry
+      Title="Mirror Commit Overhead (Milliseconds)"
+      Link="/Content/SQLdm/Alerts/Mirror Commit Overhead.htm" />
+    <TocEntry
+      Title="Mirrored Server Role Change"
+      Link="/Content/SQLdm/Alerts/Mirrored Server Role Change.htm" />
+    <TocEntry
+      Title="Mirroring Oldest Unsent Transactions (Minutes)"
+      Link="/Content/SQLdm/Alerts/Mirroring Oldest Unsent.htm" />
+    <TocEntry
+      Title="Mirroring Preferred Configuration"
+      Link="/Content/SQLdm/Alerts/Mirroring Preferred Configuration.htm" />
+    <TocEntry
+      Title="Mirroring Status"
+      Link="/Content/SQLdm/Alerts/Mirroring Status.htm" />
+    <TocEntry
+      Title="Mirroring Unrestored Log (KB)"
+      Link="/Content/SQLdm/Alerts/Mirroring Unrestored Log.htm" />
+    <TocEntry
+      Title="Mirroring Unsent Log (KB)"
+      Link="/Content/SQLdm/Alerts/Mirroring Unsent Log.htm" />
+    <TocEntry
+      Title="Mirroring Witness Connection"
+      Link="/Content/SQLdm/Alerts/Mirroring Witness Connection.htm" />
+    <TocEntry
+      Title="Non-Distributed Transactions (Count)"
+      Link="/Content/SQLdm/Alerts/Non Distributed Transactions.htm" />
+    <TocEntry
+      Title="Oldest Open Transaction (Minutes)"
+      Link="/Content/SQLdm/Alerts/Oldest Open Transaction.htm" />
+    <TocEntry
+      Title="OLE Automation Disabled"
+      Link="/Content/SQLdm/Alerts/OLE Automation Disabled.htm" />
+    <TocEntry
+      Title="OS Average Disk Queue Length (Count)"
+      Link="/Content/SQLdm/Alerts/Disk Queue Length Alert.htm" />
+    <TocEntry
+      Title="OS Average Disk Queue Length Per Disk (Count)"
+      Link="/Content/SQLdm/Alerts/OS Average Disk Queue Length Per Disk Alert.htm" />
+    <TocEntry
+      Title="OS Disk Free Space (Size)"
+      Link="/Content/SQLdm/Alerts/Disk Space Free.htm" />
+    <TocEntry
+      Title="OS Disk Full (Percent)"
+      Link="/Content/SQLdm/Alerts/Disk Full.htm" />
+    <TocEntry
+      Title="OS Disk Time (Percent)"
+      Link="/Content/SQLdm/Alerts/OS Disk Time Percent Alert.htm" />
+    <TocEntry
+      Title="OS Disk Time Per Disk (Percent)"
+      Link="/Content/SQLdm/Alerts/OS Disk Time Per Disk Percent Alert.htm" />
+    <TocEntry
+      Title="OS Memory Usage (Percent)"
+      Link="/Content/SQLdm/Alerts/OS Memory Usage Alert.htm" />
+    <TocEntry
+      Title="OS Metrics Collection Status"
+      Link="/Content/SQLdm/Alerts/OS Metrics Collection Status.htm" />
+    <TocEntry
+      Title="OS Paging (Per Second)"
+      Link="/Content/SQLdm/Alerts/OS Paging Alert.htm" />
+    <TocEntry
+      Title="OS Privileged Time (Percent)"
+      Link="/Content/SQLdm/Alerts/Privileged Time.htm" />
+    <TocEntry
+      Title="OS Processor Queue Length (Count)"
+      Link="/Content/SQLdm/Alerts/Processor Queue Length Alert.htm" />
+    <TocEntry
+      Title="OS Processor Time (Percent)"
+      Link="/Content/SQLdm/Alerts/OS Processor Time.htm" />
+    <TocEntry
+      Title="OS User Time (Percent)"
+      Link="/Content/SQLdm/Alerts/OS User Time.htm" />
+    <TocEntry
+      Title="Page Life Expectancy"
+      Link="/Content/SQLdm/Alerts/Page Life Expectancy Alert.htm" />
+    <TocEntry
+      Title="Procedure Cache Hit Ratio"
+      Link="/Content/SQLdm/Alerts/Procedure Cache Hit Ratio.htm" />
+    <TocEntry
+      Title="Query Monitor Events (Count)"
+      Link="/Content/SQLdm/Alerts/Query Monitor Events.htm" />
+    <TocEntry
+      Title="Session CPU Time (Seconds)"
+      Link="/Content/SQLdm/Alerts/Session CPU Time.htm" />
+    <TocEntry
+      Title="Session Tempdb Space Usage (MB)"
+      Link="/Content/SQLdm/Alerts/Session TempDB Space Usage.htm" />
+    <TocEntry
+      Title="SQL Server Agent Job Completion"
+      Link="/Content/SQLdm/Alerts/Agent Job Completion.htm" />
+    <TocEntry
+      Title="SQL Server Agent Job Failure"
+      Link="/Content/SQLdm/Alerts/SQL Server Agent Job Failure.htm" />
+    <TocEntry
+      Title="SQL Server Agent Log"
+      Link="/Content/SQLdm/Alerts/SQL Server Agent Log.htm" />
+    <TocEntry
+      Title="SQL Server Agent Long Running Job (Minutes)"
+      Link="/Content/SQLdm/Alerts/Agent Long Running Job Min.htm" />
+    <TocEntry
+      Title="SQL Server Agent Long Running Job (Percent)"
+      Link="/Content/SQLdm/Alerts/Agent Long Running Job Per.htm" />
+    <TocEntry
+      Title="SQL Server Agent Status"
+      Link="/Content/SQLdm/Alerts/SQL Server Agent Status.htm"></TocEntry>
+    <TocEntry
+      Title="SQL Server Agent XPs Disabled"
+      Link="/Content/SQLdm/Alerts/SQL Server Agent XPs Disabled.htm" />
+    <TocEntry
+      Title="SQL Server CPU Usage (Percent)"
+      Link="/Content/SQLdm/Alerts/SQL Server CPU Usage Alert.htm" />
+    <TocEntry
+      Title="SQL Server Data Used (Percent)"
+      Link="/Content/SQLdm/Alerts/SQL Server Database Space Used.htm" />
+    <TocEntry
+      Title="SQL Server Error Log"
+      Link="/Content/SQLdm/Alerts/SQL Server Error Log.htm" />
+    <TocEntry
+      Title="SQL Server Log Used (Percent)"
+      Link="/Content/SQLdm/Alerts/SS Log Space Used Alert.htm" />
+    <TocEntry
+      Title="SQL Server Memory Usage (Percent)"
+      Link="/Content/SQLdm/Alerts/SQL Server Memory Usage Alert.htm" />
+    <TocEntry
+      Title="SQL Server Response Time (Milliseconds)"
+      Link="/Content/SQLdm/Alerts/Response Time Alert.htm" />
+    <TocEntry
+      Title="SQL Server Status"
+      Link="/Content/SQLdm/Alerts/SQL Server Status.htm" />
+    <TocEntry
+      Title="SQLdm Service Status"
+      Link="/Content/SQLdm/Alerts/SQL diagnostic manager Service Status.htm" />
+    <TocEntry
+      Title="Table Fragmentation (Percent)"
+      Link="/Content/SQLdm/Alerts/Table Fragmentation.htm" />
+    <TocEntry
+      Title="Tempdb Contention (ms)"
+      Link="/Content/SQLdm/Alerts/TempDB Contention.htm" />
+    <TocEntry
+      Title="Unsubscribed Transactions (Count)"
+      Link="/Content/SQLdm/Alerts/Unsubscribed Transactions.htm" />
+    <TocEntry
+      Title="Unsubscribed Transactions (Seconds)"
+      Link="/Content/SQLdm/Alerts/Unsubscribed Transaction Time.htm" />
+    <TocEntry
+      Title="User Connections (Percent)"
+      Link="/Content/SQLdm/Alerts/User Connections.htm" />
+    <TocEntry
+      Title="Version Store Generation Ratio"
+      Link="/Content/SQLdm/Alerts/Version Store Generation Ratio.htm" />
+    <TocEntry
+      Title="Version Store Size (MB)"
+      Link="/Content/SQLdm/Alerts/Version Store Size.htm" />
+    <TocEntry
+      Title="VM CPU Ready Wait Time (ms)"
+      Link="/Content/SQLdm/Alerts/VM CPU Ready Wait Time Alert.htm" />
+    <TocEntry
+      Title="VM CPU Usage (Percent)"
+      Link="/Content/SQLdm/Alerts/VM CPU Usage.htm" />
+    <TocEntry
+      Title="VM Host Server Change"
+      Link="/Content/SQLdm/Alerts/VM Host Server Change.htm" />
+    <TocEntry
+      Title="VM Memory Swap Delay Detected"
+      Link="/Content/SQLdm/Alerts/VM Memory Swap Delay Detected.htm" />
+    <TocEntry
+      Title="VM Memory Usage (Percent)"
+      Link="/Content/SQLdm/Alerts/VM Memory Usage Alert.htm" />
+    <TocEntry
+      Title="VM Power State"
+      Link="/Content/SQLdm/Alerts/VM Power State.htm" />
+    <TocEntry
+      Title="VM Reclaimed/Ballooned Memory (KB)"
+      Link="/Content/SQLdm/Alerts/VM Reclaimed Ballooned Memory Alert.htm" />
+    <TocEntry
+      Title="VM Resource Configuration Change"
+      Link="/Content/SQLdm/Alerts/VM Resource Configuration Change.htm"></TocEntry>
+    <TocEntry
+      Title="VM Resource Limits Detected"
+      Link="/Content/SQLdm/Alerts/VM Resource Limits Detected.htm" />
+    <TocEntry
+      Title="WMI Service Unavailable"
+      Link="/Content/SQLdm/Alerts/WMI Service Unavailable.htm" />
+  </TocEntry>
+  <TocEntry
+    Title="Advanced Solutions"
+    Link="/Content/SQLdm/Advanced Solutions.htm">
+    <TocEntry
+      Title="Migrate or Recover Your Installation"
+      Link="/Content/SQLdm/Migrating or Recovering Your Installation.htm">
+      <TocEntry
+        Title="System Diagnostics"
+        Link="/Content/SQLdm/System Diagnostics.htm" />
+      <TocEntry
+        Title="Choosing to migrate or recover SQLdm"
+        Link="/Content/SQLdm/Choosing to migrate or recover SQLdm.htm" />
+      <TocEntry
+        Title="Creating your migration or recovery plan"
+        Link="/Content/SQLdm/Creating your migration or recovery plan.htm" />
+      <TocEntry
+        Title="Migrating your SQLdm installation"
+        Link="/Content/SQLdm/Migrating your SQLdm installation.htm" />
+      <TocEntry
+        Title="Recovering your SQLdm installation"
+        Link="/Content/SQLdm/Recovering your SQLdm installation.htm" />
+      <TocEntry
+        Title="Migrating the SQLdm Repository only"
+        Link="/Content/SQLdm/Migrating the SQLdm Repository only.htm" />
+      <TocEntry
+        Title="Migrating the SQLdm Services only"
+        Link="/Content/SQLdm/Migrating the SQLdm Services only.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Deploy SQLdm in a Clustered Environment"
+      Link="/Content/SQLdm/Deploying SQLdm in a Clustered Environment.htm">
+      <TocEntry
+        Title="Windows Server 2003 clustered environment"
+        Link="/Content/SQLdm/Windows Server 2003 Clustered Environment.htm" />
+      <TocEntry
+        Title="Windows Server 2008 clustered environment"
+        Link="/Content/SQLdm/Windows Server 2008 Clustered Environment.htm" />
+      <TocEntry
+        Title="Windows Server 2012 clustered environment"
+        Link="/Content/SQLdm/Windows Server 2012 Clustered Environment.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Deploy Idera Newsfeed in a Clustered Environment"
+      Link="/Content/SQLdm/Deploy INF in Clustered Environment.htm">
+      <TocEntry
+        Title="Windows Server 2003 clustered environment"
+        Link="/Content/SQLdm/Deploy INF Windows 2003 Cluster.htm" />
+      <TocEntry
+        Title="Windows Server 2008 clustered environment"
+        Link="/Content/SQLdm/Deploy INF Windows 2008 Cluster.htm" />
+      <TocEntry
+        Title="Windows Server 2012 clustered environment"
+        Link="/Content/SQLdm/Deploy INF Windows 2012 Cluster.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="SQLdm Default Alert ID"
+      Link="/Content/SQLdm/Alert ID.htm" />
+    <TocEntry
+      Title="Troubleshooting WMI Connectivity Issues"
+      Link="/Content/SQLdm/WMI Connection Error.htm" />
+    <TocEntry
+      Title="Integrate SQLdm with SCOM"
+      Link="/Content/SQLdm/Integrate SQLdm with SCOM.htm"
+      conditions="Default.SCOM PDF Only">
+      <TocEntry
+        Title="Install and configure the SQLdm Management Pack for SCOM"
+        Link="/Content/SQLdm/Install the SQLdm MP for SCOM.htm" />
+      <TocEntry
+        Title="View SQLdm details in SCOM"
+        Link="/Content/SQLdm/View SQLdm details in SCOM.htm" />
+    </TocEntry>
+  </TocEntry>
+</CatapultToc>

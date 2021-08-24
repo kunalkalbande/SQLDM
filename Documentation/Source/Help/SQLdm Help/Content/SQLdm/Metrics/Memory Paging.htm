@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="303" MadCap:lastWidth="824">
+    <head><title>Memory Paging metric in Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">Memory Paging</h1>
+        <p class="Body">The Memory Paging metric counts the number of pages being swapped in and out of memory per second. The <span class="GUI_Item">Memory </span>view on the <span class="GUI_Item">Resources </span>tab allows you to track paging and other key memory statistics over a period of time.</p>
+        <h2 class="Heading2">Reasons why this metric has no value</h2>
+        <p class="Body">SQLdm is unable to collect the corresponding counter due to one of the following reasons:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">It usually takes two refreshes to begin populating the Memory Paging metric, which occurs within a few seconds.</li>
+            <li class="Bullet">OS&#160;Metrics collection is disabled or not working properly. You must enable OS Metrics collection for SQLdm to collect hardware performance metrics.</li>
+            <li class="Bullet">Lightweight Pooling is enabled. SQLdm cannot collect OS metrics if Lightweight Pooling is enabled on the SQL Server instance.</li>
+            <li class="BulletLast">The counter does not exist on this SQL&#160;Server instance.</li>
+        </ul>
+    </body>
+</html>

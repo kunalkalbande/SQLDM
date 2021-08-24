@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="569" MadCap:lastWidth="762" MadCap:ignoredWords="MIB">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Configure network management settings in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure network management settings</h1>
+        <p class="Body">The <a href="Alerts Communication Wizard.htm">Alert Communications wizard</a> allows you to set up Simple Network Management Protocol (<a href="http://technet.microsoft.com/en-us/library/bb726987.aspx" target="_blank">SNMP</a>) for sending out alert events to your Network Management system on the SNMP&#160;Configuration window.</p>
+        <p class="Body">SQLdm includes a MIB that you can use in your Network Management System to format the events that are sent by SQLdm. </p>
+        <p class="Body">The MIB file is located in the root directory of your SQLdm installation and is named <a href="Understanding the Idera MIB.htm" target="_self">Idera.MIB</a>. </p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <col />
+            <col style="width: 274px;" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">  TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="Body">SQLdm supports SNMPv1 and SNMPv2</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Access the Alert Communications wizard SNMP&#160;Configuration window</h2>
+        <ol>
+            <li class="NumberedList">Select <span class="GUI_Item">Tools &gt; Alert Actions and Responses </span>from the SQLdm toolbar menu.</li>
+            <li class="NumberedList">Select the Action Providers tab and click <span class="GUI_Item">Add</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Next</span> on the Welcome to the Alert Communications wizard window.</li>
+            <li class="NumberedList">Select <span class="GUI_Item">Simple Network Management Protocol (SNMP)</span> from the <span class="GUI_Item">Provider Type </span>drop-down.</li>
+            <li class="NumberedList">Enter a name for your provider.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Next</span>.</li>
+        </ol>
+        <h2 class="Heading2">Set up your SNMP communication</h2>
+        <ol>
+            <li class="NumberedList">Enter the SNMP address, port number, and the community name that you want to use.</li>
+        </ol>
+        <ol MadCap:continue="true">
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span>.</li>
+            <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                            <p class="TableHeadRow">TIP</p>
+                        </td>
+                        <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                            <p class="TableText">It is best to specify a computer name for the address, especially in a  DHCP environment.  If the manager has a static address, enter the IPv4  formatted address instead.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ol>
+        <ol MadCap:continue="true">
+            <li class="NumberedList">Click Test to verify the connection to the SNMP enabled management console. </li>
+            <li class="NumberedList">Verify that the test event arrived and click <span class="GUI_Item">OK</span> if the test is successful.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Finish</span>.</li>
+        </ol>
+    </body>
+</html>

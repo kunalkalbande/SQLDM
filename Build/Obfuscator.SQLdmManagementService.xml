@@ -1,0 +1,55 @@
+<?xml version='1.0'?>
+<!DOCTYPE obfuscator SYSTEM "obfuscator.dtd">
+<obfuscator>
+<module export="false">
+  <file>..\Development\bin\Release\SQLdmManagementService.exe</file>
+  <name>SQLdmManagementService</name>
+
+  <namespace rename="false" keeppublic="true">
+    <name>Idera.SQLdm.ManagementService</name>
+  </namespace>
+
+  <namespace rename="false" keeppublic="true">
+    <name>Idera.SQLdm.ManagementService.Configuration</name>
+  </namespace>
+
+  <namespace rename="false">
+    <name>Idera.SQLdm.ManagementService.Helpers</name>
+    <class rename="false" keeppublic="true" keepfields="true">
+      <name>PersistenceManager</name>
+      <class rename="false">
+        <name>Deque_Add`1</name>
+      </class>
+      <class rename="false">
+        <name>NotificationQueueHelper</name>
+      </class>
+      <method rename="false">
+        <name regex="true">.*</name>
+        <attribute>private static </attribute>
+      </method>
+    </class>
+  </namespace>
+
+  <namespace rename="false" keeppublic="true">
+    <name>Idera.SQLdm.ManagementService.Health</name>
+  </namespace>
+
+  <namespace rename="false">
+    <name>Idera.SQLdm.ManagementService.Notification</name>
+  </namespace>
+
+  <namespace rename="false" keeppublic="true">
+    <name>Idera.SQLdm.ManagementService.Notification.Providers</name>
+  </namespace>
+
+  <namespace rename="false">
+    <name>Idera.SQLdm.ManagementService.WebClient</name>
+  </namespace>
+
+  <namespace rename="false" keeppublic="false">
+    <name>Idera.SQLdm.ManagementService.Monitoring</name>
+  </namespace>
+
+
+</module>
+</obfuscator>

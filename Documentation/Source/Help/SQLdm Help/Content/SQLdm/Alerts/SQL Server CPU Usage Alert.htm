@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="367" MadCap:lastWidth="833">
+    <head><title>SQL Server CPU Usage (Percent) alert in Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">SQL Server CPU Usage (Percent) alert</h1>
+        <p class="Body">The SQL&#160;Server CPU&#160;Usage (Percent) alert indicates an unusually high amount of CPU usage by SQL Server. The percentage of SQL Server processor usage is listed under the control. A high SQL Server percentage could indicate a large number of active client sessions.</p>
+        <h2 class="Heading2">Reduce your SQL&#160;Server CPU&#160;usage</h2>
+        <p class="Body">Consistently high SQL Server processor usage could indicate the need to:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Reduce the number of SQL re-compilations as they are CPU intensive. There are many reasons that an object such as a stored procedure is recompiled and you can remove most of these reasons by careful coding.
+</li>
+            <li class="Bullet">Make sure that all T-SQL statements (whether in a stored procedure, trigger or ad hoc statement) that reference objects fully qualify the object referenced.</li>
+        </ul>
+        <p class="DefinitionListBody">For example: <code>SELECT * FROM Northwind.dbo Employees</code> is a fully-qualified object reference whereas <code>SELECT * FROM Employees</code> is a poorly-qualified object. You can reuse the execution plans of fully-qualified objects "as is," whereas plans where you either cannot reuse the not fully-qualified objects or, if they are reused, then they are subject to a highly restrictive <code>COMPILE </code>lock while SQL Server determines if all of the objects referenced in the T-SQL code have the same owners as the execution plan currently in cache. Both of these situations consume a significant amount of CPU time.</p>
+    </body>
+</html>

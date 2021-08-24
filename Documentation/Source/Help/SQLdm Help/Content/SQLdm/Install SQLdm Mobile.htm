@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="2555" MadCap:lastWidth="558">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Install SQLdm Mobile and Idera Newsfeed</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">How to install SQLdm Mobile and Idera Newsfeed</h1>
+        <p class="Body">
+            <MadCap:keyword term="install:instructions;how to:install SQLdm Mobile;install:trial installation;install:production installation;SQLdm Mobile:install" />This procedure guides you through the installation of SQLdm Mobile and&#160;Newsfeed. Before installation, review the associated <a href="SQLdm Mobile Architecture Components.htm" target="_self">architecture and components</a>. Although you can install different components on different computers, this procedure recommends the following deployments:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Install the Mobile and Newsfeed components on the same computer where your SQLdm Services reside</li>
+            <li class="BulletLast">Install the Mobile Web components on your corporate Web Server</li>
+        </ul>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">In larger environments that contain more than one SQLdm installation, consider dedicating a SQLdm Mobile deployment per each SQLdm application.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">If you are interested in installing only the Idera Newsfeed without the additional components used with SQLdm Mobile, see <a href="Install INF only.htm" target="_self">How to install Idera Newsfeed only</a>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Install or upgrade to SQLdm 8.6</h2>
+        <p class="Body">SQLdm Mobile and the Idera Newsfeed technology are supported by SQLdm 7.0 or later. To successfully install and deploy SQLdm Mobile, first <a href="SQLdm installation.htm" target="_self">install</a> or <a href="Upgrade to this build.htm" target="_self">upgrade</a> to SQLdm 8.6.</p>
+        <h2 class="Heading2">Start your SQLdm Mobile and Newsfeed install</h2>
+        <p class="Body">You can install the SQLdm Mobile components on any computer that meets or exceeds the <a href="SQLdm Mobile Requirements.htm" target="_self">product requirements</a>. By default, the SQLdm Mobile &amp;&#160;Newsfeed setup program installs the SQLdm Mobile &amp; Newsfeed Service to the local computer.</p>
+        <p class="StepIntro">To start installing SQLdm Mobile and Newsfeed:</p>
+        <ol>
+            <li class="NumberedList">Log on with an administrator account to the computer on which you want to install the SQLdm Mobile &amp; Newsfeed Service.&#160;We recommend that you install this service on the same computer that already hosts your SQLdm services.</li>
+            <li class="NumberedList">Run <span class="Code">Setup.exe</span> in the root of the SQLdm installation kit.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">SQLdm Mobile &amp;&#160;Newsfeed</span> on the<span class="GUI_Item"> Quick Start</span> window.</li>
+            <li class="NumberedList">On the <span class="GUI_Item">Welcome</span> window of the setup program, click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Review the license agreement. To accept this license agreement, click <span class="GUI_Item">I accept the terms in the license agreement</span>, and then click <span class="GUI_Item">Next</span>.</li>
+        </ol>
+        <h2 class="Heading2">Begin configuring your install</h2>
+        <p class="Body">We recommend installing the Mobile &amp;&#160;Newsfeed components in your SQLdm environment, and then re-running the setup program to install the SQLdm Mobile Web application on your Web Server. </p>
+        <p class="Body">You can use the default install location or specify a different path. For your first install, we recommend using the default location. By default, the SQLdm Mobile &amp; Newsfeed Service is also installed in the same location.</p>
+        <p class="Body">On the <span class="GUI_Item">Custom Setup</span> window, choose the <span class="GUI_Item">Mobile &amp;&#160;Newsfeed components</span>, and then click <span class="GUI_Item">Next</span>.</p>
+        <h2 class="Heading2">Add the Windows credentials to use for the SQLdm Mobile &amp; Newsfeed Service account</h2>
+        <p class="Body">You can specify the Local System account or a Windows user account. Make sure that the specified account includes the <a href="SQLdm Mobile Requirements.htm" target="_self">required permissions</a>.</p>
+        <p class="StepIntro">To specify a service account:</p>
+        <ol>
+            <li class="NumberedList">Select the Local System account or type the appropriate credentials in the provided fields.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Test Credentials</span> to validate the account.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Next</span>.</li>
+        </ol>
+        <h2 class="Heading2">Select the SQL Server instance to use for the Repository database</h2>
+        <p class="Body">Store the published status updates and other configuration settings in the SQLdm Mobile Repository.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">SQLdm Mobile requires Microsoft SQL&#160;Server 2005 or above running on the computer that hosts the Mobile Repository database.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="StepIntro">To specify on which SQL Server instance you want to install the SQLdm Repository:</p>
+        <ol>
+            <li class="NumberedList">Select the SQL Server instance you want to use. The SQL Server menu lists SQL Server instances provided by your domain controller. <span class="If_Then_Statement">If you do not see your SQL Server instance in the list</span>, type the host name and instance in the space provided.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Next</span>.</li>
+        </ol>
+        <h2 class="Heading2">Add the authentication credentials to create the Repository database</h2>
+        <p class="Body">You can use either Windows or SQL&#160;Authentication to create the Mobile Repository database. Make sure the specified Windows account includes the <a href="SQLdm Mobile Requirements.htm" target="_self">required permissions</a>.</p>
+        <p class="StepIntro">To specify a service account:</p>
+        <ol>
+            <li class="NumberedList">Choose the authentication that you want to use, and then type the appropriate credentials in the provided fields.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Test Connection</span> to validate the account can connect to the specified SQL&#160;Server instance.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Next</span>. </li>
+        </ol>
+        <h2 class="Heading2">Add the authentication credentials to connect to the Repository database at run time</h2>
+        <p class="Body">You can use either Windows or SQL&#160;Authentication to connect to the Mobile Repository database. Make sure the specified Windows account includes the <a href="SQLdm Mobile Requirements.htm" target="_self">required permissions</a>.</p>
+        <p class="StepIntro">To specify a service account:</p>
+        <ol>
+            <li class="NumberedList">Choose the authentication that you want to use, and then type the appropriate credentials in the provided fields.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Test Connection</span> to validate the account can connect to the specified SQL&#160;Server instance.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Next</span>. </li>
+        </ol>
+        <h2 class="Heading2">Select a location for the SQLdm Management Service</h2>
+        <p class="Body">SQLdm Mobile uses its own Authentication Provider to enforce application security across your SQLdm and SQLdm Mobile deployments.</p>
+        <p class="Body">On the <span class="GUI_Item">Authentication Provider</span> window, specify the computer that hosts the SQLdm Management Service, and then click <span class="GUI_Item">Next</span>.</p>
+        <h2 class="Heading2">Complete the Mobile &amp;&#160;Newsfeed components install</h2>
+        <p class="Body">Click <span class="GUI_Item">Install</span> to indicate that you are ready to complete your install with the configurations you specified.</p>
+        <h2 class="Heading2">Begin the SQLdm Mobile Web components install</h2>
+        <p class="Body">We recommend installing the SQLdm Mobile Web components on your corporate Web Server. Make sure your Web Server meets the <a href="SQLdm Mobile Requirements.htm" target="_self">software and port requirements</a>.</p>
+        <p class="StepIntro">To start installing the SQLdm Mobile Web application:</p>
+        <ol>
+            <li class="NumberedList">Log on with an administrator account to the computer on which you want to install the SQLdm Web application.&#160;We recommend that you install this application on the same Web Server that already hosts your corporate Web site.</li>
+            <li class="NumberedList">Restart the SQLdm Mobile &amp;&#160;Newsfeed setup program and navigate to the <span class="GUI_Item">Custom Setup </span>window.</li>
+            <li class="NumberedList">Choose the <span class="GUI_Item">Mobile Web components</span>, and then click <span class="GUI_Item">Next</span>.</li>
+        </ol>
+        <h2 class="Heading2">Select the Web Server settings you want the SQLdm Mobile Web application to use</h2>
+        <p class="Body">The setup program installs the SQLdm Mobile Web application in a unique virtual directory on your Web Server computer. You can install the SQLdm Mobile Web application as a new Web site or add it to an existing Web site, such as your corporate intranet. </p>
+        <p class="Body">Specify the name of the computer that hosts the SQLdm Mobile &amp; Newsfeed Service so that you can send communications between the SQLdm Mobile components and SQLdm.</p>
+        <p class="Body">Make sure your Web Server meets the SQLdm Mobile <a href="SQLdm Mobile Requirements.htm" target="_self">requirements</a>.</p>
+        <p class="StepIntro">To configure the Web Server settings:</p>
+        <ol>
+            <li class="NumberedList">Choose whether to install the SQLdm Mobile Web application as a new Web site.</li>
+            <li class="NumberedList">Specify the name of the  computer on which you installed the SQLdm Mobile &amp; Newsfeed Service.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Next</span>. </li>
+        </ol>
+        <h2 class="Heading2">Complete the Mobile Web components install</h2>
+        <p class="Body">Click <span class="GUI_Item">Install</span> to indicate that you are ready to complete your install with the configurations you specified.</p>
+    </body>
+</html>

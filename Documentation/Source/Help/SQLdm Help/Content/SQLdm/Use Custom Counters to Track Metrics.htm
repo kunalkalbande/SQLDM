@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="1123" MadCap:lastWidth="820">
+    <head>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1 class="Heading1">Use custom counters to track metrics</h1>
+        <p class="Body">
+            <MadCap:keyword term="Virtual;Virtual Machine;Virtualization;VM;VMware;ESX;Host;vCenter;Custom Counter;Windows Performance Counters" />SQL diagnostic manager, by default, displays a wide variety of the most common SQL Server and Operating System performance metrics. In addition to providing these common metrics, custom counters provide the ability to add additional performance metrics to the SQLdm console used for historical trending, on-demand monitoring, and schedule refresh alerting. </p>
+        <p class="Body">You can find a list of operating system counters by searching for "Windows Performance Counters" on <a href="http://technet.microsoft.com/" target="_blank">technet.microsoft.com</a>.</p>
+        <p class="Body">You can add the following types of metrics:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">All Windows System Counters, including all Perfmon and WMI&#160;counters</li>
+            <li class="Bullet">Any SQL&#160;Server System Counter stored in the sysperfinfo system table</li>
+            <li class="BulletLast">Any numerical value you would like to return from a custom SQL&#160;script</li>
+            <li class="BulletLast">VM&#160;and host server performance counters accessible through the host server</li>
+        </ul>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">In addition to providing all of the above counters, you can add any additional counters contained in a new Windows or SQL&#160;Server Service Pack. This allows you the flexibility to monitor any metric that is important to your enterprise.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Access the Custom Counters view</h2>
+        <p class="Body">To open the Custom Counters view, click <span class="GUI_Item">Administration &gt; Custom Counters</span> from the navigation pane.</p>
+        <h2 class="Heading2">Create a custom counter</h2>
+        <p class="StepIntro">To add a custom counter:</p>
+        <ol>
+            <li class="NumberedList">Select <span class="GUI_Item">Administration </span>in the navigation pane.</li>
+            <li class="NumberedList">Select <span class="GUI_Item">Custom Counters</span>.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If this is your first time to access this page</span>, click <span class="GUI_Item">Click here to add a new custom counter now</span>.<span class="If_Then_Statement"> If you have accessed this page before</span>, click <span class="GUI_Item">Add</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Next </span>on the Add Custom Counter wizard Welcome page.</li>
+            <li class="NumberedList">Select a counter type, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Select the counter you want to monitor, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Select the counter calculation type and scale factor, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Type a name for the custom counter, select a <span class="GUI_Item">Category</span>, add a <span class="GUI_Item">Description</span>, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Configure your alert settings related to the new custom counter, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Finish</span>.</li>
+        </ol>
+        <h2 class="Heading2">Using custom SQL&#160;scripts</h2>
+        <p class="Body">Use custom SQL&#160;scripts to monitor metrics that are not connected to system or SQL&#160;counters, under-utilized SQL&#160;2005 DMVs, or metrics that are very specific to your environment, such as rowcount for a production table. </p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">
+                            <MadCap:keyword term="SQL Scripts" />SQLdm does not scrub custom SQL&#160;batches for SQL&#160;Injection protection. Use caution when entering custom SQL&#160;scripts as it is an advanced feature.&#160;The <span class="Code">go</span> command is not a Transact-SQL&#160;statement and you cannot use this command in custom SQL batches. The <span class="Code">go</span> command is a batch separator for Management Studio, Query Analyzer, sqlcmb, and osql.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Locate your custom counters</h2>
+        <p class="Body">Custom counters appear in the following places in the SQLdm console:</p>
+        <p class="DefinitionListTerm">Alert Configuration window</p>
+        <p class="DefinitionListBody">Your new custom counters appear in the Alert Configuration and the Default Alert Configuration windows in the Custom category. You can edit the alert thresholds, and even decide whether you want an alert associated with the new counter.</p>
+        <p class="DefinitionListTerm">Server Details view</p>
+        <p class="DefinitionListBody">The Server Details view lists all the metrics monitored by SQL diagnostic manager, including all your new custom counters. You can filter this view to display only your custom counters by selecting the Custom Counters radio-button in the Filter ribbon. You can access this window by selecting details on the Server view or by double-clicking Custom Counters in the Servers tree. </p>
+        <p class="DefinitionListTerm">Custom Counters table</p>
+        <p class="DefinitionListBody">SQLdm provides a list of all your custom counters in the Custom Counters table on the Administration window. In addition to viewing a list of custom counters, you can add a new counter, edit a counter, delete a counter, test a counter, or link a counter to a SQL&#160;Server instance for monitoring.</p>
+    </body>
+</html>

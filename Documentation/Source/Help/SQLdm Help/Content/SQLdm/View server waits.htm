@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="517" MadCap:lastWidth="1099">
+    <head><title>View Idera SQLdm server waits</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">View server waits</h1>
+        <p class="Body">The Server Waits view allows you to see all of the waits affecting server performance. By correlating the areas of the SQL&#160;Server instance that are waiting with other statistics, it is possible to narrow down possible causes of the waits. All waits occurring on your system are displayed in a graph that shows the time the wait happened and the length of time it took for the wait to clear. You can filter the graph by the wait type to view how a particular wait is affecting your server. Below the graph, SQLdm displays a table that includes the wait category, wait type, length of time the wait took to clear, total wait time for all the collected wait types, and a definition of the wait type.</p>
+        <p class="Body">Server waits are always collected. History mode for this view is available.</p>
+        <h2 class="Heading2">Access the Server Waits view</h2>
+        <p class="Body">You can open the Server Waits view of the SQLdm Resources tab by selecting the appropriate SQL&#160;Server instance, and then clicking <span class="GUI_Item">Resources &gt; Server Waits</span>.</p>
+        <h2 class="Heading2">Available wait types</h2>
+        <p class="Body">You can filter the view by <a href="Wait-Backup.htm">Backup</a>, <a href="Wait-IO.htm">I/O</a>, <a href="Wait-Lock.htm">Lock</a>, <a href="Wait-Memory.htm">Memory</a>, <a href="Wait-Non-IO Page Latch.htm">Non-I/O Page Latch</a>, <a href="Wait-Non-Page Latch.htm">Non-Page Latch</a>, <a href="Wait-Transaction Log.htm">Transaction Log</a>, and <a href="Wait-Other.htm">Other</a> categories.</p>
+        <h2 class="Heading2">Available wait categories</h2>
+        <p class="Body">You can select from the following wait categories:</p>
+        <p class="DefinitionListTerm">Total Waits</p>
+        <p class="DefinitionListBody">Total waits include all the types of waits collected.</p>
+        <p class="DefinitionListTerm">Signal Waits</p>
+        <p class="DefinitionListBody">Signal waits occur when a resource is now available (after a resource wait) and the task is waiting to run again.</p>
+        <p class="DefinitionListTerm">Resource Waits</p>
+        <p class="DefinitionListBodyLast">Resource waits occur when access to a resource is denied because the resource is in use or not available.</p>
+    </body>
+</html>

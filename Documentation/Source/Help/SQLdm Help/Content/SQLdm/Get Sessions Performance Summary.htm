@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="4" MadCap:lastHeight="824" MadCap:lastWidth="829">
+    <head><title>Get sessions performance summary in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Get sessions performance summary</h1>
+        <p class="Body">
+            <MadCap:keyword term="Sessions:summary" />The Sessions Summary view displays real-time charts that allow you to quickly view key diagnostic statistics for sessions on your SQL&#160;Server instance. Click any chart in this view to see detailed information on the chart. The Sessions Summary tab includes the Response Time, Sessions, Lock Statistics, and Blocked Sessions charts.</p>
+        <h2 class="Heading2">Access the Summary view</h2>
+        <p class="Body">You can open the Summary view of the SQLdm Sessions tab by selecting the appropriate SQL&#160;Server instance, and then clicking <span class="GUI_Item">Sessions &gt; Summary</span>.</p>
+        <h2 class="Heading2">Response Time chart</h2>
+        <p class="Body">The <a href="Charts.htm" target="_self">Response Time chart</a> displays the response time (in milliseconds)  it takes a <span class="Code">Select</span> SQL statement to go to the SQL Server instance and back.</p>
+        <p class="Body">You can see the specific time and response time of any data point in the chart by hovering your mouse over it.  </p>
+        <p class="Body">The Response Time chart indicates the current speed and congestion of the network as well as the speed with which SQL&#160;Server processes small queries. Unusually high response times could indicate the need to upgrade server or network hardware.</p>
+        <h2 class="Heading2">Sessions chart</h2>
+        <p class="Body">The <a href="Charts.htm" target="_self">Sessions chart</a> displays the number of concurrent connections to the monitored SQL&#160;Server instance over time. The total number of sessions includes the active, idle, and system sessions. </p>
+        <p class="Body">You can see the specific metric value for a given time by hovering your mouse over the chart.</p>
+        <h2 class="Heading2">Lock Statistics chart</h2>
+        <p class="Body">The <a href="Charts.htm" target="_self">Lock Statistics chart</a> provides a breakdown of the various lock types taken by SQL&#160;Server in the last refresh. The Lock Statistics chart offers, by using the drop-down menu, charts that include information on the Average Wait Time, Deadlocks, Requests, Timeouts, Waits, and Wait Time.</p>
+        <p class="Body">You can see the specific time and statistic on any data point on the Lock Statistics for a given time by hovering your mouse over the chart.</p>
+        <h2 class="Heading2">Blocked Sessions chart</h2>
+        <p class="Body">The <a href="Charts.htm" target="_self">Blocked Sessions charts</a> lists all the Blocked Sessions, Lead Blockers, and the Total Deadlocks, in real-time, for the selected SQL&#160;Server instance. This allows you to easily see blocks as they occur.</p>
+        <p class="Body">You can see the specific time and number of blocked sessions at a given time by hovering your mouse over the chart.</p>
+        <h2 class="Heading2">Understanding your chart data and refresh interval</h2>
+        <p class="Body">SQLdm charts provide data whether collected real time or as part of a scheduled collection event. For additional information about how SQLdm displays your chart data, see <a href="Charts.htm" target="_self">Charts</a>. </p>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="857" MadCap:lastWidth="833">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Monitor your Idera SQLdm tempdb database</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Monitor your tempdb database</h1>
+        <p class="Body">
+            <MadCap:keyword term="Database:tempdb summary" />SQLdm allows you to monitor your tempdb database with a number of charts and alerts to help you avoid costly performance issues caused by a full tempdb.  The tempdb system database is a workspace used to hold temporary user objects, results created through queries and sorts, and other objects created by the SQL Server Database Engine. Because of the large amount of data stored in tempdb, users can run out of disk space, which causes the entire server and all of its databases to become unresponsive. SQLdm seeks to resolve some of these issues by providing a monitoring solution that features a series of tempdb-specific charts, views, and alerts.</p>
+        <p class="Body">The tempdb system database, along with the Master, Model, and MSDB databases, is provided by default with SQL Server and is a shared resource available to all users connected to a single SQL Server instance. Each time you start SQL Server, it re-creates tempdb based on the Model database. Tempdb can fill up quickly when you are low on disk space or have a low maximum size for database growth. Certain workloads may cause excessive space usage or create contention in tempdb, which can affect performance on the entire server.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Tempdb&#160;monitoring is supported on SQL&#160;Server 2005 and above servers only.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Tempdb&#160;version store</h2>
+        <p class="Body">The tempdb version store collects the data necessary to support row versioning. Each time a data value changes, a new version of the row is created and stored for as long as the oldest active transaction needs to access it. Once the row version is no longer needed it is removed from tempdb by a cleanup job which runs once per minute. As a result, long-running transactions prevent cleanup of older entries into the tempdb&#160;version store, causing growth which can affect performance and cause tempdb to run out of space.</p>
+        <h2 class="Heading2">Tempdb&#160;contention</h2>
+        <p class="Body">Tempdb resource contention or waits is usually the result of heavy use on too few tempdb&#160;files and occurs when the system attempts to allocate pages. The tempdb contention chart displays latch wait time (in milliseconds) for the allocation pages of tempdb.  The three tracked allocation page types are:</p>
+        <ul>
+            <li>Page free space (PFS)</li>
+            <li>Global allocation map (GAM)</li>
+            <li>Shared global allocation map (SGAM)</li>
+        </ul>
+        <p class="Body">Latch contention of this sort is usually an indication that you should create more tempdb data files.  In some situations, using Trace Flag 1118 may also alleviate tempdb contention.</p>
+        <h2 class="Heading2">Available alerts</h2>
+        <p class="Body">Tempdb includes the following specific alerts:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet"><a href="Alerts/Data File Autogrow.htm">Data File Autogrow</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Log File Autogrow.htm">Log File Autogrow</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Longest Running Version Store Transaction.htm">Longest Running Version Store Transaction (Minutes)</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Session TempDB Space Usage.htm">Session Tempdb Space Usage (MB)</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/TempDB Contention.htm">Tempdb Contention (ms)</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Version Store Generation Ratio.htm">Version Store Generation Ratio</a>
+            </li>
+            <li class="BulletLast"><a href="Alerts/Version Store Size.htm">Version Store Size (MB)</a>
+            </li>
+        </ul>
+    </body>
+</html>

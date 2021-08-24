@@ -1,0 +1,8 @@
+[Demo]
+Path=.\SQLdm-ia64.dbd
+Version=8.00
+Type=DemoShield Project File
+[Import By Ref]
+Number=0
+[Language]
+Number=0

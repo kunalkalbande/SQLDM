@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1209" MadCap:lastWidth="770">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>File Activity panel in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">File Activity panel</h1>
+        <p class="Body">
+            <MadCap:keyword term="File Activity:Dashboard panel;Dashboard:File Activity" />The File Activity panel displays the top five database files with the highest relative activity since the last refresh. Available metrics allow you to view the top Reads/sec, Writes/sec, and Transfers/sec activity for all files or a selected database, disk, or file. Unexpected spikes in the amount of file activity may warn you of ineffective or excessive indexing or out-of-date statistics.  For additional information, see <a href="View file activity.htm" target="_self">how to view file activity</a>.</p>
+        <h2 class="Heading2" MadCap:conditions="Default.Internal Only"><a name="FileActivityIOStall"></a>I/O&#160;stall chart (ms/sec)</h2>
+        <p class="Body" MadCap:conditions="Default.Internal Only">The<span class="GUI_Item"> I/O Stall ms/sec</span> chart displays the total time per second (in milliseconds) that the SQL&#160;Server processes were waiting on an I/O to complete.  Chronically high I/O stall metrics may indicate a disk bottleneck.</p>
+        <h2 class="Heading2"><a name="FileActivityReads"></a>Reads chart (per second)</h2>
+        <p class="Body">The <span class="GUI_Item">Reads/sec </span>chart displays the number of physical reads per second the disk sub-system is performing to bring SQL Server database pages into the data (buffer) cache. If the reads rate is excessive for a long period of time, consider taking action to avoid performance issues.</p>
+        <h2 class="Heading2" MadCap:conditions="Default.Internal Only"><a name="FileActivityReadsKB"></a>Reads KB chart (per second)</h2>
+        <p class="Body" MadCap:conditions="Default.Internal Only">The <span class="GUI_Item">Reads KB/sec </span>chart displays the size of the physical reads per second the disk sub-system is performing to bring SQL Server database pages into the data (buffer) cache.</p>
+        <h2 class="Heading2" MadCap:conditions="Default.Internal Only"><a name="FileActivityTotalKB"></a>Total KB chart (per second)</h2>
+        <p class="Body" MadCap:conditions="Default.Internal Only">The <span class="GUI_Item">Total KB/sec</span> chart displays the  total size of activity per second across all databases on the monitored instance.</p>
+        <h2 class="Heading2"><a name="FileActivityWrites"></a>Writes chart (per second)</h2>
+        <p class="Body">The <span class="GUI_Item">Writes/sec</span> chart displays the number of physical database writes per second the disk sub-system is performing. If the writes rate is excessive for a long period of time, consider taking action to avoid performance issues.</p>
+        <h2 class="Heading2" MadCap:conditions="Default.Internal Only"><a name="FileActivityWritesKB"></a>Writes KB chart (per second)</h2>
+        <p class="Body" MadCap:conditions="Default.Internal Only">The <span class="GUI_Item">Writes KB/sec</span> chart displays the size of the physical database writes per second the disk sub-system is performing.</p>
+        <h2 class="Heading2"><a name="FileActivityTransfers"></a>Transfers chart (per second)</h2>
+        <p class="Body">The <span class="GUI_Item">Transfers/sec</span> chart displays the  total number of transfers per second across all databases on the monitored instance. Transfers are the sum of reads and writes. A higher transfer rate indicates a higher risk of resource issues.</p>
+        <h2 class="Heading2"><a name="FileActivityNoData"></a>When the File Activity panel displays no data</h2>
+        <p class="Body">There are circumstances under which the File Activity panel does not display any data. For example, when you lose connection to the Collection Service or SQLdm Repository. Another reason is the lack of collection data points. On new instances, file activity collection occurs once per hour by default. By increasing the length of time shown on the desktop client views, you may be able to see more data points. You can modify the timeframe of data displayed in SQLdm by clicking <span class="GUI_Item">Tools &gt;&#160;Console Options</span> while in the File Activity view and changing the <span class="GUI_Item">Keep data for the last</span> and <span class="GUI_Item">Show data for the last</span> values. </p>
+        <p class="Body">You also can change the database collection interval and grooming options to help you see more data points. Use the <span class="GUI_Item">Collect and alert on database metrics</span> field in the <a href="Set general server options.htm" target="_self">General tab of the Monitored SQL&#160;Server Properties window</a> to manage your database collection. For grooming options, use the <span class="GUI_Item">Groom Sessions, Queries, Deadlocks, Waits, and History Browser data older than</span> field in the <a href="Set your Repository grooming schedule.htm" target="_self">Grooming Options</a> window.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Decreasing the collection interval and grooming your data less often can result in performance issues and require additional storage space in your Repository.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="DefinitionListTerm">Activity for a new monitored SQL&#160;Server instance</p>
+        <p class="DefinitionListBody">The File Activity panel displays results based on activity since the last refresh. You must have two collections to create a point on the graph, three collections to create a line. By default, the database collection interval is set at one hour, which means that the File Activity panel does not show a point until an hour after adding the instance unless you perform a manual refresh. You can refresh and collect data by clicking the <span class="GUI_Item">Refresh </span>button in the SQLdm Management Console menu bar.</p>
+        <p class="DefinitionListTerm">Activity when using the History Browser</p>
+        <p class="DefinitionListBody">The History Browser allows you to view the state of your SQL&#160;Server instance at the time a snapshot occurs, which is every six minutes by default. When using the History Browser with the File Activity panel, note that data may appear in one snapshot but not in others because no file activity occurred during that interval. Remember that file activity data does not appear for the first two hours of monitoring a SQL&#160;Server instance because the metrics are based on the activity since the last database refresh.</p>
+    </body>
+</html>

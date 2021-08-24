@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="833" MadCap:lastWidth="597">
+    <head><title>Configure advanced Idera SQLdm query monitor options</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure advanced query monitor options</h1>
+        <p class="Body">
+            <MadCap:keyword term="Advanced:Query Monitor configuration;Query Monitor:advanced configuration;Query Monitor: exclusion filters;Query Monitor: inclusion filters" />The Advanced Query Monitor Configuration window allows you to supply filtering criteria such as including or excluding specific applications, databases, and SQL text from the Query Monitor Trace collection. Filtering allows you to improve the results you see in the Query Monitor view and reduce the impact of the Query Monitor trace on your server.</p>
+        <h2 class="Heading2">Access the Advanced Query Monitor Configuration window</h2>
+        <p class="Body">You can access the Advanced Query Monitor Configuration window by right-clicking the appropriate monitored SQL&#160;Server instance, and then selecting <span class="GUI_Item">Properties</span>. Click <span class="GUI_Item">Query Monitor</span> when SQLdm displays the Monitored SQL&#160;Server Properties window, and then click <span class="GUI_Item">Advanced</span>.</p>
+        <h2 class="Heading2">Using Query Monitor exclusion filtering </h2>
+        <p class="Body">Excluding data from your Query Monitor trace helps filter out information that is not important for the task at hand. SQLdm allows you to filter specific applications, databases, or SQL text and also exclude the SQLdm queries from the results. When adding multiple items to exclude, use a semi-colon <b>(;)</b> between items of the same type. You can also use a percent character <b>(%)</b> as a wildcard.</p>
+        <p class="StepIntro">To exclude data from your Query Monitor trace while in the Queries view:</p>
+        <ol>
+            <li class="NumberedList">On the Queries view for the server you want to exclude data from, press the <span class="GUI_Item">Configure Query Monitor</span> button.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Advanced</span>.</li>
+            <li class="NumberedList">Enter your filter information in the <b>Exclude</b> fields, using <b>(;)</b> to separate items and <b>(%)</b> as a wildcard.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span>.</li>
+        </ol>
+        <h2 class="Heading2">Using Query Monitor inclusion filtering </h2>
+        <p class="Body">SQLdm  allow you to set Query Monitor inclusion filters. You can choose the applications, databases, and SQL text you want to include in the Query Monitor trace and SQLdm stores only queries that match these inclusion filtering criteria.  When adding multiple items to include, use a semi-colon <b>(;)</b> between items of the same type. You can also use a percent character <b>(%)</b> as a wildcard.</p>
+        <p class="StepIntro">To include data in your Query Monitor trace while in the Queries view:</p>
+        <ol>
+            <li class="NumberedList">On the Queries view for the server you want to include data in, press the <b>Configure Query Monitor</b> button.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Advanced</span>.</li>
+            <li class="NumberedList">Enter your filter information in the <b>Include</b> fields, using <b>(;)</b> to separate items and <b>(%)</b> as a wildcard.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span>.</li>
+        </ol>
+        <p class="Body">&#160;</p>
+    </body>
+</html>

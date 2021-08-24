@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="8" MadCap:lastHeight="676" MadCap:lastWidth="545">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Edit table statistics options in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Edit table statistics options</h1>
+        <p class="Body">
+            <MadCap:keyword term="Table Statistics: edit" />SQLdm lets you collect statistics and perform trend analysis over time. Table Statistics allow you to designate the days and times SQLdm collects table growth and reorganization statistics. Because statistics collection can negatively impact performance, SQLdm allows you to designate an individual Table Statistics collection time for the SQL&#160;Server instances. Configure a time you know the instance is utilized less than normal.</p>
+        <p class="Body">In addition, you can limit the amount of performance impact by utilizing the following:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Limit reorganization to databases over a set size, which eliminates the reorganization of small, rarely-used tables.</li>
+            <li class="BulletLast"><a href="Select database to exclude from table growth stats.htm" target="_self">Exclude non-essential databases from collection</a> by clicking <span class="GUI_Item">Select Databases to Exclude</span> and selecting the appropriate databases.</li>
+        </ul>
+        <h2 class="Heading2">Access the Table Statistics tab</h2>
+        <p class="Body">You can access the Table Statistics tab of the Monitor SQL&#160;Server Properties window by right-clicking the appropriate monitored SQL&#160;Server instance, and then selecting <span class="GUI_Item">Properties</span>. Click <span class="GUI_Item">Table Statistics</span> when SQLdm displays the Monitored SQL&#160;Server Properties window.</p>
+        <h2 class="Heading2">Schedule table statistics collection</h2>
+        <p class="Body">
+            <MadCap:keyword term="Table Statistics:scheduling" />Table Statistics collection is a resource-intensive process. Schedule your collection time for non-peak hours to reduce the possibility of your users experiencing decreased performance.</p>
+        <table style="border-left-style: solid;border-left-width: 1px;border-left-color: #a9a9a9;border-right-style: solid;border-right-width: 1px;border-right-color: #a9a9a9;border-top-style: solid;border-top-width: 1px;border-top-color: #a9a9a9;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #a9a9a9;caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="Body">The SQLdm Collection Service may not include fragmentation data for a particular table for any of the following reasons:</p>
+                        <ul style="list-style-type: circle;">
+                            <li class="Bullet">Table statistics collection has not occurred.</li>
+                            <li class="Bullet">The database hosting the table is excluded from collection.</li>
+                            <li class="Bullet">The table size does not meet the minimum size threshold.</li>
+                            <li class="Bullet">The database hosting the table is not accessible.</li>
+                            <li class="BulletLast">The table is locked.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

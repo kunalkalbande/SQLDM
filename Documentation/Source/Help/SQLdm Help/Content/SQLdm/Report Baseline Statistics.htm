@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="914" MadCap:lastWidth="833">
+    <head>
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Baseline Statistics report in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Baseline Statistics</h1>
+        <p class="Body">The Baseline Statistics report lets you analyze and compare baselines within a single SQL Server instance and across two instances. When viewing baseline statistics for a monitored SQL&#160;Server instance, you can compare the baseline metric values at two different times or two different metrics at the same time. Include another instance and you can compare baselines values occurring at the same time or different times.</p>
+        <h2 class="Heading2">When to run this report</h2>
+        <p class="Body">You should run the Baseline Statistics report when you want to view trends in the average value of a metric for a SQL&#160;Server instance and how this value changes over time to help you in capacity planning. This report also provides insight into the utilization of your different instances by comparing the baselines over time.</p>
+        <h2 class="Heading2">Report selections change based on the selected Period</h2>
+        <p class="Body">The Baseline Statistics report <span class="GUI_Item">Period</span> indicates the date range for which you want to see results. If you select <span class="GUI_Item">Today</span> or <span class="GUI_Item">Custom Range</span>, SQLdm displays additional fields that allow you to filter results by the start and end hours.</p>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col />
+            <col style="width: 626px;" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">If you select <span class="GUI_Item">Custom Range</span> as the <span class="GUI_Item">Period</span>, and the start and end dates are both for the same day, SQLdm calculates the selection the same as if you select <span class="GUI_Item">Today </span>as the <span class="GUI_Item">Period</span>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">How SQLdm calculates metric values on this report</h2>
+        <p class="Body">The baseline values are the most recent calculations for the selected period. Note that the <span class="GUI_Item">Metric Value</span> is an average of all data for the selected metric. For example, if you select <span class="GUI_Item">Hours</span> from the <span class="GUI_Item">Sample</span> drop-down list, the Baselines Statistics report grid includes 24 rows for a single day, one row for each hour from 00:00 to 23:00. Each row displays a metric value which is the average of the selected metric for that hour, such as 05:00 to 05:59:59, and the baseline values which are calculated for the entire 24-hour day. As a result, SQLdm displays 24 rows of different metric values but equal baseline values.</p>
+        <p class="Body" MadCap:conditions="Default.Internal Only">The following table provides additional information as to how SQLdm calculates that values in each column of the Baseline Statistics report.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0" MadCap:conditions="Default.Internal Only">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Column Name</th>
+                    <th class="HeadD-Column2-Header1">How SQLdm calculates this value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Baseline</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Baseline Configuration</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Baseline Count</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Baseline Max</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Baseline Min</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Baseline Std Deviation</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Date</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Metric</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Metric Value</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Average of all data for the selected <span class="GUI_Item">Metric</span> from the monitored SQL&#160;Server instance  for the selected period.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Server</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">You can access our <a href="http://www.idera.com/support" target="_blank">Customer Service Portal</a> (www.idera.com/support) for more information about the algorithm used to calculate a specific metric.</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">How does SQL diagnostic manager gather statistics from monitored SQL Servers? - Solution #00000055</li>
+        </ul>
+    </body>
+</html>

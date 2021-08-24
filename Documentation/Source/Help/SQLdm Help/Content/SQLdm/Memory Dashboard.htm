@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1270" MadCap:lastWidth="847">
+    <head>
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Memory panel in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Memory panel</h1>
+        <p class="Body">
+            <MadCap:keyword term="Memory:Dashboard panel;Dashboard:Memory;Virtual;Virtualization;VM;VMware;ESX;Host;Virtual Machine" />The Memory panel tracks the usage and availability of memory on your monitored SQL Server computer. Unexpected spikes in memory usage can warn you about the beginning of a serious performance issue.  Chronically high memory metrics may indicate the need for server maintenance, query tuning, or other diagnostics to better handle the ongoing workload.  Use the <span class="GUI_Item">Memory </span>view on the <span class="GUI_Item">Resources </span>tab to track  key memory statistics over a period of time. For additional information, see <a href="Get Memory Performance Details.htm" target="_self">how to get the memory performance details</a>.</p>
+        <h2 class="Heading2"><a name="MemoryUsage"></a>SQL&#160;Server Usage chart</h2>
+        <p class="Body">The <span class="GUI_Item">SQL&#160;Server Usage</span> chart compares the amount of memory allocated and used by SQL&#160;Server to the total memory consumed on a computer.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Metric</th>
+                    <th class="HeadD-Column2-Header1">Why it is important</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">SQL allocated</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates how much available memory is allocated to SQL Server from the operating system (SQLOS). Compare this metric to how much memory is actually being used by SQL&#160;Server.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText"><a href="Metrics/SQL Server Memory Usage.htm">SQL used</a>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates how much memory is currently used by SQL Server from the total allocated (SQL allocated) to this application. A higher SQL memory percentage indicates that you may have poorly performing queries or a fragmented database.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText"><a href="Metrics/Total Memory Usage.htm">Total used</a>
+                        </p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Indicates how much physical memory is used by the operating system (SQL Server and other applications). A higher total memory percentage indicates that the overall workload of the SQL&#160;Server computer is too intensive for the available resources.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2"><a name="MemoryPaging"></a>SQL&#160;Server Paging chart</h2>
+        <p class="Body">The <span class="GUI_Item">SQL&#160;Server Paging</span> chart plots the number of swapped pages per second, over time, as calculated by the <a href="Metrics/Memory Paging.htm">memory paging metric</a>.</p>
+        <h2 class="Heading2"><a name="VMMemoryUsage"></a>VM&#160;Memory Usage chart</h2>
+        <p class="Body">The <span class="GUI_Item">VM Memory Usage</span> chart compares the amount of memory allocated and used by SQL&#160;Server to the total memory consumed on this virtual machine. For additional information about how SQLdm works with virtual machines and collects metrics, see <a href="How SQLdm works with a virtual environment.htm" target="_self">How SQLdm works with a virtual environment</a>.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Metric</th>
+                    <th class="HeadD-Column2-Header1">Why it is important</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Active</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the amount of memory actively used by this virtual machine.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Ballooned</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the amount of memory temporarily reclaimed by the host system for use in other areas. A higher ballooned value indicates that the host server is under memory pressure. Review your load balancing for the host server.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Consumed</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the amount of memory consumed by this virtual machine. This value does not include shared memory or overhead memory for this VM.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Granted</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the amount of physical memory granted by the host to this virtual machine.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Swapped</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Indicates the amount of memory swapped to disk by the hypervisor.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2"><a name="HostMemoryUsage"></a>Host Memory Usage chart</h2>
+        <p class="Body">The <span class="GUI_Item">Host Memory Usage</span> chart compares the amount of memory allocated and used by SQL&#160;Server to the total memory consumed on this host server. For additional information about how SQLdm works with virtual machines and collects metrics, see <a href="How SQLdm works with a virtual environment.htm" target="_self">How SQLdm works with a virtual environment</a>.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Metric</th>
+                    <th class="HeadD-Column2-Header1">Why it is important</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Active</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the amount of memory actively used by all of your VMs on this host server.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Ballooned</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the amount of memory temporarily reclaimed by all of your VMs on the host system for use in other areas. A higher ballooned value indicates that the host server is under memory pressure. Review your load balancing for the host server.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Consumed</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the amount of memory consumed by all of your VMs on this host server. This value does not include shared memory or overhead memory for these VMs.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Granted</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the amount of physical memory granted by the host to all of your VMs.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Swapped</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Indicates the amount of memory swapped to disk by the hypervisor.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Available alerts</h2>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet"><a href="Alerts/Host Memory Usage Alert.htm">Host&#160;Memory Usage (Percent) Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/OS Memory Usage Alert.htm">O/S Memory Usage (Percent) Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/OS Paging Alert.htm">O/S Paging Alert</a>
+            </li>
+            <li class="BulletLast"><a href="Alerts/SQL Server Memory Usage Alert.htm">SQL Memory Usage (Percent) Alert</a>
+            </li>
+            <li class="BulletLast"><a href="Alerts/VM Memory Usage Alert.htm">VM&#160;Memory Usage (Percent)</a>
+            </li>
+        </ul>
+    </body>
+</html>

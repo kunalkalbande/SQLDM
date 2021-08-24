@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="2448" MadCap:lastWidth="833">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Monitor database mirroring in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Monitor database mirroring</h1>
+        <p class="Body">
+            <MadCap:keyword term="Database:mirroring;Mirroring;Alerts:database mirroring" />The Database Mirroring view allows you to monitor  the mirrored databases set up on monitored SQL&#160;Server instances.  You can view the mirrored databases by clicking <span class="GUI_Item">Mirroring</span> on the Databases tab. </p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">If you have enabled database mirroring on your SQL&#160;Server, the SQLdm Database Mirror Monitoring view is enabled by default.     <![CDATA[ ]]></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">Database mirroring is a process available in SQL&#160;Server 2005 and 2008 that moves database transactions from one SQL Server database to another SQL Server database on a different instance of SQL Server. Database mirroring allows you to configure a duplicate of your important databases for availability and redundancy.</p>
+        <h2 class="Heading2">Access the Mirroring view</h2>
+        <p class="Body">You can open the Mirroring view of the SQLdm Databases tab by selecting the appropriate SQL&#160;Server instance, and then clicking <span class="GUI_Item">Databases &gt; Mirroring</span>.</p>
+        <h2 class="Heading2">Database mirroring statistics</h2>
+        <p class="Body">In this view, you can see all the mirrored databases on all the monitored SQL&#160;Server instances, their current status, and history. The database table provides the following information:</p>
+        <p class="DefinitionListTerm">Database Name</p>
+        <p class="DefinitionListBody">The name of the database.</p>
+        <p class="DefinitionListTerm">Server Instance</p>
+        <p class="DefinitionListBody">The SQL&#160;Server instance hosting the mirrored database.</p>
+        <p class="DefinitionListTerm">Current Role</p>
+        <p class="DefinitionListBody">Describes whether the database is the principal or the mirrored database.</p>
+        <p class="DefinitionListTerm">Partner Instance</p>
+        <p class="DefinitionListBody">The name of the SQL&#160;Server instance that is the mirror partner.</p>
+        <p class="DefinitionListTerm">Mirroring State</p>
+        <p class="DefinitionListBody">The status of the database mirror, color-coded based on the configured alert level.</p>
+        <p class="DefinitionListTerm">Witness Connection</p>
+        <p class="DefinitionListBody">The status of the connection, color-coded based on the configured alert level.</p>
+        <p class="DefinitionListTerm">Operational State</p>
+        <p class="DefinitionListBody">Describes whether the database mirroring session is operating in a preferred configuration based on how the user established which SQL&#160;Server instance hosts the principal and which SQL&#160;Server instance hosts the mirrored database.</p>
+        <p class="DefinitionListTerm">Operating Mode (Hidden)</p>
+        <p class="DefinitionListBodyLast">Shows the current operating mode: High availability with automatic fail-over (has a witness, synchronous); High availability without automatic fail-over (no witness, synchronous); High performance (no witness, asynchronous).</p>
+        <h2 class="Heading2"> Available details for a specific session</h2>
+        <p class="Body">Select a session, and then click the Status tab to view the following details. You can also view historical information for a selected session using the History tab. This information includes the history of the metrics over time for both the local and remote partner.</p>
+        <p class="DefinitionListTerm">Unsent log (in kilobytes) </p>
+        <p class="DefinitionListBody">Size of the log waiting in the send queue on the principal, displayed in kilobytes.</p>
+        <p class="DefinitionListTerm">Oldest unsent transaction (dd.hh:mm)</p>
+        <p class="DefinitionListBody">Date and time of the oldest unsent transaction in the send queue on the principal.</p>
+        <p class="DefinitionListTerm">Time to send log (estimated)</p>
+        <p class="DefinitionListBody">Estimated number of minutes required by the principal to send the log waiting in the send queue to the mirror based on the current send rate. Note that this rate is affected by the rate of incoming transactions.</p>
+        <p class="DefinitionListTerm">Send rate (in kilobytes per second)</p>
+        <p class="DefinitionListBody">Rate at which the principal is sending transactions to the mirror, displayed in kilobytes per second.</p>
+        <p class="DefinitionListTerm">Rate of new transactions (in kilobytes per second)</p>
+        <p class="DefinitionListBody">Rate at which transactions are added to the unsent queue on the principal.</p>
+        <p class="DefinitionListTerm">Unrestored log (in kilobytes)</p>
+        <p class="DefinitionListBody">Size of the log waiting in the redo queue on the mirror, in kilobytes.</p>
+        <p class="DefinitionListTerm">Time to restore log (estimated)</p>
+        <p class="DefinitionListBody">Estimated number of minutes required to apply the log in the redo queue to the mirror database.</p>
+        <p class="DefinitionListTerm">Current restore rate (in kilobytes per second)</p>
+        <p class="DefinitionListBody">Rate at which transactions in the redo queue are applied to the mirror database, in kilobytes per second.</p>
+        <p class="DefinitionListTerm">Mirror commit overhead</p>
+        <p class="DefinitionListBody">Size of the log waiting in the redo queue on the mirror, in kilobytes. This delay is due to mirror operations and is the first indication that the traffic exceeds the capabilities of the hardware.</p>
+        <p class="DefinitionListTerm">Time to send and restore all current log (estimated)</p>
+        <p class="DefinitionListBody">Estimated number of minutes required to process all outstanding transactions on both the principal and mirror.</p>
+        <p class="DefinitionListTerm">Operating mode</p>
+        <p class="DefinitionListBody">Displays one of the following operating modes for the current database mirroring session: High availability with automatic fail-over (has a witness, synchronous), High availability without automatic fail-over (no witness, synchronous), or High performance (no witness, asynchronous).</p>
+        <p class="DefinitionListTerm">Witness Address</p>
+        <p class="DefinitionListBody">Network address of the witness SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Mirror Address</p>
+        <p class="DefinitionListBody">Network address of the mirror SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Principal Address</p>
+        <p class="DefinitionListBodyLast">Network address of the principal SQL&#160;Server instance.</p>
+        <h2 class="Heading2">Available actions in the Database Mirror Monitoring view</h2>
+        <p class="Body">Each row of the mirrored databases table provides a menu of actions you can perform:</p>
+        <p class="DefinitionListTerm">Failover</p>
+        <p class="DefinitionListBody">Select <span class="GUI_Item">Fail over to partner</span> to fail over the principal role between the two partner databases in the mirroring session. </p>
+        <p class="DefinitionListBody">The duration of a mirroring failover operation varies according to the amount of log in the redo queue on the mirror. All transactions in the redo queue must roll forward before the mirror can assume the role of Principal. After the failover is initiated, the Principal changes to PENDING_FAILOVER while the mirror synchronizes. Once complete, there is a brief period where user connections are terminated and while roles are switching the mirroring status is undetermined. If a refresh occurs at this time, your mirrored database does not show in the Mirrored Databases grid. This lasts for a moment and your next refresh reflects the switched roles.</p>
+        <p class="DefinitionListBody">For more information about the failover function, see SQL&#160;Server Books Online.</p>
+        <p class="DefinitionListTerm">Suspend or Resume Monitoring</p>
+        <p class="DefinitionListBody">Use <span class="GUI_Item">Suspend\resume session</span> to pause all mirroring operations. While mirroring is paused in "High Availability" mode, all transactions opened against the principal are queued for transmission to the mirror partner once the session resumes.</p>
+        <p class="DefinitionListTerm">Set mirror relationship as "Failed over" or "Normal"</p>
+        <p class="DefinitionListBody">Select <span class="GUI_Item">Mark session as "failed over"</span> or <span class="GUI_Item">Mark session as "normal" operational status</span> to define the status of a mirror relationship. Once you have set a preferred operational state, SQLdm alerts you if the configuration differs from your selection.</p>
+        <p class="DefinitionListTerm">Clear the role preference for this mirroring session</p>
+        <p class="DefinitionListBodyLast">Use <span class="GUI_Item">Clear preferred role for this session</span> to clear the preferred role for the session and stop receiving alerts for differences between the current configuration and the Normal status.</p>
+        <h2 class="Heading2">Available alerts for mirrored databases</h2>
+        <p class="Body">You can <a href="Set advanced alert options.htm" target="_self">configure the following alerts for mirrored databases</a>.</p>
+        <p class="DefinitionListTerm">Mirror Commit Overhead </p>
+        <p class="DefinitionListBody">Average delay (in milliseconds) on the principal server instance for each transaction due to database mirroring.</p>
+        <p class="DefinitionListTerm">Mirrored Server Role Change</p>
+        <p class="DefinitionListBody">A change in role occurred on a mirrored database on the monitored server.</p>
+        <p class="DefinitionListTerm">Mirroring Oldest Unsent Transactions</p>
+        <p class="DefinitionListBody">The age of the oldest unsent transaction in minutes on the principal. This is only meaningful on the principal server instance.</p>
+        <p class="DefinitionListTerm">Mirroring Preferred Configuration</p>
+        <p class="DefinitionListBody">A change occurred in terms of the preferred operational status.</p>
+        <p class="DefinitionListTerm">Mirror Status</p>
+        <p class="DefinitionListBody">Status of the mirrored database such as synchronized, suspended or disconnected.</p>
+        <p class="DefinitionListTerm">Mirroring Unrestored Log</p>
+        <p class="DefinitionListBody">Size of the redo queue on the mirror in kilobytes. The redo queue is the size in kilobytes  of the outstanding transactions on the mirror that are not yet applied.</p>
+        <p class="DefinitionListTerm">Mirroring Unsent Log</p>
+        <p class="DefinitionListBody">Size of the unsent log in the send queue on the principal in kilobytes.</p>
+        <p class="DefinitionListTerm">Mirroring Witness Connection</p>
+        <p class="DefinitionListBodyLast">If a witness is configured, this alert displays whether the witness is connected.</p>
+    </body>
+</html>

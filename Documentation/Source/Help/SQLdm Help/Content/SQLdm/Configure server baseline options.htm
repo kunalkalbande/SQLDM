@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="3225" MadCap:lastWidth="571">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Configure SQL Server instance baseline options in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure server baseline options</h1>
+        <p class="Body">
+            <MadCap:keyword term="Baseline;Alert Threshold" />The Baseline Configuration tab of the Monitored SQL Server Properties window allows you to configure your server baseline options. SQLdm calculates a baseline out of a pool of collected data based on the selected period and collection interval, and is represented by mean, standard deviation, minimum, maximum, and count statistics. One benefit of using this feature is that SQLdm uses the baseline to provide alert recommendations which you can use to set effective <a href="View suggested alert thresholds.htm" target="_self">alert thresholds</a>. </p>
+        <p class="Body">SQLdm allows you to select the date range used to calculate the performance baseline for one or more selected SQL&#160;Server instances. The day and time period fields allow you to select the days and times on which to base your alert baseline calculations. When your SQL&#160;Server instances are not busy, clear the days and times to remove them from the calculation and provide a more realistic and accurate baseline. The days and hours selected apply to both the <span class="GUI_Item">Automatic</span> and <span class="GUI_Item">Custom</span> baseline selections.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">User accounts that include the View privilege can access the Baseline Configuration window, but cannot make any changes. <br />User accounts that include the Modify privilege can make changes to the baseline configuration of their monitored SQL&#160;Server instances.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Access the Baseline Configuration tab</h2>
+        <p class="Body">You can access the Baseline Configuration tab of the Monitor SQL&#160;Server Properties window by right-clicking the appropriate monitored SQL&#160;Server instance, and then selecting <span class="GUI_Item">Configure Baseline</span>.</p>
+        <h2 class="Heading2">Select a baseline period</h2>
+        <p class="Body">The baseline period you specify should represent a typical operation of the monitored SQL&#160;Server instances to which this baseline applies.</p>
+        <p class="DefinitionListTerm">Automatic</p>
+        <p class="DefinitionListBody">Automatic calculates a dynamic baseline based on a moving window of the past seven days of collected data.</p>
+        <p class="DefinitionListTerm">Custom</p>
+        <p class="DefinitionListBodyLast">Custom allows you to set a specific time range that does not change.</p>
+        <h2 class="Heading2">Apply this baseline to more than one instance</h2>
+        <p class="Body">You can apply a specific baseline to additional instances not included when you originally created the baseline configuration.</p>
+        <p class="StepIntro">To add a baseline configuration to additional instances:</p>
+        <ol>
+            <li class="NumberedList">In the Servers pane, right-click the name of any instance that you want to have the new baseline configuration, and then select <span class="GUI_Item">Configure Baseline</span>. </li>
+            <li class="NumberedList">Make any necessary changes to the baseline configuration, and then click <span class="GUI_Item">Apply Baseline Configuration</span>. </li>
+            <li class="NumberedList">Select the appropriate instances from the <span class="GUI_Item">Available Servers</span> list, and then click <span class="GUI_Item">Add &gt;</span> to move them to the <span class="GUI_Item">Added Servers</span> list. </li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span>. SQLdm applies this configuration to the other instances.<br /></li>
+        </ol>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">When verifying your baseline configuration changes for more than one instance in the <a href="Use Change Log.htm" target="_self">Change Log view</a>, note that instance property changes are logged only once. In comparison, baseline configuration changes are logged as many times as the number of instances affected by the change.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Metrics used in baseline calculations</h2>
+        <p class="Body">SQLdm uses the following metrics when calculating a baseline for a monitored SQL&#160;Server instance:</p>
+        <ul>
+            <li class="Bullet">Available Memory</li>
+            <li class="Bullet"><a href="Metrics/Batches Received.htm" target="_self">Batches Per Second</a>
+            </li>
+            <li class="Bullet"><a href="Metrics/Blocked Sessions.htm" target="_self">Blocked Sessions</a>
+            </li>
+            <li class="Bullet"><a href="Metrics/Buffer Cache Hit Ratio.htm" target="_self">Buffer Cache Hit Ratio</a>
+            </li>
+            <li class="Bullet">Buffer Cache Size</li>
+            <li class="Bullet">Checkpoint Writes Per Second</li>
+            <li class="Bullet"><a href="Metrics/Client Computers.htm" target="_self">Client Computers</a>
+            </li>
+            <li class="Bullet">Data File Count</li>
+            <li class="Bullet">Data File Space Allocated</li>
+            <li class="Bullet">Data File Space Used</li>
+            <li class="Bullet">Data File Space Used (Percent)</li>
+            <li class="Bullet">Database Count</li>
+            <li class="Bullet"><a href="Metrics/Disk Queue Length.htm" target="_self">Disk Queue Length</a>
+            </li>
+            <li class="Bullet"><a href="Metrics/Disk Time.htm" target="_self">Disk Time (Percent)</a>
+            </li>
+            <li class="Bullet">Distribution Latency</li>
+            <li class="Bullet">Host&#160;CPU&#160;Usage</li>
+            <li class="Bullet">Host&#160;CPU&#160;Usage MHz</li>
+            <li class="Bullet">Host&#160;Disk Device Latency</li>
+            <li class="Bullet">Host&#160;Disk Kernel Latency</li>
+            <li class="Bullet">Host&#160;Disk Queue Latency</li>
+            <li class="Bullet">Host&#160;Disk Read</li>
+            <li class="Bullet">Host&#160;Disk Total Latency</li>
+            <li class="Bullet">Host&#160;Disk Usage</li>
+            <li class="Bullet">Host&#160;Disk Write</li>
+            <li class="Bullet">Host&#160;Memory Swap In Rate</li>
+            <li class="Bullet">Host&#160;Memory Swap Out Rate</li>
+            <li class="Bullet">Host&#160;Memory Active</li>
+            <li class="Bullet">Host&#160;Memory Ballooned</li>
+            <li class="Bullet">Host&#160;Memory Consumed</li>
+            <li class="Bullet">Host&#160;Memory Granted</li>
+            <li class="Bullet">Host&#160;Memory Usage</li>
+            <li class="Bullet">Host&#160;Net Received</li>
+            <li class="Bullet">Host&#160;Net Transmitted</li>
+            <li class="Bullet">Host&#160;Net Usage</li>
+            <li class="Bullet">Full Scans Per Second</li>
+            <li class="Bullet">Lazy Writer Writes Per Second</li>
+            <li class="Bullet">Lock Waits Per Second</li>
+            <li class="Bullet">Log File Count</li>
+            <li class="Bullet">Log File Space Allocated</li>
+            <li class="Bullet">Log File Space Used</li>
+            <li class="Bullet">Log File Space Used (Percent)</li>
+            <li class="Bullet"><a href="Metrics/Log Flushes.htm" target="_self">Log Flushes Per Second</a>
+            </li>
+            <li class="Bullet">Logins Per Second</li>
+            <li class="Bullet">Oldest Open Transaction (Minutes)</li>
+            <li class="Bullet">Open Transactions</li>
+            <li class="Bullet">OS CPU Privileged Activity</li>
+            <li class="Bullet">OS CPU User Time</li>
+            <li class="Bullet">OS Memory Used (Percent)</li>
+            <li class="Bullet">OS Total Processor Activity</li>
+            <li class="Bullet">Packet Errors Per Second</li>
+            <li class="Bullet"><a href="Metrics/Packets Received.htm" target="_self">Packets Received Per Second</a>
+            </li>
+            <li class="Bullet"><a href="Metrics/Packets Sent.htm" target="_self">Packets Sent Per Second</a>
+            </li>
+            <li class="Bullet">Page Life Expectancy</li>
+            <li class="Bullet">Page Lookups Per Second</li>
+            <li class="Bullet"><a href="Metrics/Page Reads.htm" target="_self">Page Reads Per Second</a>
+            </li>
+            <li class="Bullet">Page Splits Per Second</li>
+            <li class="Bullet"><a href="Metrics/Page Writes.htm" target="_self">Page Writes Per Second</a>
+            </li>
+            <li class="Bullet">Pages Per Second</li>
+            <li class="Bullet">Physical Memory</li>
+            <li class="Bullet">Procedure Cache Hit Ratio</li>
+            <li class="Bullet">Procedure Cache Size</li>
+            <li class="Bullet"><a href="Metrics/Processor Queue Length.htm" target="_self">Processor Queue Length</a>
+            </li>
+            <li class="Bullet">Read Ahead Pages Per Second</li>
+            <li class="Bullet">Replication Latency (Seconds)</li>
+            <li class="Bullet">Replication Subscribed</li>
+            <li class="Bullet"><a href="Metrics/Response Time.htm" target="_self">Response Time</a>
+            </li>
+            <li class="Bullet">SQL Compilations Per Second</li>
+            <li class="Bullet">SQL CPU Activity</li>
+            <li class="Bullet">SQL Memory Allocated</li>
+            <li class="Bullet"><a href="Metrics/SQL Server Memory Usage.htm" target="_self">SQL Memory Used</a>
+            </li>
+            <li class="Bullet"><a href="Metrics/Re-compiles Per Second.htm" target="_self">SQL Recompilations Per Second</a>
+            </li>
+            <li class="Bullet">System Processes</li>
+            <li class="Bullet">System Processes Consuming CPU</li>
+            <li class="Bullet">Table Lock Escalations</li>
+            <li class="Bullet">Tempdb GAM Wait Time Milliseconds</li>
+            <li class="Bullet">Tempdb PFS&#160;Wait Time Milliseconds</li>
+            <li class="Bullet">Tempdb SGAM Wait Time Milliseconds</li>
+            <li class="Bullet">Tempdb&#160;Size</li>
+            <li class="Bullet">Tempdb&#160;Size Percent</li>
+            <li class="Bullet">Undistributed Transactions</li>
+            <li class="Bullet">Unsubscribed Transactions</li>
+            <li class="Bullet"><a href="Metrics/Total Memory Usage.htm" target="_self">Used Memory (Percent)</a>
+            </li>
+            <li class="Bullet">User Connections (Percent)</li>
+            <li class="Bullet">User Processes</li>
+            <li class="Bullet">User Processes Consuming CPU</li>
+            <li class="Bullet">Version Store Generation</li>
+            <li class="Bullet">Version Store Size</li>
+            <li class="Bullet">VM&#160;CPU&#160;Ready</li>
+            <li class="Bullet">VM&#160;CPU&#160;Swap Wait</li>
+            <li class="Bullet">VM&#160;CPU&#160;Usage</li>
+            <li class="Bullet">VM&#160;CPU&#160;Usage MHz</li>
+            <li class="Bullet">VM&#160;Disk Read</li>
+            <li class="Bullet">VM&#160;Disk Usage</li>
+            <li class="Bullet">VM&#160;Disk Write</li>
+            <li class="Bullet">VM&#160;Memory Active</li>
+            <li class="Bullet">VM&#160;Memory Ballooned</li>
+            <li class="Bullet">VM&#160;Memory Consumed</li>
+            <li class="Bullet">VM&#160;memory Granted</li>
+            <li class="Bullet">VM&#160;Memory Swap In Wait</li>
+            <li class="Bullet">VM&#160;Memory Swap Out Rate</li>
+            <li class="Bullet">VM&#160;Memory Swapped</li>
+            <li class="Bullet">VM&#160;Memory Usage</li>
+            <li class="Bullet">VM&#160;Net Received</li>
+            <li class="Bullet">VM&#160;Net Transmitted</li>
+            <li class="Bullet">VM&#160;Net Usage</li>
+            <li class="Bullet">Workfiles Created Per Second</li>
+            <li class="BulletLast">Worktables Created Per Second</li>
+        </ul>
+    </body>
+</html>

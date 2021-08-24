@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultProject Version="1" xml:lang="en-us">
+    <Synchronize>
+        <Mapping ProjectPath="Content/Resources/Images/upgrade from 8.5_8.6.jpg" ExternalPath="file:///D:/Work files/8.6/upgrade from 8.5_8.6.jpg" />
+    </Synchronize>
+</CatapultProject>

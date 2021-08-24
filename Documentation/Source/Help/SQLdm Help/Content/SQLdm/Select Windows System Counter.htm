@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="683" MadCap:lastWidth="820">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Select Windows system counter in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Select Windows system counter</h1>
+        <p class="Body">The Select Windows System Counter window of the Add Custom Counter wizard allows you to select the counter you want from a list populated from those currently available on an existing monitored SQL&#160;Server instance, or you can enter the counter information manually. </p>
+        <h2 class="Heading2">Access the Add Custom Counter wizard</h2>
+        <p class="Body">You can open the Add Custom Counter wizard by clicking <span class="GUI_Item">Administration &gt;&#160;Custom Counters</span>, and then clicking <span class="GUI_Item">Add </span>in the Custom Counters view.</p>
+        <h2 class="Heading2">Select a counter from the list</h2>
+        <p class="Body">As you select from a populated list from those currently available on an existing monitored SQL&#160;Server instance, the next drop-down list populates (filtered by your selection). This allows you to quickly find the specific counter you want to add to SQLdm.</p>
+        <ol>
+            <li class="NumberedList">Select whether you want to populate the list with counters that are contained in PerfMon, or populate it with every WMI&#160;counter.</li>
+            <li class="NumberedList">Pick the SQL&#160;Server instance to populate counter information from the drop-down list.</li>
+            <li class="NumberedList">Select the object name from the drop-down list.</li>
+            <li class="NumberedList">Select the name of the specific counter you want to add from the drop-down list.</li>
+            <li class="NumberedList">Select the instance from the drop-down list. The instance name is used to distinguish objects of a given type. For example, <code>_Total</code> refers to all instances, a drive letter such as C: for a specific disk drive, or the name of an application.</li>
+        </ol>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Click the <span class="GUI_Item">Details </span>button for information on the object name and counter name you have selected.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Manually add a counter</h2>
+        <p class="Body">If you have the counter information available, you can enter the information quickly by simply pasting or typing the Object Name, Counter Name, and Instance name into their associated fields. The counter information entered must be the exact complicated name or the counter does not work correctly.</p>
+        <p class="Body">For example, to enter the Processor object name (as seen in PerfMon), use the following programmatic name entry depending on the system configuration: </p>
+        <p class="Body"><code>Win32_PerfFormattedData_PerfOS_Processor</code>
+        </p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">You can find custom counter programmatic names on <a href="http://technet.microsoft.com/" target="_blank">Microsoft TechNet</a>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

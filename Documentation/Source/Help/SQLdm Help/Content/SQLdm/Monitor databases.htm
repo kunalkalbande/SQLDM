@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="4" MadCap:lastHeight="865" MadCap:lastWidth="1099">
+    <head><title>Monitor databases in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Monitor databases</h1>
+        <p class="Body">
+            <MadCap:keyword term="Databases" />SQLdm allows you to monitor your database backups, restores, table sizes, table row counts, configurable options, and replication status. SQLdm provides a graphical analysis of the used, unused, and index disk space of the database. You can also view the size and structure of database tables. SQLdm provides a list of data size, text or image size, index page size, and the number of table rows, making reorganization and index creation decisions easy.</p>
+        <p class="Body">
+            <MadCap:keyword term="Databases:common concepts">
+            </MadCap:keyword>The following concepts are important to understand when using the Databases tab:</p>
+        <p class="DefinitionListTerm">Percentage of Database/Log Full</p>
+        <p class="DefinitionListBody">The <span class="GUI_Item">% Data Full</span> and <span class="GUI_Item">%Log Full</span> columns on the Database Summary and Database Files views refer to the current space used as a percentage of the potential maximum available space. The larger the number the closer you are to running out of space. These columns can have associated alert thresholds.</p>
+        <p class="DefinitionListTerm">Potential Maximum Available Space</p>
+        <p class="DefinitionListBody">The <span class="GUI_Item">Data Potential Growth</span> and <span class="GUI_Item">Log Potential Growth</span> columns on the Database Summary and Database Files views refer to the currently allocated space plus the available expansion space.</p>
+        <p class="DefinitionListTerm">Available Expansion Space</p>
+        <p class="DefinitionListBody">Available Expansion Space refers to the available <MadCap:keyword term="Disk Space"></MadCap:keyword>disk space that files can grow into as determined by the growth settings for the files, the location of the files, and the free space on those disks.</p>
+        <p class="DefinitionListBody">Multiple database files as well as files from other databases can potentially compete for space on the same disk. For example, if the data and log files for several databases are on the same disk and the data file of one database expands, the available expansion space for all database files on the disk is immediately reduced.</p>
+        <h2 class="Heading2">Access the Databases tab</h2>
+        <p class="Body">SQLdm provides two paths to access the Databases tab. The first access path is by clicking the appropriate monitored SQL&#160;Server instance, and then clicking the Databases tab. The second access path is by expanding the Servers tree, and then clicking <span class="GUI_Item">Databases </span>for the appropriate instance.</p>
+        <h2 class="Heading2">Alerts associated with the Databases tab</h2>
+        <p class="Body">
+            <MadCap:keyword term="Databases:alerts;Alerts:databases" />The following alerts are associated with the Databases tab:</p>
+        <p class="DefinitionListTerm">Database Full (Percent)</p>
+        <p class="DefinitionListBody">Percentage of the allowable disk space for the database currently used by the sum of data, text, and index. Allowable disk space for the database is calculated by taking into account the current allocated space, auto-growth settings, and available disk space.</p>
+        <p class="DefinitionListTerm">Database Read/Write Error Occurred</p>
+        <p class="DefinitionListBody">Failure to read from or write to the hard disk.</p>
+        <p class="DefinitionListTerm">Database Status</p>
+        <p class="DefinitionListBody">Multiple types of <a href="Database Status.htm">Database Status</a> alerts exist.</p>
+        <p class="DefinitionListTerm">Index Row hits (Percent)</p>
+        <p class="DefinitionListBody">Number of row hits that part of a clustered index or an entire non-clustered index returns, providing an indication of index effectiveness.</p>
+        <p class="DefinitionListTerm">Log Full (Percent)</p>
+        <p class="DefinitionListBody">Percentage of the allowable disk space for the database currently used by the transaction log. Allowable disk space for the database is calculated by taking into the current allocated space, auto-growth settings and available disk space.</p>
+        <p class="DefinitionListTerm">Table Fragmentation (Percent)</p>
+        <p class="DefinitionListBody">Percentage of pages that are fragmented in each table in the database.</p>
+    </body>
+</html>

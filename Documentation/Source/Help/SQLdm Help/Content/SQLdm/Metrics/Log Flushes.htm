@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="591" MadCap:lastWidth="833">
+    <head><title>Log Flushes (Per Second) metric in Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">Log Flushes (Per Second)</h1>
+        <p class="Body">The Log Flushes (Per Second) metric reads <code>LOG FLUSHES/SEC</code> from <code>sysperfinfo</code>.   Each time data changes, the changes write to the log cache, which resides in memory. Under certain conditions, this log cache is flushed to disk. These situations include: 
+</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">A commit or roll back of an explicit or implicit transaction.</li>
+            <li class="Bullet">A CHECKPOINT statement execution.</li>
+            <li class="Bullet">SQL Server issues an automatic checkpoint.</li>
+            <li class="BulletLast">The Log Cache is full and needs emptying.</li>
+        </ul>
+        <h2 class="Heading2">Reduce&#160;log flushes</h2>
+        <p class="Body">On an OLTP system that runs relatively small transactions (on average, less than 40 rows added, changed, or deleted per transaction), the number of Log Flushes should not exceed SQL Batches by more than 40% during periods of high activity. If you exceed this percentage, then one of the following abnormal conditions exists: 
+</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">T-SQL batches sent for execution contain a number of individual data manipulation statements (inserts, deletes, or updates) not enclosed within a transaction.</li>
+            <li class="Bullet">	Large batch jobs which update significant amounts of data are run during the day.</li>
+            <li class="Bullet">Deadlocks or Lock Timeouts are causing a number of transactions to roll back or execute a ROLLBACK TRANSACTION statement.</li>
+            <li class="Bullet">Your Recovery Interval parameter is too low. Raise this parameter to 10-15 minutes. 
+</li>
+            <li class="Bullet">An explicit CHECKPOINT statement is executed within some transactions. 
+</li>
+            <li class="BulletLast">If you need to delete the entire contents of a table, use the TRUNCATE TABLE statement instead of DELETE&#160;as it produces less log flushes.
+</li>
+        </ul>
+        <p class="Body">If you implement the previously-mentioned measures and the Log Flushes still greatly exceed 140% of SQL Batches, then consider: 
+</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Switching your RAID array from a RAID 5 to a RAID 10 solution. Each write IO results in two writes using RAID 10 vs. 4 for RAID 5 (100% more efficient with writes).
+</li>
+            <li class="Bullet">As long as the RAID controller has some form of battery backup, then switch its cache mode from Write-through to Write-back, as this setting increases the system's ability to handle write IOs by an order of magnitude.
+</li>
+            <li class="BulletLast">Adding more cache memory to the RAID controller.
+</li>
+        </ul>
+    </body>
+</html>

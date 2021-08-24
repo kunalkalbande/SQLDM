@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="827" MadCap:lastWidth="807">
+    <head><title>Configure disk drive exclusions in Idera SQLdm alert filters</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure alert filters - disk drive exclusions</h1>
+        <p class="Body">By default, certain metrics include all drives within a specific SQL&#160;Server instance when monitoring for events that can trigger an alert. The Alert Filters tab of the Advanced Alert Configuration window allows you to select one of more disk drives to exclude from alerting on the selected metric. </p>
+        <p class="Body">The alerts that allow for disk drive exclusions include the following:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet"><a href="Alerts/Average Disk Milliseconds Per Read Alert.htm" target="_self">Average Disk Milliseconds Per Read</a> <![CDATA[ ]]></li>
+            <li class="Bullet"><a href="Alerts/Average Disk Milliseconds Per Transfer Alert.htm" target="_self">Average Disk Milliseconds Per Transfer</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Average Disk Milliseconds Per Write Alert.htm" target="_self">Average Disk Milliseconds Per Write</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Disk Reads Per Second Alert.htm" target="_self">Disk Reads Per Second</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Disk Transfers Per Second Alert.htm" target="_self">Disk Transfers Per Second</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Disk Writes Per Second Alert.htm" target="_self">Disk Writes Per Second</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/OS Average Disk Queue Length Per Disk Alert.htm" target="_self">OS&#160;Average Disk Queue Length Per Disk (Count)</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Disk Space Free.htm" target="_self">OS&#160;Disk Free Space (Size)</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Disk Full.htm" target="_self">OS&#160;Disk Full (Percent)</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/OS Disk Time Per Disk Percent Alert.htm" target="_self">OS&#160;Disk Time Per Disk (Percent)</a>
+            </li>
+        </ul>
+        <p class="StepIntro">To use ad hoc Alert Configuration to exclude disk drives from an alert:</p>
+        <ol>
+            <li class="NumberedList">In the Navigation page, click <span class="GUI_Item">Servers</span>. </li>
+            <li class="NumberedList">Right-click the appropriate SQL&#160;server instance, and then select <span class="GUI_Item">Configure Alerts</span>.</li>
+            <li class="NumberedList">Select the metric for which you want to configure an alert.</li>
+            <li class="NumberedList">Select the appropriate disk, click <span class="GUI_Item">Edit</span>, and then click <span class="GUI_Item">Advanced</span>.</li>
+            <li class="NumberedList">Click the Alert Filters tab.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Exclude</span>.</li>
+            <li class="NumberedList">Select one or more disk drives from the list, and then click <span class="GUI_Item">Exclude</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span>.</li>
+            <li class="NumberedList">To accept these changes, click <span class="GUI_Item">OK</span>.</li>
+        </ol>
+        <p class="StepIntro">To use Alert Configuration Templates to exclude disk drives from an alert:</p>
+        <ol>
+            <li class="NumberedList">Click <span class="GUI_Item">Tools &gt; Alert Configuration Templates</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">New</span> or select an existing template, and then click <span class="GUI_Item">View/Edit</span>.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you clicked <span class="GUI_Item">New</span></span>, type a name, and then click <span class="GUI_Item">Edit Configuration</span>.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you clicked <span class="GUI_Item">View/Edit</span></span>, click <span class="GUI_Item">Edit Configuration</span>.</li>
+            <li class="NumberedList">Select the metric for which you want to configure an alert.</li>
+            <li class="NumberedList">Select the appropriate disk, click <span class="GUI_Item">Edit</span>, and then click <span class="GUI_Item">Advanced</span>.</li>
+            <li class="NumberedList">Click the Alert Filters tab.</li>
+            <li class="NumberedList">Type the name of the disk drives you want to exclude from alerts. Use semicolons to separate names and do not use wildcard characters.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span>.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you want SQLdm to replicate your edits to every monitored SQL&#160;Server instance</span>, click <span class="GUI_Item">Yes</span>.</li>
+            <li class="NumberedList">To accept these changes, click <span class="GUI_Item">OK</span>.</li>
+        </ol>
+    </body>
+</html>

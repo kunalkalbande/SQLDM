@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="1846" MadCap:lastWidth="558">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Install Idera Newsfeed only</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">How to install Idera Newsfeed only</h1>
+        <p class="Body">
+            <MadCap:keyword term="install:instructions;how to:install Idera Newsfeed" />This procedure guides you through the installation of Idera Newsfeed only and none of the additional components used with SQLdm Mobile. Use this solution in a larger environment where your SQL&#160;Server team or environment is spread across multiple locations and you need an easier, more streamlined way to troubleshoot issues. The Idera Newsfeed can help you capture or bookmark the team resolutions for future reference. You can implement this option without need to allot the additional hardware and IIS&#160;resources necessary to deploy a complete, mobile-available solution.</p>
+        <p class="Body">Before installing Newsfeed, review the associated <a href="SQLdm Mobile Architecture Components.htm" target="_self">architecture and components</a>.</p>
+        <h2 class="Heading2">Install or upgrade to SQLdm 8.6</h2>
+        <p class="Body">The Idera Newsfeed technology is supported by SQLdm 7.0 or later. To successfully install and deploy Idera Newsfeed, first <a href="SQLdm installation.htm" target="_self">install</a> or <a href="Upgrade to this build.htm" target="_self">upgrade</a> to SQLdm 8.6.</p>
+        <h2 class="Heading2">Start your Idera Newsfeed install</h2>
+        <p class="Body">Before installing Newsfeed, review the associated <a href="SQLdm Mobile Architecture Components.htm" target="_self">architecture and components</a>. You can install the Idera Newsfeed on any computer that meets or exceeds the <a href="SQLdm Mobile Requirements.htm" target="_self">product requirements</a>. By default, the SQLdm Mobile &amp;&#160;Newsfeed setup program installs the SQLdm Mobile &amp; Newsfeed Service to the local computer.</p>
+        <p class="StepIntro">To start installing Idera Newsfeed:</p>
+        <ol>
+            <li class="NumberedList">Log on with an administrator account to the computer on which you want to install the SQLdm Mobile &amp; Newsfeed Service.</li>
+            <li class="NumberedList">Run <span class="Code">Setup.exe</span> in the root of the SQLdm installation kit.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">SQLdm Mobile &amp;&#160;Newsfeed</span> on the<span class="GUI_Item"> Quick Start</span> window.</li>
+            <li class="NumberedList">On the <span class="GUI_Item">Welcome </span>window of the SQLdm Mobile &amp;&#160;Newsfeed setup program, click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Review the license agreement. To accept this license agreement, click <span class="GUI_Item">I accept the terms in the license agreement</span>, and then click <span class="GUI_Item">Next</span>.</li>
+        </ol>
+        <h2 class="Heading2">Begin configuring your install</h2>
+        <p class="Body">You can use the default install location or specify a different path. For your first install, we recommend using the default location. By default, the SQLdm Mobile &amp; Newsfeed Service is also installed in the same location.</p>
+        <p class="Body">On the <span class="GUI_Item">Custom Setup</span> window, choose the <span class="GUI_Item">Mobile &amp;&#160;Newsfeed components</span>, and then click <span class="GUI_Item">Next</span>.</p>
+        <h2 class="Heading2">Add the Windows credentials to use for the SQLdm Mobile &amp; Newsfeed Service account</h2>
+        <p class="Body">You can specify the Local System account or a Windows user account. Make sure the specified account includes the <a href="SQLdm Mobile Requirements.htm" target="_self">required permissions</a>.</p>
+        <p class="StepIntro">To specify a service account:</p>
+        <ol>
+            <li class="NumberedList">Select the Local System account or type the appropriate credentials in the provided fields.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Test Credentials</span> to validate the account.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Next</span>. </li>
+        </ol>
+        <h2 class="Heading2">Select the SQL Server instance to use for the Repository database</h2>
+        <p class="Body">The Idera Newsfeed Repository is where the published status updates and other configuration settings are stored.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">SQLdm Mobile requires Microsoft SQL&#160;Server 2005 or above running on the computer that hosts the Newsfeed Repository database.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="StepIntro">To specify the SQL Server instance to install the SQLdm Repository on:</p>
+        <ol>
+            <li class="NumberedList">Select the SQL Server instance you want to use. The SQL Server menu lists SQL Server instances provided by your domain controller. <span class="If_Then_Statement">If you do not see your SQL Server instance in the list</span>, type the host name and instance in the space provided.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Next</span>.</li>
+        </ol>
+        <h2 class="Heading2">Add the authentication credentials to create the Repository database</h2>
+        <p class="Body">You can use either Windows or SQL&#160;Authentication to create the Newsfeed Repository database. Make sure the specified Windows account includes the <a href="SQLdm Mobile Requirements.htm" target="_self">required permissions</a>.</p>
+        <p class="StepIntro">To specify a service account:</p>
+        <ol>
+            <li class="NumberedList">Choose the authentication that you want to use, and then type the appropriate credentials in the provided fields.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Test Connection</span> to validate the account can connect to the specified SQL&#160;Server instance.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Next</span>. </li>
+        </ol>
+        <h2 class="Heading2">Add the authentication credentials to connect to the Repository database at run time</h2>
+        <p class="Body">You can use either Windows or SQL&#160;Authentication to connect to the Newsfeed Repository database. Make sure the specified Windows account includes the <a href="SQLdm Mobile Requirements.htm" target="_self">required permissions</a>.</p>
+        <p class="StepIntro">To specify a service account:</p>
+        <ol>
+            <li class="NumberedList">Choose the authentication that you want to use, and then type the appropriate credentials in the provided fields.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Test Connection</span> to validate the account can connect to the specified SQL&#160;Server instance.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Next</span>. </li>
+        </ol>
+        <h2 class="Heading2">Select a location for the SQLdm Management Service</h2>
+        <p class="Body">SQLdm Mobile uses its own Authentication Provider to enforce application security across your SQLdm and Idera Newsfeed deployments.</p>
+        <p class="Body">On the <span class="GUI_Item">Authentication Provider</span> window, specify the computer that hosts the SQLdm Management Service, and then click <span class="GUI_Item">Next</span>.</p>
+        <h2 class="Heading2">Complete the Newsfeed install</h2>
+        <p class="Body">Click <span class="GUI_Item">Install</span> to indicate that you are ready to complete your install with the configurations you specified.</p>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="738" MadCap:lastWidth="843">
+    <head><title>Migrate your Idera SQLdm Services only</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Migrate the SQLdm services</h1>
+        <p class="Body">The procedures in this section detail the migration steps for moving the SQLdm Services to a new computer while leaving the SQLdm Repository. Follow each section in order for a successful migration.</p>
+        <h2 class="Heading2">Uninstall SQLdm on the Original Computer</h2>
+        <p class="Body">Uninstalling SQLdm on the original computer via Add or Remove Programs, removes all the SQLdm components from the original computer except for the SQLdm Repository. For best results, use the following procedure for uninstalling SQLdm on the original computer:</p>
+        <ol>
+            <li class="NumberedList">Select <span class="GUI_Item">Start &gt; Control Panel &gt; Add or Remove Programs</span>.</li>
+            <li class="NumberedList">Scroll down to SQL diagnostic manager and select <span class="GUI_Item">Remove</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Yes</span> to the prompt asking if you want to completely remove SQL diagnostic manager.</li>
+        </ol>
+        <h2 class="Heading2">Perform a Full SQL diagnostic manager Install on the New Computer</h2>
+        <p class="Body">A full install of SQL diagnostic manager installs the new SQLdm Services, link them to the restored SQLdm Repository, and install the SQLdm Console. For best results, use the following procedure for installing SQLdm:</p>
+        <ol>
+            <li class="NumberedList">Log on with an administrator account to the computer on which you want to install the SQLdm services.</li>
+            <li class="NumberedList">Run <span class="Code">Setup.exe</span> in the root of the installation kit.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">SQL diagnostic manager</span> on the<span class="GUI_Item"> Quick Start</span> window.</li>
+            <li class="NumberedList">On the <span class="GUI_Item">Welcome</span> window of the setup program, click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Review and accept the license agreement by clicking I accept the terms in the license agreement, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Accept the default folder for your SQLdm installation, or click <span class="GUI_Item">Change</span> to specify a different folder, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Select your setup type and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Browse and select the SQL Server instance on the original computer that contains your SQLdm Repository, and click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Enter your service account credentials and click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Install</span> to begin installing SQLdm with the options you have selected.</li>
+        </ol>
+        <h2 class="Heading2">Verify that the Migration was Successful</h2>
+        <p class="Body">The SQLdm Console includes a system diagnostics test that allows you to test the connections of all the SQLdm components.</p>
+        <ol>
+            <li class="NumberedList">Open the SQLdm console.</li>
+            <li class="NumberedList">Enter your new SQLdm license key.</li>
+            <li class="NumberedList">Add the SQL Server instances you want to monitor.</li>
+            <li class="NumberedList">Open the System Diagnostics utility by selecting <span class="GUI_Item">Help &gt; System Diagnostics</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Test</span>.</li>
+            <li class="NumberedList">Verify that all the tests are successful.</li>
+        </ol>
+    </body>
+</html>

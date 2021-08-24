@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="925" MadCap:lastWidth="830">
+    <head><title>Migrate your Idera SQLdm Repository only</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Migrate the SQLdm Repository</h1>
+        <p class="Body">The procedures in this section detail the migration steps for moving the SQLdm Repository to a new computer while leaving the SQLdm Services. Follow each section in order for a successful migration.</p>
+        <h2 class="Heading2">Get a New SQLdm License Key</h2>
+        <p class="Body">Because you are migrating the Repository database to a different SQL Server instance, SQLdm requires a new license key. You can easily request a new license key by sending an email to: <a href="mailto:licensing@idera.com?subject=Request new SQLdm license key">licensing@idera.com</a>.</p>
+        <p class="Body">To complete the request, you need the name of the SQL Server instance where you plan to install the SQLdm Repository database.</p>
+        <h2 class="Heading2">Restore the SQLdm Repository on the Target Computer</h2>
+        <p class="Body">To recover lost or damaged data, restore the Repository database. For best results, use the following guidelines:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Perform a full restore</li>
+            <li class="BulletLast">Schedule the restore during off-hours, or times when you expect the least collection activity</li>
+        </ul>
+        <p class="StepIntro">To restore the Repository database:</p>
+        <ol>
+            <li class="NumberedList">Use SQL Server Enterprise Manager or Management Studio to close any open connections to the Repository database.</li>
+            <li class="NumberedList">Use SQL Server Enterprise Manager or Management Studio to take the Repository database offline. If you cannot take the Repository database offline, stop the Collection Service.</li>
+            <li class="NumberedList">Use a tool such as Idera SQLsafe to restore the Repository database using the appropriate backup archive file.</li>
+        </ol>
+        <h2 class="Heading2">Configure the Management Service</h2>
+        <p class="Body">If you migrated the Repository to a different computer, you need to configure the Management Service so that it can communicate with the new Repository.</p>
+        <p class="StepIntro">To configure the SQLdm Management Service:</p>
+        <ol>
+            <li class="NumberedList">Start the Management Service Configuration wizard by selecting <span class="GUI_Item">Start &gt; All Programs &gt; Idera &gt; Idera SQL diagnostic manager &gt; Tools &gt; Management Service Configuration Wizard</span> on the computer that hosts the SQLdm Services.</li>
+            <li class="NumberedList">Read the Welcome window, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Verify that the following settings are correct, and then click <span class="GUI_Item">Next</span>.</li>
+        </ol>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body">The name of the SQL Server instance hosting the Repository database</li>
+            <li class="Bullet-Def-Body">The name of the Repository database</li>
+            <li class="Bullet-Def-Body-Last">The type of authentication the Management Service should use to connect to the Repository database</li>
+        </ul>
+        <ol start="4">
+            <li class="NumberedList">Click <span class="GUI_Item">Test</span> to validate your settings.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Finish</span> to exit the wizard.</li>
+        </ol>
+        <h2 class="Heading2">Verify that the Migration was Successful</h2>
+        <p class="Body">The SQLdm Console includes a system diagnostics test that allows you to test the connections of all the SQLdm components.</p>
+        <ol>
+            <li class="NumberedList">Open the SQLdm console.</li>
+            <li class="NumberedList">Enter your new SQLdm license key.</li>
+            <li class="NumberedList">Add the SQL Server instances you want to monitor.</li>
+            <li class="NumberedList">Open the System Diagnostics utility by selecting <span class="GUI_Item">Help &gt; System Diagnostics</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Test</span>.</li>
+            <li class="NumberedList">Verify that all the tests are successful. </li>
+        </ol>
+    </body>
+</html>

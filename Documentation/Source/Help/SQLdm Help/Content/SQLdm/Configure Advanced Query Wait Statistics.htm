@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="458" MadCap:lastWidth="846">
+    <head><title>Configure advanced Idera SQLdm query wait statistics options</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure advanced query wait statistics options</h1>
+        <p class="Body">
+            <MadCap:keyword term="Advanced:Query Monitor configuration;Query Monitor:advanced configuration" />The Advanced Query Wait Statistics Configuration window allows you to filter out applications, databases, SQL text from the Query Waits Statistics collection, and exclude specific SQLdm queries as well as limit the amount of rows to be collected at a time. Filtering allows you to improve the results you see in the Query Waits view and reduce the impact of the Query Wait trace on your server.</p>
+        <h2 class="Heading2">Access the Advanced Query Wait Statistics Configuration window</h2>
+        <p class="Body">You can access the Advanced Query Wait Statistics Configuration window by right-clicking the appropriate monitored SQL&#160;Server instance, and then selecting <span class="GUI_Item">Properties</span>. Click <span class="GUI_Item">Wait Monitoring</span> when SQLdm displays the Monitored SQL&#160;Server Properties window, and then click <span class="GUI_Item">Filter Options</span>.</p>
+        <h2 class="Heading2">Using Query Wait filtering </h2>
+        <p class="Body">Excluding data from your Query Waits Statistics collection helps filter out information that is not important for the task at hand. SQLdm allows you to filter specific applications, databases, SQL text and also exclude the SQLdm queries from the results or limit the amount of rows to be collected at a time. When including multiple items to exclude, use a semi-colon <b>(;)</b> between items of the same type. You can also use a percent character <b>(%)</b> as a wildcard.</p>
+        <p class="StepIntro">To exclude data from your Query Wait Statistics collection while in the Queries view:</p>
+        <ol>
+            <li class="NumberedList">On the Queries Waits view for the server you want to exclude data from, press the <span class="GUI_Item">Configure</span> button.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Filter Options</span>.</li>
+            <li class="NumberedList">Enter your filter information in the provided fields, using <b>(;)</b> to separate items and <b>(%)</b> as a wildcard.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span>.</li>
+        </ol>
+    </body>
+</html>

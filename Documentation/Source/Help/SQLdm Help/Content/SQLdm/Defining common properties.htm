@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="826" MadCap:lastWidth="833">
+    <head><title>Define common Idera SQLdm properties</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Define common properties</h1>
+        <p class="Body">The options on the <span class="GUI_Item">General</span> tab represent the most common properties users can change in the SQLdm Console.</p>
+        <h2 class="Heading2">Access the Console Options window General tab</h2>
+        <p class="Body">You can open the General tab of the Console Options window from the SQLdm Console by selecting <span class="GUI_Item">Tools &gt;&#160;Console Options</span>. The General tab is available by default.</p>
+        <h2 class="Heading2">Set your refresh intervals</h2>
+        <p class="Body">The Refresh Interval refers to the amount of time the SQLdm Console waits before gathering data from the SQLdm Repository. There are two types of refreshes. Each type is associated with different SQL Console components: </p>
+        <p class="DefinitionListTerm">Server View Refresh</p>
+        <p class="DefinitionListBody">Refers to the amount of time the SQLdm Console waits before refreshing the currently active view. When you first open a view, the view is refreshed with the latest data SQLdm has collected directly from the monitored SQL Server instance. You may want to lower the amount of time between refreshes if you are trying to diagnose a specific problem that requires a shorter interval. The interval for this field is between one and 300 seconds. </p>
+        <p class="DefinitionListTerm">Status and Alerts Refresh</p>
+        <p class="DefinitionListBody">Refers to the amount of time the SQLdm Console waits before polling every monitored SQL&#160;Server instance and displaying notification pop-ups, updating the monitored SQL&#160;Server instance tree with status changes, and updating the SQLdm Today view with status changes. The interval for this field is between one and 60 minutes.</p>
+        <h2 class="Heading2">Hide the desktop client</h2>
+        <p class="Body">The <span class="GUI_Item">Hide when minimized</span> toggle determines whether SQLdm displays as an active application in your Windows taskbar. When you want to open your SQLdm Console again, double-click the <span class="GUI_Item">Idera SQL diagnostic manager</span> icon in your taskbar. Enabling or disabling this option has no effect on data collection or the refresh rate of your currently active view.</p>
+        <h2 class="Heading2">Use chart options</h2>
+        <p class="Body">Chart options allow you to determine how much data is shown in your real-time charts. The entry in the <span class="GUI_Item">Keep data for the last</span> field is always greater than the entry in the <span class="GUI_Item">Show data for the last</span> field.</p>
+        <p class="DefinitionListTerm">Keep data for the last</p>
+        <p class="DefinitionListBody">Determines the length of time data is stored in the SQLdm Repository.</p>
+        <p class="DefinitionListTerm">Show data for the last </p>
+        <p class="DefinitionListBody">Determines the time period displayed in real-time charts.</p>
+        <h2 class="Heading2">Use a color scheme</h2>
+        <p class="Body">The <span class="GUI_Item">Color scheme</span> field allows you to select the background color you prefer for the SQLdm Management Console. By default, the scheme is set to <span class="GUI_Item">Black</span>.</p>
+    </body>
+</html>

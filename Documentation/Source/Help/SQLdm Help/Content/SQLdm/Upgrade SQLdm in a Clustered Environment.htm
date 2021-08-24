@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="825" MadCap:lastWidth="584">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Upgrade to Idera SQLdm in a clustered environment</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Upgrade SQLdm in a clustered environment</h1>
+        <p class="Body">Use the following steps to upgrade your SQLdm installation in a clustered environment.</p>
+        <table style="caption-side: top;border-left-style: solid;border-left-width: 1px;border-left-color: #a1b5b0;border-right-style: solid;border-right-width: 1px;border-right-color: #a1b5b0;border-top-style: solid;border-top-width: 1px;border-top-color: #a1b5b0;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #a1b5b0;border-collapse: collapse;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col />
+            <col />
+            <tr>
+                <td style="background-color: #ff4500;" class="TableStyle_Tip_Style_Body_0_0_RowSep_ColSep">
+                    <p class="TableHeadRow"><span style="color: #ffffff;">TIP</span>
+                    </p>
+                </td>
+                <td class="TableStyle_Tip_Style_Body_0_1_RowSep_ColEnd">
+                    <p class="TableText">SQLdm 8.6 and later requires Microsoft SQL&#160;Server 2005 running on the computer that hosts the SQLdm Repository database for all installations.</p>
+                </td>
+            </tr>
+        </table>
+        <h2 class="Heading2">Upgrade in a Microsoft Windows Server 2003 Clustered Environment</h2>
+        <p class="StepIntro">To upgrade SQLdm in a clustered environment:</p>
+        <ol>
+            <li class="NumberedList"> Log on to the cluster node  using the Administrator account.</li>
+            <li class="NumberedList">In Cluster Administrator, select the resource group that contains the SQLdm services.</li>
+            <li class="NumberedList">Take the SQLdm Management and Collection services off line.</li>
+        </ol>
+        <p class="StepIntro">Perform the following steps on each node, starting with the active node:</p>
+        <ol>
+            <li class="NumberedList"><a href="Perform a distributed upgrade.htm">Upgrade SQLdm components previously deployed to the node</a>.</li>
+            <li class="NumberedList">In Windows Services, stop the SQLdm Collection, SQLdm Management, and SQLdm Predictive Analytics services.</li>
+            <li class="NumberedList">Set the SQLdm services to manually start, and then restart the services.</li>
+        </ol>
+        <p class="StepIntro">Once the previous steps are complete, perform the following steps on each cluster node:</p>
+        <ol>
+            <li class="NumberedList">In Cluster Administrator, bring the SQLdm Management Service on line.</li>
+            <li class="NumberedList">Use the Management Service Configuration wizard to force the services to re-register on the active node.</li>
+        </ol>
+        <h2 class="Heading2">Upgrade in a Microsoft Windows Server 2008 Clustered Environment</h2>
+        <p class="StepIntro">To upgrade SQLdm in a clustered environment:</p>
+        <ol>
+            <li class="NumberedList"> Log on  to the cluster node using  the Administrator account.</li>
+            <li class="NumberedList">In the Failover Cluster Management tool, select the resource group that contains the SQLdm services.</li>
+            <li class="NumberedList">Take the SQLdm Management and Collection services offline.</li>
+        </ol>
+        <p class="StepIntro">Perform the following steps on each node, starting with the active node:</p>
+        <ol>
+            <li class="NumberedList"><a href="Perform a distributed upgrade.htm">Upgrade SQLdm components previously deployed to the node</a>.</li>
+            <li class="NumberedList">In Windows Services, stop the SQLdm Collection, SQLdm Management, and SQLdm Predictive Analytics services.</li>
+            <li class="NumberedList">Set the SQLdm services to manually start, and then restart the services.</li>
+        </ol>
+        <p class="StepIntro">Once the previous steps are complete, perform the following steps on each cluster node:</p>
+        <ol>
+            <li class="NumberedList">Bring the SQLdm Management Service on line.</li>
+            <li class="NumberedList">Use the Management Service Configuration wizard to force the services to re-register on the active node.</li>
+        </ol>
+    </body>
+</html>

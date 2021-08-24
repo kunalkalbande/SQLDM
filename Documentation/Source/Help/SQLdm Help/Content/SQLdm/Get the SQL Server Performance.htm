@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="5" MadCap:lastHeight="3127" MadCap:lastWidth="584">
+    <head><title>Get the SQL Server performance overview in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Get the SQL Server performance overview</h1>
+        <p class="Body">
+            <MadCap:keyword term="Monitor:performance summary;Dashboard;Layout" />The Dashboard view contains a graphical representation of the activity on your SQL&#160;Server instance. This view not only displays the status of your SQL&#160;Server instance, but it allows you to diagnose where problems originate.</p>
+        <p class="Body">The Dashboard view is made up of panels, which include additional information for specific metrics in <a href="Charts.htm" target="_self">chart form</a>. Hover your mouse cursor over an area within a chart on which you want to get actual statistics. Click a specific metric to drill down for more detailed information. By using the options in the menu available when you right-click over an area, you can configure alerts, view associated help topics and details, print, save the image, or export the dashboard to Microsoft Excel as a .csv file.</p>
+        <p class="Body">You can also customize your Dashboard view to show only those panels that are important to your monitored SQL&#160;Server instance. SQLdm also allows you to save your customized view on a per-instance basis, or use the same view for all of your instances. For more information about customizing your Dashboard view, see <a href="Customize your Dashboard view.htm" target="_self">Customize your Dashboard view</a>.</p>
+        <h2 class="Heading2">Access the Dashboard view</h2>
+        <p class="Body">You can open the Dashboard view of the SQLdm Overview tab by selecting the appropriate SQL&#160;Server instance, and then clicking <span class="GUI_Item">Overview &gt; Dashboard</span>.</p>
+        <h2 class="Heading2">Dashboard view</h2>
+        <p class="Body">
+            <MadCap:keyword term="Server dashboard">
+            </MadCap:keyword>The Dashboard view is organized with panels that display all the key metrics collected by SQLdm by category. </p>
+        <p class="Body">The available data panels for the Dashboard view include:</p>
+        <p class="DefinitionListTerm">Cache</p>
+        <p class="DefinitionListBody">The <a href="Cache Dashboard.htm" target="_self">Cache panel</a> tracks the database and procedure processes using a buffer pool of memory on your monitored SQL&#160;Server instance, and includes the following charts and gauges:</p>
+        <blockquote>
+            <ul style="list-style-type: circle;">
+                <li class="Bullet-Def-Body">Page Life Expectancy</li>
+                <li class="Bullet-Def-Body">Areas</li>
+                <li class="Bullet-Def-Body-Last">Hit Ratios</li>
+            </ul>
+        </blockquote>
+        <p class="DefinitionListTerm">CPU</p>
+        <p class="DefinitionListBody">The <a href="CPU Dashboard.htm" target="_self">CPU&#160;panel</a> includes key CPU metrics for your SQL Server instance and the computer that hosts the instance. The metrics displayed in CPU include the following charts and gauges:</p>
+        <blockquote>
+            <ul style="list-style-type: circle;">
+                <li class="Bullet-Def-Body">Usage </li>
+                <li class="Bullet-Def-Body">Processor Queue Length</li>
+                <li class="Bullet-Def-Body-Last">Call Rates</li>
+            </ul>
+        </blockquote>
+        <p class="DefinitionListTerm">Custom Counters</p>
+        <p class="DefinitionListBody">The <a href="Custom Counters dashboard.htm" target="_self">Custom Counters panel</a> tracks selected custom counters for your monitored SQL&#160;Server instance. You must have at least one <a href="Use Custom Counters to Track Metrics.htm" target="_self">custom counter</a> to view data in this panel.</p>
+        <p class="DefinitionListTerm">Databases</p>
+        <p class="DefinitionListBody">The <a href="Databases Dashboard.htm" target="_self">Databases panel</a> includes key metrics covering the health of the databases on your monitored SQL Server instance. The metrics displayed in Databases include the following charts and gauges:</p>
+        <blockquote>
+            <ul style="list-style-type: circle;">
+                <li class="Bullet-Def-Body">Transactions/sec</li>
+                <li class="Bullet-Def-Body">Log Flushes/sec</li>
+                <li class="Bullet-Def-Body">Reads/sec</li>
+                <li class="Bullet-Def-Body">Writes/sec</li>
+                <li class="Bullet-Def-Body-Last">I/O&#160;Stall ms/sec</li>
+            </ul>
+        </blockquote>
+        <p class="DefinitionListTerm">Disk</p>
+        <p class="DefinitionListBody">The <a href="Disk Dashboard.htm" target="_self">Disk panel</a> includes key metrics that monitor the health of the disk of your monitored SQL Server instance. The metrics displayed in Disk include the following charts and gauges:</p>
+        <blockquote>
+            <ul style="list-style-type: circle;">
+                <li class="Bullet-Def-Body">Latency </li>
+                <li class="Bullet-Def-Body">Throughput</li>
+                <li class="Bullet-Def-Body-Last">SQL&#160;Server Physical I/O</li>
+            </ul>
+        </blockquote>
+        <p class="DefinitionListTerm">File Activity</p>
+        <p class="DefinitionListBody">The <a href="File Activity dashboard.htm" target="_self">File Activity panel</a> includes the top five  database files with the highest relative activity since the last refresh of your monitored SQL&#160;Server instance. You can select different metrics and display results for all files, or a single database, disk, or file. The available metrics include:</p>
+        <blockquote>
+            <ul style="list-style-type: circle;">
+                <li class="Bullet-Def-Body">Reads/sec</li>
+                <li class="Bullet-Def-Body">Writes/sec</li>
+                <li class="Bullet-Def-Body-Last">Transfers/sec</li>
+            </ul>
+        </blockquote>
+        <p class="DefinitionListTerm">Lock Waits</p>
+        <p class="DefinitionListBody">The <a href="Locks Dashboard.htm" target="_self">Lock Waits panel</a> tracks the total number waits caused when a task is waiting to acquire a lock on your monitored SQL Server.</p>
+        <p class="DefinitionListTerm">Memory</p>
+        <p class="DefinitionListBody">The <a href="Memory Dashboard.htm" target="_self">Memory panel</a> includes key Memory metrics for your SQL Server instance and the computer that hosts the instance. The metrics displayed in Memory include the following charts:</p>
+        <blockquote>
+            <ul style="list-style-type: circle;">
+                <li class="Bullet-Def-Body">SQL&#160;Server Usage</li>
+                <li class="Bullet-Def-Body">SQL&#160;Server Paging</li>
+                <li class="Bullet-Def-Body">VM&#160;Memory Usage</li>
+                <li class="Bullet-Def-Body-Last">Host Memory Usage</li>
+            </ul>
+        </blockquote>
+        <p class="DefinitionListTerm">Network</p>
+        <p class="DefinitionListBody">The <a href="Network Dashboard.htm" target="_self">Network panel</a> tracks the performance of the network connection being used by your monitored SQL Server, and includes the following charts and gauge:</p>
+        <blockquote>
+            <ul style="list-style-type: circle;">
+                <li class="Bullet-Def-Body">SQL&#160;Server Throughput</li>
+                <li class="Bullet-Def-Body">VM&#160;Network Usage Throughput</li>
+                <li class="Bullet-Def-Body">Host Network Usage Throughput</li>
+                <li class="Bullet-Def-Body-Last">Response Time</li>
+            </ul>
+        </blockquote>
+        <p class="DefinitionListTerm">Server Waits</p>
+        <p class="DefinitionListBody">The <a href="Server Waits Dashboard.htm" target="_self">Server Waits panel</a>  tracks the total number and time spent on waits affecting your monitored SQL Server.</p>
+        <p class="DefinitionListTerm">Sessions</p>
+        <p class="DefinitionListBody">The <a href="Sessions Dashboard.htm" target="_self">Sessions panel</a> includes session-specific data items. The metrics displayed in Sessions include the following chart and gauge:</p>
+        <blockquote>
+            <ul style="list-style-type: circle;">
+                <li class="Bullet-Def-Body">Activity &amp;&#160;Blocking</li>
+                <li class="Bullet-Def-Body-Last">Clients</li>
+            </ul>
+        </blockquote>
+        <p class="DefinitionListTerm">Tempdb</p>
+        <p class="DefinitionListBody">The <a href="Tempdb Dashboard.htm" target="_self">Tempdb panel</a>  tracks the status of the tempdb database on your monitored SQL Server instance, and includes the following charts and gauge:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body">Tempdb Space Used</li>
+            <li class="Bullet-Def-Body">Tempdb Contention</li>
+            <li class="Bullet-Def-Body-Last">Version Store Cleanup Rate</li>
+        </ul>
+        <p class="DefinitionListTerm">Virtualization</p>
+        <p class="DefinitionListBody">The <a href="Virtualization Dashboard.htm" target="_self">Virtualization panel</a>  tracks the performance of  the host server that manages your virtual machines and the VM&#160;on which the monitored SQL&#160;Server instance is running, and includes the following charts and gauge:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body">Virtual Machine Memory Areas</li>
+            <li class="Bullet-Def-Body">VM&#160;Host Memory Areas</li>
+            <li class="Bullet-Def-Body">Virtual Machine Disk Usage</li>
+            <li class="Bullet-Def-Body">VM Host Disk Usage</li>
+            <li class="Bullet-Def-Body-Last">CPU Ready</li>
+        </ul>
+        <h2 class="Heading2">Understand the Dashboard colors</h2>
+        <p class="Body">
+            <MadCap:keyword term="Dashboard:colors">
+            </MadCap:keyword>The following colors are associated with a status for each of the provided panels.</p>
+        <p class="DefinitionListTerm">Gray</p>
+        <p class="DefinitionListBody">Indicates the status of the data is normal, or within the thresholds assigned to the metric.</p>
+        <p class="DefinitionListTerm">Blue</p>
+        <p class="DefinitionListBody">Indicates the status of the data is at an informational level based on your settings.</p>
+        <p class="DefinitionListTerm">Yellow</p>
+        <p class="DefinitionListBody">Indicates the status of the data is at a warning level, or outside the threshold of normal but not yet at the critical status.</p>
+        <p class="DefinitionListTerm">Red</p>
+        <p class="DefinitionListBodyLast">Indicates the status of the data is at a critical level and requires immediate action.</p>
+        <h2 class="Heading2">Blank metrics on the Dashboard</h2>
+        <p class="Body">
+            <MadCap:keyword term="Dashboard: question marks" />If a metric on the Dashboard has no value, or displays as blank, SQLdm is not able to collect the corresponding counter. Causes of this situation include:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Indent">The SQLdm Console has not captured the metrics. It can take up to two refreshes for this capture to occur.</li>
+            <li class="Bullet-Indent">OS&#160;metrics are disabled. SQLdm requires direct WMI or OLE automation to collect data.</li>
+            <li class="Bullet-Indent">If using OLE&#160;automation, those procedures are unavailable. SQLdm is unable to locate required OLE automation stored procedures.</li>
+            <li class="Bullet-Indent-Last">If connecting to WMI directly, the WMI Service is not running. SQLdm requires that the WMI service is running on the computer that hosts the SQL&#160;Server instance in order to collect OS metrics.</li>
+            <li class="Bullet-Indent-Last">The counters do not exist on this SQL&#160;Server instance.</li>
+        </ul>
+        <p class="Body">You can <a href="Enable OS Metrics Monitoring.htm" target="_self">enable OS metrics monitoring</a> to track the performance of the computers on which your monitored SQL Server instances are hosted.</p>
+        <h2 class="Heading2">Refresh your Dashboard data</h2>
+        <p class="Body">
+            <MadCap:keyword term="Dashboard:refresh" />The Dashboard view is refreshed according to the time set in the <span class="GUI_Item">Server View Refresh</span> field on the Console Options window, which is accessible by clicking <span class="GUI_Item">Tools &gt; Console Options</span>.</p>
+        <h2 class="Heading2">Understanding your chart data and refresh interval</h2>
+        <p class="Body">SQLdm charts provide data whether collected real time or as part of a scheduled collection event. For additional information about how SQLdm displays your chart data, see <a href="Charts.htm" target="_self">Charts</a>. </p>
+    </body>
+</html>

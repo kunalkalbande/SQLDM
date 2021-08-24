@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="660" MadCap:lastWidth="1073">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Monitor SQL Agent jobs using Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Monitor SQL Agent jobs</h1>
+        <p class="Body">
+            <MadCap:keyword term="Services:SQL Agent jobs" />The SQL Agent Jobs view allows you to view all your SQL Agent Jobs for the selected SQL&#160;Server instance. You can view the Job History of SQL Agent Jobs in the Job History list and Job Steps by clicking the <span class="GUI_Item">+</span> button next to the <span class="GUI_Item">Job Name</span>.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">SQL Server 2005 users may notice that SQLdm does not display the Job History for the listed SQL Agent jobs. This issues is the result of a SQL Server 2005 security setting. You can override this security setting by using the following statement on the target server:</p>
+                        <p class="TableText"><code>sp_configure 'agent XPs',1    <![CDATA[ ]]></code>
+                        </p>
+                        <p class="TableText"><code>reconfigure with override</code>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Access the SQL&#160;Agent Jobs view</h2>
+        <p class="Body">You can open the SQL Agent Jobs view of the SQLdm Services tab by selecting the appropriate SQL&#160;Server instance, and then clicking  <span class="GUI_Item">Services &gt; SQL&#160;Agent Jobs</span>.</p>
+        <h2 class="Heading2">Last Run Outcome colors</h2>
+        <p class="Body">The Last Run Outcome column of the SQL&#160;Agent Jobs page is color coded to quickly alert you of  issues needing your attention. The colors used in this column depend on the use of the SQL Agent Job Completion metric in the Alert Configuration dialog. </p>
+        <p class="Body"> If this metric is enabled, the Last Run Outcome column is colored based on the correlation of the outcome of the job or job step and the state that outcome corresponds to in the SQL Agent Job Completion metric.  If this metric is not enabled, then SQLdm displays results in red if the outcome is Failed or Canceled, and green if the outcome is Succeeded.  All other outcome states remain the default color.</p>
+        <p class="StepIntro">To customize the Last Run Outcome settings for your SQL Agent jobs:</p>
+        <ol>
+            <li class="NumberedList">Right-click a SQL&#160;Server instance in the Servers tree.</li>
+            <li class="NumberedList">Select<span class="GUI_Item"> Configure Alerts</span>.</li>
+            <li class="NumberedList">Select the <span class="GUI_Item">SQL&#160;Server Agent Job Completion</span> metric.</li>
+            <li class="NumberedList">Click the<span class="GUI_Item"> Edit</span> button.</li>
+            <li class="NumberedList">Make the necessary changes to customize your alert states.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span>, and then click <span class="GUI_Item">OK</span>.</li>
+        </ol>
+        <h2 class="Heading2">View message information about a specific job</h2>
+        <p class="Body">Use the Job History list to see more information about a specific job. You can review the full message by right-clicking the appropriate job name, and then selecting <span class="GUI_Item">View Message</span>. A copy feature allows you to cut and paste the message detail into another format for additional use.</p>
+    </body>
+</html>

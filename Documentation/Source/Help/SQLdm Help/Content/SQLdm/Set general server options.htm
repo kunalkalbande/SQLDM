@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="1788" MadCap:lastWidth="833">
+    <head><title>Set general SQL Server instance options in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Set general server options</h1>
+        <p class="Body">The General tab allows you to edit the most common property settings. These settings include the data collection interval or the amount of time between data collections, the server availability verification interval, and the credentials used to collect data.</p>
+        <h2 class="Heading2">Access the General tab</h2>
+        <p class="Body">You can access the General tab of the Monitor SQL&#160;Server Properties window by right-clicking the appropriate monitored SQL&#160;Server instance, and then selecting <span class="GUI_Item">Properties</span>.</p>
+        <h2 class="Heading2">Associate tags with an instance</h2>
+        <p class="Body">The tag field allows you to <a href="Tag Instance.htm">select a tag</a> to add your server to or <a href="Add Tag.htm">add a new tag</a>. Tags help you organize server instances into meaningful groups.</p>
+        <h2 class="Heading2">Select a diagnostic data collection interval</h2>
+        <p class="Body">The data collection interval is the amount of time SQLdm waits between each collection of data on the selected SQL&#160;Server instance. You can set a different interval for each of the following functions:</p>
+        <p class="DefinitionListTerm">Collect diagnostic data and raise alerts (max 30 minutes)</p>
+        <p class="DefinitionListBody">The interval between times that the SQLdm Collection Service collects diagnostic data and raises the associated alerts.  Lower values cause SQLdm to raise alerts more quickly, but also cause more frequent refreshes, which increases your monitoring overhead.</p>
+        <p class="DefinitionListTerm">Collect and alert on database metrics (max 24 hours) </p>
+        <p class="DefinitionListBodyLast">The interval between times that the SQLdm Collection Service collects database space-related data and raises the associated alerts.  Lower values cause SQLdm to raise alerts more quickly, but also cause more frequent refreshes, which increases your monitoring overhead.  In environments with a large number of databases whose sizes do not change rapidly, setting the database data collection to a long interval can greatly reduce the monitoring footprint.</p>
+        <p class="Body">By default, SQLdm collects diagnostic data every six minutes and database data every 60 minutes. Consider the following factors before selecting your data collection interval:</p>
+        <p class="DefinitionListTerm">Data collection purpose</p>
+        <p class="DefinitionListBody">If your goal with this data collection is to identify broad trends and alert on critical downtime, then a longer refresh interval is appropriate. If you are closely monitoring your SQL&#160;Server instance for minute-by-minute changes, use a shorter duration.</p>
+        <p class="DefinitionListTerm">Data collection frequency</p>
+        <p class="DefinitionListBody">When diagnosing specific problems or when working with a problematic SQL&#160;Server instance, a short interval lets you capture enough data to diagnose the issue. In most situations, the default interval provides sufficient data for your diagnostic needs. Note that SQL&#160;Server instances used only occasionally may require less monitoring attention.</p>
+        <p class="DefinitionListTerm">Notification of existing or potential problems</p>
+        <p class="DefinitionListBody">Remember that a lower collection interval results in SQLdm raising alerts more quickly, but also increases your monitoring overhead. This is true when any setting causes more frequent refreshes.</p>
+        <p class="DefinitionListTerm">System resource impact</p>
+        <p class="DefinitionListBody">Although SQLdm limits the amount of system resource impact when collecting data, short collection times on SQL&#160;Server instances with large amounts of data could potentially cause system performance degradation. Using the default interval should meet your data collection needs while limiting any system resource impacts.</p>
+        <p class="DefinitionListTerm">Space needed for the SQLdm Repository</p>
+        <p class="DefinitionListBody">A lower collection interval results in more frequent refreshes which are all stored in the SQLdm Repository. Make sure you have enough available space to accommodate these lower settings.</p>
+        <p class="DefinitionListTerm">Data spikes</p>
+        <p class="DefinitionListBody">SQLdm averages most metrics over the timeframe between collections. More-frequent data collection causes increased movement in averages because of short-duration events. For example, a 15-second CPU spike has a greater effect on a one-minute refresh than on a six-minute refresh.  You can use alert smoothing to reduce the impact of data spikes on a per-alert basis.</p>
+        <h2 class="Heading2">Select a server availability verification interval</h2>
+        <p class="Body">The server availability verification interval is the amount of time SQLdm waits between verifying availability on the selected SQL&#160;Server instance. If the connection test collector does not complete within the time specified in the <span class="GUI_Item">Alert if the server is inaccessible (max 10 minutes)</span> field, the SQL&#160;Server instance is considered unresponsive. Setting this field to a very low value can result in false positive alerts. </p>
+        <h2 class="Heading2">Collect extended session data</h2>
+        <p class="Body">The extended session collection data includes important session information, such as details, locks and blocks. If this information is important to you, make sure the <span class="GUI_Item">Collect extended session data, including session details, locks, and blocks</span> check box is selected.</p>
+        <h2 class="Heading2">Limit the number of DBCC&#160;Inputbuffer executions</h2>
+        <p class="Body">You can limit the number of executions performed by the DBCC&#160;Inputbuffer, which retrieves the actual input command for the Session Details view, among others. Note that on busy servers, decreasing the <span class="GUI_Item">Limit executions of DBCC&#160;Inputbuffer to</span> value can reduce monitoring impact.</p>
+        <h2 class="Heading2">Data collection credentials</h2>
+        <p class="Body">SQLdm uses the specified credentials to collect data from the monitored SQL&#160;Server instance. You can choose to use either Windows authentication or SQL&#160;Server authentication. </p>
+        <p class="DefinitionListTerm">Windows authentication</p>
+        <p class="DefinitionListBody">Windows Authentication uses the security of the operating system to create a trusted connection only if the account matches a security account defined in SQL&#160;Server. This security account must have sufficient permissions on the monitored instance to collect data and OS metrics.</p>
+        <p class="DefinitionListTerm">SQL&#160;Server authentication</p>
+        <p class="DefinitionListBodyLast">Select this option to use the credentials of a specific SQL&#160;Server account.</p>
+        <h2 class="Heading2">Select encryption options</h2>
+        <p class="Body">SQLdm allows you to designate encryption methods used to encrypt data between the Collection Service and the monitored SQL&#160;Server instance. You can choose to use SSL or SSL with Trust Service Certificate.</p>
+        <p class="DefinitionListTerm">Encrypt Connection (SSL)</p>
+        <p class="DefinitionListBody">This option sets a flag in the connection properties that is used when the collection service connects to a monitored server that specifies that SSL (Secure Sockets Layer) is used to encrypt the data between the collection service and the monitored SQL&#160;Server instance. For this option to work correctly, configure the monitored SQL&#160;Server instance to support encryption.</p>
+        <p class="DefinitionListTerm">Trust Server Certificate (Bypass Certificate Validation)</p>
+        <p class="DefinitionListBody">This option is available only when the Encrypt Connection (SSL) is selected. This option allows you to skip the certificate validation when a SQL&#160;Server instance establishes a connection. If SSL on the monitored SQL&#160;Server instance is not configured to use a certificate that the collection service trusts, the connection is rejected unless the Trust Server Certificate option is selected.</p>
+    </body>
+</html>

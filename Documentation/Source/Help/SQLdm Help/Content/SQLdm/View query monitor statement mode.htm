@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="923" MadCap:lastWidth="571">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>View the Idera SQLdm query monitor statement mode</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">View the query monitor statement mode</h1>
+        <p class="Body">The Statement Mode view includes queries that are presented exactly as they are collected by the Query Monitor Trace.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">If queries appear on the Query Monitor views that you never want to appear, click Configure <a href="Set query monitor options.htm" target="_self">Query Monitor &gt; Advanced</a> and enter the applications, databases or SQL&#160;text you want to exclude from the Query Monitor collection.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">The Statement Mode view is where you go to drill-down into a specific execution of a particular query. Whereas the <a href="View query monitor signature mode.htm">signature mode</a> view provides a filtered look at your queries, the Statement Mode view provides all the detail you may need to diagnose a specific problem with a query. Once you find the problem query, History mode allows you to track the query over time and view trends.</p>
+        <p class="Body">The primary focus of the Statement Mode view is in the charts. The chart type drop-down allows you to pick a chart type to display, while the chart category drop-down allows you to choose to view the data by SQL&#160;Text, Application, Database, User, or Host. Click a query in a chart to open up the <a href="View query history.htm">query history</a> for that query.</p>
+        <p class="Body">Use Query filters to narrow the results to only those that most interest you. Do this by selecting the data and time range, the application, user, database, workstation and even the SQL&#160;text you want to include or exclude from your results.</p>
+        <p class="Body">Event Occurrences is a listing of each occurrence of the query and the associated statistics, such as the duration, CPU time, reads, writes, and associated SQL&#160;text.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">If Query Monitor is disabled but Activity Monitor is enabled, SQL statements appearing in the Event Occurrences grid come from the Blocking Session collector. The collector only populates the following fields: Query, SQL text, Event Type, and Deadlocks. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">The <b>Exclude Currently Running Queries</b> filter in the Statement Mode view is enabled by default. If you would like to include data with null values in this view, un-check this check box in the Filters section.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Access the Statement Mode view</h2>
+        <p class="Body">You can open the Statement Mode view of the SQLdm Queries tab by selecting the appropriate SQL&#160;Server instance, and then clicking <span class="GUI_Item">Queries &gt; Statement Mode</span>.</p>
+        <h2 class="Heading2">Sigma (Σ) character</h2>
+        <p class="Body">The Sigma character indicates that the data in this row is at least partially composed of aggregated data. This means that the data is condensed into a day-length summary and some precision about the individual statements, client computers, and users is suppressed. Rows on this view with the Sigma character may include a mix of aggregated and non-aggregated data.</p>
+        <h2 class="Heading2">Understanding cell colors</h2>
+        <p class="Body">Red in the column indicates that the data in that row represents 20 percent or more of the total data displayed in the list, while yellow indicates that the data in the row represents five percent or more of the total data displayed in the list.</p>
+    </body>
+</html>

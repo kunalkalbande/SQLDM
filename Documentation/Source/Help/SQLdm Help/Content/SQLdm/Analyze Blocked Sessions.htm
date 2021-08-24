@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="2960" MadCap:lastWidth="875">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Analyze blocked sessions in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Analyze blocked sessions</h1>
+        <p class="Body">
+            <MadCap:keyword term="Sessions:Blocked;Sessions: Blocking view;Sessions: Block Reports;Sessions: Deadlock Reports" />The Blocking view provides a blocking tree, along with the lead blockers, for the selected SQL&#160;Server instance. A lead blocker is a session that blocks at least one session, which can then block other sessions. </p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">You can use the History Browser to <a href="View past performance.htm" target="_self">view past performance</a> and go back to the point in time to view the sessions involved with the blocking alerts you receive.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">Navigate through the blocking tree to find sessions that cause blocks, and then either trace sessions to find out what is causing the blocks or stop the session to have it removed. To trace a blocked session or lead blocker select it from the list and click <span class="GUI_Item">Trace Session</span>. To stop a blocked session, or lead blocker, select it from the list and click <span class="GUI_Item">Kill Session</span>.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Deadlocks have no lead blockers and are circular in nature. For this reason, SQLdm does not display deadlocks in the Blocking Tree but does display instances of deadlocks in the Blocking Chart. In addition, SQLdm does not count self-blocking sessions as  blocked or blocking sessions.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Access the Blocking view</h2>
+        <p class="Body">You can open the Blocking view of the SQLdm Sessions tab by selecting the appropriate SQL&#160;Server instance, and then clicking <span class="GUI_Item">Sessions &gt; Blocking</span>.</p>
+        <h2 class="Heading2">Trace Session</h2>
+        <p class="Body">When you click <span class="GUI_Item">Trace Session</span>, the Session Trace window opens. The Session Trace provides session statistics and information including the following:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Overview of the session, including the CPU Time, Row Count, Lock Wait Timeout, Physical Reads and Write metrics</li>
+            <li class="Bullet">Last Command executed</li>
+            <li class="BulletLast">All the SQL&#160;Server statements</li>
+        </ul>
+        <h2 class="Heading2">Blocking chart</h2>
+        <p class="Body">The <a href="Charts.htm" target="_self">Blocking chart</a> displays the number of blocked sessions, lead blockers, and total deadlocks at a given point in time. The total deadlocks represent the total number of deadlocks that have occurred since the last time the pane was refreshed.</p>
+        <p class="Body">You can right-click the chart and either print, save as image, or export this data to Microsoft Excel. In addition, you can select <span class="GUI_Item">Toolbar</span> for advanced customization options, such as changing the chart color scheme and the type of chart shown.</p>
+        <h2 class="Heading2">Blocking Sessions Report</h2>
+        <p class="Body">The Blocking Sessions Report (Block Reports) displays blocking and blocked sessions’ information.  To access the Blocking Sessions Report in the Alert view, select the <span class="GUI_Item">Show Block Details</span> option in the right-click context menu. You can also access the same information on the <b>Blocking View</b> by selecting a specific SQL Server instance, pointing to Sessions, and then selecting the Blocking ribbon.</p>
+        <p class="Body">
+            <img src="../Resources/Images/Block Reports_8.5.gif" style="width: 799px;height: 441px;" />
+        </p>
+        <p class="Body">Key information provided for blocking and blocked sessions includes:</p>
+        <p class="DefinitionListTerm">Blocking Process Details:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body">Session ID</li>
+            <li class="Bullet-Def-Body">Host Name</li>
+            <li class="Bullet-Def-Body">User Name</li>
+            <li class="Bullet-Def-Body">Application</li>
+            <li class="Bullet-Def-Body">Database</li>
+            <li class="Bullet-Def-Body">Last Batch Started</li>
+            <li class="Bullet-Def-Body">Transaction ID</li>
+            <li class="Bullet-Def-Body-Last">Open Transactions</li>
+        </ul>
+        <p class="DefinitionListTerm">Blocked Process Details:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body">Session ID</li>
+            <li class="Bullet-Def-Body">Host Name</li>
+            <li class="Bullet-Def-Body">User Name</li>
+            <li class="Bullet-Def-Body">Application</li>
+            <li class="Bullet-Def-Body">Database</li>
+            <li class="Bullet-Def-Body">Last Batch Started</li>
+            <li class="Bullet-Def-Body">Transaction ID</li>
+            <li class="Bullet-Def-Body">Open Transactions</li>
+            <li class="Bullet-Def-Body">Wait Time (ms)</li>
+            <li class="Bullet-Def-Body-Last">Wait Resource</li>
+        </ul>
+        <p class="Body">This feature allows you to export statistics in XML format.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">To retrieve the blocking sessions report for SQLdm, select the "Non-Query activities&gt;Capture Blocking (SQL 2005+)" check box in the <span class="GUI_Item">Activity Monitor </span>Tab.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Deadlock Sessions Report</h2>
+        <p class="Body">The Deadlock Sessions Report (Deadlock Reports) displays deadlock sessions information. To access the Deadlock Sessions Report in the Alert view, select the <b>Show Block Details</b> option in the right-click context menu. You can also access the same information on the <b>Blocking View</b> by selecting a specific SQL Server instance, pointing to <b>Sessions</b>, and then selecting the <b>Blocking</b> ribbon.</p>
+        <p class="Body">
+            <img src="../Resources/Images/Deadlock Reports_8.5.gif" style="width: 798px;height: 488px;" />
+        </p>
+        <p class="Body">Key information provided for deadlock sessions includes:</p>
+        <p class="DefinitionListTerm">Deadlock Process Details</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body">Session ID</li>
+            <li class="Bullet-Def-Body">Status</li>
+            <li class="Bullet-Def-Body">Host Name</li>
+            <li class="Bullet-Def-Body">User Name</li>
+            <li class="Bullet-Def-Body">Execution Context</li>
+            <li class="Bullet-Def-Body">Application</li>
+            <li class="Bullet-Def-Body">Database</li>
+            <li class="Bullet-Def-Body">Last Batch Started</li>
+            <li class="Bullet-Def-Body">Last Batch Completed</li>
+            <li class="Bullet-Def-Body">Last Transaction Started</li>
+            <li class="Bullet-Def-Body">Transaction ID</li>
+            <li class="Bullet-Def-Body">Transaction Name</li>
+            <li class="Bullet-Def-Body">Open Transactions</li>
+            <li class="Bullet-Def-Body">Wait Time (ms)</li>
+            <li class="Bullet-Def-Body">Wait Type</li>
+            <li class="Bullet-Def-Body-Last">Wait Resource</li>
+        </ul>
+        <p class="Body">This feature allows you to export statistics in XDL format.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">To retrieve the deadlock sessions report for SQLdm, select the "Non-Query activities&gt;Capture deadlocks (SQL 2005+)" check box in the <span class="GUI_Item">Activity Monitor </span>Tab.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">&#160;</p>
+    </body>
+</html>

@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1156" MadCap:lastWidth="847">
+    <head>
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>CPU panel in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">CPU panel</h1>
+        <p class="Body">
+            <MadCap:keyword term="CPU:Dashboard panel;Dashboard:CPU;Virtual;Virtual Machine;Virtualization;VM;VMware;ESX;Host" />The CPU panel tracks the performance of the processor used by your monitored SQL Server. Unexpected spikes in CPU usage and call rates may warn you about the beginning of a serious performance issue. Chronically high CPU metrics may indicate the need for server maintenance, query tuning, or index updates to better handle the ongoing workload. For additional information, see <a href="Get CPU Performance Details.htm" target="_self">how to get your CPU performance details</a>.</p>
+        <h2 class="Heading2"><a name="CPUUsage"></a>Usage chart</h2>
+        <p class="Body">The <span class="GUI_Item">CPU Usage</span> chart displays the percentage of processing power in use on the computer that hosts the SQL Server instance over a period of time. The CPU view on the Resources view allows you to track your CPU usage over a period of time, along with other key CPU statistics. For additional information about how SQLdm works with virtual machines and collects metrics, see <a href="How SQLdm works with a virtual environment.htm" target="_self">How SQLdm works with a virtual environment</a>.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Metric</th>
+                    <th class="HeadD-Column2-Header1">Why it is important</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText"><a href="Metrics/CPU Usage by SQL Server.htm" target="_self">SQL usage</a>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">A higher SQL usage can indicate that SQL Server is spending too much time processing queries.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Total usage</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">A high total CPU usage can indicate that this server does not have enough resources to adequately process its current workload.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText"><a href="Alerts/VM CPU Usage.htm" target="_self">VM&#160;usage</a>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">A high virtual machine usage can indicate that the processor power allocated to this VM is insufficient for its current workload.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Host usage</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">A high host server usage indicates the processing power on this host is insufficient to handle the workload of the currently active VMs.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2"><a name="CPUProcQueueLength"></a>Processor Queue Length gauge</h2>
+        <p class="Body">The <span class="GUI_Item">CPU Processor Queue Length</span> gauge displays the current value of the <a href="Metrics/Processor Queue Length.htm" target="_self">processor queue length metric</a>. Use this metric to determine how much work is waiting on this server. A high processor queue could indicate a blocking session or other performance issues.</p>
+        <h2 class="Heading2"><a name="CPUCallRates"></a>Call Rates chart</h2>
+        <p class="Body">The <span class="GUI_Item">CPU Call Rates</span> chart breaks down the processor workload into the number of batches, compilations, and transactions completed each second, giving you a detailed view of which activities are resource-intensive.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Metric</th>
+                    <th class="HeadD-Column2-Header1">Why it is important</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText"><a href="Metrics/Batches Received.htm" target="_self">Batches/sec</a>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">A high throughput rate can indicate a higher risk of network, CPU, and resource issues as the SQL&#160;Server performance degrades.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText"><a href="Metrics/CompilesPer Second.htm" target="_self">Compiles/sec</a>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">A high number of compilations (greater than 100 per second) can indicate a high server workload or that there is more recompilation overhead than necessary.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText"><a href="Metrics/Re-compiles Per Second.htm" target="_self">Re-Compiles/sec</a>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">A high re-compilation rate can indicate excessive re-compilation overhead.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText"><a href="Metrics/Transactions Per Second.htm" target="_self">Transactions/sec</a>
+                        </p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">A high rate of transactions can indicate a higher risk of resource issues, such as blocks or locks, due to the heavier workload.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Differences in statistics</h2>
+        <p class="Body">You may notice some difference in your statistics, such as your OS&#160;CPU&#160;usage being higher than your VM&#160;CPU&#160;usage. While the hypervisor manages resources efficiently, the demand for physical resources may be greater than what it has to provide. For example,  a guest OS on a virtual machine submits a batch of work to a CPU for execution. However, all of the physical CPUs are committed to other work, so there is no physical CPU available on the host to process the work. In this situation, the VM has to wait for a CPU to become available to process its work. While it is waiting, the guest OS is unaware of the wait and assumes that it is simply taking longer for the CPU to process this batch of work, and the OS thinks it is using more CPU power than it is actually using. </p>
+        <p class="Body">Remember that SQLdm uses the additional overhead of the hypervisor to calculate the VM metrics. In this situation, the hypervisor knows the VM is just waiting for a CPU, so it does not charge the VM for CPU processing power while it is waiting. The result is that the guest OS reports that it is using the additional processing power.</p>
+        <h2 class="Heading2">Available alerts</h2>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet"><a href="Alerts/Host CPU Usage Alert.htm" target="_self">Host&#160;CPU&#160;Usage (Percent)&#160;Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/OS Processor Time.htm" target="_self">OS&#160;Processor Time (Percent) Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Processor Queue Length Alert.htm" target="_self">OS Processor Queue Length (Count) Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/SQL Server CPU Usage Alert.htm" target="_self">SQL&#160;Server CPU Usage (Percent) Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/VM CPU Usage.htm" target="_self">VM&#160;CPU&#160;Usage (Percent)&#160;Alert</a>
+            </li>
+        </ul>
+    </body>
+</html>

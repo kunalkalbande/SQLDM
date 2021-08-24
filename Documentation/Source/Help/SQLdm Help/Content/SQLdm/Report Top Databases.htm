@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="981" MadCap:lastWidth="721">
+    <head>
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Top Databases report in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Top Databases</h1>
+        <p class="Body">The Top Databases report identifies your worst performing SQL Server databases based on the size of the database, the growth rate of the database, and the number of reads, writes, and transactions per second performed on the database. </p>
+        <p class="Body">You can further filter your monitored databases by wait time with waits that exceed a defined <b>Wait Threshold</b> in milliseconds.</p>
+        <p class="Body">Use this report to compile a list of databases that used most often or have the heaviest loads.</p>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col>
+            </col>
+            <col style="width: 626px;">
+            </col>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">You can use % as a wildcard in the <span class="GUI_Item">Search Value</span> field.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">When to run this report</h2>
+        <p class="Body">You should run the Top Databases report on a routine basis, such as once a week. This report helps you:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Plan for upcoming maintenance</li>
+            <li class="Bullet">Identify issues that may impact third-party application performance even though the host SQL&#160;Server instance remains healthy</li>
+            <li class="BulletLast">Compare database performance across your enterprise</li>
+        </ul>
+        <h2 class="Heading2">How SQLdm calculates metric values on this report</h2>
+        <p class="Body">Most values on the Top Databases report correlate with the related SQL Server metric. However, some metric values represent averages over time. Likewise, a few metric values are based on performance algorithms that use multiple statistics to calculate a more accurate metric.</p>
+        <p class="Body" MadCap:conditions="Default.Internal Only">The following table provides additional information as to how SQLdm calculates that values in each column of the Top Databases report.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0" MadCap:conditions="Default.Internal Only">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Column Name</th>
+                    <th class="HeadD-Column2-Header1">How SQLdm calculates this value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">%&#160;Growth</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Rate of growth of this database.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Bytes Read/sec</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Amount of data read from this database, in bytes per second.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Bytes Written/sec</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Amount of data written to this database, in bytes per second.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Database Name</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Name of the database.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Data File Size</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Size of the data file on this database.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Data Size</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Amount of data stored in the data file.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Log File Size</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Size of the log file on this database.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Transactions/sec</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Number of transactions occurring on this database per second.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">You can access our <a href="http://www.idera.com/support" target="_blank">Customer Service Portal</a> (www.idera.com/support) for more information about the algorithm used to calculate a specific metric.</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">How is the Worst Performing and Most Frequent Queries information gathered? - Solution #00000412</li>
+            <li class="Bullet">How does SQL diagnostic manager gather statistics from monitored SQL Servers? - Solution #00000055</li>
+            <li class="Bullet">How does SQL diagnostic manager calculate the reorganization percentage for database tables? - Solution #00000301</li>
+            <li class="BulletLast">What does the 'Memory Usage' metric in the Console and Reports represent? - Solution #00002237</li>
+        </ul>
+    </body>
+</html>

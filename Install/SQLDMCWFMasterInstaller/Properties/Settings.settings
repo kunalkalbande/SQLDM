@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Installer_form_application.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="RestrictedIDVersionsForLocal" Type="System.String" Scope="User">
+      <Value Profile="(Default)">4.4.0</Value>
+    </Setting>
+    <Setting Name="MemoryRqdForSQLdmConsoleInMB" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="MemoryRqdForSQLdmServicesInMB" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="MemoryRqdForDashboardInMB" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">230</Value>
+    </Setting>
+    <Setting Name="MemoryRqdForBufferInMB" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
+    <Setting Name="RestrictedIDVersionForRemote" Type="System.String" Scope="User">
+      <Value Profile="(Default)">4.4.0.18</Value>
+    </Setting>
+    <Setting Name="SQLdmProductVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">11.1.0</Value>
+    </Setting>
+    <Setting Name="MemoryRqdForSqlClrTypesInMB" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="MemoryRqdForSMOInMB" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

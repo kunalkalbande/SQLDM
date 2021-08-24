@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="377" MadCap:lastWidth="833">
+    <head><title>OS Average Disk Queue Length (Count) alert in Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">OS Average Disk Queue Length (Count) alert </h1>
+        <p class="Body">The OS&#160;Average Disk Queue Length (Count) alert provides the average number of both read and write requests queued for all the disks on the SQL Server computer. </p>
+        <h2 class="Heading2">Reduce queue length</h2>
+        <p class="Body"> If this queue often remains above six per physical disk for more than 10 seconds at a time, then your disk subsystem is overloaded.   In this case consider the following:
+</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Check OS Paging to make sure that paging from/to the swap file is not causing these IOs.
+</li>
+            <li class="Bullet">Replacing disks with faster disks.
+</li>
+            <li class="Bullet">Add more disks to you RAID array.
+</li>
+            <li class="Bullet">Switch your RAID array from RAID 5 to RAID 10 solution as each write IO results in two writes using RAID 10 vs. 4 for RAID 5.
+</li>
+            <li class="Bullet">Move other applications to another computer.
+</li>
+            <li class="Bullet">So long as the RAID controller has some form of battery backup then switch its cache mode from Write-through to Write-back as this increases the system ability to handle write IOs by an order of magnitude.
+</li>
+            <li class="BulletLast">If the computer is running multiple instances of SQL Server, then consider placing each instance on a separate physical computer.
+</li>
+        </ul>
+    </body>
+</html>

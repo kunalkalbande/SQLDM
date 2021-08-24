@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="373" MadCap:lastWidth="859">
+    <head><title>Log Space Used (Percent) metric in Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">Log Space Used (Percent) </h1>
+        <p class="Body">The Log Space Used (Percent) metric calculates the added size all log files used as a percent of summed allocated size of all data files.
+</p>
+        <p class="Body">A transaction log continues to grow until its inactive portion is truncated. Transaction log truncation occurs because either: 
+</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">the BACKUP LOG statement successfully concluded, or</li>
+            <li class="BulletLast">if the database is using the Simple Recovery Model, then a CHECKPOINT T-SQL statement executes or SQL Server performed an internal automatic CHECKPOINT. SQL&#160;Server performs this action if the log reaches 70% full or when SQL Server determines the length of time to recover from the log, in the event of a failure, exceeds the Recovery Interval option.
+</li>
+        </ul>
+        <p class="Body">Only the inactive portion of the log is ever removed. The inactive portion of the log is the portion of the log up to but not including the start date/time of the oldest open transaction. No matter which method is used to truncate the log, if there is a perpetually open transaction then the log continues to grow in size until it consumes all available disk space. </p>
+        <h2 class="Heading2">Reduce the percentage of the log used</h2>
+        <p class="Body">
+If  your transaction log size continues to grow despite issuing BACKUP LOG or CHECKPOINT statements, check for a rogue transaction. Begin your research by sorting the Last Batch column on the SQL Processes grid into ascending mode such that the processes containing the oldest batches appear first. Scroll down the list until you find the first user process with a non-zero number of transactions in its Trans column, and then kill this process. Once this is done, perform a CHECKPOINT or BACKUP LOG to reduce the Log File Used Size.
+</p>
+    </body>
+</html>

@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C43838B-3184-434A-B110-1B6F0A404F3C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Installer_form_application</RootNamespace>
+    <AssemblyName>SQLDMCWFMasterInstaller</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Development\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Development\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;TRIAL</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>..\..\Development\bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>TRACE;TRIAL</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\Development\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\Development\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Idera_Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>SampleProduct.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CWFInstallerService, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\CWFInstallerService.dll</HintPath>
+    </Reference>
+    <Reference Include="License4Net , Version=6.0.6436.29810, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\BBSLicense\x64\License4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TracerX, Version=2.1.809.18205, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\Libraries\TracerX.exe</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Development\Idera\SQLdm\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="AccountHelper.cs" />
+    <Compile Include="IderaDashboardDetails.cs" />
+    <Compile Include="IderaDashboardHelper.cs" />
+    <Compile Include="InstallOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstallOption.Designer.cs">
+      <DependentUpon>InstallOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstallationFailure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstallationFailure.Designer.cs">
+      <DependentUpon>InstallationFailure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstallReady.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstallReady.Designer.cs">
+      <DependentUpon>InstallReady.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstallScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstallScreen.Designer.cs">
+      <DependentUpon>InstallScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Credentials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Credentials.Designer.cs">
+      <DependentUpon>Credentials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Description.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Description.Designer.cs">
+      <DependentUpon>Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EULA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EULA.Designer.cs">
+      <DependentUpon>EULA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Introduction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Introduction.Designer.cs">
+      <DependentUpon>Introduction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JsonHelper.cs" />
+    <Compile Include="LicenseHelper.cs" />
+    <Compile Include="LicenseScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LicenseScreen.Designer.cs">
+      <DependentUpon>LicenseScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PortForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PortForm.Designer.cs">
+      <DependentUpon>PortForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="properties.cs" />
+    <Compile Include="RemoteProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RemoteProgress.Designer.cs">
+      <DependentUpon>RemoteProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RepositoryDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RepositoryDetails.Designer.cs">
+      <DependentUpon>RepositoryDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RepositoryDetailsDM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RepositoryDetailsDM.Designer.cs">
+      <DependentUpon>RepositoryDetailsDM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SampleProductException.cs" />
+    <Compile Include="SampleProductInstallationHelper.cs" />
+    <Compile Include="ServiceAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceAccount.Designer.cs">
+      <DependentUpon>ServiceAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SQLAUTHDM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SQLAUTHDM.Designer.cs">
+      <DependentUpon>SQLAUTHDM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SQLAuthID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SQLAuthID.Designer.cs">
+      <DependentUpon>SQLAuthID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SQLdmDetails.cs" />
+    <Compile Include="SQLdmHelper.cs" />
+    <EmbeddedResource Include="InstallOption.resx">
+      <DependentUpon>InstallOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstallationFailure.resx">
+      <DependentUpon>InstallationFailure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstallReady.resx">
+      <DependentUpon>InstallReady.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstallScreen.resx">
+      <DependentUpon>InstallScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Credentials.resx">
+      <DependentUpon>Credentials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Description.resx">
+      <DependentUpon>Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EULA.resx">
+      <DependentUpon>EULA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Introduction.resx">
+      <DependentUpon>Introduction.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LicenseScreen.resx">
+      <DependentUpon>LicenseScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PortForm.resx">
+      <DependentUpon>PortForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RemoteProgress.resx">
+      <DependentUpon>RemoteProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepositoryDetails.resx">
+      <DependentUpon>RepositoryDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepositoryDetailsDM.resx">
+      <DependentUpon>RepositoryDetailsDM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceAccount.resx">
+      <DependentUpon>ServiceAccount.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQLAUTHDM.resx">
+      <DependentUpon>SQLAUTHDM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQLAuthID.resx">
+      <DependentUpon>SQLAuthID.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="SampleProduct.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Idera - Software License Agreement.rtf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Idera_Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Idera_Icon.ico" />
+    <None Include="Resources\Main_Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Development\Idera\SQLdm\Common\Idera.SQLdm.Common.csproj">
+      <Project>{DC3D7464-76DF-4212-AE5C-9AF39E856CA6}</Project>
+      <Name>Idera.SQLdm.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

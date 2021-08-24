@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1279" MadCap:lastWidth="843">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Migrate your Idera SQLdm installation</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Migrate your SQLdm installation</h1>
+        <p class="Body">The procedures in this section detail the migration steps for moving both the SQLdm Repository and the Services to a new computer. Follow each section in order for a successful migration.</p>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col>
+            </col>
+            <col style="width: 626px;">
+            </col>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">SQLdm Application security is not maintained when your SQLdm installation is migrated to a new server. For more information, see <a href="Use application security to manage SQLdm.htm" target="_self">Use application security to manage SQLdm</a>.    </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Get a New SQLdm License Key</h2>
+        <p class="Body">Because you are migrating the Repository database to a different SQL Server instance, SQLdm requires a new license key. You can easily request a new license key by sending an email to: <a href="mailto:licensing@idera.com?subject=Request new SQLdm license key">licensing@idera.com</a>.</p>
+        <p class="Body">To complete the request, make sure you have the name of the SQL Server instance where you plan to install the SQLdm Repository database.</p>
+        <h2 class="Heading2">Restore the SQLdm Repository on the Target Computer</h2>
+        <p class="Body">For best results, use the following guidelines migrate your SQLdm Repository to the target computer:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Perform a full restore</li>
+            <li class="BulletLast">Schedule the restore during off-hours, or times when you expect the least collection activity</li>
+        </ul>
+        <p class="StepIntro">To restore the Repository database:</p>
+        <ol>
+            <li class="NumberedList">Use SQL Server Enterprise Manager or Management Studio to close any open connections to the Repository database.</li>
+            <li class="NumberedList">Use SQL Server Enterprise Manager or Management Studio to take the Repository database offline. If you cannot take the Repository database offline, stop the Collection Service.</li>
+            <li class="NumberedList">Use a tool such as Idera SQLsafe to restore the Repository database on the target server using the appropriate backup archive file.</li>
+        </ol>
+        <h2 class="Heading2">Disable or Uninstall the SQLdm Services on the Current Computer</h2>
+        <p class="Body">SQLdm Services must be uninstalled to avoid conflict with the restored SQLdm Repository. For best results, use the following procedure:</p>
+        <p class="StepIntro">If you do not want to keep the SQLdm console on the current computer, perform the following steps:</p>
+        <ol>
+            <li class="NumberedList">Select <span class="GUI_Item">Start &gt; Control Panel &gt; Uninstall a Program</span> on your current computer.</li>
+            <li class="NumberedList">Uninstall SQL diagnostic manager completely.</li>
+        </ol>
+        <p class="StepIntro">If you want to keep the SQLdm console on the current computer, perform the following steps:</p>
+        <ol>
+            <li class="NumberedList">Select <span class="GUI_Item">Start &gt; Administrative Tools &gt; Services</span> on the current computer.</li>
+            <li class="NumberedList">Scroll down and right-click SQLdm Collection Service in the list, and select <span class="GUI_Item">Properties</span>.</li>
+            <li class="NumberedList">In the Startup Type drop-down list, select <span class="GUI_Item">Disabled</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span>.</li>
+            <li class="NumberedList">Scroll down and right click SQLdm Management Services in the list, and select <span class="GUI_Item">Properties</span>.</li>
+            <li class="NumberedList">In the Startup Type drop-down list, select <span class="GUI_Item">Disabled</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span>.</li>
+        </ol>
+        <h2 class="Heading2">Perform a Full SQL diagnostic manager Install on the New Computer</h2>
+        <p class="Body">A full install of SQL diagnostic manager installs the new SQLdm Services, link them to the restored SQLdm Repository, and install the SQLdm Console. For best results, use the following procedure for installing SQLdm:</p>
+        <ol>
+            <li class="NumberedList">Log on with an administrator account to the computer on which you want to install the SQLdm services.</li>
+            <li class="NumberedList">Run <span class="Code">Setup.exe</span> in the root of the installation kit.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">SQL diagnostic manager</span> on the<span class="GUI_Item"> Quick Start</span> window.</li>
+            <li class="NumberedList">On the <span class="GUI_Item">Welcome</span> window of the setup program, click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Review and accept the license agreement by clicking I accept the terms in the license agreement, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Accept the default folder for your SQLdm installation, or click <span class="GUI_Item">Change</span> to specify a different folder, and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Select your setup type and then click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Browse and select the SQL Server instance your SQLdm Repository was restored to and click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Enter your service account credentials and click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Install</span> to begin installing SQLdm with the options you have selected.</li>
+        </ol>
+        <h2 class="Heading2">Verify that the Migration was Successful</h2>
+        <p class="Body">The SQLdm Console includes a system diagnostics test that allows you to test the connections of all the SQLdm components.</p>
+        <ol>
+            <li class="NumberedList">Open the SQLdm console.</li>
+            <li class="NumberedList">Enter your new SQLdm license key.</li>
+            <li class="NumberedList">Add the SQL Server instances you want to monitor.</li>
+            <li class="NumberedList">Open the System Diagnostics utility by selecting <span class="GUI_Item">Help &gt; System Diagnostics</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Test</span>.</li>
+            <li class="NumberedList">Verify that all the tests are successful.</li>
+        </ol>
+    </body>
+</html>

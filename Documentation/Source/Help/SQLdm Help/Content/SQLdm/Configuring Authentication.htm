@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="4" MadCap:lastHeight="622" MadCap:lastWidth="859">
+    <head><title>Configure Idera SQLdm authentication</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure authentication</h1>
+        <p class="Body">
+            <MadCap:keyword term="Authentication" />The Configure Authentication window of the Add Servers wizard allows you to select the authentication credentials SQLdm uses when collecting performance and statistics information from your SQL&#160;Server instances. You can also set encryption to secure the connection.</p>
+        <p class="Body">After selecting a connection type and encryption, click <span class="GUI_Item">Next </span>to continue. </p>
+        <h2 class="Heading2">Access the Add Servers wizard</h2>
+        <p class="Body">You can open the Add Servers wizard from the SQLdm Console menu by selecting <span class="GUI_Item">File &gt;&#160;Manage Servers</span>, and then clicking <span class="GUI_Item">Add </span>in the Manage Servers window.</p>
+        <h2 class="Heading2">Select a connection type</h2>
+        <p class="Body">Windows Authentication is the recommended collection type as SQLdm uses a number of SQL trace statements that require a trusted connection. When you select and use <span class="GUI_Item">Windows Authentication</span>, the account the SQLdm Collection Service is running as is used to connect to the SQL&#160;Server instance.</p>
+        <h2 class="Heading2">Select encryption</h2>
+        <p class="Body">
+            <MadCap:keyword term="Collection Service: encryption">
+            </MadCap:keyword>SQLdm allows you to designate encryption methods used to encrypt data between the SQLdm Collection Service and the monitored SQL&#160;Server instance. The options include SSL (Secure Sockets Layer) or SSL with Trust Service Certificate.</p>
+        <p class="DefinitionListTerm">Encrypt Connection (SSL)</p>
+        <p class="DefinitionListBody">The <span class="GUI_Item">Encrypt Connection (SSL)&#160;option</span> adds a flag in the connection properties that triggers SSL use when the SQLdm Collection Service connects to a monitored server that uses SSL to encrypt the data transfer. For this option to work correctly, you must configure the monitored SQL&#160;Server instance to use SSL encryption.</p>
+        <p class="DefinitionListTerm">Trust Server Certificate (Bypass Certificate Validation)</p>
+        <p class="DefinitionListBody">The <span class="GUI_Item">Trust Server Certificate (bypass certificate validation)</span> option is available only after you select <span class="GUI_Item">Encrypt Connection (SSL)</span>. This option allows you to skip certificate validation when a SQL&#160;Server instance establishes a connection. If SSL on the monitored SQL&#160;Server instance is not configured to use a certificate that the collection service trusts, then the connection is rejected unless you select the Trust Server Certificate option.</p>
+    </body>
+</html>

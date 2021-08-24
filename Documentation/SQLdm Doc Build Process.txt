@@ -1,0 +1,48 @@
+
+********************************
+SQLdm Legacy Documentation (3.x)
+********************************
+
+Legacy\Main\devmain\dev\SQL\DiagnosticManager\Documents
+
+..\Evaluation Guide\sQL diagnostic manager Eval Guide.pdf
+..\Help\*.* (compiled by build script)
+..\Release Notes\*.*
+..\User Guide\SQL diagnostic manager User Guide.pdf
+
+The SQLdm Help is a standard HTML compiled Help system that is manually maintained. The PDFs are generated from MSWord files. All documentation source files are located in the same folders as the files included in the build.
+
+
+*********************************
+SQLdm 4.x
+*********************************
+
+Includes legacy documentation plus the following documentation from NG3:
+
+Documents\User Education\Documentation\For Build
+
+Web Console Help\*.*
+SQLdm Database Help.chm
+SQLdm Web Console Guide.pdf
+SQLdm Web Console Quick Start Guide.pdf
+SQLdm Web Console Release Notes.pdf
+
+The Web Console Help is WebHelp converted from an MSWord file using WebWorks Publisher. The PDFs are generated from MSWord files. All documentation source files are located under the Documentation\Current folder.
+
+
+**********************************
+SQLdm 5.0
+**********************************
+
+Main\Documentation\Build
+
+SQLdm Help.chm
+SQLdm Quick Start Guide.pdf
+SQLdm Release Notes.pdf
+SQLdm User Guide.pdf
+Upgrading SQLdm.pdf
+Web Console\Help\*.*
+Web Console\SQLdm Web Console Guide.pdf
+Web Console\SQLdm Web Console Quick Start Guide.pdf
+
+The Web Console Help is WebHelp converted from an MSWord file using WebWorks Publisher. The SQLdm Help The PDFs are created from MSWord files. All documentation source files are located under the Documentation\Source folder.

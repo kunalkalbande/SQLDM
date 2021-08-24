@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="310" MadCap:lastWidth="858">
+    <head>
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Choose to migrate or recover Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Choose to migrate or recover SQLdm</h1>
+        <p class="Body">When choosing whether a migration or disaster recovery strategy is best for your environment, consider if you want to permanently move the SQLdm Repository or Services to another computer.</p>
+        <p class="Body">You can also choose to have the Repository and Console components located on computers that belong to different domains. This deployment option is advantageous during disaster recovery, especially if the only available computer is in another domain. Verify that a two-way trust exists between the target domains to support full communication between the Repository and consoles.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" class="TableStyle-Idera_Table_Stylesheet" cellspacing="0">
+            <col class="Column-Column1" />
+            <col style="width: 64px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">
+                        <p class="TableHeadRow">Goal</p>
+                    </th>
+                    <th class="HeadD-Column2-Header1">
+                        <p class="TableHeadRow">Action</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Replace the SQLdm Repository or Services computer</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Migration</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Repair the original Repository or Services computer</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Recovery</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">In both cases, first back up and then restore the Repository database. </p>
+    </body>
+</html>

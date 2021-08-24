@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="1"
+  Comment="SQLdm Help"
+  Type="PDF"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  ConditionTagExpression="include[Default.PDFOnly or Default.PrintOnly] exclude[Default.Google or Default.ScreenOnly or Default.SEO] "
+  MasterToc="/Project/TOCs/SQLdm.fltoc"
+  MasterStylesheet="/Content/Resources/Stylesheets/Idera Stylesheet.css"
+  OutputFile="SQLdm Help"
+  PatchHeadingLevels="true"
+  InjectBookHeadings="true">
+  <PDF
+    ShowUsedBookmarks="false"
+    Tagged="true"
+    CollapsedBookmarks="true" />
+</CatapultTarget>

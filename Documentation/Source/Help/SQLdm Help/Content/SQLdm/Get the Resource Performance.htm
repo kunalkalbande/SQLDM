@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="7" MadCap:lastHeight="1539" MadCap:lastWidth="892">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Get the resource performance summary in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Get the resource performance summary</h1>
+        <p class="Body">
+            <MadCap:keyword term="Resources:details;virtual;virtual machine;virtualization;VM;VMware;host;ESX" />The Resources Summary tab displays real-time charts that allow you to quickly view key diagnostic statistics for monitoring the resources for the selected SQL&#160;Server instance and computer on which it resides. The Resources Summary tab is especially useful in determining resource bottlenecks. For more details, click any of the charts to navigate to the associated tab.</p>
+        <h2 class="Heading2">Access the Resources Summary view</h2>
+        <p class="Body">You can open the Summary view of the SQLdm Resources tab by selecting the appropriate SQL&#160;Server instance, and then clicking <span class="GUI_Item">Resources &gt; Summary</span>.</p>
+        <h2 class="Heading2">Use the CPU Usage chart</h2>
+        <p class="Body">The <a href="Charts.htm" target="_self">CPU Usage chart</a> helps you determine the amount of strain your SQL&#160;Server instance is putting upon the CPU. This is an important factor in analyzing poorly-performing SQL&#160;Server instances. Click this chart to open the CPU, which contains more charts and information on your CPU resources.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">SQL Server is the primary process consuming CPU on the computer hosting your instance. If this is the case and the total CPU usage is consistently higher than 80 percent, the computer requires your attention. High usage may indicate the need to upgrade your CPU or add more processors.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Use the Call Rates chart</h2>
+        <p class="Body">The <a href="Charts.htm" target="_self">Call Rates chart</a> helps you determine why you have high CPU usage. The Call Rates chart displays the following metric statistics:</p>
+        <p class="DefinitionListTerm">Batches</p>
+        <p class="DefinitionListBody">Displays the rate at which SQL&#160;Server issues SQL Statement batches.</p>
+        <p class="DefinitionListTerm">Compiles</p>
+        <p class="DefinitionListBody">Displays the rate at which SQL&#160;Server compiles SQL Statements into the Procedure Cache.</p>
+        <p class="DefinitionListTerm">Re-Compiles</p>
+        <p class="DefinitionListBodyLast">Displays the rate at which SQL&#160;Server recompiles stored SQL Statements into the Procedure Cache.</p>
+        <ol MadCap:continue="true">
+            <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                            <p class="TableHeadRow">TIP</p>
+                        </td>
+                        <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                            <p class="TableText">If the number of re-compiles is consistently higher than 10, or the number of compiles is high, you may need to tune your queries. Consider running <a href="Set query monitor options.htm" target="_self">the Query Monitor</a> as a way of diagnosing query performance issues. You can enable the Query Monitor on the Query Monitor tab of the Monitored SQL Server Properties window.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ol>
+        <p class="DefinitionListTerm">Transactions</p>
+        <p class="DefinitionListBodyLast">Displays the number of SQL&#160;Statement transactions affecting the Procedure Cache.</p>
+        <h2 class="Heading2">Use the Memory Usage chart</h2>
+        <p class="Body">The <a href="Charts.htm" target="_self">Memory Usage chart</a> allows you to analyze the way in which your SQL&#160;Server instance uses memory. The chart provides the amount of memory allocated to SQL&#160;Server, the memory currently used by SQL&#160;Server, and the total amount used on the host computer. </p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">If the SQL Used metric is consistently high compared to the amount of physical memory on the computer where the SQL&#160;Server instance resides, it may indicate that you need more physical memory.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Use the Cache Hit Ratios chart</h2>
+        <p class="Body">The <a href="Charts.htm" target="_self">Cache Hit Ratios chart</a> allows you to view how often a request is serviced by the buffer and procedure cache.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">An acceptable Buffer Cache and Procedure Cache percentage is 90 percent or higher. If this number is consistently lower, analyze your memory settings and add more memory if necessary.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Use the Disk Busy chart</h2>
+        <p class="Body">Use the <a href="Charts.htm" target="_self">Disk Busy chart</a> to analyze bottlenecks in your file system.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">If your Disk Busy is consistently over 90 percent you may need to use a faster disk drive, move files to an additional disk or server, or add disks to a RAID array to improve your SQL&#160;Server performance.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Use the SQL&#160;Server Physical I/O chart</h2>
+        <p class="Body">The <a href="Charts.htm" target="_self">SQL&#160;Server Physical I/O chart</a> allows you to view the number of pages read from, and written to, the physical disk.</p>
+        <p class="Body">The SQL&#160;Server Physical I/O chart displays the following reads and writes:</p>
+        <p class="DefinitionListTerm">Checkpoint Writes</p>
+        <p class="DefinitionListBody">Save time during recovery by creating a point at which all dirty pages are guaranteed written to disk.</p>
+        <p class="DefinitionListTerm">Lazy Writer Writes</p>
+        <p class="DefinitionListBody">Create more available buffers for the system by clearing all unnecessary buffers.</p>
+        <p class="DefinitionListTerm">Page Reads</p>
+        <p class="DefinitionListBody">Are disk writes where the requesting session must wait for the disk write operation to finish.</p>
+        <p class="DefinitionListTerm">Page Writes</p>
+        <p class="DefinitionListBodyLast">Are disks writes where the requesting session must wait for certain operations to finish.</p>
+        <ol MadCap:continue="true">
+            <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                            <p class="TableHeadRow">TIP</p>
+                        </td>
+                        <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                            <p class="TableText">If the number of reads and writes approaches the limits of the I/O capacity of the computer the SQL&#160;Server instance resides, consider reducing the values by tuning your application or database, increasing the I/O capacity of your hardware, or adding memory.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ol>
+        <p class="DefinitionListTerm">Read Ahead Reads</p>
+        <p class="DefinitionListBodyLast">Are part of a process in which SQL&#160;Server predicts what pages a session requires next and writes them to memory in advance.</p>
+        <h2 class="Heading2">Understanding your chart data and refresh interval</h2>
+        <p class="Body">SQLdm charts provide data whether collected real time or as part of a scheduled collection event. For additional information about how SQLdm displays your chart data, see <a href="Charts.htm" target="_self">Charts</a>. </p>
+    </body>
+</html>

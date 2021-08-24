@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1220" MadCap:lastWidth="524" MadCap:ignoredWords="sessions’;Hostname">
+    <head>
+        <link href="../../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Blocking Session Wait Time (Seconds) alert in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Blocking Session Wait Time (Seconds) alert</h1>
+        <p class="Body">The Blocking Session Wait Time (Seconds) alert provides the time in seconds that a SQL Server session blocks other sessions.</p>
+        <p class="Body">By default, locked sessions waiting for a lock wait forever, which is not optimum behavior from an end-user point of view. You can change this default behavior by adding <code>SET LOCKTIMEOUT 60000</code> to the top of the first T-SQL batch after making a connection. </p>
+        <p class="Body">The <a href="../View active alerts for this instance.htm" target="_self">Active Alerts view</a> provides additional information on the Blocking Session Wait Time (Seconds) alert. To access this information, refer to the right-click context menu after having organized your alert view by metric. This menu grants access to real time alert information, historical view, block details, and online help specific to the alert.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">To access similar information on the <a href="../Analyze Blocked Sessions.htm" target="_self">Blocking View</a>, select a specific SQL Server instance, point to <span class="GUI_Item">Sessions</span>, and then select the <span class="GUI_Item">Blocking</span> ribbon.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Reduce blocked sessions wait time</h2>
+        <p class="Body">If you experience more than one blocked session on an average day, your site may experience one of the following issues:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">T-SQL batches submitted containing a <code>BEGIN TRANSACTION</code> statement with no corresponding <code>COMMIT TRANSACTION</code> statement. You must correct the T-SQL.
+</li>
+            <li class="Bullet">T-SQL batches submitted containing a <code>BEGIN TRANSACTION</code> statement but where the <code>COMMIT TRANSACTION</code> statement is in a following T-SQL batch that is only executed once the end-user confirms the transaction. You must correct the T-SQL.
+</li>
+            <li class="BulletLast">The site includes some long-running transactions processing at peak times. 
+</li>
+        </ul>
+        <p class="Body">Where your transactions run longer than they should and clash, consider drastically reducing the time that a lock is held by:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Performing as much work as possible before the transaction performs its first update, delete, or insert.
+For example, add any necessary SELECT statements. </li>
+            <li class="Bullet">Grouping all UPDATES, DELETES, and INSERTS as closely as possible within a transaction with as few SELECTS as possible separating them.
+</li>
+            <li class="Bullet">Committing the transaction as soon as possible after the final DML statement. 
+</li>
+            <li class="Bullet">Avoiding any stops for user input once the transaction begins. Be sure to gather all user inputs before the transaction starts.</li>
+            <li class="Bullet">Avoiding the use of server-side cursors during a transaction as they slow execution considerably. 
+</li>
+            <li class="Bullet">Minimizing or eliminating the number of SQL re-compilations made to the object if a stored procedure and/or trigger is invoked inside a transaction. See the SQL RE-compilations counter for steps to dramatically reduce recompiles.
+</li>
+            <li class="Bullet">Increasing the speed of transaction throughput such that it becomes less likely that one transaction waits for the preceding transaction. You can improve transaction throughput speed by:
+<ul><li class="Bullet">Adding more disks to your RAID solution. 
+</li><li class="Bullet">Replacing your disks with faster disks. 
+</li><li class="Bullet">Switching your RAID array from a RAID 5 to a RAID 10 solution. Note that each write IO results in two writes using RAID 10 vs. four for RAID 5 (100% more efficient with writes).
+</li><li class="Bullet">Switching the RAID&#160;controller cache mode from Write-through to Write-back so long as the RAID controller has some form of battery backup. This change increases the system's ability to handle write IOs by an order of magnitude.</li><li class="Bullet">Adding more cache memory to the RAID controller. 
+</li><li class="Bullet">Adding more RAM to the server. 
+</li><li class="Bullet">Adding another CPU to the SMP computer. 
+</li><li class="Bullet">Upgrading the CPU, memory, and motherboard with faster models. 
+</li><li class="Bullet">Minimizing the number of Context Switches by turning on Use NT Fibers in SQL Server. 
+</li><li class="BulletLast">Switching on the Boost SQL Server Priority. 
+
+</li></ul></li>
+        </ul>
+    </body>
+</html>

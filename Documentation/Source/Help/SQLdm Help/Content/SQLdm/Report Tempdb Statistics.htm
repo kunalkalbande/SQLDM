@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="567" MadCap:lastWidth="812" MadCap:ignoredWords="SQL">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Tempdb Statistics report in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Tempdb Statistics</h1>
+        <p class="Body">The Tempdb Statistics report lets you view space utilization and data throughput statistics over time for your tempdb database. You can focus on a single chart type, such as data file growth, and track its value increase over a specified period of time.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">The Tempdb Statistics report is available for users with monitored SQL&#160;Server instances on SQL&#160;Server 2005 or later.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">When to run this report</h2>
+        <p class="Body">You should run the Tempdb Statistics report to view different space utilization and data throughput statistics currently occurring on your monitored SQL&#160;Server instances. This report allows you to obtain statistics through different metrics or chart types. Below a list of all possible metrics:</p>
+        <ul style="list-style-type: circle;">
+            <li>Data File Size MB</li>
+            <li>Data File Growth</li>
+            <li>Reads Per Second</li>
+            <li>Writes Per Second</li>
+            <li>Transactions Per Second</li>
+            <li>User Objects MB</li>
+            <li>Internal Objects MB</li>
+            <li>Version Store MB</li>
+            <li>Mixed Extents MB</li>
+        </ul>
+        <h2 class="Heading2">How SQLdm calculates metric values on this report</h2>
+        <p class="Body">Most values on the Tempdb Statistics report are averages of data from the system DMV sys.dm_db_file_space_usage on the monitored SQL&#160;Server. </p>
+        <p class="Body">You can access our <a href="http://www.idera.com/support" target="_blank">Customer Service Portal</a> (www.idera.com/support) for more information about the algorithm used to calculate a specific metric.</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">How does SQL diagnostic manager gather statistics from monitored SQL Servers? - Solution #00000055</li>
+        </ul>
+    </body>
+</html>

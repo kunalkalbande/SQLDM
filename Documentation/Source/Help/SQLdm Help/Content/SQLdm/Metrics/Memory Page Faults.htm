@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="296" MadCap:lastWidth="833">
+    <head><title>Memory Page Faults (Per Second) metric in Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">Memory Page Faults (Per Second)</h1>
+        <p class="Body">This metric calculates the page fault rate for all processes on the SQL Server computer.  The <code>WMI object Win32_PerfRawData_PerfOS_Memory</code> property <code>PagesPersec</code> is measured to get this value.   For optimal performance, the page fault rate should either be either 0 or very low. </p>
+        <h2 class="Heading2">Reduce memory page faults</h2>
+        <p class="Body">Use the following solutions to reduce the page fault rate if it rises above 100 for a period of time longer than a momentary spike:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Decrease the memory being used by stopping unnecessary programs such as the Print Spooler from running on the dedicated SQL Server computer. You should also eliminate activities such as the server acting as a PDC or BDC and (as a last resort) reducing the amount of memory SQL Server may consume.
+</li>
+            <li class="Bullet">Add more physical memory on the computer. 
+</li>
+            <li class="BulletLast">If the computer is running multiple instances of SQL Server, then consider moving each instance to a separate physical computer. 
+</li>
+        </ul>
+    </body>
+</html>

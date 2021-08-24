@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="914" MadCap:lastWidth="1047">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>View the Idera SQLdm database status</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">View database status</h1>
+        <p class="Body">SQLdm allows multiple simultaneous status indicators for each individual database, very similar to what you see in Microsoft SQL&#160;Server Management Studio. You can see the status of a database in the Servers tree by expanding the associated Server tree. The status displayed matches what is shown in Microsoft SQL&#160;Server Management Studio in all cases where Management Studio displays a status.</p>
+        <h2 class="Heading2">Database alerts and statuses</h2>
+        <p class="Body">The following alerts and statuses are associated with Database status:</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col class="Column-Column1" />
+            <col class="Column-Column2" />
+            <col class="Column-Column1" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Default Status Level</th>
+                    <th class="HeadE-Column2-Header1">Alert/Status</th>
+                    <th class="HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">OK</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Normal</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">Everything is okay and the database is operating normally.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">OK</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Standby</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">The database is in standby mode.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">OK</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Read Only</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">The database is in read-only mode.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">OK</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Single User</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">The database is in single-user mode.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">OK</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Restore Mirror</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">Restoring the database mirror.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">OK</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Undetermined</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">No information is available one this database.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">OK</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Cleanly Shut Down</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">The database is shut down and needs no recovery.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">OK</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">DBO&#160;Use Only</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">The database is in a dbo-use mode (restricted_user).</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Warning</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Restoring</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">Restoring the database.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Warning</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Recovering</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">Recovering the database.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Warning</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Recovery Pending</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">The database recovery is not yet begun.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Warning</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Offline</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">The database is offline.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Critical</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Suspect</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">The database integrity is suspect.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Critical</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Emergency Mode</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">The database is in emergency mode.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Critical</p>
+                    </td>
+                    <td class="BodyB-Column2-Body1">
+                        <p class="TableText">Inaccessible</p>
+                    </td>
+                    <td class="BodyA-Column1-Body1">
+                        <p class="TableText">The SQLdm Monitoring Service is unable to open the database. A serious issue such as a sik failure can cause an inaccessible database.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Change the default alert status level</h2>
+        <p class="Body">Alerting is based on the most critical status associated with a database at the time of collection.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Note that for certain metrics, using the informational alert means that you no longer receive a warning or critical alert for events generated by that metric. Please review the situation before setting up an informational alert.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="StepIntro">To change the default alert status level:</p>
+        <ol>
+            <li class="NumberedList">Right-click any server in the Servers tree.</li>
+            <li class="NumberedList">Select <span class="GUI_Item">Configure Alerts</span>.</li>
+            <li class="NumberedList">Select <span class="GUI_Item">Database Status</span> from the list of alerts.</li>
+            <li class="NumberedList">Double-click any of the values on the <span class="GUI_Item">Configuration</span> tab.</li>
+            <li class="NumberedList">Edit each alert to associate it with the desired alert status level.</li>
+        </ol>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="1"
+  Comment="SQLdm Help"
+  Type="HtmlHelp"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  DefaultUrl="/Content/SQLdm/Welcome to SQLdm.htm"
+  MasterPage="/Content/Resources/MasterPages/Splash Page.flmsp"
+  ConditionTagExpression="include[Default.ScreenOnly or Default.SEO] exclude[Default.Google or &quot;Default.Internal Only&quot; or Default.PDFOnly or Default.PrintOnly] "
+  MasterStylesheet="/Content/Resources/Stylesheets/Idera Stylesheet.css"
+  GetLatestBeforeCompile="false"
+  InjectDocType="false"
+  OutputFile="SQLdm Help"></CatapultTarget>

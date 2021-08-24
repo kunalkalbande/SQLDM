@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="8" MadCap:lastHeight="1656" MadCap:lastWidth="813">
+    <head><title>Configure alerts</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure alerts</h1>
+        <p class="Body">
+            <MadCap:keyword term="Alerts:configure" />The Alert Configuration window allows you to set up alerts  for specific SQL&#160;Server instances. To open the Alert Configuration window with a SQL Server instance selected, right-click the instance, and then select <span class="GUI_Item">Configure Alerts</span>. You can set the acceptable thresholds using the following alert types:</p>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');" class="TableStyle-Idera_Table_Stylesheet" cellspacing="0">
+            <col class="Column-Column1" />
+            <col class="Column-Column2" />
+            <col class="Column-Column1" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">
+                        <p class="TableHeadRow">Alert Type</p>
+                    </th>
+                    <th class="HeadE-Column2-Header1">
+                        <p class="TableHeadRow">Color</p>
+                    </th>
+                    <th class="HeadD-Column1-Header1">
+                        <p class="TableHeadRow">Meaning</p>
+                    </th>
+                </tr>
+            </thead>
+            <tr class="Body-Body1">
+                <td class="BodyE-Column1-Body1">
+                    <p class="TableText">OK</p>
+                </td>
+                <td class="BodyE-Column2-Body1">
+                    <p class="TableText"><span style="color: #32cd32;">Green</span>
+                    </p>
+                </td>
+                <td class="BodyD-Column1-Body1">
+                    <p class="TableText">Acceptable threshold where SQLdm does not generate an alert.</p>
+                </td>
+            </tr>
+            <tr class="Body-Body1">
+                <td class="BodyE-Column1-Body1">
+                    <p class="TableText">Informational</p>
+                </td>
+                <td class="BodyE-Column2-Body1">
+                    <p class="TableText"><span style="color: #4169e1;">Blue</span>
+                    </p>
+                </td>
+                <td class="BodyD-Column1-Body1">
+                    <p class="TableText">Informational threshold where SQLdm generates an informational alert.</p>
+                </td>
+            </tr>
+            <tr class="Body-Body1">
+                <td class="BodyE-Column1-Body1">
+                    <p class="TableText">Warning</p>
+                </td>
+                <td class="BodyE-Column2-Body1">
+                    <p class="TableText"><span style="color: #ffd700;">Yellow</span>
+                    </p>
+                </td>
+                <td class="BodyD-Column1-Body1">
+                    <p class="TableText">Warning threshold where SQLdm generates a warning alert.</p>
+                </td>
+            </tr>
+            <tr class="Body-Body1">
+                <td class="BodyE-Column1-Body1">
+                    <p class="TableText">Critical</p>
+                </td>
+                <td class="BodyE-Column2-Body1">
+                    <p class="TableText"><span style="color: #ff0000;">Red</span>
+                    </p>
+                </td>
+                <td class="BodyD-Column1-Body1">
+                    <p class="TableText">Critical threshold where SQLdm generates a critical alert.</p>
+                </td>
+            </tr>
+        </table>
+        <p class="Body">In addition to setting the thresholds for specific alerts, you can customize your alerts by adding comments to each alert. Comments allow you to include instructions to users when a level reaches a particular threshold or to provide additional information about the alert. You can also customize the levels at which SQLdm provides alert notifications by changing the informational, warning, and critical values either on the Configuration tab of the Alert Configuration window or, for database- and disk-level alerts, on the Database Threshold Configuration window available by selecting the database or disk, and then clicking <span class="GUI_Item">Edit</span>.</p>
+        <p class="Body">You can also <a href="Base Alerts on Past Performance.htm">base your alerts on the past performance</a> of the metrics collected by SQLdm. This is a powerful and effective way to make sure that the alerts you receive are outside of your typical metric ranges.</p>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col />
+            <col style="width: 626px;" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">For each alert metric, you can enter the specific criteria by double-clicking the values on the Configuration tab.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="StepIntro">To configure an alert:</p>
+        <ol>
+            <li class="NumberedList">Right-click a SQL&#160;Server instance in the Servers tree.</li>
+            <li class="NumberedList">Select <span class="GUI_Item">Configure Alerts</span>.</li>
+            <li class="NumberedList">Select the metric you want to edit from the list in the <span class="GUI_Item">Alert Configuration</span> window.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If the metric features a per-database or per-disk alert</span>, on the Configuration tab of the Alert Configuration window, click <span class="GUI_Item">Add</span>. Use the drop-down list to select the database or disk to which you want to apply these settings. <span class="If_Then_Statement"> If the metric applies at the instance level</span>, continue with the next step.</li>
+            <li class="NumberedList">Check  the boxes next to <span class="GUI_Item">Informational</span>, <span class="GUI_Item">Warning</span>, and <span class="GUI_Item">Critical </span>to include alerts for these states.</li>
+            <li class="NumberedList">Change the alert thresholds by moving the arrows to the appropriate levels or by double-clicking the value and typing a new threshold level.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If the metric features a per-database or per-disk alert</span>, click <span class="GUI_Item">Advanced </span>to apply any advanced settings, such as <a href="Configure alert suppression.htm" target="_self">alert suppression</a> or <a href="Configure size remaining.htm" target="_self">autogrow settings</a>. Click <span class="GUI_Item">OK</span>. <span class="If_Then_Statement"> If the metric applies at the instance level</span>, continue with the next step.</li>
+            <li class="NumberedList">Select the <span class="GUI_Item">Comments</span> tab and enter information you want displayed in the alert message for this metric.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Apply</span>.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you want to replicate these edits to other SQL&#160;Server instance SQLdm is monitoring, tags, or templates</span>, click <span class="GUI_Item">Yes</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span> to accept your changes.</li>
+        </ol>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col>
+            </col>
+            <col style="width: 626px;">
+            </col>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Note that when you modify  an alertable metric in the Alert Configuration window, the <span class="GUI_Item">Create Template</span> button is disabled. Once you apply the modification, this command button is enabled again.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Alert refresh</h2>
+        <p class="Body">A full refresh of alerts excluding table fragmentation occurs in the following circumstances even if longer collection intervals are defined: </p>
+        <ul>
+            <li class="Bullet">when the collection service starts</li>
+            <li class="Bullet">when the collection service receives a new workload, such as redirecting the Management Service to a new Repository</li>
+            <li class="Bullet">when you add a SQL&#160;Server for collection</li>
+            <li class="Bullet">when a SQL&#160;Server resumes from Maintenance Mode</li>
+            <li class="Bullet">when a user selects Refresh Alerts</li>
+        </ul>
+        <p class="Body">This refresh does not cause collection of non-alertable data, nor cause collection of anything that is disabled.</p>
+        <h2 class="Heading2">Table Fragmentation alert thresholds</h2>
+        <p class="Body">SQLdm updates Table Fragmentation alerts with new threshold information only when new data is generated during the table statistics collection interval. It is preferred that you set your table statistics collection interval to occur when your server is not performing any production tasks. </p>
+        <p class="Body">Because this data collection occurs at most once per day and you can configure it to run as infrequently as once per week, you may experience a significant delay before new alerts are generated with your new alert threshold. You can <a href="Configure Wait Monitoring.htm">configure your wait monitoring using the Monitored SQL Server Properties window</a>.</p>
+        <h2 class="Heading2">Apply different alert thresholds to multiple databases or disks</h2>
+        <p class="Body">Some of the available alerts allow you to apply them independently to multiple databases or disks on your monitored SQL&#160;Server instance. When you click the alert to modify the thresholds, notice that a list of your databases or disks appears with the associated thresholds as they are currently set. Click <span class="GUI_Item">Edit </span>to make your changes. The <a href="Configure database thresholds.htm" target="_self">Database Threshold Configuration dialog</a> lets you specify the database, and then select the thresholds for that database only. The <a href="Configure disk thresholds.htm" target="_self">Disk Threshold Configuration dialog</a> provides the same functionality, only disks replace the databases. </p>
+        <h2 class="Heading2">Alert templates</h2>
+        <p class="Body">SQLdm allows you to configure generic alert settings as a template that you can apply to servers and groups of servers in your organization. Click <span class="GUI_Item">Tools &gt;&#160;Alert Configuration Templates</span> and complete the required fields to <a href="Configure Alert Templates.htm">configure an alert template</a>.</p>
+        <h2 class="Heading2">Informational alerts</h2>
+        <p class="Body">Informational alerts allow you to set a threshold that, when generated, triggers a status that does not affect the overall status of the server within SQLdm. You can use informational alerts to notify an administrator of the state of a particular metric for a server or trigger secondary processes that could take action to prevent issue escalation.</p>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col>
+            </col>
+            <col style="width: 626px;">
+            </col>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Note that for certain metrics, using the informational alert means that you no longer receive a warning or critical alert for events generated by that metric. Please review the situation before setting up an informational alert.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

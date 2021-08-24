@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="7" MadCap:lastHeight="4972" MadCap:lastWidth="737">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Server Configuration Properties view in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Server Configuration Properties</h1>
+        <p class="Body">
+            <MadCap:keyword term="Server Configuration Properties" />The Server Configuration Properties view provides the current configuration settings for each of your monitored SQL&#160;Server instances and allows for some changes directly in this window rather than leaving this view to access the properties page. The grid layout allows you to quickly scroll down in the column for a specific setting, and verify that the setting is correct in all of your instances. </p>
+        <p class="Body">You can sort your results in ascending or descending order for each column by clicking the column header. Right-click a column header to select other column options, including grouping by the selected column, hiding a column, or opening the <span class="GUI_Item">Group By</span> box for additional options.</p>
+        <h2 class="Heading2">Access the Server Configuration Properties view</h2>
+        <p class="Body">SQLdm provides two paths to access the Server Configuration Properties view. The first access path is by clicking <span class="GUI_Item">All Servers</span>, and then clicking the <span class="GUI_Item">Show Server Configuration Properties</span> icon on the far right. The second access path is by right-clicking <span class="GUI_Item">All Servers</span>, and then clicking <span class="GUI_Item">View All Server Properties</span>. By default, the All Servers view displays your monitored SQL&#160;Server instances in the thumbnail view.</p>
+        <h2 class="Heading2">Performing general tasks in this view</h2>
+        <p class="Body">The Server Configuration Properties view provides the following actions by right-clicking a row, and then selecting the task you want to perform:</p>
+        <p class="DefinitionListTerm">Open</p>
+        <p class="DefinitionListBody">Opens the Dashboard view for the selected monitored SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Refresh Alerts</p>
+        <p class="DefinitionListBody">Gathers the alert status and refreshes the tree view information   for the selected monitored SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Delete</p>
+        <p class="DefinitionListBody">Allows you to delete the SQL&#160;Server instance from your SQLdm installation. When you select <span class="GUI_Item">Delete</span>, SQLdm displays a message asking whether you want to retain the collected data for the SQL&#160;Server instance, and it also allows you to cancel out of the deletion process.</p>
+        <ol MadCap:continue="true">
+            <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                            <p class="TableHeadRow">TIP</p>
+                        </td>
+                        <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                            <p class="TableText">You cannot retrieve collected data once it is deleted from the SQLdm Repository. Use the <span class="GUI_Item">Delete </span>option with care.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ol>
+        <p class="DefinitionListTerm">Collapse All Groups</p>
+        <p class="DefinitionListBody">Allows you to collapse the contents of a group of monitored SQL&#160;Server instances.</p>
+        <p class="DefinitionListTerm">Expand All Groups</p>
+        <p class="DefinitionListBody">Allows you to expand the contents of a group of monitored SQL&#160;Server instances.</p>
+        <p class="DefinitionListTerm">Print</p>
+        <p class="DefinitionListBody">Allows you to print the grid of your monitored SQL&#160;Server instances and their configured properties.</p>
+        <p class="DefinitionListTerm">Export To Excel</p>
+        <p class="DefinitionListBody">Allows you to export the grid of your monitored SQL&#160;Server instances and their configured properties to Microsoft Excel.</p>
+        <p class="DefinitionListTerm">Properties</p>
+        <p class="DefinitionListBodyLast">Opens the Monitored SQL&#160;Server Properties window for the selected instance.</p>
+        <h2 class="Heading2">Server Configuration Properties view contents</h2>
+        <p class="Body">When you select the Server Configuration Properties view, SQLdm displays a grid containing each of the settings for all of your monitored SQL&#160;Server instances. This information is updated each time the SQLdm Collection Service runs. Some cells allow you to make changes on this view while others are managed in other areas in SQLdm, which are accessible by double-clicking the cell you want to change. SQLdm displays the Change icon in the <span class="GUI_Item">Changed?</span> column for the row in which you made the change. Make sure you click <span class="GUI_Item">Save Changes</span> once you made the necessary change. Click <span class="GUI_Item">Reset Changes</span> to revert all unsaved changes you made on this view. The Change icon helps remind you to save your changes as shown in the following image.</p>
+        <p class="Image">
+            <img src="../Resources/Images/Server Config Changes.bmp" title="Server Configuration Properties changes" />
+        </p>
+        <p class="Body">The Server Configuration Properties view contains the following properties:</p>
+        <p class="DefinitionListTerm">Active Cluster Node</p>
+        <p class="DefinitionListBody">Displays the name of the active cluster node on this monitored SQL&#160;Server instance. For more information about this setting, see <a href="Configure Cluster Settings.htm" target="_self">Configure cluster settings</a>.</p>
+        <p class="DefinitionListTerm">Alert Refresh</p>
+        <p class="DefinitionListBody">Displays the interval (in hours, minutes, and seconds) between times when the service collects diagnostic data and raises the associated alerts. Use a value between 30 seconds and 30 minutes. Lower values result in a faster triggered alert, but also cause more frequent refreshes, which may increase monitoring overhead. You can modify this setting directly in this view. Click in the appropriate field, make your change, and then click <span class="GUI_Item">Save Changes</span>. For more information about this setting, see <a href="Set general server options.htm" target="_self">Set general server options</a>.</p>
+        <p class="DefinitionListTerm">Authentication Mode</p>
+        <p class="DefinitionListBody">Displays the authentication mode used by the SQLdm Collection Service to collect diagnostic data from the monitored SQL&#160;Server instance. For more information about this setting, see <a href="Set general server options.htm" target="_self">Set general server options</a>.</p>
+        <p class="DefinitionListTerm">Activity Monitor Enabled</p>
+        <p class="DefinitionListBody">Displays whether monitoring of non-query activities is enabled. The monitoring of non-query activities captures autogrow events, deadlocks, and blocks. For more information about this setting, see <a href="Set non-query monitor options.htm" target="_self">Set activity monitor options</a>.</p>
+        <p class="DefinitionListTerm">Baseline Date Range</p>
+        <p class="DefinitionListBody">Displays the period of time over which the server baseline is calculated. For more information about this setting, see <a href="Configure server baseline options.htm" target="_self">Set server baseline options</a>.</p>
+        <p class="DefinitionListTerm">Baseline Time Period</p>
+        <p class="DefinitionListBody">Displays the date range over which the server baseline is calculated. For more information about this setting, see <a href="Configure server baseline options.htm" target="_self">Set server baseline options</a>.</p>
+        <p class="DefinitionListTerm">Changed?</p>
+        <p class="DefinitionListBody">Displays an edit icon to indicate that this row includes a change from the last time the data was saved. Click <span class="GUI_Item">Save Changes</span> to retain any changes made in this view. Click <span class="GUI_Item">Reset Changes</span> to revert to the most-recently saved server configuration properties.</p>
+        <p class="DefinitionListTerm">Check Server Accessibility</p>
+        <p class="DefinitionListBody">Displays the interval (in hours, minutes, and seconds) between times when the server availability is verified. Use a value between 30 seconds and 10 minutes. If a <code>select 1</code> query cannot execute in this timeframe, then the server is considered unresponsive.  Setting your server availability check to a very low value may result in false positive alerts. You can modify this setting directly in this view. Click in the appropriate field, make your change, and then click <span class="GUI_Item">Save Changes</span>. For more information about this setting, see <a href="Set general server options.htm" target="_self">Set general server options</a>.</p>
+        <p class="DefinitionListTerm">Database Statistics Refresh</p>
+        <p class="DefinitionListBody">Displays the interval (in hours, minutes, and seconds) between times when the database space-related data is collected and associated alerts are raised. Use a value between one minute and 24 hours. Setting your database statistics refresh to a low value may result in false positive alerts. A low setting also causes refreshes to occur more often, which increases the monitoring overhead. In environments with a large number of databases whose sizes do not change rapidly, setting this refresh to a long interval can greatly reduce your monitoring footprint. You can modify this setting directly in this view. Click in the appropriate field, make your change, and then click <span class="GUI_Item">Save Changes</span>. For more information about this setting, see <a href="Set general server options.htm" target="_self">Set general server options</a>.</p>
+        <p class="DefinitionListTerm">Deadlock Monitoring</p>
+        <p class="DefinitionListBody">Displays the current state of deadlock monitoring, which raises alerts for deadlocked sessions on your  monitored SQL Server instance.  Deadlock monitoring is supported on monitored servers running SQL Server 2005 or greater and is dependent on enabling the monitoring of non-query activities in the Activity Monitor window.  For more information about this setting, see <a href="Set non-query monitor options.htm" target="_self">Set activity monitor options</a>.<p>&#160;</p></p>
+        <p class="DefinitionListTerm">Disk Collection Settings</p>
+        <p class="DefinitionListBody">Displays whether the connected disk drives are discovered automatically. For more information about this setting, see <a href="Customize Disk Statistics.htm" target="_self">Customize disk statistics</a>.</p>
+        <p class="DefinitionListTerm">Error Log Alerting Enabled</p>
+        <p class="DefinitionListBody">Displays whether error log alerting is enabled, causing a specific error log collector to run. Error log alerting is considered enabled if either the SQL&#160;Server Agent Log or SQL&#160;Server Error Log alert is enabled. Note that these collectors may negatively affect performance. You can reduce the impact of error log reading by regularly cycling the server error logs. For more information about error log alerting, see <a href="Configure Alerts for Your.htm" target="_self">Configure alerts</a>.</p>
+        <p class="DefinitionListTerm">Fragmentation Min. Table Size (KB)</p>
+        <p class="DefinitionListBody">Displays the minimum size, in kilobytes, a table must meet before fragmentation statistics are collected. Use a value between 0 KB and 999999 KB. Fragmentation statistics are only gathered on tables with clustered indexes. You can modify this setting directly in this view. Click in the appropriate field, make your change, and then click <span class="GUI_Item">Save Changes</span>. For more information about this setting, see <a href="Edit Table Statistics Options.htm" target="_self">Edit table statistics options</a>.</p>
+        <p class="DefinitionListTerm">InputBuffer Limiter</p>
+        <p class="DefinitionListBody">Displays the limit of the executions performed by the DBCC&#160;Inputbuffer. This command retrieves the actual input command for the Session Details view, among others. Note that on busy servers, limiting this value can reduce monitoring impact. For more information about this setting, see <a href="Set general server options.htm" target="_self">Set general server options</a>.</p>
+        <p class="DefinitionListTerm">Job Alerting Enabled</p>
+        <p class="DefinitionListBody">Displays whether job alerting is enabled, causing a specific job alerts collector to run. Job alerting is considered enabled if one of the following alerts is enabled: </p>
+        <ul>
+            <li class="Bullet-Def-Body"><a href="Alerts/Agent Job Completion.htm" target="_self">SQL&#160;Server Agent Job Completion</a>
+            </li>
+            <li class="Bullet-Def-Body"><a href="Alerts/SQL Server Agent Job Failure.htm" target="_self">SQL&#160;Server Agent Job Failure</a>
+            </li>
+            <li class="Bullet-Def-Body"><a href="Alerts/Agent Long Running Job Min.htm" target="_self">SQL&#160;Server Agent Long Running Job (Minutes)</a>
+            </li>
+            <li class="Bullet-Def-Body-Last"><a href="Alerts/Agent Long Running Job Per.htm" target="_self">SQL&#160;Server Agent Long Running Job (Percent)</a>
+            </li>
+        </ul>
+        <p class="DefinitionListBody">For more information about job alerting, see <a href="Configure Alerts for Your.htm" target="_self">Configure alerts</a>.</p>
+        <p class="DefinitionListTerm">Last Fragmentation Collection</p>
+        <p class="DefinitionListBody">Displays the date and time of the most recent, successful table fragmentation collection. This timestamp is local to the monitored SQL&#160;Server instance. For more information about this setting, see <a href="Edit Table Statistics Options.htm" target="_self">Edit table statistics options</a>.</p>
+        <p class="DefinitionListTerm">Last Table Growth Collection</p>
+        <p class="DefinitionListBody">Displays the date and time of the most recent, successful table statistics collection. This timestamp is local to the monitored SQL&#160;Server instance. For more information about this setting, see <a href="Edit Table Statistics Options.htm" target="_self">Edit table statistics options</a>.</p>
+        <p class="DefinitionListTerm">Linked Custom Counters (Count)</p>
+        <p class="DefinitionListBody">Displays the total number of custom counters monitored on this SQL&#160;Server instance. For more information about this setting, see <a href="Link or Tag Custom Counters.htm" target="_self">Link or tag custom counters</a>.</p>
+        <p class="DefinitionListTerm">Linked Custom Counters (List)</p>
+        <p class="DefinitionListBody">Displays the name for each custom counter monitored on this SQL&#160;Server instance. For more information about this setting, see <a href="Link or Tag Custom Counters.htm" target="_self">Link or tag custom counters</a>.</p>
+        <p class="DefinitionListTerm">Maintenance Mode</p>
+        <p class="DefinitionListBody">Displays the occasions when this server is in maintenance mode. Options include <span class="GUI_Item">Never</span>, <span class="GUI_Item">Until further notice</span>, <span class="GUI_Item">Recurring every week at the specified time</span>, and <span class="GUI_Item">Occurring once at the specified time</span>. For more information about this setting, see <a href="Schedule Maintenance Mode.htm" target="_self">Schedule maintenance mode</a>.</p>
+        <p class="DefinitionListTerm">OS&#160;Metrics Collection</p>
+        <p class="DefinitionListBody">Displays whether SQLdm uses OLE automation or a direct connection to Windows Management Interface (WMI) to collect operating system and disk statistics.  Disabling this setting prevents the collection of certain metrics in SQLdm, but may lessen the monitoring overhead. For more information about this setting, see <a href="Configure OS metrics.htm" target="_self">Configure OS metrics</a>.</p>
+        <p class="DefinitionListTerm">Preferred Cluster Node</p>
+        <p class="DefinitionListBody">Displays the name of the preferred cluster node on this monitored SQL&#160;Server instance. You can modify this setting directly in this view. Click in the appropriate field, make your change, and then click <span class="GUI_Item">Save Changes</span>. For more information about this setting, see <a href="Configure Cluster Settings.htm" target="_self">Configure cluster settings</a>.</p>
+        <p class="DefinitionListTerm">Query Monitor Enabled</p>
+        <p class="DefinitionListBody">Displays whether query monitoring is enabled. The Query Monitor collects poorly-performing queries such as SQL batches, statements, stored procedures, and triggers. Low thresholds  for query monitoring may impact performance. For more information about this setting, see <a href="Set query monitor options.htm" target="_self">Set Query Monitor options</a>.</p>
+        <p class="DefinitionListTerm">Query Monitor Thresholds</p>
+        <p class="DefinitionListBody">Displays the various threshold types for query monitoring. Note that low thresholds for the query monitoring impacts performance. For more information about these settings, see <a href="Set query monitor options.htm" target="_self">Set Query Monitor options</a>.</p>
+        <p class="DefinitionListTerm">Query Waits</p>
+        <p class="DefinitionListBody">Displays the date and time when the query-level wait statistics are collected or whether they are collected indefinitely. By default, these statistics are available only when the <a href="View query waits.htm">Query Waits view</a> is open. Collection of query waits is a performance-intensive operation. For more information about this setting, see <a href="Configure Wait Monitoring.htm" target="_self">Configure wait monitoring</a>.</p>
+        <p class="DefinitionListTerm">Query Waits Filters</p>
+        <p class="DefinitionListBody">Displays the filter configuration of the query-level wait statistics for this monitored SQL&#160;Server instance, including which applications, databases, and SQL text you want to exclude from the query wait statistics collection. Collection of query waits is a performance-intensive operation and excluding unnecessary data can reduce the monitoring footprint. For more information about this setting, see <a target="_self" href="Configure Advanced Query Wait Statistics.htm">Configure advanced query wait options</a>.</p>
+        <p class="DefinitionListTerm">Replication Monitoring Disabled</p>
+        <p class="DefinitionListBody">Displays whether replication statistics collection is disabled. Replication monitoring can cause excess monitoring overhead in some environments and is not necessary for all servers. You can modify this setting directly in this view. Click in the appropriate field to make your change, and then click <span class="GUI_Item">Save Changes</span>. For more information about this setting, see <a href="Disable replication statistics collection.htm" target="_self">Disable replication statistics collection</a>.</p>
+        <p class="DefinitionListTerm">Server Name</p>
+        <p class="DefinitionListBody">Displays the name of the monitored SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">Session History Browser Collection Disabled</p>
+        <p class="DefinitionListBody">Displays whether extended session data collection is disabled, including collection of session details, locks, and blocks. Collection of this data allows you to view past session detail, lock, and block information, but incurs extra monitoring overhead to provide this data.  This data also requires extra space in the SQLdm Repository. You can modify this setting directly in this view. Click in the appropriate field to make your change, and then click <span class="GUI_Item">Save Changes</span>. For more information about this setting, see <a href="Set general server options.htm" target="_self">Set general server options</a>.</p>
+        <p class="DefinitionListTerm">SQL&#160;Edition</p>
+        <p class="DefinitionListBody">Displays the edition of SQL&#160;Server software used in this instance.</p>
+        <p class="DefinitionListTerm">SQL&#160;Server ID</p>
+        <p class="DefinitionListBody">Displays the identification number of the monitored SQL&#160;Server as used internally by SQLdm. You cannot modify this value.</p>
+        <p class="DefinitionListTerm">SQL&#160;Version</p>
+        <p class="DefinitionListBody">Displays the version of SQL&#160;Server software used in this instance.</p>
+        <p class="DefinitionListTerm">Table Fragmentation Collection</p>
+        <p class="DefinitionListBody">Displays the days of the week and time of day when an attempt at table statistics collection occurs. For more information about this setting, see <a href="Edit Table Statistics Options.htm" target="_self">Edit table statistics options</a>.</p>
+        <p class="DefinitionListTerm">Table Growth Collection</p>
+        <p class="DefinitionListBody">Displays the days of the week and time of day when an attempt at table statistics collection occurs. For more information about this setting, see <a href="Edit Table Statistics Options.htm" target="_self">Edit table statistics options</a>.</p>
+        <p class="DefinitionListTerm">Table Statistics Excluded Databases (Count)</p>
+        <p class="DefinitionListBody">Displays the total number of databases excluded from table statistic collection. For more information about this setting, see <a href="Edit Table Statistics Options.htm" target="_self">Edit table statistics options</a>.</p>
+        <p class="DefinitionListTerm">Table Statistics Excluded Databases (List)</p>
+        <p class="DefinitionListBody">Displays the name of each database excluded from table statistic collection. For more information about this setting, see <a href="Edit Table Statistics Options.htm" target="_self">Edit table statistics options</a>.</p>
+        <p class="DefinitionListTerm">Virtualization Host Name</p>
+        <p class="DefinitionListBody">Displays the name of the host server on which this monitored SQL&#160;Server instance is running. This field applies only to SQL&#160;Server instances running on a virtual machine. For more information about virtualization configuration, see <a href="Configure Virtualization.htm" target="_self">Configure virtualization</a>.</p>
+        <p class="DefinitionListTerm">VM&#160;Name</p>
+        <p class="DefinitionListBodyLast">Displays the name of the virtual machine on which this monitored SQL&#160;Server instance is running. This field applies only to SQL&#160;Server instances running on a virtual machine. For more information about virtualization configuration, see <a href="Configure Virtualization.htm" target="_self">Configure virtualization</a>.</p>
+    </body>
+</html>

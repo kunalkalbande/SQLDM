@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="378" MadCap:lastWidth="1060">
+    <head><title>Configure Idera SQLdm alerts for important cluster events</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure alerts for important cluster events</h1>
+        <p class="Body">SQL diagnostic manager allows you to monitor your clustered SQL Server environment including alerts when a failover occurs and when the preferred active cluster node changes.</p>
+        <p class="Body">An important way to track clustering events using SQLdm is through the usage of cluster alerts.</p>
+        <p class="DefinitionListTerm">Cluster Failover Alert</p>
+        <p class="DefinitionListBody">By default, this alert is enabled and set to Critical. When a failover occurs, SQLdm generates an alert and then performs one of the following actions:</p>
+        <blockquote>
+            <blockquote>
+                <blockquote>
+                    <ul style="list-style-type: circle;">
+                        <li class="Bullet-Def-Body">Clears after 12 hours if no additional alerts are generated on the cluster.</li>
+                        <li class="Bullet-Def-Body">Generates an additional alert if another cluster failover occurs.</li>
+                        <li class="Bullet-Def-Body-Last">Clears instantly when manually cleared.</li>
+                    </ul>
+                </blockquote>
+            </blockquote>
+        </blockquote>
+        <p class="DefinitionListTerm">Cluster Active Node Alert</p>
+        <p class="DefinitionListBody">The active node of the cluster is a non-preferred node. You can change this setting on the <a href="Configure Cluster Settings.htm" target="_self">Cluster Settings tab</a> of the Monitored SQL Server Properties dialog box. The Cluster Active Node is triggered when SQLdm detects that a clustered SQL&#160;Server instance is running on a node other than the configured preferred node.</p>
+        <h2 class="Heading2">Best practices for using the Cluster Alerts</h2>
+        <p class="Body">Choose the alert that best reflects your environment and setup notifications for it. Disable the other alert if it is not necessary.</p>
+    </body>
+</html>

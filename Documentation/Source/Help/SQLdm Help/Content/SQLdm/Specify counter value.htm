@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1106" MadCap:lastWidth="807">
+    <head>
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Specify Idera SQLdm custom counter value</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Specify counter value</h1>
+        <p class="Body">The Custom Counter Value window of the Add Custom Counter wizard allows you to select the type of calculation used by your counter and set a scale factor so that your counter information displays values in their correct format. While the <span class="GUI_Item">Scale </span>drop-down list displays the same scale factors available in PerfMon, you can also type in a custom scale factor to use.</p>
+        <p class="DefinitionListTerm">Custom Calculation Type</p>
+        <p class="DefinitionListBody">Choose to either have your counter display the value collected or calculate the value per second between refreshes.</p>
+        <p class="DefinitionListTerm">Customize Scale Factor</p>
+        <p class="DefinitionListBodyLast">Select a custom scale to convert the value into a more manageable number.</p>
+        <h2 class="Heading2">Access the Add Custom Counter wizard</h2>
+        <p class="Body">You can open the Add Custom Counter wizard by clicking <span class="GUI_Item">Administration &gt;&#160;Custom Counters</span>, and then clicking <span class="GUI_Item">Add </span>in the Custom Counters view.</p>
+        <h2 class="Heading2">Scale factor examples</h2>
+        <p class="Body">The following table covers some conversion factors that allows you to precisely convert common units:</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col class="Column-Column1" />
+            <col class="Column-Column2" />
+            <col class="Column-Column1" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">
+                        <p class="TableHeadRow">Collected Value</p>
+                    </th>
+                    <th class="HeadE-Column2-Header1">
+                        <p class="TableHeadRow">Desired Value</p>
+                    </th>
+                    <th class="HeadD-Column1-Header1">
+                        <p class="TableHeadRow">Scale Factor</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Kilobyte</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Byte</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">1024</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Megabyte</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Byte</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">1048576</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Megabyte</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Kilobyte</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">1024</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Gigabyte</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Kilobyte</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">1048576</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Terabyte</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Megabyte</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">1048576</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Terabyte</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Gigabyte</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">1024</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Byte</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Kilobyte</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">0.0009765625</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Byte</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Megabyte</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">0.000000953674316</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Kilobyte</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Megabyte</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">0.0009765625</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Kilobyte</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Gigabyte</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">0.0009765625</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Megabyte</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Gigabyte</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">0.0009765625</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Megabyte</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Terabyte</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">0.000000953674316</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Gigabyte</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Terabyte</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">0.0009765625</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Kilobyte</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">SQL&#160;Server Page</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">0.125</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Megabyte</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">SQL&#160;Server Page</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">128</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Gigabyte</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">SQL&#160;Server&#160;Page</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">131072</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">SQL&#160;Server&#160;Page</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Kilobyte</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">8</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">SQL&#160;Server page</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Megabyte</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">0.007813</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">SQL&#160;Server Page</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Gigabyte</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">0.000007629395</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Kilobyte</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">SQL&#160;Server Extent</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">0.015625</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Megabyte</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">SQL&#160;Server Extent</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">16</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Gigabyte</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">SQL&#160;Server Extent</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">16384</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">SQL&#160;Server Extent</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Kilobyte</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">64</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">SQL&#160;Server Extent</p>
+                    </td>
+                    <td class="BodyE-Column2-Body1">
+                        <p class="TableText">Megabyte</p>
+                    </td>
+                    <td class="BodyD-Column1-Body1">
+                        <p class="TableText">0.0625</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">SQL&#160;Server Extent</p>
+                    </td>
+                    <td class="BodyB-Column2-Body1">
+                        <p class="TableText">Gigabyte</p>
+                    </td>
+                    <td class="BodyA-Column1-Body1">
+                        <p class="TableText">0.000061035156</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

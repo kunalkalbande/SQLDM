@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1775" MadCap:lastWidth="571">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Configure your virtual machine connections in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure your virtual machine connections</h1>
+        <p class="Body">
+            <MadCap:keyword term="Virtualization;VM;VMware;Virtual Machine;ESX;Virtual;Host;vCenter;Hyper-V" />The VM Configuration window allows you to associate your monitored virtual SQL&#160;Server instances with the virtualization host server that manages your VMs and the VM&#160;on which the monitored SQL&#160;Server instance is running. </p>
+        <p class="Body">Virtual machines appearing in the list are based on the permissions for the user account typed into the Virtualization Host Configuration dialog box. To view a specific VM, you must have the View permission on all parent folders.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Remember to renew your link after changing the name of a virtual machine. Once the name change is complete, simply open the VM&#160;Configuration window and wait until after SQLdm is done contacting the vCenter server or Hyper-V Host server to get a list of your VM names. Note that your updated VM name already appears in the list. Click <span class="GUI_Item">OK </span>to save the new name to the list of VMs. If you do not update the name, this action occurs again the next time you access the VM&#160;Configuration window.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Access the VM&#160;Configuration window</h2>
+        <p class="Body">To open the VM Configuration window, select <span class="GUI_Item">Tools &gt; VM&#160;Configuration</span>, or click <span class="GUI_Item">VM&#160;Configuration</span> from the Manage Servers window. You can also access this window from the Virtualization tab of the Server Properties window by clicking the <span class="GUI_Item">VM&#160;Configuration</span> button.</p>
+        <h2 class="Heading2">Add a host server</h2>
+        <p class="Body">SQLdm allows you to add a new host server through the VM Configuration window. Click <span class="GUI_Item">New</span>, and then complete the access information for the server. When you complete all the available fields, SQLdm allows you to verify connectivity with this server. Click <span class="GUI_Item">Test </span>to make sure you typed the correct access credentials. Click <span class="GUI_Item">OK </span>after a successful test.</p>
+        <h2 class="Heading2">
+            <img src="../Resources/Images/Adding a virtualization Host server.gif" style="width: 421px;height: 391px;" />
+        </h2>
+        <h2 class="Heading2">Verify your connection to the host server</h2>
+        <p class="Body">You can test the connection to your listed host servers by selecting the appropriate server from the list, and then clicking <span class="GUI_Item">Test</span>. SQLdm displays an icon with your current connection status. If the connection fails, click <span class="GUI_Item">View/Edit</span> and verify your connection details. Make the necessary changes to access your host server, click <span class="GUI_Item">Test</span>, and then click <span class="GUI_Item">OK </span>to save your changes after a successful test.</p>
+        <h2 class="Heading2">Associate a monitored SQL&#160;Server instance to a VM</h2>
+        <p class="Body">Once you add your SQL&#160;Server instances to SQLdm for monitoring, you must associate them with their host server and virtual machine.</p>
+        <p class="StepIntro">To associate a monitored SQL&#160;Server instance to a virtual machine:</p>
+        <p class="StepIntro">
+            <img src="../Resources/Images/Linking instances to VMs_final_8.5.gif" style="width: 439px;height: 408px;" />
+        </p>
+        <ol>
+            <li class="NumberedList">Verify that the instance you want to associate to the host appears in the list.</li>
+            <li class="NumberedList">Click the <span class="GUI_Item">Virtualization</span> column for the appropriate virtual instance, and then select the associated host server from the drop-down list.</li>
+            <li class="NumberedList">Click the <span class="GUI_Item">Virtual Machine</span> column, and then select the name of the virtual machine where this instance resides. SQLdm populates this drop-down list based on the servers on the selected host server.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Link Instances to VMs</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK </span>to save your changes and close this window.</li>
+        </ol>
+    </body>
+</html>

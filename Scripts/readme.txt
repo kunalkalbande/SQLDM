@@ -1,0 +1,1 @@
+This folder is for scripts such as database create, upgrade, etc.

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="402" MadCap:lastWidth="824">
+    <head><title>Data Used (Percent) metric in Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">Data Used (Percent)</h1>
+        <p class="Body">The Data Used (Percent) metric calculates the size of all data files used as a percent of the added allocated size of all data files.
+</p>
+        <p class="Body">In a typical medium-to-large-scale OLTP environment with a data file size of over 50 GB, this value slowly increases over time in a linear fashion with the population of any available history tables. </p>
+        <h2 class="Heading2">Reduce the percentage of data used</h2>
+        <p class="Body">If your site experiences a sudden sharp increase in this value of over 10% in an hour, investigate the issue to fully understand the underlying causes which often lead to poor performance. Possible causes include: 
+</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">A large number of rows were inserted into a table. If so, then make sure that the table is not fragmented due to this operation. To verify, run <code>DBCC SHOWCONTIG</code>.
+</li>
+            <li class="Bullet">An index with very poor cardinality (uniqueness) was added to a large table. Indexes with poor cardinality often exceed the size of the underlying table itself and in almost all cases are not  used by any SQL Server query.
+</li>
+            <li class="BulletLast">A large number of rows were incorrectly changed by performing an insert of a new row followed by a delete of the old row. Although the net effect of the change is essentially the same number of rows; the database would have grown significantly in size and require you to issue a <code>DBCC SHRINKDATABASE</code>. It is likely that the table is also fragmented because the inserts were done before the deletes so run <code>DBCC SHOWCONTIG</code>. Always delete the old rows out of a table first before inserting the new rows; otherwise the tables are fragmented more quickly, databases increase in size, and  the performance of the transactions is degraded due to the large number of page splits the table had to undergo.
+</li>
+        </ul>
+    </body>
+</html>

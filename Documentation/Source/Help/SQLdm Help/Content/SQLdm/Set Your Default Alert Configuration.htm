@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="1001" MadCap:lastWidth="810">
+    <head><title>Set Your Default Alert Configuration</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1 class="Heading1">Set your default alert configuration</h1>
+        <p class="Body">SQLdm allows you to customize the thresholds that generate informational, warning, and critical alerts and notifications. In addition, you can add comments to the alert that appear whenever an alert is generated. SQLdm provides you with the ability to create a default alert configuration so that all new SQL&#160;Server instances you add to SQLdm use the same template, reducing the amount of time it takes you to tweak alert configurations.</p>
+        <table style="caption-side: top;border-left-style: solid;border-left-width: 1px;border-left-color: #a1b5b0;border-right-style: solid;border-right-width: 1px;border-right-color: #a1b5b0;border-top-style: solid;border-top-width: 1px;border-top-color: #a1b5b0;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #a1b5b0;border-collapse: collapse;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col />
+            <col />
+            <tr>
+                <td style="background-color: #ff4500;" class="TableStyle_Tip_Style_Body_0_0_RowSep_ColSep">
+                    <p class="TableHeadRow"><span style="color: #ffffff;">TIP</span>
+                    </p>
+                </td>
+                <td class="TableStyle_Tip_Style_Body_0_1_RowSep_ColEnd">
+                    <p class="TableText">Make sure you review the list of every <a href="Alert ID.htm">default alert ID</a>, its description, and what events are associated with it before changing your alert configuration.</p>
+                </td>
+            </tr>
+        </table>
+        <h2 class="Heading2">Customize your alerts</h2>
+        <p class="Body">The Alert Configuration window allows you to customize the thresholds that generate informational, warning, and critical alerts and notifications for all of your currently monitored metrics.</p>
+        <p class="StepIntro">To customize your alert configuration:</p>
+        <ol>
+            <li class="NumberedList">Right-click the SQL Server instance you want to edit from the Servers tree, and then select <span class="GUI_Item">Configure Alerts</span>.</li>
+            <li class="NumberedList">Select each of the metrics you want to edit from the list. <span class="If_Then_Statement">If you are satisfied with how your metrics are set up</span>, skip steps 4 and 5.</li>
+            <li class="NumberedList">Check  the <span class="GUI_Item">Informational</span>, <span class="GUI_Item">Warning</span>, and <span class="GUI_Item">Critical </span>check boxes to include alerts for these states.</li>
+            <li class="NumberedList">Change the alert thresholds by moving the arrows to the appropriate levels.</li>
+            <li class="NumberedList">Select the <span class="GUI_Item">Comments</span> tab, and then type the information you want displayed in the alert message for this metric.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Apply</span>.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you want to replicate your edits to other monitored SQL&#160;Server instances, tags, or templates</span>, click <span class="GUI_Item">Yes</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span> to accept your changes.</li>
+        </ol>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col>
+            </col>
+            <col style="width: 626px;">
+            </col>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Note that when you modify  an alertable metric in the Alert Configuration window, the <span class="GUI_Item">Create Template</span> button is disabled. Once you apply the modification, this command button is enabled again.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Set up your default alert configuration</h2>
+        <p class="Body">
+            <MadCap:keyword term="Alerts:default" />The Default Alert Configuration window allows you to configure standard alerts for every SQL&#160;Server instance that is added to SQLdm. SQLdm uses this alert template each time you register a new SQL&#160;Server instance so that you can use all the same alert thresholds on the collected metrics.</p>
+        <p class="StepIntro">To set up your alert configuration:</p>
+        <ol>
+            <li class="NumberedList">Select a SQL&#160;Server from the Servers tree to use as the baseline for your template.</li>
+            <li class="NumberedList">Select <span class="GUI_Item">Tools &gt; Default Alert Configuration</span>.</li>
+            <li class="NumberedList">Select each of the metrics you want to edit from the list.<span class="If_Then_Statement"> If you are satisfied with how your metrics are set up</span>, skip steps 4 and 5.</li>
+            <li class="NumberedList">Change the alert thresholds by moving the arrows to the appropriate levels.</li>
+            <li class="NumberedList">Select the <span class="GUI_Item">Comments </span>tab, and then type the information you want displayed in the alert message for this metric.</li>
+            <li class="NumberedList">Click<span class="GUI_Item"> Apply</span>.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you want to replicate your edits to other monitored SQL&#160;Server instances, tags, or templates</span>, click <span class="GUI_Item">Yes</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span> to accept your changes.</li>
+        </ol>
+    </body>
+</html>

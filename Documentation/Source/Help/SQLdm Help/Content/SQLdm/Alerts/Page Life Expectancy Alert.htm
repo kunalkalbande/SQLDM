@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="227" MadCap:lastWidth="859">
+    <head><title>Page Life Expectancy alert in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Page Life Expectancy alert</h1>
+        <p>The Page Life Expectancy alert provides that the number of seconds a page stays in the buffer pool without references has fallen below the warning level. A decline in page life expectancy can indicate an increase in the physical I/O requirements for a user database. The rate decrease could likely indicate that the memory taken away from the buffer pool is forcing database pages to exit the buffer pool prematurely.</p>
+        <h2 class="Heading2">Diagnose problems with your SQL Server instance</h2>
+        <p class="Body">Microsoft recommends a minimum target for page life expectancy of 300 seconds. This means that any given page in memory is kept in the buffer for five minutes before the buffer flushes the page to disk. A page life expectancy value of less than 300 seconds is indicative of either a memory problem or inefficient query plans. </p>
+    </body>
+</html>

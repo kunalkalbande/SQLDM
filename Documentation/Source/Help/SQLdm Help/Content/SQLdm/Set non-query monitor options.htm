@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="2077" MadCap:lastWidth="871" MadCap:ignoredWords="Profiler">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Set Idera SQLdm activity monitor options</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Set activity monitor options</h1>
+        <p class="Body">
+            <MadCap:keyword term="Non-Query Monitor: options;Deadlocks, autogrow, blocking" />The Activity Monitor window allows you to enable or disable monitoring of non-query activities.  If you enable the Activity Monitor, you can select the settings that are used. The types of non-query events to capture include: </p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Deadlocks (SQL 2005+)</li>
+            <li class="Bullet">Autogrow</li>
+            <li class="BulletLast">Blocking (SQL 2005+)</li>
+        </ul>
+        <h2 class="Heading2">Capturing deadlocks</h2>
+        <p class="Body">Capturing deadlock information allows the associated deadlock alert to provide details on deadlocked processes on the Alerts view. Deadlock monitoring is supported on monitored instances running SQL Server 2005 or greater and is dependent on the Activity Monitor. To access this information, check <b>Enable the Activity Monitor</b> and <b>Capture deadlocks (SQL 2005+)</b> in the Activity Monitor window. Details provided include:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">SPID</li>
+            <li class="Bullet">Hostname</li>
+            <li class="Bullet">Login Name</li>
+            <li class="Bullet">Client Application</li>
+            <li class="Bullet">Database</li>
+            <li class="Bullet">Status</li>
+            <li class="Bullet">Wait Time</li>
+            <li class="Bullet">Wait Resource</li>
+            <li class="Bullet">Transaction Count</li>
+            <li class="Bullet">Input Buffer</li>
+            <li class="Bullet">Lock Object</li>
+            <li class="Bullet">Lock Mode</li>
+            <li class="Bullet">Lock Owners</li>
+            <li class="BulletLast">Lock Waiters</li>
+        </ul>
+        <h2 class="Heading2">Capturing Autogrow events</h2>
+        <p class="Body">Capturing autogrow information allows the associated autogrow alert to provide information about log and data growth on the Alerts view.  To access this information, check <b>Enable the Activity Monitor</b> and <b>Capture Autogrow</b> in the Activity Monitor window. </p>
+        <h2 class="Heading2">Capturing Blocking events</h2>
+        <p class="Body">Capturing blocking information allows the associated blocked alert to provide details on blocking and blocked sessions on the Alerts view. Blocking monitoring is supported on monitored instances running SQL Server 2005 or greater and is dependent on Activity Monitor.  To access this information, check <b>Enable the Activity Monitor</b> and <b>Capture Blocking (SQL 2005+)</b> in the Activity Monitor window. Key details provided for blocking and blocked sessions include:</p>
+        <p class="DefinitionListTerm">Blocking Process Details:</p>
+        <p class="DefinitionListBody">Session ID</p>
+        <p class="DefinitionListBody">Hostname</p>
+        <p class="DefinitionListBody">User Name</p>
+        <p class="DefinitionListBody">Application</p>
+        <p class="DefinitionListBody">Database</p>
+        <p class="DefinitionListBody">Last Batch Started</p>
+        <p class="DefinitionListBody">Transaction ID</p>
+        <p class="DefinitionListBodyLast">Open Transactions</p>
+        <p class="DefinitionListTerm">Blocked Process Details:</p>
+        <p class="DefinitionListBody">Session ID</p>
+        <p class="DefinitionListBody">Hostname</p>
+        <p class="DefinitionListBody">User Name</p>
+        <p class="DefinitionListBody">Application</p>
+        <p class="DefinitionListBody">Database</p>
+        <p class="DefinitionListBody">Last Batch Started</p>
+        <p class="DefinitionListBody">Transaction ID</p>
+        <p class="DefinitionListBody">Open Transactions</p>
+        <p class="DefinitionListBodyLast">Wait Resource</p>
+        <h2 class="Heading2">Blocked Process Threshold</h2>
+        <p class="Body">SQL Server 2005+ includes a new SQL Server Profiler event, the Blocked Process report. This event helps identify blocking issues and provides relevant information to solve these issues. 
+ 
+In SQLdm, users can take advantage of this feature by setting the Blocked Process Threshold value according to their needs. To access the Blocked Process Threshold option, enable Capture Blocking (SQL 2005+) in the Activity Monitor window.  Note that when this option is enabled, the Blocked Process Threshold value is automatically set to 30 (seconds) but can be modified as desired.
+</p>
+        <p class="Body">
+            <img src="../Resources/Images/Screenshot_SQLdmHelp_BPT.gif" style="width: 523px;height: 578px;" />
+        </p>
+        <p class="Body">Since collecting information about blocked processes in SQL server is resource-intensive, Idera recommends to set the blocked process threshold value to at least 5 (seconds) or your deadlock monitor runs constantly. For more information on this topic, see the Microsoft document <a href="http://technet.microsoft.com/en-us/library/bb402879.aspx" target="_blank">Increase or Disable Blocked Process Threshold.</a></p>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Modifying the Activity Monitor Blocked Process threshold automatically changes the Blocked Process threshold value in your monitored SQL Server instance.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="DefinitionListBodyLast">&#160;</p>
+    </body>
+</html>

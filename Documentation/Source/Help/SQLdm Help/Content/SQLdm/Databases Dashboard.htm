@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="556" MadCap:lastWidth="839">
+    <head><title>Databases panel in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Databases panel</h1>
+        <p class="Body">
+            <MadCap:keyword term="Databases:Dashboard panel;Dashboard:Databases" />The Databases panel tracks the performance of the databases on your monitored SQL Server. Unexpected spikes in database usage may warn you about the beginning of a serious performance issue. This feature offers a number of different metric sets based on your preference, which allows you to view your database transactions, log flushes, reads, writes, or I/O stalls. For each metric set, you can view a list of your top 100 databases sorted by current usage of that metric, and a bar representing the relative size of the associated database. A&#160;trends chart displays the same data over a period of time for only your top five databases. For additional information, see <a href="Get the Database Status Summary.htm" target="_self">how to get the database status summary</a>.</p>
+        <h2 class="Heading2"><a name="DBTransactions"></a>Transactions chart (per second)</h2>
+        <p class="Body">The <span class="GUI_Item"><a href="Metrics/Transactions Per Second.htm" target="_self">Transactions/sec</a></span> chart displays the number of transactions per second occurring on the databases on your SQL&#160;Server instance.</p>
+        <h2 class="Heading2"><a name="DBLogFlushes"></a>Log flushes chart (per second)</h2>
+        <p class="Body">The <span class="GUI_Item"><a href="Metrics/Log Flushes.htm" target="_self">Log Flushes/sec</a></span> chart displays the number of log flushes performed per second and usually matches the number of transactions per second. If you experience a disk bottleneck, review to see if your log flushes greatly outnumbers your transactions.</p>
+        <h2 class="Heading2"><a name="DBReads"></a>Reads chart (per second)</h2>
+        <p class="Body">The <span class="GUI_Item">Reads/sec </span>chart displays the number of reads per second performed by the databases on your SQL&#160;Server instance.</p>
+        <h2 class="Heading2"><a name="DBWrites"></a>Writes chart (per second)</h2>
+        <p class="Body">The <span class="GUI_Item">Writes/sec</span> chart displays the number of writes per second performed by the databases on your SQL&#160;Server instance.</p>
+        <h2 class="Heading2"><a name="DBIOStall"></a>I/O&#160;stall chart (ms/sec)</h2>
+        <p class="Body">The<span class="GUI_Item"> I/O Stall ms/sec</span> chart displays the total time per second (in milliseconds) that the databases on your SQL Server instance were waiting on an I/O to complete.  Chronically high I/O stall metrics may indicate a disk bottleneck.</p>
+    </body>
+</html>

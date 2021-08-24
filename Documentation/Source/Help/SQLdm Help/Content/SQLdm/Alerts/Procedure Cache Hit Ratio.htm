@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="539" MadCap:lastWidth="833">
+    <head><title>Procedure Cache Hit Ratio (Percent) alert in Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">Procedure Cache Hit Ratio (Percent) alert</h1>
+        <p class="Body">The Procedure Cache Hit Ratio (Percent) alert provides the ratio of procedure cache hits to procedure cache lookups.This value indicates the reuse of an execution plan from memory as opposed to a compilation from disk.</p>
+        <h2 class="Heading2">Manage your Procedure Cache Hit Ratio</h2>
+        <p class="Body">If you regularly encounter values below 80% once SQL Server is actively running for at least 30 minutes, then consider one of the following remedies: 
+</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Make sure that all T-SQL statements (whether in a stored procedure, trigger or ad hoc statement) that reference objects fully qualify the object referenced. <br />For example: <code>SELECT * FROM Northwind.dbo Employees</code> is a fully-qualified object reference whereas <code>SELECT * FROM Employees</code> is a poorly-qualified object. You can reuse the execution plans of fully-qualified objects "as is," whereas plans where you either cannot reuse the not fully-qualified objects or, if they are reused, then they are subject to a highly restrictive <code>COMPILE </code>lock while SQL Server determines if all of the objects referenced in the T-SQL code have the same owners as the execution plan currently in cache. Both of these situations consume a significant amount of CPU time.</li>
+            <li class="Bullet">	Add more physical memory (RAM) to the computer. 
+</li>
+            <li class="Bullet">If your site makes use of extended stored procedures that are not called very often, then after calling them, issue a <code>DBCC DLLNAME (FREE)</code>. Once an extended stored procedure is called, it remains in memory until SQL Server is shut down even if it is never called again! This is tremendously wasteful in terms of available memory and a <code>DBCC DLLNAME (FREE)</code> releases that memory for use by both the procedure cache as well as the Data Pages which has a significant positive effect on both the Procedure Cache Hit Ratio, as well as the Buffer Cache Hit Ratio. In order to view the extended stored procedures currently loaded in memory by SQL Server, execute <code>SP_HELPEXTENDEDPROC</code>.
+</li>
+            <li class="Bullet">	Allow SQL Server to consume more of the available memory (making sure that OS Paging does not increase). 
+</li>
+            <li class="Bullet">Stop unnecessary programs (such as the Print Spooler or activities such as the database server acting as either a BDC or PDC) from running.
+</li>
+            <li class="BulletLast">If the computer is running multiple instances of SQL Server, consider placing each instance on a separate physical computer.
+</li>
+        </ul>
+    </body>
+</html>

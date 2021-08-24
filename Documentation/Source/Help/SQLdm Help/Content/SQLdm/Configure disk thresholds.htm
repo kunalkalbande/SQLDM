@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="4" MadCap:lastHeight="806" MadCap:lastWidth="845">
+    <head><title>Configure disk thresholds in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure disk thresholds</h1>
+        <p class="Body">
+            <MadCap:keyword term="Disk threshold alerts" />The Disk Threshold Configuration dialog allows you to set alert thresholds for selected disks on your SQL&#160;Server instance. Not all alerts are available for applying disk-specific thresholds. The following alerts include disk-specific settings:</p>
+        <ul>
+            <li class="Bullet"><a href="Alerts/Disk Space Free.htm" target="_self">OS&#160;Disk Free Space (Size)</a>
+            </li>
+            <li class="BulletLast"><a href="Alerts/Disk Full.htm" target="_self">OS&#160;Disk Full (Percent)</a>
+            </li>
+        </ul>
+        <p class="Body">Use the <span class="GUI_Item">Advanced </span>button to set <a href="Set advanced alert options.htm" target="_self">how and when alerts are raised</a> by limiting the number of alerts and notifications generated.</p>
+        <p class="StepIntro">To add a disk for specific alert configuration:</p>
+        <ol>
+            <li class="NumberedList">Right-click a SQL&#160;Server instance in the Servers tree.</li>
+            <li class="NumberedList">Select <span class="GUI_Item">Configure Alerts</span>.</li>
+            <li class="NumberedList">Select the disk-specific metric you want to edit from the list in the <span class="GUI_Item">Alert Configuration</span> window.</li>
+            <li class="NumberedList">On the Configuration tab, click <span class="GUI_Item">Add</span>.</li>
+            <li class="NumberedList">Select the disk from the available drop-down list.</li>
+            <li class="NumberedList">Make the appropriate changes to your alert configuration for this disk, and then click <span class="GUI_Item">OK</span>. SQLdm now displays that disk in the list on the Configuration tab.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span> to accept your changes.</li>
+        </ol>
+        <p class="StepIntro">To edit the alert threshold configuration for a disk:</p>
+        <ol>
+            <li class="NumberedList">Right-click a SQL&#160;Server instance in the Servers tree.</li>
+            <li class="NumberedList">Select <span class="GUI_Item">Configure Alerts</span>.</li>
+            <li class="NumberedList">Select the disk-specific metric you want to edit from the list in the <span class="GUI_Item">Alert Configuration</span> window.</li>
+            <li class="NumberedList">On the Configuration tab, click the disk you want to configure, and then click <span class="GUI_Item">Edit</span>.</li>
+            <li class="NumberedList">Change the alert thresholds by moving the arrows to the appropriate levels or by double-clicking the value and typing a new threshold level, and then click <span class="GUI_Item">OK</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Apply</span>.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you want SQLdm to replicate your edits to every monitored SQL&#160;Server instance</span>, click <span class="GUI_Item">Yes</span>, select the instances you want to include, and then click <span class="GUI_Item">OK</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span> to accept your changes.</li>
+        </ol>
+        <p class="StepIntro">To delete the alert threshold configuration for a disk:</p>
+        <ol>
+            <li class="NumberedList">Right-click a SQL&#160;Server instance in the Servers tree.</li>
+            <li class="NumberedList">Select <span class="GUI_Item">Configure Alerts</span>.</li>
+            <li class="NumberedList">Select the metric from which you want to remove the specific disk from the list in the <span class="GUI_Item">Alert Configuration</span> window.</li>
+            <li class="NumberedList">On the Configuration tab, click the disk you want to delete, and then click <span class="GUI_Item">Delete</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Yes</span> in the confirmation window.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Apply</span>.</li>
+            <li class="NumberedList"><span class="If_Then_Statement">If you want to delete the same disk from any other SQL&#160;Server instance SQLdm is monitoring</span>, click <span class="GUI_Item">Yes</span>, select the instances you want to include, and then click <span class="GUI_Item">OK</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">OK</span> to accept your changes.</li>
+        </ol>
+    </body>
+</html>

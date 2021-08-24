@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="541" MadCap:lastWidth="839">
+    <head><title>Page Reads (Per Second) metric in Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">Page Reads (Per Second)</h1>
+        <p class="Body">This metric counts the number of physical reads the disk sub-system performs to bring SQL Server database pages into the data (buffer) cache. For the first few minutes after you start or restart SQL Server, almost any request for data is retrieved from disk. As the data cache fills, these requests are reduced.  This value is measured by reading ‘<code>PAGE READS/SEC</code>’ from <code>sysperfinfo</code>.
+</p>
+        <p class="Body">Currently, even the fastest disks can support a maximum sustained rate of around only 85 random IOs per second. To determine if your IO subsystem is "flooded," perform the following calculation: </p>
+        <p class="Body">On RAID 10: <code>((Page reads + read ahead pages + ((page writes + checkpoint pages + lazy writes + log flushes) X 2)) / number of disk spindles in RAID array)</code> must be &lt; 65. </p>
+        <h2 class="Heading2">Reduce page reads</h2>
+        <p class="Body">If the page reads rate exceeds 65 for more than five seconds every 20 minutes, then consider these solutions: </p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Add more physical memory (RAM) to the computer. 
+</li>
+            <li class="Bullet">If your site makes use of extended stored procedures that are not called very often, then after calling them, issue a <code>DBCC DLLNAME (FREE)</code>. Once an extended stored procedure is called, it remains in memory until SQL Server is shut down even if it is never called again. This is tremendously wasteful in terms of available memory and a <code>DBCC DLLNAME (FREE)</code> releases that memory for use by both the procedure cache as well as the Data Pages which have a significant positive effect on both the Procedure Cache Hit Ratio as well as the Buffer Cache Hit Ratio. In order to view the extended stored procedures currently loaded in memory by SQL Server, execute <code>SP_HELPEXTENDEDPROC</code>.
+	</li>
+            <li class="Bullet">Allow SQL Server to consume more of the available memory (making sure that OS Paging does not increase).
+</li>
+            <li class="Bullet">If you are running large, batch-style reporting queries on the OLTP server, then large numbers of data pages are flushed from cache causing much additional IO overhead. In this situation, set up a separate SQL Server Reports computer to service all but the smallest reports. You can feed this Reports Server via backups and Log Shipping from the OLTP server.
+</li>
+            <li class="Bullet">Stop unnecessary programs (such as the Print Spooler or activities such as the database server acting as either a BDC or PDC) from running.
+</li>
+            <li class="Bullet">If the computer is running multiple instances of SQL Server, then consider placing each instance on a separate physical computer.
+</li>
+        </ul>
+    </body>
+</html>

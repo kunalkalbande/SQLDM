@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="8" MadCap:lastHeight="806" MadCap:lastWidth="794">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Configure your Idera SQLdm collection interval</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Configure data collection</h1>
+        <p class="Body">
+            <MadCap:keyword term="Query Monitor:when to use" />The Configure SQL diagnostic manager Collection window of the All Servers wizard allows you to set the interval at which you want to collect diagnostic data and raise alerts, and whether you want to enable query monitoring. </p>
+        <p class="Body">The collection interval you specify refers to the time SQLdm waits to collect statistical information on your SQL&#160;Server instance. This data includes the resource, session, database and tables, query, and service information.</p>
+        <p class="Body">The Query Monitor is a standard SQL&#160;Server trace that collects events occurring on your SQL&#160;Server instance over a period of time. </p>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Enabling the Query Monitor can cause SQL&#160;Server performance degradation while it runs. Enable the Query Monitor only when diagnosing specific query issues.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">After making any changes to the collection interval or enabling the Query Monitor, click <span class="GUI_Item">Next </span>to continue. </p>
+        <h2 class="Heading2">Access the Add Servers wizard</h2>
+        <p class="Body">You can open the Add Servers wizard from the SQLdm Console menu by selecting <span class="GUI_Item">File &gt;&#160;Manage Servers</span>, and then clicking <span class="GUI_Item">Add </span>in the Manage Servers window.</p>
+        <h2 class="Heading2">Select a collection interval</h2>
+        <p class="Body">Choosing the appropriate interval depends on your specific monitoring needs. When your SQL&#160;Server instance performs poorly, you can decrease the collection interval so that you can track changes more often. When monitoring a SQL&#160;Server instance that has a very heavy client load and a large number of databases, you can increase the time period between collections to reduce the possibility of the frequent collections causing a performance impact on your clients.</p>
+        <h2 class="Heading2">Monitoring your environment by collecting query activities</h2>
+        <p class="Body">When you experience query timeouts or other performance issues, you can collect query-related activities   through the Query Monitor. Note that enabling these options can degrade performance on the monitored SQL&#160;Server instance because of the additional data collection and storage. To help alleviate degradation, SQLdm allows you to select only those types of queries you want to monitor such as batches, statements, procedures, and triggers. Additional threshold fields allow you to set the levels at which you consider a query as performing poorly.</p>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">It is important to remember that once you complete your problem diagnosis, you can disable the Query Monitor  on the Monitored SQL Server Properties window by selecting the Query Monitor tab and then clearing the <span class="GUI_Item">Enable the Query Monitor</span> check box.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Using advanced Query Monitor options</h2>
+        <p class="Body">Query Monitor includes advanced options that allow you to filter applications, databases, and SQL&#160;text from collection. Use semicolons (;) to separate multiple entries. You can also use the percent character (%) as a wildcard.</p>
+        <p class="Body">You can access this window by clicking the <b>Advanced</b> button in the Query Monitor tab of the monitored SQL Server Properties window.</p>
+    </body>
+</html>

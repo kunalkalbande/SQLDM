@@ -1,0 +1,1 @@
+This folder is for install scripts and associated files.

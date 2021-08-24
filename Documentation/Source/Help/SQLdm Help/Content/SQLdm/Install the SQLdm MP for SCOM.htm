@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="603" MadCap:lastWidth="931" MadCap:conditions="Default.SCOM PDF Only">
+    <head><title>Integrate SQLdm with SCOM in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Install and configure the SQLdm Management Pack for SCOM</h1>
+        <p class="Body">Before importing the SQLdm Management Pack for SCOM, you must import the relevant Microsoft Windows management packs for your current operating system. For example, if SQLdm is installed on Windows Server 2008 R2, then you must install the management pack for that OS before continuing.
+</p>
+        <p class="Body">You can find the SQLdm MP (Idera.SQLDM.mp) in the root of the installation kit.</p>
+        <h2 class="Heading2">Configuring your installation to support SCOM</h2>
+        <p class="Body">The SQLdm Management Pack requires that the SCOM agent has at least read access to the SQLdm Repository. Grant this access before installing the SQLdm MP and enabling discovery of any SQLdm installed instances.</p>
+        <p class="Body">SQLdm MP also requires that a SCOM agent (version 2007 or above) be installed locally on each server where an instance of SQLdm is present. If an agent is not already installed, then use the Discovery Wizard in the SCOM Console to push the agent installation.
+</p>
+        <h2 class="Heading2">Importing the SQLdm Management Pack for SCOM</h2>
+        <p class="Body">The SQLdm Management Pack import process loads into the SCOM database the SQLdm MP settings, classes, and rules necessary for monitoring SQLdm. The import replicates the relevant rules and objects to all systems where SQLdm is installed.</p>
+        <p class="Body">The following steps help you import the SQLdm Management Pack when it is downloaded  to a hard drive local to the SCOM Console. For more information about other methods of importing the Management Pack, see <a href="http://technet.microsoft.com/en-us/library/cc974494.aspx" target="_blank">How to Import a Management Pack in Operations Manager 2007</a>.</p>
+        <p class="StepIntro">To import the SQLdm Management Pack:
+</p>
+        <ol>
+            <li class="NumberedList">Open the Operations Console for Operations Manager, and then click the Administration button.
+</li>
+            <li class="NumberedList">In the Actions pane or from  Actions →Actions menu option, click Import  Management Packs.</li>
+            <li class="NumberedList">Click <b>Add</b>, and then click <b>Add from disk</b>.</li>
+        </ol>
+        <ol>
+            <li class="NumberedList" value="4">In the Online Catalog Connection dialog, click <b>No</b>. <b>If you did not preload the required OS Management Packs and you have a current Internet connection</b>, click <b>Yes</b>.
+</li>
+            <li class="NumberedList">Browse for and then select the Idera SQL Diagnostic Manager Management Pack.
+</li>
+            <li class="NumberedList">Click <b>Install</b>. Discovery of SQLdm servers and monitored SQL Server instances begins automatically as the Management Pack is deployed to the relevant agents across the network.
+&#160;</li>
+            <p class="NumberedList">&#160;</p>
+        </ol>
+        <p>&#160;</p>
+    </body>
+</html>

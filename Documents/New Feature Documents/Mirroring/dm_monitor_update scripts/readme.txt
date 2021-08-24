@@ -1,0 +1,1 @@
+There is an issue in the sp_dbmmonitorupdate sp that causes a critical exception to occur when the principal and mirror are out of sync and in a broken state.  The issue is in getthelatestlast where it tries to find the time_behind by comparing the latest lsn of the principal and the witness.

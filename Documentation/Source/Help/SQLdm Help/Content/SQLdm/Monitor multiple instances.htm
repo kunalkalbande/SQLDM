@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="7" MadCap:lastHeight="1823" MadCap:lastWidth="811">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Monitor multiple SQL Server instances in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Monitor multiple SQL Server instances</h1>
+        <p class="Body">
+            <MadCap:keyword term="My Views:monitoring servers" />My Views allows you to group servers to provide a high-level, global view of multiple monitored servers. This view includes basic statistics about your registered SQL&#160;Server instances and quick links to more detailed information. A monitor displays statistics for each SQL&#160;Server instance included in the group.</p>
+        <h2 class="Heading2">Access My Views</h2>
+        <p class="Body">My Views is available at all times as part of the Navigation pane as shown in the following image.</p>
+        <p class="Image">
+            <img src="../Resources/Images/My Views.bmp" title="My Views" />
+        </p>
+        <h2 class="Heading2">Use the group list</h2>
+        <p class="Body">SQLdm updates the data shown in the thumbnails view of the group list according to the interval entered in the <span class="GUI_Item">Status and Alerts Refresh</span> field on the <a href="Configure Console Options.htm" target="_self">Console Options window</a>, accessed by clicking <span class="GUI_Item">Tools &gt; Console Options</span>. This information is collected from the last data point stored in the SQLdm Repository.</p>
+        <p class="Body">By default, the group list displays basic statistics for each of the SQL&#160;Server instances monitored by SQLdm. This information includes the following statistics for each instance:</p>
+        <p class="DefinitionListTerm">Response Time</p>
+        <p class="DefinitionListBody">Refers to the time it takes for a query to go from the SQLdm Console to the SQL&#160;Server instance and back.</p>
+        <p class="DefinitionListTerm">User Sessions</p>
+        <p class="DefinitionListBody">Refers to the total number of SQL&#160;Server user sessions.</p>
+        <p class="DefinitionListTerm">SQL CPU Usage</p>
+        <p class="DefinitionListBody">Refers to average percentage of SQL&#160;Server processor usage on the computer hosting the SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">SQL Memory Usage/Allocated</p>
+        <p class="DefinitionListBody">Refers to amount of memory in use by the monitored SQL&#160;Server instance.</p>
+        <p class="DefinitionListTerm">SQL Disk I/O</p>
+        <p class="DefinitionListBodyLast">Refers to the number of physical reads and physical writes made by the SQL&#160;Server instance between refreshes. <span class="If_Then_Statement">If you see a high percentage of physical reads</span>, you can improve performance by allocating more memory to the SQL data cache.</p>
+        <h2 class="Heading2">Customize the monitors in your group list</h2>
+        <p class="Body">SQLdm allows you to customize the monitors displayed in group lists so that you display only those key statistics and charts that are most important to you.</p>
+        <p class="StepIntro">To customize a monitor:</p>
+        <ol>
+            <li class="NumberedList">Right-click a SQL&#160;Server instance in the view.</li>
+            <li class="NumberedList">Select <span class="GUI_Item">Thumbnail</span> and select the information type you want to display on your monitor.</li>
+        </ol>
+        <p class="Body">Instead of listing statistics for the server, SQLdm displays the individual chart of the data item you selected. To revert back, select <span class="GUI_Item">Summary</span> from the <span class="GUI_Item">Thumbnail</span> list.</p>
+        <h2 class="Heading2">Use the Server Thumbnails, Details, or Configuration Properties window</h2>
+        <p class="Body">SQLdm allows you to monitor multiple instances using different views, such as thumbnails of mini-monitors, a list of instances and their important details, or a list of instances and their server properties. SQLdm defaults to the thumbnails view. To access a different view, click the appropriate button in the upper-right corner of the window as shown in the following image.</p>
+        <p class="Image">
+            <img src="../Resources/Images/Multiple Monitors Views.bmp" title="Monitor Multiple Instances" />
+        </p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">If any of the metrics are missing from this view, you may need to <a href="Enable OS Metrics Monitoring.htm" target="_self">enable OS metrics collection</a>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">These views list all the data collected at the last refresh for all your monitored SQL&#160;Server instances. The Details and <a href="Server configuration properties view.htm" target="_self">Server Configuration Properties</a> views can assist you with comparing the status of a specific metric or property between two or more of your SQL&#160;Server instances.</p>
+        <h2 class="Heading2">Add a custom view</h2>
+        <p class="Body">
+            <MadCap:keyword term="My Views:add" />You may want to add a custom view to the My Views list to organize your SQL&#160;Server instances into specific groups for monitoring purposes. This is especially important if you are monitoring a large number of SQL&#160;Server instances and want information for a specific group of SQL&#160;Server instances. If you create views before adding your SQL&#160;Server instances to SQLdm for monitoring, you can have these new instances added to your views by selecting the new view you create and then adding the SQL&#160;Server instances.</p>
+        <p class="StepIntro">To add a new view:</p>
+        <ol>
+            <li class="NumberedList"><span class="If_Then_Statement">If you want to create a new view from the File menu</span>, click <span class="GUI_Item">File &gt; Create View</span>.<span class="If_Then_Statement"> If you want to create a new view from My Views</span>, right-click within the My Views section, and then select <span class="GUI_Item">Create View</span>.</li>
+            <li class="NumberedList">Type a name for the view.</li>
+            <li class="NumberedList">Select the monitored SQL&#160;Server instances you want to include in this view.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Add &gt;</span> to move the selected instances from <span class="GUI_Item">Monitored Instances</span> to <span class="GUI_Item">View Instances</span>.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Create </span>to create your new view.</li>
+        </ol>
+    </body>
+</html>

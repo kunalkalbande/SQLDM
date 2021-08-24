@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="1173" MadCap:lastWidth="839">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Monitor SQL Server services in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Monitor services</h1>
+        <p class="Body">
+            <MadCap:keyword term="Services">
+            </MadCap:keyword>The Services tab allows you to view the status and manage your SQL&#160;Server services including the following services:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">SQL Server Agent</li>
+            <li class="Bullet">Full-Text Search (Note that SQL Server 2008 no longer has a separate full-text search service. If the monitored instance is SQL&#160;Server 2008, the full text search does not appear on the grid or graph.)</li>
+            <li class="Bullet">DTC (Distributed Transaction Coordinator service)</li>
+            <li class="BulletLast">Replication services</li>
+        </ul>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">The Start and Stop service actions are not supported for virtual SQL Server instances or instances located on a Windows cluster node. To start or stop a service on a virtual SQL&#160;Server 2008 instance, use the Microsoft Failover Cluster Management tool. For SQL Server 2005 or earlier, use the Microsoft Cluster Administrator tool to manage services.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Access the Services tab</h2>
+        <p class="Body">SQLdm provides two paths to access the Services tab. The first access path is by clicking the appropriate monitored SQL&#160;Server instance, and then clicking the Services tab. The second access path is by expanding the Servers tree, and then clicking the Services for the appropriate instance.</p>
+        <h2 class="Heading2">Alerts associated with the Services tab</h2>
+        <p class="Body">
+            <MadCap:keyword term="Services:alerts;Alerts:services" />The following alerts are associated with the Services tab:</p>
+        <p class="DefinitionListTerm">Cluster Active Node</p>
+        <p class="DefinitionListBody">The active node of the cluster is a non-preferred node. You can configure the preferred node under <span class="GUI_Item">Server Properties &gt;&#160;Cluster Settings</span>.</p>
+        <p class="DefinitionListTerm">Cluster Failover</p>
+        <p class="DefinitionListBody">There is a change in the active node. This alert remains active for the amount of time specified in the advanced settings for that alert.</p>
+        <p class="DefinitionListTerm">Distribution Latency (Seconds)</p>
+        <p class="DefinitionListBody">Time in seconds that a replication transaction is holding at the Publisher and waiting for a &#160;Distributor.</p>
+        <p class="DefinitionListTerm">DTC Status</p>
+        <p class="DefinitionListBody">Displays the status of the Distributed Transaction Coordinator service.</p>
+        <p class="DefinitionListTerm">Full-Text Search Status</p>
+        <p class="DefinitionListBody">Displays the status of the Full-Text Search service.</p>
+        <p class="DefinitionListTerm">Last Full-Text Catalog Update (Hours)</p>
+        <p class="DefinitionListBody">The number of hours beyond which the Full-Text Catalog statistics data is considered outdated.</p>
+        <p class="DefinitionListTerm">Non-Distributed Transactions (Count)</p>
+        <p class="DefinitionListBody">The number of transactions not written to the Distribution database.</p>
+        <p class="DefinitionListTerm">SQL Server Agent Job Completion</p>
+        <p class="DefinitionListBody">Provides the status of the Agent Job Completion metric. Values for this alert include <span class="GUI_Item">Succeeded</span>, <span class="GUI_Item">Retry</span>, <span class="GUI_Item">Canceled</span>, <span class="GUI_Item">Failed</span>, and <span class="GUI_Item">Unknown</span>.</p>
+        <p class="DefinitionListTerm">SQL Server Agent Job Failure</p>
+        <p class="DefinitionListBody">Indicates that a scheduled job processed by the SQL Server Agent service ended abnormally.</p>
+        <p class="DefinitionListTerm">SQL Server Agent Long Running Job (Minutes)</p>
+        <p class="DefinitionListBody">Provides the maximum number of minutes used to complete a scheduled SQL Server Agent job.</p>
+        <p class="DefinitionListTerm">SQL Server Agent Long Running Job (Percentage)</p>
+        <p class="DefinitionListBody">Indicates the percentage of time a scheduled job is using over what it normally uses to complete the job.</p>
+        <p class="DefinitionListTerm">SQL Server Agent Status</p>
+        <p class="DefinitionListBody">Displays the status of the SQL Server Agent service.</p>
+        <p class="DefinitionListTerm">SQL Server Status</p>
+        <p class="DefinitionListBody">Displays the status of the SQL Server service.</p>
+        <p class="DefinitionListTerm">Unsubscribed Transactions (Count)</p>
+        <p class="DefinitionListBody">The number of non-subscribed transactions written to the Distribution database.</p>
+        <p class="DefinitionListTerm">Unsubscribed Transactions (Seconds)</p>
+        <p class="DefinitionListBody">The number of seconds a transaction written to the database waits before subscription.</p>
+    </body>
+</html>

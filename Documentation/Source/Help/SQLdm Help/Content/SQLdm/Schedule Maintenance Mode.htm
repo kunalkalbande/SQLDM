@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1457" MadCap:lastWidth="565">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Schedule Idera SQLdm maintenance mode</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Schedule maintenance mode</h1>
+        <p class="Body">
+            <MadCap:keyword term="Maintenance Mode;Mass Maintenance Mode" />Maintenance mode allows you to temporarily stop alert generation and performance metric collection for the time period that your SQL&#160;Server instance is offline. This pause allows you to perform necessary maintenance on a SQL&#160;Server without causing SQLdm to send numerous misleading alerts.</p>
+        <h2 class="Heading2">Access the Maintenance Mode tab</h2>
+        <p class="Body">You can access the Maintenance Mode function by right-clicking the appropriate monitored SQL Server instance, and then selecting Maintenance Mode.  This will prompt three command options: Enable, Disable and Schedule.</p>
+        <p class="Body">The Enable command puts the SQL Server instance into maintenance mode, stopping alert generation and collection of some performance metrics.</p>
+        <p class="Body">The Disable command allows SQLdm to resume performance statistics collection and alert generation for the selected SQL Server instance.</p>
+        <p class="Body">The Schedule command prompts the monitored SQL Server Properties dialog, where under the Maintenance Mode tab it is possible to select a specific maintenance mode setting.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">A different way to access the Maintenance Mode function is by right-clicking the monitored SQL Server instance, and then selecting Properties. Click Maintenance Mode when SQLdm displays the Monitored SQL Server Properties window. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">About mass maintenance mode</h2>
+        <p class="Body">Users  looking to apply maintenance mode modifications to a large number of servers at once can run the Maintenance Mode command by right-clicking on the following:  Server Tree, a specific tag, a particular server view and Tools.</p>
+        <h2 class="Heading2">Available maintenance mode settings</h2>
+        <p class="Body">
+            <img src="../Resources/Images/Maintenance Mode_Monthly_07.15.14.gif" style="width: 565px;height: 508px;" />
+        </p>
+        <p class="Body">You can choose from the following options when setting a monitored SQL&#160;Server instance to maintenance mode:</p>
+        <p class="DefinitionListTerm">Never</p>
+        <p class="DefinitionListBody">The server is never in maintenance mode and always generates alerts.</p>
+        <p class="DefinitionListTerm">Until further notice</p>
+        <p class="DefinitionListBody">The server is in maintenance mode and does not generate alerts until this setting is changed.</p>
+        <p class="DefinitionListTerm">Recurring every week at the specified time</p>
+        <p class="DefinitionListBody">Set the server to enter maintenance mode at regular intervals, for the day, time, and duration you select.</p>
+        <p class="DefinitionListTerm">Recurring every month at the specified time</p>
+        <p class="DefinitionListBody">Set the server to enter maintenance mode at regular intervals, for the month, time, and duration you select.</p>
+        <p class="DefinitionListTerm">Occurring once at the specified time</p>
+        <p class="DefinitionListBody">The server enters maintenance mode at a specified date and time, and leaves maintenance mode at a specified date and time.</p>
+    </body>
+</html>

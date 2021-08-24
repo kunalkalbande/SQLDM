@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="375" MadCap:lastWidth="833">
+    <head><title>Distribution Latency (Seconds) alert in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Distribution Latency (Seconds) alert </h1>
+        <p class="Body">The Distribution Latency (Seconds) alert tracks the amount of time, in seconds, that a replication transaction is at the Publisher waiting for a Distributor to receive it, and has exceeded the warning threshold.</p>
+        <h2 class="Heading2">Causes of high distribution latency</h2>
+        <p class="Body">The most common cause of high distribution latency is when a transaction has a large amount of commands. Once the transaction is complete, distribution latency decreases.</p>
+        <p class="Body">The <span class="GUI_Item">Replication </span>view on the <span class="GUI_Item">Services </span>tab displays a graph with the non-distributed count and the non-distributed time. Graphs that trend upward may indicate a problem that needs resolution.</p>
+        <h2 class="Heading2">Reduce distribution latency</h2>
+        <p class="Body">You can reduce distribution latency by:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Reducing traffic on the publisher</li>
+            <li class="Bullet">Limiting non-replication related work by the publisher</li>
+            <li class="BulletLast">Increasing the network bandwidth available to the publisher</li>
+        </ul>
+    </body>
+</html>

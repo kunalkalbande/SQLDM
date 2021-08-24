@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="563" MadCap:lastWidth="833">
+    <head><title>Provide custom SQL script for an Idera SQLdm custom counter</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Provide custom SQL script</h1>
+        <p class="Body">
+            <MadCap:keyword term="Custom SQL Script;T-SQL" />The Provide Custom SQL&#160;Script window of the Add Custom Counter wizard allows you to enter or paste a T-SQL script for your custom counter. For more information about T-SQL&#160;scripts, see <a href="http://msdn.microsoft.com/en-us/library/ms130214.aspx" target="_blank">SQL&#160;Server Books Online</a>.</p>
+        <p class="Body">Refer to the following tips when using custom SQL&#160;Scripts:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Dangerous or destructive T-SQL that is entered as a custom counter is executed as entered, which could result in a negative impact on the linked monitored SQL&#160;Server instances.</li>
+            <li class="Bullet">The <code class="Code">go</code> command is not a Transact-SQL statement and you cannot use this command in custom SQL batches. The <span class="Code">go</span> command is a batch separator for Management Studio, Query Analyzer, sqlcmd, and osql.</li>
+            <li class="Bullet">Custom counter scripts run at every scheduled refresh and on-demand on the Custom Counters view. For best performance, custom scripts should run in under 30 seconds. If the script takes longer than two minutes to execute, timeouts may occur.</li>
+            <li class="Bullet">Custom SQL&#160;scripts must return a single result set with a single numeric field. Additional fields or non-numeric values result in an error.</li>
+            <li class="Bullet">Custom SQL scripts are displayed in Queries tab with "User Defined Counter" in their application name.</li>
+            <li class="BulletLast">The following options are set by default for custom counter scripts. If you need to use a different value, particularly another transaction isolation level, you should add the appropriate SET&#160;statement to the beginning of the script.<ul style="list-style-type: circle;"><li class="Bullet">set transaction isolation level read uncommitted</li><li class="Bullet">set lock_timeout 20000</li><li class="Bullet">set implicit_transactions off</li><li class="Bullet">set language us_english</li><li class="Bullet">set cursor_close_on_commit off</li><li class="Bullet">set query_governor_cost_limit 0</li><li class="BulletLast">set numeric_roundabort off</li></ul></li>
+        </ul>
+        <h2 class="Heading2">Access the Add Custom Counter wizard</h2>
+        <p class="Body">You can open the Add Custom Counter wizard by clicking <span class="GUI_Item">Administration &gt;&#160;Custom Counters</span>, and then clicking <span class="GUI_Item">Add </span>in the Custom Counters view.</p>
+    </body>
+</html>

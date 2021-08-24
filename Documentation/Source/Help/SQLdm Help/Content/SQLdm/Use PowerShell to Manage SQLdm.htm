@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1001" MadCap:lastWidth="859">
+    <head><title>Use PowerShell to automate Idera SQLdm functions</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">Use PowerShell to automate SQLdm functions</h1>
+        <p class="Body">
+            <MadCap:keyword term="Powershell;snapin" /><a href="PowerShell Commands in SQLdm.htm">SQLdm PowerShell integration</a> allows you to make mass changes to your SQLdm configuration across multiple SQL&#160;Server instances in a few lines of text, saving you time.</p>
+        <h2 class="Heading2">About PowerShell</h2>
+        <p class="Body">Microsoft® Windows® PowerShell is a task-based command-line shell and scripting language designed especially for system administration. Built on the .NET Framework, Microsoft® Windows® PowerShell helps IT professionals and power users control and automate the administration of the Windows operating system and applications that run on Windows.</p>
+        <p class="Body">Windows PowerShell furnishes an operating environment for commands that include cmdlets, functions, filters, scripts, aliases, and executables (applications). The main command type used in this environment is the cmdlet, with certain cmdlets made available only through Windows PowerShell providers that allow access to stored data.</p>
+        <p class="Body">Windows PowerShell operates within a hosting application (the default is powershell.exe) that exposes a command line to the user, and uses a host interface to communicate with the commands invoked by the command line. You can use a console application, Windows application, or a Web application as the hosting application. In most cases, the hosting application uses its Main function to interact with the Windows PowerShell runtime through the internal host interface; however, a hosting application can optionally support its own custom host by implementing the PSHost class along with one or more related user interface classes. Together, these classes allow direct communication between the application and Windows PowerShell commands.</p>
+        <p class="Body">For more information about Windows PowerShell, see <a href="http://technet.microsoft.com/en-us/library/ms130214.aspx" target="_blank">SQL&#160;Server Books Online</a>.</p>
+        <h2 class="Heading2">Install the SQLdm Provider for PowerShell</h2>
+        <p class="Body">The SQLdm Provider is installed automatically with SQLdm. </p>
+        <p class="Body">To enable the Provider, type the following from within PowerShell:</p>
+        <p class="DefinitionListBody"><code>add-ps</code><code>snapin sqldmsnapin</code>
+        </p>
+        <p class="Body">To verify your snapin is registered:</p>
+        <p class="DefinitionListBody"><code>get-psprovider</code> <![CDATA[ ]]></p>
+        <p class="Body">To receive general help:</p>
+        <p class="DefinitionListBody"><code>get-help</code>
+        </p>
+        <p class="Body">To display a list of cmdlets for the SQLdm snapin:</p>
+        <p class="DefinitionListBody"><code>get-help sqldm</code>
+        </p>
+        <h2 class="Heading2">Applications available to use with PowerShell</h2>
+        <p class="Body">There are several applications that allow you to use PowerShell and enhance its functionality.</p>
+        <p class="Body">
+            <MadCap:keyword term="Powershell Plus" />PowerShell Plus is a powerful interactive scripting environment designed to help administrators and developers learn and master Windows PowerShell. Unlike most of the basic script editors on the market today, PowerShell Plus features a powerful interactive console, an advanced script editor and a comprehensive learning center. PowerShell Plus  is built on the backbone of PowerShellIDE, the first PowerShell application to offer a very rich graphical user interface.</p>
+        <p class="DefinitionListTerm">Interactive PowerShell Console</p>
+        <p class="DefinitionListBody">The PowerShellPlus Console allows you to work interactively with PowerShell from a feature rich Windows UI. This integration makes working with PowerShell faster and easier to use than ever before.</p>
+        <p class="DefinitionListTerm">Advanced Script Editor</p>
+        <p class="DefinitionListBody">The advanced debugger and script editor lets you build and test complex PowerShell scripts, try one line PowerShell commands from an embedded console window, and sign your script with a security certificate, all from a single workspace.</p>
+        <p class="DefinitionListTerm">Comprehensive Learning Center</p>
+        <p class="DefinitionListBody">The Comprehensive Learning Center helps you experience PowerShell by example. Short tutorials guide you through basic concepts at your own pace. The Comprehensive Learning Center also includes dynamically created help topics from currently installed PowerShell CmdLets, Snap-Ins and WMI objects.</p>
+    </body>
+</html>

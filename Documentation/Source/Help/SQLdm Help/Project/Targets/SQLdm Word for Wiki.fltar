@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="1"
+  Comment="SQLdm Word for Wiki"
+  Type="MsWord"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  MasterToc="/Project/TOCs/SQLdm.fltoc"
+  OutputFile="SQLdm Word for Wiki">
+  <PrintedOutput
+    CollapseMargins="true" />
+</CatapultTarget>

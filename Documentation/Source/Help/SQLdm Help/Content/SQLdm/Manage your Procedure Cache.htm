@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="685" MadCap:lastWidth="833">
+    <head><title>Manage your Idera SQLdm procedure cache</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Manage your procedure cache</h1>
+        <p class="Body">
+            <MadCap:keyword term="Resources:procedure cache" />The Procedure Cache view allows you to view each item cached, the size, and the SQL text associated. Graphs below the cache listing provide you with a breakdown of the key Procedure Cache statistics that can help you analyze performance bottlenecks on your SQL Server instance.</p>
+        <p class="Body">The <span class="GUI_Item">Usage </span>column displays the number of times the associated cache object is used since inception. The <span class="GUI_Item">References </span>column displays the number of other cache objects referencing the associated cache object, with "1" as the base.</p>
+        <h2 class="Heading2">Access the Procedure Cache view</h2>
+        <p class="Body">You can open the Procedure Cache view of the SQLdm Resources tab by selecting the appropriate SQL&#160;Server instance, and then clicking <span class="GUI_Item">Resources &gt; Procedure Cache</span>.</p>
+        <h2 class="Heading2">Procedure Cache tab charts</h2>
+        <p class="Body">The following <a href="Charts.htm">charts</a> are available on the Procedure Cache tab:</p>
+        <p class="DefinitionListTerm">Cache Size by Object Type</p>
+        <p class="DefinitionListBody">Displays the amount of the procedure cache used by various objects including:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body">Adhoc Query</li>
+            <li class="Bullet-Def-Body">Check Constraint</li>
+            <li class="Bullet-Def-Body">Default Constraint</li>
+            <li class="Bullet-Def-Body">Extended Procedure</li>
+            <li class="Bullet-Def-Body">Prepared Statement</li>
+            <li class="Bullet-Def-Body">View</li>
+            <li class="Bullet-Def-Body-Last">Stored Procedure</li>
+        </ul>
+        <p class="DefinitionListTerm">Object Types</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet-Def-Body">Use the drop-down button to select either Hit Ratio, Object Count, or Use Rate. </li>
+            <li class="Bullet-Def-Body">Hit Ratio offers a chart of the cache hit ratios of the individual object types in memory through the last 25 refreshes. For example, you can view the hit ratio of the extended procedure object.</li>
+            <li class="Bullet-Def-Body-Last">Object Count displays the number of objects using the procedure cache. Use Rate displays the rate at which each of the object types is used in the procedure cache.</li>
+        </ul>
+    </body>
+</html>

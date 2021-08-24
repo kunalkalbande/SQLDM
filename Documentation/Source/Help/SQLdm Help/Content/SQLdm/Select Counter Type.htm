@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="481" MadCap:lastWidth="623">
+    <head><title>Select Idera SQLdm counter type</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Select counter type</h1>
+        <p class="Body">
+            <MadCap:keyword term="virtual;virtual machine;virtualization;VM;VMware;ESX;host;PerfMon;Hyper-V" />The Select Counter Type window of the Add Custom Counter wizard allows you to choose the method you want SQLdm to use when collecting the counter. SQLdm offers the following counter types:</p>
+        <p class="DefinitionListTerm">Windows System Counter</p>
+        <p class="DefinitionListBody">Select this option to pick from counters that include both those available in <a href="http://technet.microsoft.com/en-us/library/cc749249.aspx" target="_blank">Windows System Performance Monitor (PerfMon)</a> and      <a href="http://msdn.microsoft.com/en-us/library/aa394569.aspx" target="_blank">Windows Management Instrumentation (WMI)&#160;performance counter types</a>.</p>
+        <p class="DefinitionListTerm">SQL&#160;Server System Counter</p>
+        <p class="DefinitionListBody">Select this option to pick from counters that are gathered via standard T-SQL from SQL&#160;Server. </p>
+        <p class="DefinitionListTerm">Custom SQL&#160;Script</p>
+        <p class="DefinitionListBody">Select this option to enter a custom T-SQL script  to monitor variables such as those which are not connected to the Operating System or SQL&#160;Server counters or metrics that are very specific to your environment such as a row count on a particular production table. Note that your script must return a single numeric value.</p>
+        <p class="DefinitionListTerm">Virtual Machine Counter</p>
+        <p class="DefinitionListBody">Select this option to pick from counters collected using an API&#160;from VMware or Hyper-V.</p>
+        <h2 class="Heading2">Access the Add Custom Counter wizard</h2>
+        <p class="Body">You can open the Add Custom Counter wizard by clicking <span class="GUI_Item">Administration &gt;&#160;Custom Counters</span>, and then clicking <span class="GUI_Item">Add </span>in the Custom Counters view.</p>
+    </body>
+</html>

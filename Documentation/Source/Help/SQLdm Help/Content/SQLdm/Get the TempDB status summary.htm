@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="4" MadCap:lastHeight="699" MadCap:lastWidth="931">
+    <head><title>Get the Idera SQLdm tempdb status summary</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Get the tempdb status summary</h1>
+        <p class="Body">
+            <MadCap:keyword term="Database:TempDB summary" />The <a href="Monitor your TempDB database.htm" target="_self">Tempdb</a> Summary tab allows you to view the status of your tempdb database on the selected SQL&#160;Server instance. These charts include options for viewing your current capacity usage and recent trends of your files over time. These statistics appear in the Database Statistics report.</p>
+        <p class="Body">The Tempdb Summary tab displays a list of sessions currently using tempdb along with their cumulative usage and tempdb&#160;space. These statistics help you get an overview of the health of your tempdb database and gives you a good indication whether you have enough space allocated or whether tempdb issues are causing a performance problem on your server.</p>
+        <h2 class="Heading2">Access the Tempdb Summary view</h2>
+        <p class="Body">You can open the Tempdb Summary view of the SQLdm Databases tab by selecting the appropriate SQL&#160;Server instance, and then clicking <span class="GUI_Item">Databases &gt; Tempdb Summary</span>.</p>
+        <h2 class="Heading2">Tempdb Summary tab charts</h2>
+        <p class="Body">The Tempdb Summary tab includes <a href="Charts.htm" target="_self">charts</a> that display capacity usage and recent trend information for your tempdb database.</p>
+        <p class="Body"> Toggle between the Version Store Cleanup and Tempdb&#160;Contention charts by using the drop-down list available to the right of the chart title.</p>
+        <p class="DefinitionListTerm">Tempdb Space Used by File</p>
+        <p class="DefinitionListBody">You can choose to view how each file is using space on your tempdb database, displayed in megabytes. </p>
+        <p class="DefinitionListTerm">Tempdb&#160;Space Used Over Time</p>
+        <p class="DefinitionListBody">You can choose to view how your database is used over time based on object type by comparing charts that offer metrics for the Space Used and Space Allocated.</p>
+        <p class="DefinitionListTerm">Version Store Cleanup Rate</p>
+        <p class="DefinitionListBody">The <a href="Monitor your TempDB database.htm" target="_self">tempdb&#160;database version store</a> collects data rows necessary to support snapshot isolation. This chart helps you see the current cleanup rate to avoid filling up tempdb. </p>
+        <p class="DefinitionListTerm">Tempdb&#160;Contention</p>
+        <p class="DefinitionListBodyLast">The <a href="Monitor your TempDB database.htm" target="_self">Tempdb&#160;Contention</a> chart displays latch wait time (in milliseconds) for the allocation pages of tempdb.  The three tracked allocation page types are:</p>
+        <ul>
+            <li>Page free space (PFS)</li>
+            <li>Global allocation map (GAM)</li>
+            <li>Shared global allocation map (SGAM)</li>
+        </ul>
+        <p class="DefinitionListBodyLast">Latch contention of this sort is usually an indication that you should create more tempdb data files.  In some situations, using Trace Flag 1118 may also alleviate tempdb contention.</p>
+    </body>
+</html>

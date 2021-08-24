@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="1160" MadCap:lastWidth="887">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Get disk performance details in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Get disk performance details</h1>
+        <p class="Body">
+            <MadCap:keyword term="Resources:disk;virtual;virtual machine;virtualization;VM;VMware;ESX;host" />The Disk tab allows you to view key statistics on the way your disks are used on the computer hosting your SQL Server instance. This allows you to analyze your disk performance for any performance bottlenecks that may be occurring. </p>
+        <p class="Body">Disk information is displayed in four charts that display the drives the computer on which the SQL&#160;Server instance is located. You can pick which four charts you view by selecting from the drop-down list at the top of each chart. You can select from the following charts:</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">You must have <a href="Enable OS Metrics Monitoring.htm" target="_self">OS metrics enabled</a> to show the information in the charts on the Disks tab.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2">Access the Disk view</h2>
+        <p class="Body">You can open the Disk view of the SQLdm Resources tab by selecting the appropriate SQL&#160;Server instance, and then clicking <span class="GUI_Item">Resources &gt; Disk</span>.</p>
+        <h2 class="Heading2">Disk tab details</h2>
+        <p class="DefinitionListTerm">Disk Busy Total</p>
+        <p class="DefinitionListBody">Displays the percentage of time during the sample interval that the disk was not idle for all the disks (combined) on the server that the SQL Server instance resides.</p>
+        <p class="DefinitionListTerm">Disk Busy Per Disk</p>
+        <p class="DefinitionListBody">Displays the percentage of time during the sample interval that each disk was not idle.</p>
+        <p class="DefinitionListTerm">Average Disk Queue Length Total</p>
+        <p class="DefinitionListBody">Displays the average length of the disk queue during the sample interval for all disks (combined) on the server that the SQL Server instance resides.</p>
+        <p class="DefinitionListTerm">Average Disk Queue Length Per Disk</p>
+        <p class="DefinitionListBody">Displays the average length of the disk queue during the sample interval for all disks (individual) on the server that the SQL Server instance resides.</p>
+        <p class="DefinitionListTerm">SQL Server Physical I/O</p>
+        <p class="DefinitionListBody">Displays the number of read and write requests sent to the physical disk the SQL Server instance resides.</p>
+        <p class="DefinitionListTerm">SQL Server Physical I/O Errors</p>
+        <p class="DefinitionListBody">Displays the number of errors sent from the physical disk the SQL Server instance resides.</p>
+        <p class="DefinitionListTerm">Disk Reads/Second Per Disk</p>
+        <p class="DefinitionListBody">Displays the number of reads per disk per second during the sample interval.</p>
+        <p class="DefinitionListTerm">Disk Transfers/Second Per Disk</p>
+        <p class="DefinitionListBody">Displays the number of transfers per disk per second during the sample interval.</p>
+        <p class="DefinitionListTerm">Disk Writes/Second Per Disk</p>
+        <p class="DefinitionListBody">Displays the number of writes per disk per second during the sample interval.</p>
+        <p class="DefinitionListTerm">Average Disk ms/Read  Per Disk</p>
+        <p class="DefinitionListBody">Displays the average length of time (in milliseconds) for a disk to read during the sample interval.</p>
+        <p class="DefinitionListTerm">Average Disk ms/Transfer Per Disk</p>
+        <p class="DefinitionListBody">Displays the average length of time (in milliseconds) for a disk transfer during the sample interval.</p>
+        <p class="DefinitionListTerm">Average Disk ms/Write Per Disk</p>
+        <p class="DefinitionListBody">Displays the average length of time (in milliseconds) for a disk write during the sample interval.</p>
+        <p class="DefinitionListTerm">VM Disk Usage</p>
+        <p class="DefinitionListBody">Displays the amount of data read from and written to disk in KB per second for this virtual machine during the sample interval. For additional information about how SQLdm works with virtual machines and collects metrics, see <a href="How SQLdm works with a virtual environment.htm" target="_self">How SQLdm works with a virtual environment</a>.</p>
+        <p class="DefinitionListTerm">Host Disk Usage</p>
+        <p class="DefinitionListBodyLast">Displays the amount of data read from and written to disk in KB per second for the host server during the sample interval. For additional information about how SQLdm works with virtual machines and collects metrics, see <a href="How SQLdm works with a virtual environment.htm" target="_self">How SQLdm works with a virtual environment</a>.</p>
+        <h2 class="Heading2">Understanding your chart data and refresh interval</h2>
+        <p class="Body">SQLdm charts provide data whether collected real time or as part of a scheduled collection event. For additional information about how SQLdm displays your chart data, see <a href="Charts.htm" target="_self">Charts</a>. </p>
+    </body>
+</html>

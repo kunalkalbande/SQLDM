@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="8" MadCap:lastHeight="811" MadCap:lastWidth="762">
+    <head><title>Blocked Sessions (Count) alert in Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">Blocked Sessions (Count) alert</h1>
+        <p class="Body">The Blocked Sessions (Count) alert provides the number of sessions on the SQL Server instance blocked by other sessions holding requested locks. For this alert to display, enable monitoring of non-query activities with capturing of blocking events.</p>
+        <p class="Body">By default, blocked sessions wait for a lock wait forever, which is not optimum behavior. You can change this default behavior by making a connection, and then adding <code>SET LOCKTIMEOUT 60000</code> to the top of the first T-SQL batch. </p>
+        <h2 class="Heading2">Reduce the number of blocked sessions</h2>
+        <p class="Body">If you experience more than one blocked session on an average day, your site may experience one of the following issues:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">T-SQL batches submitted containing a <code>BEGIN TRANSACTION</code> statement with no corresponding <code>COMMIT TRANSACTION</code> statement. You must correct the T-SQL.
+</li>
+            <li class="Bullet">T-SQL batches submitted containing a <code>BEGIN TRANSACTION</code> statement but where the <code>COMMIT TRANSACTION</code> statement is in a following T-SQL batch that is only executed once the end-user confirms the transaction. You must correct the T-SQL.
+</li>
+            <li class="BulletLast">The site includes some long-running transactions processing at peak times. 
+</li>
+        </ul>
+        <p class="Body">When your transactions run longer than they should and clash, consider drastically reducing the time that a lock is held by:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Doing as much work as possible (for example, SELECT&#160;statements that may be needed) before the transaction performs its first update, delete, or insert.
+</li>
+            <li class="Bullet">Group all UPDATES, DELETES, and INSERTS as closely as possible together within a transaction with as few selects as possible separating them.
+</li>
+            <li class="Bullet">Commit the transaction as soon as possible after the last DML statement. 
+</li>
+            <li class="Bullet">Once the transaction has begun do not have any stops for user input. Gather all user inputs before the transaction starts.
+</li>
+            <li class="Bullet">Avoid the use of server side cursors during a transaction as they slow execution considerably. 
+	</li>
+            <li class="Bullet">If a stored procedure and/or trigger are invoked inside a transaction minimize or eliminate the number of SQL re-compilations made to that object. See the SQL Re-compilations counter for ways to dramatically reduce recompiles.
+</li>
+            <li class="BulletLast">Increase the speed of transaction throughput such that it becomes less likely that one transaction waits for the preceding one by:
+<ul><li class="Bullet">Adding more disks to your RAID solution. 
+</li><li class="Bullet">Replacing your disks with faster disks. 
+</li><li class="Bullet">Switching your RAID array from a RAID 5 to a RAID 10 solution as each write IO results in two writes using RAID 10 vs. four for RAID 5 (100% more efficient with writes).
+</li><li class="Bullet">So long as the RAID controller has some form of battery backup, then switch its cache mode from Write-through to Write-back as this increases the system's ability to handle write IOs by an order of magnitude.
+</li><li class="Bullet">Adding more cache memory to the RAID controller. 
+</li><li class="Bullet">Adding more RAM to the server. 
+</li><li class="Bullet">Adding another CPU to a SMP computer. 
+</li><li class="Bullet">Upgrading the CPU, memory and motherboard with faster models. 
+</li><li class="Bullet">Minimize the number of Context Switches by turning on Use NT Fibers in SQL Server. 
+</li><li class="BulletLast">Switch the Boost SQL Server Priority on. </li></ul></li>
+        </ul>
+    </body>
+</html>

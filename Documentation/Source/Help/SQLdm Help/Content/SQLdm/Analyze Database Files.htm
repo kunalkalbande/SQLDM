@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="397" MadCap:lastWidth="858">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Analyze Idera SQLdm database files</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Analyze database files</h1>
+        <p class="Body">
+            <MadCap:keyword term="Database:files">
+            </MadCap:keyword>The Files view allows you to see the file statistics for each of your databases on the selected SQL&#160;Server instance. Database capacity and growth are common causes of SQL Server performance bottlenecks.</p>
+        <table class="TableStyle_Tip_Style" style="mc-table-style: url('../Resources/TableStyles/Tip Style.css');" cellspacing="0">
+            <col />
+            <col style="width: 394px;" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Database growth statistics are collected every scheduled refresh.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">
+            <MadCap:keyword term="Files" />The Files view is an important tool that displays how much disk space you have available to your databases, how much disk space they are using, and the percentage of space used by databases and logs. Database capacity and growth are common causes of SQL Server performance bottlenecks.</p>
+        <p class="Body"><span class="GUI_Item">For Example:</span> If the % Data Full on a database is over a threshold, it could mean that either the file doesn't have the file auto-growth setting turned on, is about to reach the maximum allowable size, or that the disk the database is on is about to run out of space.</p>
+        <p class="Body">Another common use of the Files view is to identify the fragmentation percentage on an index. Once identified, you can click <span class="GUI_Item">Rebuild Indexes</span> to reduce the fragmentation on the selected index.</p>
+        <h2 class="Heading2">Access the Files view</h2>
+        <p class="Body">You can open the Files view of the SQLdm Databases tab by selecting the appropriate SQL&#160;Server instance, and then clicking <span class="GUI_Item">Databases &gt; Files</span>.</p>
+    </body>
+</html>

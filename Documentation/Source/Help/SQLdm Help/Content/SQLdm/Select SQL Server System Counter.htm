@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="805" MadCap:lastWidth="762">
+    <head><title>Select SQL Server system counter in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Select SQL Server system counters</h1>
+        <p class="Body">
+            <MadCap:keyword term="SQL Server System Counter;System Counter" />The Select SQL&#160;Server System Counter window of the Add Custom Counter wizard allows you to manually enter counter information or select counters from a list populated from those currently available on an existing monitored SQL&#160;Server.&#160;</p>
+        <p class="Body">If you have the counter information available, you can enter the information quickly by simply pasting or typing the <span class="GUI_Item">Object Name</span>, <span class="GUI_Item">Counter Name</span>, and <span class="GUI_Item">Instance</span> name into their associated fields. The counter information entered must be exact or the counter does not work correctly.</p>
+        <p class="StepIntro">To select a SQL&#160;Server system counter:</p>
+        <ol>
+            <li class="NumberedList">Select the appropriate SQL&#160;Server instance from the drop-down list.</li>
+            <li class="NumberedList">Select the object name.</li>
+            <li class="NumberedList">Select the name of the specific counter you want to add.</li>
+            <li class="NumberedList">Select the instance, if applicable. The instance name is what distinguishes it from other similar objects.</li>
+        </ol>
+        <p class="Body">If no counters appear in the drop-down list, either the counters are not installed or they are disabled, possibly by a recent Windows Service Pack. </p>
+        <h2 class="Heading2">Access the Add Custom Counter wizard</h2>
+        <p class="Body">You can open the Add Custom Counter wizard by clicking <span class="GUI_Item">Administration &gt;&#160;Custom Counters</span>, and then clicking <span class="GUI_Item">Add </span>in the Custom Counters view.</p>
+        <h2 class="Heading2">How to calculate this metric</h2>
+        <p class="Body">For more information about the algorithm used to calculate a specific metric, see SQL&#160;diagnostic manager cannot load the performance counters needed for the statistics view pane - Solution #00000133 Idera Solution available at the <a href="http://www.idera.com/support" target="_blank">Customer Service Portal</a>.</p>
+        <h2 class="Heading2">Understand why the SQL&#160;Server counter grows</h2>
+        <p class="Body">
+            <MadCap:keyword term="Buffer" />Many <a href="Specify counter value.htm">SQL&#160;Server counter values</a> start at zero when a server starts and then grow persistently from there, including most of the values in the sysperfinfo system table.&#160;</p>
+        <p class="Body">For example, the Buffer Manager Page Lookups/Sec counter in the <span class="GUIItem_1">value collected</span> mode always shows the total number of page lookups since the server was first started, while when in the <span class="GUIItem_1">value per second</span> mode, it shows the number of lookups per second during the monitored period.</p>
+    </body>
+</html>

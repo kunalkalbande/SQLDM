@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us" MadCap:lastBlockDepth="6" MadCap:lastHeight="1128" MadCap:lastWidth="858">
+    <head><title>Analyze locked sessions in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Analyze locked sessions</h1>
+        <p class="Body">
+            <MadCap:keyword term="Sessions:Locked" />On the Locked Sessions view, you can see which problem locks are causing data availability problems and unacceptable responses. By combining the information provided on the Problem Locks view (including the type of Lock) with the <span class="GUI_Item">Lock Statistics:&#160;Waits</span> chart on the Sessions Summary tab, you can pinpoint, correct, or reschedule automated applications that cause extensive row, table, or database locking. </p>
+        <p class="Body">Use the drop-down list in the chart title to select charts that include:</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">Average Wait Time</li>
+            <li class="Bullet">Deadlocks</li>
+            <li class="Bullet">Requests</li>
+            <li class="Bullet">Timeouts</li>
+            <li class="Bullet">Waits</li>
+            <li class="BulletLast">Wait Time information</li>
+        </ul>
+        <p class="Body">You can right-click any of these <a href="Charts.htm">charts</a> and either print, save as image, or export them to Microsoft Excel. In addition, you can select <span class="GUI_Item">Toolbar </span>for advanced customization options such as changing the chart color scheme and the type of chart shown.</p>
+        <h2 class="Heading2">Access the Locks view</h2>
+        <p class="Body">You can open the Locks view of the SQLdm Sessions tab by selecting the appropriate SQL&#160;Server instance, and then clicking <span class="GUI_Item">Sessions &gt; Locks</span>.</p>
+        <h2 class="Heading2">Available SQL&#160;Server lock objects</h2>
+        <p class="Body">The Lock Statistics chart includes the following objects:</p>
+        <p class="DefinitionListTerm">AllocUnit</p>
+        <p class="DefinitionListBody">Represents a lock on an allocation unit.</p>
+        <p class="DefinitionListTerm">Application</p>
+        <p class="DefinitionListBody">Represents a lock on an application-specific resource.</p>
+        <p class="DefinitionListTerm">Database</p>
+        <p class="DefinitionListBody">Represents a lock on a database, including all objects in the database.</p>
+        <p class="DefinitionListTerm">Extent</p>
+        <p class="DefinitionListBody">Represents a lock on a contiguous group of eight pages.</p>
+        <p class="DefinitionListTerm">File</p>
+        <p class="DefinitionListBody">Represents a lock on a database file.</p>
+        <p class="DefinitionListTerm">HoBT</p>
+        <p class="DefinitionListBody">(Heap or BTree) Represents a lock on a heap of data pages, or on the BTree structure of an index.</p>
+        <p class="DefinitionListTerm">Key</p>
+        <p class="DefinitionListBody">Represents a lock on a row in an index.</p>
+        <p class="DefinitionListTerm">Latch</p>
+        <p class="DefinitionListBody">Represents a lock on a latch.</p>
+        <p class="DefinitionListTerm">Metadata</p>
+        <p class="DefinitionListBody">Represents a lock on a piece of catalog information, also called metadata.</p>
+        <p class="DefinitionListTerm">Object</p>
+        <p class="DefinitionListBody">Represents a lock on an item such as a table, stored procedure, or view, including all data and indexes. The object represents anything that has an entry in <code>sys.all_objects</code>.</p>
+        <p class="DefinitionListTerm">Page</p>
+        <p class="DefinitionListBody">Represents a lock on an 8 KB page in a database.</p>
+        <p class="DefinitionListTerm">RID</p>
+        <p class="DefinitionListBody">(Row ID) Represents a lock on a single row in a heap.</p>
+        <p class="DefinitionListTerm">Table</p>
+        <p class="DefinitionListBodyLast">Represents a lock on a table.</p>
+    </body>
+</html>

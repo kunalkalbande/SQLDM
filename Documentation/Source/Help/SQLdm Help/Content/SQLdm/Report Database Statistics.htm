@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="754" MadCap:lastWidth="833">
+    <head>
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Database Statistics report in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Database Statistics</h1>
+        <p class="Body">The Database Statistics report lets you analyze and compare performance trends, such as the percentage of growth, across two SQL Server databases. You can also compare performance metrics at different points in time for the same database. This report can also include tempdb database statistics.</p>
+        <h2 class="Heading2">When to run this report</h2>
+        <p class="Body">You should run the Database Statistics report when attempting to understand performance differences or trouble-shooting database issues. </p>
+        <h2 class="Heading2">How SQLdm calculates metric values on this report</h2>
+        <p class="Body">Most values on the Database Statistics report correlate with the related SQL Server metric. However, some metric values represent averages over time. Likewise, a few metric values are based on performance algorithms that use multiple statistics to calculate a more accurate metric.</p>
+        <p class="Body" MadCap:conditions="Default.Internal Only">The following table provides additional information as to how SQLdm calculates that values in each column of the Database Statistics report.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0" MadCap:conditions="Default.Internal Only">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Column Name</th>
+                    <th class="HeadD-Column2-Header1">How SQLdm calculates this value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Avg % Growth</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Avg Data File MB</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Avg Data Size MB</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Avg Log File MB</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Database Name</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">KB&#160;Read/sec</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">KB&#160;Written/sec</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Period</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Timestamp</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Tran/sec</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">You can access our <a href="http://www.idera.com/support" target="_blank">Customer Service Portal</a> (www.idera.com/support) for more information about the algorithm used to calculate a specific metric.</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">How is the Worst Performing and Most Frequent Queries information gathered? - Solution #00000412</li>
+            <li class="Bullet">How does SQL diagnostic manager gather statistics from monitored SQL Servers? - Solution #00000055</li>
+            <li class="Bullet">How does SQL diagnostic manager calculate the reorganization percentage for database tables? - Solution #00000301</li>
+            <li class="BulletLast">What does the 'Memory Usage' metric in the Console and Reports represent? - Solution #00002237</li>
+        </ul>
+    </body>
+</html>

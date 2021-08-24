@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="666" MadCap:lastWidth="833">
+    <head>
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Server Statistics report in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Server Statistics</h1>
+        <p class="Body">The Server Statistics report lets you analyze and compare performance trends across two SQL Server instances. You can focus on a single performance statistic, such as memory usage, and track its value on both instances over a specified period of time.</p>
+        <h2 class="Heading2">When to run this report</h2>
+        <p class="Body">You should run the Server Statistics report when you want to trend key performance metrics over time for one or two specific instances, in response to a known problem or a routine health check. For example, if the same third party application uses two different databases but only one database has reported issues, then comparing their key performance metrics can help you diagnose the issue.</p>
+        <h2 class="Heading2">How SQLdm calculates metric values on this report</h2>
+        <p class="Body">Most values on the Server Statistics report correlate with the related SQL Server metric. However, some metric values represent averages over time. Likewise, a few metric values are based on performance algorithms that use multiple statistics to calculate a more accurate metric. </p>
+        <p class="Body" MadCap:conditions="Default.Internal Only">The following table provides additional information as to how SQLdm calculates that values in each column of the Server Statistics report.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0" MadCap:conditions="Default.Internal Only">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Column Name</th>
+                    <th class="HeadD-Column2-Header1">How SQLdm calculates this value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">%&#160;Disk Busy</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Percentage of time this instance spent serving system-wide input/output requests.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Date</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Timestamp when the Collection service gathered the corresponding data.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Instance</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Name of the instance monitored by SQLdm.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Interval</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">OS&#160;Memory Usage (GB)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Operating system memory usage for a request on this instance, in gigabytes.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Response Time (MS)</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Amount of time needed for this instance to respond to a request, in milliseconds.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">SQL&#160;CPU&#160;Activity (%)</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Amount of CPU time used by this instance.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">You can access our <a href="http://www.idera.com/support" target="_blank">Customer Service Portal</a> (www.idera.com/support) for more information about the algorithm used to calculate a specific metric.</p>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet">How is the Worst Performing and Most Frequent Queries information gathered? - Solution #00000412</li>
+            <li class="Bullet">How does SQL diagnostic manager gather statistics from monitored SQL Servers? - Solution #00000055</li>
+            <li class="Bullet">How does SQL diagnostic manager calculate the reorganization percentage for database tables? - Solution #00000301</li>
+            <li class="BulletLast">What does the 'Memory Usage' metric in the Console and Reports represent? - Solution #00002237</li>
+        </ul>
+    </body>
+</html>

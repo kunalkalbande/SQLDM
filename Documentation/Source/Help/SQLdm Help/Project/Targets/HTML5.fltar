@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="1"
+  Comment="SQLdm Help"
+  Type="WebHelp2"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  DefaultUrl="/Content/SQLdm/Welcome to SQLdm.htm"
+  Skin="/Project/Skins/DefaultHTML5.flskn"
+  MasterToc="/Project/TOCs/SQLdm.fltoc"
+  BrowseSequence="/Project/Advanced/PDF.flbrs"
+  MasterStylesheet="/Content/Resources/Stylesheets/Idera Stylesheet.css"
+  ConditionTagExpression="include[Default.ScreenOnly or Default.SEO] exclude[Default.Google or &quot;Default.Internal Only&quot; or Default.PDFOnly or Default.PrintOnly] "
+  InsertMOTW="true"
+  MoveOutputContentToRoot="false"
+  MasterPage="/Content/Resources/MasterPages/NewPage.flmsp"
+  EnableSitemap="true"
+  SitemapWebUrl="http://www.idera.com/Help/SQLdm/8-6/Web">
+  <PrintedOutput
+    CollapseMargins="true" />
+</CatapultTarget>

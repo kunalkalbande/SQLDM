@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="1"
+  Comment="SQLdm Release Notes"
+  Type="PDF"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  ConditionTagExpression="include[&quot;Default.PDF Only&quot; or Default.PrintOnly] exclude[Default.Google or &quot;Default.Internal Only&quot; or Default.ScreenOnly or Default.SEO] "
+  MasterToc="/Project/TOCs/SQLdm.fltoc"
+  MasterStylesheet="/Content/Resources/Stylesheets/Idera Stylesheet.css"
+  OutputFile="SQLdm Release Notes"
+  PatchHeadingLevels="true"
+  InjectBookHeadings="true">
+  <PDF
+    ShowUsedBookmarks="false"
+    Tagged="true"
+    CollapsedBookmarks="true" />
+  <DocumentProperties
+    Author="" />
+</CatapultTarget>

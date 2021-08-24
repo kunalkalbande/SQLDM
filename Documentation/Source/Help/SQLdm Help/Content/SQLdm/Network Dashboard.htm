@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="875" MadCap:lastWidth="794">
+    <head>
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Network panel in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Network panel</h1>
+        <p class="Body">
+            <MadCap:keyword term="Network:Dashboard panel;Dashboard:Network;VM;VMware;Virtual;Virtualization;Host;ESX;Virtual Machine" />The Network panel tracks the performance of the network connection being used by your monitored SQL Server. Unexpected spikes in packet rates and response times may warn you about the beginning of a serious performance issue. Chronically high network metrics may indicate excessive network traffic or a high server workload, which may require you to move some monitored instances to other computers to free up network resources and balance the workload.</p>
+        <h2 class="Heading2"><a name="NetworkThroughput"></a>SQL&#160;Server Throughput chart</h2>
+        <p class="Body">The <span class="GUI_Item">SQL&#160;Server Throughput </span>chart plots how many packets this SQL&#160;Server sends and receives over time. </p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Metric</th>
+                    <th class="HeadD-Column2-Header1">Why it is important</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText"><a href="Metrics/Packets Received.htm">Packets received/sec
+</a>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">A consistently high rate may indicate that the packet size is too small.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText"><a href="Metrics/Packets Sent.htm">Packets sent/sec</a>
+                        </p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">A consistently high rate may indicate that the packet size is too small.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2"><a name="VMNetworkThroughput"></a>VM&#160;Network Usage Throughput chart</h2>
+        <p class="Body">The <span class="GUI_Item">VM Network Usage Throughput </span>chart plots how much data this virtual machine transmits and receives in KB/second over time. For additional information about how SQLdm works with virtual machines, see <a href="How SQLdm works with a virtual environment.htm" target="_self">How SQLdm works with a virtual environment</a>.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Metric</th>
+                    <th class="HeadD-Column2-Header1">Why it is important</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Transmitted KB/sec</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">A consistently high rate may indicate that data throughput is saturated. Investigate load balancing your network traffic.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Received KB/sec</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">A consistently high rate may indicate that data throughput is saturated. Investigate load balancing your network traffic.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2"><a name="HostNetworkThroughput"></a>Host Network Usage Throughput chart</h2>
+        <p class="Body">The <span class="GUI_Item">Host Network Usage Throughput </span>chart plots how much data this host server transmits and receives in KB/second over time. For additional information about how SQLdm works with virtual machines, see <a href="How SQLdm works with a virtual environment.htm" target="_self">How SQLdm works with a virtual environment</a>.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Metric</th>
+                    <th class="HeadD-Column2-Header1">Why it is important</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Transmitted KB/sec</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">A consistently high rate may indicate that data throughput is saturated. Investigate load balancing your network traffic.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Received KB/sec</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">A consistently high rate may indicate that data throughput is saturated. Investigate load balancing your network traffic.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2"><a name="NetworkResponseTime"></a>Response Time gauge</h2>
+        <p class="Body">The <span class="GUI_Item">Response Time</span> gauge displays the time (in milliseconds) SQL diagnostic manager currently needs to send a simple SQL command to the SQL Server instance, have it processed, and receive the returned result set. This value corresponds to the <a href="Metrics/Response Time.htm">SQL&#160;Server Response Time</a> metric.</p>
+        <h2 class="Heading2">Available alerts</h2>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet"><a href="Alerts/Response Time Alert.htm">SQL&#160;Server Response Time Alert</a>
+            </li>
+        </ul>
+    </body>
+</html>

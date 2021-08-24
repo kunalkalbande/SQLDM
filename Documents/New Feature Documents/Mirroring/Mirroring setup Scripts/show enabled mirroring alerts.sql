@@ -1,0 +1,1 @@
+exec sys.sp_dbmmonitorhelpalert @database_name=N'AdventureWorks'

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="702" MadCap:lastWidth="800">
+    <head>
+        <link href="../Resources/TableStyles/Idera Table Stylesheet.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Cache panel in Idera SQLdm</title>
+        <link href="../Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="Heading1">Cache panel</h1>
+        <p class="Body">
+            <MadCap:keyword term="Cache:Dashboard panel;Dashboard:Cache" />The Cache panel tracks the database and procedure processes using a buffer pool of memory on your monitored SQL&#160;Server instance. Unexpected spikes in the buffer and procedure cache may alert you to check that you have enough memory for the current pool to function properly. Chronically high cache metrics may indicate the need for server maintenance, query tuning, or index updates to better handle the ongoing workload. For additional information, see <a href="Manage your Procedure Cache.htm" target="_self">how to manage your Procedure Cache</a>.</p>
+        <p>If the database cache size seems to be too small for optimal performance and there is very little available memory on the system, adding more memory to the system may increase performance. If there is a lot of available memory on the system and the database cache size is not growing beyond a certain point, the database cache size may be capped at an artificially low limit. Increasing this limit may increase performance.</p>
+        <h2 class="Heading2"><a name="CachePageLife"></a>Page Life Expectancy chart</h2>
+        <p class="Body">The <span class="GUI_Item">Page Life Expectancy</span> chart provides the time in seconds that a page remains in the cache or buffer pool. The longer your page stays in the cache, the more likely the chance that SQL&#160;Server finds that data quickly without a read of physical media and minimize processing resource use. Use the <a href="Alerts/Page Life Expectancy Alert.htm" target="_self">Page Life Expectancy Alert</a> to warn you of issues.</p>
+        <h2 class="Heading2"><a name="CacheAreas"></a>Areas chart</h2>
+        <p class="Body">The Areas chart displays the usage in megabytes of each type of cache in use.</p>
+        <table class="TableStyle-Idera_Table_Stylesheet" style="mc-table-style: url('../Resources/TableStyles/Idera Table Stylesheet.css');caption-side: top;" cellspacing="0">
+            <col style="width: 185px;" class="Column-Column1" />
+            <col style="width: 521px;" class="Column-Column2" />
+            <thead>
+                <tr class="Head-Header1">
+                    <th class="HeadE-Column1-Header1">Metric</th>
+                    <th class="HeadD-Column2-Header1">Why it is important</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Database</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the amount of system memory (in MB) used by the database cache manager to hold commonly-used information from the database file(s) to prevent file operations.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Free</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">A low amount of free cache indicates a higher risk of performance issues.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1">
+                        <p class="TableText">Procedure Cache</p>
+                    </td>
+                    <td class="BodyD-Column2-Body1">
+                        <p class="TableText">Indicates the amount of space used to store query plans.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1">
+                        <p class="TableText">Other</p>
+                    </td>
+                    <td class="BodyA-Column2-Body1">
+                        <p class="TableText">Indicates the amount of space used by other processes.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="Heading2"><a name="CacheHitRatios"></a>Cache Hit Ratios gauge</h2>
+        <p class="Body">The <span class="GUI_Item">Cache Hit Ratios</span> gauge displays the hit rates of the Buffer and Procedure cache in this SQL&#160;Server instance. Use the <a href="Alerts/Procedure Cache Hit Ratio.htm" target="_self">Procedure Cache Hit Ratio Alert</a> to warn you of issues.</p>
+        <h2 class="Heading2">Available alerts</h2>
+        <ul style="list-style-type: circle;">
+            <li class="Bullet"><a href="Alerts/Page Life Expectancy Alert.htm">Page Life Expectancy Alert</a>
+            </li>
+            <li class="Bullet"><a href="Alerts/Procedure Cache Hit Ratio.htm">Procedure Cache Hit Ratio Alert</a>
+            </li>
+        </ul>
+    </body>
+</html>

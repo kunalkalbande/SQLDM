@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="552" MadCap:lastWidth="667">
+    <head>
+        <link href="../Resources/TableStyles/Tip Style.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Add users to Idera SQLdm</title>
+        <link href="Resources/Stylesheets/Idera Stylesheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="Heading1">Add users to SQLdm</h1>
+        <p class="Body">
+            <MadCap:keyword term="Add Permission;permission" />The Add Permission wizard allows you to give SQLdm access to a specified login in your environment. By default, all users belonging to the sysadmin role on the SQLdm Repository have SQLdm Administrator privileges and all other users are denied access to any of the monitoring and diagnostic views in SQLdm.</p>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col>
+            </col>
+            <col style="width: 626px;">
+            </col>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">Logins belonging to the sysadmin role on the SQLdm Repository have SQLdm Administrator privileges and you cannot edit or delete these accounts.    </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Body">Each login account can have multiple permissions associated with it. For example, if you want User A to have the ability to view all your SQL Server instances but modify only one of them, you can create two permissions. Include View permissions in the first login to allow the login to view all your SQL&#160;Server instances, and enable Modify permissions for the specified SQL&#160;Server instance in the second login.</p>
+        <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Tip Style.css');" class="TableStyle_Tip_Style" cellspacing="0">
+            <col>
+            </col>
+            <col style="width: 626px;">
+            </col>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Tip_Style_Body_0_0_RowEnd_ColSep">
+                        <p class="TableHeadRow">TIP</p>
+                    </td>
+                    <td class="TableStyle_Tip_Style_Body_0_1_RowEnd_ColEnd">
+                        <p class="TableText">If a SQL&#160;login is entered and it does not already exist, a new login account is created on the SQLdm Repository SQL Server instance.    </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="StepIntro">To create a SQLdm login account:</p>
+        <ol>
+            <li class="NumberedList">Click <span class="GUI_Item">Administration &gt; Application Security</span>.</li>
+            <li class="NumberedList">Click the <span class="GUI_Item">Add</span> button on the Application Security window.</li>
+            <li class="NumberedList">Click <span class="GUI_Item">Next</span> on the Add Permission wizard Welcome window.</li>
+            <li class="NumberedList">Type either the Windows account or SQL&#160;login used to connect to the SQLdm Repository.</li>
+            <li class="NumberedList">Select the <span class="GUI_Item">Authentication</span> type and click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Select the <a href="Specify permissions.htm">type of SQL&#160;Server instance permissions</a> to grant to the specified account and click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Select the tags or SQL&#160;Server instances to apply the permissions to and click <span class="GUI_Item">Add</span> to move them to the <span class="GUI_Item">Selected Servers</span> column and click <span class="GUI_Item">Next</span>.</li>
+            <li class="NumberedList">Review your changes on the Summary window and click <span class="GUI_Item">Finish</span> to add the SQLdm login.</li>
+        </ol>
+    </body>
+</html>
