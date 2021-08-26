@@ -1,6 +1,9 @@
 using Idera.SQLdm.Common.Configuration;
 using Idera.SQLdm.Common.Services;
 using Idera.SQLdm.DesktopClient.Helpers;
+using Idera.SQLdm.DesktopClient.Properties;
+using System.Drawing;
+
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
 {
     partial class ResourcesWaitStatsActive
@@ -47,53 +50,57 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
         /// </summary>
         private void InitializeComponent()
         {
+            Color backColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor) : Color.White;
+            Color foreColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridForeColor) : Color.Black;
+            Color activeBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridActiveBackColor) : Color.White;
+            Color hoverBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridHoverBackColor) : Color.White;
             this.components = new System.ComponentModel.Container();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab8 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab3 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab4 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab5 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab6 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab7 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab8 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab6 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab7 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
             ChartFX.WinForms.Adornments.GradientBackground gradientBackground1 = new ChartFX.WinForms.Adornments.GradientBackground();
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool1 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("chartContextMenu");
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool1 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("toggleChartToolbarButton", "");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printChartButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportChartImageButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportChartDataButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Infragistics.Win.UltraWinToolbars.ButtonTool("viewFullGroupByTextButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool10 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showQueryHistoryButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printChartButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Controls.CustomControls.CustomButtonTool("printChartButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Controls.CustomControls.CustomButtonTool("exportChartImageButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Controls.CustomControls.CustomButtonTool("exportChartDataButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Controls.CustomControls.CustomButtonTool("viewFullGroupByTextButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool10 = new Controls.CustomControls.CustomButtonTool("showQueryHistoryButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Controls.CustomControls.CustomButtonTool("printChartButton");
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportChartDataButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Controls.CustomControls.CustomButtonTool("exportChartDataButton");
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportChartImageButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Controls.CustomControls.CustomButtonTool("exportChartImageButton");
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool2 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("toggleChartToolbarButton", "");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Infragistics.Win.UltraWinToolbars.ButtonTool("viewFullGroupByTextButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Controls.CustomControls.CustomButtonTool("viewFullGroupByTextButton");
             Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showQueryHistoryButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Controls.CustomControls.CustomButtonTool("showQueryHistoryButton");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResourcesWaitStatsActive));
-            this.ultraTabStripControl1 = new Infragistics.Win.UltraWinTabControl.UltraTabStripControl();
+            this.ultraTabStripControl1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTabStripControl();
             this.ultraTabSharedControlsPage1 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
-            this.chart = new ChartFX.WinForms.Chart();
+            this.chart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
             this.toolbarsManager = new Idera.SQLdm.DesktopClient.Controls.ContextMenuManager(this.components);
             this.ultraPrintPreviewDialog = new Infragistics.Win.Printing.UltraPrintPreviewDialog(this.components);
-            this.ResourcesWaitStatsActive_Fill_Panel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.ResourcesWaitStatsActive_Fill_Panel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.headerStrip1 = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
-            this.queryWaitsOverTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.queryWaitsByDurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.queryWaitsOverTimeToolStripMenuItem = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomToolStripMenuItem();
+            this.queryWaitsByDurationToolStripMenuItem = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomToolStripMenuItem();
             this.breadCrumb1 = new Idera.SQLdm.DesktopClient.Controls.BreadCrumb();
             this.headerStrip2 = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-        //  this.advancedQueryViewPanel = new System.Windows.Forms.Panel();
+        //  this.advancedQueryViewPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
         //  this.advancedQueryViewImage = new System.Windows.Forms.PictureBox();
-        //  this.advancedQueryViewLabel = new System.Windows.Forms.Label();
-            this.operationalStatusPanel = new System.Windows.Forms.Panel();
+        //  this.advancedQueryViewLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.operationalStatusPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.operationalStatusImage = new System.Windows.Forms.PictureBox();
-            this.operationalStatusLabel = new System.Windows.Forms.Label();
+            this.operationalStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ultraTabStripControl1)).BeginInit();
             this.ultraTabStripControl1.SuspendLayout();
             this.ultraTabSharedControlsPage1.SuspendLayout();
@@ -409,9 +416,10 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = backColor;
+            this.ForeColor = foreColor;
             this.Controls.Add(this.ResourcesWaitStatsActive_Fill_Panel);
-       //   this.Controls.Add(this.advancedQueryViewPanel);
+            //this.Controls.Add(this.advancedQueryViewPanel);
             this.Controls.Add(this.operationalStatusPanel);
             this.Name = "QueriesWaitStatsActive";
             this.Size = new System.Drawing.Size(800, 679);
@@ -435,30 +443,28 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
             this.operationalStatusPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.operationalStatusImage)).EndInit();
             this.ResumeLayout(false);
-
         }
-
         #endregion
 
         private Infragistics.Win.UltraWinTabControl.UltraTabStripControl ultraTabStripControl1;
         private Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage ultraTabSharedControlsPage1;
         private ChartFX.WinForms.Chart chart;
         private Idera.SQLdm.DesktopClient.Controls.ContextMenuManager toolbarsManager;
-        private System.Windows.Forms.Panel ResourcesWaitStatsActive_Fill_Panel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  ResourcesWaitStatsActive_Fill_Panel;
         private Infragistics.Win.Printing.UltraPrintPreviewDialog ultraPrintPreviewDialog;
         private Idera.SQLdm.DesktopClient.Controls.BreadCrumb breadCrumb1;
         private Idera.SQLdm.DesktopClient.Controls.HeaderStrip headerStrip2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.Panel panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
         private Idera.SQLdm.DesktopClient.Controls.HeaderStrip headerStrip1;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
         private System.Windows.Forms.ToolStripMenuItem queryWaitsOverTimeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem queryWaitsByDurationToolStripMenuItem;
-    //  private System.Windows.Forms.Panel advancedQueryViewPanel;
+    //  private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  advancedQueryViewPanel;
     //  private System.Windows.Forms.PictureBox advancedQueryViewImage;
-    //  private System.Windows.Forms.Label advancedQueryViewLabel;
-        private System.Windows.Forms.Panel operationalStatusPanel;
+    //  private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel advancedQueryViewLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  operationalStatusPanel;
         private System.Windows.Forms.PictureBox operationalStatusImage;
-        private System.Windows.Forms.Label operationalStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel operationalStatusLabel;
     }
 }

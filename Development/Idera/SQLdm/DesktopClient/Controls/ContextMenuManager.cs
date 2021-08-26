@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.Integration;
 using BBS.TracerX;
 using Infragistics.Win.UltraWinToolbars;
+using Infragistics.Windows.Themes;
 using Control = System.Windows.Forms.Control;
 using Point = System.Drawing.Point;
 
@@ -24,6 +25,66 @@ namespace Idera.SQLdm.DesktopClient.Controls
         private static Logger LOG = Logger.GetLogger("ContextMenuManager");
         public ContextMenuManager(IContainer container) : base(container)
         {
+            updateThemeColors();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void updateThemeColors()
+        {
+            if (Properties.Settings.Default.ColorScheme == "Dark")
+            {
+                this.UseAppStyling = false;
+                this.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
+                this.Appearance.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.ContextMenuManagerDockBackColor);
+                this.MenuSettings.IconAreaAppearance.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.ContextMenuManagerDockBackColor);
+                this.MenuSettings.HotTrackAppearance.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.ContextMenuManagerMenuItemBackColorSelected);
+                this.Appearance.ForeColor = ColorTranslator.FromHtml(DarkThemeColorConstants.ContextMenuManagerDockForeColor);
+                this.DockAreaAppearance.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.ContextMenuManagerDockBackColor);
+                this.DockAreaAppearance.BackColor2 = ColorTranslator.FromHtml(DarkThemeColorConstants.ContextMenuManagerDockBackColor2);
+                this.DockAreaAppearance.ForeColor = ColorTranslator.FromHtml(DarkThemeColorConstants.ContextMenuManagerDockForeColor);
+            }
+            else
+            {
+                this.UseAppStyling = true;
+                this.UseOsThemes = Infragistics.Win.DefaultableBoolean.True;
+                this.ResetAppearance();
+                this.ResetMenuSettings();
+                this.DockAreaAppearance.ResetBackColor();
+                this.DockAreaAppearance.ResetBackColor2();
+                this.DockAreaAppearance.ResetForeColor();
+            }
+        }
+
+        
+        void updateContextMenuTheme(ContextMenuStrip result)
+        {
+            if (Properties.Settings.Default.ColorScheme == "Dark")
+            {
+                Appearance.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.ContextMenuManagerDockBackColor);
+                result.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.ContextMenuManagerDockBackColor);
+                result.ForeColor = ColorTranslator.FromHtml(DarkThemeColorConstants.ContextMenuManagerDockForeColor);
+            }
+            else
+            {
+                result.ResetBackColor();
+                ResetAppearance();
+            }
+        }
+
+        void updateContextSubMenuTheme(ToolStripMenuItem result)
+        {
+            if (Properties.Settings.Default.ColorScheme == "Dark")
+            {
+                result.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.ContextMenuManagerDockBackColor);
+                result.ForeColor = ColorTranslator.FromHtml(DarkThemeColorConstants.ContextMenuManagerDockForeColor);
+                result.DropDown.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.ContextMenuManagerDockBackColor);
+                result.DropDown.ForeColor = ColorTranslator.FromHtml(DarkThemeColorConstants.ContextMenuManagerDockForeColor);
+            }
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            updateThemeColors();
         }
 
         private Hashtable contextMenuUltras = null;
@@ -264,9 +325,9 @@ namespace Idera.SQLdm.DesktopClient.Controls
             result.Tag = new ToolDropdownEventArgs(popupMenuTool, sourceControl);
             result.Closed += OnContextMenuClosed;
             result.ItemClicked += OnToolClick;
+            updateContextMenuTheme(result);
 
             BuildContextMenu(result.Items, popupMenuTool, false);
-
             return result.Items.Count == 0 ? null : result;
         }
 
@@ -305,6 +366,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
                 //item.Click += OnToolClick;
                 item.Click += new EventHandler(item_Click);
                 item.Tag = isSubMenu;
+                updateContextSubMenuTheme(item);
 
                 if (tool.InstanceDisplaysImage)
                 {
@@ -496,15 +558,30 @@ namespace Idera.SQLdm.DesktopClient.Controls
         }
         public override Color ImageMarginGradientBegin
         {
-            get { return Color.FromArgb(255, 242, 244, 245); }
+            get 
+            {
+                if (Properties.Settings.Default.ColorScheme == "Dark")
+                    return ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelBackColor);
+                return Color.FromArgb(255, 242, 244, 245); 
+            }
         }
         public override Color ImageMarginGradientMiddle
         {
-            get { return Color.FromArgb(255, 242, 244, 245); }
+            get
+            {
+                if (Properties.Settings.Default.ColorScheme == "Dark")
+                    return ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelBackColor);
+                return Color.FromArgb(255, 242, 244, 245); 
+            }
         }
         public override Color ImageMarginGradientEnd
         {
-            get { return Color.FromArgb(255, 242, 244, 245); }
+            get
+            {
+                if (Properties.Settings.Default.ColorScheme == "Dark")
+                    return ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelBackColor);
+                return Color.FromArgb(255, 242, 244, 245); 
+            }
         }
         public override Color ImageMarginRevealedGradientBegin
         {
@@ -683,6 +760,9 @@ namespace Idera.SQLdm.DesktopClient.Controls
                     else
                     {
                         Color menuItemBorder = this.ColorTable.MenuItemBorder;
+                        if (Properties.Settings.Default.ColorScheme == "Dark")
+                            menuItemBorder = ColorTranslator.FromHtml(DarkThemeColorConstants.ContextMenuManagerMenuItemBackColorSelected);
+
                         if (item.Enabled)
                         {
                             using (Brush linearGradientBrush = new LinearGradientBrush(rectangle,
@@ -723,15 +803,29 @@ namespace Idera.SQLdm.DesktopClient.Controls
                 else
                 {
                     Color highlight = this.ColorTable.MenuItemBorder;
+                    if (Properties.Settings.Default.ColorScheme == "Dark")
+                        highlight = Color.Empty;
                     if (item.Enabled)
                     {
-                        using (var linearGradientBrush = new LinearGradientBrush(rectangle,
+                        if (Properties.Settings.Default.ColorScheme == "Dark")
+                        {
+                            using (Brush brush = new SolidBrush(ColorTranslator.FromHtml(DarkThemeColorConstants.ContextMenuManagerMenuItemBackColorSelected)))
+                            {
+                                graphics.FillRectangle(brush, rectangle);
+                            }
+
+                        }
+                        else
+                        {
+
+                            using (var linearGradientBrush = new LinearGradientBrush(rectangle,
                                                              this.ColorTable.MenuItemSelectedGradientBegin,
                                                              this.ColorTable.MenuItemSelectedGradientEnd,
                                                              LinearGradientMode.Vertical))
-                        {
-                            linearGradientBrush.InterpolationColors = MenuItemBackColorSelected;
-                            graphics.FillRectangle(linearGradientBrush, rectangle);
+                            {
+                                linearGradientBrush.InterpolationColors = MenuItemBackColorSelected;
+                                graphics.FillRectangle(linearGradientBrush, rectangle);
+                            }
                         }
                     }
                     using (var pen1 = new Pen(highlight))

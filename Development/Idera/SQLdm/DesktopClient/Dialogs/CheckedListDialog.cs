@@ -7,7 +7,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using System.Windows.Forms;
     using Infragistics.Win.UltraWinListView;
 
-    public partial class CheckedListDialog<ItemType> : Form
+    public partial class CheckedListDialog<ItemType> : BaseDialog
     {
         private List<Wrapper<ItemType>> listItems  = new List<Wrapper<ItemType>>();
         private List<ItemType> selectedItems = new List<ItemType>();

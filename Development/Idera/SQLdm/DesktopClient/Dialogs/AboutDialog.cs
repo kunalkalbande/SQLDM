@@ -13,8 +13,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Idera.SQLdm.DesktopClient.Objects;
     using Idera.SQLdm.Common.Services;
     using Idera.Newsfeed.Plugins.UI;
+    using Infragistics.Windows.Themes;
 
-    internal partial class AboutDialog : Form
+    internal partial class AboutDialog : BaseDialog
     {
         private IManagementServiceConfiguration configService;
         private static CommonAssemblyInfo assemblyInfo = new CommonAssemblyInfo();
@@ -22,12 +23,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public AboutDialog()
         {
+            this.DialogHeader = "AboutBox";
             InitializeComponent();
 
             Text = String.Format("About {0}", Application.ProductName);
             BuildComponentList();
             systemInfoButton.Visible = GetMsinfo32Path(out msInfoPath);
             AdaptFontSize();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
         private void BuildComponentList()
@@ -210,6 +213,18 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+            if (AutoScaleSizeHelper.isScalingRequired && !(Settings.Default.ColorScheme == "Dark"))
+            {
+                this.okButton.Text = "      OK        ";
+            }
+        }
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            if (Idera.SQLdm.DesktopClient.Properties.Settings.Default.ColorScheme == "Dark")
+            {
+                this.gradientPanel1.BackColor = System.Drawing.ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+                this.gradientPanel1.BackColor2 = System.Drawing.ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+            }
         }
     }
 }

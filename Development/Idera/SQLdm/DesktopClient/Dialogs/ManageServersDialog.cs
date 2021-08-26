@@ -17,10 +17,12 @@ using Microsoft.SqlServer.MessageBox;
 using Idera.SQLdm.Common;
 using Wintellect.PowerCollections;
 using BBS.TracerX;
+using System.Drawing.Drawing2D;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class ManageServersDialog : Form
+    public partial class ManageServersDialog : BaseDialog
     {
         private static readonly Logger Log = Logger.GetLogger("ManageServersDialog");
 
@@ -55,11 +57,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private readonly List<BackgroundWorker> activeTestConnectionWorkers = new List<BackgroundWorker>();
         private readonly Dictionary<object, ChangeType> pendingChanges = new Dictionary<object, ChangeType>();
         private bool okButtonPressed = false;
-
         public ManageServersDialog()
         {
+            this.DialogHeader = "Manage Servers";
+            DialogHeader = "Manage Server";
+            Console.WriteLine("Manager Server Dialog Called");
             InitializeComponent();
             Icon = Resources.ServersIcon;
+            //this.Paint += new PaintEventHandler(paintPanel);
             connectionTestStatusImages.Images.Add(Resources.TestConnectionFailed);
             connectionTestStatusImages.Images.Add(Resources.StatusWarningSmall);
             connectionTestStatusImages.Images.Add(Resources.TestConnectionUnknown);
@@ -80,6 +85,58 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             LoadMonitoredInstances();
             UpdateForm();
             AdaptFontSize();
+            //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                ScaleControlsAsPerResolution();
+            }
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        public override void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("Theme Chane Event got hit in manager dialog cs");
+            this.backcolor = Color.Yellow;
+            Console.WriteLine("Current color"+ this.backcolor);
+            this.Invalidate();
+             this.Refresh();
+        }
+        private void paintPanel(object sender, PaintEventArgs e)
+        {
+            //Graphics g = e.Graphics;
+            //Rectangle firstHalf = new Rectangle(e.ClipRectangle.X, e.ClipRectangle.Y, 250, 100);
+            ////Draw border over panel
+            //Rectangle fullwindow = new Rectangle(10, 10, 250, 250);
+            //LinearGradientBrush thalf = new LinearGradientBrush(fullwindow,
+            //   System.Drawing.Color.Yellow, System.Drawing.Color.Yellow, 45f);
+
+            //g.DrawString("Satya", new Font(SystemFonts.DefaultFont, FontStyle.Bold), Brushes.Black,
+            //   new PointF(firstHalf.X + 6, firstHalf.Y + 6)); //top layer
+
+            //float penWidth = 1F;
+            //Pen myPen = new Pen(Brushes.Gray, (int)penWidth);
+            //e.Graphics.DrawRectangle(myPen, penWidth / 2F, penWidth / 2F,
+            //                         (float)this.Width - 2F * penWidth,
+            //                         (float)this.Height + 1 - 2F * penWidth);
+
+            //myPen.Dispose();
+
+
+            //// firstHalf.
+            //LinearGradientBrush bfhalf = new LinearGradientBrush(firstHalf,
+            //    Color.Red, Color.Red, 45f);
+            //g.FillRectangle(bfhalf, firstHalf);
+            // Second Half.
+        
+
+         
+
+
+           // bfhalf.Dispose();
+
+
+
+
         }
 
         private void SizeLastColumn(ListView instancesListView)
@@ -1016,6 +1073,13 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+        private void ScaleControlsAsPerResolution()
+        {
+            AutoScaleFontResolutionHelper.Default.AutoScaleFont(this.headerPanel, AutoScaleFontHelper.ControlType.Container);
+            AutoScaleSizeHelper.Default.AutoScaleControl(this.descriptionLabel, AutoScaleSizeHelper.ControlType.Control, new SizeF(0.9F, 1.0F), false);
         }
     }
 }

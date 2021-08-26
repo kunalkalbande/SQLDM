@@ -36,21 +36,21 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             Infragistics.Win.Layout.GridBagConstraint gridBagConstraint1 = new Infragistics.Win.Layout.GridBagConstraint();
             Infragistics.Win.Layout.GridBagConstraint gridBagConstraint2 = new Infragistics.Win.Layout.GridBagConstraint();
             Infragistics.Win.Layout.GridBagConstraint gridBagConstraint3 = new Infragistics.Win.Layout.GridBagConstraint();
-            this.selectedTablesListBox = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.removeButton = new System.Windows.Forms.Button();
-            this.addButton = new System.Windows.Forms.Button();
-            this.availableTablesListBox = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.availableTablesTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.selectedTablesListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListBox();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.removeButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.addButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.availableTablesListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListBox();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.availableTablesTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.ultraGridBagLayoutPanel1 = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
             this.availableTablesStackPanel = new Idera.SQLdm.Common.UI.Controls.StackLayoutPanel();
-            this.availableTablesMessageLabel = new System.Windows.Forms.TextBox();
-            this.databaseComboBox = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.availableTablesMessageLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.databaseComboBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraComboEditor();
+            this.panel5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel1)).BeginInit();
             this.ultraGridBagLayoutPanel1.SuspendLayout();
             this.availableTablesStackPanel.SuspendLayout();
@@ -98,7 +98,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(67, 24);
             this.removeButton.TabIndex = 1;
-            this.removeButton.Text = "< &Remove";
+            this.removeButton.Text = "< Remove";
             this.removeButton.UseVisualStyleBackColor = true;
             this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
@@ -109,7 +109,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(67, 24);
             this.addButton.TabIndex = 0;
-            this.addButton.Text = "&Add >";
+            this.addButton.Text = "Add >";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
@@ -303,20 +303,20 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.TextBox availableTablesTextBox;
-        private System.Windows.Forms.Label label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox availableTablesTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
         private System.Windows.Forms.ListBox availableTablesListBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button removeButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton addButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton removeButton;
         private System.Windows.Forms.ListBox selectedTablesListBox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
         private Infragistics.Win.Misc.UltraGridBagLayoutPanel ultraGridBagLayoutPanel1;
-        private System.Windows.Forms.Panel panel5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel5;
         private Infragistics.Win.UltraWinEditors.UltraComboEditor databaseComboBox;
         private Idera.SQLdm.Common.UI.Controls.StackLayoutPanel availableTablesStackPanel;
-        private System.Windows.Forms.TextBox availableTablesMessageLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox availableTablesMessageLabel;
     }
 }

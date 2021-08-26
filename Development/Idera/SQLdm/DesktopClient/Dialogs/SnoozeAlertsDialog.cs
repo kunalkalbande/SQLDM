@@ -24,8 +24,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Objects;
     using Properties;
     using Resources = Properties.Resources;
+    using Infragistics.Windows.Themes;
+    using Idera.SQLdm.DesktopClient.Controls;
 
-    public partial class SnoozeAlertsDialog : Form
+    public partial class SnoozeAlertsDialog : BaseDialog
     {
         private const string UNSNOOZE_MESSAGE = "You are about to resume alerts for the selected metrics. Alerts raised for specific metrics are reflected in the state of your monitored server(s). Do you wish to continue?";
         private const string SNOOZE_ALL_MESSAGE = "You can snooze all alerts for a specified period of time (10 minutes minimum). If snoozed, alerts are cleared and no longer impact the state of your monitored server(s) until the snooze period is over.";
@@ -64,11 +66,25 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.alertDescription = alertDescription;
 
             this.ShrinkDialog(action == SnoozeAction.Snooze ? true : false);
-
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
             // Autoscale font size.
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.snoozedAlertsGrid);
+        }
         /// <summary>
         /// Resizes the dialog according to if it was called for Snooze or Unsnooze
         /// </summary>
@@ -611,6 +627,25 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             auditableEntity.AddMetadataProperty("Alert summary", alertDescription);
 
             return auditableEntity;
+        }
+
+        private void ScaleControlsAsPerResolution()
+        {
+            if(AutoScaleSizeHelper.isLargeSize)
+            {
+                this.Height += 100; ;
+                return;
+            }
+            if (AutoScaleSizeHelper.isXLargeSize)
+            {
+                this.Height += 150;
+                return;
+            }
+            if (AutoScaleSizeHelper.isXXLargeSize)
+            {
+                this.Height += 200;
+                return;
+            }
         }
     }
 }

@@ -24,21 +24,21 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports {
         /// </summary>
         private void InitializeComponent() {
             this.ultraMonthViewSingle1 = new Infragistics.Win.UltraWinSchedule.UltraMonthViewSingle();
-            this.daysRadio = new System.Windows.Forms.RadioButton();
-            this.monthsRadio = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.monthsListBox = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.yearsRadio = new System.Windows.Forms.RadioButton();
-            this.yearsListBox = new System.Windows.Forms.ListBox();
-            this.rangeRadio = new System.Windows.Forms.RadioButton();
-            this.rangePanel = new System.Windows.Forms.Panel();
-            this.toPicker = new System.Windows.Forms.DateTimePicker();
-            this.toLabel = new System.Windows.Forms.Label();
-            this.fromlabel = new System.Windows.Forms.Label();
-            this.fromPicker = new System.Windows.Forms.DateTimePicker();
-            this.daysTipLabel = new System.Windows.Forms.Label();
+            this.daysRadio = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.monthsRadio = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.monthsListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListBox();
+            this.button1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.button2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.yearsRadio = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.yearsListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListBox();
+            this.rangeRadio = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.rangePanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.toPicker = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDateTimePicker();
+            this.toLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.fromlabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.fromPicker = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDateTimePicker();
+            this.daysTipLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ultraMonthViewSingle1)).BeginInit();
             this.rangePanel.SuspendLayout();
             this.SuspendLayout();
@@ -241,21 +241,21 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports {
         #endregion
 
         private Infragistics.Win.UltraWinSchedule.UltraMonthViewSingle ultraMonthViewSingle1;
-        private System.Windows.Forms.RadioButton daysRadio;
-        private System.Windows.Forms.RadioButton monthsRadio;
-        private System.Windows.Forms.Label label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton daysRadio;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton monthsRadio;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
         private System.Windows.Forms.ListBox monthsListBox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.RadioButton yearsRadio;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton button1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton button2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton yearsRadio;
         private System.Windows.Forms.ListBox yearsListBox;
-        private System.Windows.Forms.RadioButton rangeRadio;
-        private System.Windows.Forms.Panel rangePanel;
-        private System.Windows.Forms.Label fromlabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton rangeRadio;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  rangePanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel fromlabel;
         private System.Windows.Forms.DateTimePicker fromPicker;
         private System.Windows.Forms.DateTimePicker toPicker;
-        private System.Windows.Forms.Label toLabel;
-        private System.Windows.Forms.Label daysTipLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel toLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel daysTipLabel;
 
     }
 }

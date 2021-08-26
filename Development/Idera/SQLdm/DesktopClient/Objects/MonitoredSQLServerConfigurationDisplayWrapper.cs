@@ -117,15 +117,13 @@ namespace Idera.SQLdm.DesktopClient.Objects
 
         private MonitoredSqlServerConfiguration config;
         private int id;
-        private int repoId;
         private MonitoredServerConfigurationOriginalSettings originalSettings;
         
 
-        public MonitoredSQLServerConfigurationDisplayWrapper(MonitoredSqlServerConfiguration config, int id,int repoId)
+        public MonitoredSQLServerConfigurationDisplayWrapper(MonitoredSqlServerConfiguration config, int id)
         {
             this.config = config;
             this.id = id;
-            this.repoId = repoId;
             originalSettings = new MonitoredServerConfigurationOriginalSettings(
                 this.PreferredClusterNode,
                 (TimeSpan)this.ScheduledCollectionInterval,
@@ -140,10 +138,7 @@ namespace Idera.SQLdm.DesktopClient.Objects
         {
             get { return id; }
         }
-        public int RepoID
-        {
-            get { return repoId; }
-        }
+
         #region Change Tracking
 
 

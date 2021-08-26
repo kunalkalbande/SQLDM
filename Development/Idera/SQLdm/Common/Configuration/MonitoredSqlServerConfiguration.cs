@@ -195,11 +195,6 @@ namespace Idera.SQLdm.Common.Configuration
             set { isActive = value; }
         }
 
-        public int RepoId
-        {
-            get;
-            set;
-        }
         public MaintenanceMode MaintenanceMode
         {
             get { return maintenanceMode; }

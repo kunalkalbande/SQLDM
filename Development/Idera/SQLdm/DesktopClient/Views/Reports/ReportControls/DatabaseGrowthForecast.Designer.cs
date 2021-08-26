@@ -35,19 +35,19 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatabaseGrowthForecast));
-            Infragistics.Win.UltraWinEditors.DropDownEditorButton dropDownEditorButton2 = new Infragistics.Win.UltraWinEditors.DropDownEditorButton("DropDownList");
-            Infragistics.Win.UltraWinEditors.DropDownEditorButton dropDownEditorButton1 = new Infragistics.Win.UltraWinEditors.DropDownEditorButton("DropDownList");
-            this.forecastUnits = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblForecastType = new System.Windows.Forms.Label();
-            this.forecastTypeCombo = new System.Windows.Forms.ComboBox();
-            this.chkShowAvailableSpace = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.startHoursTimeEditor = new Idera.SQLdm.Common.UI.Controls.TimeComboEditor();
-            this.endHoursTimeEditor = new Idera.SQLdm.Common.UI.Controls.TimeComboEditor();
-            this.startHoursLbl = new System.Windows.Forms.Label();
-            this.endHoursLbl = new System.Windows.Forms.Label();
-            this.showTablesCheckbox = new System.Windows.Forms.CheckBox();
+            Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton dropDownEditorButton2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton("DropDownList");
+            Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton dropDownEditorButton1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton("DropDownList");
+            this.forecastUnits = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblForecastType = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.forecastTypeCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.chkShowAvailableSpace = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.startHoursTimeEditor = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor();
+            this.endHoursTimeEditor = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor();
+            this.startHoursLbl = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.endHoursLbl = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.showTablesCheckbox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             this.panel1.SuspendLayout();
             this.filterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.forecastUnits)).BeginInit();
@@ -323,16 +323,16 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
 
         #endregion
 
-        private System.Windows.Forms.CheckBox showTablesCheckbox;
-        private System.Windows.Forms.NumericUpDown forecastUnits;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox forecastTypeCombo;
-        private System.Windows.Forms.Label lblForecastType;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox chkShowAvailableSpace;
-        private System.Windows.Forms.Label endHoursLbl;
-        private System.Windows.Forms.Label startHoursLbl;
-        private Common.UI.Controls.TimeComboEditor endHoursTimeEditor;
-        private Common.UI.Controls.TimeComboEditor startHoursTimeEditor;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox showTablesCheckbox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown forecastUnits;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox forecastTypeCombo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblForecastType;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkShowAvailableSpace;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel endHoursLbl;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel startHoursLbl;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor endHoursTimeEditor;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor startHoursTimeEditor;
     }
 }

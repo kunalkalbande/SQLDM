@@ -2,6 +2,8 @@ using Idera.SQLdm.Common.UI.Controls;
 namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 {
     using Idera.SQLdm.Common.Notification;
+    using Idera.SQLdm.DesktopClient.Properties;
+    using System.Drawing;
 
     partial class NotificationRulesViewPanel
     {
@@ -31,6 +33,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         /// </summary>
         private void InitializeComponent()
         {
+            Color backColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor) : Color.White;
+            Color foreColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridForeColor) : Color.Black;
+            Color activeBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridActiveBackColor) : Color.White;
+            Color hoverBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridHoverBackColor) : Color.White;
             this.components = new System.ComponentModel.Container();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("NotificationRuleWrapper", -1);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Name", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, false);
@@ -48,22 +54,22 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.rulesGroupBox = new Infragistics.Win.Misc.UltraGroupBox();
+            this.splitContainer1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomSplitContainer();
+            this.rulesGroupBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraGroupBox();
             this.stackLayoutPanel1 = new Idera.SQLdm.Common.UI.Controls.StackLayoutPanel();
             this.rulesListView = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.noRulesLabel = new System.Windows.Forms.Label();
+            this.noRulesLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.previewGroupBox = new Infragistics.Win.Misc.UltraExpandableGroupBox();
             this.previewGroupBoxPanel = new Infragistics.Win.Misc.UltraExpandableGroupBoxPanel();
-            this.rulePreview = new System.Windows.Forms.WebBrowser();
-            this.removeButton = new System.Windows.Forms.Button();
-            this.editButton = new System.Windows.Forms.Button();
-            this.addButton = new System.Windows.Forms.Button();
-            this.copyButton = new System.Windows.Forms.Button();
-            this.exportButton = new System.Windows.Forms.Button();
-            this.importButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.rulePreview = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFilledWebBrowser();
+            this.removeButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.editButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.addButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.copyButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.exportButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.importButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.tableLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
             this.rulesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -83,7 +89,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             // 
             // splitContainer1
             // 
-            this.splitContainer1.BackColor = System.Drawing.Color.Transparent;
+            this.splitContainer1.BackColor = backColor; //System.Drawing.Color.Transparent;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(3, 3);
             this.splitContainer1.Name = "splitContainer1";
@@ -104,24 +110,28 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             // rulesGroupBox
             // 
             this.rulesGroupBox.BorderStyle = Infragistics.Win.Misc.GroupBoxBorderStyle.RectangularSolid;
-            appearance1.BackColor = System.Drawing.Color.White;
+            appearance1.BackColor = backColor; //System.Drawing.Color.White;
+            appearance1.BackColor2 = backColor;
+            appearance1.ForeColor = foreColor;
             this.rulesGroupBox.ContentAreaAppearance = appearance1;
+            this.rulesGroupBox.HeaderAppearance = appearance1;
+            this.rulesGroupBox.Appearance = appearance1;
             this.rulesGroupBox.Controls.Add(this.stackLayoutPanel1);
             this.rulesGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             appearance12.BackColor = System.Drawing.Color.Transparent;
-            this.rulesGroupBox.HeaderAppearance = appearance12;
+            //this.rulesGroupBox.HeaderAppearance = appearance12;
             this.rulesGroupBox.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopOutsideBorder;
             this.rulesGroupBox.Location = new System.Drawing.Point(0, 0);
             this.rulesGroupBox.Name = "rulesGroupBox";
             this.rulesGroupBox.Size = new System.Drawing.Size(444, 232);
             this.rulesGroupBox.TabIndex = 0;
             this.rulesGroupBox.Text = "Rules";
-            this.rulesGroupBox.UseAppStyling = false;
+            //this.rulesGroupBox.UseAppStyling = false;
             // 
             // stackLayoutPanel1
             // 
             this.stackLayoutPanel1.ActiveControl = null;
-            this.stackLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.stackLayoutPanel1.BackColor = backColor; //System.Drawing.Color.Transparent;
             this.stackLayoutPanel1.Controls.Add(this.rulesListView);
             this.stackLayoutPanel1.Controls.Add(this.noRulesLabel);
             this.stackLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -134,32 +144,39 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             // rulesListView
             // 
             this.rulesListView.DataSource = this.rulesBindingSource;
-            appearance2.BackColor = System.Drawing.SystemColors.Window;
+            appearance2.BackColor = backColor; //ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor); //System.Drawing.SystemColors.Window;
             appearance2.BorderColor = System.Drawing.SystemColors.InactiveCaption;
+            appearance2.ForeColor = foreColor;
             this.rulesListView.DisplayLayout.Appearance = appearance2;
             this.rulesListView.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ExtendLastColumn;
             ultraGridColumn1.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append;
             ultraGridColumn1.Header.VisiblePosition = 1;
+            ultraGridColumn1.Header.Appearance = appearance2;
+            ultraGridColumn1.CellAppearance = appearance2;
+            ultraGridColumn1.CellButtonAppearance = appearance2;
             ultraGridColumn2.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append;
             ultraGridColumn2.Header.VisiblePosition = 0;
+            ultraGridColumn2.Header.Appearance = appearance2;
+            ultraGridColumn2.CellAppearance = appearance2;
+            ultraGridColumn2.CellButtonAppearance = appearance2;
             ultraGridBand1.Columns.AddRange(new object[] {
             ultraGridColumn1,
             ultraGridColumn2});
             this.rulesListView.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
             this.rulesListView.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
-            appearance3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            appearance3.BackColor2 = System.Drawing.SystemColors.ControlDark;
+            appearance3.BackColor = backColor; //System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            appearance3.BackColor2 = backColor;// System.Drawing.SystemColors.ControlDark;
             appearance3.BackGradientStyle = Infragistics.Win.GradientStyle.None;
             appearance3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
             this.rulesListView.DisplayLayout.GroupByBox.Appearance = appearance3;
-            appearance4.ForeColor = System.Drawing.SystemColors.GrayText;
+            appearance4.ForeColor = foreColor; //System.Drawing.SystemColors.GrayText;
             this.rulesListView.DisplayLayout.GroupByBox.BandLabelAppearance = appearance4;
             this.rulesListView.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
             this.rulesListView.DisplayLayout.GroupByBox.Hidden = true;
-            appearance5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            appearance5.BackColor2 = System.Drawing.SystemColors.Control;
+            appearance5.BackColor = backColor;  // System.Drawing.SystemColors.ControlLightLight;
+            appearance5.BackColor2 = backColor;  // System.Drawing.SystemColors.Control;
             appearance5.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
-            appearance5.ForeColor = System.Drawing.SystemColors.GrayText;
+            appearance5.ForeColor = foreColor; //System.Drawing.SystemColors.GrayText;
             this.rulesListView.DisplayLayout.GroupByBox.PromptAppearance = appearance5;
             this.rulesListView.DisplayLayout.MaxColScrollRegions = 1;
             this.rulesListView.DisplayLayout.MaxRowScrollRegions = 1;
@@ -168,7 +185,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.rulesListView.DisplayLayout.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.False;
             this.rulesListView.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.None;
             this.rulesListView.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.None;
-            appearance6.BackColor = System.Drawing.SystemColors.Window;
+            appearance6.BackColor = backColor;  // System.Drawing.SystemColors.Window;
             this.rulesListView.DisplayLayout.Override.CardAreaAppearance = appearance6;
             appearance7.BorderColor = System.Drawing.Color.Silver;
             appearance7.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter;
@@ -177,8 +194,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.rulesListView.DisplayLayout.Override.CellPadding = 0;
             this.rulesListView.DisplayLayout.Override.FixedHeaderIndicator = Infragistics.Win.UltraWinGrid.FixedHeaderIndicator.None;
             this.rulesListView.DisplayLayout.Override.GroupByColumnsHidden = Infragistics.Win.DefaultableBoolean.False;
-            appearance8.BackColor = System.Drawing.SystemColors.Control;
-            appearance8.BackColor2 = System.Drawing.SystemColors.ControlDark;
+            appearance8.BackColor = backColor;  // System.Drawing.SystemColors.Control;
+            appearance8.BackColor2 = backColor;  // System.Drawing.SystemColors.ControlDark;
             appearance8.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element;
             appearance8.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
             appearance8.BorderColor = System.Drawing.SystemColors.Window;
@@ -187,14 +204,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             appearance9.TextHAlignAsString = "Left";
             this.rulesListView.DisplayLayout.Override.HeaderAppearance = appearance9;
             this.rulesListView.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortSingle;
-            appearance10.BackColor = System.Drawing.SystemColors.Window;
+            appearance10.BackColor = backColor;  // System.Drawing.SystemColors.Window;
             appearance10.BorderColor = System.Drawing.Color.Silver;
             this.rulesListView.DisplayLayout.Override.RowAppearance = appearance10;
             this.rulesListView.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.False;
             this.rulesListView.DisplayLayout.Override.SelectTypeCell = Infragistics.Win.UltraWinGrid.SelectType.None;
             this.rulesListView.DisplayLayout.Override.SelectTypeCol = Infragistics.Win.UltraWinGrid.SelectType.None;
             this.rulesListView.DisplayLayout.Override.SelectTypeRow = Infragistics.Win.UltraWinGrid.SelectType.Extended;
-            appearance11.BackColor = System.Drawing.SystemColors.ControlLight;
+            appearance11.BackColor = backColor; //System.Drawing.SystemColors.ControlLight;
             this.rulesListView.DisplayLayout.Override.TemplateAddRowAppearance = appearance11;
             this.rulesListView.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
             this.rulesListView.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
@@ -215,7 +232,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             // noRulesLabel
             // 
             this.noRulesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.noRulesLabel.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.noRulesLabel.BackColor = backColor;  
+            this.noRulesLabel.ForeColor = foreColor; //System.Drawing.SystemColors.GrayText;
             this.noRulesLabel.Location = new System.Drawing.Point(0, 0);
             this.noRulesLabel.Name = "noRulesLabel";
             this.noRulesLabel.Size = new System.Drawing.Size(440, 210);
@@ -227,8 +245,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             // previewGroupBox
             // 
             this.previewGroupBox.BorderStyle = Infragistics.Win.Misc.GroupBoxBorderStyle.RectangularSolid;
-            appearance13.BackColor = System.Drawing.Color.White;
+            appearance13.BackColor = backColor;  // System.Drawing.Color.White;
+            appearance13.BackColor2 = backColor;
+            appearance13.ForeColor = foreColor;
             this.previewGroupBox.ContentAreaAppearance = appearance13;
+            this.previewGroupBox.Appearance = appearance13;
+            this.previewGroupBox.HeaderAppearance = appearance13;
             this.previewGroupBox.Controls.Add(this.previewGroupBoxPanel);
             this.previewGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.previewGroupBox.ExpandedSize = new System.Drawing.Size(444, 205);
@@ -239,7 +261,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.previewGroupBox.Size = new System.Drawing.Size(444, 205);
             this.previewGroupBox.TabIndex = 0;
             this.previewGroupBox.Text = "Rule Description";
-            this.previewGroupBox.UseAppStyling = false;
+            //this.previewGroupBox.UseAppStyling = false;
             this.previewGroupBox.ExpandedStateChanged += new System.EventHandler(this.ultraExpandableGroupBox1_ExpandedStateChanged);
             // 
             // previewGroupBoxPanel
@@ -370,7 +392,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = backColor; //System.Drawing.SystemColors.Control;
+            this.ForeColor = foreColor;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "NotificationRulesViewPanel";
             this.Size = new System.Drawing.Size(450, 487);
@@ -395,21 +418,21 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         #endregion
 
         private Idera.SQLdm.Common.UI.Controls.StackLayoutPanel stackLayoutPanel1;
-        private System.Windows.Forms.Button removeButton;
-        private System.Windows.Forms.Button editButton;
-        private System.Windows.Forms.Button addButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton removeButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton editButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton addButton;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private Infragistics.Win.Misc.UltraGroupBox rulesGroupBox;
         private Infragistics.Win.Misc.UltraExpandableGroupBox previewGroupBox;
         private Infragistics.Win.Misc.UltraExpandableGroupBoxPanel previewGroupBoxPanel;
-        private System.Windows.Forms.WebBrowser rulePreview;
-        private System.Windows.Forms.Button copyButton;
-        private System.Windows.Forms.Button exportButton;
-        private System.Windows.Forms.Button importButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFilledWebBrowser rulePreview;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton copyButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton exportButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton importButton;
         private System.Windows.Forms.BindingSource rulesBindingSource;
         private Infragistics.Win.UltraWinGrid.UltraGrid rulesListView;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label noRulesLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel noRulesLabel;
     }
 }

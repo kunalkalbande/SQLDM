@@ -35,17 +35,17 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TableGrowthForecast));
-            this.label3 = new System.Windows.Forms.Label();
-            this.tablesTextbox = new System.Windows.Forms.TextBox();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.tablesTextbox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
             this.tableBrowseButton = new Infragistics.Win.Misc.UltraButton();
-            this.forecastUnits = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblForecastType = new System.Windows.Forms.Label();
-            this.forecastTypeCombo = new System.Windows.Forms.ComboBox();
+            this.forecastUnits = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblForecastType = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.forecastTypeCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
             this.panel1.SuspendLayout();
             this.filterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.forecastUnits)).BeginInit();
-            this.showTablesCheckbox = new System.Windows.Forms.CheckBox();
+            this.showTablesCheckbox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             this.SuspendLayout();
             // 
             // databaseTextbox
@@ -265,13 +265,13 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
 
         #endregion
 
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tablesTextbox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox tablesTextbox;
         private Infragistics.Win.Misc.UltraButton tableBrowseButton;
-        private System.Windows.Forms.NumericUpDown forecastUnits;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblForecastType;
-        private System.Windows.Forms.ComboBox forecastTypeCombo;
-        private System.Windows.Forms.CheckBox showTablesCheckbox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown forecastUnits;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblForecastType;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox forecastTypeCombo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox showTablesCheckbox;
     }
 }

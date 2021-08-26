@@ -19,10 +19,17 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
 
             // Autoscale font size.
             AdaptFontSize();
+            
         }
 
         public void ShowPanel(ServerBaseView baseView, DashboardPanel panel, ServerSummaryHistoryData history, ViewContainer vHost)
         {
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                this.Size = new Size(820, 464);
+                this.mainGradientPanel.Size = new Size(620, 464);
+                this.Location = new Point(this.Location.X, this.Location.Y + 40);
+            }
             if (dashboardPanel != panel)
             {
                 if (dashboardControl != null)
@@ -38,7 +45,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
                 mainTableLayoutPanel.Controls.Add(dashboardControl, 0, mainTableLayoutPanel.RowCount);
                 mainTableLayoutPanel.SetColumnSpan(dashboardControl, 2);
                 dashboardControl.Margin = new Padding(3);
-                dashboardControl.Size = new Size(256, 75);
+                dashboardControl.Size = AutoScaleSizeHelper.isScalingRequired ? new Size(256, 200) : new Size(256, 75);
                 dashboardControl.MouseDown += dashboardControl_MouseDown;
                 dashboardControl.MouseClick += Control_MouseClick;
                 dashboardControl.SetPosition(-1, -1);

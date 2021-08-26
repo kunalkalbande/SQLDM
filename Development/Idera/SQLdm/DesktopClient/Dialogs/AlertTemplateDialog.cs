@@ -19,9 +19,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Idera.SQLdm.Common.Objects.ApplicationSecurity;
     using Objects;
     using System.IO;
+    using Infragistics.Windows.Themes;
+    using Idera.SQLdm.DesktopClient.Controls;
 
-
-    public partial class AlertTemplateDialog : Form
+    public partial class AlertTemplateDialog : BaseDialog
     {
         /// <summary>
         /// Application logger.
@@ -38,11 +39,23 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public AlertTemplateDialog()
         {
+            this.DialogHeader = "Alert Templates";
             InitializeComponent();
             alertTemplatesGrid.DrawFilter = new HideFocusRectangleDrawFilter();
             this.AdaptFontSize();
+
+            SetGridTheme();
+            SetPropertiesTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+
         }
 
+        private void ScaleControlsAsPerResolution()
+        {
+            this.informationBox1.Location = new System.Drawing.Point(this.informationBox1.Location.X + 50, this.informationBox1.Location.Y);
+        }
         #endregion
 
         #region Events
@@ -302,6 +315,24 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             }
         }
 
-       
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+            SetPropertiesTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.alertTemplatesGrid);
+        }
+
+        void SetPropertiesTheme()
+        {
+            var propertiesThemeManager = new Controls.PropertiesThemeManager();
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage1);
+        }
+
     }
 }

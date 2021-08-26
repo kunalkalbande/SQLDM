@@ -5,13 +5,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using System;
     using System.Windows.Forms;
 
-    public partial class QueryMonitorDestinationDialog : Form
+    public partial class QueryMonitorDestinationDialog : BaseDialog
     {
         private int durationInMinutes = -1;
 
 
         public QueryMonitorDestinationDialog()
         {
+            this.DialogHeader = "Query Monitor Settings";
             InitializeComponent();
             AdaptFontSize();
         }

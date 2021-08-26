@@ -8,14 +8,20 @@
              xmlns:root="clr-namespace:Idera.SQLdm.DesktopClient" 
              xmlns:server="clr-namespace:Idera.SQLdm.DesktopClient.Views.Servers.Server"
              xmlns:b="clr-namespace:Idera.SQLdm.DesktopClient.Controls"
-             xmlns:c="clr-namespace:Idera.SQLdm.DesktopClient.Converters"
-             xmlns:p="clr-namespace:Idera.SQLdm.DesktopClient.Controls.Presentation"
+             xmlns:c="clr-namespace:Idera.SQLdm.DesktopClient.Converters"  
+             xmlns:p="clr-namespace:Idera.SQLdm.DesktopClient.Controls.Presentation"             
              xmlns:s="clr-namespace:System;assembly=mscorlib"
              x:ClassModifier="internal"
              mc:Ignorable="d" 
              d:DesignHeight="427" d:DesignWidth="2000" 
              d:DataContext="{d:DesignInstance Type=server:ServerViewViewModel}" Loaded="OnServerViewContainerLoaded" xmlns:igEditors="http://infragistics.com/Editors">
     <UserControl.Resources>
+        <c:DpiBasisFontSize10Converter x:Key="FontSize10Converter" Ratio="1.4"/>
+        <c:DpiBasisFontSize10Converter x:Key="FontSize10ConverterSmall" Ratio="1.2"/>
+        <c:DpiBasisFontSize11Converter x:Key="FontSize11Converter" Ratio="1.2"/>
+        <c:DpiBasisFontSize12Converter x:Key="FontSize12Converter" Ratio="1.2"/>
+        <c:DpiBasisHeightConverter x:Key="HeightConverter" Ratio="1.75"/>
+        <c:DpiBasisHeightConverter x:Key="HeightConverterForCustomize" Ratio="1.81" DefaultSize="48"/>
         <c:StyleConverter x:Key="StyleConverterBold"/>
         <c:BoolToVisibilityConverter x:Key="VisibilityConverter"/>
         <c:BoolToImageConverter x:Key="RadioButtonConverter" FalseValue="/SQLdmDesktopClient;component/Resources/RibbonRadioButtonUnchecked.png" TrueValue="/SQLdmDesktopClient;component/Resources/RibbonRadioButtonChecked.png" />
@@ -110,27 +116,7 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        <Style TargetType="ToggleButton" x:Key="toggleCustomDashboardStyle">
-            <Setter Property="OverridesDefaultStyle" Value="True" />
-            <Setter Property="Margin" Value="150,-8,9,0" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="ToggleButton">
-                        <Border Name="border" BorderThickness="0" Padding="10, 0, 0, 10" BorderBrush="Black" Background="{TemplateBinding Background}">
-                            <ContentPresenter x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Opacity" Value="0.7" />
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Opacity" Value="0.4" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+
         <Style TargetType="{x:Type Button}" x:Key="CDButtonStyle">
             <Setter Property="Height" Value="32"></Setter>
             <Setter Property="Width" Value="174"></Setter>
@@ -158,7 +144,30 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-
+        <Style TargetType="igEditors:XamMonthCalendar">
+            <Setter Property="Background" Value="{DynamicResource CalendarBackColor}"></Setter>
+            <Setter Property="Foreground" Value="{DynamicResource CalendarForeColor}"></Setter>
+        </Style>
+        <Style TargetType="igEditors:CalendarDay">
+            <Setter Property="Background" Value="{DynamicResource CalendarBackColor}"></Setter>
+            <Setter Property="Foreground" Value="{DynamicResource CalendarForeColor}"></Setter>
+        </Style>
+        <Style TargetType="igEditors:CalendarItemArea">
+            <Setter Property="Background" Value="{DynamicResource CalendarBackColor}"></Setter>
+            <Setter Property="Foreground" Value="{DynamicResource CalendarForeColor}"></Setter>
+        </Style>
+        <Style TargetType="igEditors:CalendarItemGroup">
+            <Setter Property="Background" Value="{DynamicResource CalendarBackColor}"></Setter>
+            <Setter Property="Foreground" Value="{DynamicResource CalendarForeColor}"></Setter>
+        </Style>
+        <Style TargetType="igEditors:CalendarItemGroupTitle">
+            <Setter Property="Background" Value="{DynamicResource CalendarBackColor}"></Setter>
+            <Setter Property="Foreground" Value="{DynamicResource CalendarForeColor}"></Setter>
+        </Style>
+        <Style TargetType="igEditors:CalendarDayOfWeek">
+            <Setter Property="Background" Value="{DynamicResource CalendarBackColor}"></Setter>
+            <Setter Property="Foreground" Value="{DynamicResource CalendarForeColor}"></Setter>
+        </Style>
         <Style TargetType="{x:Type ToggleButton}" x:Key="CustomizeDashboardToggleButtonStyle">
             <Setter Property="Height" Value="26"></Setter>
             <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
@@ -185,48 +194,6 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        
-        <Style TargetType="{x:Type ToggleButton}" x:Key="HistoryBrowserToggleButtonStyle">
-            <Setter Property="Height" Value="24"></Setter>
-            <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
-            <Setter Property="FontSize" Value="10"></Setter>
-            <Setter Property="Foreground" Value="#006089"></Setter>
-            <Setter Property="Margin" Value="0,0,12,0"></Setter>
-            <Setter Property="HorizontalAlignment" Value="Right"></Setter>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ToggleButton}">
-                        <Border >
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#00a1dd"/>
-                    <Setter Property="BorderBrush" Value="#00a1dd"/>
-                    <Setter Property="BorderThickness" Value="1"/>
-                    <Setter Property="Foreground" Value="#00a1dd" />
-                </Trigger>
-                <Trigger Property="IsChecked" Value="True">
-                    <Setter Property="Foreground" Value="#072d40" />
-                </Trigger>
-                <Trigger Property="IsEnabled" Value="False">
-                    <Setter Property="Opacity" Value="0.2" />
-                </Trigger>
-                <MultiTrigger>
-                    <MultiTrigger.Conditions>
-                        <Condition Property="IsChecked" Value="True" />
-                        <Condition Property="IsMouseOver" Value="True" />
-                    </MultiTrigger.Conditions>
-                    <MultiTrigger.Setters>
-                        <Setter Property="Foreground" Value="#00a1dd" />
-                    </MultiTrigger.Setters>
-                </MultiTrigger>
-
-            </Style.Triggers>
-        </Style>
 
         <Style TargetType="{x:Type TabControl}">
             <Setter Property="BorderThickness" Value="0"></Setter>
@@ -251,10 +218,10 @@
             </Setter>
         </Style>
         <Style TargetType="{x:Type TabItem}">
-            <Setter Property="Height" Value="16"></Setter>
+            <Setter Property="Height" Value="{Binding Path= QuickHistoricalSnapshotText,Converter= {StaticResource HeightConverter}}"></Setter>
             <Setter Property="Foreground" Value="{DynamicResource TabForeground}"></Setter>
             <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
-            <Setter Property="FontSize" Value="12px"></Setter>
+            <Setter Property="FontSize" Value="{Binding Path= QuickHistoricalSnapshotText,Converter= {StaticResource FontSize10Converter}}"></Setter>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="TabItem">
@@ -265,7 +232,7 @@
                                     VerticalAlignment="Center"
                                     HorizontalAlignment="Left"
                                     ContentSource="Header"
-                                        Margin="0, 0, 0, 0" />
+                                        Margin="0, 0, 0, 0"/>
                                 <!--<Button Style="{StaticResource closeTabButtonStyle}"  ToolTip="Close this tab" 
                                         DataContext="{Binding ElementName=ContentSite}" Click="closeButton_Click">
                                     <TextBlock FontSize="12" Margin="4, 0, 0, 12">x</TextBlock>
@@ -283,6 +250,9 @@
                                 <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource TabIsSelectedBorder}" />
                                 <Setter TargetName="ContentSite" Property="TextBlock.Foreground" Value="{DynamicResource TabIsSelectedText}"></Setter>
                             </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="ContentSite" Property="TextBlock.Foreground" Value="{DynamicResource TabForeground}"></Setter>
+                            </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -295,26 +265,6 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border Name="border" BorderThickness="0" Padding="10, 0, 0, 10" BorderBrush="Black" Background="{TemplateBinding Background}">
-                            <ContentPresenter x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Opacity" Value="0.7" />
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Opacity" Value="0.4" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style x:Key="QuickHistorySnapshotNavButtonStyle" TargetType="Button">
-            <Setter Property="OverridesDefaultStyle" Value="True" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
                             <ContentPresenter x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
                         <ControlTemplate.Triggers>
@@ -902,18 +852,19 @@
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="1" Margin="0,0,0,1">
                             <Image Grid.Column="0" Name="TitleImage" Width="16" Height="16" VerticalAlignment="Center" />
                             <ComboBox MinWidth="300" MaxWidth="400" BorderThickness="0, 0, 0, 1" BorderBrush="#006089" Foreground="#00a1dd" 
-                                FontFamily="Arial" FontSize="11"
+                                FontFamily="Arial" 
+                                FontSize="{Binding Path= QuickHistoricalSnapshotText,Converter= {StaticResource FontSize11Converter}}"
                                 IsTextSearchEnabled="False" 
                                 IsEditable="True" 
                                 IsSynchronizedWithCurrentItem="False"  
                                 Name="InstanceComboBox">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
-                                        <TextBlock Name="comboBoxItem" MaxWidth="400" Text="{Binding InstanceName}" TextTrimming="CharacterEllipsis" MouseEnter="ComboBoxItem_OnMouseEnter" MouseLeave="ComboBoxItem_OnMouseLeave"/>
+                                        <TextBlock Name="comboBoxItem" MaxWidth="400" Text="{Binding InstanceName}" TextTrimming="CharacterEllipsis" MouseEnter="ComboBoxItem_OnMouseEnter" MouseLeave="ComboBoxItem_OnMouseLeave" FontSize="{Binding InstanceName,Converter= {StaticResource FontSize11Converter}}" />
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
                             </ComboBox>
-                        <!--<TextBlock Style="{DynamicResource BreadcrumbStyle}" Margin="5,0,0,0" VerticalAlignment="Center" Text="" 
+                            <!--<TextBlock Style="{DynamicResource BreadcrumbStyle}" Margin="5,0,0,0" VerticalAlignment="Center" Text="" 
                            Visibility="{Binding Path=ChildBreadcrumbVisible, Converter={StaticResource VisibilityConverter}}"></TextBlock>
                             <TextBlock Style="{DynamicResource BreadcrumbStyle}" MouseUp="ParentBreadcrumbLabel_MouseUp" Margin="5,0,0,0"
                            VerticalAlignment="Center" Text="{Binding ParentBreadcrumb}"></TextBlock>
@@ -923,9 +874,9 @@
                            Text="{Binding ChildBreadcrumb}"  
                            Visibility="{Binding Path=ChildBreadcrumbVisible, Converter={StaticResource VisibilityConverter}}"></TextBlock>
                         -->
-                    </StackPanel>
-                    <!-- hiding this textblock because we do not use it in new 10.6 design-->
-                    <TextBlock TextAlignment="Right" VerticalAlignment="Center" FontFamily="Arial" FontWeight="Bold" Visibility="Collapsed"
+                        </StackPanel>
+                        <!-- hiding this textblock because we do not use it in new 10.6 design-->
+                        <TextBlock TextAlignment="Right" VerticalAlignment="Center" FontFamily="Arial" FontWeight="Bold" Visibility="Collapsed"
                                Grid.Column="2" FontSize="15.75" Margin="0,0,7,0" Foreground="#FF4B4B4B" 
                                Name="historyTimestampLabel" TextTrimming="CharacterEllipsis">History Timestamp</TextBlock>
 
@@ -938,43 +889,38 @@
                         </Button>
                     </Grid>
                 </StackPanel>
+                <!--Babita Manral back-->
                 <StackPanel DockPanel.Dock="Right" Orientation="Horizontal"  VerticalAlignment="Center" Margin="0,0,15,0" 
                          Visibility="{Binding Path=QuickHistoricalSnapshotVisible, Converter={StaticResource VisibilityConverter}}">
                     <Button x:Name="showPreviousSnapshotButton"  Width="16" Height="16" BorderThickness="0" Margin="0,0,3,0" 
-                             Style="{StaticResource QuickHistorySnapshotNavButtonStyle}"
+                             Style="{DynamicResource QuickHistorySnapshotNavBackButtonStyle}"
                              Click="OnToolClick" IsEnabled="{Binding Path=HistoryBrowserEnablePrevious}">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/SQLdmDesktopClient;component/Resources/back16x16.png"></ImageBrush>
-                        </Button.Background>
                     </Button>
 
                     <ComboBox Name="QuickHistoricalSnapshotComboBox" 
-                          BorderThickness="0, 0, 0, 1" BorderBrush="#979797" Foreground="#5f95c5" 
-                          FontFamily="{StaticResource SourceSansPro}" FontSize="12"
+                          BorderThickness="0, 0, 0, 1" 
+                          FontFamily="{StaticResource SourceSansPro}" FontSize="{Binding Converter={StaticResource FontSize12Converter}}" FontStyle="Normal"
                           IsEditable="True" IsReadOnly="True"
                           IsSynchronizedWithCurrentItem="False"
                           SelectionChanged="QuickHistoricalSnapshotCombobox_SelectionChanged"
-                          Text="{Binding Path=QuickHistoricalSnapshotText}"
-                          Style="{Binding Path=QuickHistoricalSnapshotText, Converter={StaticResource StyleConverterBold}}">
-                        <ComboBoxItem FontSize="10" FontWeight="Normal" Tag="15">Show last 15 minutes of data</ComboBoxItem>
-                        <ComboBoxItem FontSize="10" FontWeight="Normal" Tag="30">Show last 30 minutes of data</ComboBoxItem>
-                        <ComboBoxItem FontSize="10" FontWeight="Normal" Tag="60">Show last hour of data</ComboBoxItem>
-                        <ComboBoxItem FontSize="10" FontWeight="Normal" Tag="120">Show last 2 hours of data</ComboBoxItem>
-                        <ComboBoxItem FontSize="10" FontWeight="Normal" Tag="240">Show last 4 hours of data</ComboBoxItem>
-                        <ComboBoxItem FontSize="10" FontWeight="Normal" Tag="360">Show last 6 hours of data</ComboBoxItem>
-                        <ComboBoxItem FontSize="10" FontWeight="Normal" Tag="480">Show last 8 hours of data</ComboBoxItem>
-                        <ComboBoxItem FontSize="10" FontWeight="Normal" Tag="1440">Show last day of data</ComboBoxItem>
-                        <ComboBoxItem FontSize="10" FontWeight="Normal" Tag="7200">Show last 5 days of data</ComboBoxItem>
-                        <ComboBoxItem FontSize="10" FontWeight="Normal" Tag="-1">Enter a Custom Time Range</ComboBoxItem>
-                        <ComboBoxItem FontSize="10" FontWeight="Normal" Tag="0">Real Time</ComboBoxItem>
+                          Text="{Binding Path=QuickHistoricalSnapshotText}">
+                        <ComboBoxItem FontSize="{Binding Converter={StaticResource FontSize10Converter}}" FontWeight="Normal" Tag="15">Show last 15 minutes of data</ComboBoxItem>
+                        <ComboBoxItem FontSize="{Binding Converter={StaticResource FontSize10Converter}}" FontWeight="Normal" Tag="30">Show last 30 minutes of data</ComboBoxItem>
+                        <ComboBoxItem FontSize="{Binding Converter={StaticResource FontSize10Converter}}" FontWeight="Normal" Tag="60">Show last hour of data</ComboBoxItem>
+                        <ComboBoxItem FontSize="{Binding Converter={StaticResource FontSize10Converter}}" FontWeight="Normal" Tag="120">Show last 2 hours of data</ComboBoxItem>
+                        <ComboBoxItem FontSize="{Binding Converter={StaticResource FontSize10Converter}}" FontWeight="Normal" Tag="240">Show last 4 hours of data</ComboBoxItem>
+                        <ComboBoxItem FontSize="{Binding Converter={StaticResource FontSize10Converter}}" FontWeight="Normal" Tag="360">Show last 6 hours of data</ComboBoxItem>
+                        <ComboBoxItem FontSize="{Binding Converter={StaticResource FontSize10Converter}}" FontWeight="Normal" Tag="480">Show last 8 hours of data</ComboBoxItem>
+                        <ComboBoxItem FontSize="{Binding Converter={StaticResource FontSize10Converter}}" FontWeight="Normal" Tag="1440">Show last day of data</ComboBoxItem>
+                        <ComboBoxItem FontSize="{Binding Converter={StaticResource FontSize10Converter}}" FontWeight="Normal" Tag="7200">Show last 5 days of data</ComboBoxItem>
+                        <ComboBoxItem FontSize="{Binding Converter={StaticResource FontSize10Converter}}" FontWeight="Normal" Tag="-1">Enter a Custom Time Range</ComboBoxItem>
+                        <ComboBoxItem FontSize="{Binding Converter={StaticResource FontSize10Converter}}" FontWeight="Normal" Tag="0">Real Time</ComboBoxItem>
                     </ComboBox>
 
+                    <!--Babita Manral forward-->
                     <Button x:Name="showNextSnapshotButton"  Width="16" Height="16" BorderThickness="0" Margin="5,0,0,0"
-                            Style="{StaticResource QuickHistorySnapshotNavButtonStyle}" 
-                            Click="OnToolClick" IsEnabled="{Binding Path=HistoryBrowserEnableNext}">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/SQLdmDesktopClient;component/Resources/forward16x16.png"></ImageBrush>
-                        </Button.Background>
+                            Style="{DynamicResource QuickHistorySnapshotNavForwardButtonStyle}" 
+                            Click="OnToolClick" IsEnabled="{Binding Path=HistoryBrowserEnableNext}">                        
                     </Button>
                 </StackPanel>
             </DockPanel>
@@ -986,35 +932,35 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                             <ColumnDefinition MaxWidth="24"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                    <TabControl Grid.Column="0" Name="overviewTabControl" SelectionChanged="OnToolClick">
-                            <TabItem x:Name="overviewTabSummaryViewButton" Tag="overviewDashboard" Visibility="{Binding Path=VisibilityOverviewDashboard, Mode=TwoWay}">
-                            <TabItem.Header>
-                                Dashboard
-                            </TabItem.Header>
-                        </TabItem>
+                        <TabControl Grid.Column="0" Name="overviewTabControl" SelectionChanged="OnToolClick">
+                            <TabItem x:Name="overviewTabSummaryViewButton" Tag="overviewDashboard" Visibility="{Binding Path=VisibilityOverviewDashboard, Mode=TwoWay}" >
+                                <TabItem.Header>
+                                    Dashboard
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="overviewTabDetailsViewButton" Tag="overviewDetails" Visibility="{Binding Path=VisibilityOverviewDetails, Mode=TwoWay}">
-                            <TabItem.Header>
-                                Details
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    Details
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="overviewTabConfigurationViewButton" Tag="overviewConfiguration" Visibility="{Binding Path=VisibilityOverviewConfiguration,Mode=TwoWay}">
-                            <TabItem.Header>
-                                Configuration
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    Configuration
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="overviewTabAlertsViewButton" Tag="overviewActiveAlerts" Visibility="{Binding Path=VisibilityOverviewActiveAlerts, Mode=TwoWay}">
-                            <TabItem.Header>
-                                Active Alerts
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    Active Alerts
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="overviewTabTimelineViewButton" Tag="overviewTimeline" Visibility="{Binding Path=VisibilityOverviewTimeline, Mode=TwoWay}">
-                            <TabItem.Header>
-                                Timeline
-                            </TabItem.Header>
-                        </TabItem>
-                    </TabControl>
-                </Grid>
-                <Popup x:Name="overviewAddTabPopup"  StaysOpen="False"
+                                <TabItem.Header>
+                                    Timeline
+                                </TabItem.Header>
+                            </TabItem>
+                        </TabControl>
+                    </Grid>
+                    <Popup x:Name="overviewAddTabPopup"  StaysOpen="False"
                        IsOpen="{Binding ElementName=removeOverviewTabButton, Path=IsChecked}"
                        PlacementTarget="{Binding ElementName=removeOverviewTabButton}" Placement="Right" 
                        VerticalOffset="18" HorizontalOffset="137" PopupAnimation="Slide" Margin="5,5,5,5" AllowsTransparency="True">
@@ -1061,33 +1007,33 @@
 
                     <Grid x:Name="sessionsTabControlPanel"
                         Margin="15, 10, 0, 0" Visibility="Collapsed">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition MaxWidth="24"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <TabControl Grid.Column="0" Name="sessionsTabControl" SelectionChanged="OnToolClick">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition MaxWidth="24"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TabControl Grid.Column="0" Name="sessionsTabControl" SelectionChanged="OnToolClick">
                             <TabItem x:Name="sessionsTabSummaryViewButton" Tag="sessionsSummary" Visibility="{Binding Path=VisibilitySessionsSummary, Mode=TwoWay}">
-                            <TabItem.Header>
-                                Summary
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    Summary
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="sessionsTabDetailsViewButton" Tag="sessionsDetails"  Visibility="{Binding Path=VisibilitySessionsDetails, Mode=TwoWay}">
-                            <TabItem.Header>
-                                Details
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    Details
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="sessionsTabLocksViewButton" Tag="sessionsLocks" Visibility="{Binding Path=VisibilitySessionsLocks,Mode=TwoWay}">
-                            <TabItem.Header>
-                                Locks
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    Locks
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="sessionsTabBlockingViewButton" Tag="sessionsBlocking" Visibility="{Binding Path=VisibilitySessionsBlocking,Mode=TwoWay}">
-                            <TabItem.Header>
-                                Blocking
-                            </TabItem.Header>
-                        </TabItem>
-                    </TabControl>
-                    <!--
+                                <TabItem.Header>
+                                    Blocking
+                                </TabItem.Header>
+                            </TabItem>
+                        </TabControl>
+                        <!--
                     <ToggleButton Grid.Column="1" x:Name="removeSessionsTabButton" Click="AddTabButton_Click"
                         Style="{StaticResource activeAddToggleButtonStyle}" IsEnabled="{Binding Path=CanAddSessionsTab, Mode=Default}">
                         <ToggleButton.Content>
@@ -1101,8 +1047,8 @@
                         </ToggleButton.Content>
                     </ToggleButton>
                     -->
-                </Grid>
-                <Popup x:Name="sessionsAddTabPopup" StaysOpen="False"
+                    </Grid>
+                    <Popup x:Name="sessionsAddTabPopup" StaysOpen="False"
                        IsOpen="{Binding ElementName=removeSessionsTabButton, Path=IsChecked}"
                        PlacementTarget="{Binding ElementName=removeSessionsTabButton}" Placement="Right" 
                        VerticalOffset="18" HorizontalOffset="137" PopupAnimation="Slide" Margin="5,5,5,5" AllowsTransparency="True">
@@ -1142,33 +1088,33 @@
 
                     <Grid x:Name="queriesTabControlPanel"
                     Margin="15, 10, 0, 0" Visibility="Collapsed">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition MaxWidth="24"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <TabControl Grid.Column="0" Name="queriesTabControl" SelectionChanged="OnToolClick">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition MaxWidth="24"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TabControl Grid.Column="0" Name="queriesTabControl" SelectionChanged="OnToolClick">
                             <TabItem x:Name="queriesTabSignatureModeViewButton" Tag="queriesSignatureMode" Visibility="{Binding Path=VisibilityQueriesSignatureMode, Mode=TwoWay}">
-                            <TabItem.Header>
-                                Signature Mode
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    Signature Mode
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="queriesTabStatementModeViewButton" Tag="queriesStatementMode" Visibility="{Binding Path=VisibilityQueriesStatementMode, Mode=TwoWay}">
-                            <TabItem.Header>
-                                Statement Mode
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    Statement Mode
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="queriesTabHistoryModeViewButton" Tag="queriesQueryHistory" Visibility="{Binding Path=VisibilityQueriesQueryHistory, Mode=TwoWay}">
-                            <TabItem.Header>
-                                Query History
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    Query History
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="queriesActiveWaitsConfigureButton" Tag="queriesQueryWaits" Visibility="{Binding Path=VisibilityQueriesQueryWaits, Mode=TwoWay}">
-                            <TabItem.Header>
-                                Query Waits
-                            </TabItem.Header>
-                        </TabItem>
-                    </TabControl>
-                    <!--
+                                <TabItem.Header>
+                                    Query Waits
+                                </TabItem.Header>
+                            </TabItem>
+                        </TabControl>
+                        <!--
                     <ToggleButton Grid.Column="1" x:Name="removeQueriesTabButton"  Click="AddTabButton_Click"
                     Style="{StaticResource activeAddToggleButtonStyle}" IsEnabled="{Binding Path=CanAddQueriesTab, Mode=Default}">
                         <ToggleButton.Content>
@@ -1178,8 +1124,8 @@
                         </ToggleButton.Content>
                     </ToggleButton>
                     -->
-                </Grid>
-                <Popup x:Name="queriesAddTabPopup" StaysOpen="False"
+                    </Grid>
+                    <Popup x:Name="queriesAddTabPopup" StaysOpen="False"
                        IsOpen="{Binding ElementName=removeQueriesTabButton, Path=IsChecked}"
                        PlacementTarget="{Binding ElementName=removeQueriesTabButton}" Placement="Right" 
                        VerticalOffset="18" HorizontalOffset="137" PopupAnimation="Slide" Margin="5,5,5,5" AllowsTransparency="True">
@@ -1219,53 +1165,53 @@
 
                     <Grid x:Name="resourcesTabControlPanel" 
                         Margin="15, 10, 0, 0" Visibility="Collapsed" >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition MaxWidth="24"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <TabControl Grid.Column="0" Name="resourcesTabControl" SelectionChanged="OnToolClick">
-                        <TabItem  x:Name="resourcesTabSummaryViewButton" Tag="resourcesSummary" Visibility="{Binding Path=VisibilityResourcesSummary,Mode=TwoWay}">
-                            <TabItem.Header>
-                                Summary
-                            </TabItem.Header>
-                        </TabItem>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition MaxWidth="24"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TabControl Grid.Column="0" Name="resourcesTabControl" SelectionChanged="OnToolClick">
+                            <TabItem  x:Name="resourcesTabSummaryViewButton" Tag="resourcesSummary" Visibility="{Binding Path=VisibilityResourcesSummary,Mode=TwoWay}">
+                                <TabItem.Header>
+                                    Summary
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem  x:Name="resourcesTabCpuViewButton" Tag="resourcesCPU" Visibility="{Binding Path=VisibilityResourcesCPU,Mode=TwoWay}">
-                            <TabItem.Header>
-                                CPU
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    CPU
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem  x:Name="resourcesTabMemoryViewButton" Tag="resourcesMemory" Visibility="{Binding Path=VisibilityResourcesMemory,Mode=TwoWay}">
-                            <TabItem.Header>
-                                Memory
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    Memory
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem  x:Name="resourcesTabDiskViewButton" Tag="resourcesDisk" Visibility="{Binding Path=VisibilityResourcesDisk,Mode=TwoWay}">
-                            <TabItem.Header>
-                                Disk
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    Disk
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem  x:Name="resourcesTabDiskSizeViewButton" Tag="resourcesDiskSize" Visibility="{Binding Path=VisibilityResourcesDiskSize,Mode=TwoWay}">
-                            <TabItem.Header>
-                                Disk Size
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    Disk Size
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem  x:Name="resourcesTabFileActivityViewButton" Tag="resourcesFileActivity" Visibility="{Binding Path=VisibilityResourcesFileActivity,Mode=TwoWay}">
-                            <TabItem.Header>
-                                File Activity
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    File Activity
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem  x:Name="resourcesTabProcedureCacheViewButton" Tag="resourcesProcedureCache" Visibility="{Binding Path=VisibilityResourcesProcedureCache,Mode=TwoWay}">
-                            <TabItem.Header>
-                                Procedure Cache
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    Procedure Cache
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem  x:Name="resourcesTabWaitStatsViewButton" Tag="resourcesServerWaits" Visibility="{Binding Path=VisibilityResourcesServerWaits,Mode=TwoWay}">
-                            <TabItem.Header>
-                                Server Waits
-                            </TabItem.Header>
-                        </TabItem>
-                    </TabControl>
-                    <!--
+                                <TabItem.Header>
+                                    Server Waits
+                                </TabItem.Header>
+                            </TabItem>
+                        </TabControl>
+                        <!--
                     <ToggleButton Grid.Column="1" x:Name="removeResourcesTabButton" Click="AddTabButton_Click"
                     Style="{StaticResource activeAddToggleButtonStyle}" IsEnabled="{Binding Path=CanAddResourcesTab, Mode=Default}">
                         <ToggleButton.Content>
@@ -1275,8 +1221,8 @@
                         </ToggleButton.Content>
                     </ToggleButton>
                     -->
-                </Grid>
-                <Popup x:Name="resourcesAddTabPopup" StaysOpen="False"
+                    </Grid>
+                    <Popup x:Name="resourcesAddTabPopup" StaysOpen="False"
                        IsOpen="{Binding ElementName=removeResourcesTabButton, Path=IsChecked}"
                        PlacementTarget="{Binding ElementName=removeResourcesTabButton}" Placement="Right" 
                        VerticalOffset="18" HorizontalOffset="137" PopupAnimation="Slide" Margin="5,5,5,5" AllowsTransparency="True">
@@ -1343,53 +1289,53 @@
                     </Popup>
                     <Grid x:Name="databaseTabControlPanel"
                         Margin="15, 0, 0, 0" Visibility="Collapsed">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"></ColumnDefinition>
-                        <ColumnDefinition MaxWidth="24"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <TabControl Grid.Column="0" Name="databaseTabControl" SelectionChanged="OnToolClick">
-                            <TabItem x:Name="databasesTabSummaryViewButton" Tag="databasesSummary"  Visibility="{Binding Path=VisibilityDatabaseSummary,Mode=TwoWay}">
-                            <TabItem.Header>
-                                Summary
-                            </TabItem.Header>
-                        </TabItem>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition MaxWidth="24"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TabControl Grid.Column="0" Name="databaseTabControl" SelectionChanged="OnToolClick">
+                            <TabItem x:Name="databasesTabSummaryViewButton" Tag="databasesSummary"  Visibility="{Binding Path=VisibilityDatabaseSummary,Mode=TwoWay}" >
+                                <TabItem.Header>
+                                    Summary
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="databasesTabAlwaysOnViewButton" Tag="databasesAvailabilityGroup"  Visibility="{Binding Path=VisibilityDatabaseAvailabilityGroup,Mode=TwoWay}">
-                            <TabItem.Header>
-                                Availability Group
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    Availability Group
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="databasesTabTempdbSummaryViewButton" Tag="databasesTempDBSummary" Visibility="{Binding Path=VisibilityDatabaseTempdbSummary,Mode=TwoWay}">
-                            <TabItem.Header>
-                                TempDB Summary
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    TempDB Summary
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="databasesTabConfigurationViewButton" Tag="databasesConfiguration"  Visibility="{Binding Path=VisibilityDatabaseConfiguration,Mode=TwoWay}">
-                            <TabItem.Header>
-                                Configuration
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    Configuration
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="databasesTabFilesViewButton" Tag="databasesFiles" Visibility="{Binding Path=VisibilityDatabaseFiles,Mode=TwoWay}">
-                            <TabItem.Header>
-                                Files
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    Files
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="databasesTabBackupRestoreHistoryViewButton" Tag="databasesBackupRestore" Visibility="{Binding Path=VisibilityDatabaseBackupRestore,Mode=TwoWay}">
-                            <TabItem.Header>
-                                Backup &amp; Restore
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    Backup &amp; Restore
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="databasesTabTablesIndexesViewButton" Tag="databasesTablesIndexes" Visibility="{Binding Path=VisibilityDatabaseTablesIndexes,Mode=TwoWay}">
-                            <TabItem.Header>
-                                Tables &amp; Indexes
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    Tables &amp; Indexes
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="databasesTabMirroringViewButton" Tag="databasesMirroring" Visibility="{Binding Path=VisibilityDatabaseMirroring,Mode=TwoWay}">
-                            <TabItem.Header>
-                                Mirroring
-                            </TabItem.Header>
-                        </TabItem>
-                    </TabControl>
-                    <!--<ToggleButton Grid.Column="1" x:Name="removeDatabaseTabButton" Click="AddTabButton_Click"
+                                <TabItem.Header>
+                                    Mirroring
+                                </TabItem.Header>
+                            </TabItem>
+                        </TabControl>
+                        <!--<ToggleButton Grid.Column="1" x:Name="removeDatabaseTabButton" Click="AddTabButton_Click"
                     Style="{StaticResource activeAddToggleButtonStyle}" IsEnabled="{Binding Path=CanAddDatabaseTab, Mode=Default}" >
                             <ToggleButton.Content>
                             <ContentControl>
@@ -1398,9 +1344,9 @@
                         </ToggleButton.Content>
                     </ToggleButton>
                     -->
-                </Grid>
-                  
-                <Popup x:Name="databaseAddTabPopup" StaysOpen="False"
+                    </Grid>
+
+                    <Popup x:Name="databaseAddTabPopup" StaysOpen="False"
                        IsOpen="{Binding ElementName=removeDatabaseTabButton, Path=IsChecked}"
                        PlacementTarget="{Binding ElementName=removeDatabaseTabButton}" Placement="Right" 
                        VerticalOffset="18" HorizontalOffset="137" PopupAnimation="Slide" Margin="5,5,5,5" AllowsTransparency="True">
@@ -1468,33 +1414,33 @@
 
                     <Grid x:Name="servicesTabControlPanel" 
                         Margin="15, 10, 0, 0" Visibility="Collapsed" >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition MaxWidth="24"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <TabControl Grid.Column="0" Name="servicesTabControl" SelectionChanged="OnToolClick">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition MaxWidth="24"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TabControl Grid.Column="0" Name="servicesTabControl" SelectionChanged="OnToolClick">
                             <TabItem x:Name="servicesTabSummaryViewButton" Tag="servicesSummary" Visibility="{Binding Path=VisibilityServicesSummary,Mode=TwoWay}">
-                            <TabItem.Header>
-                                Summary
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    Summary
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="servicesTabSqlAgentJobsViewButton" Tag="servicesSQLAgentJobs" Visibility="{Binding Path=VisibilityServicesSQLAgentJobs,Mode=TwoWay}">
-                            <TabItem.Header>
-                                SQL Agent Jobs
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    SQL Agent Jobs
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="servicesTabFullTextSearchViewButton" Tag="servicesFullTextSearch" Visibility="{Binding Path=VisibilityServicesFullTextSearch,Mode=TwoWay}">
-                            <TabItem.Header>
-                                Full-Text Search
-                            </TabItem.Header>
-                        </TabItem>
+                                <TabItem.Header>
+                                    Full-Text Search
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="servicesTabReplicationViewButton" Tag="servicesReplication" Visibility="{Binding Path=VisibilityServicesReplication,Mode=TwoWay}">
-                            <TabItem.Header>
-                                Replication
-                            </TabItem.Header>
-                        </TabItem>
-                    </TabControl>
-                    <!--
+                                <TabItem.Header>
+                                    Replication
+                                </TabItem.Header>
+                            </TabItem>
+                        </TabControl>
+                        <!--
                     <ToggleButton Grid.Column="1" x:Name="removeServicesTabButton" Click="AddTabButton_Click"
                     Style="{StaticResource activeAddToggleButtonStyle}" IsEnabled="{Binding Path=CanAddServicesTab, Mode=Default}">
                         <ToggleButton.Content>
@@ -1504,8 +1450,8 @@
                         </ToggleButton.Content>
                     </ToggleButton>
                     -->
-                </Grid>
-                <Popup x:Name="servicesAddTabPopup" StaysOpen="False"
+                    </Grid>
+                    <Popup x:Name="servicesAddTabPopup" StaysOpen="False"
                        IsOpen="{Binding ElementName=removeServicesTabButton, Path=IsChecked}"
                        PlacementTarget="{Binding ElementName=removeServicesTabButton}" Placement="Right" 
                        VerticalOffset="18" HorizontalOffset="137" PopupAnimation="Slide" Margin="5,5,5,5" AllowsTransparency="True">
@@ -1545,8 +1491,8 @@
 
                 </StackPanel>
             </ScrollViewer>
-    
-            <TextBlock x:Name="CustomizeDashboardText" DockPanel.Dock="Top" Margin="10,10,23,10" Foreground="#006089" FontFamily="{StaticResource SourceSansPro}" 
+
+            <TextBlock x:Name="CustomizeDashboardText" Style="{DynamicResource CustomizeDashboardText}" DockPanel.Dock="Top" Margin="10,10,23,10" FontFamily="{StaticResource SourceSansPro}" 
                                Visibility="Collapsed" FontWeight="Bold" FontSize="18" VerticalAlignment="Center" >Customize Dashboard</TextBlock>
 
         </DockPanel>
@@ -1565,46 +1511,31 @@
             </Border.Resources>
             <DockPanel>
                 <DockPanel x:Name="customDashboardControls" DockPanel.Dock="Top" Visibility="Collapsed" Margin="0,0,0,10" VerticalAlignment="Center" LastChildFill="False">
-                    <TextBlock DockPanel.Dock="Left" Margin="0,0,9,0" Foreground="#006089" FontFamily="{StaticResource SourceSansPro}" 
+                    <TextBlock x:Name="SelectLayout" Style="{DynamicResource SelectLayout}" DockPanel.Dock="Left" Margin="0,0,9,0" FontFamily="{StaticResource SourceSansPro}" 
                                FontWeight="Bold" FontSize="14" VerticalAlignment="Center">Select Layout</TextBlock>
-                    <Button Background="Transparent" x:Name="layoutButton" Width="16" Height="16" BorderBrush="Transparent" Margin="0,0,9,0" Tag="DashboardLayoutTwoByTwo" Click="LayoutButton_Click">
-                        <Image Source="/SQLdmDesktopClient;component/Resources/Grid_2x2.png"></Image>
-                    </Button>
-                    <Button Background="Transparent" Width="16" Height="16" Margin="0,0,9,0" BorderBrush="Transparent" Tag="DashboardLayoutTwoByThree" Click="LayoutButton_Click">
-                        <Image Source="/SQLdmDesktopClient;component/Resources/Grid_2x3.png"></Image>
-                    </Button>
-                    <Button Background="Transparent" Width="16" Height="16" Margin="0,0,9,0" BorderBrush="Transparent" Tag="DashboardLayoutTwoByFour" Click="LayoutButton_Click">
-                        <Image Source="/SQLdmDesktopClient;component/Resources/Grid_2x4.png"></Image>
-                    </Button>
-                    <Button Background="Transparent" Width="16" Height="16" Margin="0,0,9,0" BorderBrush="Transparent" Tag="DashboardLayoutTwoByFive" Click="LayoutButton_Click">
-                        <Image Source="/SQLdmDesktopClient;component/Resources/Grid_2x5.png"></Image>
-                    </Button>
-                    <Button Background="Transparent" Width="16" Height="16" Margin="0,0,9,0" BorderBrush="Transparent" Tag="DashboardLayoutThreeByTwo" Click="LayoutButton_Click">
-                        <Image Source="/SQLdmDesktopClient;component/Resources/Grid_3x2.png"></Image>
-                    </Button>
-                    <Button Background="Transparent" Width="16" Height="16" Margin="0,0,9,0" BorderBrush="Transparent" Tag="DashboardLayoutThreeByThree" Click="LayoutButton_Click">
-                        <Image Source="/SQLdmDesktopClient;component/Resources/Grid_3x3.png"></Image>
-                    </Button>
-                    <Button Background="Transparent" Width="16" Height="16" Margin="0,0,9,0" BorderBrush="Transparent" Tag="DashboardLayoutThreeByFour" Click="LayoutButton_Click">
-                        <Image Source="/SQLdmDesktopClient;component/Resources/Grid_3x4.png"></Image>
-                    </Button>
-                    <Button Background="Transparent" Width="16" Height="16" Margin="0,0,9,0" BorderBrush="Transparent" Tag="DashboardLayoutFourByTwo" Click="LayoutButton_Click">
-                        <Image Source="/SQLdmDesktopClient;component/Resources/Grid_4x2.png"></Image>
-                    </Button>
-                    <Button Background="Transparent" Width="16" Height="16" Margin="0,0,9,0" BorderBrush="Transparent" Tag="DashboardLayoutFourByThree" Click="LayoutButton_Click">
-                        <Image Source="/SQLdmDesktopClient;component/Resources/Grid_4x3.png"></Image>
-                    </Button>
+                    <!-- START:DarkTheme 4.12 Customize Select Layout Icons Styling : Babita Manral-->
+                    <Button x:Name="layoutButton" Tag="DashboardLayoutTwoByTwo" Click="LayoutButton_Click" Style="{DynamicResource Grid_2x2_ImagesLayout}" />
+                    <Button Tag="DashboardLayoutTwoByThree" Click="LayoutButton_Click" Style="{DynamicResource Grid_2x3_ImagesLayout}" />
+                    <Button Tag="DashboardLayoutTwoByFour" Click="LayoutButton_Click" Style="{DynamicResource Grid_2x4_ImagesLayout}" />
+                    <Button Tag="DashboardLayoutTwoByTwo" Click="LayoutButton_Click" Style="{DynamicResource Grid_2x4_ImagesLayout}" />
+                    <Button Tag="DashboardLayoutTwoByFive" Click="LayoutButton_Click" Style="{DynamicResource Grid_2x5_ImagesLayout}" />
+                    <Button Tag="DashboardLayoutThreeByTwo" Click="LayoutButton_Click" Style="{DynamicResource Grid_3x2_ImagesLayout}" />
+                    <Button Tag="DashboardLayoutThreeByThree" Click="LayoutButton_Click" Style="{DynamicResource Grid_3x3_ImagesLayout}" />
+                    <Button Tag="DashboardLayoutThreeByFour" Click="LayoutButton_Click" Style="{DynamicResource Grid_3x4_ImagesLayout}" />
+                    <Button Tag="DashboardLayoutFourByTwo" Click="LayoutButton_Click" Style="{DynamicResource Grid_4x2_ImagesLayout}" />
+                    <Button Tag="DashboardLayoutFourByThree" Click="LayoutButton_Click" Style="{DynamicResource Grid_4x3_ImagesLayout}" />
+                    <!--END:DarkTheme 4.12 Customize Select Layout Icons Styling : Babita Manral-->
                     <ToggleButton x:Name="dashboardGalleryButton" DockPanel.Dock="Left"
                                   Style="{StaticResource CustomizeDashboardToggleButtonStyle}" Click="OnToolClick"
-                                  Margin="0,0,9,0">Select a Dashboard</ToggleButton>
+                                  Margin="0,0,9,0" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Select a Dashboard</ToggleButton>
                     <ToggleButton x:Name="togglePanelGalleryButton" DockPanel.Dock="Left"
                                   Style="{StaticResource CustomizeDashboardToggleButtonStyle}" Click="OnToolClick"
-                                  Margin="0,0,9,0">View Panel Gallery</ToggleButton>
+                                  Margin="0,0,9,0" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">View Panel Gallery</ToggleButton>
 
                     <ToggleButton DockPanel.Dock="Right" Click="customizeDashBoardSave_Click" Style="{StaticResource CustomizeDashboardToggleButtonStyle}"
-                                  Margin="0,0,9,0" Height="24" FontStretch="SemiExpanded">Save</ToggleButton>
+                                  Margin="0,0,9,0" Height="24" FontStretch="SemiExpanded" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Save</ToggleButton>
                     <ToggleButton DockPanel.Dock="Right" Click="customizeDashBoardCancel_Click" Style="{StaticResource CustomizeDashboardToggleButtonStyle}"
-                                  Margin="0,0,9,0" Height="24">Cancel</ToggleButton>
+                                  Margin="0,0,9,0" Height="24" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Cancel</ToggleButton>
                 </DockPanel>
 
                 <StackPanel DockPanel.Dock="Top" Margin="0,10,0,20" Orientation="Horizontal" FlowDirection="RightToLeft" Visibility="{Binding Path=ShowDashGalleryButtons, Converter={StaticResource VisibilityConverter}}">
@@ -1618,181 +1549,181 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width ="Auto"/>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="1.5*"/>
+                            <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <WrapPanel Grid.Column="0" MaxWidth="{Binding ActualWidth, ElementName=ContentAreaBorder, Mode=OneWay}" Orientation="Horizontal" DockPanel.Dock="Top" Visibility="Visible" Margin="0,0,0,10" VerticalAlignment="Center">
+                        <WrapPanel Name="ServerContainerWrapPanel" Grid.Column="0" MaxWidth="{Binding ActualWidth, ElementName=ContentAreaBorder, Mode=OneWay}" Orientation="Horizontal" DockPanel.Dock="Top" Visibility="Visible" Margin="0,0,0,10" VerticalAlignment="Center">
                             <StackPanel Visibility="Collapsed"  Orientation="Horizontal" Margin="0,10,0,10" >
                                 <TextBlock 
                                Foreground="{DynamicResource SecondToolbarColor}"  FontSize="16" FontWeight="Bold" FontFamily="{StaticResource SourceSansPro}"
                                Margin="0,0,9,10" VerticalAlignment="Center">View History</TextBlock>
-                        <DatePicker x:Name="startDate"  Margin="0,0,9,10"
+                                <DatePicker x:Name="startDate"  Margin="0,0,9,10"
                                 BorderThickness="0,0,0,2" BorderBrush="#00a1dd" IsEnabled="{Binding ShowCustomControls}">
-                            <DatePicker.Resources>
-                                <Style TargetType="{x:Type DatePickerTextBox}">
-                                    <Setter Property="Text" Value="{Binding Mode=TwoWay, Path=StartHistoryDate, StringFormat='{x:Static root:ApplicationModel.DateFormat}'}"></Setter>
-                                    <Setter Property="BorderThickness" Value="0"></Setter>
-                                    <Setter Property="Background" Value="#eeeff4"></Setter>
-                                    <Setter Property="Foreground" Value="Red"/>
-                                    <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
-                                    <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-                                    <Setter Property="FontSize" Value="16"></Setter>
-                                    <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
-                                    <Setter Property="FontStretch" Value="Normal"></Setter>
-                                    <Setter Property="FontStyle" Value="Normal"></Setter>
-                                    <Setter Property="FontWeight" Value="Normal"></Setter>
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type DatePickerTextBox}">
-                                                <Grid>
-                                                    <Grid.Resources>
-                                                        <SolidColorBrush x:Key="WatermarkBrush" Color="#FFAAAAAA"/>
-                                                    </Grid.Resources>
-                                                    <VisualStateManager.VisualStateGroups>
-                                                        <VisualStateGroup x:Name="CommonStates">
-                                                            <VisualStateGroup.Transitions>
-                                                                <VisualTransition GeneratedDuration="0"/>
-                                                                <VisualTransition GeneratedDuration="0:0:0.1" To="MouseOver"/>
-                                                            </VisualStateGroup.Transitions>
-                                                            <VisualState x:Name="Normal"/>
-                                                            <VisualState x:Name="MouseOver">
-                                                                <Storyboard>
-                                                                    <ColorAnimation Duration="0" To="#FF99C1E2" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="ContentElement"/>
-                                                                    <ColorAnimation Duration="0" To="#FF99C1E2" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="watermark_decorator"/>
-                                                                </Storyboard>
-                                                            </VisualState>
-                                                        </VisualStateGroup>
-                                                        <VisualStateGroup x:Name="WatermarkStates">
-                                                            <VisualStateGroup.Transitions>
-                                                                <VisualTransition GeneratedDuration="0"/>
-                                                            </VisualStateGroup.Transitions>
-                                                            <VisualState x:Name="Unwatermarked"/>
-                                                            <VisualState x:Name="Watermarked">
-                                                                <Storyboard>
-                                                                    <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ContentElement"/>
-                                                                    <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PART_Watermark"/>
-                                                                </Storyboard>
-                                                            </VisualState>
-                                                        </VisualStateGroup>
-                                                        <VisualStateGroup x:Name="FocusStates">
-                                                            <VisualStateGroup.Transitions>
-                                                                <VisualTransition GeneratedDuration="0"/>
-                                                            </VisualStateGroup.Transitions>
-                                                            <VisualState x:Name="Unfocused"/>
-                                                            <VisualState x:Name="Focused">
-                                                                <Storyboard>
-                                                                    <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisual"/>
-                                                                </Storyboard>
-                                                            </VisualState>
-                                                        </VisualStateGroup>
-                                                    </VisualStateManager.VisualStateGroups>
-                                                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="1" Opacity="1" Padding="{TemplateBinding Padding}">
-                                                        <Grid x:Name="WatermarkContent" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
-                                                            <Border x:Name="ContentElement" BorderBrush="#FFFFFFFF" BorderThickness="1" Visibility="Hidden"/>
-                                                            <Border x:Name="watermark_decorator" BorderBrush="#FFFFFFFF" BorderThickness="0" Visibility="Visible">
-                                                                <ContentControl x:Name="PART_Watermark" Focusable="False" IsHitTestVisible="False" Opacity="0" Padding="2"/>
+                                    <DatePicker.Resources>
+                                        <Style TargetType="{x:Type DatePickerTextBox}">
+                                            <Setter Property="Text" Value="{Binding Mode=TwoWay, Path=StartHistoryDate, StringFormat='{x:Static root:ApplicationModel.DateFormat}'}"></Setter>
+                                            <Setter Property="BorderThickness" Value="0"></Setter>
+                                            <Setter Property="Background" Value="#eeeff4"></Setter>
+                                            <Setter Property="Foreground" Value="Red"/>
+                                            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+                                            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+                                            <Setter Property="FontSize" Value="16"></Setter>
+                                            <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+                                            <Setter Property="FontStretch" Value="Normal"></Setter>
+                                            <Setter Property="FontStyle" Value="Normal"></Setter>
+                                            <Setter Property="FontWeight" Value="Normal"></Setter>
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type DatePickerTextBox}">
+                                                        <Grid>
+                                                            <Grid.Resources>
+                                                                <SolidColorBrush x:Key="WatermarkBrush" Color="#FFAAAAAA"/>
+                                                            </Grid.Resources>
+                                                            <VisualStateManager.VisualStateGroups>
+                                                                <VisualStateGroup x:Name="CommonStates">
+                                                                    <VisualStateGroup.Transitions>
+                                                                        <VisualTransition GeneratedDuration="0"/>
+                                                                        <VisualTransition GeneratedDuration="0:0:0.1" To="MouseOver"/>
+                                                                    </VisualStateGroup.Transitions>
+                                                                    <VisualState x:Name="Normal"/>
+                                                                    <VisualState x:Name="MouseOver">
+                                                                        <Storyboard>
+                                                                            <ColorAnimation Duration="0" To="#FF99C1E2" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="ContentElement"/>
+                                                                            <ColorAnimation Duration="0" To="#FF99C1E2" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="watermark_decorator"/>
+                                                                        </Storyboard>
+                                                                    </VisualState>
+                                                                </VisualStateGroup>
+                                                                <VisualStateGroup x:Name="WatermarkStates">
+                                                                    <VisualStateGroup.Transitions>
+                                                                        <VisualTransition GeneratedDuration="0"/>
+                                                                    </VisualStateGroup.Transitions>
+                                                                    <VisualState x:Name="Unwatermarked"/>
+                                                                    <VisualState x:Name="Watermarked">
+                                                                        <Storyboard>
+                                                                            <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ContentElement"/>
+                                                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PART_Watermark"/>
+                                                                        </Storyboard>
+                                                                    </VisualState>
+                                                                </VisualStateGroup>
+                                                                <VisualStateGroup x:Name="FocusStates">
+                                                                    <VisualStateGroup.Transitions>
+                                                                        <VisualTransition GeneratedDuration="0"/>
+                                                                    </VisualStateGroup.Transitions>
+                                                                    <VisualState x:Name="Unfocused"/>
+                                                                    <VisualState x:Name="Focused">
+                                                                        <Storyboard>
+                                                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisual"/>
+                                                                        </Storyboard>
+                                                                    </VisualState>
+                                                                </VisualStateGroup>
+                                                            </VisualStateManager.VisualStateGroups>
+                                                            <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="1" Opacity="1" Padding="{TemplateBinding Padding}">
+                                                                <Grid x:Name="WatermarkContent" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                                                    <Border x:Name="ContentElement" BorderBrush="#FFFFFFFF" BorderThickness="1" Visibility="Hidden"/>
+                                                                    <Border x:Name="watermark_decorator" BorderBrush="#FFFFFFFF" BorderThickness="0" Visibility="Visible">
+                                                                        <ContentControl x:Name="PART_Watermark" Focusable="False" IsHitTestVisible="False" Opacity="0" Padding="2"/>
+                                                                    </Border>
+                                                                    <ScrollViewer x:Name="PART_ContentHost" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                                    <Border x:Name="FocusVisual" BorderBrush="#FF45D6FA" CornerRadius="1" IsHitTestVisible="False" Opacity="0"/>
+                                                                </Grid>
                                                             </Border>
-                                                            <ScrollViewer x:Name="PART_ContentHost" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                                                            <Border x:Name="FocusVisual" BorderBrush="#FF45D6FA" CornerRadius="1" IsHitTestVisible="False" Opacity="0"/>
                                                         </Grid>
-                                                    </Border>
-                                                </Grid>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </DatePicker.Resources>
-                        </DatePicker>
-                        <igEditors:XamDateTimeEditor x:Name="startTime" Mask="hh:mm tt"  Margin="0,0,9,10" Width="85"  
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </DatePicker.Resources>
+                                </DatePicker>
+                                <igEditors:XamDateTimeEditor x:Name="startTime" Mask="hh:mm tt"  Margin="0,0,9,10" Width="85"  
                                                  IsEnabled="{Binding ShowCustomControls}"
                                                  Background="#eeeff4" BorderThickness="0,0,0,2" BorderBrush="#00a1dd"
                                                  Foreground="#006089"  FontSize="16" FontFamily="{StaticResource SourceSansPro}">
-                        </igEditors:XamDateTimeEditor>
-                        <TextBlock  Foreground="#006089"  FontSize="16" FontFamily="{StaticResource SourceSansPro}"
+                                </igEditors:XamDateTimeEditor>
+                                <TextBlock  Foreground="#006089"  FontSize="16" FontFamily="{StaticResource SourceSansPro}"
                                Margin="0,0,9,10" VerticalAlignment="Center">To</TextBlock>
-                        <DatePicker Name="endDate" Margin="0,0,9,10"  IsEnabled="{Binding ShowCustomControls}"
+                                <DatePicker Name="endDate" Margin="0,0,9,10"  IsEnabled="{Binding ShowCustomControls}"
                                 BorderThickness="0,0,0,2" BorderBrush="#00a1dd">
-                            <DatePicker.Resources>
-                                <Style TargetType="{x:Type DatePickerTextBox}">
-                                    <Setter Property="Text" Value="{Binding Mode=TwoWay, Path=EndHistoryDate, StringFormat='{x:Static root:ApplicationModel.DateFormat}'}"></Setter>
-                                    <Setter Property="BorderThickness" Value="0"></Setter>
-                                    <Setter Property="Background" Value="#eeeff4"></Setter>
-                                    <Setter Property="Foreground" Value="#006089"/>
-                                    <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
-                                    <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-                                    <Setter Property="FontSize" Value="16"></Setter>
-                                    <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
-                                    <Setter Property="FontStretch" Value="Normal"></Setter>
-                                    <Setter Property="FontStyle" Value="Normal"></Setter>
-                                    <Setter Property="FontWeight" Value="Normal"></Setter>
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type DatePickerTextBox}">
-                                                <Grid>
-                                                    <Grid.Resources>
-                                                        <SolidColorBrush x:Key="WatermarkBrush" Color="#FFAAAAAA"/>
-                                                    </Grid.Resources>
-                                                    <VisualStateManager.VisualStateGroups>
-                                                        <VisualStateGroup x:Name="CommonStates">
-                                                            <VisualStateGroup.Transitions>
-                                                                <VisualTransition GeneratedDuration="0"/>
-                                                                <VisualTransition GeneratedDuration="0:0:0.1" To="MouseOver"/>
-                                                            </VisualStateGroup.Transitions>
-                                                            <VisualState x:Name="Normal"/>
-                                                            <VisualState x:Name="MouseOver">
-                                                                <Storyboard>
-                                                                    <ColorAnimation Duration="0" To="#FF99C1E2" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="ContentElement"/>
-                                                                    <ColorAnimation Duration="0" To="#FF99C1E2" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="watermark_decorator"/>
-                                                                </Storyboard>
-                                                            </VisualState>
-                                                        </VisualStateGroup>
-                                                        <VisualStateGroup x:Name="WatermarkStates">
-                                                            <VisualStateGroup.Transitions>
-                                                                <VisualTransition GeneratedDuration="0"/>
-                                                            </VisualStateGroup.Transitions>
-                                                            <VisualState x:Name="Unwatermarked"/>
-                                                            <VisualState x:Name="Watermarked">
-                                                                <Storyboard>
-                                                                    <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ContentElement"/>
-                                                                    <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PART_Watermark"/>
-                                                                </Storyboard>
-                                                            </VisualState>
-                                                        </VisualStateGroup>
-                                                        <VisualStateGroup x:Name="FocusStates">
-                                                            <VisualStateGroup.Transitions>
-                                                                <VisualTransition GeneratedDuration="0"/>
-                                                            </VisualStateGroup.Transitions>
-                                                            <VisualState x:Name="Unfocused"/>
-                                                            <VisualState x:Name="Focused">
-                                                                <Storyboard>
-                                                                    <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisual"/>
-                                                                </Storyboard>
-                                                            </VisualState>
-                                                        </VisualStateGroup>
-                                                    </VisualStateManager.VisualStateGroups>
-                                                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="1" Opacity="1" Padding="{TemplateBinding Padding}">
-                                                        <Grid x:Name="WatermarkContent" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
-                                                            <Border x:Name="ContentElement" BorderBrush="#FFFFFFFF" BorderThickness="1" Visibility="Hidden"/>
-                                                            <Border x:Name="watermark_decorator" BorderBrush="#FFFFFFFF" BorderThickness="0" Visibility="Visible">
-                                                                <ContentControl x:Name="PART_Watermark" Focusable="False" IsHitTestVisible="False" Opacity="0" Padding="2"/>
+                                    <DatePicker.Resources>
+                                        <Style TargetType="{x:Type DatePickerTextBox}">
+                                            <Setter Property="Text" Value="{Binding Mode=TwoWay, Path=EndHistoryDate, StringFormat='{x:Static root:ApplicationModel.DateFormat}'}"></Setter>
+                                            <Setter Property="BorderThickness" Value="0"></Setter>
+                                            <Setter Property="Background" Value="#eeeff4"></Setter>
+                                            <Setter Property="Foreground" Value="#006089"/>
+                                            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+                                            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+                                            <Setter Property="FontSize" Value="16"></Setter>
+                                            <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+                                            <Setter Property="FontStretch" Value="Normal"></Setter>
+                                            <Setter Property="FontStyle" Value="Normal"></Setter>
+                                            <Setter Property="FontWeight" Value="Normal"></Setter>
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type DatePickerTextBox}">
+                                                        <Grid>
+                                                            <Grid.Resources>
+                                                                <SolidColorBrush x:Key="WatermarkBrush" Color="#FFAAAAAA"/>
+                                                            </Grid.Resources>
+                                                            <VisualStateManager.VisualStateGroups>
+                                                                <VisualStateGroup x:Name="CommonStates">
+                                                                    <VisualStateGroup.Transitions>
+                                                                        <VisualTransition GeneratedDuration="0"/>
+                                                                        <VisualTransition GeneratedDuration="0:0:0.1" To="MouseOver"/>
+                                                                    </VisualStateGroup.Transitions>
+                                                                    <VisualState x:Name="Normal"/>
+                                                                    <VisualState x:Name="MouseOver">
+                                                                        <Storyboard>
+                                                                            <ColorAnimation Duration="0" To="#FF99C1E2" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="ContentElement"/>
+                                                                            <ColorAnimation Duration="0" To="#FF99C1E2" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="watermark_decorator"/>
+                                                                        </Storyboard>
+                                                                    </VisualState>
+                                                                </VisualStateGroup>
+                                                                <VisualStateGroup x:Name="WatermarkStates">
+                                                                    <VisualStateGroup.Transitions>
+                                                                        <VisualTransition GeneratedDuration="0"/>
+                                                                    </VisualStateGroup.Transitions>
+                                                                    <VisualState x:Name="Unwatermarked"/>
+                                                                    <VisualState x:Name="Watermarked">
+                                                                        <Storyboard>
+                                                                            <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ContentElement"/>
+                                                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PART_Watermark"/>
+                                                                        </Storyboard>
+                                                                    </VisualState>
+                                                                </VisualStateGroup>
+                                                                <VisualStateGroup x:Name="FocusStates">
+                                                                    <VisualStateGroup.Transitions>
+                                                                        <VisualTransition GeneratedDuration="0"/>
+                                                                    </VisualStateGroup.Transitions>
+                                                                    <VisualState x:Name="Unfocused"/>
+                                                                    <VisualState x:Name="Focused">
+                                                                        <Storyboard>
+                                                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisual"/>
+                                                                        </Storyboard>
+                                                                    </VisualState>
+                                                                </VisualStateGroup>
+                                                            </VisualStateManager.VisualStateGroups>
+                                                            <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="1" Opacity="1" Padding="{TemplateBinding Padding}">
+                                                                <Grid x:Name="WatermarkContent" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                                                    <Border x:Name="ContentElement" BorderBrush="#FFFFFFFF" BorderThickness="1" Visibility="Hidden"/>
+                                                                    <Border x:Name="watermark_decorator" BorderBrush="#FFFFFFFF" BorderThickness="0" Visibility="Visible">
+                                                                        <ContentControl x:Name="PART_Watermark" Focusable="False" IsHitTestVisible="False" Opacity="0" Padding="2"/>
+                                                                    </Border>
+                                                                    <ScrollViewer x:Name="PART_ContentHost" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                                    <Border x:Name="FocusVisual" BorderBrush="#FF45D6FA" CornerRadius="1" IsHitTestVisible="False" Opacity="0"/>
+                                                                </Grid>
                                                             </Border>
-                                                            <ScrollViewer x:Name="PART_ContentHost" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                                                            <Border x:Name="FocusVisual" BorderBrush="#FF45D6FA" CornerRadius="1" IsHitTestVisible="False" Opacity="0"/>
                                                         </Grid>
-                                                    </Border>
-                                                </Grid>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </DatePicker.Resources>
-                        </DatePicker>
-                        <igEditors:XamDateTimeEditor x:Name="endTime" Mask="hh:mm tt" Margin="0,0,9,10" Width="85" IsEnabled="{Binding ShowCustomControls}"
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </DatePicker.Resources>
+                                </DatePicker>
+                                <igEditors:XamDateTimeEditor x:Name="endTime" Mask="hh:mm tt" Margin="0,0,9,10" Width="85" IsEnabled="{Binding ShowCustomControls}"
                                                  Background="#eeeff4" BorderThickness="0,0,0,2" BorderBrush="#00a1dd"
                                                  Foreground="#006089"  FontSize="16" FontFamily="{StaticResource SourceSansPro}">
-                        </igEditors:XamDateTimeEditor>
-                        <ComboBox 
+                                </igEditors:XamDateTimeEditor>
+                                <ComboBox 
                                 Margin="0,0,9,10" 
                                 BorderThickness="0, 0, 0, 2" 
                                 BorderBrush="Red" 
@@ -1804,236 +1735,232 @@
                                 IsSynchronizedWithCurrentItem="False"  
                                 Width="100" 
                                 Name="historySelectionCombobox" SelectionChanged="HistorySelectionCombobox_SelectionChanged">
-                            <ComboBoxItem Name="LiveHistoryComboBoxItem"  Tag="0" IsSelected="True">Live</ComboBoxItem>
-                            <ComboBoxItem Tag="40320">4 Weeks</ComboBoxItem>
-                            <ComboBoxItem Tag="7200">5 Days</ComboBoxItem>
-                            <ComboBoxItem Tag="1440">1 Day</ComboBoxItem>
-                            <ComboBoxItem Tag="480">8 Hours</ComboBoxItem>
-                            <ComboBoxItem Tag="240">4 Hours</ComboBoxItem>
-                            <ComboBoxItem Tag="60">1 Hour</ComboBoxItem>
-                            <ComboBoxItem Tag="30">30 Minutes</ComboBoxItem>
-                            <ComboBoxItem Tag="15">15 Minutes</ComboBoxItem>
-                            <ComboBoxItem Name="CustomHistoryComboBoxItem" Tag="-1">Custom</ComboBoxItem>
-                        </ComboBox>
-                    </StackPanel>
-                    <StackPanel Margin="0,10,0,0" Orientation="Horizontal" HorizontalAlignment="Right">
-                            <Button  Click="OverviewMaintenanceMode_Click" Style="{DynamicResource TabActionButtonStyle}" 
-                            Visibility="{Binding Path=ShowMaintenanceModeButton, Converter={StaticResource VisibilityConverter}}">Maintenance Mode</Button>
-                            <Button  Click="OverviewBaselineVisualizer_Click" Style="{DynamicResource TabActionButtonStyle}" 
-                            Visibility="{Binding Path=ShowBaselineVisualizerButton, Converter={StaticResource VisibilityConverter}}">Baseline Visualizer</Button>
-                            <Button  Click="SessionsTraceSession_Click" Style="{DynamicResource TabActionButtonStyle}" 
-                            Visibility="{Binding Path=ShowTraceSessionButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableTraceSessionButton}">Trace Session</Button>
-                            <Button  Click="SessionsKillSession_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowKillSessionButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableKillSessionButton}">Kill Session</Button>
-                            <Menu Style="{DynamicResource TabActionMenuStyle}" Visibility="{Binding Path=ShowBlockingTreeButton, Converter={StaticResource VisibilityConverter}}">
-                                <MenuItem Style="{DynamicResource TabActionMenuItemStyle}">
-                                    <MenuItem.Header>
-                                        <StackPanel>
-                                            <TextBlock Text="Blocking Tree" Margin="0,0,0,0" Cursor="Arrow" Style="{DynamicResource TabActionMenuTextStyle}"></TextBlock>
+                                    <ComboBoxItem Name="LiveHistoryComboBoxItem"  Tag="0" IsSelected="True">Live</ComboBoxItem>
+                                    <ComboBoxItem Tag="40320">4 Weeks</ComboBoxItem>
+                                    <ComboBoxItem Tag="7200">5 Days</ComboBoxItem>
+                                    <ComboBoxItem Tag="1440">1 Day</ComboBoxItem>
+                                    <ComboBoxItem Tag="480">8 Hours</ComboBoxItem>
+                                    <ComboBoxItem Tag="240">4 Hours</ComboBoxItem>
+                                    <ComboBoxItem Tag="60">1 Hour</ComboBoxItem>
+                                    <ComboBoxItem Tag="30">30 Minutes</ComboBoxItem>
+                                    <ComboBoxItem Tag="15">15 Minutes</ComboBoxItem>
+                                    <ComboBoxItem Name="CustomHistoryComboBoxItem" Tag="-1">Custom</ComboBoxItem>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Button  Click="OverviewMaintenanceMode_Click" Style="{DynamicResource TabActionButtonStyle}" 
+                            Visibility="{Binding Path=ShowMaintenanceModeButton, Converter={StaticResource VisibilityConverter}}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Maintenance Mode</Button>
+                                <Button  Click="OverviewBaselineVisualizer_Click" Style="{DynamicResource TabActionButtonStyle}" 
+                            Visibility="{Binding Path=ShowBaselineVisualizerButton, Converter={StaticResource VisibilityConverter}}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Baseline Visualizer</Button>
+                                <Button  Click="SessionsTraceSession_Click" Style="{DynamicResource TabActionButtonStyle}" 
+                            Visibility="{Binding Path=ShowTraceSessionButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableTraceSessionButton}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Trace Session</Button>
+                                <Button  Click="SessionsKillSession_Click" Style="{DynamicResource TabActionButtonStyle}"  
+                            Visibility="{Binding Path=ShowKillSessionButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableKillSessionButton}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Kill Session</Button>
+                                <Menu Style="{DynamicResource TabActionMenuStyle}" Visibility="{Binding Path=ShowBlockingTreeButton, Converter={StaticResource VisibilityConverter}}">
+                                    <MenuItem Style="{DynamicResource TabActionMenuItemStyle}">
+                                        <MenuItem.Header>
+                                            <StackPanel>
+                                                <TextBlock Text="Blocking Tree" Margin="0,0,0,0" Cursor="Arrow" Style="{DynamicResource TabActionMenuTextStyle}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}"></TextBlock>
 
-                                            <Image Margin="60,-10,0,0" Source="{StaticResource down_arrow_wht_icon_2DrawingImage}" Height="5" Width="10" VerticalAlignment="Center"></Image>
+                                                <Image Margin="70,-10,0,0" Source="{StaticResource down_arrow_wht_icon_2DrawingImage}" Height="5" Width="10" VerticalAlignment="Center"></Image>
 
-                                        </StackPanel>
-                                    </MenuItem.Header>
-                                    <MenuItem x:Name="showSessionsBlockingBySessionButton" Header="By Session" Click="OnToolClick" Style="{DynamicResource LeftFlyoutMenu}" IsCheckable="True" IsChecked="{Binding ShowBtBySession}">
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                        <MenuItem x:Name="showSessionsBlockingBySessionButton" Header="By Session" Click="OnToolClick" Style="{DynamicResource MenuLeftFlyoutMenu}" IsCheckable="True" IsChecked="{Binding ShowBtBySession}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">
+                                        </MenuItem>
+                                        <MenuItem x:Name="showSessionsBlockingByLockButton" Header="By Lock" Click="OnToolClick" Style="{DynamicResource MenuLeftFlyoutMenu}" IsCheckable="True" IsChecked="{Binding ShowBtByLock}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">
+                                        </MenuItem>
                                     </MenuItem>
-                                    <MenuItem x:Name="showSessionsBlockingByLockButton" Header="By Lock" Click="OnToolClick" Style="{DynamicResource LeftFlyoutMenu}" IsCheckable="True" IsChecked="{Binding ShowBtByLock}" >
-                                    </MenuItem>
-                                </MenuItem>
-                            </Menu>
-                            <Button  Click="QueriesConfigQueryMonitor_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowConfigureQueryMonitorButton, Converter={StaticResource VisibilityConverter}}">Configure Query Monitor</Button>
-                            <Button  Click="ClearCache_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowClearCacheButton, Converter={StaticResource VisibilityConverter}}">Clear Cache</Button>
-                            <Button  Click="UpdateStats_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowUpdateStatisticsButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableDatabaseStats}">Update Statistics</Button>
-                            <Button  Click="RebuildIndices_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowRebuildIndexesButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableRebuildIndices}">Rebuild Indexes</Button>
-                            <Button  Click="FailOver_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowFailOverButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableFailOver}">Fail Over</Button>
-                            <Button  Click="SuspendResume_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowSuspendResumeButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableSuspendResume}">Suspend/Resume</Button>
+                                </Menu>
+                                <Button  Click="QueriesConfigQueryMonitor_Click" Style="{DynamicResource TabActionButtonStyle}"  
+                            Visibility="{Binding Path=ShowConfigureQueryMonitorButton, Converter={StaticResource VisibilityConverter}}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Configure Query Monitor</Button>
+                                <Button  Click="ClearCache_Click" Style="{DynamicResource TabActionButtonStyle}"  
+                            Visibility="{Binding Path=ShowClearCacheButton, Converter={StaticResource VisibilityConverter}}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Clear Cache</Button>
+                                <Button  Click="UpdateStats_Click" Style="{DynamicResource TabActionButtonStyle}"  
+                            Visibility="{Binding Path=ShowUpdateStatisticsButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableDatabaseStats}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Update Statistics</Button>
+                                <Button  Click="RebuildIndices_Click" Style="{DynamicResource TabActionButtonStyle}"  
+                            Visibility="{Binding Path=ShowRebuildIndexesButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableRebuildIndices}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Rebuild Indexes</Button>
+                                <Button  Click="FailOver_Click" Style="{DynamicResource TabActionButtonStyle}"  
+                            Visibility="{Binding Path=ShowFailOverButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableFailOver}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Fail Over</Button>
+                                <Button  Click="SuspendResume_Click" Style="{DynamicResource TabActionButtonStyle}"  
+                            Visibility="{Binding Path=ShowSuspendResumeButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableSuspendResume}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Suspend/Resume</Button>
                                 <Button  Click="QueriesConfig_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowQueriesConfigureButton, Converter={StaticResource VisibilityConverter}}">Configure</Button>
+                            Visibility="{Binding Path=ShowQueriesConfigureButton, Converter={StaticResource VisibilityConverter}}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Configure</Button>
                                 <Button  Click="AnalyzeBlock_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowAnalyzeActionButtons, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableAnalyzeBlockButton}">Block</Button>
+                            Visibility="{Binding Path=ShowAnalyzeActionButtons, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableAnalyzeBlockButton}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Block</Button>
                                 <Button  Click="AnalyzeExport_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowAnalyzeActionButtons, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableAnalyzeExportButton}">Export</Button>
+                            Visibility="{Binding Path=ShowAnalyzeActionButtons, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableAnalyzeExportButton}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Export</Button>
                                 <Button  Click="AnalyzeCopy_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowAnalyzeActionButtons, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableAnalyzeCopyButton}">Copy</Button>
+                            Visibility="{Binding Path=ShowAnalyzeActionButtons, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableAnalyzeCopyButton}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Copy</Button>
                                 <Button  Click="AnalyzeEmail_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowAnalyzeActionButtons, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableAnalyzeEmailButton}">Email</Button>
+                            Visibility="{Binding Path=ShowAnalyzeActionButtons, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableAnalyzeEmailButton}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Email</Button>
                             </StackPanel>
                             <StackPanel Margin="0,10,0,0" Orientation="Horizontal" HorizontalAlignment="Right">
                                 <StackPanel.Resources>
                                     <CollectionViewSource Source="{Binding ShowHideItems}" x:Key="ShowHideItemsResource"/>
                                 </StackPanel.Resources>
                                 <Button  Click="Filter_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowFilterDialogButton, Converter={StaticResource VisibilityConverter}}">Filter</Button>
-                            <Menu Style="{DynamicResource TabActionMenuStyle}"   Visibility="{Binding Path=ShowShowHideButton, Converter={StaticResource VisibilityConverter}}">
-                                <MenuItem Style="{DynamicResource TabActionMenuItemStyle}">
-                                    <MenuItem.Header>
+                            Visibility="{Binding Path=ShowFilterDialogButton, Converter={StaticResource VisibilityConverter}}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Filter</Button>
+                                <Menu Style="{DynamicResource TabActionMenuStyle}"   Visibility="{Binding Path=ShowShowHideButton, Converter={StaticResource VisibilityConverter}}">
+                                    <MenuItem Style="{DynamicResource TabActionMenuItemStyle}">
+                                        <MenuItem.Header>
                                             <StackPanel>
-                                                <TextBlock Text="Show/Hide" Margin="0,0,0,0" Cursor="Arrow" Style="{DynamicResource TabActionMenuTextStyle}"></TextBlock>
-                                                
-                                                <Image Margin="50,-10,0,0" Source="{StaticResource down_arrow_wht_icon_2DrawingImage}" Height="5" Width="10" VerticalAlignment="Center"></Image>
-                                               
+                                                <TextBlock Text="Show/Hide" Margin="0,0,0,0" Cursor="Arrow" Style="{DynamicResource TabActionMenuTextStyle}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}"></TextBlock>
+
+                                                <Image Margin="58,-10,0,0" Source="{StaticResource down_arrow_wht_icon_2DrawingImage}" Height="5" Width="10" VerticalAlignment="Center"></Image>
+
                                             </StackPanel>
-                                        
-                                    </MenuItem.Header>
-                                    
-                                    <MenuItem.ItemsSource>
-                                        <CompositeCollection>
-                                            <CollectionContainer Collection="{Binding Source={StaticResource ShowHideItemsResource}}" />
-                                        </CompositeCollection>
-                                    </MenuItem.ItemsSource>
-                                    <MenuItem.ItemContainerStyle>
-                                        <Style>
-                                            <Setter Property="MenuItem.Header" Value="{Binding Name}"/>
-                                            <Setter Property="MenuItem.Background" Value="{DynamicResource RightFlyoutBackground}"></Setter>
-                                            <Setter Property="MenuItem.Foreground" Value="{DynamicResource RightFlyoutForeground}"></Setter>
-                                            <Setter Property="MenuItem.BorderThickness" Value="0"></Setter>
-                                            <Setter Property="MenuItem.FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
-                                            <Setter Property="MenuItem.FontSize" Value="10px"></Setter>
-                                            <Setter Property="MenuItem.Margin" Value="1,0,0,0"></Setter>
-                                            <Setter Property="MenuItem.IsCheckable" Value="True"></Setter>
-                                            <Setter Property="MenuItem.IsChecked" Value="{Binding Checked}"></Setter>
-                                            <Setter Property="MenuItem.CommandParameter" Value="{Binding IsChecked,RelativeSource={RelativeSource Self}}"></Setter>
-                                            <Setter Property="MenuItem.Command" Value="{Binding ShowHideCommand}"></Setter>
-                                        </Style>
-                                    </MenuItem.ItemContainerStyle>
-                                </MenuItem>
-                            </Menu>
-                            <Menu Style="{DynamicResource TabActionMenuStyle}"   Visibility="{Binding Path=ShowBasicFilterButton, Converter={StaticResource VisibilityConverter}}">
-                                <MenuItem  Style="{DynamicResource TabActionMenuItemStyle}">
-                                    <MenuItem.Header>
+
+                                        </MenuItem.Header>
+
+                                        <MenuItem.ItemsSource>
+                                            <CompositeCollection>
+                                                <CollectionContainer Collection="{Binding Source={StaticResource ShowHideItemsResource}}" />
+                                            </CompositeCollection>
+                                        </MenuItem.ItemsSource>
+                                        <MenuItem.ItemContainerStyle >
+                                            <Style >
+                                                <Setter Property="MenuItem.Header" Value="{Binding Name}"/>
+                                                <Setter Property="MenuItem.Background" Value="{DynamicResource RightFlyoutBackground}"></Setter>
+                                                <Setter Property="MenuItem.Foreground" Value="{DynamicResource RightFlyoutForeground}"></Setter>
+                                                <Setter Property="MenuItem.BorderThickness" Value="0"></Setter>
+                                                <Setter Property="MenuItem.FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+                                                <Setter Property="MenuItem.FontSize" Value="{Binding Converter={StaticResource FontSize10ConverterSmall}}"></Setter>
+                                                <Setter Property="MenuItem.Margin" Value="0,0,0,0"></Setter>
+                                                <Setter Property="MenuItem.IsCheckable" Value="True"></Setter>
+                                                <Setter Property="MenuItem.IsChecked" Value="{Binding Checked}"></Setter>
+                                                <Setter Property="MenuItem.CommandParameter" Value="{Binding IsChecked,RelativeSource={RelativeSource Self}}"></Setter>
+                                                <Setter Property="MenuItem.Command" Value="{Binding ShowHideCommand}"></Setter>
+                                                <Style.Triggers>
+                                                    <Trigger Property="MenuItem.IsMouseOver" Value="True">
+                                                        <Setter Property="MenuItem.Foreground" Value="{DynamicResource NavPaneDropDownHover}"></Setter>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </MenuItem.ItemContainerStyle>
+                                    </MenuItem>
+                                </Menu>
+                                <Menu Style="{DynamicResource TabActionMenuStyle}"   Visibility="{Binding Path=ShowBasicFilterButton, Converter={StaticResource VisibilityConverter}}">
+                                    <MenuItem  Style="{DynamicResource TabActionMenuItemStyle}">
+                                        <MenuItem.Header>
                                             <StackPanel>
-                                                <TextBlock Text="Filter" Margin="0,0,0,0" Cursor="Arrow" Style="{DynamicResource TabActionMenuTextStyle}"></TextBlock>
+                                                <TextBlock Text="Filter" Margin="0,0,0,0" Cursor="Arrow" Style="{DynamicResource TabActionMenuTextStyle}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}"></TextBlock>
 
                                                 <Image Margin="26,-10,0,0" Source="{StaticResource down_arrow_wht_icon_2DrawingImage}" Height="5" Width="10" VerticalAlignment="Center"></Image>
 
                                             </StackPanel>
                                         </MenuItem.Header>
-                                    <MenuItem Visibility="{Binding Path=ShowBasicFilter_OvDetailsButton, Converter={StaticResource VisibilityConverter}}"
-                                      Header="Show All" Click="OvDetailsShowAll_Click" Style="{DynamicResource LeftFlyoutMenu}" IsCheckable="True" IsChecked="{Binding ShowOvDetailsShowAll}">
+                                        <MenuItem Visibility="{Binding Path=ShowBasicFilter_OvDetailsButton, Converter={StaticResource VisibilityConverter}}"
+                                      Header="Show All" Click="OvDetailsShowAll_Click" Style="{DynamicResource MenuLeftFlyoutMenu}" IsCheckable="True" IsChecked="{Binding ShowOvDetailsShowAll}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">
+                                        </MenuItem>
+                                        <MenuItem Visibility="{Binding Path=ShowBasicFilter_OvDetailsButton, Converter={StaticResource VisibilityConverter}}"
+                                      Header="Custom Counter" Click="OvDetailsCustomCounter_Click" Style="{DynamicResource MenuLeftFlyoutMenu}" IsCheckable="True" IsChecked="{Binding ShowOvDetailsCustomCounter}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">
+                                        </MenuItem>
+                                        <MenuItem Visibility="{Binding Path=ShowBasicFilter_DbIndexButton, Converter={StaticResource VisibilityConverter}}"
+                                      Header="User Databases Only" Click="DbUserDatabases_Click" Style="{DynamicResource MenuLeftFlyoutMenu}" IsCheckable="True" IsChecked="{Binding ShowDbUserDatabases}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">
+                                        </MenuItem>
+                                        <MenuItem Visibility="{Binding Path=ShowBasicFilter_DbIndexButton, Converter={StaticResource VisibilityConverter}}"
+                                      Header="User Table Only" Click="DbUserTables_Click" Style="{DynamicResource MenuLeftFlyoutMenu}" IsCheckable="True" IsChecked="{Binding ShowDbUserTables}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">
+                                        </MenuItem>
+                                        <MenuItem Height="30" Name="OvTimelineFilter" Visibility="{Binding Path=ShowBasicFilter_OvTimelineButton, Converter={StaticResource VisibilityConverter}}" Style="{DynamicResource TabMenuItemStyle}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">
+                                            <MenuItem.Header>
+                                                <Grid HorizontalAlignment="Stretch">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="40"></RowDefinition>
+                                                        <RowDefinition Height="30"></RowDefinition>
+                                                    </Grid.RowDefinitions>
+                                                    <igEditors:XamComboEditor Style="{DynamicResource ComboEditor}" Grid.Row="0" SelectedIndex="0" Name="activityTimelineRange" VerticalAlignment="Center" HorizontalAlignment="Left" ValueChanged="ComboEditorTool_ValueChanged">
+                                                        <igEditors:XamComboEditor.ItemsProvider>
+                                                            <igEditors:ComboBoxItemsProvider>
+                                                                <igEditors:ComboBoxItemsProvider.Items>
+                                                                    <igEditors:ComboBoxDataItem DisplayText="Today" Value="0"/>
+                                                                    <igEditors:ComboBoxDataItem DisplayText="Yesterday" Value="1"/>
+                                                                    <igEditors:ComboBoxDataItem DisplayText="Last 7 Days" Value="2"/>
+                                                                    <igEditors:ComboBoxDataItem DisplayText="Last 14 Days" Value="3"/>
+                                                                    <igEditors:ComboBoxDataItem DisplayText="Pick a Day" Value="4"/>
+                                                                </igEditors:ComboBoxItemsProvider.Items>
+                                                            </igEditors:ComboBoxItemsProvider>
+                                                        </igEditors:XamComboEditor.ItemsProvider>
+                                                    </igEditors:XamComboEditor>
+                                                    <StackPanel Orientation="Horizontal" Grid.Row="1">
+                                                        <Label Name="label1" Content="Day:" VerticalAlignment="Center" />
+                                                        <igEditors:XamDateTimeEditor Background="{DynamicResource CalendarEditorBackColor}"  VerticalAlignment="Center" Name="activityTimelineStart" DisplayMode="IncludeLiteralsWithPadding" UseLayoutRounding="False" Mask="{}{date}" AutoFillDate="None" AlwaysValidate="True" SpinButtonDisplayMode="Never" ToolTip="Select a start date"  VerticalContentAlignment="Top" ValueChanged="activityTimelineStart_ValueChanged" InvalidValueBehavior="RevertValue">
+                                                            <igEditors:XamDateTimeEditor.ValueConstraint>
+                                                                <igEditors:ValueConstraint Nullable="False" ValidateAsType="DateTime" />
+                                                            </igEditors:XamDateTimeEditor.ValueConstraint>
+                                                        </igEditors:XamDateTimeEditor>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </MenuItem.Header>
+                                        </MenuItem>
                                     </MenuItem>
-                                    <MenuItem Visibility="{Binding Path=ShowBasicFilter_OvDetailsButton, Converter={StaticResource VisibilityConverter}}"
-                                      Header="Custom Counter" Click="OvDetailsCustomCounter_Click" Style="{DynamicResource LeftFlyoutMenu}" IsCheckable="True" IsChecked="{Binding ShowOvDetailsCustomCounter}">
-                                    </MenuItem>
-                                    <MenuItem Visibility="{Binding Path=ShowBasicFilter_DbIndexButton, Converter={StaticResource VisibilityConverter}}"
-                                      Header="User Databases Only" Click="DbUserDatabases_Click" Style="{DynamicResource LeftFlyoutMenu}" IsCheckable="True" IsChecked="{Binding ShowDbUserDatabases}">
-                                    </MenuItem>
-                                    <MenuItem Visibility="{Binding Path=ShowBasicFilter_DbIndexButton, Converter={StaticResource VisibilityConverter}}"
-                                      Header="User Table Only" Click="DbUserTables_Click" Style="{DynamicResource LeftFlyoutMenu}" IsCheckable="True" IsChecked="{Binding ShowDbUserTables}">
-                                    </MenuItem>
-                                    <MenuItem Height="30" Name="OvTimelineFilter" Visibility="{Binding Path=ShowBasicFilter_OvTimelineButton, Converter={StaticResource VisibilityConverter}}" Style="{DynamicResource TabMenuItemStyle}">
-                                        <MenuItem.Header>
-                                            <Grid HorizontalAlignment="Stretch">
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="40"></RowDefinition>
-                                                    <RowDefinition Height="30"></RowDefinition>
-                                                </Grid.RowDefinitions>
-                                                <igEditors:XamComboEditor Grid.Row="0" SelectedIndex="0" Name="activityTimelineRange" VerticalAlignment="Center" HorizontalAlignment="Left" ValueChanged="ComboEditorTool_ValueChanged">
-                                                    <igEditors:XamComboEditor.ItemsProvider>
-                                                        <igEditors:ComboBoxItemsProvider>
-                                                            <igEditors:ComboBoxItemsProvider.Items>
-                                                                <igEditors:ComboBoxDataItem DisplayText="Today" Value="0"/>
-                                                                <igEditors:ComboBoxDataItem DisplayText="Yesterday" Value="1"/>
-                                                                <igEditors:ComboBoxDataItem DisplayText="Last 7 Days" Value="2"/>
-                                                                <igEditors:ComboBoxDataItem DisplayText="Last 14 Days" Value="3"/>
-                                                                <igEditors:ComboBoxDataItem DisplayText="Pick a Day" Value="4"/>
-                                                            </igEditors:ComboBoxItemsProvider.Items>
-                                                        </igEditors:ComboBoxItemsProvider>
-                                                    </igEditors:XamComboEditor.ItemsProvider>
-                                                </igEditors:XamComboEditor>
-                                                <StackPanel Orientation="Horizontal" Grid.Row="1">
-                                                    <Label Name="label1" Content="Day:" VerticalAlignment="Center" />
-                                                    <igEditors:XamDateTimeEditor VerticalAlignment="Center" Name="activityTimelineStart" DisplayMode="IncludeLiteralsWithPadding" UseLayoutRounding="False" Mask="{}{date}" AutoFillDate="None" AlwaysValidate="True" SpinButtonDisplayMode="Never" ToolTip="Select a start date"  VerticalContentAlignment="Top" ValueChanged="activityTimelineStart_ValueChanged" InvalidValueBehavior="RevertValue">
-                                                        <igEditors:XamDateTimeEditor.ValueConstraint>
-                                                            <igEditors:ValueConstraint Nullable="False" ValidateAsType="DateTime" />
-                                                        </igEditors:XamDateTimeEditor.ValueConstraint>
-                                                    </igEditors:XamDateTimeEditor>
-                                                </StackPanel>
-                                            </Grid>
-                                        </MenuItem.Header>
-                                    </MenuItem>
-                                </MenuItem>
-                            </Menu>
-                        </StackPanel>
-                        <StackPanel Margin="0,10,0,0" Orientation="Horizontal" HorizontalAlignment="Right">
-                            <Button  Click="Start_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowStartButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableStartButton}">Start</Button>
+                                </Menu>
+                            </StackPanel>
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Button  Click="Start_Click" Style="{DynamicResource TabActionButtonStyle}"  
+                            Visibility="{Binding Path=ShowStartButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableStartButton}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Start</Button>
                                 <Button  Click="Stop_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowStopButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableStopButton}">Stop</Button>
+                            Visibility="{Binding Path=ShowStopButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableStopButton}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Stop</Button>
                                 <Button  Click="StartService_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowStartServiceButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableStartServiceButton}">Start Service</Button>
+                            Visibility="{Binding Path=ShowStartServiceButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableStartServiceButton}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Start Service</Button>
                                 <Button  Click="StopService_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowStopServiceButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableStopServiceButton}">Stop Service</Button>
+                            Visibility="{Binding Path=ShowStopServiceButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableStopServiceButton}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Stop Service</Button>
                                 <Button  Click="StartJob_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowStartJobButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableStartJobButton}">Start Job</Button>
+                            Visibility="{Binding Path=ShowStartJobButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableStartJobButton}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Start Job</Button>
                                 <Button  Click="StopJob_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowStopJobButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableStopJobButton}">Stop Job</Button>
+                            Visibility="{Binding Path=ShowStopJobButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableStopJobButton}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Stop Job</Button>
                                 <Button  Click="Optimize_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowOptimizeButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableOptimizeButton}">Optimize</Button>
+                            Visibility="{Binding Path=ShowOptimizeButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableOptimizeButton}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Optimize</Button>
                                 <Button  Click="Rebuild_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowRebuildButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableRebuildButton}">Rebuild</Button>
+                            Visibility="{Binding Path=ShowRebuildButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableRebuildButton}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Rebuild</Button>
                                 <Button  Click="Repopulate_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowRepopulateButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableRepopulateButton}">Repopulate</Button>
+                            Visibility="{Binding Path=ShowRepopulateButton, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableRepopulateButton}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Repopulate</Button>
                                 <Button  Click="CycleLogs_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowCycleLogsButton, Converter={StaticResource VisibilityConverter}}">Cycle Server Log</Button>
+                            Visibility="{Binding Path=ShowCycleLogsButton, Converter={StaticResource VisibilityConverter}}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Cycle Server Log</Button>
                                 <Button  Click="LogsConfigure_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowLogsConfigureButton, Converter={StaticResource VisibilityConverter}}">Configure</Button>
+                            Visibility="{Binding Path=ShowLogsConfigureButton, Converter={StaticResource VisibilityConverter}}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Configure</Button>
                                 <Button  Click="AnalyzeUndo_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowAnalyzeActionButtons, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableAnalyzeUndoButton}">Undo</Button>
+                            Visibility="{Binding Path=ShowAnalyzeActionButtons, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableAnalyzeUndoButton}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Undo</Button>
                                 <Button  Click="AnalyzeRun_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowAnalyzeActionButtons, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableAnalyzeRunButton}">Run</Button>
+                            Visibility="{Binding Path=ShowAnalyzeActionButtons, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableAnalyzeRunButton}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Run</Button>
                                 <Button  Click="AnalyzeShowProblem_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowAnalyzeActionButtons, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableAnalyzeShowProblemButton}">Show Problem</Button>
+                            Visibility="{Binding Path=ShowAnalyzeActionButtons, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableAnalyzeShowProblemButton}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Show Problem</Button>
                                 <Button  Click="AnalyzeUndoScript_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowAnalyzeActionButtons, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableAnalyzeUndoScriptButton}">Undo Script</Button>
+                            Visibility="{Binding Path=ShowAnalyzeActionButtons, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableAnalyzeUndoScriptButton}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Undo Script</Button>
                                 <Button  Click="AnalyzeOptimizeScript_Click" Style="{DynamicResource TabActionButtonStyle}"  
-                            Visibility="{Binding Path=ShowAnalyzeActionButtons, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableAnalyzeOptimizeScriptButton}">Optimize Script</Button>
+                            Visibility="{Binding Path=ShowAnalyzeActionButtons, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableAnalyzeOptimizeScriptButton}" FontSize="{Binding Converter={StaticResource FontSize10ConverterSmall}}">Optimize Script</Button>
                                 <Button x:Name="refreshView"   Click="OnToolClick" 
                             IsEnabled="{Binding Path=IsRefreshOptionsEnabled}" 
-                            Width="16" Height="16" BorderThickness="0" Margin="0, -8, 9, 0" Style="{StaticResource NavButtonButtonStyle}"
+                            Width="16" Height="16" BorderThickness="0" Margin="0, -8, 9, 0" Style="{DynamicResource RefreshViewButtonStyle}"
                             ToolTip="Refresh View">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="/SQLdmDesktopClient;component/Resources/ToolbarRefresh.png"></ImageBrush>
-                                </Button.Background>
-                            </Button>
-                            <ToggleButton x:Name="pauseAutoRefreshView"  Click="OnToolClick" 
+                                </Button>
+                                <ToggleButton x:Name="pauseAutoRefreshView"  Click="OnToolClick" 
                             IsEnabled="{Binding Path=IsRefreshOptionsEnabled}" 
                             IsChecked="{Binding Path=IsForegroundRefreshEnabled, Mode=TwoWay, NotifyOnTargetUpdated=True, Converter={StaticResource NotConverter}}" 
                             ToolTip="Pause Automatic View Refresh"
                             Width="16" Height="16" 
-                            BorderThickness="0" Margin="0, -8, 10, 0" Style="{StaticResource activeAddToggleButtonStyle}">
-                                <ToggleButton.Background>
-                                    <ImageBrush ImageSource="/SQLdmDesktopClient;component/Resources/ToolbarPause.png"></ImageBrush>
-                                </ToggleButton.Background>
-                            </ToggleButton>
+                            BorderThickness="0" Margin="0, -8, 10, 0" Style="{DynamicResource PauseAutoRefreshButtonStyle}">
+                                </ToggleButton>
 							<!--SQLDM-31035-->
                              <Button  Click="AnalyzeBack_Click" Style="{DynamicResource TabActionButtonStyle}"  
                             Visibility="{Binding Path=ShowAnalyzeActionButtons, Converter={StaticResource VisibilityConverter}}" IsEnabled="{Binding Path=EnableAnalyzeBackButton}">Back</Button>
                              <!--SQLDM-31035-->
 
-         
-                        </StackPanel>
 
-                            
+                            </StackPanel>
+
+
                         </WrapPanel>
-                        <ToggleButton Grid.Column="1" x:Name="toggleCustomDashboard" Margin="0,-8,9,0" Height="24" Width="48" 
-                                      IsChecked="False" Click="OnToolClick" Style="{StaticResource toggleCustomDashboardStyle}" 
+                        <ToggleButton Grid.Column="1" x:Name="toggleCustomDashboard" Height="24" Width="{Binding Converter={StaticResource HeightConverterForCustomize}}" 
+                                      IsChecked="False" Click="OnToolClick" Style="{DynamicResource toggleCustomDashboardStyle}" 
                                       Visibility="{Binding Path=ShowCustomizeDashboardButton, Converter={StaticResource VisibilityConverter}}"
-                                      HorizontalAlignment="Right">
-                            <ToggleButton.Background>
-                                <ImageBrush ImageSource="/SQLdmDesktopClient;component/Resources/Customize16x16.png"></ImageBrush>
-                            </ToggleButton.Background>
+                                      HorizontalAlignment="Center">
                         </ToggleButton>
 
                         <ToggleButton Grid.Column="2" x:Name="toggleHistoryBrowserButton" Margin="0,-8,9,0" HorizontalAlignment="Right"
                               Click="OnToolClick" IsChecked="{Binding Path=HistoryBrowserVisible, Mode=TwoWay}"
-                              Style="{StaticResource HistoryBrowserToggleButtonStyle}"
-                              Visibility="{Binding Path=QuickHistoricalSnapshotVisible, Converter={StaticResource VisibilityConverter}}">History Browser</ToggleButton>
+                              Style="{DynamicResource HistoryBrowserToggleButtonStyle}"
+                              Visibility="{Binding Path=QuickHistoricalSnapshotVisible, Converter={StaticResource VisibilityConverter}}" FontSize="{Binding Converter={StaticResource FontSize10Converter}}">History Browser</ToggleButton>
 
                     </Grid>
                 </StackPanel>

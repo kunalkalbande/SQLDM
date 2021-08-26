@@ -1,3 +1,4 @@
+using Idera.SQLdm.DesktopClient.Helpers;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -36,37 +37,37 @@ namespace Idera.SQLdm.DesktopClient.Controls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
+            appearance1 = new Infragistics.Win.Appearance();
+            appearance2 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinTree.Override _override1 = new Infragistics.Win.UltraWinTree.Override();
-            Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
+            appearance3 = new Infragistics.Win.Appearance();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryBrowserPane));
             Infragistics.Win.UltraWinTree.Override _override2 = new Infragistics.Win.UltraWinTree.Override();
             Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Infragistics.Win.UltraWinToolbars.ButtonTool("refreshButton");
-            Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Controls.CustomControls.CustomButtonTool("refreshButton");
+            appearance15 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool1 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("historicalSnapshotsContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Infragistics.Win.UltraWinToolbars.ButtonTool("refreshButton");
-            this.calendarPanel = new System.Windows.Forms.Panel();
-            this.filterOptionsLinkLabel = new System.Windows.Forms.LinkLabel();
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Controls.CustomControls.CustomButtonTool("refreshButton");
+            this.calendarPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.filterOptionsLinkLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
             this.calendar = new Infragistics.Win.UltraWinSchedule.UltraMonthViewMulti();
             this.ultraCalendarInfo = new Infragistics.Win.UltraWinSchedule.UltraCalendarInfo(this.components);
             this.ultraCalendarLook = new Infragistics.Win.UltraWinSchedule.UltraCalendarLook(this.components);
             this.treeImages = new System.Windows.Forms.ImageList(this.components);
-            this.HistoryBrowserPane_Fill_Panel = new System.Windows.Forms.Panel();
+            this.HistoryBrowserPane_Fill_Panel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.containerPanel = new Idera.SQLdm.DesktopClient.Controls.GradientPanel();
-            this.historicalSnapshotsPanel = new System.Windows.Forms.Panel();
+            this.historicalSnapshotsPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.gradientPanel1 = new Idera.SQLdm.DesktopClient.Controls.GradientPanel();
             this.historicalSnapshotsProgressControl = new MRG.Controls.UI.LoadingCircle();
-            this.historicalSnapshotsStatusLabel = new System.Windows.Forms.Label();
-            this.historicalSnapshotsTree = new Infragistics.Win.UltraWinTree.UltraTree();
-            this.historicalSnapshotsHeaderStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
+            this.historicalSnapshotsStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.historicalSnapshotsTree = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTree();
+            this.historicalSnapshotsHeaderStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip(true);
             this.historicalSnapshotsHeaderStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.refreshHistoricalSnapshotsButton = new System.Windows.Forms.ToolStripButton();
-            this.recentlyViewedPanel = new System.Windows.Forms.Panel();
+            this.recentlyViewedPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.recentlyViewedTreeContainerPanel = new Idera.SQLdm.DesktopClient.Controls.GradientPanel();
-            this.recentlyViewedTree = new Infragistics.Win.UltraWinTree.UltraTree();
-            this.recentlyViewedHeaderStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
+            this.recentlyViewedTree = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTree();
+            this.recentlyViewedHeaderStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip(true);
             this.recentlyViewedHeaderStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.toggleRecentlyViewedButton = new System.Windows.Forms.ToolStripButton();
             this.toolTipManager = new Infragistics.Win.UltraWinToolTip.UltraToolTipManager(this.components);
@@ -288,7 +289,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
             // 
             this.refreshHistoricalSnapshotsButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.refreshHistoricalSnapshotsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshHistoricalSnapshotsButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Refresh;
+            this.refreshHistoricalSnapshotsButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Refresh; //Babita Manral
             this.refreshHistoricalSnapshotsButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.refreshHistoricalSnapshotsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshHistoricalSnapshotsButton.Margin = new System.Windows.Forms.Padding(0, 1, 1, 1);
@@ -379,7 +380,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
             this.toggleRecentlyViewedButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toggleRecentlyViewedButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toggleRecentlyViewedButton.Enabled = false;
-            this.toggleRecentlyViewedButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.HeaderStripSmallCollapse;
+            this.toggleRecentlyViewedButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.HeaderStripSmallCollapse; //Babita Manral
             this.toggleRecentlyViewedButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toggleRecentlyViewedButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toggleRecentlyViewedButton.Name = "toggleRecentlyViewedButton";
@@ -395,7 +396,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
             // 
             this.toolbarsManager.DesignerFlags = 0;
             this.toolbarsManager.ShowFullMenusDelay = 500;
-            appearance15.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh;
+            appearance15.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh; //Babita Manral
             buttonTool1.SharedPropsInternal.AppearancesSmall.Appearance = appearance15;
             buttonTool1.SharedPropsInternal.Caption = "Refresh";
             popupMenuTool1.SharedPropsInternal.Caption = "historicalSnapshotsContextMenu";
@@ -442,15 +443,15 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
         #endregion
 
-        private System.Windows.Forms.Panel calendarPanel;
-        private System.Windows.Forms.Panel recentlyViewedPanel;
-        private System.Windows.Forms.Panel historicalSnapshotsPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  calendarPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  recentlyViewedPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  historicalSnapshotsPanel;
         private HeaderStrip recentlyViewedHeaderStrip;
         private HeaderStrip historicalSnapshotsHeaderStrip;
         private Infragistics.Win.UltraWinSchedule.UltraMonthViewMulti calendar;
         private Infragistics.Win.UltraWinSchedule.UltraCalendarLook ultraCalendarLook;
         private GradientPanel containerPanel;
-        private System.Windows.Forms.LinkLabel filterOptionsLinkLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel filterOptionsLinkLabel;
         private Infragistics.Win.UltraWinTree.UltraTree historicalSnapshotsTree;
         private Infragistics.Win.UltraWinSchedule.UltraCalendarInfo ultraCalendarInfo;
         private System.Windows.Forms.ImageList treeImages;
@@ -460,12 +461,16 @@ namespace Idera.SQLdm.DesktopClient.Controls
         private System.Windows.Forms.ToolStripLabel historicalSnapshotsHeaderStripLabel;
         private GradientPanel recentlyViewedTreeContainerPanel;
         private Infragistics.Win.UltraWinTree.UltraTree recentlyViewedTree;
-        private System.Windows.Forms.Label historicalSnapshotsStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel historicalSnapshotsStatusLabel;
         private MRG.Controls.UI.LoadingCircle historicalSnapshotsProgressControl;
-        private System.Windows.Forms.Panel HistoryBrowserPane_Fill_Panel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  HistoryBrowserPane_Fill_Panel;
         private Idera.SQLdm.DesktopClient.Controls.ContextMenuManager toolbarsManager;
         private Infragistics.Win.UltraWinToolTip.UltraToolTipManager toolTipManager;
         private System.Windows.Forms.ToolStripButton refreshHistoricalSnapshotsButton;
         private System.Windows.Forms.Timer autoRefreshTimer;
+        Infragistics.Win.Appearance appearance1;
+        Infragistics.Win.Appearance appearance2;
+        Infragistics.Win.Appearance appearance3;
+        Infragistics.Win.Appearance appearance15;
     }
 }

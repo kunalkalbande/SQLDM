@@ -28,22 +28,22 @@ namespace Idera.SQLdm.DesktopClient.Controls
         /// </summary>
         private void InitializeComponent()
         {
-            Infragistics.Win.UltraWinEditors.DropDownEditorButton dropDownEditorButton5 = new Infragistics.Win.UltraWinEditors.DropDownEditorButton("DropDownList");
+            Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton dropDownEditorButton5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton("DropDownList");
             Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton5 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
-            Infragistics.Win.UltraWinEditors.DropDownEditorButton dropDownEditorButton6 = new Infragistics.Win.UltraWinEditors.DropDownEditorButton("DropDownList");
+            Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton dropDownEditorButton6 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton("DropDownList");
             Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton6 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
-            this._lbl_Days = new System.Windows.Forms.Label();
-            this._lastDaysInput = new System.Windows.Forms.NumericUpDown();
-            this._lbl_Last = new System.Windows.Forms.Label();
-            this._lbl_Begin = new System.Windows.Forms.Label();
-            this._lbl_End = new System.Windows.Forms.Label();
-            this._beginTimeCombo = new Idera.SQLdm.Common.UI.Controls.TimeComboEditor();
-            this._endDateCombo = new Infragistics.Win.UltraWinSchedule.UltraCalendarCombo();
-            this._endTimeCombo = new Idera.SQLdm.Common.UI.Controls.TimeComboEditor();
-            this._beginDateCombo = new Infragistics.Win.UltraWinSchedule.UltraCalendarCombo();
-            this._pnl_LastN = new System.Windows.Forms.Panel();
-            this._pnl_TimeSpan = new System.Windows.Forms.Panel();
-            this._lnklbl_Specification = new System.Windows.Forms.LinkLabel();
+            this._lbl_Days = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._lastDaysInput = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this._lbl_Last = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._lbl_Begin = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._lbl_End = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._beginTimeCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor();
+            this._endDateCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraCalendarCombo();
+            this._endTimeCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor();
+            this._beginDateCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraCalendarCombo();
+            this._pnl_LastN = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this._pnl_TimeSpan = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this._lnklbl_Specification = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this._lastDaysInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._beginTimeCombo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._endDateCombo)).BeginInit();
@@ -217,17 +217,17 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
         #endregion
 
-        private System.Windows.Forms.Label _lbl_Days;
-        private System.Windows.Forms.NumericUpDown _lastDaysInput;
-        private System.Windows.Forms.Label _lbl_Last;
-        private System.Windows.Forms.Label _lbl_Begin;
-        private System.Windows.Forms.Label _lbl_End;
-        private Idera.SQLdm.Common.UI.Controls.TimeComboEditor _beginTimeCombo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _lbl_Days;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown _lastDaysInput;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _lbl_Last;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _lbl_Begin;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _lbl_End;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor _beginTimeCombo;
         private Infragistics.Win.UltraWinSchedule.UltraCalendarCombo _endDateCombo;
-        private Idera.SQLdm.Common.UI.Controls.TimeComboEditor _endTimeCombo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor _endTimeCombo;
         private Infragistics.Win.UltraWinSchedule.UltraCalendarCombo _beginDateCombo;
-        private System.Windows.Forms.Panel _pnl_LastN;
-        private System.Windows.Forms.Panel _pnl_TimeSpan;
-        private System.Windows.Forms.LinkLabel _lnklbl_Specification;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  _pnl_LastN;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  _pnl_TimeSpan;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel _lnklbl_Specification;
     }
 }

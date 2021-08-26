@@ -44,6 +44,10 @@
         <c:NotConverter x:Key="NotConverter"/>
         <c:BoolToVisibilityConverter x:Key="VisibilityConverter"/>
         <c:BoolToVisibilityConverter x:Key="NotVisibilityConverter" FalseValue="Visible" TrueValue="Collapsed" />
+        <c:DpiBasisFontSize10Converter x:Key="FontSize10Converter" Ratio="1.2"/>
+        <c:DpiBasisFontSize11Converter x:Key="FontSize11Converter" Ratio="1.2"/>
+        <c:DpiBasisFontSize12Converter x:Key="FontSize12Converter" Ratio="1.2"/>
+        <c:DpiBasisHeightConverter x:Key="HeightConverter" Ratio="1.75"/>
         <Style TargetType="TabItem">
             <Setter Property="Background" Value="{x:Null}" />
         </Style>
@@ -148,7 +152,7 @@
                                                 VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,0,0"    
                                                 FontSize="12" FontWeight="Normal" TextTrimming="CharacterEllipsis" FontFamily="Open Sans">
                                             <ToolTipService.ToolTip>
-                                                <ToolTip Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}" HorizontalOffset="65" /> 
+                                                <ToolTip Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}" HorizontalOffset="65" />
                                             </ToolTipService.ToolTip>
                                         </TextBlock>
                                         <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,0">
@@ -159,29 +163,29 @@
                                                         <Image ToolTip="Files" DockPanel.Dock="Right" Height="14" Width="14" HorizontalAlignment="Right"
                                                         VerticalAlignment="Center" Source="/SQLdmDesktopClient;component/Resources/FilesMenu.png"></Image>
                                                     </MenuItem.Icon>
-                                                    <MenuItem x:Name="connectMenu" Click="FilesMenu_Click" Style="{DynamicResource RightFlyoutMenu}">
+                                                    <MenuItem x:Name="connectMenu" Click="FilesMenu_Click" Style="{DynamicResource RightFlyoutMenu}" BorderThickness="2,2,2,0">
                                                         <MenuItem.Header>
-                                                            <TextBlock Text="Connect to SQLDM Repository"></TextBlock>
+                                                            <TextBlock Text="Connect to SQLDM Repository" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"></TextBlock>
                                                         </MenuItem.Header>
                                                     </MenuItem>
                                                     <MenuItem x:Name="manageServersMenu" Click="FilesMenu_Click" Style="{DynamicResource RightFlyoutMenu}">
                                                         <MenuItem.Header>
-                                                            <TextBlock Text="Manage Servers"></TextBlock>
+                                                            <TextBlock Text="Manage Servers" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"></TextBlock>
                                                         </MenuItem.Header>
                                                     </MenuItem>
                                                     <MenuItem x:Name="manageTagsMenu" Click="FilesMenu_Click" Style="{DynamicResource RightFlyoutMenu}">
                                                         <MenuItem.Header>
-                                                            <TextBlock Text="Manage Tags"></TextBlock>
+                                                            <TextBlock Text="Manage Tags" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"></TextBlock>
                                                         </MenuItem.Header>
                                                     </MenuItem>
                                                     <MenuItem x:Name="createViewMenu" Click="FilesMenu_Click" Style="{DynamicResource RightFlyoutMenu}">
                                                         <MenuItem.Header>
-                                                            <TextBlock Text="Create View"></TextBlock>
+                                                            <TextBlock Text="Create View" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"></TextBlock>
                                                         </MenuItem.Header>
                                                     </MenuItem>
-                                                    <MenuItem x:Name="exitMenu" BorderBrush="#acacac" BorderThickness="2,0,2,2" Click="FilesMenu_Click" Style="{DynamicResource RightFlyoutMenu}">
+                                                    <MenuItem x:Name="exitMenu" Click="FilesMenu_Click" Style="{DynamicResource RightFlyoutMenu}" BorderThickness="2,0,2,2">
                                                         <MenuItem.Header>
-                                                            <TextBlock Text="Exit"></TextBlock>
+                                                            <TextBlock Text="Exit" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"></TextBlock>
                                                         </MenuItem.Header>
                                                     </MenuItem>
                                                 </MenuItem>
@@ -192,49 +196,49 @@
                                                         <Image ToolTip="Tools" DockPanel.Dock="Right" Height="14" Width="14" HorizontalAlignment="Right"
                                                    VerticalAlignment="Center" Source="/SQLdmDesktopClient;component/Resources/ToolsMenu.png"></Image>
                                                     </MenuItem.Icon>
-                                                    <MenuItem x:Name="toolsMenuAlertConfig" Click="ToolsMenu_Click" Style="{DynamicResource RightFlyoutMenu}">
+                                                    <MenuItem x:Name="toolsMenuAlertConfig" Click="ToolsMenu_Click" Style="{DynamicResource RightFlyoutMenu}" BorderThickness="2,2,2,0">
                                                         <MenuItem.Header>
-                                                            <TextBlock Text="Alert Configuration Templates"></TextBlock>
+                                                            <TextBlock Text="Alert Configuration Templates" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"></TextBlock>
                                                         </MenuItem.Header>
                                                     </MenuItem>
                                                     <MenuItem x:Name="toolsMenuAlertActions" Click="ToolsMenu_Click" Style="{DynamicResource RightFlyoutMenu}">
                                                         <MenuItem.Header>
-                                                            <TextBlock Text="Alert Actions and Responses"></TextBlock>
+                                                            <TextBlock Text="Alert Actions and Responses" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"></TextBlock>
                                                         </MenuItem.Header>
                                                     </MenuItem>
                                                     <MenuItem x:Name="toolsMenuVMConfiguration" Click="ToolsMenu_Click" Style="{DynamicResource RightFlyoutMenu}">
                                                         <MenuItem.Header>
-                                                            <TextBlock Text="VM Configuration"></TextBlock>
+                                                            <TextBlock Text="VM Configuration" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"></TextBlock>
                                                         </MenuItem.Header>
                                                     </MenuItem>
                                                     <MenuItem x:Name="toolsMenuAzureProfileConfiguration" Click="ToolsMenu_Click" Style="{DynamicResource RightFlyoutMenu}">
                                                         <MenuItem.Header>
-                                                            <TextBlock Text="Azure Profile Configuration"></TextBlock>
+                                                            <TextBlock Text="Azure Profile Configuration" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"></TextBlock>
                                                         </MenuItem.Header>
                                                     </MenuItem>
                                                     <MenuItem x:Name="toolsMenuGroomingOptions" Click="ToolsMenu_Click" Style="{DynamicResource RightFlyoutMenu}">
                                                         <MenuItem.Header>
-                                                            <TextBlock Text="Grooming Options"></TextBlock>
+                                                            <TextBlock Text="Grooming Options" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"></TextBlock>
                                                         </MenuItem.Header>
                                                     </MenuItem>
                                                     <MenuItem x:Name="toolsMenuConsoleOptions" Click="ToolsMenu_Click" Style="{DynamicResource RightFlyoutMenu}">
                                                         <MenuItem.Header>
-                                                            <TextBlock Text="Console Options"></TextBlock>
+                                                            <TextBlock Text="Console Options" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"></TextBlock>
                                                         </MenuItem.Header>
                                                     </MenuItem>
                                                     <MenuItem x:Name="toolsMenuSnoozeAlerts" Click="ToolsMenu_Click" IsEnabled="{Binding SnoozeAllAlertsEnabled}" Style="{DynamicResource RightFlyoutMenu}">
                                                         <MenuItem.Header>
-                                                            <TextBlock Text="Snooze Alerts"></TextBlock>
+                                                            <TextBlock Text="Snooze Alerts" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"></TextBlock>
                                                         </MenuItem.Header>
                                                     </MenuItem>
                                                     <MenuItem x:Name="toolsMenuResumeAlerts" Click="ToolsMenu_Click" IsEnabled="{Binding ResumeAllAlertsEnabled}" Style="{DynamicResource RightFlyoutMenu}">
                                                         <MenuItem.Header>
-                                                            <TextBlock Text="Resume Alerts"></TextBlock>
+                                                            <TextBlock Text="Resume Alerts" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"></TextBlock>
                                                         </MenuItem.Header>
                                                     </MenuItem>
-                                                    <MenuItem x:Name="toolsMenuMaintenanceMode" BorderThickness="2,0,2,2" BorderBrush="#acacac" Click="ToolsMenu_Click" Style="{DynamicResource RightFlyoutMenu}">
+                                                    <MenuItem x:Name="toolsMenuMaintenanceMode" Click="ToolsMenu_Click" Style="{DynamicResource RightFlyoutMenu}" BorderThickness="2,0,2,2">
                                                         <MenuItem.Header>
-                                                            <TextBlock Text="Maintenance Mode"></TextBlock>
+                                                            <TextBlock Text="Maintenance Mode" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"></TextBlock>
                                                         </MenuItem.Header>
                                                     </MenuItem>
                                                 </MenuItem>
@@ -254,38 +258,39 @@
                                                         <Image ToolTip="Help" x:Name="menuImage" DockPanel.Dock="Right" Height="15" Width="15" HorizontalAlignment="Right"
                                                    VerticalAlignment="Center" Source="/SQLdmDesktopClient;component/Resources/HelpMenu.png"/>
                                                     </MenuItem.Icon>
-                                                    <MenuItem Header="Help on this Window" Name="menuHelpThisWindow" Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}">
+                                                    <MenuItem Header="Help on this Window" Name="menuHelpThisWindow" Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}" BorderThickness="2,2,2,0" FontSize="{Binding Converter={StaticResource FontSize10Converter}}">
                                                         <MenuItem.Icon>
                                                             <Image Source="/SQLdmDesktopClient;component/Resources/ToolbarHelp.png" />
                                                         </MenuItem.Icon>
                                                     </MenuItem>
-                                                    <MenuItem Header="Visit Trial Center" Name="menuHelpVisitTrialCenter" Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}" />
+                                                    <MenuItem Header="Visit Trial Center" Name="menuHelpVisitTrialCenter" Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"/>
 
-                                                    <MenuItem Header="How Do I" Style="{DynamicResource RightFlyoutMenu}">
-                                                        <MenuItem Header="Have SQLDM notify me when there is a problem" Name="menuHelpHowTo1"  Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}" />
-                                                        <MenuItem Header="Use SQLDM to diagnose performance bottlenecks" Name="menuHelpHowTo2"  Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}" />
-                                                        <MenuItem Header="Use SQLDM to improve database performance" Name="menuHelpHowTo3"  Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}" />
-                                                        <MenuItem Header="Generate reports to track performance over time" Name="menuHelpHowTo4"  Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}" />
+                                                    <MenuItem Header="How Do I" Style="{DynamicResource HelpLeftFlyoutMenu}">
+                                                        <MenuItem Header="Have SQLDM notify me when there is a problem" Name="menuHelpHowTo1"  Click="OnMenuItemClicked" Style="{DynamicResource ReportRightFlyoutMenu1}" />
+                                                        <MenuItem Header="Use SQLDM to diagnose performance bottlenecks" Name="menuHelpHowTo2"  Click="OnMenuItemClicked" Style="{DynamicResource ReportRightFlyoutMenu}" />
+                                                        <MenuItem Header="Use SQLDM to improve database performance" Name="menuHelpHowTo3"  Click="OnMenuItemClicked" Style="{DynamicResource ReportRightFlyoutMenu}" />
+                                                        <MenuItem Header="Generate reports to track performance over time" Name="menuHelpHowTo4"  Click="OnMenuItemClicked" Style="{DynamicResource ReportRightFlyoutMenu2}" />
+
                                                     </MenuItem>
-                                                    <MenuItem Header="Search Knowledge Base" Name="menuHelpSearchKB"  Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}" />
-                                                    <MenuItem Header="Visit IDERA Community Site" Name="menuHelpVisitCommunityCenter"  Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}" />
-                                                    <MenuItem Header="Contact Support" Name="menuHelpContactSupport"  Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}"/>
-                                                    <MenuItem Header="About IDERA Products" Name="menuHelpIderaProducts"  Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}"/>
-                                                    <MenuItem Header="Check for Updates" Name="menuHelpCheckUpdates"  Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}"/>
-                                                    <MenuItem Header="System Diagnostics..." Name="menuHelpDiagnostics"  Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}">
+                                                    <MenuItem Header="Search Knowledge Base" Name="menuHelpSearchKB"  Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"/>
+                                                    <MenuItem Header="Visit IDERA Community Site" Name="menuHelpVisitCommunityCenter"  Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"/>
+                                                    <MenuItem Header="Contact Support" Name="menuHelpContactSupport"  Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"/>
+                                                    <MenuItem Header="About IDERA Products" Name="menuHelpIderaProducts"  Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"/>
+                                                    <MenuItem Header="Check for Updates" Name="menuHelpCheckUpdates"  Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"/>
+                                                    <MenuItem Header="System Diagnostics..." Name="menuHelpDiagnostics"  Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}" FontSize="{Binding Converter={StaticResource FontSize10Converter}}">
                                                         <MenuItem.Icon>
                                                             <Image Source="/SQLdmDesktopClient;component/Resources/SystemDiagnosticsView16x16.png" />
                                                         </MenuItem.Icon>
                                                     </MenuItem>
-                                                    <MenuItem Header="Manage Licenses..." Name="menuHelpLicenses"  Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}"/>
+                                                    <MenuItem Header="Manage Licenses..." Name="menuHelpLicenses"  Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"/>
 
-                                                    <MenuItem Header="About IDERA SQL Diagnostic Manager" BorderThickness="2,0,2,2" BorderBrush="#acacac" Name="menuHelpAbout"  Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}" />
+                                                    <MenuItem Header="About IDERA SQL Diagnostic Manager" Name="menuHelpAbout"  Click="OnMenuItemClicked" Style="{DynamicResource RightFlyoutMenu}" BorderThickness="2,0,2,2" FontSize="{Binding Converter={StaticResource FontSize10Converter}}"/>
                                                 </MenuItem>
                                                 <Separator Style="{StaticResource TopMenuSeparator}" />
                                             </Menu>
-                                            
-                                            
-                                            
+
+
+
                                         </StackPanel>
                                         <StackPanel Grid.Column="3" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right">
                                             <MenuItem x:Name="minimizeScreen" shell:WindowChrome.IsHitTestVisibleInChrome="True" Click="MinimizeWindow">
@@ -316,7 +321,7 @@
                                                                ServersNavigationPane="{x:Reference Name=serversNavigationPaneControl}"  
                                                                Padding="0,0,0,0" Visibility="{Binding Path=HideHamburger, Converter={StaticResource VisibilityConverter}}"
                                                                shell:WindowChrome.IsHitTestVisibleInChrome="True"></nav:XamNavigationPane>
-                                    
+
                                     </Grid>
 
                                     <nav:XamSecondaryNavigationPane DockPanel.Dock="Top" Padding="0,0,0,0"
@@ -335,7 +340,7 @@
     </Window.Style>
 
     <DockPanel LastChildFill="True" x:Name="mainWindowDockPanel">
-        <StatusBar x:Name="statusBar" DockPanel.Dock="Bottom" Height="26">
+        <StatusBar x:Name="statusBar" DockPanel.Dock="Bottom" Height="26" Style="{DynamicResource statusBar}">
             <StatusBarItem HorizontalAlignment="Left">
                 <TextBlock Name="customStatusText1"></TextBlock>
             </StatusBarItem>
@@ -350,7 +355,7 @@
             </StatusBarItem>
         </StatusBar>
         <Grid>
-            <igDock:XamDockManager PaneDragEnded="dockMgr_PaneDragEnded" FloatingWindowCaptionSource="UseContentPaneCaption" Name="dockMgr" LayoutMode="FillContainer">
+            <igDock:XamDockManager Style="{DynamicResource XamDockManager}" PaneDragEnded="dockMgr_PaneDragEnded" FloatingWindowCaptionSource="UseContentPaneCaption" Name="dockMgr" LayoutMode="FillContainer">
                 <igDock:XamDockManager.Resources>
                     <Style TargetType="{x:Type igDock:DockingIndicator}">
                         <Style.Triggers>
@@ -368,15 +373,15 @@
                 </igDock:XamDockManager.Resources>
                 <igDock:XamDockManager.Panes>
                     <igDock:SplitPane Name="SplitPane0">
-                        <igDock:ContentPane PreviewMouseRightButtonUp="DockPane_PreviewMouseRightButtonUp" AllowDockingInTabGroup="False" SizeChanged="LeftNavPane_SizeChanged" igDock:SplitPane.RelativeSize="100, 100" Name="LeftNavPane" CloseButtonVisibility="Collapsed" PinButtonVisibility="Collapsed" WindowPositionMenuVisibility="Collapsed">
+                        <igDock:ContentPane Style="{DynamicResource SearchContentPane}" PreviewMouseRightButtonUp="DockPane_PreviewMouseRightButtonUp" AllowDockingInTabGroup="False" SizeChanged="LeftNavPane_SizeChanged" igDock:SplitPane.RelativeSize="100, 100" Name="LeftNavPane" CloseButtonVisibility="Collapsed" PinButtonVisibility="Collapsed" WindowPositionMenuVisibility="Collapsed">
                             <igDock:ContentPane.HeaderTemplate>
                                 <DataTemplate>
-                                    <Rectangle Fill="{DynamicResource BarAboveContentPane}" Height="28" Margin="-2"></Rectangle>
+                                    <Rectangle Height="28" Margin="-2"></Rectangle>
                                 </DataTemplate>
                             </igDock:ContentPane.HeaderTemplate>
                             <Grid Grid.Row="0">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="34" />
+                                    <RowDefinition Height="34"/>
                                     <RowDefinition Height="AUTO" />
                                     <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
@@ -389,14 +394,14 @@
 
                                 <Grid Name="SearchGrid" Grid.Row="1" Margin="10,10,10,10" Height="28" Width="Auto" Visibility="{Binding Path=LeftNavExpanded, Converter={StaticResource VisibilityConverter}}">
                                     <TextBox Name="SearchTextBox"  Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"                                            
-                                                CaretBrush="#006089" LostFocus="SearchTextBox_LostFocus" Style="{DynamicResource SearchTextBox}" shell:WindowChrome.IsHitTestVisibleInChrome="True">
+                                                LostFocus="SearchTextBox_LostFocus" Style="{DynamicResource SearchTextBox}" shell:WindowChrome.IsHitTestVisibleInChrome="True">
                                     </TextBox>
                                     <DockPanel Name="SearchGridDock">
                                         <TextBlock DockPanel.Dock="Left" IsHitTestVisible="False" Margin="10,0,0,0" VerticalAlignment="Center" FontStyle="Italic" Foreground="#006089" Text="Search Servers, Tags, and Views" Visibility="{Binding Path=SearchTextNotPresent, Converter={StaticResource VisibilityConverter}}"></TextBlock>
                                         <Image Margin="0,6,20,6" HorizontalAlignment="Right" DockPanel.Dock="Right" Stretch="Uniform" Source="/SQLdmDesktopClient;component/Resources/search.png"/>
                                     </DockPanel>
                                     <Popup Name="SearchPopup" AllowsTransparency="True" IsOpen="{Binding SearchResultsPresent, Mode=OneWay}" PlacementTarget="{Binding ElementName=SearchTextBox}" Width="{Binding ElementName=SearchTextBox, Path=ActualWidth}">
-                                        <ListBox VerticalAlignment="Top" Height="Auto" SelectionChanged="ListBox_Selected" ItemsSource="{Binding SearchItemsFiltered}">
+                                        <ListBox ItemContainerStyle="{DynamicResource SearchListBoxItem}"  x:Name="SearchListBox" Style="{DynamicResource SearchListBox}" VerticalAlignment="Top" Height="Auto" SelectionChanged="ListBox_Selected" ItemsSource="{Binding SearchItemsFiltered}">
                                             <ListBox.ItemTemplate>
                                                 <DataTemplate>
                                                     <TextBlock Text="{Binding Path=Name}"></TextBlock>
@@ -405,7 +410,7 @@
                                         </ListBox>
                                     </Popup>
                                 </Grid>
-                                
+
                                 <WindowsFormsHost Grid.Row="2" Name="navigationPaneHost" 
                                     Visibility="{Binding Path=LeftNavExpanded, Converter={StaticResource VisibilityConverter}}"
                                     Margin="0,0,-1,0">
@@ -431,7 +436,7 @@
                                             <TextBlock Style="{DynamicResource CollapsedLeftNavHeaderFlyout_Label}" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Text="SEARCH" FontSize="14" FontWeight="Bold"></TextBlock>
                                         </Grid>
                                     </Popup>
-                                    
+
                                     <Button Click="CollapsedMyViewsBtn_Click" MouseMove="CollapsedMyViewsBtn_MouseMove" MouseLeave="CollapsedMyViewsBtn_MouseLeave" Style="{DynamicResource LeftNavCollapsedBtn}">
                                         <Grid Name="CollapsedMyViewsButtonGrid">
                                             <Grid.ColumnDefinitions>
@@ -448,7 +453,7 @@
                                             <TextBlock Style="{DynamicResource CollapsedLeftNavHeaderFlyout_Label}" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Text="MY VIEWS" FontSize="14" FontWeight="Bold"></TextBlock>
                                         </Grid>
                                     </Popup>
-                                    
+
                                     <Button Click="CollapsedTagsBtn_Click" MouseMove="CollapsedTagsBtn_MouseMove" MouseLeave="CollapsedTagsBtn_MouseLeave" Style="{DynamicResource LeftNavCollapsedBtn}">
                                         <Grid Name="CollapsedTagsButtonGrid">
                                             <Grid.ColumnDefinitions>
@@ -465,9 +470,9 @@
                                             <TextBlock Style="{DynamicResource CollapsedLeftNavHeaderFlyout_Label}" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Text="TAGS" FontSize="14" FontWeight="Bold"></TextBlock>
                                         </Grid>
                                     </Popup>
-                                    
+
                                     <Button Click="CollapsedServersBtn_Click"  MouseMove="CollapsedServersBtn_MouseMove" MouseLeave="CollapsedServersBtn_MouseLeave" Style="{DynamicResource LeftNavCollapsedBtn}">
-                                        <Grid Name="CollapsedServersButtonGrid">
+                                        <Grid Name="CollapsedServersButtonGrid" Style="{DynamicResource CollapsedServersButtonGrid}">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="20"></ColumnDefinition>
                                                 <ColumnDefinition Width="15"></ColumnDefinition>
@@ -486,13 +491,13 @@
                             </Grid>
                         </igDock:ContentPane>
 
-                        <igDock:ContentPane PreviewMouseRightButtonUp="DockPane_PreviewMouseRightButtonUp" AllowDockingInTabGroup="False" igDock:SplitPane.RelativeSize="400, 100" Name="BodyPane" CloseButtonVisibility="Collapsed" PinButtonVisibility="Collapsed" WindowPositionMenuVisibility="Collapsed">
+                        <igDock:ContentPane Style="{DynamicResource BodyContentPane}" PreviewMouseRightButtonUp="DockPane_PreviewMouseRightButtonUp" AllowDockingInTabGroup="False" igDock:SplitPane.RelativeSize="400, 100" Name="BodyPane" CloseButtonVisibility="Collapsed" PinButtonVisibility="Collapsed" WindowPositionMenuVisibility="Collapsed">
                             <igDock:ContentPane.HeaderTemplate>
                                 <DataTemplate>
-                                    <Rectangle Fill="{DynamicResource BarAboveContentPane}" Height="28" Margin="-2"></Rectangle>
+                                    <Rectangle Height="28" Margin="-2"></Rectangle>
                                 </DataTemplate>
                             </igDock:ContentPane.HeaderTemplate>
-                            <my:ViewContainer x:Name="viewContainer" Background="{DynamicResource BodyBackgroundColor}"  SizeChanged="mainWindowViewContainer_SizeChanged"/>
+                            <my:ViewContainer x:Name="viewContainer" Background="{DynamicResource ViewCotainerBackground}" Style="{DynamicResource ViewContainer}"  SizeChanged="mainWindowViewContainer_SizeChanged"/>
                         </igDock:ContentPane>
                     </igDock:SplitPane>
                 </igDock:XamDockManager.Panes>

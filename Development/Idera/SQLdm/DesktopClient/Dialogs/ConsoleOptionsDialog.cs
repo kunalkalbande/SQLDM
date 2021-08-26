@@ -7,6 +7,8 @@ using Idera.SQLdm.DesktopClient.Helpers;
 using Idera.SQLdm.DesktopClient.Properties;
 using Infragistics.Win.AppStyling;
 using Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources;
+using Idera.SQLdm.DesktopClient.Controls;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
@@ -19,15 +21,23 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         NeverShow
     }
 
-    public partial class ConsoleOptionsDialog : Form
+    public partial class ConsoleOptionsDialog : BaseDialog
     {
         private int currentRealTimeChartsHistoryLimit;
         private int currentRealTimeChartsVisibleLimit;
+        private String previousTheme;
 
         public ConsoleOptionsDialog()
         {
+            this.DialogHeader = "Console Options";
             InitializeComponent();
+            SetPropertiesTheme();
             AdaptFontSize();
+            previousTheme = Settings.Default.ColorScheme;
+            //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
         private void notificationPreviewButton_Click(object sender, EventArgs e)
@@ -87,10 +97,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             }
 
             string style = Settings.Default.ColorScheme;
-            if (String.IsNullOrEmpty(style))
-                style = "Office2007Black.isl";
-            styleSelectionComboBox.SelectedItem =
-                styleSelectionComboBox.Items.ValueList.FindByDataValue(style);
+            styleSelectionComboBox.SelectedItem = styleSelectionComboBox.Items.ValueList.FindByDataValue(style);
         }
 
         private void okButton_Click(object sender, EventArgs e)
@@ -123,7 +130,21 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
                     Convert.ToInt32(consoleAlertNotificationOptionsNeverShow.Tag);
             }
 
+            MainWindow mainWindow = new MainWindow();
             Settings.Default.ColorScheme = (string)styleSelectionComboBox.SelectedItem.DataValue;
+            if(previousTheme == Settings.Default.ColorScheme)
+            {
+                return;
+            }
+            previousTheme = Settings.Default.ColorScheme;
+            if (Settings.Default.ColorScheme == ThemeName.Light.ToString())
+            {
+                mainWindow.MenuLight_Click();
+            }
+            else if (Settings.Default.ColorScheme == ThemeName.Dark.ToString())
+            {
+                mainWindow.MenuDark_Click();
+            }
         }
 
         private void realtimeChartsHistoryLimitComboBox_SelectionChanged(object sender, EventArgs e)
@@ -156,6 +177,67 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+        private void ScaleControlsAsPerResolution()
+        {
+            if (AutoScaleSizeHelper.isLargeSize)
+            {
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.tableLayoutPanel3, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.0F, 1.2F), false);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.tableLayoutPanel2, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.0F, 1.5F), false);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.tableLayoutPanel1, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.0F, 1.2F), false);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.panel1, AutoScaleSizeHelper.ControlType.Form, new System.Drawing.SizeF(1.5F, 1.0F), false);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.panel2, AutoScaleSizeHelper.ControlType.Form, new System.Drawing.SizeF(1.5F, 1.0F), false);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.panel3, AutoScaleSizeHelper.ControlType.Form, new System.Drawing.SizeF(1.5F, 1.0F), false);
+                this.noteLabel.Width += 200;
+                //this.notificationPreviewButton.Anchor = AnchorStyles.Right;
+                this.notificationPreviewButton.Size = new System.Drawing.Size(100, 40);
+                this.realtimeChartsHistoryLimitComboBox.Width += 50;
+                return;
+            }
+            if (AutoScaleSizeHelper.isXLargeSize)
+            {
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.tableLayoutPanel3, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.0F, 1.5F), false);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.tableLayoutPanel2, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.0F, 1.75F), false);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.tableLayoutPanel1, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.0F, 1.25F), false);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.panel1, AutoScaleSizeHelper.ControlType.Form, new System.Drawing.SizeF(1.75F, 1.0F), false);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.panel2, AutoScaleSizeHelper.ControlType.Form, new System.Drawing.SizeF(1.5F, 1.0F), false);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.panel3, AutoScaleSizeHelper.ControlType.Form, new System.Drawing.SizeF(1.5F, 1.0F), false);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.notificationPreviewButton, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.5F, 1.25F));
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.backgroundRefreshSpinner, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.75F, 1.0F));
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.foregroundRefreshSpinner, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.75F, 1.0F));
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.styleSelectionComboBox, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.75F, 1.0F));
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.realtimeChartsHistoryLimitComboBox, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.75F, 1.0F));
+                this.noteLabel.Width += 300;
+                this.notificationPreviewButton.Size = new System.Drawing.Size(120, 50);
+                this.realtimeChartsHistoryLimitComboBox.Width += 50;
+                //this.notificationPreviewButton.Anchor = AnchorStyles.Right;
+                //this.notificationPreviewButton.Width -= 600;
+                //this.notificationPreviewButton.Height -= 50;
+                return;
+            }
+            if (AutoScaleSizeHelper.isXXLargeSize)
+            {
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.tableLayoutPanel3, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.0F, 1.75F), false);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.tableLayoutPanel2, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.0F, 1.75F), false);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.tableLayoutPanel1, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.0F, 1.33F), false);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.panel1, AutoScaleSizeHelper.ControlType.Form, new System.Drawing.SizeF(1.85F, 1.0F), false);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.panel2, AutoScaleSizeHelper.ControlType.Form, new System.Drawing.SizeF(1.75F, 1.0F), false);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.panel3, AutoScaleSizeHelper.ControlType.Form, new System.Drawing.SizeF(1.75F, 1.0F), false);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.notificationPreviewButton, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.65F, 1.25F));
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.backgroundRefreshSpinner, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.75F, 1.0F));
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.foregroundRefreshSpinner, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.75F, 1.0F));
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.styleSelectionComboBox, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.75F, 1.0F));
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.realtimeChartsHistoryLimitComboBox, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.75F, 1.0F));
+                this.noteLabel.Width += 400;
+                this.notificationPreviewButton.Size = new System.Drawing.Size(140, 60);
+                this.realtimeChartsHistoryLimitComboBox.Width += 50;
+                //this.notificationPreviewButton.Anchor = AnchorStyles.Right;
+                //this.notificationPreviewButton.Width -= 800;
+                //this.notificationPreviewButton.Height -= 50;
+                return;
+            }
         }
     }
 }

@@ -1,3 +1,5 @@
+using Idera.SQLdm.DesktopClient.Properties;
+using Infragistics.Windows.Themes;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -18,8 +20,17 @@ namespace Idera.SQLdm.DesktopClient.Controls
             Clicked
         }
 
+        public Color rsbBackColor = Settings.Default.ColorScheme == "Dark" ? System.Drawing.ColorTranslator.FromHtml("#012A4F") : System.Drawing.Color.White;
+        public Color rsbForeColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.ForeColor) : System.Drawing.Color.FromArgb(((int)(((byte)(00)))), ((int)(((byte)(96)))), ((int)(((byte)(137)))));
+        public Color rsbDarkHoverColor = ColorTranslator.FromHtml(DarkThemeColorConstants.SelectionColor);
+
         public ReportSelectionButton()
         {
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+            rsbBackColor = Settings.Default.ColorScheme == "Dark" ? System.Drawing.ColorTranslator.FromHtml("#012A4F") : System.Drawing.Color.White;
+            rsbForeColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.ForeColor) : System.Drawing.Color.FromArgb(((int)(((byte)(00)))), ((int)(((byte)(96)))), ((int)(((byte)(137)))));
+            this.BackColor = rsbBackColor;
+
             SetStyle(
                 ControlStyles.UserPaint |
                 ControlStyles.AllPaintingInWmPaint |
@@ -28,6 +39,23 @@ namespace Idera.SQLdm.DesktopClient.Controls
                 ControlStyles.SupportsTransparentBackColor, true);
 
             InitializeComponent();
+            this.DescriptionColor = rsbForeColor;
+            this.TitleColor = rsbForeColor;
+        }
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            rsbBackColor = Settings.Default.ColorScheme == "Dark" ? System.Drawing.ColorTranslator.FromHtml("#012A4F") : System.Drawing.Color.White;
+            rsbForeColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.ForeColor) : System.Drawing.Color.FromArgb(((int)(((byte)(00)))), ((int)(((byte)(96)))), ((int)(((byte)(137)))));
+
+            this.BackColor = rsbBackColor;
+            try
+            {
+                this.reportDescriptionLabel.BackColor = Color.Transparent;
+                this.reportTitleLabel.BackColor = Color.Transparent;
+            }
+            catch(Exception exception) { }
+            this.reportDescriptionLabel.ForeColor = rsbForeColor;
+            this.reportTitleLabel.ForeColor = rsbForeColor;
         }
 
         [Category("Appearance")]
@@ -44,14 +72,32 @@ namespace Idera.SQLdm.DesktopClient.Controls
             get { return reportTitleLabel.ForeColor; }
             set { reportTitleLabel.ForeColor = value; }
         }
-
+        [Category("Appearance")]
+        public Font SetTitleFont
+        {
+            set
+            {
+                reportTitleLabel.Font = value;
+            }
+        }
+        [Category("Appearance")]
+        public Font SetDescriptionFont
+        {
+            set { reportDescriptionLabel.Font = value; }
+        }
         [Category("Appearance")]
         public string Description
         {
             get { return reportDescriptionLabel.Text; }
             set { reportDescriptionLabel.Text = value; }
         }
-
+        [Category("Appearance")]
+        [DefaultValue(typeof(Color), "0x535353")]
+        public Color DescriptionColor
+        {
+            get { return reportDescriptionLabel.ForeColor; }
+            set { reportDescriptionLabel.ForeColor = value; }
+        }
         protected override void OnEnabledChanged(EventArgs e)
         {
             foreach (Control control in Controls)
@@ -148,6 +194,11 @@ namespace Idera.SQLdm.DesktopClient.Controls
                 case ReportButtonState.Clicked:
                     DrawClicked(e.Graphics);
                     break;
+                case ReportButtonState.Normal:
+                    this.BackColor = rsbBackColor;
+                    this.DescriptionColor = rsbForeColor;
+                    this.TitleColor = rsbForeColor;
+                    break;
             }
         }
 
@@ -155,11 +206,16 @@ namespace Idera.SQLdm.DesktopClient.Controls
         {
             if (graphics != null)
             {
-                using (Pen pen = new Pen(Color.FromArgb(255, 232, 166)))
+                //using (Pen pen = new Pen(Color.White))
+                using (Pen pen = new Pen(Settings.Default.ColorScheme == "Dark" ? rsbBackColor : Color.White))
                 {
                     Rectangle bounds = Rectangle.Inflate(ClientRectangle, -1, -1);
-                    DrawRoundRectangle(graphics, pen, Color.FromArgb(255, 255, 255), Color.FromArgb(255, 243, 205),
-                                       bounds, 5);
+                    
+                    //DrawRoundRectangle(graphics, pen, Color.FromArgb(238, 239, 244), Color.FromArgb(228, 229, 234),
+                    //                   bounds, 5);
+                    DrawRoundRectangle(graphics, pen, Settings.Default.ColorScheme == "Dark" ? rsbDarkHoverColor : Color.FromArgb(238, 239, 244),
+                        Settings.Default.ColorScheme == "Dark" ? rsbDarkHoverColor : Color.FromArgb(228, 229, 234), bounds, 5);
+
                 }
             }
         }
@@ -168,11 +224,14 @@ namespace Idera.SQLdm.DesktopClient.Controls
         {
             if (graphics != null)
             {
-                using (Pen pen = new Pen(Color.FromArgb(220, 220, 220)))
+                using (Pen pen = new Pen(Settings.Default.ColorScheme == "Dark" ? rsbBackColor : Color.FromArgb(220, 220, 220)))
                 {
                     Rectangle bounds = Rectangle.Inflate(ClientRectangle, -1, -1);
-                    DrawRoundRectangle(graphics, pen, Color.FromArgb(243, 243, 243), Color.FromArgb(226, 226, 226),
-                                       bounds, 5);
+                    //DrawRoundRectangle(graphics, pen, Color.FromArgb(243, 243, 243), Color.FromArgb(226, 226, 226),
+                    //                   bounds, 5);
+
+                    DrawRoundRectangle(graphics, pen, Settings.Default.ColorScheme == "Dark" ? rsbDarkHoverColor : Color.FromArgb(243, 243, 243),
+                        Settings.Default.ColorScheme == "Dark" ? rsbDarkHoverColor : Color.FromArgb(226, 226, 226), bounds, 5);
                 }
             }
         }
@@ -182,6 +241,9 @@ namespace Idera.SQLdm.DesktopClient.Controls
         {
             if (graphics != null)
             {
+                //fillColor1 = Color.Red;
+                //fillColor2 = Color.Red;
+
                 using (GraphicsPath gp = new GraphicsPath())
                 {
                     gp.AddLine(radius, 0, bounds.Width - (radius*2), 0);

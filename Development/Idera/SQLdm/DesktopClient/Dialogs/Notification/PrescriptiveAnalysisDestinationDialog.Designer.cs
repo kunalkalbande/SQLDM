@@ -28,12 +28,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         /// </summary>
         private void InitializeComponent()
         {
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelCategoryTree = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.TreeViewCategories = new System.Windows.Forms.TreeView();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.tableLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.labelCategoryTree = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.TreeViewCategories = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTreeView();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -143,11 +143,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         #endregion
 
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label labelCategoryTree;
-        private System.Windows.Forms.Panel panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel labelCategoryTree;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
         private System.Windows.Forms.TreeView TreeViewCategories;
     }
 }

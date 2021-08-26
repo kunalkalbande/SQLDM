@@ -28,20 +28,21 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
+            bool isDarkThemeSelected = Properties.Settings.Default.ColorScheme == "Dark";
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlertRecommendationOptionsDialog));
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.restoreDefaultOptionsButton = new System.Windows.Forms.Button();
-            this.office2007PropertyPage1 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.restoreDefaultOptionsButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.office2007PropertyPage1 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage(isDarkThemeSelected);
             this.headerStrip1 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.informationBox1 = new Divelements.WizardFramework.InformationBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.warningPercentageOptionControl = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.criticalPercentageOptionControl = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
+            this.informationBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
+            this.tableLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.label5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.warningPercentageOptionControl = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.criticalPercentageOptionControl = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.office2007PropertyPage1.ContentPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.warningPercentageOptionControl)).BeginInit();
@@ -263,20 +264,31 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         }
 
+        void OnCurrentThemeChanged(object sender, System.EventArgs e)
+        {
+            SetPropertiesTheme();
+        }
+
+        void SetPropertiesTheme()
+        {
+            var propertiesThemeManager = new Controls.PropertiesThemeManager();
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage1);
+        }
+
         #endregion
 
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
-        private Divelements.WizardFramework.InformationBox informationBox1;
-        private System.Windows.Forms.Button restoreDefaultOptionsButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox informationBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton restoreDefaultOptionsButton;
         private Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage office2007PropertyPage1;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip headerStrip1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown warningPercentageOptionControl;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown criticalPercentageOptionControl;
-        private System.Windows.Forms.Label label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown warningPercentageOptionControl;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown criticalPercentageOptionControl;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
     }
 }

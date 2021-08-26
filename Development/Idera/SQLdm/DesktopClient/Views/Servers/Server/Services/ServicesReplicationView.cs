@@ -28,6 +28,7 @@ using Idera.SQLdm.Common.Objects.Replication;
 using ChartFX.WinForms;
 using Idera.SQLdm.Common.Objects.ApplicationSecurity;
 using System.Globalization;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Services
 {
@@ -153,8 +154,24 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Services
 
             InitializeCharts();
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
         }
+        private void ScaleControlsAsPerResolution()
+        {
+            this.trendNonSubscribedQueue.LegendBox.AutoSize = true;
+            this.trendNonSubscribedTime.LegendBox.AutoSize = true;
+            this.trendNonDistributedTime.LegendBox.AutoSize = true;
+            this.trendNonDistributedQueue.LegendBox.AutoSize = true;
+            this.lblReplicationTrends.Size = new System.Drawing.Size(543, 25);
+            this.recentTrendsResponseTimeLinkLabel.Size = new System.Drawing.Size(160, 25);
+            this.linkLabel1.Size = new System.Drawing.Size(160, 25);
+            this.linkLabel3.Size = new System.Drawing.Size(160, 25);
+            this.linkLabel2.Size = new System.Drawing.Size(160, 25);
 
+        }
         #endregion
 
         #region Properties
@@ -3441,6 +3458,26 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Services
         private void AdaptFontSize()
         {            
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.grdPublisher);
+            themeManager.updateGridTheme(this.grdSubscriber);
+            themeManager.updateGridTheme(this.grdDistributor);
+            themeManager.updateGridTheme(this.grdMergeSubscriber);
+            themeManager.updateGridTheme(this.grdMergePublisher);
+            themeManager.updateGridTheme(this.grdDistributorMerge);
+            themeManager.updateGridTheme(this.distributorTransactionsGrid);
+            themeManager.updateGridTheme(this.grdReplicationTopology);
+
         }
     }
 }

@@ -1,3 +1,5 @@
+using Idera.SQLdm.DesktopClient.Properties;
+
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
     partial class HistoryBrowserOptionsDialog
@@ -28,19 +30,19 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            Infragistics.Win.UltraWinEditors.DropDownEditorButton dropDownEditorButton3 = new Infragistics.Win.UltraWinEditors.DropDownEditorButton("DropDownList");
-            Infragistics.Win.UltraWinEditors.DropDownEditorButton dropDownEditorButton4 = new Infragistics.Win.UltraWinEditors.DropDownEditorButton("DropDownList");
+            Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton dropDownEditorButton3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton("DropDownList");
+            Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton dropDownEditorButton4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton("DropDownList");
             this.cancelButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
-            this.panel = new System.Windows.Forms.Panel();
-            this.beginTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.endTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.labelTo = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelScale = new System.Windows.Forms.Label();
-            this.realtimeChartsHistoryLimitComboBox = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
-            this.beginDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.endDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.panel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.beginTimeDateTimePicker = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDateTimePicker();
+            this.endTimeDateTimePicker = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDateTimePicker();
+            this.labelTo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.labelScale = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.realtimeChartsHistoryLimitComboBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraComboEditor();
+            this.beginDateDateTimePicker = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDateTimePicker();
+            this.endDateDateTimePicker = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDateTimePicker();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.realtimeChartsHistoryLimitComboBox)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +53,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.Location = new System.Drawing.Point(714, 105);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.Size = new System.Drawing.Size(75, 28);
             this.cancelButton.TabIndex = 1;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -62,7 +64,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.okButton.Location = new System.Drawing.Point(623, 105);
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 23);
+            this.okButton.Size = new System.Drawing.Size(75, 28);
             this.okButton.TabIndex = 0;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
@@ -254,10 +256,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Panel panel;
-        private System.Windows.Forms.Label labelTo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelScale;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel labelTo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel labelScale;
         private Infragistics.Win.UltraWinEditors.UltraComboEditor realtimeChartsHistoryLimitComboBox;
 
         Infragistics.Win.ValueListItem valueListItem1 = new Infragistics.Win.ValueListItem();

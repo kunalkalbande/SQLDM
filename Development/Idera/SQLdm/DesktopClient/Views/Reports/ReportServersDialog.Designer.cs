@@ -23,14 +23,14 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
-            this.selectAll = new System.Windows.Forms.CheckBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.contentLayoutPanel = new System.Windows.Forms.Panel();
-            this.infoLayoutPanel = new System.Windows.Forms.Panel();
-            this.descriptionLabel = new Divelements.WizardFramework.InformationBox();
-            this.buttonLayoutPanel = new System.Windows.Forms.Panel();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.selectAll = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.checkedListBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckedListBox1();
+            this.contentLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.infoLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.descriptionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
+            this.buttonLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.contentLayoutPanel.SuspendLayout();
             this.infoLayoutPanel.SuspendLayout();
             this.buttonLayoutPanel.SuspendLayout();
@@ -149,13 +149,13 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports {
 
         #endregion
 
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.CheckBox selectAll;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox selectAll;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.Panel contentLayoutPanel;
-        private System.Windows.Forms.Panel infoLayoutPanel;
-        private System.Windows.Forms.Panel buttonLayoutPanel;
-        private Divelements.WizardFramework.InformationBox descriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  contentLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  infoLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  buttonLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox descriptionLabel;
     }
 }

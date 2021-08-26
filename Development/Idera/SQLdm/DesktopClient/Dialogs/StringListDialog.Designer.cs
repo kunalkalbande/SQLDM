@@ -28,9 +28,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.textBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
             this.SuspendLayout();
             // 
             // cancelButton
@@ -93,8 +93,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox textBox1;
     }
 }

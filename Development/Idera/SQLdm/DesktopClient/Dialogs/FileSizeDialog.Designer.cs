@@ -28,12 +28,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.informationBox1 = new Divelements.WizardFramework.InformationBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.informationBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.numericUpDown1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,11 +145,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
-        private Divelements.WizardFramework.InformationBox informationBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox informationBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown numericUpDown1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
     }
 }

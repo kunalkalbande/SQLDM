@@ -74,7 +74,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             if (Settings.Default.AlertsNavigationPaneCurrentViewPanelExpanded)
             {
                 toggleCurrentViewPanelButton.Image = Resources.HeaderStripSmallCollapse;
-                currentViewPanel.Height = 253;
+                currentViewPanel.Height = 270;
             }
             else
             {

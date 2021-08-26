@@ -1,4 +1,7 @@
-﻿namespace Idera.SQLdm.DesktopClient.Dialogs
+﻿using Idera.SQLdm.DesktopClient.Properties;
+using System.Drawing;
+
+namespace Idera.SQLdm.DesktopClient.Dialogs
 {
     partial class VirtualizationConfig
     {
@@ -28,8 +31,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Color backColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor) : Color.White;
+            Color foreColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridForeColor) : Color.Black;
+            Color activeBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridActiveBackColor) : Color.White;
+            Color hoverBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridHoverBackColor) : Color.White;
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
+            ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn2 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("selected");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn12 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("monitoredServerID");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn13 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("instanceName", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, false);
@@ -49,8 +56,8 @@
             Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList1 = new Infragistics.Win.ValueList(231294337);
-            Infragistics.Win.ValueList valueList2 = new Infragistics.Win.ValueList(235567204);
+            Infragistics.Win.ValueList valueList1 = new Controls.CustomControls.CustomValueList(231294337);
+            Infragistics.Win.ValueList valueList2 = new Controls.CustomControls.CustomValueList(235567204);
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand2 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn4 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("vcHostID");
@@ -75,25 +82,25 @@
             Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance20 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance21 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList3 = new Infragistics.Win.ValueList(35772059);
+            Infragistics.Win.ValueList valueList3 = new Controls.CustomControls.CustomValueList(35772059);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VirtualizationConfig));
             this.vmGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.vCenterWorker = new System.ComponentModel.BackgroundWorker();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.vcGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnTest = new System.Windows.Forms.Button();
-            this.btnLink = new System.Windows.Forms.Button();
-            this.headerPanel = new System.Windows.Forms.Panel();
-            this.descriptionLabel = new System.Windows.Forms.Label();
-            this.vCenterConnectionLabel = new System.Windows.Forms.Label();
-            this.selectAllServersCheckBox = new System.Windows.Forms.CheckBox();
-            this.lblVcNoInstances = new System.Windows.Forms.Label();
-            this.lblNoVirtualMachines = new System.Windows.Forms.Label();
+            this.btnDelete = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnEdit = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnAdd = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnTest = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnLink = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.headerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.descriptionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.vCenterConnectionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.selectAllServersCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.lblVcNoInstances = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblNoVirtualMachines = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.statusProgressBar2 = new Idera.SQLdm.DesktopClient.Controls.InfiniteProgressBar();
             this.statusProgressBar = new Idera.SQLdm.DesktopClient.Controls.InfiniteProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.vmGrid)).BeginInit();
@@ -158,6 +165,11 @@
             ultraGridColumn1});
             ultraGridBand1.Override.DefaultRowHeight = 20;
             ultraGridBand1.Override.RowSizing = Infragistics.Win.UltraWinGrid.RowSizing.Fixed;
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                ultraGridBand1.Override.HeaderAppearance.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+                ultraGridBand1.Override.HeaderAppearance.BackColor2 = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+            }
             this.vmGrid.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
             this.vmGrid.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
             this.vmGrid.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
@@ -226,7 +238,7 @@
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(380, 463);
+            this.btnOK.Location = new System.Drawing.Point(380, 467);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 10;
@@ -237,7 +249,7 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(461, 463);
+            this.btnCancel.Location = new System.Drawing.Point(461, 467);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 11;
@@ -442,7 +454,7 @@
             // 
             this.btnLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnLink.Enabled = false;
-            this.btnLink.Location = new System.Drawing.Point(12, 463);
+            this.btnLink.Location = new System.Drawing.Point(12, 467);
             this.btnLink.Name = "btnLink";
             this.btnLink.Size = new System.Drawing.Size(141, 23);
             this.btnLink.TabIndex = 9;
@@ -453,8 +465,16 @@
             // headerPanel
             // 
             this.headerPanel.BackColor = System.Drawing.Color.White;
-            this.headerPanel.BackgroundImage = global::Idera.SQLdm.DesktopClient.Properties.Resources.AddServersManagerDialogHeader;
-            this.headerPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            if(Settings.Default.ColorScheme != "Dark") 
+                {
+                    this.headerPanel.BackgroundImage = global::Idera.SQLdm.DesktopClient.Properties.Resources.AddServersManagerDialogHeader;
+                    this.headerPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+                    this.descriptionLabel.Location = new System.Drawing.Point(64, 6);
+            }
+            else
+            {
+                this.descriptionLabel.Location = new System.Drawing.Point(0, 0);
+            }
             this.headerPanel.Controls.Add(this.descriptionLabel);
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPanel.Location = new System.Drawing.Point(0, 0);
@@ -468,7 +488,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.descriptionLabel.BackColor = System.Drawing.Color.Transparent;
             this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLabel.Location = new System.Drawing.Point(64, 6);
+            
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.descriptionLabel.Size = new System.Drawing.Size(482, 47);
@@ -585,6 +605,10 @@
             this.Name = "VirtualizationConfig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VM Configuration";
+            this.BackColor = backColor;
+            this.ForeColor = foreColor;
+            this.headerPanel.BackColor = backColor;
+            this.headerPanel.ForeColor = foreColor;
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.VirtualizationConfig_HelpButtonClicked);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VirtualizationConfig_FormClosing);
             this.Load += new System.EventHandler(this.VirtualizationConfig_Load);
@@ -600,24 +624,24 @@
         #endregion
 
         private Infragistics.Win.UltraWinGrid.UltraGrid vmGrid;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Button btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
         private System.ComponentModel.BackgroundWorker vCenterWorker;
-        private System.Windows.Forms.Label label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
         private Infragistics.Win.UltraWinGrid.UltraGrid vcGrid;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnTest;
-        private System.Windows.Forms.Button btnLink;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnDelete;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnEdit;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnAdd;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnTest;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnLink;
         private Controls.InfiniteProgressBar statusProgressBar;
-        private System.Windows.Forms.Panel headerPanel;
-        private System.Windows.Forms.Label descriptionLabel;
-        private System.Windows.Forms.Label vCenterConnectionLabel;
-        private System.Windows.Forms.CheckBox selectAllServersCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  headerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel descriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel vCenterConnectionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox selectAllServersCheckBox;
         private Controls.InfiniteProgressBar statusProgressBar2;
-        private System.Windows.Forms.Label lblVcNoInstances;
-        private System.Windows.Forms.Label lblNoVirtualMachines;
-
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblVcNoInstances;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblNoVirtualMachines;
+        private Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1;
     }
 }

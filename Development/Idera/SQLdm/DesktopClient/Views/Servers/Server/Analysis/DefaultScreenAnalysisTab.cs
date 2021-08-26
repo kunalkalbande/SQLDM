@@ -12,6 +12,8 @@ using System.Drawing;
 using System.Windows.Forms;
 using Idera.SQLdm.Common.Recommendations;
 using Idera.Newsfeed.Plugins.UI.Dialogs;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Controls;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
 {
@@ -32,6 +34,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
         public DefaultScreenAnalysisTab()
         {
             InitializeComponent();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
         public DefaultScreenAnalysisTab(int instanceId, ViewContainer vHost, bool isDashboard, ServerViewViewModel svm = null)
@@ -40,6 +44,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
             this.InstanceId = instanceId;
             viewHost = vHost;
             InitializeComponent();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
             IsAnalyzeEnabled = false;
 
             _headingFormat = lblHeading.Text;
@@ -90,12 +96,13 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
                         priority.Anchor = System.Windows.Forms.AnchorStyles.Right;
                         priority.Location = new System.Drawing.Point(6, 7);
                         priority.Name = "priority";
-                        priority.Size = new System.Drawing.Size(80, 8);
+                        priority.Size = AutoScaleSizeHelper.isScalingRequired ? new System.Drawing.Size(120, 12) : new Size(80, 8);
                         priority.TabIndex = 3;
                         priority.Value = 20F;
                         priority.Value = listAnalysis.ComputedRankFactor;
-                        Bitmap IMG = new Bitmap(80, 8);
-                        priority.DrawToBitmap(IMG, new Rectangle(0, 0, 80, 8));
+                        Bitmap IMG = AutoScaleSizeHelper.isScalingRequired ? new Bitmap(120, 12) : new Bitmap(80, 8);
+                        Rectangle rectDraw = AutoScaleSizeHelper.isScalingRequired ? new Rectangle(0, 0, 120, 12) : new Rectangle(0, 0, 80, 8);
+                        priority.DrawToBitmap(IMG, rectDraw);
                         row["Priority"] = IMG;
                         row["ComputedRankFactor"] = listAnalysis.ComputedRankFactor;                        
                         _AnalysisListTable.Rows.Add(row);                        
@@ -150,6 +157,16 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
                 Log.Error(ex.Message + ": Not able to show records. Error in GetRealTimeAnalysisRecords for run analysis.");
                 throw new Exception("Unable to display recommendtionns on screen.", ex);
             }
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+        }
+        private void ScaleControlsAsPerResolution()
+        {
+            this.lblHeading.Location = new System.Drawing.Point(75, 11);
+            this.horzSplitContainer.Size = new System.Drawing.Size(3000, 841);
+            this.horzSplitContainer.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right | System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom;
+            this.horzSplitContainer.SplitterDistance = 80;
+            this.Height = this.Height + 2000;
         }
         #endregion
 
@@ -184,7 +201,10 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
                             int hinset = (area.Width - width) / 2;
                             int vinset = (area.Height - 8) / 2 + 1;
                             Rectangle rect = new Rectangle(area.X + hinset, area.Y + vinset, width, 8);
-                            PriorityBar.Draw(drawParams.Graphics, rect, (float)value);
+                            Rectangle newRect = rect;
+                            if (AutoScaleSizeHelper.isScalingRequired)
+                                newRect = new Rectangle(rect.X, rect.Y, rect.Width + 40, rect.Height + 4);
+                            PriorityBar.Draw(drawParams.Graphics, newRect, (float)value);
                         }
                     }
                 }
@@ -304,6 +324,26 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
             {
                 serverViewViewModel.DrillOutButtonVisible = true;
             }
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            if(Settings.Default.ColorScheme == "Dark")
+            {
+                this.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor);
+            }
+            else
+            {
+                this.BackColor = Color.White;
+            }
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this._historyGrid);
         }
     }
 }

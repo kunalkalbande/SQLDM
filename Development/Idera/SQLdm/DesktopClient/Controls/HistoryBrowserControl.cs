@@ -32,13 +32,39 @@ namespace Idera.SQLdm.DesktopClient.Controls
             InitializeComponent();
             controlContainerDialog.VisibleChanged += controlContainerDialog_VisibleChanged;
 
-            historyTreeImages.Images.Add("HistoryGroup", Resources.Calendar16x16);
-            historyTreeImages.Images.Add("StatusOK", Resources.StatusOKSmall);
-            historyTreeImages.Images.Add("StatusWarning", Resources.StatusWarningSmall);
-            historyTreeImages.Images.Add("StatusCritical", Resources.StatusCriticalSmall);
+            SetThemeImages();
+            Infragistics.Windows.Themes.ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
 
             // Auto scale font size.
             AdaptFontSize();
+        }
+
+        private void SetThemeImages()
+        {
+            if (Settings.Default.ColorScheme == "Dark") {
+                historyTreeImages.Images.Add("HistoryGroup", Resources.Calendar16x16);
+                historyTreeImages.Images.Add("StatusOK", ImageHelper.GetBitmapFromSvgByteArray(Resources.Ok_Dark));
+                historyTreeImages.Images.Add("StatusWarning", ImageHelper.GetBitmapFromSvgByteArray(Resources.Warning_Dark));
+                historyTreeImages.Images.Add("StatusCritical", ImageHelper.GetBitmapFromSvgByteArray(Resources.Critical_Dark));
+
+                toggleMinimizedButton.Image = Resources.LeftArrows; //need to update
+                this.toggleMinimizedButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.RightArrows; //need to update
+                this.closeButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Hide; //need to update
+            } else {
+                historyTreeImages.Images.Add("HistoryGroup", Resources.Calendar16x16);
+                historyTreeImages.Images.Add("StatusOK", Resources.StatusOKSmall);
+                historyTreeImages.Images.Add("StatusWarning", Resources.StatusWarningSmall);
+                historyTreeImages.Images.Add("StatusCritical", Resources.StatusCriticalSmall);
+
+                toggleMinimizedButton.Image = Resources.LeftArrows;
+                this.toggleMinimizedButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.RightArrows;
+                this.closeButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Hide;
+            }
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetThemeImages();
         }
 
         [Browsable(false)]
@@ -108,8 +134,16 @@ namespace Idera.SQLdm.DesktopClient.Controls
                 historyBrowserPane.Visible = false;
                 titleLabel.Visible = false;
                 closeButton.Visible = false;
-                toggleMinimizedButton.Image = Resources.LeftArrows;
-                toggleMinimizedButton.ToolTipText = "Expand History Browser";
+                toggleMinimizedButton.Image = Resources.LeftArrows; //Babita Manral
+
+               // if (Settings.Default.ColorScheme == "Dark") {
+                //    toggleMinimizedButton.Image = ImageHelper.GetBitmapFromSvgByteArray(Resources.LeftArrow_Dark);
+                //} else {
+                  //  toggleMinimizedButton.Image = Resources.LeftArrows;
+               // }
+                //toggleMinimizedButton.Image = ImageHelper.GetBitmapFromSvgByteArray(Resources.darkTheme_LeftArrowWhite); //Babita Manral
+
+toggleMinimizedButton.ToolTipText = "Expand History Browser";
                 minimized = true;
             }
         }
@@ -128,7 +162,13 @@ namespace Idera.SQLdm.DesktopClient.Controls
                 historyBrowserPane.Visible = true;
                 titleLabel.Visible = true;
                 closeButton.Visible = true;
-                toggleMinimizedButton.Image = Resources.RightArrows;
+
+                if (Settings.Default.ColorScheme == "Dark") {
+                    toggleMinimizedButton.Image = Resources.RightArrows; //need to update
+                } else {
+                    toggleMinimizedButton.Image = Resources.RightArrows;
+                }
+
                 toggleMinimizedButton.ToolTipText = "Minimize History Browser";
                 minimized = false;
             }
@@ -152,7 +192,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
             OnCloseButtonClicked();
         }
 
-        private void OnCloseButtonClicked()
+        public void OnCloseButtonClicked()
         {
             if (CloseButtonClicked != null)
             {

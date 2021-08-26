@@ -3629,6 +3629,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             }
 
             ComboBox comboBox = (ComboBox)sender;
+            if (Settings.Default.ColorScheme == "Dark" && azureProfileComboBox.SelectedIndex != azureProfileComboBox.Items.IndexOf(azureProfileComboBox.Text) && azureProfileComboBox.SelectedItem != null)
+            {
+                azureProfileComboBox.Text = azureProfileComboBox.SelectedItem.ToString();
+            }
             if (azureProfileComboBox.Text == SELECT_A_PROFILE)
             {
                 EnableConfigNextButton();
@@ -3640,6 +3644,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         private void HandleResourceTypeChanged(ComboBox comboBox)
         {
+            if (Settings.Default.ColorScheme == "Dark" && azureResourceTypeNameComboBox.SelectedIndex != azureResourceTypeNameComboBox.Items.IndexOf(azureResourceTypeNameComboBox.Text) && azureResourceTypeNameComboBox.SelectedItem != null)
+            {
+                azureResourceTypeNameComboBox.Text = azureResourceTypeNameComboBox.SelectedItem.ToString();
+            }
             if (azureResourceTypeNameComboBox.Text == SELECT_A_RESOURCE_TYPE)
             {
                 azureResourceNameComboBox.Enabled = false; 
@@ -3657,6 +3665,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         private void Profile_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            if (Settings.Default.ColorScheme == "Dark" && azureProfileComboBox.SelectedIndex != azureProfileComboBox.Items.IndexOf(azureProfileComboBox.Text) && azureProfileComboBox.SelectedItem != null)
+            {
+                azureProfileComboBox.Text = azureProfileComboBox.SelectedItem.ToString();
+            }
             if (azureProfileComboBox.Text == SELECT_A_PROFILE)
             {
                 azureResourceNameComboBox.Enabled = false;
@@ -3688,6 +3700,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         private void ResourceName_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            if (Settings.Default.ColorScheme == "Dark" && azureResourceNameComboBox.SelectedIndex != azureResourceNameComboBox.Items.IndexOf(azureResourceNameComboBox.Text) && azureResourceNameComboBox.SelectedItem != null)
+            {
+                azureResourceNameComboBox.Text = azureResourceNameComboBox.SelectedItem.ToString();
+            }
             if (azureResourceNameComboBox.Text != SELECT_A_RESOURCE)
             {
                 azureResourceName = azureResourceNameComboBox.Text;

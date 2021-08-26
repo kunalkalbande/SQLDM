@@ -28,12 +28,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         /// </summary>
         private void InitializeComponent()
         {
-            this.tagsListBox = new System.Windows.Forms.CheckedListBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.selectAllCheckBox = new System.Windows.Forms.CheckBox();
-            this.promptLabel = new System.Windows.Forms.Label();
+            this.tagsListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckedListBox1();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.btnOK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.selectAllCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.promptLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -135,11 +135,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         #endregion
 
         private System.Windows.Forms.CheckedListBox tagsListBox;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.CheckBox selectAllCheckBox;
-        private System.Windows.Forms.Label promptLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox selectAllCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel promptLabel;
 
     }
 }

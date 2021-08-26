@@ -89,9 +89,9 @@ public class AlertDetailsViewModel extends SelectorComposer<Window> {
 	@Wire Textbox alertDetail;
 	@Wire Div metricsDetails;
 	@Wire Toolbarbutton toolbarLaunch;
-	private GridAlert alert;
+	private Alert alert;
 	private Alert newAlert;
-	private List<GridAlert> alertsList;
+	private List<Alert> alertsList;
 	private Product product;
 	private int currentIndex = -1;
 	
@@ -101,10 +101,19 @@ public class AlertDetailsViewModel extends SelectorComposer<Window> {
 	public void doAfterCompose(Window comp) throws Exception {
 		setOffSet();
         super.doAfterCompose(comp);
-        
-        alert = (GridAlert) Executions.getCurrent().getArg().get("alert");
-        alertsList = new ArrayList<>(); 
-        alertsList.addAll((List<GridAlert>) Executions.getCurrent().getArg().get("alertsList"));	
+        try {
+			alert = toGridAlert((GridAlert) Executions.getCurrent().getArg().get("alert"));
+		} catch (ClassCastException e) {
+			// TODO Auto-generated catch block
+			alert = (Alert) Executions.getCurrent().getArg().get("alert");
+		}
+        alertsList = new ArrayList<>();
+		try {
+			alertsList.addAll(toAlertsList((List<GridAlert>) Executions.getCurrent().getArg().get("alertsList")));	
+		} catch (ClassCastException e) {
+			// TODO Auto-generated catch block
+			alertsList.addAll((List<Alert>) Executions.getCurrent().getArg().get("alertsList"));	
+		}
        // product = (Product) Executions.getCurrent().getArg().get("product");
         product = alert.getProduct();
         updateCurrentIndex();
@@ -178,16 +187,16 @@ public class AlertDetailsViewModel extends SelectorComposer<Window> {
 		/*${idera:getImageURLWithoutSize('warning32x32')}*/
 		String icon;
 		switch(alert.getSeverity()){
-		case "Ok":
+		case 1:
 			icon = "ok32x32";
 			break;
-		case "Informational":
+		case 2:
 			icon = "Information32x32";
 			break;
-		case "Warning":
+		case 4:
 			icon = "warning32x32";
 			break;
-		case "Critical":
+		case 8:
 			icon = "critical32x32";
 			break;
 		default : icon = "ok32x32";
@@ -198,14 +207,14 @@ public class AlertDetailsViewModel extends SelectorComposer<Window> {
 	
 	private String getStatusTitle(){
 		switch(alert.getSeverity()){
-		case "Ok":
+		case 1:
 			return AlertSeverity.OK.name();
 			
-		case "Informational":
+		case 2:
 			return AlertSeverity.INFORMATIONAL.name();
-		case "Warning":
+		case 4:
 			return AlertSeverity.WARNING.name();
-		case "Critical":
+		case 8:
 			return AlertSeverity.CRITICAL.name();
 		default : return AlertSeverity.OK.name();
 		}
@@ -213,7 +222,7 @@ public class AlertDetailsViewModel extends SelectorComposer<Window> {
 	
 	private void updateCurrentIndex(){
 		int i = 0;
-		for(GridAlert alrt : alertsList){
+		for(Alert alrt : alertsList){
 			if(this.alert.getAlertId().equals(alrt.getAlertId())){
 				currentIndex = i;
 				break;
@@ -302,7 +311,7 @@ public class AlertDetailsViewModel extends SelectorComposer<Window> {
 		}
 		SessionUtil.getSecurityContext();
 		currentIndex++;
-		this.alert = alertsList.get(currentIndex);
+		this.alert = alertsList.get(currentIndex);//SQLDM-31301
 		metricHistoryTitle.setValue(ELFunctions.getLabel("SQLdm.Labels.history.four-hours"));
 		refreshAlertModel(this.alert.getAlertId());
 	}
@@ -356,7 +365,7 @@ public class AlertDetailsViewModel extends SelectorComposer<Window> {
 	
 
 	
-	public GridAlert getAlert(){
+	public Alert getAlert(){
 		return alert;
 	}
 	
@@ -388,4 +397,54 @@ public class AlertDetailsViewModel extends SelectorComposer<Window> {
 		if (offSet != null)
 			OFFSET_IN_HOURS = offSet.toString();
 	}
+	
+	private Alert toGridAlert(GridAlert gridAlert){
+		Alert alert = new Alert();
+		alert.alertId = gridAlert.getAlertId();
+		alert.name = gridAlert.getName();
+		alert.instanceName = gridAlert.getInstanceName();
+		alert.databaseName = gridAlert.getDatabaseName();
+		alert.instanceId = gridAlert.getInstanceId();
+		alert.isActive = gridAlert.getIsActive();
+		alert.utcUpdated = gridAlert.getUtcUpdated();
+		switch(gridAlert.getSeverity())
+        {
+			case "Ok":
+				alert.severity = 1;
+				break;
+			case "Informational":
+				alert.severity = 2;
+				break;
+			case "Warning":
+				alert.severity = 4;
+				break;
+			case "Critical":
+				alert.severity = 8;
+				break;
+			default:
+				alert.severity = 1;
+			break;
+		}
+		alert.previousAlertSeverity = gridAlert.getPreviousAlertSeverity();
+		alert.description = gridAlert.getDescription();
+		alert.activeDuration = gridAlert.getActiveDuration();
+		alert.Metric = gridAlert.getMetric();
+		alert.value = gridAlert.getValue();
+		alert.StringValue = gridAlert.getStringValue();
+		alert.StateEvent = gridAlert.getStateEvent();
+		alert.product = gridAlert.getProduct();
+		
+		return alert;
+	}
+	
+	private List<Alert> toAlertsList(List<GridAlert> gridAlerts){
+		List<Alert> alerts = new ArrayList<Alert>();
+		
+		for(GridAlert gridAlert : gridAlerts){
+			alerts.add(toGridAlert(gridAlert));
+		}
+		
+		return alerts;
+	}
+	
 }

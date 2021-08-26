@@ -1,3 +1,9 @@
+using System;
+using System.Drawing;
+using Idera.SQLdm.DesktopClient.Properties;
+using Infragistics.Win;
+using Infragistics.Windows.Themes;
+
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
 {
     partial class DatabasesConfigurationView
@@ -30,34 +36,34 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
         {
             this.components = new System.ComponentModel.Container();
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool1 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("columnContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortAscendingButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortDescendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Controls.CustomControls.CustomButtonTool("sortAscendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Controls.CustomControls.CustomButtonTool("sortDescendingButton");
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool1 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("groupByThisColumnButton", "");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Infragistics.Win.UltraWinToolbars.ButtonTool("toggleGroupByBoxButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Infragistics.Win.UltraWinToolbars.ButtonTool("removeThisColumnButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showColumnChooserButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showColumnChooserButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Controls.CustomControls.CustomButtonTool("toggleGroupByBoxButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Controls.CustomControls.CustomButtonTool("removeThisColumnButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Controls.CustomControls.CustomButtonTool("showColumnChooserButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Controls.CustomControls.CustomButtonTool("showColumnChooserButton");
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Infragistics.Win.UltraWinToolbars.ButtonTool("toggleGroupByBoxButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Controls.CustomControls.CustomButtonTool("toggleGroupByBoxButton");
             Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortAscendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Controls.CustomControls.CustomButtonTool("sortAscendingButton");
             Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortDescendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Controls.CustomControls.CustomButtonTool("sortDescendingButton");
             Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool10 = new Infragistics.Win.UltraWinToolbars.ButtonTool("removeThisColumnButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool10 = new Controls.CustomControls.CustomButtonTool("removeThisColumnButton");
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool2 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("groupByThisColumnButton", "");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool11 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool11 = new Controls.CustomControls.CustomButtonTool("printGridButton");
             Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool12 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool12 = new Controls.CustomControls.CustomButtonTool("exportGridButton");
             Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool2 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("gridContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool13 = new Infragistics.Win.UltraWinToolbars.ButtonTool("collapseAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool14 = new Infragistics.Win.UltraWinToolbars.ButtonTool("expandAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool15 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printGridButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool16 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportGridButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool17 = new Infragistics.Win.UltraWinToolbars.ButtonTool("collapseAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool18 = new Infragistics.Win.UltraWinToolbars.ButtonTool("expandAllGroupsButton");
-            Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool13 = new Controls.CustomControls.CustomButtonTool("collapseAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool14 = new Controls.CustomControls.CustomButtonTool("expandAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool15 = new Controls.CustomControls.CustomButtonTool("printGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool16 = new Controls.CustomControls.CustomButtonTool("exportGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool17 = new Controls.CustomControls.CustomButtonTool("collapseAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool18 = new Controls.CustomControls.CustomButtonTool("expandAllGroupsButton");
+            appearance1 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("DatabaseName", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, false);
@@ -108,23 +114,23 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList1 = new Infragistics.Win.ValueList(575079454);
+            Infragistics.Win.ValueList valueList1 = new Controls.CustomControls.CustomValueList(575079454);
             Infragistics.Win.ValueListItem valueListItem1 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem2 = new Infragistics.Win.ValueListItem();
-            Infragistics.Win.ValueList valueList2 = new Infragistics.Win.ValueList(98659907);
-            Infragistics.Win.ValueList valueList3 = new Infragistics.Win.ValueList(774349954);
+            Infragistics.Win.ValueList valueList2 = new Controls.CustomControls.CustomValueList(98659907);
+            Infragistics.Win.ValueList valueList3 = new Controls.CustomControls.CustomValueList(774349954);
             this.toolbarsManager = new Idera.SQLdm.DesktopClient.Controls.ContextMenuManager(this.components);
-            this.DatabasesConfigurationView_Fill_Panel = new System.Windows.Forms.Panel();
+            this.DatabasesConfigurationView_Fill_Panel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.refreshDatabasesButton = new Infragistics.Win.Misc.UltraButton();
-            this.databasesFilterComboBox = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.databasesFilterComboBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraComboEditor();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.configurationGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.configurationGridStatusLabel = new System.Windows.Forms.Label();
+            this.configurationGridStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.ultraGridExcelExporter = new Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter(this.components);
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.ultraPrintPreviewDialog = new Infragistics.Win.Printing.UltraPrintPreviewDialog(this.components);
             this.ultraGridPrintDocument = new Infragistics.Win.UltraWinGrid.UltraGridPrintDocument(this.components);
-            this.historicalSnapshotStatusLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.historicalSnapshotStatusLinkLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarsManager)).BeginInit();
             this.DatabasesConfigurationView_Fill_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.databasesFilterComboBox)).BeginInit();
@@ -206,8 +212,21 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             // 
             // refreshDatabasesButton
             // 
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                this.refreshDatabasesButton.UseAppStyling = false;
+                this.refreshDatabasesButton.UseOsThemes = DefaultableBoolean.False;
+                this.refreshDatabasesButton.ButtonStyle = UIElementButtonStyle.FlatBorderless;
+            }
+            else
+            {
+                this.refreshDatabasesButton.UseAppStyling = true;
+            }
             this.refreshDatabasesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            appearance1.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh;
+            if (!refreshDatabasesButton.Enabled)
+                appearance1.Image = Helpers.ImageUtils.ChangeOpacity(global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh, 0.50F);
+            else
+                appearance1.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh;
             appearance1.ImageHAlign = Infragistics.Win.HAlign.Center;
             this.refreshDatabasesButton.Appearance = appearance1;
             this.refreshDatabasesButton.Location = new System.Drawing.Point(663, 3);
@@ -217,6 +236,9 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             this.refreshDatabasesButton.Size = new System.Drawing.Size(23, 23);
             this.refreshDatabasesButton.TabIndex = 16;
             this.refreshDatabasesButton.Click += new System.EventHandler(this.refreshDatabasesButton_Click);
+            this.refreshDatabasesButton.MouseEnterElement += new UIElementEventHandler(mouseEnter_refreshDatabasesButton);
+            this.refreshDatabasesButton.MouseLeaveElement += new UIElementEventHandler(mouseLeave_refreshDatabasesButton);
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
             // 
             // databasesFilterComboBox
             // 
@@ -503,16 +525,17 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
         #endregion
 
         private Idera.SQLdm.DesktopClient.Controls.ContextMenuManager toolbarsManager;
-        private System.Windows.Forms.Panel DatabasesConfigurationView_Fill_Panel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  DatabasesConfigurationView_Fill_Panel;
         private Infragistics.Win.UltraWinGrid.UltraGrid configurationGrid;
-        private System.Windows.Forms.Label configurationGridStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel configurationGridStatusLabel;
         private Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter ultraGridExcelExporter;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private Infragistics.Win.Printing.UltraPrintPreviewDialog ultraPrintPreviewDialog;
         private Infragistics.Win.UltraWinGrid.UltraGridPrintDocument ultraGridPrintDocument;
-        private System.Windows.Forms.Panel panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
         private Infragistics.Win.UltraWinEditors.UltraComboEditor databasesFilterComboBox;
-        private System.Windows.Forms.LinkLabel historicalSnapshotStatusLinkLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel historicalSnapshotStatusLinkLabel;
         private Infragistics.Win.Misc.UltraButton refreshDatabasesButton;
+        private Infragistics.Win.Appearance appearance1;
     }
 }

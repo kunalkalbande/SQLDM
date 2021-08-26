@@ -62,9 +62,9 @@ namespace Idera.SQLdm.Common.Objects
         //[END] SQLdm 10.0 (Rajesh Gupta): Baseline Enhancement - Added a list for multiple BaselineConfiguration         
         // Flag that indicates whether the alerts are going to be refreshed in minutes or in seconds
         private bool alertRefreshInMinutes = true;
+
         private int? cloudProviderId = null; //SQLdm 10.0 (Tarun Sapra)- get the cloud provider id for the monitored instance of the sql server
-        public int ClusterRepoId { get; set; }
-        public int RepoId { get; set; }
+
         // Display flags
 
         //START: SQLdm 10.0 (Tarun Sapra): Minimal Cloud Support

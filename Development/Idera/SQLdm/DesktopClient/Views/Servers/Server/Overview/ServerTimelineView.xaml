@@ -511,12 +511,12 @@
 
         <local:AxisLabelConverter x:Key="converter"/>
     </UserControl.Resources>
-    <Grid>
+    <Grid Style="{DynamicResource gridTimelineBackground}">
         <Grid.RowDefinitions>
             <RowDefinition Height="36" />
             <RowDefinition Height="528*" />
         </Grid.RowDefinitions>
-        <ig:XamTimeline Name="xamTimeline1" Grid.Row="1">
+        <ig:XamTimeline Name="xamTimeline1" Grid.Row="1" Style="{DynamicResource xamTimeline}">
             <ig:XamTimeline.Resources>
                 <Style TargetType="ig:AxisLabel">
                     <Setter Property="Template">
@@ -535,23 +535,23 @@
                 </Style>
             </ig:XamTimeline.LegendStyle>
         </ig:XamTimeline>
-        <Label Content="Databases" Height="28" HorizontalAlignment="Left" Margin="31,5,0,0" Name="label1" VerticalAlignment="Top" />
+        <Label Content="Databases" Height="28" HorizontalAlignment="Left" Margin="31,5,0,0" Name="label1" VerticalAlignment="Top" Style="{DynamicResource timelineLabelColor}" />
         <Ellipse Height="10" HorizontalAlignment="Left" Margin="23,14,0,0" Name="ellipse1" Stroke="Black" VerticalAlignment="Top" Width="10" Fill="BlanchedAlmond" />
-        <Label Content="Logs" Height="28" HorizontalAlignment="Left" Margin="114,5,0,0" Name="label2" VerticalAlignment="Top" />
+        <Label Content="Logs" Height="28" HorizontalAlignment="Left" Margin="114,5,0,0" Name="label2" VerticalAlignment="Top" Style="{DynamicResource timelineLabelColor}" />
         <Ellipse Height="10" HorizontalAlignment="Left" Margin="106,14,0,0" Name="ellipse2" Stroke="Black" VerticalAlignment="Top" Width="10" Fill="BlueViolet" />
-        <Label Content="Operational" Height="28" HorizontalAlignment="Left" Margin="170,5,0,0" Name="label3" VerticalAlignment="Top" />
+        <Label Content="Operational" Height="28" HorizontalAlignment="Left" Margin="170,5,0,0" Name="label3" VerticalAlignment="Top" Style="{DynamicResource timelineLabelColor}" />
         <Ellipse Height="10" HorizontalAlignment="Left" Margin="162,14,0,0" Name="ellipse3" Stroke="Black" VerticalAlignment="Top" Width="10" Fill="Coral" />
-        <Label Content="Queries" Height="28" HorizontalAlignment="Left" Margin="262,5,0,0" Name="label4" VerticalAlignment="Top" />
+        <Label Content="Queries" Height="28" HorizontalAlignment="Left" Margin="262,5,0,0" Name="label4" VerticalAlignment="Top" Style="{DynamicResource timelineLabelColor}" />
         <Ellipse Height="10" HorizontalAlignment="Left" Margin="254,14,0,0" Name="ellipse4" Stroke="Black" VerticalAlignment="Top" Width="10" Fill="Thistle" />
-        <Label Content="Resources" Height="28" HorizontalAlignment="Left" Margin="334,5,0,0" Name="label5" VerticalAlignment="Top" />
+        <Label Content="Resources" Height="28" HorizontalAlignment="Left" Margin="334,5,0,0" Name="label5" VerticalAlignment="Top" Style="{DynamicResource timelineLabelColor}" />
         <Ellipse Height="10" HorizontalAlignment="Left" Margin="327,14,0,0" Name="ellipse5" Stroke="Black" VerticalAlignment="Top" Width="10" Fill="ForestGreen" />
-        <Label Content="Services" Height="28" HorizontalAlignment="Left" Margin="420,5,0,0" Name="label6" VerticalAlignment="Top" />
+        <Label Content="Services" Height="28" HorizontalAlignment="Left" Margin="420,5,0,0" Name="label6" VerticalAlignment="Top" Style="{DynamicResource timelineLabelColor}" />
         <Ellipse Height="10" HorizontalAlignment="Left" Margin="412,14,0,0" Name="ellipse6" Stroke="Black" VerticalAlignment="Top" Width="10" Fill="PaleVioletRed" />
-        <Label Content="Sessions" Height="28" HorizontalAlignment="Left" Margin="493,5,0,0" Name="label7" VerticalAlignment="Top" />
+        <Label Content="Sessions" Height="28" HorizontalAlignment="Left" Margin="493,5,0,0" Name="label7" VerticalAlignment="Top" Style="{DynamicResource timelineLabelColor}" />
         <Ellipse Height="10" HorizontalAlignment="Left" Margin="485,14,0,0" Name="ellipse7" Stroke="Black" VerticalAlignment="Top" Width="10" Fill="LightGreen" />
-        <Label Content="Virtualization" Height="28" HorizontalAlignment="Left" Margin="566,5,0,0" Name="label8" VerticalAlignment="Top" />
+        <Label Content="Virtualization" Height="28" HorizontalAlignment="Left" Margin="566,5,0,0" Name="label8" VerticalAlignment="Top" Style="{DynamicResource timelineLabelColor}" />
         <Ellipse Height="10" HorizontalAlignment="Left" Margin="558,14,0,0" Name="ellipse8" Stroke="Black" VerticalAlignment="Top" Width="10" Fill="Goldenrod" />
-        <Label Content="Custom" Height="28" Margin="663,5,0,0" Name="label9" VerticalAlignment="Top" HorizontalAlignment="Left" Width="51" />
+        <Label Content="Custom" Height="28" Margin="663,5,0,0" Name="label9" VerticalAlignment="Top" HorizontalAlignment="Left" Width="51" Style="{DynamicResource timelineLabelColor}" />
         <Ellipse Height="10" HorizontalAlignment="Left" Margin="655,14,0,0" Name="ellipse9" Stroke="Black" VerticalAlignment="Top" Width="10" Fill="SteelBlue" />
     </Grid>
 </Server:WpfServerBaseView>

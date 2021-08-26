@@ -11,13 +11,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 {
     using Helpers;
 
-    public partial class DatabaseSelectionDialog : Form
+    public partial class DatabaseSelectionDialog : BaseDialog
     {
         private List<string> listItems = new List<string>();
         private List<string> selectedItems = new List<string>();
 
         public DatabaseSelectionDialog()
         {
+            this.DialogHeader = "Excluded Databases";
             InitializeComponent();
             databaseListBox.DrawFilter = new HideFocusRectangleDrawFilter();
 

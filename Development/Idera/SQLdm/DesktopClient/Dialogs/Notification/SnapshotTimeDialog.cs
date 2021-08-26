@@ -8,7 +8,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using System.ComponentModel;
     using Idera.SQLdm.DesktopClient.Helpers;
 
-    public partial class SnapshotTimeDialog : Form
+    public partial class SnapshotTimeDialog : BaseDialog
     {
         private string timeFormat;
         private SnapshotTimeRule rule;
@@ -16,6 +16,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public SnapshotTimeDialog()
         {
+            this.DialogHeader = "Alert Response Time Period";
             InitializeComponent();
             AdaptFontSize();
         }

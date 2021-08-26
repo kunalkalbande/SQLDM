@@ -29,8 +29,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
         private void InitializeComponent()
         {
             this.runReportButton = new Infragistics.Win.Misc.UltraButton();
-            this.availabilityGroupLabel = new System.Windows.Forms.Label();
-            this.availabilityGroupCombo = new System.Windows.Forms.ComboBox();
+            this.availabilityGroupLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.availabilityGroupCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
             this.panel1.SuspendLayout();
             this.filterPanel.SuspendLayout();
             this.SuspendLayout();
@@ -167,8 +167,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
 
         #endregion
 
-        protected System.Windows.Forms.ComboBox availabilityGroupCombo;
-        private System.Windows.Forms.Label availabilityGroupLabel;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox availabilityGroupCombo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel availabilityGroupLabel;
         private Infragistics.Win.Misc.UltraButton runReportButton;
 
     }

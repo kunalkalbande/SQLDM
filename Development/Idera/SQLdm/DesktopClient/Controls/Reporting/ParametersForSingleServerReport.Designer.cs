@@ -23,8 +23,8 @@ namespace Idera.SQLdm.DesktopClient.Controls.Reporting {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.serverLabel = new System.Windows.Forms.Label();
-            this.serverBox = new System.Windows.Forms.ComboBox();
+            this.serverLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.serverBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
             this.SuspendLayout();
             // 
             // serverLabel
@@ -61,7 +61,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.Reporting {
 
         #endregion
 
-        private System.Windows.Forms.Label serverLabel;
-        private System.Windows.Forms.ComboBox serverBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel serverLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox serverBox;
     }
 }

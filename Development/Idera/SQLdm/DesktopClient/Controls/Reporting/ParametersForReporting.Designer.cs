@@ -23,7 +23,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.Reporting {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.runReportButton = new System.Windows.Forms.Button();
+            this.runReportButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.timeParameters1 = new Idera.SQLdm.DesktopClient.Controls.Reporting.TimeParameters();
             this.SuspendLayout();
             // 
@@ -60,7 +60,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.Reporting {
 
         #endregion
 
-        public System.Windows.Forms.Button runReportButton;
+        public Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton runReportButton;
         public TimeParameters timeParameters1;
 
     }

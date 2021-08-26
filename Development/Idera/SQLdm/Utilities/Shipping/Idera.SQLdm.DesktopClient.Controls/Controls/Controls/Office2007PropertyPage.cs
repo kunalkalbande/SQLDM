@@ -13,6 +13,11 @@ namespace Idera.SQLdm.DesktopClient.Controls
             InitializeComponent();
         }
 
+        public Office2007PropertyPage(bool isDarkThemeSelected)
+        {
+            InitializeComponent(isDarkThemeSelected);
+        }
+
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public GradientPanel ContentPanel
         {

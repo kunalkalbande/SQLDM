@@ -121,6 +121,7 @@ namespace Idera.SQLdm.DesktopClient
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
             InitializeComponent();
+            System.Windows.Forms.Application.VisualStyleState = System.Windows.Forms.VisualStyles.VisualStyleState.NonClientAreaEnabled;
             stopWatch.Stop();
             StartUpTimeLog.DebugFormat("Time taken by InitializeComponent() : {0}", stopWatch.ElapsedMilliseconds);
 
@@ -174,6 +175,7 @@ namespace Idera.SQLdm.DesktopClient
 
             SetupSavedViewInformation();
 
+            SetHistoryBrowserVisibility();
 
             stopWatchMain.Stop();
             StartUpTimeLog.DebugFormat("Time taken by MainWindow : {0}", stopWatchMain.ElapsedMilliseconds);
@@ -281,7 +283,7 @@ namespace Idera.SQLdm.DesktopClient
         void OnCurrentThemeChanged(object sender, EventArgs e)
         {
             var newTheme = ThemeManager.CurrentTheme;
-           
+            SetHistoryBrowserVisibility();
         }
 
         private void OnWindowStateChanged(object sender, EventArgs e)
@@ -292,6 +294,8 @@ namespace Idera.SQLdm.DesktopClient
         void OnSizeChanged(object sender, SizeChangedEventArgs e)
         {
             UpdateRestoreBounds();
+            Debug.Print("Main Window-> " + this.ActualWidth);
+            Debug.Print("Left Navigation Pane-> " + LeftNavMainSection.ActualWidth);
         }
 
         protected override void OnLocationChanged(EventArgs e)
@@ -600,91 +604,90 @@ namespace Idera.SQLdm.DesktopClient
                 {
                     option = ConsoleAlertNotificationDisplayOptions.AlwaysShow;
                 }
-                foreach (var repoinstances in ApplicationModel.Default.RepoActiveInstances)
+
+                foreach (var wrapper in ApplicationModel.Default.ActiveInstances)
                 {
-                    foreach (var wrapper in repoinstances.Value)
+                    var status = ApplicationModel.Default.GetInstanceStatus(wrapper.Id);
+                    if (status != null)
                     {
-                        var status = ApplicationModel.Default.GetInstanceStatus(wrapper.Id,repoinstances.Key);
-                        if (status != null)
+                        MonitoredState cachedSeverity;
+
+                        if (status.Severity > highestSeverity)
                         {
-                            MonitoredState cachedSeverity;
+                            highestSeverity = status.Severity;
+                        }
 
-                            if (status.Severity > highestSeverity)
+                        if (status.Severity == MonitoredState.Critical)
+                        {
+                            ++criticalCount;
+                        }
+                        else if (status.Severity == MonitoredState.Warning)
+                        {
+                            ++warningCount;
+                        }
+
+                        if (_instanceStateTracking.TryGetValue(wrapper.Id, out cachedSeverity))
+                        {
+                            // The state tracking table must be updated regardless of the console
+                            // alert notification settings
+                            if (cachedSeverity != status.Severity)
                             {
-                                highestSeverity = status.Severity;
+                                _instanceStateTracking.Remove(wrapper.Id);
+                                _instanceStateTracking.Add(wrapper.Id, status.Severity);
+                                statusChanged = true;
                             }
 
-                            if (status.Severity == MonitoredState.Critical)
+                            if (option == ConsoleAlertNotificationDisplayOptions.AlwaysShow)
                             {
-                                ++criticalCount;
-                            }
-                            else if (status.Severity == MonitoredState.Warning)
-                            {
-                                ++warningCount;
-                            }
-
-                            if (_instanceStateTracking.TryGetValue(wrapper.Id, out cachedSeverity))
-                            {
-                                // The state tracking table must be updated regardless of the console
-                                // alert notification settings
-                                if (cachedSeverity != status.Severity)
+                                if (showAllServerStatuses)
                                 {
-                                    _instanceStateTracking.Remove(wrapper.Id);
-                                    _instanceStateTracking.Add(wrapper.Id, status.Severity);
-                                    statusChanged = true;
+                                    changeList.Add(status);
                                 }
-
-                                if (option == ConsoleAlertNotificationDisplayOptions.AlwaysShow)
+                                // only show Critical Servers 
+                                else if (showCriticalServersOnly && status.Severity == MonitoredState.Critical)
+                                {
+                                    changeList.Add(status);
+                                }
+                                // add if it is warnig or critical
+                                else if ((status.Severity > MonitoredState.OK) && showWarCritServersOnly)
+                                {
+                                    changeList.Add(status);
+                                }
+                            }
+                            else if (option == ConsoleAlertNotificationDisplayOptions.ShowOnlyOnStateTransition)
+                            {
+                                if (cachedSeverity != status.Severity)
                                 {
                                     if (showAllServerStatuses)
                                     {
                                         changeList.Add(status);
                                     }
                                     // only show Critical Servers 
-                                    else if (showCriticalServersOnly && status.Severity == MonitoredState.Critical)
+                                    if (showCriticalServersOnly && status.Severity == MonitoredState.Critical)
                                     {
                                         changeList.Add(status);
                                     }
-                                    // add if it is warnig or critical
-                                    else if ((status.Severity > MonitoredState.OK) && showWarCritServersOnly)
+                                    // 
+                                    else if (showWarCritServersOnly && status.Severity > MonitoredState.OK)
                                     {
                                         changeList.Add(status);
                                     }
-                                }
-                                else if (option == ConsoleAlertNotificationDisplayOptions.ShowOnlyOnStateTransition)
-                                {
-                                    if (cachedSeverity != status.Severity)
-                                    {
-                                        if (showAllServerStatuses)
-                                        {
-                                            changeList.Add(status);
-                                        }
-                                        // only show Critical Servers 
-                                        if (showCriticalServersOnly && status.Severity == MonitoredState.Critical)
-                                        {
-                                            changeList.Add(status);
-                                        }
-                                        // 
-                                        else if (showWarCritServersOnly && status.Severity > MonitoredState.OK)
-                                        {
-                                            changeList.Add(status);
-                                        }
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                _instanceStateTracking.Add(wrapper.Id, status.Severity);
-                                if (status.Severity > MonitoredState.OK)
-                                {
-                                    changeList.Add(status);
                                 }
                             }
                         }
                         else
-                            gotStatusForAll = false;
+                        {
+                            _instanceStateTracking.Add(wrapper.Id, status.Severity);
+                            if (status.Severity > MonitoredState.OK)
+                            {
+                                changeList.Add(status);
+                            }
+                        }
                     }
+                    else
+                        gotStatusForAll = false;
                 }
+
                 // NOTE: Check to make sure the status bar is shown, which is an indication that
                 // the main form is shown, otherwise an exception can occur when the notification
                 // popup window is clicked. The result if this behavior is that the popup window
@@ -886,6 +889,17 @@ namespace Idera.SQLdm.DesktopClient
             Log.DebugFormat("Server View refresh interval set to {0} seconds.", interval.TotalSeconds);
         }
 
+        private void SetHistoryBrowserVisibility()
+        {
+            if (ApplicationController.Default.ActiveView is ServerViewContainer)
+            {
+                var activeView = ApplicationController.Default.ActiveView as ServerViewContainer;
+                if (Settings.Default.ColorScheme == "Dark" && (activeView.ActualWidth == 699 || activeView.ActualWidth < 699))
+                {
+                    activeView.historyBrowserControl.OnCloseButtonClicked();
+                }
+            }
+        }
 
         #region tray
 
@@ -1182,7 +1196,7 @@ namespace Idera.SQLdm.DesktopClient
 
             foreach (var server in servers)
             {
-                MonitoredSqlServerStatus serverStatus = ApplicationModel.Default.GetInstanceStatus(server.Key,server.Value.RepoId);
+                MonitoredSqlServerStatus serverStatus = ApplicationModel.Default.GetInstanceStatus(server.Key);
                 MonitoredSqlServerConfiguration config = serverStatus.Instance.Instance.GetConfiguration();
 
                 MaintenanceModeType modeType = status ? MaintenanceModeType.Always : MaintenanceModeType.Never;
@@ -1711,7 +1725,7 @@ namespace Idera.SQLdm.DesktopClient
         }
 
         
-        private void MenuLight_Click(object sender, RoutedEventArgs e)
+        public void MenuLight_Click()
         {
             Settings.Default.ColorScheme = "Light";
             ApplicationController.Default.ChangeTheme(ThemeName.Light);
@@ -1719,7 +1733,7 @@ namespace Idera.SQLdm.DesktopClient
             setFlyoutsPanelsBackgroundColor(flyoutPanelBackgroundColor);
         }
 
-        private void MenuDark_Click(object sender, RoutedEventArgs e)
+        public void MenuDark_Click()
         {
             Settings.Default.ColorScheme = "Dark";
             ApplicationController.Default.ChangeTheme(ThemeName.Dark);
@@ -2315,6 +2329,7 @@ namespace Idera.SQLdm.DesktopClient
             {
                 var activeView = ApplicationController.Default.ActiveView as ServerViewContainer;
                 activeView.SetQuickHistoricalSnapshotVisible(activeView.ActualWidth > 699);
+                SetHistoryBrowserVisibility();
             }
         }
         public void UpdateNavigationPane(XamNavigationPanes itemType)

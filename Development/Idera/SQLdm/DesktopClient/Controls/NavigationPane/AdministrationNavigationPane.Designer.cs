@@ -44,7 +44,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             treeNode4,
             treeNode5});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministrationNavigationPane));
-            this.adminTree = new System.Windows.Forms.TreeView();
+            this.adminTree = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTreeView();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 

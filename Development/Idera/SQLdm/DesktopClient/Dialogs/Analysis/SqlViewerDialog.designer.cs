@@ -31,19 +31,19 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         {
             this.components = new System.ComponentModel.Container();
             Infragistics.Win.UltraWinToolbars.UltraToolbar ultraToolbar1 = new Infragistics.Win.UltraWinToolbars.UltraToolbar("viewer");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Infragistics.Win.UltraWinToolbars.ButtonTool("PreviousButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Infragistics.Win.UltraWinToolbars.ButtonTool("NextButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Infragistics.Win.UltraWinToolbars.ButtonTool("NextButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Controls.CustomControls.CustomButtonTool("PreviousButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Controls.CustomControls.CustomButtonTool("NextButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Controls.CustomControls.CustomButtonTool("NextButton");
             Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Infragistics.Win.UltraWinToolbars.ButtonTool("PreviousButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Controls.CustomControls.CustomButtonTool("PreviousButton");
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinStatusBar.UltraStatusPanel ultraStatusPanel1 = new Infragistics.Win.UltraWinStatusBar.UltraStatusPanel();
             Infragistics.Win.UltraWinStatusBar.UltraStatusPanel ultraStatusPanel2 = new Infragistics.Win.UltraWinStatusBar.UltraStatusPanel();
             ActiproSoftware.SyntaxEditor.Document document1 = new ActiproSoftware.SyntaxEditor.Document();
             ActiproSoftware.SyntaxEditor.VisualStudio2005SyntaxEditorRenderer visualStudio2005SyntaxEditorRenderer1 = new ActiproSoftware.SyntaxEditor.VisualStudio2005SyntaxEditorRenderer();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.copyButton = new System.Windows.Forms.Button();
-            this.closeButton = new System.Windows.Forms.Button();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.copyButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.closeButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this._SqlViewerDialog_Toolbars_Dock_Area_Left = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
             this.toolbarManager = new Infragistics.Win.UltraWinToolbars.UltraToolbarsManager(this.components);
             this._SqlViewerDialog_Toolbars_Dock_Area_Right = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
@@ -51,7 +51,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this._SqlViewerDialog_Toolbars_Dock_Area_Bottom = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
             this.statusBar = new Infragistics.Win.UltraWinStatusBar.UltraStatusBar();
             this.gradientPanel1 = new GradientPanel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomSplitContainer();
             this.syntaxEditor1 = new ActiproSoftware.SyntaxEditor.SyntaxEditor();
             this.lvRecommendations = new Infragistics.Win.UltraWinListView.UltraListView();
             this.panel1.SuspendLayout();
@@ -292,8 +292,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         private ActiproSoftware.SyntaxEditor.SyntaxEditor syntaxEditor1;
         private GradientPanel gradientPanel1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button closeButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton closeButton;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsManager toolbarManager;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _SqlViewerDialog_Toolbars_Dock_Area_Left;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _SqlViewerDialog_Toolbars_Dock_Area_Right;
@@ -302,6 +302,6 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private Infragistics.Win.UltraWinStatusBar.UltraStatusBar statusBar;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private Infragistics.Win.UltraWinListView.UltraListView lvRecommendations;
-        private System.Windows.Forms.Button copyButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton copyButton;
     }
 }

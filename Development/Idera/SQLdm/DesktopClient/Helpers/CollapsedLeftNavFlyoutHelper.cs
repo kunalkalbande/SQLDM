@@ -21,7 +21,7 @@ namespace Idera.SQLdm.DesktopClient.Helpers
         System.Windows.Forms.TreeView treeView = null;
         System.Windows.Forms.ToolStrip header = null;
         System.Windows.Forms.ToolStripItem headerToggleCaret = null;
-        System.Windows.Forms.Panel latestPanel = null;
+        Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  latestPanel = null;
         System.Windows.Controls.Panel latestSearchPanel = null;
         System.Windows.Forms.Label emptyTreeViewIndicator = null;
         System.Windows.Controls.Grid searchGrid = null;
@@ -106,7 +106,7 @@ namespace Idera.SQLdm.DesktopClient.Helpers
                 popup.VerticalOffset = -4;
                 popup.HorizontalOffset = 4;
                 popup.AllowsTransparency = true;
-                var newPanel = new System.Windows.Forms.Panel();
+                var newPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
                 newPanel.Width = originalTreeViewParent.Width;
                 newPanel.Height = flyoutHeight;
                 newPanel.BackColor = originalTreeViewParent.BackColor;

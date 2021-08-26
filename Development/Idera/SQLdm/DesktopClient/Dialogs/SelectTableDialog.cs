@@ -15,7 +15,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Idera.SQLdm.Common.UI.Dialogs;
     using Wintellect.PowerCollections;
 
-    public partial class SelectTableDialog : Form, IEqualityComparer<string>
+    public partial class SelectTableDialog : BaseDialog, IEqualityComparer<string>
     {
         private const string AdhocInstructionText = "< Type semicolon separated names >";
 
@@ -27,6 +27,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public SelectTableDialog(MonitoredSqlServer monitoredSqlServer, Set<string> selectedTables)
         {
+            this.DialogHeader = "Excluded Tables";
             this.monitoredSqlServer = monitoredSqlServer;
             this.selectedSet = selectedTables ?? new Set<string>(this);
             InitializeComponent();

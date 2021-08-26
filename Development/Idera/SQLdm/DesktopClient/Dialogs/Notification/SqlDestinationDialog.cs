@@ -13,7 +13,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using Infragistics.Win.Misc;
     using Objects;
 
-    public partial class SqlDestinationDialog : Form
+    public partial class SqlDestinationDialog : BaseDialog
     {
         private SqlDestination destination;
 
@@ -22,6 +22,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public SqlDestinationDialog()
         {
+            this.DialogHeader = "SQL Script Action";
             InitializeComponent();
             sqlCaretData = new CaretData();
             sqlCaretData.editor = tSqlTextBox;

@@ -8,7 +8,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Timer=System.Threading.Timer;
     using Idera.SQLdm.DesktopClient.Helpers;
 
-    public partial class ProgressMonitorDialog : Form
+    public partial class ProgressMonitorDialog : BaseDialog
     {
         private int delay = Timeout.Infinite;
         private System.Threading.Timer delayTimer;
@@ -17,6 +17,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         internal ProgressMonitorDialog(BackgroundWorkerWithProgressDialog backgroundWorker)
         {
+            this.DialogHeader = "Please wait...";
             this.backgroundWorker = backgroundWorker;
 
             InitializeComponent();

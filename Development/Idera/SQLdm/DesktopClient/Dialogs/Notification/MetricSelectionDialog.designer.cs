@@ -29,12 +29,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.metricsListView = new System.Windows.Forms.ListView();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnOK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.metricsListView = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.chkbxSelectAll = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.chkbxSelectAll = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -134,11 +134,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         #endregion
 
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.ListView metricsListView;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListView metricsListView;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.CheckBox chkbxSelectAll;
-        private System.Windows.Forms.Label label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkbxSelectAll;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
     }
 }

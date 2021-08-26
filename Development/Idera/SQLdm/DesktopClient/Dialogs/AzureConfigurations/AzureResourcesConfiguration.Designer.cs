@@ -44,19 +44,19 @@
             Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AzureResourcesConfiguration));
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnView = new System.Windows.Forms.Button();
-            this.lblNoResources = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.serverComboBox = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.applicationProfileComboBox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnClose = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnUpdate = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnView = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.lblNoResources = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.serverComboBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.applicationProfileComboBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.azureResourcesGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.loadResourcesWorker = new System.ComponentModel.BackgroundWorker();
-            this.updateStatusLabel = new System.Windows.Forms.Label();
-            this.labelDetails = new System.Windows.Forms.Label();
+            this.updateStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.labelDetails = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.iAzureResourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iAzureApplicationProfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.monitoredSqlServerBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -331,22 +331,22 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnView;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnClose;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnUpdate;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnView;
         private Controls.InfiniteProgressBar statusProgressBar;
-        private System.Windows.Forms.Label lblNoResources;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox serverComboBox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox applicationProfileComboBox;
-        private System.Windows.Forms.Label label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblNoResources;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox serverComboBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox applicationProfileComboBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
         private Infragistics.Win.UltraWinGrid.UltraGrid azureResourcesGrid;
         private System.Windows.Forms.BindingSource iAzureResourceBindingSource;
         private System.Windows.Forms.BindingSource monitoredSqlServerBindingSource;
         private System.Windows.Forms.BindingSource iAzureApplicationProfileBindingSource;
         private System.ComponentModel.BackgroundWorker loadResourcesWorker;
-        private System.Windows.Forms.Label updateStatusLabel;
-        private System.Windows.Forms.Label labelDetails;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel updateStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel labelDetails;
     }
 }

@@ -31,6 +31,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
+            bool isDarkThemeSelected = Properties.Settings.Default.ColorScheme == "Dark";
             Infragistics.Win.ValueListItem valueListItem1 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             Infragistics.Win.ValueListItem valueListItem2 = new Infragistics.Win.ValueListItem();
@@ -39,26 +40,26 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
             Infragistics.Win.ValueListItem valueListItem4 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
-            this._btn_Cancel = new System.Windows.Forms.Button();
-            this._btn_OK = new System.Windows.Forms.Button();
-            this._propertyPage = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
-            this._txtbx_Message = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this._lbl_CreatedOn = new System.Windows.Forms.Label();
-            this._lbl_Server = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this._lbl_Metric = new System.Windows.Forms.Label();
-            this._statusCombo = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
-            this.label15 = new System.Windows.Forms.Label();
-            this._txtbx_Comments = new System.Windows.Forms.TextBox();
-            this._txtbx_Owner = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this._lbl_CompletedOn = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this._btn_Cancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this._btn_OK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this._propertyPage = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage(isDarkThemeSelected);
+            this._txtbx_Message = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label9 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._lbl_CreatedOn = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._lbl_Server = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._lbl_Metric = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._statusCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraComboEditor();
+            this.label15 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._txtbx_Comments = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this._txtbx_Owner = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label14 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._lbl_CompletedOn = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label8 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label6 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.propertiesHeaderStrip3 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label13 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.propertiesHeaderStrip1 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
             this._propertyPage.ContentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._statusCombo)).BeginInit();
@@ -358,27 +359,27 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button _btn_Cancel;
-        private System.Windows.Forms.Button _btn_OK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton _btn_Cancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton _btn_OK;
         private Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage _propertyPage;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip propertiesHeaderStrip1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label9;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label13;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label9;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip propertiesHeaderStrip3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox _txtbx_Comments;
-        private System.Windows.Forms.TextBox _txtbx_Owner;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label _lbl_CompletedOn;
-        private System.Windows.Forms.Label _lbl_CreatedOn;
-        private System.Windows.Forms.Label label8;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label6;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label15;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox _txtbx_Comments;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox _txtbx_Owner;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label14;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _lbl_CompletedOn;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _lbl_CreatedOn;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label8;
         private Infragistics.Win.UltraWinEditors.UltraComboEditor _statusCombo;
-        private System.Windows.Forms.Label _lbl_Server;
-        private System.Windows.Forms.Label _lbl_Metric;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox _txtbx_Message;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _lbl_Server;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _lbl_Metric;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox _txtbx_Message;
 
     }
 }

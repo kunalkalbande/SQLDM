@@ -6,11 +6,12 @@ using System.Diagnostics;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    internal partial class SplashScreen : Form
+    internal partial class SplashScreen : BaseDialog
     {
         private static BBS.TracerX.Logger StartUpTimeLog = BBS.TracerX.Logger.GetLogger(TextConstants.StartUpTimeLogName);
         public SplashScreen()
         {
+            this.DialogHeader = "SplashForm";
             var stopWatch = new Stopwatch();
             stopWatch.Start();
             InitializeComponent();

@@ -39,8 +39,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Analysis
             this.tabBlockDatabases = new System.Windows.Forms.TabPage();
             this.blockedDatabases = new BlockedDatabasesTab(instnceID, blockedDatabase);
             this.instanceImages = new System.Windows.Forms.ImageList(this.components);
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.localInstancesWorker = new System.ComponentModel.BackgroundWorker();
             this.networkInstancesWorker = new System.ComponentModel.BackgroundWorker();
             this.tabSettings.SuspendLayout();
@@ -137,7 +137,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Analysis
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 1;
-            this.okButton.Text = "&OK";
+            this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
@@ -190,8 +190,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Analysis
         private System.Windows.Forms.TabControl tabSettings;
         private System.Windows.Forms.TabPage tabFilters;
         private System.Windows.Forms.TabPage tabBlockRecommendations;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
         private System.ComponentModel.BackgroundWorker localInstancesWorker;
         private System.Windows.Forms.ImageList instanceImages;
         private System.ComponentModel.BackgroundWorker networkInstancesWorker;

@@ -43,14 +43,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
-            this.addButton = new System.Windows.Forms.Button();
-            this.editButton = new System.Windows.Forms.Button();
-            this.removeButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.addButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.editButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.removeButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.tableLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
             this.stackLayoutPanel1 = new Idera.SQLdm.Common.UI.Controls.StackLayoutPanel();
             this.providerListView = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.noProvidersLabel = new System.Windows.Forms.Label();
+            this.noProvidersLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.providerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -248,14 +248,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         #endregion
 
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button editButton;
-        private System.Windows.Forms.Button removeButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton addButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton editButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton removeButton;
         private Idera.SQLdm.Common.UI.Controls.StackLayoutPanel stackLayoutPanel1;
         private Infragistics.Win.UltraWinGrid.UltraGrid providerListView;
         private System.Windows.Forms.BindingSource providerBindingSource;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label noProvidersLabel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel noProvidersLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel1;
     }
 }

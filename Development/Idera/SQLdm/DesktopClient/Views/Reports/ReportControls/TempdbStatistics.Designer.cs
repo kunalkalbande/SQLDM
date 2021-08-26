@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TempdbStatistics));
-            this.label5 = new System.Windows.Forms.Label();
-            this.chartTypeCombo = new System.Windows.Forms.ComboBox();
+            this.label5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.chartTypeCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
             this.panel1.SuspendLayout();
             this.filterPanel.SuspendLayout();
             this.SuspendLayout();
@@ -157,7 +157,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox chartTypeCombo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox chartTypeCombo;
     }
 }

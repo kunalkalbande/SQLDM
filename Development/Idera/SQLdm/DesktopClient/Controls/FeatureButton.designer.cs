@@ -29,9 +29,9 @@ namespace Idera.SQLdm.DesktopClient.Controls
         private void InitializeComponent()
         {
             this.featureImagePictureBox = new System.Windows.Forms.PictureBox();
-            this.featureDescriptionLabel = new System.Windows.Forms.Label();
-            this.featureHeaderLabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.featureDescriptionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTransparentLabel();
+            this.featureHeaderLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTransparentLabel();
+            this.tableLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTransparentTableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.featureImagePictureBox)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -125,8 +125,8 @@ namespace Idera.SQLdm.DesktopClient.Controls
         #endregion
 
         private System.Windows.Forms.PictureBox featureImagePictureBox;
-        private System.Windows.Forms.Label featureDescriptionLabel;
-        private System.Windows.Forms.Label featureHeaderLabel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTransparentLabel featureDescriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTransparentLabel featureHeaderLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTransparentTableLayoutPanel tableLayoutPanel1;
     }
 }

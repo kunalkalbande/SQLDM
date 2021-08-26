@@ -1,3 +1,7 @@
+using Idera.SQLdm.DesktopClient.Properties;
+using System;
+using System.Drawing;
+
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
     partial class ConsoleOptionsDialog
@@ -41,61 +45,65 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             Infragistics.Win.ValueListItem valueListItem33 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem34 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem35 = new Infragistics.Win.ValueListItem();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
-            this.propertiesControl1 = new Idera.SQLdm.DesktopClient.Controls.PropertiesControl();
+            bool isDarkThemeSelected = Settings.Default.ColorScheme == "Dark";
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.propertiesControl1 = new Idera.SQLdm.DesktopClient.Controls.PropertiesControl(isDarkThemeSelected);
             this.popularPropertiesPage = new Idera.SQLdm.DesktopClient.Controls.PropertyPage();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.styleSelectionComboBox = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
-            this.label3 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.styleSelectionComboBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraComboEditor();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.propertiesHeaderStrip2 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.realtimeChartsHistoryLimitComboBox = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
-            this.label12 = new System.Windows.Forms.Label();
+            this.realtimeChartsHistoryLimitComboBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraComboEditor();
+            this.label12 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.propertiesHeaderStrip6 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
 			///Initializing header strip - Ankit  Nagpal SQLdm 10.0
             this.propertiesHeaderStripBL = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.hideWhenMinimizedBox = new System.Windows.Forms.CheckBox();
+            this.hideWhenMinimizedBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             ///Initializing baseline enable box - Ankit  Nagpal SQLdm 10.0
-			this.baselineEnableBox = new System.Windows.Forms.CheckBox();
+			this.baselineEnableBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             this.propertiesHeaderStrip4 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.backgroundRefreshSpinner = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.foregroundRefreshSpinner = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.labelInfo = new System.Windows.Forms.Label();
+            this.backgroundRefreshSpinner = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.label11 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label6 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.foregroundRefreshSpinner = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.flowLayoutPanel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFlowLayoutPanel();
+            this.label11 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label6 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.flowLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFlowLayoutPanel();
+            this.label10 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.labelInfo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.propertiesHeaderStrip3 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.office2007PropertyPage1 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
+            this.office2007PropertyPage1 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage(isDarkThemeSelected);
             this.propertyPage1 = new Idera.SQLdm.DesktopClient.Controls.PropertyPage();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.noteLabel = new System.Windows.Forms.Label();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.AlertRowLimitSpinner = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.noteLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.flowLayoutPanel3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFlowLayoutPanel();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.AlertRowLimitSpinner = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.propertiesHeaderStrip1 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.office2007PropertyPage4 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
+            this.office2007PropertyPage4 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage(isDarkThemeSelected);
             this.propertyPage3 = new Idera.SQLdm.DesktopClient.Controls.PropertyPage();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.notificationPreviewButton = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.notificationPreviewButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.propertiesHeaderStrip8 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
             this.propertiesHeaderStrip7 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
             this.propertiesHeaderStrip5 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.consoleAlertNotificationOptionsAlwaysShow = new System.Windows.Forms.RadioButton();
-            this.consoleAlertNotificationOptionsShowOnlyOnStateTransition = new System.Windows.Forms.RadioButton();
-            this.consoleAlertNotificationOptionsNeverShow = new System.Windows.Forms.RadioButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.consoleAlertPopupShowAllAlertStatuses = new System.Windows.Forms.RadioButton();
-            this.consoleAlertPopupShowInfoWarCritical = new System.Windows.Forms.RadioButton();
-            this.consoleAlertPopupShowCriticalAlertOnly = new System.Windows.Forms.RadioButton();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.enableSoundForAllRadio = new System.Windows.Forms.RadioButton();
-            this.enableSoundForCriticalRadio = new System.Windows.Forms.RadioButton();
-            this.office2007PropertyPage3 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.consoleAlertNotificationOptionsAlwaysShow = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.consoleAlertNotificationOptionsShowOnlyOnStateTransition = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.consoleAlertNotificationOptionsNeverShow = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.panel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.consoleAlertPopupShowAllAlertStatuses = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.consoleAlertPopupShowInfoWarCritical = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.consoleAlertPopupShowCriticalAlertOnly = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.panel3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.panel4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel();
+            this.enableSoundForAllRadio = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.enableSoundForCriticalRadio = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.office2007PropertyPage3 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage(isDarkThemeSelected);
             this.popularPropertiesPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.styleSelectionComboBox)).BeginInit();
@@ -113,6 +121,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // cancelButton
@@ -213,10 +222,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // styleSelectionComboBox
             // 
             this.styleSelectionComboBox.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList;
-            valueListItem23.DataValue = "Office2007Black.isl";
-            valueListItem23.DisplayText = "Black";
-            valueListItem24.DataValue = "Office2007Silver.isl";
-            valueListItem24.DisplayText = "Silver";
+            valueListItem23.DataValue = "Dark";
+            valueListItem23.DisplayText = "Dark";
+            valueListItem24.DataValue = "Light";
+            valueListItem24.DisplayText = "Light";
             this.styleSelectionComboBox.Items.AddRange(new Infragistics.Win.ValueListItem[] {
             valueListItem23,
             valueListItem24});
@@ -233,7 +242,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 13);
             this.label3.TabIndex = 39;
-            this.label3.Text = "Color scheme:";
+            this.label3.Text = "Theme:";
             // 
             // propertiesHeaderStrip2
             // 
@@ -245,7 +254,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.propertiesHeaderStrip2.Name = "propertiesHeaderStrip2";
             this.propertiesHeaderStrip2.Size = new System.Drawing.Size(429, 25);
             this.propertiesHeaderStrip2.TabIndex = 38;
-            this.propertiesHeaderStrip2.Text = "What color scheme do you prefer?";            
+            this.propertiesHeaderStrip2.Text = "What theme do you prefer?";            
             // 
             // realtimeChartsHistoryLimitComboBox
             // 
@@ -675,13 +684,15 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.Controls.Add(this.notificationPreviewButton, 1, 6);
+            
+            //this.tableLayoutPanel3.Controls.Add(this.notificationPreviewButton, 1, 6);
             this.tableLayoutPanel3.Controls.Add(this.propertiesHeaderStrip8, 0, 4);
             this.tableLayoutPanel3.Controls.Add(this.propertiesHeaderStrip7, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.propertiesHeaderStrip5, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.panel1, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.panel2, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.panel3, 1, 5);
+            this.tableLayoutPanel3.Controls.Add(this.panel4, 1, 6);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 67);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 7;
@@ -699,14 +710,16 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // 
             // notificationPreviewButton
             // 
-            this.notificationPreviewButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.notificationPreviewButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.notificationPreviewButton.Location = new System.Drawing.Point(33, 304);
+            //this.notificationPreviewButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            //this.notificationPreviewButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+
+            this.notificationPreviewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.notificationPreviewButton.Location = new System.Drawing.Point(310, 0);
             this.notificationPreviewButton.Name = "notificationPreviewButton";
-            this.notificationPreviewButton.Size = new System.Drawing.Size(75, 23);
+            this.notificationPreviewButton.Size = new System.Drawing.Size(70, 25);
             this.notificationPreviewButton.TabIndex = 42;
             this.notificationPreviewButton.Text = "Preview";
-            this.notificationPreviewButton.UseVisualStyleBackColor = false;
+            //this.notificationPreviewButton.UseVisualStyleBackColor = false;
             this.notificationPreviewButton.Click += new System.EventHandler(this.notificationPreviewButton_Click);
             // 
             // propertiesHeaderStrip8
@@ -851,6 +864,15 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.panel3.Size = new System.Drawing.Size(200, 50);
             this.panel3.TabIndex = 45;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.notificationPreviewButton);
+            this.panel4.Location = new System.Drawing.Point(33, 308);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(426, 30);
+            this.panel4.TabIndex = 46;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            // 
             // enableSoundForAllRadio
             // 
             this.enableSoundForAllRadio.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -950,62 +972,78 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         }
 
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetPropertiesTheme();
+        }
+
+        void SetPropertiesTheme()
+        {
+            var propertiesThemeManager = new Controls.PropertiesThemeManager();
+            propertiesThemeManager.UpdatePropertyTheme(propertiesControl1);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage1);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage3);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage4);
+        }
+
         #endregion
 
         private Idera.SQLdm.DesktopClient.Controls.PropertiesControl propertiesControl1;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
         private Idera.SQLdm.DesktopClient.Controls.PropertyPage popularPropertiesPage;
         private Idera.SQLdm.DesktopClient.Controls.PropertyPage propertyPage3;
         private Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage office2007PropertyPage1;
         private Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage office2007PropertyPage3;
         private Idera.SQLdm.DesktopClient.Controls.PropertyPage propertyPage1;
         private Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage office2007PropertyPage4;
-        private System.Windows.Forms.RadioButton consoleAlertNotificationOptionsNeverShowGoesBackToOk;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton consoleAlertNotificationOptionsNeverShowGoesBackToOk;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label5;
         private Controls.PropertiesHeaderStrip propertiesHeaderStrip3;
         private Controls.PropertiesHeaderStrip propertiesHeaderStrip6;
         private Controls.PropertiesHeaderStrip propertiesHeaderStripBL;
-        private System.Windows.Forms.CheckBox hideWhenMinimizedBox;
-        private System.Windows.Forms.CheckBox baselineEnableBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox hideWhenMinimizedBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox baselineEnableBox;
         private Controls.PropertiesHeaderStrip propertiesHeaderStrip4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.NumericUpDown backgroundRefreshSpinner;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.NumericUpDown foregroundRefreshSpinner;
-        private System.Windows.Forms.Label label10;
+
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown backgroundRefreshSpinner;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label11;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label6;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown foregroundRefreshSpinner;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFlowLayoutPanel flowLayoutPanel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFlowLayoutPanel flowLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label10;
         private Infragistics.Win.UltraWinEditors.UltraComboEditor styleSelectionComboBox;
-        private System.Windows.Forms.Label label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
         private Controls.PropertiesHeaderStrip propertiesHeaderStrip2;
         private Infragistics.Win.UltraWinEditors.UltraComboEditor realtimeChartsHistoryLimitComboBox;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label12;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel2;
         private Controls.PropertiesHeaderStrip propertiesHeaderStrip1;
-        private System.Windows.Forms.Label noteLabel;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown AlertRowLimitSpinner;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Button notificationPreviewButton;
-        private System.Windows.Forms.RadioButton enableSoundForCriticalRadio;
-        private System.Windows.Forms.RadioButton enableSoundForAllRadio;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel noteLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFlowLayoutPanel flowLayoutPanel3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown AlertRowLimitSpinner;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton notificationPreviewButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton enableSoundForCriticalRadio;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton enableSoundForAllRadio;
         private Controls.PropertiesHeaderStrip propertiesHeaderStrip8;
-        private System.Windows.Forms.RadioButton consoleAlertPopupShowCriticalAlertOnly;
-        private System.Windows.Forms.RadioButton consoleAlertPopupShowInfoWarCritical;
-        private System.Windows.Forms.RadioButton consoleAlertPopupShowAllAlertStatuses;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton consoleAlertPopupShowCriticalAlertOnly;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton consoleAlertPopupShowInfoWarCritical;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton consoleAlertPopupShowAllAlertStatuses;
         private Controls.PropertiesHeaderStrip propertiesHeaderStrip7;
-        private System.Windows.Forms.RadioButton consoleAlertNotificationOptionsNeverShow;
-        private System.Windows.Forms.RadioButton consoleAlertNotificationOptionsShowOnlyOnStateTransition;
-        private System.Windows.Forms.RadioButton consoleAlertNotificationOptionsAlwaysShow;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton consoleAlertNotificationOptionsNeverShow;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton consoleAlertNotificationOptionsShowOnlyOnStateTransition;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton consoleAlertNotificationOptionsAlwaysShow;
         private Controls.PropertiesHeaderStrip propertiesHeaderStrip5;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel4;
 
-        private System.Windows.Forms.Label labelInfo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel labelInfo;
     }
 }

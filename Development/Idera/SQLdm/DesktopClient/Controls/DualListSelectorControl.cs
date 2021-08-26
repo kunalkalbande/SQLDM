@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
+using Idera.SQLdm.DesktopClient.Helpers;
 
 namespace Idera.SQLdm.DesktopClient.Controls
 {
@@ -63,6 +64,11 @@ namespace Idera.SQLdm.DesktopClient.Controls
         public DualListSelectorControl()
         {
             InitializeComponent();
+            if (AutoScaleSizeHelper.isScalingRequired)
+                this.buttonRemove.Size = this.buttonAdd.Size;
+            //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+            //if (AutoScaleSizeHelper.isScalingRequired && !isCustomCounter)
+                //ScaleControlsAsPerResolution();
         }
 
         private void listBoxAvailable_SelectedIndexChanged(object sender, EventArgs e)
@@ -199,6 +205,35 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
                 e.DrawFocusRectangle();
             }
+        }
+
+        //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+        private void ListBoxMeasureItem(object sender, MeasureItemEventArgs e)
+        {
+            if(AutoScaleSizeHelper.isScalingRequired)
+            {
+                if(AutoScaleSizeHelper.isLargeSize)
+                {
+                    e.ItemHeight += 10;
+                    return;
+                }
+                if (AutoScaleSizeHelper.isXLargeSize)
+                {
+                    e.ItemHeight += 12;
+                    return;
+                }
+                if (AutoScaleSizeHelper.isXXLargeSize)
+                {
+                    e.ItemHeight += 15;
+                    return;
+                }
+            }
+        }
+        //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+        protected void ScaleControlsAsPerResolution()
+        {
+            this.listBoxAvailable.DrawMode = DrawMode.OwnerDrawVariable;
+            this.listBoxSelected.DrawMode = DrawMode.OwnerDrawVariable;
         }
     }
 

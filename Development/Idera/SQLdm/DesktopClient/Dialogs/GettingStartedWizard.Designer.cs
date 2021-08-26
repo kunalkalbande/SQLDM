@@ -1,3 +1,6 @@
+using Idera.SQLdm.DesktopClient.Properties;
+using System.Drawing;
+
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
     partial class GettingStartedWizard
@@ -29,13 +32,13 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GettingStartedWizard));
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.headerLabel = new System.Windows.Forms.Label();
-            this.headerPanel = new System.Windows.Forms.Panel();
-            this.dividerLabel1 = new System.Windows.Forms.Label();
-            this.productDescriptionLabel = new System.Windows.Forms.Label();
-            this.footerPanel = new System.Windows.Forms.Panel();
-            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.headerLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.headerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.dividerLabel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.productDescriptionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.footerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.descriptionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.visitTrialCenterFeatureButton = new Idera.SQLdm.DesktopClient.Controls.FeatureButton();
             this.configureAlertsFeatureButton = new Idera.SQLdm.DesktopClient.Controls.FeatureButton();
             this.addNewServersFeatureButton = new Idera.SQLdm.DesktopClient.Controls.FeatureButton();
@@ -63,7 +66,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.headerLabel.BackColor = System.Drawing.Color.Transparent;
             this.headerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headerLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.headerLabel.Location = new System.Drawing.Point(116, 14);
+            if (Settings.Default.ColorScheme != "Dark")
+            {
+                this.headerLabel.Location = new System.Drawing.Point(116, 14);
+            }
+            else
+            {
+                this.headerLabel.Location = new System.Drawing.Point(30, 14);
+            }
             this.headerLabel.Name = "headerLabel";
             this.headerLabel.Size = new System.Drawing.Size(370, 24);
             this.headerLabel.TabIndex = 0;
@@ -71,7 +81,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // 
             // headerPanel
             // 
-            this.headerPanel.BackgroundImage = global::Idera.SQLdm.DesktopClient.Properties.Resources.GettingStartedWizardHeader;
+            if (Settings.Default.ColorScheme != "Dark")
+            {
+                this.headerPanel.BackgroundImage = global::Idera.SQLdm.DesktopClient.Properties.Resources.GettingStartedWizardHeader;
+            }
             this.headerPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.headerPanel.Controls.Add(this.dividerLabel1);
             this.headerPanel.Controls.Add(this.productDescriptionLabel);
@@ -87,7 +100,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.dividerLabel1.BackColor = System.Drawing.Color.Transparent;
             this.dividerLabel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dividerLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dividerLabel1.Location = new System.Drawing.Point(120, 45);
+            if (Settings.Default.ColorScheme != "Dark")
+            {
+                this.dividerLabel1.Location = new System.Drawing.Point(120, 45);
+            }
+            else
+            {
+                this.dividerLabel1.Location = new System.Drawing.Point(32, 45);
+            }
             this.dividerLabel1.Name = "dividerLabel1";
             this.dividerLabel1.Size = new System.Drawing.Size(440, 2);
             this.dividerLabel1.TabIndex = 9;
@@ -96,9 +116,16 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // 
             this.productDescriptionLabel.BackColor = System.Drawing.Color.Transparent;
             this.productDescriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productDescriptionLabel.Location = new System.Drawing.Point(117, 54);
-            this.productDescriptionLabel.Name = "productDescriptionLabel";
             this.productDescriptionLabel.Size = new System.Drawing.Size(470, 54);
+            this.productDescriptionLabel.Name = "productDescriptionLabel";
+            if (Settings.Default.ColorScheme != "Dark")
+            {
+                this.productDescriptionLabel.Location = new System.Drawing.Point(117, 54);
+            }
+            else
+            {
+                this.productDescriptionLabel.Location = new System.Drawing.Point(31, 54);
+            }
             this.productDescriptionLabel.TabIndex = 1;
             this.productDescriptionLabel.Text = "SQL Diagnostic Manager minimizes costly server downtime by proactively alerting a" +
                 "dministrators to problems and enabling rapid diagnosis and resolution.";
@@ -172,7 +199,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            if (Settings.Default.ColorScheme != "Dark")
+            {
+                this.BackColor = System.Drawing.Color.White;
+            }
+            else
+            {
+                this.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.ChartPanelBackColor);
+            }
             this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(599, 434);
             this.Controls.Add(this.visitTrialCenterFeatureButton);
@@ -199,13 +233,13 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Label headerLabel;
-        private System.Windows.Forms.Panel headerPanel;
-        private System.Windows.Forms.Panel footerPanel;
-        private System.Windows.Forms.Label descriptionLabel;
-        private System.Windows.Forms.Label dividerLabel1;
-        private System.Windows.Forms.Label productDescriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel headerLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  headerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  footerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel descriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel dividerLabel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel productDescriptionLabel;
         private Idera.SQLdm.DesktopClient.Controls.FeatureButton addNewServersFeatureButton;
         private Idera.SQLdm.DesktopClient.Controls.FeatureButton configureAlertsFeatureButton;
         private Idera.SQLdm.DesktopClient.Controls.FeatureButton visitTrialCenterFeatureButton;

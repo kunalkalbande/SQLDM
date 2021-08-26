@@ -24,8 +24,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using Objects;
     using Properties;
     using Wintellect.PowerCollections;
+    using Infragistics.Windows.Themes;
+    using Idera.SQLdm.DesktopClient.Controls;
 
-    public partial class TestSqlActionDialog : Form
+    public partial class TestSqlActionDialog : BaseDialog
     {
         private static readonly Logger Log = Logger.GetLogger("TestSqlActionDialog");
         private NotificationDestinationInfo destination;
@@ -33,12 +35,27 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public TestSqlActionDialog()
         {
+            this.DialogHeader = "Test Action";
             InitializeComponent();
 
             ultraGrid1.DrawFilter = new HideFocusRectangleDrawFilter();
 
             // Auto scale font size.
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.ultraGrid1);
         }
 
         internal NotificationDestinationInfo Destination

@@ -231,7 +231,7 @@ begin
 				getutcdate() as UTCTimeStamp,
 				@PercentSQLProcessorTime as PercentSQLProcessorTime 			
 
-			exec master..xp_msver 'physicalmemory' 
+			-- exec master..xp_msver 'physicalmemory' SQLDM-31380: This result is not used in the code
 
 		end 
 		else 

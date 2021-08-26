@@ -11,8 +11,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Idera.SQLdm.Common.Data;
     using Idera.SQLdm.Common.Events;
     using Idera.SQLdm.Common.UI.Dialogs;
+    using Idera.SQLdm.DesktopClient.Controls;
     using Infragistics.Win;
     using Infragistics.Win.UltraWinGrid;
+    using Infragistics.Windows.Themes;
     using Properties;
     using Wintellect.PowerCollections;
 
@@ -27,12 +29,26 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         public AlertBaselineWizard(AlertConfiguration config)
         {
             InitializeComponent();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
             contentStackPanel.ActiveControl = wizardSelectionContentPanel;
             alertsGrid.DrawFilter = new HideFocusRectangleDrawFilter();
             alertConfig = config;
 
             connectionInfo = Settings.Default.ActiveRepositoryConnection.ConnectionInfo;
             AdaptFontSize();
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.alertsGrid);
         }
 
         private void configPage_BeforeDisplay(object sender, EventArgs e)

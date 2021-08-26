@@ -28,11 +28,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            this.sqlServerCheckBox = new System.Windows.Forms.CheckBox();
-            this.selectGroupBox = new System.Windows.Forms.GroupBox();
-            this.sqlAgentCheckBox = new System.Windows.Forms.CheckBox();
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.sqlServerCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.selectGroupBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.sqlAgentCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.selectGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,10 +117,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.CheckBox sqlServerCheckBox;
-        private System.Windows.Forms.GroupBox selectGroupBox;
-        private System.Windows.Forms.CheckBox sqlAgentCheckBox;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox sqlServerCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox selectGroupBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox sqlAgentCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
     }
 }

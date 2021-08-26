@@ -1,3 +1,6 @@
+using Idera.SQLdm.DesktopClient.Properties;
+using System.Drawing;
+
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
     partial class TagPropertiesDialog
@@ -28,26 +31,31 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tagNameTextBox = new System.Windows.Forms.TextBox();
+            Color backColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor) : Color.White;
+            Color foreColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridForeColor) : Color.Black;
+            Color activeBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridActiveBackColor) : Color.White;
+            Color hoverBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridHoverBackColor) : Color.White;
+
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.tagNameTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.availableServersListBox = new System.Windows.Forms.CheckedListBox();
-            this.selectAllServersCheckBox = new System.Windows.Forms.CheckBox();
-            this.serversStatusLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.availableServersListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckedListBox1();
+            this.selectAllServersCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.serversStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.tabControl1 = new Idera.SQLdm.DesktopClient.Views.Reports.CustomTabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.selectAllCustomCountersCheckBox = new System.Windows.Forms.CheckBox();
-            this.customCountersStatusLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.customCountersListBox = new System.Windows.Forms.CheckedListBox();
+            this.selectAllCustomCountersCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.customCountersStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.customCountersListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckedListBox1();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.selectAllPermissionsCheckBox = new System.Windows.Forms.CheckBox();
-            this.permissionsStatusLabel = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.permissionsListBox = new System.Windows.Forms.CheckedListBox();
+            this.selectAllPermissionsCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.permissionsStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.permissionsListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckedListBox1();
             this.saveChangesWorker = new System.ComponentModel.BackgroundWorker();
             this.initializeWorker = new System.ComponentModel.BackgroundWorker();
             this.tabPage1.SuspendLayout();
@@ -114,6 +122,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Servers";
             this.tabPage1.UseVisualStyleBackColor = true;
+            
+            this.tabPage1.BackColor = backColor;
+            this.tabPage1.ForeColor = foreColor;
             // 
             // availableServersListBox
             // 
@@ -127,6 +138,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.availableServersListBox.Size = new System.Drawing.Size(412, 274);
             this.availableServersListBox.Sorted = true;
             this.availableServersListBox.TabIndex = 0;
+            this.availableServersListBox.BackColor =backColor;
+            this.availableServersListBox.ForeColor = foreColor;
             this.availableServersListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.availableServersListBox_ItemCheck);
             // 
             // selectAllServersCheckBox
@@ -186,6 +199,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Custom Counters";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.BackColor = backColor;
+            this.tabPage2.ForeColor = foreColor;
             // 
             // selectAllCustomCountersCheckBox
             // 
@@ -229,6 +244,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.customCountersListBox.Size = new System.Drawing.Size(412, 274);
             this.customCountersListBox.Sorted = true;
             this.customCountersListBox.TabIndex = 2;
+            this.customCountersListBox.BackColor = backColor;
+            this.customCountersListBox.ForeColor = foreColor;
             this.customCountersListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.customCountersListBox_ItemCheck);
             // 
             // tabPage3
@@ -244,6 +261,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Application Security";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.BackColor = backColor;
+            this.tabPage3.ForeColor = foreColor;
             // 
             // selectAllPermissionsCheckBox
             // 
@@ -288,6 +307,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.permissionsListBox.Size = new System.Drawing.Size(412, 274);
             this.permissionsListBox.Sorted = true;
             this.permissionsListBox.TabIndex = 4;
+            this.permissionsListBox.BackColor = backColor;
+            this.permissionsListBox.ForeColor = foreColor;
             this.permissionsListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.permissionsListBox_ItemCheck);
             // 
             // saveChangesWorker
@@ -323,6 +344,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Tag Properties";
+            this.backcolor = backcolor;
+            this.ForeColor = foreColor;
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.TagPropertiesDialog_HelpButtonClicked);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TagPropertiesDialog_FormClosed);
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.TagPropertiesDialog_HelpRequested);
@@ -340,27 +363,27 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tagNameTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox tagNameTextBox;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Label label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
         private System.Windows.Forms.CheckedListBox availableServersListBox;
         private System.Windows.Forms.TabControl tabControl1;
         private System.ComponentModel.BackgroundWorker saveChangesWorker;
-        private System.Windows.Forms.Label serversStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel serversStatusLabel;
         private System.ComponentModel.BackgroundWorker initializeWorker;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Label label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
         private System.Windows.Forms.CheckedListBox customCountersListBox;
-        private System.Windows.Forms.Label label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
         private System.Windows.Forms.CheckedListBox permissionsListBox;
-        private System.Windows.Forms.Label customCountersStatusLabel;
-        private System.Windows.Forms.Label permissionsStatusLabel;
-        private System.Windows.Forms.CheckBox selectAllServersCheckBox;
-        private System.Windows.Forms.CheckBox selectAllCustomCountersCheckBox;
-        private System.Windows.Forms.CheckBox selectAllPermissionsCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel customCountersStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel permissionsStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox selectAllServersCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox selectAllCustomCountersCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox selectAllPermissionsCheckBox;
     }
 }

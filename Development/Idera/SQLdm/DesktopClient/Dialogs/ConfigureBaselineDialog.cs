@@ -16,7 +16,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Properties;
     using Idera.SQLdm.DesktopClient.Views.Reports;
 
-    public partial class ConfigureBaselineDialog : Form
+    public partial class ConfigureBaselineDialog : BaseDialog
     {
         private readonly int instanceId;
         private SqlConnectionInfo connectionInfo;
@@ -34,6 +34,19 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
                 Text = string.Format(Text, instanceName);
             }
             AdaptFontSize();
+            SetPropertiesTheme();
+            Infragistics.Windows.Themes.ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, System.EventArgs e)
+        {
+            SetPropertiesTheme();
+        }
+
+        void SetPropertiesTheme()
+        {
+            var propertiesThemeManager = new Controls.PropertiesThemeManager();
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage1);
         }
 
         private void customBaselineRadioButton_CheckedChanged(object sender, System.EventArgs e)

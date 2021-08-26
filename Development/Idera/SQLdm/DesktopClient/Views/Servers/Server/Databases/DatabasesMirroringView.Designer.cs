@@ -1,3 +1,9 @@
+using Idera.SQLdm.DesktopClient.Properties;
+using Infragistics.Win;
+using Infragistics.Windows.Themes;
+using System;
+using System.Drawing;
+
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
 {
     partial class DatabasesMirroringView
@@ -54,14 +60,14 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList1 = new Infragistics.Win.ValueList(1145164329);
-            Infragistics.Win.ValueList valueList2 = new Infragistics.Win.ValueList(254688844);
+            Infragistics.Win.ValueList valueList1 = new Controls.CustomControls.CustomValueList(1145164329);
+            Infragistics.Win.ValueList valueList2 = new Controls.CustomControls.CustomValueList(254688844);
             Infragistics.Win.ValueListItem valueListItem21 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem22 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem23 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem24 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem25 = new Infragistics.Win.ValueListItem();
-            Infragistics.Win.ValueList valueList3 = new Infragistics.Win.ValueList(254817329);
+            Infragistics.Win.ValueList valueList3 = new Controls.CustomControls.CustomValueList(254817329);
             Infragistics.Win.ValueListItem valueListItem26 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem27 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem28 = new Infragistics.Win.ValueListItem();
@@ -83,8 +89,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             Infragistics.Win.Appearance appearance110 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance111 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance112 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList4 = new Infragistics.Win.ValueList(1609175141);
-            Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
+            Infragistics.Win.ValueList valueList4 = new Controls.CustomControls.CustomValueList(1609175141);
+            appearance1 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand2 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn15 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Database Name");
@@ -105,22 +111,22 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             Infragistics.Win.Appearance appearance20 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance28 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance33 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList5 = new Infragistics.Win.ValueList(238621516);
+            Infragistics.Win.ValueList valueList5 = new Controls.CustomControls.CustomValueList(238621516);
             Infragistics.Win.ValueListItem valueListItem29 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem30 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem31 = new Infragistics.Win.ValueListItem();
-            Infragistics.Win.ValueList valueList6 = new Infragistics.Win.ValueList(239127688);
+            Infragistics.Win.ValueList valueList6 = new Controls.CustomControls.CustomValueList(239127688);
             Infragistics.Win.ValueListItem valueListItem32 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem33 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem34 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem35 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem36 = new Infragistics.Win.ValueListItem();
-            Infragistics.Win.ValueList valueList7 = new Infragistics.Win.ValueList(243636016);
+            Infragistics.Win.ValueList valueList7 = new Controls.CustomControls.CustomValueList(243636016);
             Infragistics.Win.ValueListItem valueListItem37 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem38 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem39 = new Infragistics.Win.ValueListItem();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
             ChartFX.WinForms.Adornments.GradientBackground gradientBackground1 = new ChartFX.WinForms.Adornments.GradientBackground();
             ChartFX.WinForms.SeriesAttributes seriesAttributes1 = new ChartFX.WinForms.SeriesAttributes();
             ChartFX.WinForms.SeriesAttributes seriesAttributes2 = new ChartFX.WinForms.SeriesAttributes();
@@ -128,98 +134,98 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             ChartFX.WinForms.SeriesAttributes seriesAttributes4 = new ChartFX.WinForms.SeriesAttributes();
             ChartFX.WinForms.SeriesAttributes seriesAttributes5 = new ChartFX.WinForms.SeriesAttributes();
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool1 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("detailsGridContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Infragistics.Win.UltraWinToolbars.ButtonTool("mirroringFailOver");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool10 = new Infragistics.Win.UltraWinToolbars.ButtonTool("mirroringSuspendResume");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool30 = new Infragistics.Win.UltraWinToolbars.ButtonTool("markSessionFailedOver");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool31 = new Infragistics.Win.UltraWinToolbars.ButtonTool("markSessionNormal");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool32 = new Infragistics.Win.UltraWinToolbars.ButtonTool("markSessionRoleAgnostic");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool22 = new Infragistics.Win.UltraWinToolbars.ButtonTool("collapseAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool23 = new Infragistics.Win.UltraWinToolbars.ButtonTool("expandAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool24 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printGridButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool25 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportGridButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortAscendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Controls.CustomControls.CustomButtonTool("mirroringFailOver");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool10 = new Controls.CustomControls.CustomButtonTool("mirroringSuspendResume");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool30 = new Controls.CustomControls.CustomButtonTool("markSessionFailedOver");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool31 = new Controls.CustomControls.CustomButtonTool("markSessionNormal");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool32 = new Controls.CustomControls.CustomButtonTool("markSessionRoleAgnostic");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool22 = new Controls.CustomControls.CustomButtonTool("collapseAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool23 = new Controls.CustomControls.CustomButtonTool("expandAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool24 = new Controls.CustomControls.CustomButtonTool("printGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool25 = new Controls.CustomControls.CustomButtonTool("exportGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Controls.CustomControls.CustomButtonTool("sortAscendingButton");
             Infragistics.Win.Appearance appearance21 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortDescendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Controls.CustomControls.CustomButtonTool("sortDescendingButton");
             Infragistics.Win.Appearance appearance22 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool2 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("columnContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortAscendingButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortDescendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Controls.CustomControls.CustomButtonTool("sortAscendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Controls.CustomControls.CustomButtonTool("sortDescendingButton");
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool3 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("groupByThisColumnButton", "");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool33 = new Infragistics.Win.UltraWinToolbars.ButtonTool("toggleGroupByBoxButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool20 = new Infragistics.Win.UltraWinToolbars.ButtonTool("removeThisColumnButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool21 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showColumnChooserButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Infragistics.Win.UltraWinToolbars.ButtonTool("mirroringFailOver");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool33 = new Controls.CustomControls.CustomButtonTool("toggleGroupByBoxButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool20 = new Controls.CustomControls.CustomButtonTool("removeThisColumnButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool21 = new Controls.CustomControls.CustomButtonTool("showColumnChooserButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Controls.CustomControls.CustomButtonTool("mirroringFailOver");
             Infragistics.Win.Appearance appearance43 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool3 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("gridContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Infragistics.Win.UltraWinToolbars.ButtonTool("collapseAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool26 = new Infragistics.Win.UltraWinToolbars.ButtonTool("expandAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool27 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printGridButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool28 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportGridButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Infragistics.Win.UltraWinToolbars.ButtonTool("collapseAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Infragistics.Win.UltraWinToolbars.ButtonTool("mirroringSuspendResume");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Controls.CustomControls.CustomButtonTool("collapseAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool26 = new Controls.CustomControls.CustomButtonTool("expandAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool27 = new Controls.CustomControls.CustomButtonTool("printGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool28 = new Controls.CustomControls.CustomButtonTool("exportGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Controls.CustomControls.CustomButtonTool("collapseAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Controls.CustomControls.CustomButtonTool("mirroringSuspendResume");
             Infragistics.Win.Appearance appearance30 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool11 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool11 = new Controls.CustomControls.CustomButtonTool("printGridButton");
             Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool12 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool12 = new Controls.CustomControls.CustomButtonTool("exportGridButton");
             Infragistics.Win.Appearance appearance24 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool13 = new Infragistics.Win.UltraWinToolbars.ButtonTool("removeThisColumnButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool14 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showColumnChooserButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool13 = new Controls.CustomControls.CustomButtonTool("removeThisColumnButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool14 = new Controls.CustomControls.CustomButtonTool("showColumnChooserButton");
             Infragistics.Win.Appearance appearance26 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool15 = new Infragistics.Win.UltraWinToolbars.ButtonTool("toggleGroupByBoxButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool15 = new Controls.CustomControls.CustomButtonTool("toggleGroupByBoxButton");
             Infragistics.Win.Appearance appearance27 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool17 = new Infragistics.Win.UltraWinToolbars.ButtonTool("expandAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool17 = new Controls.CustomControls.CustomButtonTool("expandAllGroupsButton");
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool1 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("groupByThisColumnButton", "");
             Infragistics.Win.Appearance appearance29 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool16 = new Infragistics.Win.UltraWinToolbars.ButtonTool("markSessionNormal");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool18 = new Infragistics.Win.UltraWinToolbars.ButtonTool("markSessionFailedOver");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool29 = new Infragistics.Win.UltraWinToolbars.ButtonTool("markSessionRoleAgnostic");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool16 = new Controls.CustomControls.CustomButtonTool("markSessionNormal");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool18 = new Controls.CustomControls.CustomButtonTool("markSessionFailedOver");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool29 = new Controls.CustomControls.CustomButtonTool("markSessionRoleAgnostic");
             this.statusTabPage = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.pnlMessage = new System.Windows.Forms.Panel();
-            this.lblDetailsMessage = new System.Windows.Forms.Label();
-            this.pnlDetails = new System.Windows.Forms.Panel();
-            this.lblMirrorAddress = new System.Windows.Forms.Label();
-            this.lblPrincipalAddress = new System.Windows.Forms.Label();
-            this.lblOperatingMode = new System.Windows.Forms.Label();
-            this.lblWitnessAddress = new System.Windows.Forms.Label();
-            this.lblTimeToSendAndRestore = new System.Windows.Forms.Label();
-            this.lblMirrorCommitOverhead = new System.Windows.Forms.Label();
-            this.mirrorGroup = new System.Windows.Forms.GroupBox();
-            this.lblRestoreRate = new System.Windows.Forms.Label();
-            this.lblTimeToRestore = new System.Windows.Forms.Label();
-            this.lblUnrestoredLog = new System.Windows.Forms.Label();
-            this.principalGroup = new System.Windows.Forms.GroupBox();
-            this.lblRateofNewTrans = new System.Windows.Forms.Label();
-            this.lblSendRate = new System.Windows.Forms.Label();
-            this.lblOldestUnsent = new System.Windows.Forms.Label();
-            this.lblTimeToSend = new System.Windows.Forms.Label();
-            this.lblUnsentLog = new System.Windows.Forms.Label();
+            this.pnlMessage = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.lblDetailsMessage = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.pnlDetails = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.lblMirrorAddress = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblPrincipalAddress = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblOperatingMode = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblWitnessAddress = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblTimeToSendAndRestore = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblMirrorCommitOverhead = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.mirrorGroup = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.lblRestoreRate = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblTimeToRestore = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblUnrestoredLog = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.principalGroup = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.lblRateofNewTrans = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblSendRate = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblOldestUnsent = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblTimeToSend = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblUnsentLog = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.historyTabPage = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.historyGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.historyPartnerViewRadioButton = new System.Windows.Forms.RadioButton();
-            this.historyLocalViewRadioButton = new System.Windows.Forms.RadioButton();
-            this.lblFilterLisyBy = new System.Windows.Forms.Label();
-            this.mirrorMonitoringHistoryPeriodComboBox = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.panel3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.historyPartnerViewRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.historyLocalViewRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.lblFilterLisyBy = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.mirrorMonitoringHistoryPeriodComboBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraComboEditor();
             this.actionProgressControl = new MRG.Controls.UI.LoadingCircle();
             this.propertiesTabPage = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
             this.transactionLogsGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.DatabasesMirroring_Fill_Panel = new System.Windows.Forms.Panel();
+            this.DatabasesMirroring_Fill_Panel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.refreshDatabasesButton = new Infragistics.Win.Misc.UltraButton();
-            this.contentContainerPanel = new System.Windows.Forms.Panel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.contentContainerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.splitContainer1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomSplitContainer();
             this.mirroredDatabasesGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.databasesGridStatusLabel = new System.Windows.Forms.Label();
-            this.mirroringDetailsTabControl = new Infragistics.Win.UltraWinTabControl.UltraTabControl();
+            this.databasesGridStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.mirroringDetailsTabControl = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTabControl();
             this.ultraTabSharedControlsPage1 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
-            this.mirroringDetailsTabControlStatusLabel = new System.Windows.Forms.Label();
-            this.mirroredDatabasesComboBox = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
+            this.mirroringDetailsTabControlStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.mirroredDatabasesComboBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraComboEditor();
             this.disksTabPage = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.diskUsagePanel = new System.Windows.Forms.Panel();
-            this.currentDiskUsageChartContainerPanel = new System.Windows.Forms.Panel();
-            this.diskUsageChart = new ChartFX.WinForms.Chart();
-            this.diskUsageChartStatusLabel = new System.Windows.Forms.Label();
+            this.diskUsagePanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.currentDiskUsageChartContainerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel();
+            this.diskUsageChart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+            this.diskUsageChartStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.refreshAvailableDatabasesBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.refreshMirroringDetailsBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.refreshMirroringHistoryBackgroundWorker = new System.ComponentModel.BackgroundWorker();
@@ -231,7 +237,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             this.ultraPrintPreviewDialog = new Infragistics.Win.Printing.UltraPrintPreviewDialog(this.components);
             this.ultraGridPrintDocument = new Infragistics.Win.UltraWinGrid.UltraGridPrintDocument(this.components);
             this.setOperationalStatusBackgroundWorker = new System.ComponentModel.BackgroundWorker();
-            this.historicalSnapshotStatusLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.historicalSnapshotStatusLinkLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
             this.refreshPartnerDetailsBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.statusTabPage.SuspendLayout();
             this.pnlMessage.SuspendLayout();
@@ -852,9 +858,22 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             this.DatabasesMirroring_Fill_Panel.TabIndex = 10;
             // 
             // refreshDatabasesButton
-            // 
+            //
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                this.refreshDatabasesButton.UseAppStyling = false;
+                this.refreshDatabasesButton.UseOsThemes = DefaultableBoolean.False;
+                this.refreshDatabasesButton.ButtonStyle = UIElementButtonStyle.FlatBorderless;
+            }
+            else
+            {
+                this.refreshDatabasesButton.UseAppStyling = true;
+            }
             this.refreshDatabasesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            appearance1.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh;
+            if (!refreshDatabasesButton.Enabled)
+                appearance1.Image = Helpers.ImageUtils.ChangeOpacity(global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh, 0.50F);
+            else
+                appearance1.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh;
             appearance1.ImageHAlign = Infragistics.Win.HAlign.Center;
             this.refreshDatabasesButton.Appearance = appearance1;
             this.refreshDatabasesButton.Location = new System.Drawing.Point(663, 3);
@@ -864,6 +883,9 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             this.refreshDatabasesButton.Size = new System.Drawing.Size(23, 23);
             this.refreshDatabasesButton.TabIndex = 9;
             this.refreshDatabasesButton.Click += new System.EventHandler(this.refreshDatabasesButton_Click);
+            this.refreshDatabasesButton.MouseEnterElement += new UIElementEventHandler(mouseEnter_refreshDatabasesButton);
+            this.refreshDatabasesButton.MouseLeaveElement += new UIElementEventHandler(mouseLeave_refreshDatabasesButton);
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
             // 
             // contentContainerPanel
             // 
@@ -904,10 +926,10 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             // 
             // mirroredDatabasesGrid
             // 
-            appearance12.BackColor = System.Drawing.SystemColors.Window;
+            appearance12.BackColor = Color.White;
             appearance12.BorderColor = System.Drawing.SystemColors.InactiveCaption;
             this.mirroredDatabasesGrid.DisplayLayout.Appearance = appearance12;
-            this.mirroredDatabasesGrid.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ExtendLastColumn;
+            this.mirroredDatabasesGrid.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ResizeAllColumns;
             ultraGridColumn15.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append;
             appearance13.ImageHAlign = Infragistics.Win.HAlign.Center;
             ultraGridColumn15.Header.Appearance = appearance13;
@@ -1376,18 +1398,18 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
 
         #endregion
 
-        private System.Windows.Forms.Panel DatabasesMirroring_Fill_Panel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  DatabasesMirroring_Fill_Panel;
         private Infragistics.Win.Misc.UltraButton refreshDatabasesButton;
-        private System.Windows.Forms.Panel contentContainerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  contentContainerPanel;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private Infragistics.Win.UltraWinGrid.UltraGrid mirroredDatabasesGrid;
-        private System.Windows.Forms.Label databasesGridStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel databasesGridStatusLabel;
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl disksTabPage;
-        private System.Windows.Forms.Panel diskUsagePanel;
-        private System.Windows.Forms.Panel currentDiskUsageChartContainerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  diskUsagePanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  currentDiskUsageChartContainerPanel;
         private ChartFX.WinForms.Chart diskUsageChart;
-        private System.Windows.Forms.Label diskUsageChartStatusLabel;
-        private System.Windows.Forms.Label mirroringDetailsTabControlStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel diskUsageChartStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel mirroringDetailsTabControlStatusLabel;
         private Infragistics.Win.UltraWinEditors.UltraComboEditor mirroredDatabasesComboBox;
         private Infragistics.Win.UltraWinTabControl.UltraTabControl mirroringDetailsTabControl;
         private Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage ultraTabSharedControlsPage1;
@@ -1397,14 +1419,14 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
         private Infragistics.Win.UltraWinGrid.UltraGrid transactionLogsGrid;
         private System.ComponentModel.BackgroundWorker refreshAvailableDatabasesBackgroundWorker;
         private Idera.SQLdm.DesktopClient.Controls.ContextMenuManager toolbarsManager;
-        private System.Windows.Forms.Panel panel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel2;
         private Infragistics.Win.UltraWinGrid.UltraGrid historyGrid;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblFilterLisyBy;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblFilterLisyBy;
         private Infragistics.Win.UltraWinEditors.UltraComboEditor mirrorMonitoringHistoryPeriodComboBox;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.RadioButton historyPartnerViewRadioButton;
-        private System.Windows.Forms.RadioButton historyLocalViewRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton historyPartnerViewRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton historyLocalViewRadioButton;
         private System.ComponentModel.BackgroundWorker refreshMirroringHistoryBackgroundWorker;
         private System.ComponentModel.BackgroundWorker refreshMirroringDetailsBackgroundWorker;
         private System.ComponentModel.BackgroundWorker failOverBackgroundWorker;
@@ -1414,27 +1436,28 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
         private Infragistics.Win.Printing.UltraPrintPreviewDialog ultraPrintPreviewDialog;
         private Infragistics.Win.UltraWinGrid.UltraGridPrintDocument ultraGridPrintDocument;
         private System.ComponentModel.BackgroundWorker setOperationalStatusBackgroundWorker;
-        private System.Windows.Forms.Panel pnlDetails;
-        private System.Windows.Forms.GroupBox mirrorGroup;
-        private System.Windows.Forms.Label lblRestoreRate;
-        private System.Windows.Forms.Label lblTimeToRestore;
-        private System.Windows.Forms.Label lblUnrestoredLog;
-        private System.Windows.Forms.GroupBox principalGroup;
-        private System.Windows.Forms.Label lblRateofNewTrans;
-        private System.Windows.Forms.Label lblSendRate;
-        private System.Windows.Forms.Label lblOldestUnsent;
-        private System.Windows.Forms.Label lblTimeToSend;
-        private System.Windows.Forms.Label lblUnsentLog;
-        private System.Windows.Forms.Panel pnlMessage;
-        private System.Windows.Forms.Label lblDetailsMessage;
-        private System.Windows.Forms.Label lblMirrorAddress;
-        private System.Windows.Forms.Label lblPrincipalAddress;
-        private System.Windows.Forms.Label lblOperatingMode;
-        private System.Windows.Forms.Label lblWitnessAddress;
-        private System.Windows.Forms.Label lblTimeToSendAndRestore;
-        private System.Windows.Forms.Label lblMirrorCommitOverhead;
-        private System.Windows.Forms.LinkLabel historicalSnapshotStatusLinkLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  pnlDetails;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox mirrorGroup;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblRestoreRate;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblTimeToRestore;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblUnrestoredLog;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox principalGroup;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblRateofNewTrans;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblSendRate;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblOldestUnsent;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblTimeToSend;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblUnsentLog;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  pnlMessage;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblDetailsMessage;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblMirrorAddress;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblPrincipalAddress;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblOperatingMode;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblWitnessAddress;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblTimeToSendAndRestore;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblMirrorCommitOverhead;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel historicalSnapshotStatusLinkLabel;
         private MRG.Controls.UI.LoadingCircle actionProgressControl;
         private System.ComponentModel.BackgroundWorker refreshPartnerDetailsBackgroundWorker;
+        private Infragistics.Win.Appearance appearance1;
     }
 }

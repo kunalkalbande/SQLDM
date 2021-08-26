@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnNo = new System.Windows.Forms.Button();
-            this.btnYes = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this._warningTreeView = new System.Windows.Forms.TreeView();
+            this.btnNo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnYes = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._warningTreeView = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTreeView();
             this.SuspendLayout();
             // 
             // btnNo
@@ -99,9 +99,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnNo;
-        private System.Windows.Forms.Button btnYes;
-        private System.Windows.Forms.Label label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnNo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnYes;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
         private System.Windows.Forms.TreeView _warningTreeView;
     }
 }

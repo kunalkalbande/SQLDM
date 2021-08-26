@@ -114,26 +114,23 @@ namespace Idera.SQLdm.DesktopClient.Objects
             lock (syncRoot)
             {
                 copy = new List<int>(instances);
-                foreach (var repoactiveInstances in model.RepoActiveInstances.Values)
+                IDictionary<int, MonitoredSqlServerWrapper> activeInstances = model.ActiveInstances.GetDictionary();
+
+                if (activeInstances != null)
                 {
-                    IDictionary<int, MonitoredSqlServerWrapper> activeInstances = repoactiveInstances.GetDictionary();
-
-                    if (activeInstances != null)
+                    foreach (MonitoredSqlServerWrapper instance in activeInstances.Values)
                     {
-                        foreach (MonitoredSqlServerWrapper instance in activeInstances.Values)
-                        {
-                            int instanceId = instance.Id;
-                            MonitoredSqlServerStatus status = model.GetInstanceStatus(instanceId, instance.RepoId);
-                            if (status == null)
-                                continue;
+                        int instanceId = instance.Id;
+                        MonitoredSqlServerStatus status = model.GetInstanceStatus(instanceId);
+                        if (status == null)
+                            continue;
 
-                            if (IsGroupMember(instance, status))
-                            {
-                                if (!instances.Contains(instance.InstanceId))
-                                    AddInstance(instance.InstanceId);
-                                else
-                                    copy.Remove(instance.InstanceId);
-                            }
+                        if (IsGroupMember(instance, status))
+                        {
+                            if (!instances.Contains(instanceId))
+                                AddInstance(instanceId);
+                            else
+                                copy.Remove(instanceId);
                         }
                     }
                 }
@@ -153,8 +150,7 @@ namespace Idera.SQLdm.DesktopClient.Objects
             }
 
             instances.Add(id);
-            var instanceId=Helpers.RepositoryHelper.GetSelectedInstanceId(id);
-            OnInstancesChanged(new UserViewInstancesChangedEventArgs(UserViewInstancesChangeType.Added, instanceId));
+            OnInstancesChanged(new UserViewInstancesChangedEventArgs(UserViewInstancesChangeType.Added, id));
             OnSeverityChanged();
         }
 
@@ -163,8 +159,7 @@ namespace Idera.SQLdm.DesktopClient.Objects
             if (instances.Contains(id))
             {
                 instances.Remove(id);
-                var instanceId=Helpers.RepositoryHelper.GetSelectedInstanceId(id);
-                OnInstancesChanged(new UserViewInstancesChangedEventArgs(UserViewInstancesChangeType.Removed, instanceId));
+                OnInstancesChanged(new UserViewInstancesChangedEventArgs(UserViewInstancesChangeType.Removed, id));
                 OnSeverityChanged();
             }
         }

@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             Infragistics.Win.Misc.ValidationGroup validationGroup1 = new Infragistics.Win.Misc.ValidationGroup("profileValidationGroup");
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBoxAppProfile = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.azureServerComboBox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.descriptionTextBox = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnOK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.groupBox3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.groupBox2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.comboBoxAppProfile = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.groupBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.azureServerComboBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.descriptionTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label8 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.profileValidator = new Infragistics.Win.Misc.UltraValidator(this.components);
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -203,17 +203,17 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox descriptionTextBox;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBoxAppProfile;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox azureServerComboBox;
-        private System.Windows.Forms.Label label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox descriptionTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label8;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox comboBoxAppProfile;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox azureServerComboBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
         private Infragistics.Win.Misc.UltraValidator profileValidator;
     }
 }

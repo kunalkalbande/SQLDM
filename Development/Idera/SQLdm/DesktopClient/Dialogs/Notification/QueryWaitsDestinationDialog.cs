@@ -8,13 +8,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using System;
     using System.Windows.Forms;
 
-    public partial class QueryWaitsDestinationDialog : Form
+    public partial class QueryWaitsDestinationDialog : BaseDialog
     {
         private int durationInMinutes = -1;
 
 
         public QueryWaitsDestinationDialog()
         {
+            this.DialogHeader = "Query Waits Settings";
             InitializeComponent();
             AdaptFontSize();
         }

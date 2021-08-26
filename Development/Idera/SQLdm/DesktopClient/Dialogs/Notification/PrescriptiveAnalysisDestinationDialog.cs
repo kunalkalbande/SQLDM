@@ -13,7 +13,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using Idera.SQLdm.Common.Analysis;
     using System.ComponentModel;
 
-    public partial class PrescriptiveAnalysisDestinationDialog : Form
+    public partial class PrescriptiveAnalysisDestinationDialog : BaseDialog
     {
         private List<int> blockedCategoryID = null;
         public List<RecommendationCategory> blockedCategoriesList = new List<RecommendationCategory>();
@@ -25,6 +25,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public PrescriptiveAnalysisDestinationDialog()
         {
+            this.DialogHeader = "Prescriptive Analysis Settings";
             InitializeComponent();
             AdaptFontSize();
             allCategories = new Dictionary<int, string> { { 1, "Blocking Processes" }, { 2, "Disk" }, { 3, "Database Configuration" }, { 4, "DeadLocks" }, { 5, "Index Optimization" }, { 6, "Long Running Jobs" }, { 7, "Memory" }, { 8, "Network" }, { 9, "Open Transactions" }, { 10, "Processor" }, { 11, "Query Optimization" }, { 12, "Disaster Recovery" }, { 13, "Security" }, { 14, "Server Configuration" }, { 15, "System Page Files" }, { 16, "System Upgrade Suggestion" }, { 17, "Virtual Log Files" }, { 18, "Wait Stats" } };

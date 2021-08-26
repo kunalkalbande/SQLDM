@@ -32,9 +32,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.sqlTextHeaderStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
             this.copyAllButton = new System.Windows.Forms.ToolStripButton();
             this.copySelectedButton = new System.Windows.Forms.ToolStripButton();
-            this.sqlTextTextBox = new System.Windows.Forms.TextBox();
-            this.diagnoseButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
+            this.sqlTextTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.diagnoseButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.contentPanel.SuspendLayout();
             this.sqlTextHeaderStrip.SuspendLayout();
             this.SuspendLayout();
@@ -169,8 +169,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private System.Windows.Forms.ToolStripButton copyAllButton;
         private Idera.SQLdm.DesktopClient.Controls.GradientPanel contentPanel;
         private System.Windows.Forms.ToolStripButton copySelectedButton;
-        private System.Windows.Forms.Button diagnoseButton;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.TextBox sqlTextTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton diagnoseButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox sqlTextTextBox;
     }
 }

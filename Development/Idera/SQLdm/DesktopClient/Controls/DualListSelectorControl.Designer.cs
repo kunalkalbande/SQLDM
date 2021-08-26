@@ -28,14 +28,14 @@ namespace Idera.SQLdm.DesktopClient.Controls
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonRemove = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.listBoxAvailable = new System.Windows.Forms.ListBox();
-            this.listBoxSelected = new System.Windows.Forms.ListBox();
+            this.tableLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.tableLayoutPanel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.buttonRemove = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.buttonAdd = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.listBoxAvailable = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListBox();
+            this.listBoxSelected = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -100,13 +100,11 @@ namespace Idera.SQLdm.DesktopClient.Controls
             // 
             this.buttonRemove.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonRemove.Enabled = false;
-            this.buttonRemove.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonRemove.Location = new System.Drawing.Point(3, 32);
             this.buttonRemove.Name = "buttonRemove";
             this.buttonRemove.Size = new System.Drawing.Size(75, 23);
             this.buttonRemove.TabIndex = 8;
-            this.buttonRemove.Text = "< &Remove";
-            this.buttonRemove.UseVisualStyleBackColor = true;
+            this.buttonRemove.Text = "< Remove";
             this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
             // buttonAdd
@@ -114,19 +112,17 @@ namespace Idera.SQLdm.DesktopClient.Controls
             this.buttonAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonAdd.AutoSize = true;
             this.buttonAdd.Enabled = false;
-            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonAdd.Location = new System.Drawing.Point(3, 3);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdd.Size = new System.Drawing.Size(81, 23);
             this.buttonAdd.TabIndex = 7;
-            this.buttonAdd.Text = "&Add >";
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Text = "Add >";
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // listBoxAvailable
             // 
             this.listBoxAvailable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxAvailable.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            //this.listBoxAvailable.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.listBoxAvailable.FormattingEnabled = true;
             this.listBoxAvailable.Location = new System.Drawing.Point(3, 20);
             this.listBoxAvailable.Name = "listBoxAvailable";
@@ -134,14 +130,15 @@ namespace Idera.SQLdm.DesktopClient.Controls
             this.listBoxAvailable.Size = new System.Drawing.Size(121, 260);
             this.listBoxAvailable.Sorted = true;
             this.listBoxAvailable.TabIndex = 3;
-            this.listBoxAvailable.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListBoxDrawItem);
+            //this.listBoxAvailable.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListBoxDrawItem);
+            this.listBoxAvailable.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.ListBoxMeasureItem);//Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
             this.listBoxAvailable.SelectedIndexChanged += new System.EventHandler(this.listBoxAvailable_SelectedIndexChanged);
             this.listBoxAvailable.DoubleClick += new System.EventHandler(this.listBoxAvailable_DoubleClick);
             // 
             // listBoxSelected
             // 
             this.listBoxSelected.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxSelected.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            //this.listBoxSelected.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.listBoxSelected.FormattingEnabled = true;
             this.listBoxSelected.Location = new System.Drawing.Point(217, 20);
             this.listBoxSelected.Name = "listBoxSelected";
@@ -149,7 +146,8 @@ namespace Idera.SQLdm.DesktopClient.Controls
             this.listBoxSelected.Size = new System.Drawing.Size(121, 260);
             this.listBoxSelected.Sorted = true;
             this.listBoxSelected.TabIndex = 4;
-            this.listBoxSelected.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListBoxDrawItem);
+            //this.listBoxSelected.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListBoxDrawItem);
+            this.listBoxSelected.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.ListBoxMeasureItem);//Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
             this.listBoxSelected.SelectedIndexChanged += new System.EventHandler(this.listBoxSelected_SelectedIndexChanged);
             this.listBoxSelected.DoubleClick += new System.EventHandler(this.listBoxSelected_DoubleClick);
             // 
@@ -170,14 +168,14 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ListBox listBoxSelected;
         private System.Windows.Forms.ListBox listBoxAvailable;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button buttonRemove;
-        private System.Windows.Forms.Button buttonAdd;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton buttonRemove;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton buttonAdd;
 
     }
 }

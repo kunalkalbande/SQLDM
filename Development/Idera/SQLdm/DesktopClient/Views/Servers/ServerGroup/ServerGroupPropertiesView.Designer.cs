@@ -1,7 +1,11 @@
 using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 using Idera.SQLdm.Common.Configuration;
 using Idera.SQLdm.Common.Objects;
+using Idera.SQLdm.DesktopClient.Properties;
 using Infragistics.Win.UltraWinGrid;
+using Microsoft.ReportingServices.ReportRendering;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
 {
@@ -39,6 +43,11 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
         /// </summary>
         private void InitializeComponent()
         {
+            Color backColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor) : System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203))))); ;
+            Color foreColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridForeColor) : Color.Black;
+            Color activeBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridActiveBackColor) : Color.White;
+            Color hoverBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridHoverBackColor) : Color.White;
+            Color borderColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelBorderColor) : Color.Gray;
             this.components = new System.ComponentModel.Container();
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("MonitoredSQLServerConfigurationDisplayWrapper", -1);
@@ -99,62 +108,62 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance24 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance25 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList1 = new Infragistics.Win.ValueList(195913626);
-            Infragistics.Win.ValueList valueList2 = new Infragistics.Win.ValueList(972251);
+            Infragistics.Win.ValueList valueList1 = new Controls.CustomControls.CustomValueList(195913626);
+            Infragistics.Win.ValueList valueList2 = new Controls.CustomControls.CustomValueList(972251);
             Infragistics.Win.Appearance appearance26 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool1 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("columnContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortAscendingButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortDescendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Controls.CustomControls.CustomButtonTool("sortAscendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Controls.CustomControls.CustomButtonTool("sortDescendingButton");
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool1 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("groupByThisColumnButton", "");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Infragistics.Win.UltraWinToolbars.ButtonTool("toggleGroupByBoxButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Infragistics.Win.UltraWinToolbars.ButtonTool("removeThisColumnButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showColumnChooserButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showColumnChooserButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Controls.CustomControls.CustomButtonTool("toggleGroupByBoxButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Controls.CustomControls.CustomButtonTool("removeThisColumnButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Controls.CustomControls.CustomButtonTool("showColumnChooserButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Controls.CustomControls.CustomButtonTool("showColumnChooserButton");
             Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Infragistics.Win.UltraWinToolbars.ButtonTool("toggleGroupByBoxButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Controls.CustomControls.CustomButtonTool("toggleGroupByBoxButton");
             Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortAscendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Controls.CustomControls.CustomButtonTool("sortAscendingButton");
             Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortDescendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Controls.CustomControls.CustomButtonTool("sortDescendingButton");
             Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool2 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("instanceContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool10 = new Infragistics.Win.UltraWinToolbars.ButtonTool("openInstanceButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool11 = new Infragistics.Win.UltraWinToolbars.ButtonTool("refreshInstanceButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool12 = new Infragistics.Win.UltraWinToolbars.ButtonTool("deleteInstanceButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool13 = new Infragistics.Win.UltraWinToolbars.ButtonTool("collapseAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool14 = new Infragistics.Win.UltraWinToolbars.ButtonTool("expandAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool15 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printGridButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool16 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportGridButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool17 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showInstancePropertiesButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool18 = new Infragistics.Win.UltraWinToolbars.ButtonTool("refreshInstanceButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool10 = new Controls.CustomControls.CustomButtonTool("openInstanceButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool11 = new Controls.CustomControls.CustomButtonTool("refreshInstanceButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool12 = new Controls.CustomControls.CustomButtonTool("deleteInstanceButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool13 = new Controls.CustomControls.CustomButtonTool("collapseAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool14 = new Controls.CustomControls.CustomButtonTool("expandAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool15 = new Controls.CustomControls.CustomButtonTool("printGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool16 = new Controls.CustomControls.CustomButtonTool("exportGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool17 = new Controls.CustomControls.CustomButtonTool("showInstancePropertiesButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool18 = new Controls.CustomControls.CustomButtonTool("refreshInstanceButton");
             Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool19 = new Infragistics.Win.UltraWinToolbars.ButtonTool("openInstanceButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool20 = new Infragistics.Win.UltraWinToolbars.ButtonTool("deleteInstanceButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool19 = new Controls.CustomControls.CustomButtonTool("openInstanceButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool20 = new Controls.CustomControls.CustomButtonTool("deleteInstanceButton");
             Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool21 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showInstancePropertiesButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool21 = new Controls.CustomControls.CustomButtonTool("showInstancePropertiesButton");
             Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool22 = new Infragistics.Win.UltraWinToolbars.ButtonTool("removeThisColumnButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool22 = new Controls.CustomControls.CustomButtonTool("removeThisColumnButton");
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool2 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("groupByThisColumnButton", "");
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool3 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("gridContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool23 = new Infragistics.Win.UltraWinToolbars.ButtonTool("collapseAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool24 = new Infragistics.Win.UltraWinToolbars.ButtonTool("expandAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool25 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printGridButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool26 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportGridButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool27 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool23 = new Controls.CustomControls.CustomButtonTool("collapseAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool24 = new Controls.CustomControls.CustomButtonTool("expandAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool25 = new Controls.CustomControls.CustomButtonTool("printGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool26 = new Controls.CustomControls.CustomButtonTool("exportGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool27 = new Controls.CustomControls.CustomButtonTool("exportGridButton");
             Infragistics.Win.Appearance appearance20 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool28 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool28 = new Controls.CustomControls.CustomButtonTool("printGridButton");
             Infragistics.Win.Appearance appearance21 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool29 = new Infragistics.Win.UltraWinToolbars.ButtonTool("collapseAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool30 = new Infragistics.Win.UltraWinToolbars.ButtonTool("expandAllGroupsButton");
-            this.ServerGroupPropertiesView_Fill_Panel = new System.Windows.Forms.Panel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool29 = new Controls.CustomControls.CustomButtonTool("collapseAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool30 = new Controls.CustomControls.CustomButtonTool("expandAllGroupsButton");
+            this.ServerGroupPropertiesView_Fill_Panel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.splitContainer1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomSplitContainer();
             this.propertiesGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.columnHelp = new System.Windows.Forms.TextBox();
-            this.serverValidRange = new System.Windows.Forms.TextBox();
-            this.columnLabel = new System.Windows.Forms.TextBox();
-            this.undoButton = new System.Windows.Forms.Button();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.lblNoSqlservers = new System.Windows.Forms.Label();
+            this.columnHelp = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.serverValidRange = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.columnLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.undoButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.saveButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.lblNoSqlservers = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.ultraGridExcelExporter = new Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter(this.components);
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.ultraGridPrintDocument = new Infragistics.Win.UltraWinGrid.UltraGridPrintDocument(this.components);
@@ -185,6 +194,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             this.ServerGroupPropertiesView_Fill_Panel.Name = "ServerGroupPropertiesView_Fill_Panel";
             this.ServerGroupPropertiesView_Fill_Panel.Size = new System.Drawing.Size(453, 433);
             this.ServerGroupPropertiesView_Fill_Panel.TabIndex = 0;
+            this.ServerGroupPropertiesView_Fill_Panel.BackColor = backColor;
             // 
             // splitContainer1
             // 
@@ -192,6 +202,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitContainer1.BackColor = backColor;
             // 
             // splitContainer1.Panel1
             // 
@@ -199,7 +210,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.splitContainer1.Panel2.BackColor = backColor; //System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
             this.splitContainer1.Panel2.Controls.Add(this.columnHelp);
             this.splitContainer1.Panel2.Controls.Add(this.serverValidRange);
             this.splitContainer1.Panel2.Controls.Add(this.columnLabel);
@@ -212,7 +223,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             // propertiesGrid
             // 
             this.propertiesGrid.DataSource = this.monitoredSqlServerConfigurationBindingSource;
-            appearance3.BackColor = System.Drawing.SystemColors.Window;
+            appearance3.BackColor = backColor; //System.Drawing.SystemColors.Window;
             appearance3.BorderColor = System.Drawing.SystemColors.InactiveCaption;
             this.propertiesGrid.DisplayLayout.Appearance = appearance3;
             ultraGridColumn41.Header.Caption = "SQL Server ID";
@@ -495,7 +506,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             this.propertiesGrid.DisplayLayout.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.True;
             this.propertiesGrid.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid;
             this.propertiesGrid.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Solid;
-            appearance11.BackColor = System.Drawing.SystemColors.Window;
+            appearance11.BackColor = backColor; //System.Drawing.SystemColors.Window;
             this.propertiesGrid.DisplayLayout.Override.CardAreaAppearance = appearance11;
             appearance12.BorderColor = System.Drawing.Color.Silver;
             appearance12.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter;
@@ -505,6 +516,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             this.propertiesGrid.DisplayLayout.Override.CellPadding = 0;
             this.propertiesGrid.DisplayLayout.Override.FixedHeaderIndicator = Infragistics.Win.UltraWinGrid.FixedHeaderIndicator.None;
             this.propertiesGrid.DisplayLayout.Override.GroupByColumnsHidden = Infragistics.Win.DefaultableBoolean.False;
+            this.propertiesGrid.Scale(1.01f);
             appearance22.BackColor = System.Drawing.SystemColors.Control;
             appearance22.BackColor2 = System.Drawing.SystemColors.ControlDark;
             appearance22.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element;
@@ -560,37 +572,39 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             this.columnHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.columnHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
-            this.columnHelp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.columnHelp.BackColor = backColor; //System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.columnHelp.ForeColor = foreColor;
+            this.columnHelp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+           
             this.columnHelp.Location = new System.Drawing.Point(10, 31);
-            this.columnHelp.Multiline = true;
+            //this.columnHelp.Multiline = true;
             this.columnHelp.Name = "columnHelp";
-            this.columnHelp.ReadOnly = true;
-            this.columnHelp.Size = new System.Drawing.Size(336, 98);
+            //this.columnHelp.ReadOnly = true;
+            this.columnHelp.Size = new System.Drawing.Size(315, 98);
             this.columnHelp.TabIndex = 2;
             this.columnHelp.Text = "Click on a cell above for detailed help on that configuration option.";
             // 
             // serverValidRange
             // 
             this.serverValidRange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
-            this.serverValidRange.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.serverValidRange.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.serverValidRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.serverValidRange.Location = new System.Drawing.Point(10, 31);
-            this.serverValidRange.Multiline = true;
+            //this.serverValidRange.Multiline = true;
             this.serverValidRange.Name = "serverValidRange";
-            this.serverValidRange.ReadOnly = true;
+            //this.serverValidRange.ReadOnly = true;
             this.serverValidRange.Size = new System.Drawing.Size(331, 22);
             this.serverValidRange.TabIndex = 5;
             // 
             // columnLabel
             // 
             this.columnLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
-            this.columnLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.columnLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.columnLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.columnLabel.Location = new System.Drawing.Point(5, 8);
-            this.columnLabel.Multiline = true;
+            //this.columnLabel.Multiline = true;
             this.columnLabel.Name = "columnLabel";
-            this.columnLabel.ReadOnly = true;
+            //this.columnLabel.ReadOnly = true;
             this.columnLabel.Size = new System.Drawing.Size(339, 17);
             this.columnLabel.TabIndex = 4;
             this.columnLabel.Text = "Server Properties";
@@ -599,7 +613,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             // 
             this.undoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.undoButton.Enabled = false;
-            this.undoButton.Location = new System.Drawing.Point(356, 31);
+            this.undoButton.Location = new System.Drawing.Point(356, 36);
             this.undoButton.Name = "undoButton";
             this.undoButton.Size = new System.Drawing.Size(94, 22);
             this.undoButton.TabIndex = 1;
@@ -615,7 +629,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(94, 22);
             this.saveButton.TabIndex = 0;
-            this.saveButton.Text = "Save Changes";
+            this.saveButton.Text = "Save Changes ";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
@@ -772,7 +786,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             // _ServerGroupPropertiesView_Toolbars_Dock_Area_Bottom
             // 
             this._ServerGroupPropertiesView_Toolbars_Dock_Area_Bottom.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this._ServerGroupPropertiesView_Toolbars_Dock_Area_Bottom.BackColor = System.Drawing.SystemColors.Control;
+            this._ServerGroupPropertiesView_Toolbars_Dock_Area_Bottom.BackColor = backColor; //System.Drawing.SystemColors.Control;
             this._ServerGroupPropertiesView_Toolbars_Dock_Area_Bottom.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Bottom;
             this._ServerGroupPropertiesView_Toolbars_Dock_Area_Bottom.ForeColor = System.Drawing.SystemColors.ControlText;
             this._ServerGroupPropertiesView_Toolbars_Dock_Area_Bottom.Location = new System.Drawing.Point(0, 433);
@@ -808,7 +822,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
         #endregion
 
         private Idera.SQLdm.DesktopClient.Controls.ContextMenuManager toolbarsManager;
-        private System.Windows.Forms.Panel ServerGroupPropertiesView_Fill_Panel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  ServerGroupPropertiesView_Fill_Panel;
         private Infragistics.Win.UltraWinGrid.UltraGrid propertiesGrid;
         private Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter ultraGridExcelExporter;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
@@ -816,15 +830,15 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
         private Infragistics.Win.Printing.UltraPrintPreviewDialog ultraPrintPreviewDialog;
         private System.Windows.Forms.BindingSource monitoredSqlServerConfigurationBindingSource;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.Button undoButton;
-        private System.Windows.Forms.TextBox columnHelp;
-        private System.Windows.Forms.TextBox columnLabel;
-        private System.Windows.Forms.TextBox serverValidRange;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton saveButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton undoButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel columnHelp;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel columnLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel serverValidRange;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _ServerGroupPropertiesView_Toolbars_Dock_Area_Left;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _ServerGroupPropertiesView_Toolbars_Dock_Area_Right;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _ServerGroupPropertiesView_Toolbars_Dock_Area_Top;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _ServerGroupPropertiesView_Toolbars_Dock_Area_Bottom;
-        private System.Windows.Forms.Label lblNoSqlservers;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblNoSqlservers;
     }
 }

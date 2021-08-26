@@ -28,10 +28,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.lstDestinations = new System.Windows.Forms.CheckedListBox();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.btnOK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.lstDestinations = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckedListBox1();
             this.SuspendLayout();
             // 
             // label1
@@ -100,9 +100,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Button btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
         private System.Windows.Forms.CheckedListBox lstDestinations;
     }
 }

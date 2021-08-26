@@ -16,7 +16,7 @@ using Idera.SQLdm.Common.Snapshots;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class OptimizeScriptDialog : Form
+    public partial class OptimizeScriptDialog : BaseDialog
     {
         private static Logger LOG = Logger.GetLogger("OptimizeScriptDialog");
         private List<IRecommendation> _recommendations = new List<IRecommendation>();
@@ -37,12 +37,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         private OptimizeScriptDialog()
         {
+            this.DialogHeader = "Optimize Now";
             InitializeComponent();
         }
 
         internal OptimizeScriptDialog(Result results)
             : this()
         {
+            this.DialogHeader = "Optimize Now";
             //_instance = instance;
             //Idera.SQLdm.Common.Configuration.ServerConfiguration currentServer = CommonSettings.Default.FindServer(_instance);
             //if (null != currentServer)
@@ -55,6 +57,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         internal OptimizeScriptDialog(Result results, IRecommendation recommendation)
             : this(results)
         {
+            this.DialogHeader = "Optimize Now";
             _recommendations.Clear();
             _recommendations.Add(recommendation);
         }
@@ -62,6 +65,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         internal OptimizeScriptDialog(Result results, IEnumerable<IRecommendation> recommendations, bool allowRun, int instanceId)
             : this(results)
         {
+            this.DialogHeader = "Optimize Now";
             _allowRun = allowRun;
             _recommendations.Clear();
             _recommendations.AddRange(recommendations);

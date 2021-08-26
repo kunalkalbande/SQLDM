@@ -8,8 +8,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 {
     using System.ComponentModel;
     using Common;
+    using System.Drawing;
 
-    public partial class AdvancedQueryFilterConfigurationDialog : Form
+    public partial class AdvancedQueryFilterConfigurationDialog : BaseDialog
     {
         private AdvancedQueryFilterConfiguration configuration;
         private bool settingsChanged = false;
@@ -60,6 +61,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             }
 
             AdaptFontSize();
+            //SQLDM-30848, adapting resolutions, Saurabh
+            this.ClientSize = new Size(700, 650);
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+            SetPropertiesTheme();
+            Infragistics.Windows.Themes.ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
         private void InitLabels()
@@ -300,8 +307,59 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
         }
 
+        //SQLDM-30848, adapting resolutions,Saurabh
+        private void ScaleControlsAsPerResolution()
+        {
+            AutoScaleFontResolutionHelper.Default.AutoScaleFont(this.office2007PropertyPage1.ContentPanel, AutoScaleFontHelper.ControlType.Container);
+            if (AutoScaleSizeHelper.isLargeSize)
+            {
+                this.ClientSize = new Size(1050, 850);
+                this.propertiesControl1.Size = new Size(this.Size.Width - 50, this.Size.Height - 150);
+                this.okButton.Location = new Point(this.okButton.Location.X, this.propertiesControl1.Height + 30);
+                this.cancelButton.Location = new Point(this.cancelButton.Location.X, this.propertiesControl1.Height + 30);
+                var scale = new SizeF(1.1F, 1.1F);
+                this.panel1.Scale(scale);
+                this.rowcountHeaderStrip.Scale(scale);
+                this.sqlTextFilterPanel.Scale(scale);
+                this.databasesFilterPanel.Scale(scale);
+                this.applicationsFilterPanel.Scale(scale);
+                this.propertyPage1.Scale(scale);
+                this.office2007PropertyPage1.Scale(scale);
+                this.office2007PropertyPage1.ContentPanel.Scale(scale);
+            }
+            if (AutoScaleSizeHelper.isXLargeSize)
+            {
+                this.ClientSize = new Size(1050, 850);
+                this.propertiesControl1.Size = new Size(this.Size.Width - 50, this.Size.Height - 150);
+                this.okButton.Location = new Point(this.okButton.Location.X, this.propertiesControl1.Height + 30);
+                this.cancelButton.Location = new Point(this.cancelButton.Location.X, this.propertiesControl1.Height + 30);
+                var scale = new SizeF(1.2F, 1.2F);
+                this.panel1.Scale(scale);
+                this.rowcountHeaderStrip.Scale(scale);
+                this.sqlTextFilterPanel.Scale(scale);
+                this.databasesFilterPanel.Scale(scale);
+                this.applicationsFilterPanel.Scale(scale);
+                this.propertyPage1.Scale(scale);
+                this.office2007PropertyPage1.Scale(scale);
+                this.office2007PropertyPage1.ContentPanel.Scale(scale);
 
-
-
+            }
+            if (AutoScaleSizeHelper.isXXLargeSize)
+            {
+                this.Size = new Size(1500, 1500);
+                this.propertiesControl1.Size = new Size(this.Size.Width - 100, this.Size.Height - 200);
+                this.okButton.Location = new Point(this.okButton.Location.X, this.propertiesControl1.Height + 30);
+                this.cancelButton.Location = new Point(this.cancelButton.Location.X, this.propertiesControl1.Height + 30);
+                var scale = new SizeF(1.22F, 1.22F);
+                this.panel1.Scale(scale);
+                this.rowcountHeaderStrip.Scale(scale);
+                this.sqlTextFilterPanel.Scale(scale);
+                this.databasesFilterPanel.Scale(scale);
+                this.applicationsFilterPanel.Scale(scale);
+                this.propertyPage1.Scale(scale);
+                this.office2007PropertyPage1.Scale(scale);
+                this.office2007PropertyPage1.ContentPanel.Scale(scale);
+            }
+        }
     }
 }

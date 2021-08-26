@@ -2,12 +2,13 @@ using System.Windows.Forms;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class ControlContainerDialog : Form
+    public partial class ControlContainerDialog : BaseDialog
     {
         private bool hideOnDeactivate = true;
 
         public ControlContainerDialog()
         {
+            this.DialogHeader = "ControlContainerDialog";
             InitializeComponent();
         }
 

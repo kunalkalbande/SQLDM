@@ -1,6 +1,6 @@
 ﻿namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
 {
-    partial class ServerGroupHeatmapView
+    partial class ServerGroupHeatMapView
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,46 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.flowLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel(); //changed from flowlayout to table layout
+            this.ServerGroupHeatMapView_Fill_Panel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.ServerGroupHeatMapView_Fill_Panel.SuspendLayout();
             this.SuspendLayout();
+            //
+            // noInstancesLabel
+            //
+            this.NoInstancesLabel = new System.Windows.Forms.Label();
+            this.NoInstancesLabel.Text = "No instances to show in this view";
+            this.NoInstancesLabel.Location = new System.Drawing.Point(300, 5);
+            this.NoInstancesLabel.Size = new System.Drawing.Size(300,20);
+            // flowLayoutPanel
             // 
-            // label1
+            this.flowLayoutPanel.AutoScroll = true;
+            this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(10, 10);
+            this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(940, 940);
+            this.flowLayoutPanel.TabIndex = 0;
+            this.flowLayoutPanel.Visible = false;
+            //this.flowLayoutPanel.Click += ServerGroupHeatMapView_Click;
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Heatmap Here";
+            // ServerGroupHeatMapView_Fill_Panel
             // 
-            // webBrowser1
+            this.ServerGroupHeatMapView_Fill_Panel.AutoScroll = true;
+            this.ServerGroupHeatMapView_Fill_Panel.Controls.Add(this.flowLayoutPanel);
+            this.ServerGroupHeatMapView_Fill_Panel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ServerGroupHeatMapView_Fill_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ServerGroupHeatMapView_Fill_Panel.Location = new System.Drawing.Point(0, 0);
+            this.ServerGroupHeatMapView_Fill_Panel.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.ServerGroupHeatMapView_Fill_Panel.Name = "ServerGroupHeatMapView_Fill_Panel";
+            this.ServerGroupHeatMapView_Fill_Panel.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.ServerGroupHeatMapView_Fill_Panel.Size = new System.Drawing.Size(960, 960);
+            this.ServerGroupHeatMapView_Fill_Panel.TabIndex = 0;
             // 
-            this.webBrowser1.AllowNavigation = false;
-            this.webBrowser1.AllowWebBrowserDrop = false;
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(150, 150);
-            this.webBrowser1.TabIndex = 1;
+            // ServerGroupHeatMapView
             // 
-            // ServerGroupHeatmapView
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.webBrowser1);
-            this.Controls.Add(this.label1);
-            this.Name = "ServerGroupHeatmapView";
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.ServerGroupHeatMapView_Fill_Panel);
+            this.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.Name = "ServerGroupHeatMapView";
+            this.Size = new System.Drawing.Size(960, 960);
+            this.ServerGroupHeatMapView_Fill_Panel.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
-        #endregion
+       
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.WebBrowser webBrowser1;
+
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel flowLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  ServerGroupHeatMapView_Fill_Panel;
+        private System.Windows.Forms.Label NoInstancesLabel;
+
+        
+        #endregion
     }
 }

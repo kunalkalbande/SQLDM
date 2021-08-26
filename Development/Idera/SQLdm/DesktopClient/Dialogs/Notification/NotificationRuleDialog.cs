@@ -28,7 +28,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
     [PermissionSet(SecurityAction.LinkDemand, Name = "FullTrust")]
     [ComVisible(true)]
-    public partial class NotificationRuleDialog : Form, IAuditable
+    public partial class NotificationRuleDialog : BaseDialog, IAuditable
     {
         private static readonly BBS.TracerX.Logger LOG = BBS.TracerX.Logger.GetLogger("NotificationRuleDialog");
         private bool loading;
@@ -43,6 +43,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public NotificationRuleDialog(IManagementService managementService, MetricDefinitions metricDefinitions)
         {
+            this.DialogHeader = "Alert Response";
             InitializeComponent();
             this.managementService = managementService;
             this.metricDefinitions = metricDefinitions;
@@ -90,6 +91,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public NotificationRuleDialog(IManagementService managementService, MetricDefinitions metricDefinitions, List<NotificationProviderInfo> providers, bool forceDestination)
         {
+            this.DialogHeader = "Alert Response";
             InitializeComponent();
             this.managementService = managementService;
             this.metricDefinitions = metricDefinitions;

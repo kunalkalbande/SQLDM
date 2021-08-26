@@ -29,17 +29,17 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HelpPopupDialog));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.footerPanel = new Idera.SQLdm.DesktopClient.Controls.GradientPanel();
-            this.showHelpContentsLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.footerDividerLabel = new System.Windows.Forms.Label();
-            this.configureAlertsLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.showDetailsLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.showHelpContentsLinkLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.footerDividerLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.configureAlertsLinkLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.showDetailsLinkLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
             this.headerPanel = new Idera.SQLdm.DesktopClient.Controls.GradientPanel();
             this.closeButton = new System.Windows.Forms.PictureBox();
-            this.titleDividerLabel = new System.Windows.Forms.Label();
-            this.titleLabel = new System.Windows.Forms.Label();
+            this.titleDividerLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.titleLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.dialogIcon = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.footerPanel.SuspendLayout();
@@ -243,17 +243,17 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
         private Idera.SQLdm.DesktopClient.Controls.GradientPanel headerPanel;
         private System.Windows.Forms.PictureBox dialogIcon;
-        private System.Windows.Forms.Label titleLabel;
-        private System.Windows.Forms.Label titleDividerLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel titleLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel titleDividerLabel;
         private System.Windows.Forms.PictureBox closeButton;
-        private System.Windows.Forms.LinkLabel showDetailsLinkLabel;
-        private System.Windows.Forms.LinkLabel configureAlertsLinkLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel showDetailsLinkLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel configureAlertsLinkLabel;
         private System.Windows.Forms.WebBrowser webBrowser;
-        private System.Windows.Forms.LinkLabel showHelpContentsLinkLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel showHelpContentsLinkLabel;
         private Idera.SQLdm.DesktopClient.Controls.GradientPanel footerPanel;
-        private System.Windows.Forms.Label footerDividerLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel footerDividerLabel;
     }
 }

@@ -1,5 +1,8 @@
 
+using Idera.SQLdm.DesktopClient;
 using Idera.SQLdm.DesktopClient.Controls;
+using System.Drawing;
+
 namespace Idera.SQLdm.StandardClient.Dialogs
 {
     partial class BlockRecommendationsDialog
@@ -31,15 +34,15 @@ namespace Idera.SQLdm.StandardClient.Dialogs
         {
             this.components = new System.ComponentModel.Container();
             this.listViewImages = new System.Windows.Forms.ImageList(this.components);
-            this.btnBlockSelected = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.gradientPanel1 = new GradientPanel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.lvRecommendationTypes = new System.Windows.Forms.ListView();
+            this.btnBlockSelected = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.gradientPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGradientPanel();
+            this.splitContainer1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomSplitContainer();
+            this.lvRecommendationTypes = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListView();
             this.colRecommendation = new System.Windows.Forms.ColumnHeader();
-            this.lvDatabases = new System.Windows.Forms.ListView();
+            this.lvDatabases = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListView();
             this.colDatabase = new System.Windows.Forms.ColumnHeader();
-            this.copyrightLabel = new System.Windows.Forms.Label();
+            this.copyrightLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.gradientPanel1.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -60,7 +63,7 @@ namespace Idera.SQLdm.StandardClient.Dialogs
             this.btnBlockSelected.Name = "btnBlockSelected";
             this.btnBlockSelected.Size = new System.Drawing.Size(87, 23);
             this.btnBlockSelected.TabIndex = 0;
-            this.btnBlockSelected.Text = "&Block Selected";
+            this.btnBlockSelected.Text = "Block Selected";
             this.btnBlockSelected.Click += new System.EventHandler(this.btnBlockSelected_Click);
             // 
             // btnCancel
@@ -76,7 +79,7 @@ namespace Idera.SQLdm.StandardClient.Dialogs
             // 
             // gradientPanel1
             // 
-            this.gradientPanel1.BackColor = System.Drawing.SystemColors.Control;
+          
             this.gradientPanel1.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(203)))), ((int)(((byte)(204)))));
             this.gradientPanel1.BorderColor = System.Drawing.SystemColors.ControlDark;
             this.gradientPanel1.Controls.Add(this.splitContainer1);
@@ -127,7 +130,7 @@ namespace Idera.SQLdm.StandardClient.Dialogs
             // colRecommendation
             // 
             this.colRecommendation.Text = "Recommendation Type";
-            this.colRecommendation.Width = 430;
+            this.colRecommendation.Width = 463;
             // 
             // lvDatabases
             // 
@@ -187,15 +190,15 @@ namespace Idera.SQLdm.StandardClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button btnBlockSelected;
-        private System.Windows.Forms.Button btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnBlockSelected;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
         private GradientPanel gradientPanel1;
-        private System.Windows.Forms.Label copyrightLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel copyrightLabel;
         private System.Windows.Forms.ImageList listViewImages;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.ListView lvRecommendationTypes;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListView lvRecommendationTypes;
         private System.Windows.Forms.ColumnHeader colRecommendation;
-        private System.Windows.Forms.ListView lvDatabases;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListView lvDatabases;
         private System.Windows.Forms.ColumnHeader colDatabase;
     }
 }

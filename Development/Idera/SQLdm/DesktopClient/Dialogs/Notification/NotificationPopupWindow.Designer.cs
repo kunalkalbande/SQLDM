@@ -1,3 +1,7 @@
+using System.Drawing;
+using Idera.SQLdm.DesktopClient.Properties;
+using Microsoft.ReportingServices.Interfaces;
+
 namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 {
     partial class NotificationPopupWindow
@@ -30,22 +34,22 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NotificationPopupWindow));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.panel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.renderTimer = new System.Windows.Forms.Timer(this.components);
             this.contentPanel = new Idera.SQLdm.DesktopClient.Controls.GradientPanel();
-            this.linksLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.showActiveAlertsLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.messageLabel = new System.Windows.Forms.Label();
-            this.headerPanel = new Idera.SQLdm.DesktopClient.Controls.GradientPanel();
+            this.linksLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.linkLabel5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.linkLabel4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.linkLabel3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.linkLabel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.linkLabel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.showActiveAlertsLinkLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.messageLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.headerPanel = new Idera.SQLdm.DesktopClient.Controls.GradientPanel(); 
             this.closeButton = new System.Windows.Forms.PictureBox();
-            this.titleDividerLabel = new System.Windows.Forms.Label();
-            this.titleLabel = new System.Windows.Forms.Label();
+            this.titleDividerLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.titleLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.dialogIcon = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -83,9 +87,18 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.renderTimer.Tick += new System.EventHandler(this.renderTimer_Tick);
             // 
             // contentPanel
-            // 
-            this.contentPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            this.contentPanel.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            //
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                this.contentPanel.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+                this.contentPanel.BackColor2 = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+            }
+            else
+            {
+                this.contentPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+                this.contentPanel.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            }
+            
             this.contentPanel.BorderColor = System.Drawing.SystemColors.ControlDark;
             this.contentPanel.BorderWidth = 0;
             this.contentPanel.Controls.Add(this.linksLayoutPanel);
@@ -250,8 +263,17 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             // 
             // headerPanel
             // 
-            this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.headerPanel.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                this.headerPanel.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+                this.headerPanel.BackColor2 = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+            }
+            else
+            {
+                this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+                this.headerPanel.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            }
+            
             this.headerPanel.BorderColor = System.Drawing.SystemColors.ControlDark;
             this.headerPanel.BorderWidth = 0;
             this.headerPanel.Controls.Add(this.closeButton);
@@ -344,22 +366,22 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
         private Idera.SQLdm.DesktopClient.Controls.GradientPanel headerPanel;
         private System.Windows.Forms.PictureBox closeButton;
-        private System.Windows.Forms.Label titleDividerLabel;
-        private System.Windows.Forms.Label titleLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel titleDividerLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel titleLabel;
         private System.Windows.Forms.PictureBox dialogIcon;
-        private System.Windows.Forms.Panel panel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel2;
         private Idera.SQLdm.DesktopClient.Controls.GradientPanel contentPanel;
-        private System.Windows.Forms.LinkLabel showActiveAlertsLinkLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel showActiveAlertsLinkLabel;
         private System.Windows.Forms.Timer renderTimer;
-        private System.Windows.Forms.TableLayoutPanel linksLayoutPanel;
-        private System.Windows.Forms.LinkLabel linkLabel5;
-        private System.Windows.Forms.LinkLabel linkLabel4;
-        private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label messageLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel linksLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel linkLabel5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel linkLabel4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel linkLabel3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel linkLabel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel linkLabel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel messageLabel;
     }
 }

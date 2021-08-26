@@ -141,10 +141,6 @@ namespace Idera.SQLdm.DesktopClient.Objects
                         {
                             base.Add(newItem);
                         }
-                        else
-                        {
-
-                        }
                     }
 
                     OnChanged(new MonitoredSqlServerCollectionChangedEventArgs(KeyedCollectionChangeType.Added, newItems));

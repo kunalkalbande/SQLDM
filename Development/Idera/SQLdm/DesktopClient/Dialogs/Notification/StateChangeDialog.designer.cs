@@ -32,8 +32,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
             System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnOK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.previousListView = new Idera.SQLdm.Common.UI.Controls.CheckedListView();
             this.previousSeverityHeader = new System.Windows.Forms.ColumnHeader();
             this.newListView = new Idera.SQLdm.Common.UI.Controls.CheckedListView();
@@ -146,8 +146,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         #endregion
 
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnOK;
         private Idera.SQLdm.Common.UI.Controls.CheckedListView previousListView;
         private System.Windows.Forms.ColumnHeader previousSeverityHeader;
         private Idera.SQLdm.Common.UI.Controls.CheckedListView newListView;

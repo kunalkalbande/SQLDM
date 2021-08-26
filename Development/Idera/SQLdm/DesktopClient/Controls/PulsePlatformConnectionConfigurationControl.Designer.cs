@@ -28,8 +28,8 @@ namespace Idera.SQLdm.DesktopClient.Controls
         /// </summary>
         private void InitializeComponent()
         {
-            this._pulseServerTextBox = new System.Windows.Forms.TextBox();
-            this._testConnectionButton = new System.Windows.Forms.Button();
+            this._pulseServerTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this._testConnectionButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this._testConnectionProgressControl = new MRG.Controls.UI.LoadingCircle();
             this._testConnectionWorker = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
@@ -92,8 +92,8 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
         #endregion
 
-        private System.Windows.Forms.TextBox _pulseServerTextBox;
-        private System.Windows.Forms.Button _testConnectionButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox _pulseServerTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton _testConnectionButton;
         private MRG.Controls.UI.LoadingCircle _testConnectionProgressControl;
         private System.ComponentModel.BackgroundWorker _testConnectionWorker;
 

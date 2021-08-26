@@ -18,6 +18,8 @@ using Idera.SQLdm.DesktopClient.Objects;
 using Idera.SQLdm.DesktopClient.Views.Servers.Server;
 using Idera.SQLdm.DesktopClient.Dialogs;
 using Idera.SQLdm.Common.UI.Dialogs;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Properties;
 
 namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
 {
@@ -64,6 +66,18 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
             }
 
             helpTopic = HelpTopics.ServerDashboardViewMemoryPanel;
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+            else
+            {
+                this.pagingPanel.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
+                this.usagePanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            }
+        }
+        private void ScaleControlsAsPerResolution()
+        {
+            this.pagingPanel.Padding = new System.Windows.Forms.Padding(10,0,10,10);
+            this.usagePanel.Padding = new System.Windows.Forms.Padding(0,10,0,10);
         }
 
         internal override void Initialize(ServerBaseView baseView, ServerSummaryHistoryData history)
@@ -154,7 +168,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
             string serverType = "Unknown";
             Boolean pagingPanelVisibility = false;
             int colSpan = 2;
-            if (status != null && status.Instance!=null && status.Instance.Instance.IsVirtualized)
+            if (status != null && status.Instance.Instance.IsVirtualized)
             {
                 serverType = status.Instance.Instance.VirtualizationConfiguration.VCServerType;
                 pagingPanelVisibility = serverType.Equals("HyperV") ? true : false;

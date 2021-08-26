@@ -28,8 +28,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.label4 = new System.Windows.Forms.Label();
-            this.startTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.startTimePicker = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDateTimePicker();
             this.panel1.SuspendLayout();
             this.filterPanel.SuspendLayout();
             this.SuspendLayout();
@@ -141,7 +141,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
 
         #endregion
 
-        private System.Windows.Forms.Label label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
         private System.Windows.Forms.DateTimePicker startTimePicker;
     }
 }

@@ -30,13 +30,13 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.informationBox = new Divelements.WizardFramework.InformationBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.informationBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.stackLayoutPanel1 = new Idera.SQLdm.Common.UI.Controls.StackLayoutPanel();
-            this.serverList = new System.Windows.Forms.ListBox();
-            this.noneSelectedLabel = new System.Windows.Forms.Label();
+            this.serverList = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListBox();
+            this.noneSelectedLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.panel1.SuspendLayout();
             this.stackLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -144,12 +144,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
-        private Divelements.WizardFramework.InformationBox informationBox;
-        private System.Windows.Forms.Panel panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox informationBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
         private Idera.SQLdm.Common.UI.Controls.StackLayoutPanel stackLayoutPanel1;
-        private System.Windows.Forms.Label noneSelectedLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel noneSelectedLabel;
         private System.Windows.Forms.ListBox serverList;
     }
 }

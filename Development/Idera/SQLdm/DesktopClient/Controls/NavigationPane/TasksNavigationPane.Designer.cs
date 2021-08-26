@@ -33,20 +33,20 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.activeTasksRadioButton = new System.Windows.Forms.RadioButton();
-            this.dividerLabel1 = new System.Windows.Forms.Label();
-            this.completedTasksRadioButton = new System.Windows.Forms.RadioButton();
-            this.byOwnerRadioButton = new System.Windows.Forms.RadioButton();
-            this.byStatusRadioButton = new System.Windows.Forms.RadioButton();
-            this.toggleFilterOptionsLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.currentViewPanel = new System.Windows.Forms.Panel();
-            this.customRadioButton = new System.Windows.Forms.RadioButton();
+            this.activeTasksRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.dividerLabel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.completedTasksRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.byOwnerRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.byStatusRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.toggleFilterOptionsLinkLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.currentViewPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.customRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
             this.currentViewHeaderStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
             this.currentViewHeaderStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.toggleCurrentViewPanelButton = new System.Windows.Forms.ToolStripButton();
-            this.actionsPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.notificationRulesLabel = new System.Windows.Forms.LinkLabel();
+            this.actionsPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.notificationRulesLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
             this.currentViewPanel.SuspendLayout();
             this.currentViewHeaderStrip.SuspendLayout();
             this.actionsPanel.SuspendLayout();
@@ -238,19 +238,19 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane {
 
         #endregion
 
-        private System.Windows.Forms.RadioButton activeTasksRadioButton;
-        private System.Windows.Forms.Label dividerLabel1;
-        private System.Windows.Forms.RadioButton completedTasksRadioButton;
-        private System.Windows.Forms.RadioButton byOwnerRadioButton;
-        private System.Windows.Forms.RadioButton byStatusRadioButton;
-        private System.Windows.Forms.LinkLabel toggleFilterOptionsLinkLabel;
-        private System.Windows.Forms.Panel currentViewPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton activeTasksRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel dividerLabel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton completedTasksRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton byOwnerRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton byStatusRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel toggleFilterOptionsLinkLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  currentViewPanel;
         private HeaderStrip currentViewHeaderStrip;
         private System.Windows.Forms.ToolStripLabel currentViewHeaderStripLabel;
         private System.Windows.Forms.ToolStripButton toggleCurrentViewPanelButton;
-        private System.Windows.Forms.Panel actionsPanel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel notificationRulesLabel;
-        private System.Windows.Forms.RadioButton customRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  actionsPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel notificationRulesLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton customRadioButton;
     }
 }

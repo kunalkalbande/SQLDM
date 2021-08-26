@@ -15,6 +15,7 @@ using Wintellect.PowerCollections;
 using System.Diagnostics;
 using Idera.SQLdm.DesktopClient.Properties;
 
+
 namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
 {
     internal partial class ServerGroupThumbnailView : UserControl
@@ -44,13 +45,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                 stopWatch.Start();
                 parentView = parent;
                 view = initView;
-            foreach (var con in Settings.Default.RepositoryConnections)
-            {
-                if (!ApplicationModel.Default.RepoActiveInstances.ContainsKey(con.RepositiryId))
-                    ApplicationModel.Default.RepoActiveInstances.Add(con.RepositiryId, new MonitoredSqlServerCollection());
-            }
-            foreach (var key in ApplicationModel.Default.RepoActiveInstances.Keys)
-                ApplicationModel.Default.RepoActiveInstances[key].Changed += ActiveInstances_Changed;
+
+                ApplicationModel.Default.ActiveInstances.Changed += ActiveInstances_Changed;
                 ApplicationController.Default.BackgroundRefreshCompleted += BackgroundRefreshCompleted;
 
                 if (view != null)
@@ -293,13 +289,10 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                     {
                         Stopwatch stopWatch = new Stopwatch();
                         stopWatch.Start();
-                    foreach (var key in ApplicationModel.Default.RepoActiveInstances.Keys)
-                    {
-                        foreach (MonitoredSqlServerWrapper instance in ApplicationModel.Default.RepoActiveInstances[key])
+                        foreach (MonitoredSqlServerWrapper instance in ApplicationModel.Default.ActiveInstances)
                         {
-                            AddThumbnail(instance.Id, instance.RepoId);
+                            AddThumbnail(instance.Id);
                         }
-                    }
                         stopWatch.Stop();
                         StartUpTimeLog.DebugFormat("Time taken by AddThumbnail() number of monitored sql server times : {0}", stopWatch.ElapsedMilliseconds);
                     }
@@ -310,8 +303,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
 
                         foreach (int instanceId in staticUserView.Instances)
                         {
-                            var id = RepositoryHelper.GetSelectedInstanceId(instanceId);
-                            AddThumbnail(id);
+                            AddThumbnail(instanceId);
                         }
                     }
                     else if (view is int)
@@ -335,41 +327,30 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                 StartUpTimeLog.DebugFormat("Time taken by ServerGroupThumbnailView.LoadThumbnails : {0}",stopWatchMain.ElapsedMilliseconds);
         }
 
-        private void AddThumbnail(int instanceId,int repoId=0)
+        private void AddThumbnail(int instanceId)
         {
-            if (repoId == 0) repoId = Settings.Default.RepoId;
             lock (updateLock)
             {
-            
-                //if (!thumbnails.ContainsKey(instanceId) &&
-                //    ApplicationModel.Default.RepoActiveInstances[repoId].Contains(instanceId))
-                    if (
-                 ApplicationModel.Default.RepoActiveInstances[repoId].Contains(instanceId))
+                if (!thumbnails.ContainsKey(instanceId) &&
+                    ApplicationModel.Default.ActiveInstances.Contains(instanceId))
+                {
+                    MonitoredSqlServerWrapper instance = ApplicationModel.Default.ActiveInstances[instanceId];
+                    instance.Changed += parentView.instance_Changed;
+
+                    SqlServerInstanceThumbnail thumbnail = new SqlServerInstanceThumbnail(instanceId);
+                    thumbnail.SelectedChanged += thumbnail_SelectedChanged;
+                    thumbnail.MouseDown += thumbnail_MouseDown;
+                    thumbnail.MouseOverChanged += mouseOverChangedHandler;
+                    thumbnail.ToolTipManager = toolTipManager;
+                    thumbnails.Add(instanceId, thumbnail);
+
+                    flowLayoutPanel.Controls.Add(thumbnail);
+                    flowLayoutPanel.Controls.SetChildIndex(thumbnail, GetThumbnailInsertIndex(instance.InstanceName));
+
+                    if (thumbnails.Count >= 1)
                     {
-                    MonitoredSqlServerWrapper instance = ApplicationModel.Default.RepoActiveInstances[repoId][instanceId];
-                    if (!thumbnails.ContainsKey(instance.InstanceId))
-                    {
-                        instance.Changed += parentView.instance_Changed;
-
-                        SqlServerInstanceThumbnail thumbnail = new SqlServerInstanceThumbnail(instanceId, repoId);
-                        thumbnail.SelectedChanged += thumbnail_SelectedChanged;
-                        thumbnail.MouseDown += thumbnail_MouseDown;
-                        thumbnail.MouseOverChanged += mouseOverChangedHandler;
-                        thumbnail.ToolTipManager = toolTipManager;
-                        thumbnails.Add(instance.InstanceId, thumbnail);
-
-                        flowLayoutPanel.Controls.Add(thumbnail);
-                        flowLayoutPanel.Controls.SetChildIndex(thumbnail, GetThumbnailInsertIndex(instance.InstanceName));
-
-                        if (thumbnails.Count >= 1)
-                        {
-                            flowLayoutPanel.Visible = true;
-                            shortcutPanel.Visible = true;
-                        }
-                    }
-                    else
-                    {
-
+                        flowLayoutPanel.Visible = true;
+                        shortcutPanel.Visible = true;
                     }
                 }
             }
@@ -405,7 +386,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                     case KeyedCollectionChangeType.Added:
                         foreach (MonitoredSqlServerWrapper instance in e.Instances)
                         {
-                            AddThumbnail(instance.Id,instance.RepoId);
+                            AddThumbnail(instance.Id);
                         }
                         ApplicationController.Default.RefreshActiveView();
                         break;
@@ -667,7 +648,6 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                 }
 
                 selectedThumbnail = thumbnail;
-                Settings.Default.CurrentRepoId = selectedThumbnail.Instance.RepoId;
                 ApplicationModel.Default.FocusObject =
                     ApplicationModel.Default.ActiveInstances[selectedThumbnail.InstanceId];
             }
@@ -738,17 +718,15 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
         {
             foreach (int instanceId in thumbnails.Keys)
             {
-                var id = RepositoryHelper.GetSelectedInstanceId(instanceId);
-                var repoid = Settings.Default.RepoId;
                 Pair<DataView, DataView> instanceViews = new Pair<DataView, DataView>();
 
                 instanceViews.First = new DataView(data.First,
-                                                   string.Format("SQLServerID = {0} and RepoId = {1}", id,repoid),
+                                                   string.Format("SQLServerID = {0}", instanceId),
                                                    "",
                                                    DataViewRowState.CurrentRows);
 
                 instanceViews.Second = new DataView(data.Second,
-                                                    string.Format("SQLServerID = {0} and RepoId = {1}", id, repoid),
+                                                    string.Format("SQLServerID = {0}", instanceId),
                                                     "",
                                                     DataViewRowState.CurrentRows);
 

@@ -34,12 +34,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintenanceModeConflicts));
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.flowLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFlowLayoutPanel();
             this.dataGridView1 = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.headerLayoutPanel = new System.Windows.Forms.Panel();
-            this.gridPanel = new System.Windows.Forms.Panel();
+            this.headerLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.gridPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.headerText = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -150,11 +150,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel headerLayoutPanel;
-        private System.Windows.Forms.Panel gridPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFlowLayoutPanel flowLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  headerLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  gridPanel;
         private PropertiesHeaderStrip headerText;
         private UltraGrid dataGridView1;
     }

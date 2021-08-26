@@ -20,6 +20,8 @@ using Infragistics.Win.UltraWinDataSource;
 using Infragistics.Win.UltraWinGrid;
 using Infragistics.Win;
 using System.Drawing.Drawing2D;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Controls;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
 {
@@ -77,13 +79,28 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
             setBackgroundColor();
             // Autoscale font size.
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
 
             Settings.Default.PropertyChanged += Settings_PropertyChanged;
 
             MonitoredSqlServerWrapper instanceObject = ApplicationModel.Default.ActiveInstances[instanceId];
             ShowVMData(instanceObject.Instance.IsVirtualized);
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
         }
-
+        private void ScaleControlsAsPerResolution()
+        {
+            this.memoryUsageChart.LegendBox.Style = LegendBoxStyles.Wordbreak;
+            this.memoryUsageChart.LegendBox.ContentLayout = ContentLayout.Spread;
+            //this.memoryAreasChart.LegendBox.Width = 50;
+            this.memoryUsageChart.LegendBox.AutoSize = true;
+            this.memoryAreasChart.LegendBox.AutoSize = true;
+            this.cacheChart.LegendBox.AutoSize = true;
+            this.pagingChart.LegendBox.AutoSize = true;
+            this.cacheHitRatesChart.LegendBox.AutoSize = true;
+            this.pageLifeExpectancyChart.LegendBox.AutoSize = true;
+    }
         /// <summary>
         /// Start datetime for custom range, otherwise null.
         /// </summary>
@@ -829,7 +846,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
                     memoryAreasChart.Visible = true;
                 else
                 {
-                    if(status.Instance.Instance.CloudProviderId==2)
+                    if(status!=null && status.Instance.Instance.CloudProviderId==2)
                         memoryAreasChart.Visible = true;
                     else
                         memoryAreasChart.Visible = false;
@@ -1685,6 +1702,18 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.topDatabasesGrid);
         }
 
         private void InitializeDatabasesGrid()

@@ -1,3 +1,4 @@
+using Idera.SQLdm.DesktopClient.Properties;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -40,20 +41,24 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
             if (ClientRectangle.Width > 0 && ClientRectangle.Height > 0)
             {
+                Color backcolor1 = Color.FromArgb(218, 218, 218);
+                Color backcolor2 = Color.FromArgb(225, 225, 225);
+
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    backcolor1 = ColorTranslator.FromHtml(DarkThemeColorConstants.HeaderStripBackColor);
+                    backcolor2 = ColorTranslator.FromHtml(DarkThemeColorConstants.HeaderStripBackColor);
+                    ForeColor = Color.White;
+                }
+
                 using (var brush = new LinearGradientBrush(e.ClipRectangle,
-                                                           Color.FromArgb(218,218,218),
-                                                           Color.FromArgb(225,225,225),
-                                                           LinearGradientMode.Vertical))
+                                                       backcolor1,
+                                                        backcolor2,
+                                                        LinearGradientMode.Vertical))
                 {
                     e.Graphics.FillRectangle(brush, ClientRectangle);
                 }
 
-                //using (Pen pen = new Pen(Color.FromArgb(0,0,0)))
-                //{
-                //    e.Graphics.DrawLine(pen, ClientRectangle.X, ClientRectangle.Y + ClientRectangle.Height - 1,
-                //                        ClientRectangle.X + ClientRectangle.Width,
-                //                        ClientRectangle.Y + ClientRectangle.Height - 1);
-                //}
 
                 using (SolidBrush textBrush = new SolidBrush(ForeColor))
                 {

@@ -28,9 +28,10 @@ namespace Idera.SQLdm.DesktopClient.Views.Alerts
     using Objects;
     using Properties;
     using Wintellect.PowerCollections;
-    using Resources=Idera.SQLdm.DesktopClient.Properties.Resources;
-    using View=Idera.SQLdm.DesktopClient.Views.View;
+    using Resources = Idera.SQLdm.DesktopClient.Properties.Resources;
+    using View = Idera.SQLdm.DesktopClient.Views.View;
     using Idera.SQLdm.DesktopClient.Views.Servers.Server;
+    using Infragistics.Windows.Themes;
 
     internal partial class AlertsView : View
     {
@@ -62,6 +63,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Alerts
         private int lastSplitterDistance = 0;
 
         private bool showHistoricalView = false;
+
         private Control focused;
 
         ////[START] SQLdm 9.1 (Gaurav Karwal): for launching alert screen in the context of these values
@@ -72,33 +74,144 @@ namespace Idera.SQLdm.DesktopClient.Views.Alerts
 
         #endregion
 
+        ThemeSetter themeSetter = new ThemeSetter();
+
+        public Color ultragridBackColor = Settings.Default.ColorScheme == "Dark" ? System.Drawing.ColorTranslator.FromHtml("#012A4F") : System.Drawing.Color.White;
+        public Color ultragridForeColor = Settings.Default.ColorScheme == "Dark" ? System.Drawing.Color.White : System.Drawing.Color.Black;
+
         public AlertsView()
         {
-                InitializeComponent();
-                Stopwatch stopWatch = new Stopwatch();
-                stopWatch.Start();
-                alertsGrid.CreationFilter = new NoTooltip();
-                stopWatch.Stop();
-                StartUpTimeLog.DebugFormat("Time taken by NoTooltip() : {0}", stopWatch.ElapsedMilliseconds);
+            InitializeComponent();
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+            alertsGrid.CreationFilter = new NoTooltip();
+            stopWatch.Stop();
+            StartUpTimeLog.DebugFormat("Time taken by NoTooltip() : {0}", stopWatch.ElapsedMilliseconds);
 
-                noSelectionLabel.BringToFront();
+            noSelectionLabel.BringToFront();
 
-                stopWatch.Reset();
-                stopWatch.Start();
-                alertsGrid.DrawFilter = new HideFocusRectangleDrawFilter();
-                stopWatch.Stop();
-                StartUpTimeLog.DebugFormat("Time taken by HideFocusRectangleDrawFilter() : {0}", stopWatch.ElapsedMilliseconds);
+            stopWatch.Reset();
+            stopWatch.Start();
+            alertsGrid.DrawFilter = new HideFocusRectangleDrawFilter();
+            stopWatch.Stop();
+            StartUpTimeLog.DebugFormat("Time taken by HideFocusRectangleDrawFilter() : {0}", stopWatch.ElapsedMilliseconds);
 
-                appliedFilter = new AlertFilter();
-                appliedFilter.ActiveOnly = true;
-                pendingFilter = (AlertFilter)appliedFilter.Clone();
-                customFilter = new AlertFilter();
-              
-                SetFilter(pendingFilter);
-                
-                AdaptFontSize();
+            appliedFilter = new AlertFilter();
+            appliedFilter.ActiveOnly = true;
+            pendingFilter = (AlertFilter)appliedFilter.Clone();
+            customFilter = new AlertFilter();
+
+            SetFilter(pendingFilter);
+
+            AdaptFontSize();
+            SetGridTheme();
+            UpdateTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            //SetTheme();
+            SetGridTheme();
+            UpdateFilter();
+            UpdateTheme();
+        }
+
+        private void UpdateFilter()
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                toggleFilterOptionsPanelButton.Image = filterOptionsPanel.Visible ? Resources.UpArrowsDark : Resources.DownArrowsDark;
+            }
+            else
+            {
+                toggleFilterOptionsPanelButton.Image = filterOptionsPanel.Visible ? Resources.UpArrows : Resources.DownArrows;
+            }
+        }
+
+        private void SetTheme()
+        {
+            ultragridBackColor = Settings.Default.ColorScheme == "Dark" ? System.Drawing.ColorTranslator.FromHtml("#012A4F") : System.Drawing.Color.White;
+            ultragridForeColor = Settings.Default.ColorScheme == "Dark" ? System.Drawing.Color.White : System.Drawing.Color.Black;
+            
+            RowsCollection gridRows = this.alertsGrid.Rows;
+            foreach (var item in gridRows)
+            {
+                item.Appearance.ForeColor = ultragridForeColor;
+                item.Appearance.BackColor = ultragridBackColor;
+            }
+
+        }
+
+        public void UpdateTheme()
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                Color forecolor = ColorTranslator.FromHtml(DarkThemeColorConstants.ForeColor);
+                Color buttonBackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.EnabledActionButtonBackColor);
+                this.applyButton.BackColor = buttonBackColor;
+                this.applyButton.FlatAppearance.BorderColor = buttonBackColor;
+                this.applyButton.FlatStyle = FlatStyle.Flat;
+                this.applyButton.ForeColor = forecolor;
+                this.applyButton.MouseEnter += new EventHandler(this.ok_button_MouseEnter);
+                this.applyButton.MouseLeave += new EventHandler(this.ok_button_MouseLeave);
+
+                this.clearButton.BackColor = buttonBackColor;
+                this.clearButton.FlatAppearance.BorderColor = buttonBackColor;
+                this.clearButton.FlatStyle = FlatStyle.Flat;
+                this.clearButton.ForeColor = forecolor;
+                this.clearButton.MouseEnter += new EventHandler(this.cancel_button_MouseEnter);
+                this.clearButton.MouseLeave += new EventHandler(this.cancel_button_MouseLeave);
+
+            }
+            else
+            {
+                this.applyButton.BackColor = SystemColors.ButtonFace;
+                this.applyButton.FlatStyle = FlatStyle.System;
+                this.applyButton.TextAlign = ContentAlignment.MiddleCenter;
+
+                this.clearButton.BackColor = SystemColors.ButtonFace;
+                this.clearButton.FlatStyle = FlatStyle.System;
+                this.clearButton.TextAlign = ContentAlignment.MiddleCenter;
+            }
+        }
+
+
+        private void ok_button_MouseEnter(object sender, EventArgs e)
+        {
+            OnMouseHover(e);
+            this.applyButton.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.HoveredActionButtonBackColor);
+        }
+
+        private void ok_button_MouseLeave(object sender, EventArgs e)
+        {
+            OnMouseHover(e);
+            this.applyButton.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.EnabledActionButtonBackColor);
+        }
+
+        private void cancel_button_MouseEnter(object sender, EventArgs e)
+        {
+            OnMouseHover(e);
+            this.clearButton.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.HoveredActionButtonBackColor);
+        }
+
+        private void cancel_button_MouseLeave(object sender, EventArgs e)
+        {
+            OnMouseHover(e);
+            this.clearButton.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.EnabledActionButtonBackColor);
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.alertsGrid);
+        }
+
+        public void SetCurrentObjectTheme(System.Drawing.Color backColor)
+        {
+            this.BackColor = backColor;
+        }
 
         ///// <summary>
         ///// SQLdm 9.1 (Gaurav Karwal): allows alerts to launch in context of the alertid and instanceName
@@ -121,7 +234,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Alerts
         //    customFilter = new AlertFilter();
         //    SetFilter(pendingFilter);
         //    AdaptFontSize();
-            
+
         //    //[START] SQLdm 9.1 (Gaurav Karwal): for launching alert screen in the context of these values
         //    AlertId = alertId;
         //    InstanceName = instanceName;
@@ -143,9 +256,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Alerts
             object end = (filter.EndDate.HasValue) ? (object)filter.EndDate.Value.ToUniversalTime() : null;
             object metric = (filter.Metric.HasValue) ? (object)((int)filter.Metric.Value) : null;
             object severity = (filter.Severity.HasValue) ? (object)((byte)filter.Severity.Value) : null;
-            object activeOnly = (filter.ActiveOnly.HasValue && filter.ActiveOnly.Value)
-                                    ? (object)true
-                                    : null;
+            object activeOnly = (filter.ActiveOnly.HasValue && filter.ActiveOnly.Value)? (object)true : null;
 
             // if no filter instance is specified filter contains all assigned servers.
             filterInstanceNoPermission = false; // clear the filter instance no permission flag
@@ -1020,7 +1131,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Alerts
                 NavigateToView(e.Row, false);
             }
         }
-
+        
         private void NavigateToView(UltraGridRow row, bool showHistoricalSnapshot)
         {
             if (row != null)
@@ -1359,13 +1470,13 @@ namespace Idera.SQLdm.DesktopClient.Views.Alerts
         private void ConfigureFilterOptionsPanelVisible(bool expanded)
         {
             filterOptionsPanel.Visible = expanded;
-            if (expanded)
+            if (Settings.Default.ColorScheme == "Dark")
             {
-                toggleFilterOptionsPanelButton.Image = Resources.UpArrows;
+                toggleFilterOptionsPanelButton.Image = expanded ? Resources.UpArrowsDark : Resources.DownArrowsDark;
             }
             else
             {
-                toggleFilterOptionsPanelButton.Image = Resources.DownArrows;
+                toggleFilterOptionsPanelButton.Image = expanded ? Resources.UpArrows : Resources.DownArrows;
             }
         }
 
@@ -2043,11 +2154,100 @@ namespace Idera.SQLdm.DesktopClient.Views.Alerts
         /// </summary>
         private void AdaptFontSize()
         {
-                Stopwatch stopWatch = new Stopwatch();
-                stopWatch.Start();
-                AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
-                stopWatch.Stop();
-                StartUpTimeLog.DebugFormat("Time taken by AlertView.AdaptFontSize : {0}",stopWatch.ElapsedMilliseconds);
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+            AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+            stopWatch.Stop();
+            StartUpTimeLog.DebugFormat("Time taken by AlertView.AdaptFontSize : {0}", stopWatch.ElapsedMilliseconds);
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                ScaleControlAsPerResolution();
+            }
+        }
+
+        private void ScaleControlAsPerResolution()
+        {
+            //this.headerStrip.Size = new Size(this.headerStrip.Width, this.headerStrip.Height + 50);
+            if (AutoScaleSizeHelper.isLargeSize)
+            {
+                this.titleLabel.Margin = new Padding(20, 0, 0, 0);
+                beginDateCombo.Width += 20;
+                endDateCombo.Width += 20;
+                beginTimeCombo.Location = new Point(beginTimeCombo.Location.X + 20, beginTimeCombo.Location.Y);
+                endTimeCombo.Location = new Point(endTimeCombo.Location.X + 20, endTimeCombo.Location.Y);
+                this.dividerVert.Height += 30;
+                this.headerStrip.Style = HeaderStripStyle.Large;
+                this.headerStrip.Size = new Size(headerStrip.Size.Width, 45);
+                return;
+            }
+            if(AutoScaleSizeHelper.isXLargeSize)
+            {
+                this.titleLabel.Margin = new Padding(20, 0, 0, 0);
+                beginDateCombo.Width += 30;
+                beginDateCombo.Location = new Point(beginDateCombo.Location.X + 20);
+                lblTo.Width += 20;
+                endDateCombo.Width += 30;
+                endDateCombo.Location = new Point(endDateCombo.Location.X + 20);
+                lblFrom.Width += 20;
+                beginTimeCombo.Width += 10;
+                endTimeCombo.Width += 10;
+                beginTimeCombo.Location = new Point(beginTimeCombo.Location.X + 20, beginTimeCombo.Location.Y);
+                endTimeCombo.Location = new Point(endTimeCombo.Location.X + 20, endTimeCombo.Location.Y);
+                this.dividerVert.Height += 30;
+                this.headerStrip.Style = HeaderStripStyle.Large;
+                this.headerStrip.Size = new Size(headerStrip.Size.Width, 45);
+                return;
+            }
+            if (AutoScaleSizeHelper.isXXLargeSize)
+            {
+                this.titleLabel.Margin = new Padding(30, 0, 0, 0);
+                beginDateCombo.Width += 50;
+                beginDateCombo.Location = new Point(beginDateCombo.Location.X + 40);
+                lblTo.Width += 20;
+                endDateCombo.Width += 50;
+                endDateCombo.Location = new Point(endDateCombo.Location.X + 40);
+                lblFrom.Width += 40;
+                beginTimeCombo.Width += 20;
+                endTimeCombo.Width += 20;
+                beginTimeCombo.Location = new Point(beginTimeCombo.Location.X + 50, beginTimeCombo.Location.Y);
+                endTimeCombo.Location = new Point(endTimeCombo.Location.X + 50, endTimeCombo.Location.Y);
+                this.dividerVert.Height += 30;
+                this.headerStrip.Style = HeaderStripStyle.Large;
+                this.headerStrip.Size = new Size(headerStrip.Size.Width, 45);
+                return;
+            }
+            //ChangeTableColumnSize();
+
+        }
+
+        private void ChangeTableColumnSize()
+        {
+            TableLayoutColumnStyleCollection styles = this.tableLayoutPanel1.ColumnStyles;
+            foreach (System.Windows.Forms.ColumnStyle style in styles)
+            {
+                if(style.SizeType == SizeType.Percent)
+                {
+                    style.Width = 50;
+                }
+                //if (style.SizeType == SizeType.Absolute)
+                //{
+                //    style.Width = SizeType.AutoSize;
+                //}
+                //else if (style.SizeType == SizeType.AutoSize)
+                //{
+                //    style.SizeType = SizeType.Percent;
+
+                //    // Set the column width to be a percentage
+                //    // of the TableLayoutPanel control's width.
+                //    style.Width = 33;
+                //}
+                //else
+                //{
+                //    // Set the column width to 50 pixels.
+                //    style.SizeType = SizeType.Absolute;
+                //    style.Width = 50;
+                //}
+            }
         }
 
         private void showDetailsLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -2408,6 +2608,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Alerts
             }
             return false;
         }
+
     }
 
     [Serializable]

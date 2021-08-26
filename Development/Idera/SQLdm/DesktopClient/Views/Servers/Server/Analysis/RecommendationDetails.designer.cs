@@ -30,17 +30,17 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.footer = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblRecommendationType = new System.Windows.Forms.Label();
-            this.lblRecommendationDescription = new System.Windows.Forms.Label();
+            this.footer = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.flowLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFlowLayoutPanel();
+            this.lblRecommendationType = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblRecommendationDescription = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.priority = new PriorityBar();
             this.multiGradientPanel1 = new Idera.SQLdm.Common.UI.Controls.Panels.MultiGradientPanel();
             this.menuRichText = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuCopyRecommendationText = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCopyRecommendationText = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomToolStripMenuItem();
             this.txtRecommendation = new RichTextBoxWithLinks();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.menuSelectAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSelectAll = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomToolStripMenuItem();
             this.footer.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.menuRichText.SuspendLayout();
@@ -136,7 +136,6 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
             // 
             // txtRecommendation
             // 
-            this.txtRecommendation.BackColor = System.Drawing.Color.White;
             this.txtRecommendation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRecommendation.ContextMenuStrip = this.menuRichText;
             this.txtRecommendation.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -183,12 +182,12 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
         #endregion
 
         private RichTextBoxWithLinks txtRecommendation;
-        private System.Windows.Forms.Panel footer;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  footer;
         private Idera.SQLdm.Common.UI.Controls.Panels.MultiGradientPanel multiGradientPanel1;
         private PriorityBar priority;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label lblRecommendationType;
-        private System.Windows.Forms.Label lblRecommendationDescription;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFlowLayoutPanel flowLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblRecommendationType;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblRecommendationDescription;
         private System.Windows.Forms.ContextMenuStrip menuRichText;
         private System.Windows.Forms.ToolStripMenuItem menuCopyRecommendationText;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;

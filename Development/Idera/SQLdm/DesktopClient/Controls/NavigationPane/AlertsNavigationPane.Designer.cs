@@ -1,5 +1,7 @@
 using System;
 using System.Configuration;
+using System.Drawing;
+using Idera.SQLdm.DesktopClient.Helpers;
 using Idera.SQLdm.DesktopClient.Properties;
 
 namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
@@ -36,28 +38,32 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
         /// </summary>
         private void InitializeComponent()
         {
-            this.actionsPanel = new System.Windows.Forms.Panel();
-            this.defaultAlertConfigurationLink = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.notificationRulesLabel = new System.Windows.Forms.LinkLabel();
-            this.toggleDetailsLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.toggleFilterOptionsLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.dividerLabel1 = new System.Windows.Forms.Label();
-            this.currentViewPanel = new System.Windows.Forms.Panel();
+            Color backColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor) : Color.White;
+            Color foreColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridForeColor) : Color.Black;
+            Color activeBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridActiveBackColor) : Color.White;
+            Color hoverBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridHoverBackColor) : Color.White;
+            this.actionsPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.defaultAlertConfigurationLink = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.notificationRulesLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.toggleDetailsLinkLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.toggleFilterOptionsLinkLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.dividerLabel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.currentViewPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.currentViewHeaderStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
             this.currentViewHeaderStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.toggleCurrentViewPanelButton = new System.Windows.Forms.ToolStripButton();
-            this.currentViewOptionPanel = new System.Windows.Forms.Panel();
-            this.customFilterRadioButton = new System.Windows.Forms.RadioButton();
-            this.tableReorgRadioButton = new System.Windows.Forms.RadioButton();
-            this.worstPerformingRadioButton = new System.Windows.Forms.RadioButton();
-            this.oldestOpenRadioButton = new System.Windows.Forms.RadioButton();
-            this.bombedJobsRadioButton = new System.Windows.Forms.RadioButton();
-            this.blokcedProcessesRadioButton = new System.Windows.Forms.RadioButton();
-            this.activeAlertsRadioButton = new System.Windows.Forms.RadioButton();
-            this.bySeverityRadioButton = new System.Windows.Forms.RadioButton();
-            this.byMetricRadioButton = new System.Windows.Forms.RadioButton();
-            this.byInstanceRadioButton = new System.Windows.Forms.RadioButton();
+            this.currentViewOptionPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.customFilterRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.tableReorgRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.worstPerformingRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.oldestOpenRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.bombedJobsRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.blokcedProcessesRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.activeAlertsRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.bySeverityRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.byMetricRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.byInstanceRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
             this.actionsPanel.SuspendLayout();
             this.currentViewPanel.SuspendLayout();
             this.currentViewHeaderStrip.SuspendLayout();
@@ -105,6 +111,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             // 
             this.notificationRulesLabel.AutoSize = true;
             this.notificationRulesLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.notificationRulesLabel.BackColor = backColor;
             this.notificationRulesLabel.LinkColor = System.Drawing.Color.Blue;
             this.notificationRulesLabel.Location = new System.Drawing.Point(11, 88);
             this.notificationRulesLabel.Name = "notificationRulesLabel";
@@ -119,6 +126,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             this.toggleDetailsLinkLabel.AutoSize = true;
             this.toggleDetailsLinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.toggleDetailsLinkLabel.LinkColor = System.Drawing.Color.Blue;
+            this.toggleDetailsLinkLabel.BackColor = backColor;
             this.toggleDetailsLinkLabel.Location = new System.Drawing.Point(11, 35);
             this.toggleDetailsLinkLabel.Name = "toggleDetailsLinkLabel";
             this.toggleDetailsLinkLabel.Size = new System.Drawing.Size(69, 13);
@@ -214,11 +222,24 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             this.currentViewOptionPanel.Name = "currentViewOptionPanel";
             this.currentViewOptionPanel.Size = new System.Drawing.Size(267, 234);
             this.currentViewOptionPanel.TabIndex = 1;
+            // 4K Screen resolution scaling
+            int radioButtonYLocation = 23;
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                if (AutoScaleSizeHelper.isLargeSize)
+                    radioButtonYLocation = 24;
+                if (AutoScaleSizeHelper.isXLargeSize)
+                    radioButtonYLocation = 27;
+                if (AutoScaleSizeHelper.isXXLargeSize)
+                    radioButtonYLocation = 30;
+            }
+            else
+                radioButtonYLocation = 23;
             // 
             // customFilterRadioButton
             // 
             this.customFilterRadioButton.AutoSize = true;
-            this.customFilterRadioButton.Location = new System.Drawing.Point(20, 211);
+            this.customFilterRadioButton.Location = new System.Drawing.Point(20, 4 + (9 * radioButtonYLocation));
             this.customFilterRadioButton.Name = "customFilterRadioButton";
             this.customFilterRadioButton.Size = new System.Drawing.Size(60, 17);
             this.customFilterRadioButton.TabIndex = 20;
@@ -229,7 +250,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             // tableReorgRadioButton
             // 
             this.tableReorgRadioButton.AutoSize = true;
-            this.tableReorgRadioButton.Location = new System.Drawing.Point(20, 188);
+            this.tableReorgRadioButton.Location = new System.Drawing.Point(20, 4 + (8 * radioButtonYLocation));
             this.tableReorgRadioButton.Name = "tableReorgRadioButton";
             this.tableReorgRadioButton.Size = new System.Drawing.Size(122, 17);
             this.tableReorgRadioButton.TabIndex = 19;
@@ -240,7 +261,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             // worstPerformingRadioButton
             // 
             this.worstPerformingRadioButton.AutoSize = true;
-            this.worstPerformingRadioButton.Location = new System.Drawing.Point(20, 165);
+            this.worstPerformingRadioButton.Location = new System.Drawing.Point(20, 4 + (7 * radioButtonYLocation));
             this.worstPerformingRadioButton.Name = "worstPerformingRadioButton";
             this.worstPerformingRadioButton.Size = new System.Drawing.Size(127, 17);
             this.worstPerformingRadioButton.TabIndex = 18;
@@ -251,7 +272,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             // oldestOpenRadioButton
             // 
             this.oldestOpenRadioButton.AutoSize = true;
-            this.oldestOpenRadioButton.Location = new System.Drawing.Point(20, 142);
+            this.oldestOpenRadioButton.Location = new System.Drawing.Point(20, 4 + (6 * radioButtonYLocation));
             this.oldestOpenRadioButton.Name = "oldestOpenRadioButton";
             this.oldestOpenRadioButton.Size = new System.Drawing.Size(148, 17);
             this.oldestOpenRadioButton.TabIndex = 17;
@@ -262,7 +283,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             // bombedJobsRadioButton
             // 
             this.bombedJobsRadioButton.AutoSize = true;
-            this.bombedJobsRadioButton.Location = new System.Drawing.Point(20, 96);
+            this.bombedJobsRadioButton.Location = new System.Drawing.Point(20, 4 + (4 * radioButtonYLocation));
             this.bombedJobsRadioButton.Name = "bombedJobsRadioButton";
             this.bombedJobsRadioButton.Size = new System.Drawing.Size(136, 17);
             this.bombedJobsRadioButton.TabIndex = 15;
@@ -273,7 +294,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             // blokcedProcessesRadioButton
             // 
             this.blokcedProcessesRadioButton.AutoSize = true;
-            this.blokcedProcessesRadioButton.Location = new System.Drawing.Point(20, 119);
+            this.blokcedProcessesRadioButton.Location = new System.Drawing.Point(20, 4 + (5 * radioButtonYLocation));
             this.blokcedProcessesRadioButton.Name = "blokcedProcessesRadioButton";
             this.blokcedProcessesRadioButton.Size = new System.Drawing.Size(109, 17);
             this.blokcedProcessesRadioButton.TabIndex = 16;
@@ -294,7 +315,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             // 
             this.activeAlertsRadioButton.AutoSize = true;
             this.activeAlertsRadioButton.Checked = true;
-            this.activeAlertsRadioButton.Location = new System.Drawing.Point(20, 4);
+            this.activeAlertsRadioButton.Location = new System.Drawing.Point(20, 4 + (0* radioButtonYLocation));
             this.activeAlertsRadioButton.Name = "activeAlertsRadioButton";
             this.activeAlertsRadioButton.Size = new System.Drawing.Size(55, 17);
             this.activeAlertsRadioButton.TabIndex = 11;
@@ -306,7 +327,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             // bySeverityRadioButton
             // 
             this.bySeverityRadioButton.AutoSize = true;
-            this.bySeverityRadioButton.Location = new System.Drawing.Point(20, 27);
+            this.bySeverityRadioButton.Location = new System.Drawing.Point(20, 4 + (1 * radioButtonYLocation));
             this.bySeverityRadioButton.Name = "bySeverityRadioButton";
             this.bySeverityRadioButton.Size = new System.Drawing.Size(78, 17);
             this.bySeverityRadioButton.TabIndex = 12;
@@ -317,7 +338,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             // byMetricRadioButton
             // 
             this.byMetricRadioButton.AutoSize = true;
-            this.byMetricRadioButton.Location = new System.Drawing.Point(20, 73);
+            this.byMetricRadioButton.Location = new System.Drawing.Point(20, 4 + (3 * radioButtonYLocation));
             this.byMetricRadioButton.Name = "byMetricRadioButton";
             this.byMetricRadioButton.Size = new System.Drawing.Size(69, 17);
             this.byMetricRadioButton.TabIndex = 14;
@@ -328,7 +349,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             // byInstanceRadioButton
             // 
             this.byInstanceRadioButton.AutoSize = true;
-            this.byInstanceRadioButton.Location = new System.Drawing.Point(20, 50);
+            this.byInstanceRadioButton.Location = new System.Drawing.Point(20, 4 + (2 * radioButtonYLocation));
             this.byInstanceRadioButton.Name = "byInstanceRadioButton";
             this.byInstanceRadioButton.Size = new System.Drawing.Size(71, 17);
             this.byInstanceRadioButton.TabIndex = 13;
@@ -357,27 +378,28 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
 
         #endregion
 
-        private System.Windows.Forms.Panel actionsPanel;
-        private System.Windows.Forms.Label dividerLabel1;
-        private System.Windows.Forms.Panel currentViewPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  actionsPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel dividerLabel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  currentViewPanel;
         private HeaderStrip currentViewHeaderStrip;
         private System.Windows.Forms.ToolStripLabel currentViewHeaderStripLabel;
         private System.Windows.Forms.ToolStripButton toggleCurrentViewPanelButton;
-        private System.Windows.Forms.LinkLabel toggleDetailsLinkLabel;
-        private System.Windows.Forms.LinkLabel toggleFilterOptionsLinkLabel;
-        private System.Windows.Forms.LinkLabel notificationRulesLabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel defaultAlertConfigurationLink;
-        private System.Windows.Forms.Panel currentViewOptionPanel;
-        private System.Windows.Forms.RadioButton customFilterRadioButton;
-        private System.Windows.Forms.RadioButton tableReorgRadioButton;
-        private System.Windows.Forms.RadioButton worstPerformingRadioButton;
-        private System.Windows.Forms.RadioButton oldestOpenRadioButton;
-        private System.Windows.Forms.RadioButton bombedJobsRadioButton;
-        private System.Windows.Forms.RadioButton blokcedProcessesRadioButton;
-        private System.Windows.Forms.RadioButton activeAlertsRadioButton;
-        private System.Windows.Forms.RadioButton bySeverityRadioButton;
-        private System.Windows.Forms.RadioButton byMetricRadioButton;
-        private System.Windows.Forms.RadioButton byInstanceRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel toggleDetailsLinkLabel;
+        // private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel toggleFilterOptionsLinkLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel toggleFilterOptionsLinkLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel notificationRulesLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel defaultAlertConfigurationLink;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  currentViewOptionPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton customFilterRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton tableReorgRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton worstPerformingRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton oldestOpenRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton bombedJobsRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton blokcedProcessesRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton activeAlertsRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton bySeverityRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton byMetricRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton byInstanceRadioButton;
     }
 }

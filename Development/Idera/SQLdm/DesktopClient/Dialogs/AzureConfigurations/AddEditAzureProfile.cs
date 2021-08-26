@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs.AzureConfigurations
 {
-    public partial class AddEditAzureProfile : Form
+    public partial class AddEditAzureProfile : BaseDialog
     {
         private readonly Dictionary<int, List<IAzureProfile>> profilesMap;
         private readonly AzureProfile azureProfile;

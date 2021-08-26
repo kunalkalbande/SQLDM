@@ -393,11 +393,10 @@ using Idera.SQLdm.Common.Objects;
             issuesMap.Clear();
             DatabaseMap.Clear();
 
-            if (Instance == null && ApplicationModel.Default.RepoActiveInstances.ContainsKey(Settings.Default.RepoId))
+            if (Instance == null)
             {
-              var id=  RepositoryHelper.GetSelectedInstanceId(instanceID);
-                if (ApplicationModel.Default.RepoActiveInstances[Settings.Default.RepoId].Contains(id))
-                    Instance = ApplicationModel.Default.RepoActiveInstances[Settings.Default.RepoId][id];
+                if (ApplicationModel.Default.ActiveInstances.Contains(instanceID))
+                    Instance = ApplicationModel.Default.ActiveInstances[instanceID];
             }
 
             // process the child nodes
@@ -905,7 +904,6 @@ using Idera.SQLdm.Common.Objects;
         {
             get
             {
-                //return "test tooltip";
                 if (IsInMaintenanceMode)
                     return String.Format("{0} is in maintenance mode", instance.DisplayInstanceName);
                 if (!IsSupportedVersion)

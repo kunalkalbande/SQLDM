@@ -16,18 +16,35 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Infragistics.Win.UltraWinGrid;
     using Idera.SQLdm.DesktopClient.Helpers;
     using Idera.SQLdm.Common.Configuration;
+    using Idera.SQLdm.DesktopClient.Controls;
+    using Infragistics.Windows.Themes;
 
-    public partial class AlertEnumeratedValuesConfigDialog : Form
+    public partial class AlertEnumeratedValuesConfigDialog : BaseDialog
     {
         private AlertConfigurationItem configItem;
         private bool readOnly;
 
         public AlertEnumeratedValuesConfigDialog()
         {
+            this.DialogHeader = "Value Configuration";
             InitializeComponent();
 
             ConfigureGrid();
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.grid);
         }
 
         private void ConfigureGrid()

@@ -45,6 +45,7 @@ using System.Text.RegularExpressions;
 using Infragistics.Excel;
 using Infragistics.Win.UltraWinDataSource;
 using System.Threading;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
 {
@@ -127,6 +128,9 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
                 detailsGridMessageLabel.Text = SYSADMIN_MESSAGE;
                 IsAnalysisDone = true;
             }
+
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
         //To support diagnose query functions
         public Recommendations(string queryToDiagnose, string database, int instanceId)
@@ -152,6 +156,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
                 detailsGridMessageLabel.Text = SYSADMIN_MESSAGE;
                 IsAnalysisDone = true;
             }
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
         public Recommendations(int instanceId, DateTime? historySnapShotTime)
             : base(instanceId)
@@ -164,6 +170,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
             this.queryFromDignose = string.Empty;
             GetMasterRecommendations();
             InitializeComponent();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
             detailsGrid.DrawFilter = new HideFocusRectangleDrawFilter();
             historicalSnapshotDateTime = historySnapShotTime;
             defaultStatusOfToolbar();
@@ -2393,6 +2401,18 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
         }
 
         #endregion
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.detailsGrid);
+        }
     }
 
     //Constructor Type

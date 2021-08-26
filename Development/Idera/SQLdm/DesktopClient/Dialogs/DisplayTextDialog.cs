@@ -9,12 +9,13 @@ using Idera.SQLdm.DesktopClient.Helpers;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class DisplayTextDialog : Form
+    public partial class DisplayTextDialog : BaseDialog
     {
         #region Constructors
 
         public DisplayTextDialog(string caption, string text, bool readOnly)
         {
+            this.DialogHeader = "DisplayTextDialog";
             InitializeComponent();
 
             Text = caption;

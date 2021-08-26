@@ -17,10 +17,12 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
         private int hoverIndex = NoMatches;
         private readonly Dictionary<int, Rectangle> itemBounds = new Dictionary<int, Rectangle>();
+        public bool isDarkThemeSelected = false;
 
-        public Office2007ListBox()
+        public Office2007ListBox(bool isDarkThemeSelected = false)
         {
             DrawMode = DrawMode.OwnerDrawVariable;
+            this.isDarkThemeSelected = isDarkThemeSelected;
         }
 
         protected override void OnDrawItem(DrawItemEventArgs e)
@@ -71,7 +73,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
         private void DrawItemText(Graphics graphics, int index, Rectangle bounds)
         {
             using (Font textFont = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular))
-            using (SolidBrush textBrush = new SolidBrush(Color.Black))
+            using (SolidBrush textBrush = new SolidBrush(isDarkThemeSelected ? ColorTranslator.FromHtml("#E4E5EA") : Color.Black))
             {
                 StringFormat textFormat = new StringFormat();
                 textFormat.LineAlignment = StringAlignment.Center;
@@ -85,7 +87,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
         private void DrawUnselectedItem(Graphics graphics, int index, Rectangle bounds)
         {
-            graphics.FillRectangle(Brushes.White, bounds);
+            graphics.FillRectangle(isDarkThemeSelected ? new SolidBrush(ColorTranslator.FromHtml("#006089")) : Brushes.White, bounds);
             DrawItemText(graphics, index, bounds);
         }
 
@@ -94,7 +96,8 @@ namespace Idera.SQLdm.DesktopClient.Controls
             LinearGradientBrush gradientBackgroundBrush;
 
             using (gradientBackgroundBrush =
-                    new LinearGradientBrush(Bounds, Color.FromArgb(139, 118, 84), Color.FromArgb(195, 184, 166), 90f))
+                    new LinearGradientBrush(Bounds, isDarkThemeSelected ? ColorTranslator.FromHtml("#00A1DD") : Color.FromArgb(139, 118, 84),
+                    isDarkThemeSelected ? ColorTranslator.FromHtml("#00A1DD") : Color.FromArgb(195, 184, 166), 90f))
             {
                 graphics.FillRectangle(gradientBackgroundBrush, bounds);
             }
@@ -108,13 +111,15 @@ namespace Idera.SQLdm.DesktopClient.Controls
                 new RectangleF(deflatedRectangle.X, deflatedRectangle.Y + NormalItemGradientPivotPoint, deflatedRectangle.Width, deflatedRectangle.Height - NormalItemGradientPivotPoint);
 
             using (gradientBackgroundBrush =
-                    new LinearGradientBrush(topRectangle, Color.FromArgb(255, 247, 241), Color.FromArgb(252, 175, 119), 90f))
+                    new LinearGradientBrush(topRectangle, isDarkThemeSelected ? ColorTranslator.FromHtml("#00A1DD") : Color.FromArgb(255, 247, 241),
+                    isDarkThemeSelected ? ColorTranslator.FromHtml("#00A1DD") : Color.FromArgb(252, 175, 119), 90f))
             {
                 graphics.FillRectangle(gradientBackgroundBrush, topRectangle);
             }
 
             using (gradientBackgroundBrush =
-                    new LinearGradientBrush(bottomRectangle, Color.FromArgb(251, 151, 79), Color.FromArgb(254, 189, 108), 90f))
+                    new LinearGradientBrush(bottomRectangle, isDarkThemeSelected ? ColorTranslator.FromHtml("#00A1DD") : Color.FromArgb(251, 151, 79),
+                    isDarkThemeSelected ? ColorTranslator.FromHtml("#00A1DD") : Color.FromArgb(254, 189, 108), 90f))
             {
                 graphics.FillRectangle(gradientBackgroundBrush, bottomRectangle);
             }
@@ -128,13 +133,15 @@ namespace Idera.SQLdm.DesktopClient.Controls
                 new RectangleF(deflatedRectangle.X, deflatedRectangle.Y + NormalItemGradientPivotPoint, deflatedRectangle.Width, deflatedRectangle.Height - NormalItemGradientPivotPoint);
 
             using (gradientBackgroundBrush =
-                    new LinearGradientBrush(topRectangle, Color.FromArgb(255, 241, 231), Color.FromArgb(252, 166, 104), 90f))
+                    new LinearGradientBrush(topRectangle, isDarkThemeSelected ? ColorTranslator.FromHtml("#00A1DD") : Color.FromArgb(255, 241, 231),
+                    isDarkThemeSelected ? ColorTranslator.FromHtml("#00A1DD") : Color.FromArgb(252, 166, 104), 90f))
             {
                 graphics.FillRectangle(gradientBackgroundBrush, topRectangle);
             }
 
             using (gradientBackgroundBrush =
-                    new LinearGradientBrush(bottomRectangle, Color.FromArgb(251, 140, 60), Color.FromArgb(254, 180, 91), 90f))
+                    new LinearGradientBrush(bottomRectangle, isDarkThemeSelected ? ColorTranslator.FromHtml("#00A1DD") : Color.FromArgb(251, 140, 60),
+                    isDarkThemeSelected ? ColorTranslator.FromHtml("#00A1DD") : Color.FromArgb(254, 180, 91), 90f))
             {
                 graphics.FillRectangle(gradientBackgroundBrush, bottomRectangle);
             }
@@ -147,7 +154,8 @@ namespace Idera.SQLdm.DesktopClient.Controls
             LinearGradientBrush gradientBackgroundBrush;
 
             using (gradientBackgroundBrush =
-                    new LinearGradientBrush(Bounds, Color.FromArgb(192, 167, 118), Color.FromArgb(211, 205, 184), 90f))
+                    new LinearGradientBrush(Bounds, isDarkThemeSelected ? ColorTranslator.FromHtml("#00A1DD") : Color.FromArgb(192, 167, 118),
+                    isDarkThemeSelected ? ColorTranslator.FromHtml("#00A1DD") : Color.FromArgb(211, 205, 184), 90f))
             {
                 graphics.FillRectangle(gradientBackgroundBrush, bounds);
             }
@@ -155,7 +163,8 @@ namespace Idera.SQLdm.DesktopClient.Controls
             Rectangle deflatedRectangle = Rectangle.Inflate(bounds, -1, -1);
 
             using (gradientBackgroundBrush =
-                    new LinearGradientBrush(deflatedRectangle, Color.FromArgb(255, 254, 249), Color.FromArgb(255, 246, 215), 90f))
+                    new LinearGradientBrush(deflatedRectangle, isDarkThemeSelected ? ColorTranslator.FromHtml("#00A1DD") : Color.FromArgb(255, 254, 249),
+                    isDarkThemeSelected ? ColorTranslator.FromHtml("#00A1DD") : Color.FromArgb(255, 246, 215), 90f))
             {
                 graphics.FillRectangle(gradientBackgroundBrush, deflatedRectangle);
             }
@@ -169,13 +178,15 @@ namespace Idera.SQLdm.DesktopClient.Controls
                 new RectangleF(deflatedRectangle.X, deflatedRectangle.Y + NormalItemGradientPivotPoint, deflatedRectangle.Width, deflatedRectangle.Height - NormalItemGradientPivotPoint);
 
             using (gradientBackgroundBrush =
-                    new LinearGradientBrush(topRectangle, Color.FromArgb(255, 250, 234), Color.FromArgb(255, 224, 120), 90f))
+                    new LinearGradientBrush(topRectangle, isDarkThemeSelected ? ColorTranslator.FromHtml("#00A1DD") : Color.FromArgb(255, 250, 234),
+                    isDarkThemeSelected ? ColorTranslator.FromHtml("#00A1DD") : Color.FromArgb(255, 224, 120), 90f))
             {
                 graphics.FillRectangle(gradientBackgroundBrush, topRectangle);
             }
 
             using (gradientBackgroundBrush =
-                    new LinearGradientBrush(bottomRectangle, Color.FromArgb(255, 215, 80), Color.FromArgb(255, 228, 127), 90f))
+                    new LinearGradientBrush(bottomRectangle, isDarkThemeSelected ? ColorTranslator.FromHtml("#00A1DD") : Color.FromArgb(255, 215, 80),
+                    isDarkThemeSelected ? ColorTranslator.FromHtml("#00A1DD") : Color.FromArgb(255, 228, 127), 90f))
             {
                 graphics.FillRectangle(gradientBackgroundBrush, bottomRectangle);
             }

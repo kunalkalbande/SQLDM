@@ -23,13 +23,13 @@ namespace Idera.SQLdm.DesktopClient.Controls.Reporting {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.periodBox = new System.Windows.Forms.ComboBox();
-            this.years = new System.Windows.Forms.RadioButton();
-            this.days = new System.Windows.Forms.RadioButton();
-            this.months = new System.Windows.Forms.RadioButton();
-            this.intervalBox = new System.Windows.Forms.ComboBox();
-            this.labelInterval = new System.Windows.Forms.Label();
+            this.groupBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.periodBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.years = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.days = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.months = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.intervalBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.labelInterval = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,12 +137,12 @@ namespace Idera.SQLdm.DesktopClient.Controls.Reporting {
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox periodBox;
-        private System.Windows.Forms.RadioButton years;
-        private System.Windows.Forms.RadioButton days;
-        private System.Windows.Forms.RadioButton months;
-        private System.Windows.Forms.ComboBox intervalBox;
-        private System.Windows.Forms.Label labelInterval;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox periodBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton years;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton days;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton months;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox intervalBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel labelInterval;
     }
 }

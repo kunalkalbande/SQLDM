@@ -28,47 +28,48 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
-            this.propertiesControl1 = new Idera.SQLdm.DesktopClient.Controls.PropertiesControl();
+            bool isDarkThemeSelected = Properties.Settings.Default.ColorScheme == "Dark";
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.propertiesControl1 = new Idera.SQLdm.DesktopClient.Controls.PropertiesControl(isDarkThemeSelected);
             this.propertyPage1 = new Idera.SQLdm.DesktopClient.Controls.PropertyPage();
-            this.office2007PropertyPage1 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.chkExcludeDM = new System.Windows.Forms.CheckBox();
+            this.office2007PropertyPage1 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage(isDarkThemeSelected);
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.chkExcludeDM = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             this.propertiesHeaderStrip4 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.rowcountPanel = new System.Windows.Forms.Panel();
-            this.rowcountLimited = new System.Windows.Forms.RadioButton();
-            this.rowcountUnlimited = new System.Windows.Forms.RadioButton();
-            this.rowcountUpDown = new System.Windows.Forms.NumericUpDown();
+            this.rowcountPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.rowcountLimited = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.rowcountUnlimited = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.rowcountUpDown = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
             this.propertiesHeaderStrip3 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
             this.rowcountHeaderStrip = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.sqlTextFilterPanel = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.sqlTextIncludeFilterTextBox = new System.Windows.Forms.TextBox();
-            this.sqlTextExcludeFilterTextBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.sqlTextFilterPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.panel6 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.sqlTextIncludeFilterTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.sqlTextExcludeFilterTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label6 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.propertiesHeaderStrip2 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.databasesFilterPanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.databasesIncludeFilterTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.panel7 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.databasesFilterPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.panel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.label7 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.databasesIncludeFilterTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.propertiesHeaderStrip1 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.databasesExcludeFilterTextBox = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.applicationsFilterPanel = new System.Windows.Forms.Panel();
-            this.pnlApplication = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.applicationsIncludeFilterTextBox = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.databasesExcludeFilterTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.panel3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.applicationsFilterPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.pnlApplication = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.label8 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.applicationsIncludeFilterTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label12 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.applicationExcludeHeaderStrip = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.applicationsExcludeFilterTextBox = new System.Windows.Forms.TextBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.applicationsExcludeFilterTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.panel8 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.label9 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.propertyPage1.SuspendLayout();
             this.office2007PropertyPage1.ContentPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -159,6 +160,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.office2007PropertyPage1.Size = new System.Drawing.Size(454, 679);
             this.office2007PropertyPage1.TabIndex = 0;
             this.office2007PropertyPage1.Text = "Supply additional {0} filtering criteria.";
+            this.office2007PropertyPage1.ContentPanel.AutoScroll = true;
             // 
             // panel1
             // 
@@ -623,50 +625,62 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         }
 
+        void OnCurrentThemeChanged(object sender, System.EventArgs e)
+        {
+            SetPropertiesTheme();
+        }
+
+        void SetPropertiesTheme()
+        {
+            var propertiesThemeManager = new Controls.PropertiesThemeManager();
+            propertiesThemeManager.UpdatePropertyTheme(propertiesControl1);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage1);
+        }
+
         #endregion
 
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesControl propertiesControl1;
         private Idera.SQLdm.DesktopClient.Controls.PropertyPage propertyPage1;
         private Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage office2007PropertyPage1;
-        private System.Windows.Forms.Panel sqlTextFilterPanel;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  sqlTextFilterPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel6;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip propertiesHeaderStrip2;
         
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel databasesFilterPanel;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel7;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  databasesFilterPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip propertiesHeaderStrip1;
-        private System.Windows.Forms.TextBox databasesExcludeFilterTextBox;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel applicationsFilterPanel;
-        private System.Windows.Forms.Panel pnlApplication;
-        private System.Windows.Forms.Label label12;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox databasesExcludeFilterTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  applicationsFilterPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  pnlApplication;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label12;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip applicationExcludeHeaderStrip;
-        private System.Windows.Forms.TextBox applicationsExcludeFilterTextBox;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label9;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox applicationsExcludeFilterTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel8;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label9;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip rowcountHeaderStrip;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel rowcountPanel;
-        private System.Windows.Forms.NumericUpDown rowcountUpDown;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown rowcountUpDown;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  rowcountPanel;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip propertiesHeaderStrip3;
-        private System.Windows.Forms.RadioButton rowcountLimited;
-        private System.Windows.Forms.RadioButton rowcountUnlimited;
-        private System.Windows.Forms.CheckBox chkExcludeDM;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton rowcountLimited;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton rowcountUnlimited;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkExcludeDM;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip propertiesHeaderStrip4;
-        private System.Windows.Forms.TextBox sqlTextExcludeFilterTextBox;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox sqlTextIncludeFilterTextBox;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox databasesIncludeFilterTextBox;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox applicationsIncludeFilterTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox sqlTextExcludeFilterTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label6;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox sqlTextIncludeFilterTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label7;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox databasesIncludeFilterTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label8;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox applicationsIncludeFilterTextBox;
 
     }
 }

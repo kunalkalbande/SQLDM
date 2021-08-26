@@ -12,10 +12,12 @@ using Resources = Idera.SQLdm.DesktopClient.Properties.Resources;
 using Settings = Idera.SQLdm.DesktopClient.Properties.Settings;
 using Idera.SQLdm.Common.Events.AzureMonitor;
 using Idera.SQLdm.Common.Events.AzureMonitor.Interfaces;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Controls;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs.AzureConfigurations
 {
-    public partial class AzureProfilesConfiguration : Form
+    public partial class AzureProfilesConfiguration : BaseDialog
     {
         private readonly bool isReadOnly;
         private static readonly Logger Log = Logger.GetLogger("AzureProfilesConfiguration");
@@ -68,6 +70,24 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.AzureConfigurations
 
             appProfileGrid.DrawFilter = new HideFocusRectangleDrawFilter();
             azureProfileGrid.DrawFilter = new HideFocusRectangleDrawFilter();
+
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+            this.Invalidate();
+            this.Refresh();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.appProfileGrid);
+            themeManager.updateGridTheme(this.azureProfileGrid);
         }
 
         private void InitializeProgressBar()

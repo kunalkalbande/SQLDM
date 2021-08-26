@@ -28,10 +28,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            this.informationBox1 = new Divelements.WizardFramework.InformationBox();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.cboAlertTemplates = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
+            this.informationBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnOK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cboAlertTemplates = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraComboEditor();
             ((System.ComponentModel.ISupportInitialize)(this.cboAlertTemplates)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,9 +105,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private Divelements.WizardFramework.InformationBox informationBox1;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox informationBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnOK;
         private Infragistics.Win.UltraWinEditors.UltraComboEditor cboAlertTemplates;
     }
 }

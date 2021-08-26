@@ -9,10 +9,11 @@ using Idera.SQLdm.DesktopClient.Helpers;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class StringListDialog : Form
+    public partial class StringListDialog : BaseDialog
     {
         public StringListDialog()
         {
+            this.DialogHeader = "StringListDialog";
             InitializeComponent();
             AdaptFontSize();
         }

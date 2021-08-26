@@ -9,10 +9,11 @@ using Idera.SQLdm.DesktopClient.Helpers;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class FailureIsCriticalOptionDialog : Form
+    public partial class FailureIsCriticalOptionDialog : BaseDialog
     {
         public FailureIsCriticalOptionDialog()
         {
+            this.DialogHeader = "Generate Alert";
             InitializeComponent();
 
             this.AdaptFontSize();

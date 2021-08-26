@@ -16,6 +16,7 @@ using Wintellect.PowerCollections;
 using Idera.SQLdm.DesktopClient.Properties;
 using Idera.SQLdm.DesktopClient.Objects;
 using System.Data;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
 {
@@ -236,12 +237,41 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
         public ReportContol()
         {
             InitializeComponent();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+            UpdateButtonColor();
             State = UIState.ParmsNeeded;
         }
 
         public void ShowHelp()
         {
             ReportsHelper.ShowReportHelp(reportType);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            UpdateButtonColor();
+        }
+
+        public void UpdateButtonColor()
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                this.runReportButton.ButtonStyle = UIElementButtonStyle.FlatBorderless;
+                this.runReportButton.Appearance.ForeColor = ColorTranslator.FromHtml(DarkThemeColorConstants.UltraButtonForeColor);
+                this.runReportButton.Appearance.BorderColor = ColorTranslator.FromHtml(DarkThemeColorConstants.UltraButtonBorderColor);
+                this.runReportButton.Appearance.BorderColor2 = ColorTranslator.FromHtml(DarkThemeColorConstants.UltraButtonBorderColor2);
+                this.runReportButton.Appearance.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.UltraButtonBackColor);
+            }
+            else
+            {
+                this.runReportButton.ButtonStyle = UIElementButtonStyle.Default;
+                this.runReportButton.Appearance.ForeColor = System.Drawing.Color.White;
+                this.runReportButton.Appearance.BorderColor3DBase = System.Drawing.Color.FromArgb(((int)(((byte)(00)))), ((int)(((byte)(96)))), ((int)(((byte)(137)))));
+                this.runReportButton.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(00)))), ((int)(((byte)(96)))), ((int)(((byte)(137)))));
+                this.runReportButton.Appearance.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(00)))), ((int)(((byte)(96)))), ((int)(((byte)(137)))));
+                this.runReportButton.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(00)))), ((int)(((byte)(96)))), ((int)(((byte)(137)))));
+            }
+
         }
 
         virtual public void InitReport()

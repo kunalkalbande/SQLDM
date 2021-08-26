@@ -67,7 +67,15 @@ end
 --Query: Default sql server instances
 --Returns: List of default server instances 
 IF IS_SRVROLEMEMBER('sysadmin') = 1 
+BEGIN
+  -- Fix SQLDM-31332 The xp_regread would not return any result set if the registry key does not exist
+  IF OBJECT_ID('tempdb..#dm_xpregread_SQLInstances') IS NOT NULL DROP TABLE #dm_xpregread_SQLInstances
+  create table #dm_xpregread_SQLInstances ( [Value] varchar(1024), [Data] varchar(1024))
+
+  insert into #dm_xpregread_SQLInstances ([Value], [Data])
   EXEC xp_regread 'HKEY_LOCAL_MACHINE', 'SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL', 'MSSQLSERVER' 
+  SELECT * FROM #dm_xpregread_SQLInstances
+END
 ELSE
   SELECT 'MSSQLSERVER' Value, 'UNKNOWN' Data
 

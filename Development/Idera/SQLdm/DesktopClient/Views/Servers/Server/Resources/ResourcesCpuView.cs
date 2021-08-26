@@ -19,6 +19,8 @@ using Infragistics.Win;
 using Infragistics.Win.UltraWinGrid;
 using System.Drawing.Drawing2D;
 using System.Collections.Generic;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Controls;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
 {
@@ -74,6 +76,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
             MonitoredSqlServerWrapper instanceObject = ApplicationModel.Default.ActiveInstances[instanceId];
             ShowVMData(instanceObject.Instance.IsVirtualized);
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
         public void SetRegularRDSResourcesPanel()
         {
@@ -1228,6 +1232,18 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.topDatabasesGrid);
         }
 
         private void maximizeMaxWorkerChartButton_Click(object sender, EventArgs e)

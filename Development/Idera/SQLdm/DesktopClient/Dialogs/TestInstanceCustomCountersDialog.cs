@@ -24,8 +24,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Properties;
     using Wintellect.PowerCollections;
     using Idera.SQLdm.Common.Configuration;
+    using Infragistics.Windows.Themes;
+    using Idera.SQLdm.DesktopClient.Controls;
 
-    public partial class TestInstanceCustomCountersDialog : Form
+    public partial class TestInstanceCustomCountersDialog : BaseDialog
     {
         private MonitoredSqlServer instance;
         private MetricDefinitions metricDefinitions;
@@ -36,6 +38,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public TestInstanceCustomCountersDialog(MonitoredSqlServer instance, MetricDefinitions metricDefinitions, int[] metricList)
         {
+            this.DialogHeader = "Test Custom Counters";
             this.metricDefinitions = metricDefinitions;
             this.metricList = metricList;
             this.instance = instance;
@@ -44,6 +47,20 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
             ultraGrid1.DrawFilter = new HideFocusRectangleDrawFilter();
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.ultraGrid1);
         }
 
         private void backgroundWorker_DoWork(object sender, DoWorkEventArgs args)

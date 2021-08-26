@@ -45,63 +45,63 @@ public class Alert {
 	}
 
 	@JsonProperty("AlertId")
-	protected Long alertId;
+	public Long alertId;
 	@JsonProperty("Heading")
-	protected String name;
+	public String name;
 	@JsonProperty("ServerName")
-	protected String instanceName;
+	public String instanceName;
 
 	@JsonProperty("DatabaseName")
-	protected String databaseName;
+	public String databaseName;
 
 	@JsonProperty("SQLServerId")
-	private int instanceId;
+	public int instanceId;
 
 	@JsonProperty("IsActive")
-	protected Integer isActive;
+	public Integer isActive;
 	
 	@JsonProperty("UTCOccurrenceDateTime")
 	@JsonDeserialize(using = DataContractDateDeserializer.class)
 	@JsonSerialize(using = DataContractUtcDateSerializer.class)
-	protected Date utcUpdated;
+	public Date utcUpdated;
 
 	@JsonProperty("Severity")
-	protected Integer severity;
+	public Integer severity;
 	
 	@JsonProperty("PreviousAlertSeverity")
-	protected Integer previousAlertSeverity;
+	public Integer previousAlertSeverity;
 	
 	@JsonProperty("Message")
-	protected String description;
+	public String description;
 
 	/* @JsonProperty("activeDuration") */
-	protected long activeDuration;
+	public long activeDuration;
 
 	@JsonProperty("Metric")
-	private Metrics Metric;
+	public Metrics Metric;
 
 	@JsonProperty("Value")
-	protected Double value;
+	public Double value;
 
 	@JsonProperty("StringValue")
-	protected String StringValue;
+	public String StringValue;
 	@JsonProperty("StateEvent")
-	private Integer StateEvent;
+	public Integer StateEvent;
 	
 	//Used in Idera Dashboard widget
-	private Product product;
+	public Product product;
 	
 	// @author Saumyadeep 
 	// Friendly Begin
 	
 	@JsonProperty("FriendlyServerName")
-	protected String friendlyServerName;
+	public String friendlyServerName;
 
 	public String getFriendlyServerName() {
 		return friendlyServerName;
 	}
 	
-	protected String displayName;
+	public String displayName;
 	
 	public String getDisplayName() {
 		if(this.getFriendlyServerName()!= null)	

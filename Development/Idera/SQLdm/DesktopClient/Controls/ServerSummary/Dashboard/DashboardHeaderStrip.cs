@@ -5,12 +5,15 @@ using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using System.Diagnostics;
+using Idera.SQLdm.DesktopClient.Properties;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Controls.CustomControls;
 
 namespace Idera.SQLdm.DesktopClient.Controls
 {
     public class DashboardHeaderStrip : ToolStrip
     {
-        private static readonly CustomToolstripColorTable _ColorTable = new CustomToolstripColorTable();
+        private static readonly CustomToolstripColorTable _ColorTable = new CustomToolstripColorTableDarkTheme();
         private Color backColor2;
         private Color hotTrackBackColor;
         private Color borderColor;
@@ -22,8 +25,9 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
         public DashboardHeaderStrip()
         {
-            BackColor = Color.FromArgb(136, 137, 142);
-            BackColor2 = Color.Silver;
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+
+            setBackColor();
             HotTrackBackColor = Color.FromArgb(210, 210, 210);
             BorderColor = Color.White;
             ForeColor = Color.White;
@@ -153,13 +157,13 @@ namespace Idera.SQLdm.DesktopClient.Controls
             {
                 if (renderer == null)
                 {
-                    renderer = new ToolStripProfessionalRenderer(_ColorTable);
+                    renderer = new CustomToolStripProfessionalRenderer();
                     renderer.RoundedEdges = false;
                     renderer.RenderToolStripBackground += new ToolStripRenderEventHandler(renderer_RenderToolStripBackground);
                     renderer.RenderToolStripBorder +=  new ToolStripRenderEventHandler(renderer_RenderToolStripBorder);
-                    renderer.RenderDropDownButtonBackground += new ToolStripItemRenderEventHandler(renderer_RenderDropDownButtonBackground);
-                    renderer.RenderSplitButtonBackground += new ToolStripItemRenderEventHandler(renderer_RenderDropDownButtonBackground);
-                    renderer.RenderButtonBackground += new ToolStripItemRenderEventHandler(renderer_RenderDropDownButtonBackground);
+                    //renderer.RenderDropDownButtonBackground += new ToolStripItemRenderEventHandler(renderer_RenderDropDownButtonBackground);
+                    //renderer.RenderSplitButtonBackground += new ToolStripItemRenderEventHandler(renderer_RenderDropDownButtonBackground);
+                    //renderer.RenderButtonBackground += new ToolStripItemRenderEventHandler(renderer_RenderDropDownButtonBackground);
                 }
 
                 Renderer = renderer;
@@ -268,6 +272,25 @@ namespace Idera.SQLdm.DesktopClient.Controls
             {
                 graphics.DrawRectangle(pen, bounds);
             }
+        }
+
+        private void setBackColor()
+        {   
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.HeaderStripBackColor);
+                BackColor2 = ColorTranslator.FromHtml(DarkThemeColorConstants.HeaderStripBackColor2);
+            }
+            else
+            {
+                BackColor = Color.FromArgb(136, 137, 142);
+                BackColor2 = Color.Silver;
+            }
+        }
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            Invalidate();
+            setBackColor();
         }
     }
 }

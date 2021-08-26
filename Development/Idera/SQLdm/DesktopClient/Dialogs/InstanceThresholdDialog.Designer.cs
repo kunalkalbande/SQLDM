@@ -1,4 +1,6 @@
-﻿namespace Idera.SQLdm.DesktopClient.Dialogs
+﻿using Idera.SQLdm.DesktopClient.Helpers;
+
+namespace Idera.SQLdm.DesktopClient.Dialogs
 {
     partial class instanceThresholdDialog
     {
@@ -32,6 +34,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            bool isDarkThemeSelected = Properties.Settings.Default.ColorScheme == "Dark";
             this.components = new System.ComponentModel.Container();
             Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
@@ -50,7 +53,7 @@
             Infragistics.Win.Appearance appearance27 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance28 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance29 = new Infragistics.Win.Appearance();
-            ChartFX.WinForms.Gauge.LinearScale linearScale1 = new ChartFX.WinForms.Gauge.LinearScale();
+             linearScale1 = new ChartFX.WinForms.Gauge.LinearScale();
             ChartFX.WinForms.Gauge.Marker marker1 = new ChartFX.WinForms.Gauge.Marker();
             ChartFX.WinForms.Gauge.Marker marker2 = new ChartFX.WinForms.Gauge.Marker();
             ChartFX.WinForms.Gauge.Marker marker3 = new ChartFX.WinForms.Gauge.Marker();
@@ -87,33 +90,33 @@
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList1 = new Infragistics.Win.ValueList(10018657);
+            Infragistics.Win.ValueList valueList1 = new Controls.CustomControls.CustomValueList(10018657);
             Infragistics.Win.ValueListItem valueListItem1 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem2 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem3 = new Infragistics.Win.ValueListItem();
-            Infragistics.Win.ValueList valueList2 = new Infragistics.Win.ValueList(5632719);
+            Infragistics.Win.ValueList valueList2 = new Controls.CustomControls.CustomValueList(5632719);
             Infragistics.Win.ValueListItem valueListItem4 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
             Infragistics.Win.ValueListItem valueListItem5 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList3 = new Infragistics.Win.ValueList(5686891);
+            Infragistics.Win.ValueList valueList3 = new Controls.CustomControls.CustomValueList(5686891);
             Infragistics.Win.ValueListItem valueListItem6 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
             Infragistics.Win.ValueListItem valueListItem7 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.office2007PropertyPage1 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnOK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.office2007PropertyPage1 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage(isDarkThemeSelected);
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.instanceSelector = new Infragistics.Win.UltraWinGrid.UltraCombo();
-            this.label2 = new System.Windows.Forms.Label(); //SQLdm 8.6 (Ankit Srivastava) -Preferred Node feature -Added new label for Replica Instance Name 
-            this.replicaNameTextBox = new System.Windows.Forms.TextBox(); //SQLdm 8.6 (Ankit Srivastava) -Preferred Node feature -Added new textbox for Replica Instance Name
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel(); //SQLdm 8.6 (Ankit Srivastava) -Preferred Node feature -Added new label for Replica Instance Name 
+            this.replicaNameTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox(); //SQLdm 8.6 (Ankit Srivastava) -Preferred Node feature -Added new textbox for Replica Instance Name
             this.dividerProgressBar2 = new Idera.SQLdm.DesktopClient.Controls.InfiniteProgressBar();
-            this.alertConfigurationGroupBox = new System.Windows.Forms.GroupBox();
+            this.alertConfigurationGroupBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
             this.alertConfigurationGauge = new ChartFX.WinForms.Gauge.HorizontalGauge();
             this.instanceConfigurationGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.configBindSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnAdvanced = new System.Windows.Forms.Button();
+            this.btnAdvanced = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.retrieveInstancesWorker = new System.ComponentModel.BackgroundWorker();
             this.ultraValidator1 = new Infragistics.Win.Misc.UltraValidator(this.components);
             this.office2007PropertyPage1.ContentPanel.SuspendLayout();
@@ -186,7 +189,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Location = AutoScaleSizeHelper.isScalingRequired ? new System.Drawing.Point(12, 7) : new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 19;
@@ -672,21 +675,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Button btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
         private Controls.Office2007PropertyPage office2007PropertyPage1;
         private Controls.InfiniteProgressBar dividerProgressBar2;
-        private System.Windows.Forms.GroupBox alertConfigurationGroupBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox alertConfigurationGroupBox;
         private ChartFX.WinForms.Gauge.HorizontalGauge alertConfigurationGauge;
         private System.Windows.Forms.BindingSource configBindSource;
-        private System.Windows.Forms.Button btnAdvanced;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnAdvanced;
         private Infragistics.Win.UltraWinGrid.UltraCombo instanceSelector;
-        private System.Windows.Forms.TextBox replicaNameTextBox; //SQLdm 8.6 (Ankit Srivastava) -Preferred Node feature - declare the textbox for the replica instance name
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox replicaNameTextBox; //SQLdm 8.6 (Ankit Srivastava) -Preferred Node feature - declare the textbox for the replica instance name
         private System.ComponentModel.BackgroundWorker retrieveInstancesWorker;
         private Infragistics.Win.UltraWinGrid.UltraGrid instanceConfigurationGrid;
         private Infragistics.Win.Misc.UltraValidator ultraValidator1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2; //SQLdm 8.6 (Ankit Srivastava) -Preferred Node feature -declared the label for the replica instance name
-
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2; //SQLdm 8.6 (Ankit Srivastava) -Preferred Node feature -declared the label for the replica instance name
+        private ChartFX.WinForms.Gauge.LinearScale linearScale1;
     }
 }

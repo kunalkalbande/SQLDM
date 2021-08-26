@@ -5,6 +5,9 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Diagnostics;
 using Idera.SQLdm.DesktopClient.Helpers;
+using Idera.SQLdm.DesktopClient.Controls.CustomControls;
+using Idera.SQLdm.DesktopClient.Properties;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Controls 
 {
@@ -147,10 +150,10 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
             private Panel pnlAll;
             private Panel pnlDivider;
-            private CheckBox cbAll;
+            private CustomCheckBox cbAll;
 
-            private CustomCheckedListBox cclb;
-            public CustomCheckedListBox List
+            private CustomCheckedListBox1 cclb;
+            public CustomCheckedListBox1 List
             {
                 get { return cclb; }
                 set { cclb = value; }
@@ -164,26 +167,35 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
             public Dropdown(CheckedComboBox ccbParent)
             {
+                ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+
                 this.ccbParent = ccbParent;
+                setBackColor();
                 InitializeComponent();
                 this.ShowInTaskbar = false;
                 // Add a handler to notify our parent of ItemCheck events.
                 this.cclb.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.cclb_ItemCheck);
             }
+            void OnCurrentThemeChanged(object sender, EventArgs e)
+            {
+                Invalidate();
+                setPnlAllBackColor();
+                setBackColor();
+            }
 
             private void InitializeComponent()
             {
-                this.cclb = new CustomCheckedListBox();
+                this.cclb = new CustomCheckedListBox1();
                 this.pnlAll = new Panel();
                 this.pnlDivider = new Panel();
-                this.cbAll = new CheckBox();
+                this.cbAll = new CustomCheckBox();
                 this.SuspendLayout();
                 // 
                 // pnlAll
                 // 
                 this.pnlAll.Dock = DockStyle.Top;
                 this.pnlAll.Height = 20;
-                this.pnlAll.BackColor = Color.WhiteSmoke;
+                setPnlAllBackColor();
                 this.pnlAll.Controls.Add(this.cbAll);
                 this.pnlAll.Controls.Add(this.pnlDivider);
                 this.pnlAll.Padding = new Padding(1, 0, 0, 0);
@@ -221,6 +233,32 @@ namespace Idera.SQLdm.DesktopClient.Controls
                 this.MinimizeBox = false;
                 this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
                 this.ResumeLayout(false);
+            }
+
+            private void setBackColor()
+            {
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    this.ccbParent.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.ComboBoxBackColor);
+                    this.ccbParent.ForeColor = ColorTranslator.FromHtml(DarkThemeColorConstants.ComboBoxForeColor);
+                }
+                else
+                {
+                    this.ccbParent.BackColor = Color.White;
+                    this.ccbParent.ForeColor = Color.Black;
+                }
+            }
+
+            private void setPnlAllBackColor()
+            {
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    this.pnlAll.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+                }
+                else
+                {
+                    this.pnlAll.BackColor = Color.WhiteSmoke;
+                }
             }
 
             private void cbAll_CheckedChanged(object sender, EventArgs e)
@@ -452,6 +490,19 @@ namespace Idera.SQLdm.DesktopClient.Controls
                 components.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        protected override void OnEnabledChanged(EventArgs e)
+        {
+            if (Settings.Default.ColorScheme != "Dark")
+            {
+                base.OnEnabledChanged(e);
+                return;
+            }
+            if (this.Enabled)
+                this.DropDownStyle = ComboBoxStyle.DropDown;
+            else
+                this.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         protected override void OnDropDown(EventArgs e)

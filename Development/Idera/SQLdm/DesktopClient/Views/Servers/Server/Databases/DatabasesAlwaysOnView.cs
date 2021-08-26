@@ -32,8 +32,7 @@ using Idera.SQLdm.Common.Configuration.ServerActions;
 using Idera.SQLdm.Common.Objects.ApplicationSecurity;
 using BBS.TracerX;
 using System.Globalization;
-
-
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
 {
@@ -159,6 +158,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             InitializeHistoryDataTable();
             InitializeCharts();
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
         #endregion
         
@@ -1772,6 +1773,19 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
         }
 
+        //void OnCurrentThemeChanged(object sender, EventArgs e)
+        //{
+        //    SetGridTheme();
+        //}
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.transactionLogsGrid);
+            themeManager.updateGridTheme(this.alwaysOnAvailabilityGroupsGrid);
+        }
+
         public override object DoRefreshWork()
         {
             //this is largely redundant. The problem is that a customer is getting a button to allow him to access the screen
@@ -1992,6 +2006,33 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             UltraGridRow row = alwaysOnAvailabilityGroupsGrid.Rows[0];
             row.Selected = true;
             alwaysOnAvailabilityGroupsGrid.ActiveRowScrollRegion.ScrollRowIntoView(row);
+        }
+
+        private void mouseEnter_refreshDatabasesButton(Object Sender, EventArgs e)
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+                appearance11.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefreshHover;
+        }
+        private void mouseLeave_refreshDatabasesButton(Object Sender, EventArgs e)
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+                appearance11.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh;
+        }
+        private void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                if (!refreshDatabasesButton.Enabled)
+                    appearance11.Image = Helpers.ImageUtils.ChangeOpacity(global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh, 0.50F);
+                this.refreshDatabasesButton.UseOsThemes = DefaultableBoolean.False;
+                this.refreshDatabasesButton.UseAppStyling = false;
+                this.refreshDatabasesButton.ButtonStyle = UIElementButtonStyle.FlatBorderless;
+            }
+            else
+            {
+                this.refreshDatabasesButton.UseAppStyling = true;
+            }
         }
     }
 }

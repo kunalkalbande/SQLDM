@@ -47,7 +47,7 @@
             ChartFX.WinForms.Adornments.SolidBackground solidBackground3 = new ChartFX.WinForms.Adornments.SolidBackground();
             ChartFX.WinForms.SeriesAttributes seriesAttributes3 = new ChartFX.WinForms.SeriesAttributes();
             ChartFX.WinForms.SeriesAttributes seriesAttributes4 = new ChartFX.WinForms.SeriesAttributes();
-            ChartFX.WinForms.Gauge.LinearScale linearScale1 = new ChartFX.WinForms.Gauge.LinearScale();
+             linearScale1 = new ChartFX.WinForms.Gauge.LinearScale();
             ChartFX.WinForms.Gauge.Filler filler1 = new ChartFX.WinForms.Gauge.Filler();
 
             //Hyper V
@@ -58,50 +58,50 @@
             ChartFX.WinForms.TitleDockable titleDockable6 = new ChartFX.WinForms.TitleDockable();
             ChartFX.WinForms.TitleDockable titleDockable7 = new ChartFX.WinForms.TitleDockable();
 
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool27 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printChartButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool27 = new Controls.CustomControls.CustomButtonTool("printChartButton");
             Infragistics.Win.Appearance appearance34 = new Infragistics.Win.Appearance();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VirtualizationControl));
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool28 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportChartDataButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool28 = new Controls.CustomControls.CustomButtonTool("exportChartDataButton");
             Infragistics.Win.Appearance appearance35 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool29 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportChartImageButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool29 = new Controls.CustomControls.CustomButtonTool("exportChartImageButton");
             Infragistics.Win.Appearance appearance36 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool30 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showHelpButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool31 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showDetailsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool32 = new Infragistics.Win.UltraWinToolbars.ButtonTool("configureAlertsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Infragistics.Win.UltraWinToolbars.ButtonTool("vmConfig");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool30 = new Controls.CustomControls.CustomButtonTool("showHelpButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool31 = new Controls.CustomControls.CustomButtonTool("showDetailsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool32 = new Controls.CustomControls.CustomButtonTool("configureAlertsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Controls.CustomControls.CustomButtonTool("vmConfig");
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool1 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("vmContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Infragistics.Win.UltraWinToolbars.ButtonTool("vmConfig");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Infragistics.Win.UltraWinToolbars.ButtonTool("configureAlertsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool10 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showHelpButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool11 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showDetailsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool12 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printChartButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool13 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportChartImageButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool14 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportChartDataButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Controls.CustomControls.CustomButtonTool("vmConfig");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Controls.CustomControls.CustomButtonTool("configureAlertsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool10 = new Controls.CustomControls.CustomButtonTool("showHelpButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool11 = new Controls.CustomControls.CustomButtonTool("showDetailsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool12 = new Controls.CustomControls.CustomButtonTool("printChartButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool13 = new Controls.CustomControls.CustomButtonTool("exportChartImageButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool14 = new Controls.CustomControls.CustomButtonTool("exportChartDataButton");
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool2 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("cpuReadyGaugeContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Infragistics.Win.UltraWinToolbars.ButtonTool("vmConfig");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Infragistics.Win.UltraWinToolbars.ButtonTool("configureAlertsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showHelpButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showDetailsButton");
-            this.vmCpuUsagePanel = new System.Windows.Forms.Panel();
-            this.vmMemUsageChart = new ChartFX.WinForms.Chart();
-            this.esxMemUsageChart = new ChartFX.WinForms.Chart();
-            this.VmAvaiableByteHyperVChart = new ChartFX.WinForms.Chart();
-            this.HostAvaialbleByteHyperVChart = new ChartFX.WinForms.Chart();
-            this.mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.vmMemUsagePanel = new System.Windows.Forms.Panel();
-            this.vmDiskUsageChart = new ChartFX.WinForms.Chart();
-            this.esxDiskUsageChart = new ChartFX.WinForms.Chart();
-            this.cpuReadyPanel = new System.Windows.Forms.Panel();
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Controls.CustomControls.CustomButtonTool("vmConfig");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Controls.CustomControls.CustomButtonTool("configureAlertsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Controls.CustomControls.CustomButtonTool("showHelpButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Controls.CustomControls.CustomButtonTool("showDetailsButton");
+            this.vmCpuUsagePanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.vmMemUsageChart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+            this.esxMemUsageChart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+            this.VmAvaiableByteHyperVChart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+            this.HostAvaialbleByteHyperVChart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+            this.mainTableLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.vmMemUsagePanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.vmDiskUsageChart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+            this.esxDiskUsageChart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+            this.cpuReadyPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.cpuReadyGauge = new ChartFX.WinForms.Gauge.VerticalGauge();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.ultraPrintPreviewDialog = new Infragistics.Win.Printing.UltraPrintPreviewDialog(this.components);
             this.toolbarsManager = new Idera.SQLdm.DesktopClient.Controls.ContextMenuManager(this.components);
             this._DashboardControl_Toolbars_Dock_Area_Left = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
             this._DashboardControl_Toolbars_Dock_Area_Right = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
             this._DashboardControl_Toolbars_Dock_Area_Top = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
             this._DashboardControl_Toolbars_Dock_Area_Bottom = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
-            this.statusLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.VmConfigPanel = new System.Windows.Forms.Panel();
+            this.statusLinkLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.VmConfigPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.vmCpuUsagePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vmMemUsageChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.esxMemUsageChart)).BeginInit();
@@ -650,12 +650,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel vmCpuUsagePanel;
-        private System.Windows.Forms.TableLayoutPanel mainTableLayoutPanel;
-        private System.Windows.Forms.Panel vmMemUsagePanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  vmCpuUsagePanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel mainTableLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  vmMemUsagePanel;
         private ChartFX.WinForms.Chart vmDiskUsageChart;
-        private System.Windows.Forms.Panel cpuReadyPanel;
-        private System.Windows.Forms.Label label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  cpuReadyPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
         private Infragistics.Win.Printing.UltraPrintPreviewDialog ultraPrintPreviewDialog;
         private ChartFX.WinForms.Gauge.VerticalGauge cpuReadyGauge;
         private ChartFX.WinForms.Chart vmMemUsageChart;
@@ -668,7 +668,8 @@
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _DashboardControl_Toolbars_Dock_Area_Right;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _DashboardControl_Toolbars_Dock_Area_Top;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _DashboardControl_Toolbars_Dock_Area_Bottom;
-        private System.Windows.Forms.LinkLabel statusLinkLabel;
-        private System.Windows.Forms.Panel VmConfigPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel statusLinkLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  VmConfigPanel;
+        private ChartFX.WinForms.Gauge.LinearScale linearScale1;
     }
 }

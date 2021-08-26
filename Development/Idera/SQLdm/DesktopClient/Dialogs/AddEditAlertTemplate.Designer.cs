@@ -30,17 +30,17 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         {
             this.components = new System.ComponentModel.Container();
             Infragistics.Win.Misc.ValidationGroup validationGroup1 = new Infragistics.Win.Misc.ValidationGroup("checkName");
-            this.label1 = new System.Windows.Forms.Label();
-            this.templateName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.templateDescription = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.templateName = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.templateDescription = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnOK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.validator = new Infragistics.Win.Misc.UltraValidator(this.components);
-            this.cboBaseTemplate = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
-            this.chkMakeDefault = new System.Windows.Forms.CheckBox();
-            this.btnEditConfig = new System.Windows.Forms.Button();
+            this.cboBaseTemplate = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraComboEditor();
+            this.chkMakeDefault = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.btnEditConfig = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.validator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboBaseTemplate)).BeginInit();
             this.SuspendLayout();
@@ -191,17 +191,17 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox templateName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox templateDescription;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox templateName;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox templateDescription;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnOK;
         private Infragistics.Win.Misc.UltraValidator validator;
         private Infragistics.Win.UltraWinEditors.UltraComboEditor cboBaseTemplate;
-        private System.Windows.Forms.CheckBox chkMakeDefault;
-        private System.Windows.Forms.Button btnEditConfig;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkMakeDefault;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnEditConfig;
 
     }
 }

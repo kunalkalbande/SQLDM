@@ -28,7 +28,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.label5 = new System.Windows.Forms.Label();
+            this.label5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.panel1.SuspendLayout();
             this.filterPanel.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +72,6 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
 
         #endregion
 
-        private System.Windows.Forms.Label label5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label5;
     }
 }

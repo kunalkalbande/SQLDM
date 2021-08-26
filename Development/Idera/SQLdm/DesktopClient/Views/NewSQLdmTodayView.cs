@@ -24,6 +24,7 @@ using Infragistics.Win;
 using Infragistics.Win.UltraWinDataSource;
 using Infragistics.Win.UltraWinGrid;
 using Infragistics.Win.UltraWinToolbars;
+using Infragistics.Windows.Themes;
 using Wintellect.PowerCollections;
 using ApplicationMessageBox = Idera.SQLdm.Common.UI.Dialogs.ApplicationMessageBox;
 using ColumnHeader = Infragistics.Win.UltraWinGrid.ColumnHeader;
@@ -95,6 +96,8 @@ namespace Idera.SQLdm.DesktopClient.Views
             this.AdaptFontSize();
             stopWatchMain.Stop();
             StartUpTimeLog.DebugFormat("Time taken by NewSQLdmTodayView : {0}", stopWatchMain.ElapsedMilliseconds);
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
         public override void UpdateTheme(ThemeName theme)
@@ -1432,6 +1435,18 @@ namespace Idera.SQLdm.DesktopClient.Views
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
             stopWatch.Stop();
             StartUpTimeLog.DebugFormat("Time taken by AdaptFontSize : {0}", stopWatch.ElapsedMilliseconds);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.alertsGrid);
         }
 
         private void lbl_feedback_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

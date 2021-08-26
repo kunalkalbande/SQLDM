@@ -44,11 +44,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.grid = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.enableGroupByToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
+            this.enableGroupByToolStripMenuItem = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomToolStripMenuItem();
+            this.button1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -208,9 +208,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
         private Infragistics.Win.UltraWinGrid.UltraGrid grid;
-        private System.Windows.Forms.Button button1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton button1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem enableGroupByToolStripMenuItem;
     }

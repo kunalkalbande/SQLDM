@@ -42,14 +42,14 @@
             Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance24 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance26 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList1 = new Infragistics.Win.ValueList(276968329);
+            Infragistics.Win.ValueList valueList1 = new Controls.CustomControls.CustomValueList(276968329);
             Infragistics.Win.ValueListItem valueListItem3 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.Appearance appearance27 = new Infragistics.Win.Appearance();
             Infragistics.Win.ValueListItem valueListItem4 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.Appearance appearance28 = new Infragistics.Win.Appearance();
             this._blockedGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this._loadingPanel = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this._loadingPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this._loadingProgressControl = new MRG.Controls.UI.LoadingCircle();
             this._refreshDatabasesWorker = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this._blockedGrid)).BeginInit();
@@ -225,8 +225,8 @@
         #endregion
 
         private Infragistics.Win.UltraWinGrid.UltraGrid _blockedGrid;
-        private System.Windows.Forms.Panel _loadingPanel;
-        private System.Windows.Forms.Label label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  _loadingPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
         private MRG.Controls.UI.LoadingCircle _loadingProgressControl;
         private System.ComponentModel.BackgroundWorker _refreshDatabasesWorker;
 

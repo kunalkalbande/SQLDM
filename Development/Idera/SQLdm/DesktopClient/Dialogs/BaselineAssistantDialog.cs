@@ -15,13 +15,14 @@ using Idera.SQLdm.Common;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class BaselineAssistantDialog : Form
+    public partial class BaselineAssistantDialog : BaseDialog
     {
         private Dictionary<string, Tuple<int, string>> dict = new Dictionary<string, Tuple<int, string>>();
         private int instanceId=-1;
 
         public BaselineAssistantDialog(int instanceId)
         {
+            this.DialogHeader = "Baseline Definition Visualizer";
             InitializeComponent();
 
             MaximizeBox = false;

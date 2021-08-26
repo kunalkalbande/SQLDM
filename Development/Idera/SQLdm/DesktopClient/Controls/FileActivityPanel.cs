@@ -14,6 +14,9 @@ using Idera.SQLdm.DesktopClient.Views.Servers.Server;
 using Idera.SQLdm.Common.Configuration;
 using Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources;
 using System.Threading;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Properties;
+using Idera.SQLdm.DesktopClient.Helpers;
 
 namespace Idera.SQLdm.DesktopClient.Controls
 {
@@ -57,13 +60,14 @@ namespace Idera.SQLdm.DesktopClient.Controls
         // maps filekey to drivekey in cache (so we can get to the drive from the file) [filepath->driveletter, filepath->driveletter,...]
         private Dictionary<string, string> fileDiskMap;
 
-        private const int diskUiWidth           = 250;
-        private const int diskUiHeaderHeight    = 50;
-        private const int diskUiMargin          = 5;
-        private const int fileUiMargin          = 5;
-        private const int fileUiExpandedHeight  = 300;
-        private const int fileUiCollapsedHeight = 50;
-
+        //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+        private int diskUiWidth = AutoScaleSizeHelper.isScalingRequired ?  500 : 250;
+        private int diskUiHeaderHeight = 50;
+        private int diskUiMargin = 5;
+        private int fileUiMargin = 5;
+        private int fileUiExpandedHeight = AutoScaleSizeHelper.isScalingRequired ? 330 : 300;
+        private int fileUiCollapsedHeight = AutoScaleSizeHelper.isScalingRequired ? 70 : 50;
+        //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
         private SolidBrush controlBackColorBrush;
         private SolidBrush diskBackColorBrush;
         private SolidBrush fileBackColorBrush;
@@ -82,6 +86,8 @@ namespace Idera.SQLdm.DesktopClient.Controls
         private Pen        writeHistorgramPen;
         private Pen        readLinePen;
         private Pen        writeLinePen;
+        private Color fontColor;
+        private SolidBrush brushFontColor;
 
         private SolidBrush[] readActivityBrushes;
         private SolidBrush[] writeActivityBrushes;
@@ -139,6 +145,8 @@ namespace Idera.SQLdm.DesktopClient.Controls
                     ControlStyles.OptimizedDoubleBuffer, true
                 );
 
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+
             sort          = FileActivitySort.Filename;
             sortDirection = FileActivitySortDirection.Down;
             sorter        = new Sorter(this);
@@ -151,25 +159,8 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
             tooltip = new ToolTip();
 
-            // setup the colors            
-            controlBackColorBrush    = new SolidBrush(Color.FromArgb(235, 235, 235));
-            diskBackColorBrush       = new SolidBrush(Color.FromArgb(247, 247, 247));   
-            fileBackColorBrush       = new SolidBrush(Color.FromArgb(233, 233, 233));
-            fileBackColorMaxBrush    = new SolidBrush(Color.FromArgb(255, 229, 147));
-            fileOthersBackColorBrush = new SolidBrush(Color.FromArgb(231, 232, 233));
-            fileIconBackColorBrush   = new SolidBrush(Color.FromArgb(203, 203, 203));
-            fileDarkTextBrush        = new SolidBrush(Color.FromArgb(203, 203, 203));
-            fileEmptyActivityBrush   = new SolidBrush(Color.FromArgb(166, 166, 166));
-            fileReadActivityBrush    = new SolidBrush(Color.FromArgb(57, 160, 48));
-            fileWriteActivityBrush   = new SolidBrush(Color.FromArgb(80, 124, 209));
-            fileChartBackColorBrush  = new SolidBrush(Color.WhiteSmoke);
-            histogramBotBackBrush = new SolidBrush(Color.WhiteSmoke);     
-            outlinePen               = new Pen(Color.FromArgb(203, 203, 203));
-            histogramDividerPen      = new Pen(Color.FromArgb(233, 233, 233), 4);
-            readHistogramPen         = new Pen(Color.FromArgb(57, 160, 48));
-            writeHistorgramPen       = new Pen(Color.FromArgb(80, 124, 209));
-            readLinePen              = new Pen(Color.FromArgb(57, 160, 48), 2);
-            writeLinePen             = new Pen(Color.FromArgb(80, 124, 209), 2);
+            // setup the colors
+            setupColors();
 
             readActivityBrushes = new SolidBrush[11];
             readActivityBrushes[0]  = new SolidBrush(Color.FromArgb(57, 160, 48));
@@ -230,9 +221,9 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
             // setup the file type images array
             fileTypeImages = new Dictionary<FileActivityFileType, Image>();
-            fileTypeImages.Add(FileActivityFileType.Data,    Properties.Resources.Database32);
-            fileTypeImages.Add(FileActivityFileType.Log,     Properties.Resources.DatabaseIndex32);
-            fileTypeImages.Add(FileActivityFileType.Unknown, Properties.Resources.DatabaseIndex32);
+            fileTypeImages.Add(FileActivityFileType.Data,   AutoScaleImageSizeHelper.ScaleImage(Properties.Resources.Database32,1.5f));
+            fileTypeImages.Add(FileActivityFileType.Log,    AutoScaleImageSizeHelper.ScaleImage(Properties.Resources.DatabaseIndex32, 1.5f));
+            fileTypeImages.Add(FileActivityFileType.Unknown, AutoScaleImageSizeHelper.ScaleImage(Properties.Resources.DatabaseIndex32, 1.5f));
 
             // setup context menu
             menu = new ContextMenu();
@@ -261,7 +252,64 @@ namespace Idera.SQLdm.DesktopClient.Controls
             InitializeComponent();
 
             flashThread.Start();
-        }        
+        }
+
+        private void setupColors()
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                controlBackColorBrush = new SolidBrush(ColorTranslator.FromHtml(DarkThemeColorConstants.PanelBackColor));
+                diskBackColorBrush = new SolidBrush(ColorTranslator.FromHtml(DarkThemeColorConstants.TextBoxBackColor)); 
+                fileBackColorBrush = new SolidBrush(ColorTranslator.FromHtml(DarkThemeColorConstants.PanelBackColor));
+                fileBackColorMaxBrush = new SolidBrush(ColorTranslator.FromHtml(DarkThemeColorConstants.PanelBackColor));
+                fileOthersBackColorBrush = new SolidBrush(ColorTranslator.FromHtml(DarkThemeColorConstants.TextBoxBackColor));
+                fileIconBackColorBrush = new SolidBrush(ColorTranslator.FromHtml(DarkThemeColorConstants.PanelBackColor));
+                fileDarkTextBrush = new SolidBrush(ColorTranslator.FromHtml(DarkThemeColorConstants.PanelBackColor));
+                fileEmptyActivityBrush = new SolidBrush(Color.FromArgb(166, 166, 166));
+                fileReadActivityBrush = new SolidBrush(Color.FromArgb(57, 160, 48));
+                fileWriteActivityBrush = new SolidBrush(Color.FromArgb(80, 124, 209));
+                fileChartBackColorBrush = new SolidBrush(ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor)); 
+                histogramBotBackBrush = new SolidBrush(ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor));
+                outlinePen = new Pen(ColorTranslator.FromHtml(DarkThemeColorConstants.PanelBackColor));
+                histogramDividerPen = new Pen(ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor), 4);
+                readHistogramPen = new Pen(Color.FromArgb(57, 160, 48));
+                writeHistorgramPen = new Pen(Color.FromArgb(80, 124, 209));
+                readLinePen = new Pen(Color.FromArgb(57, 160, 48), 2);
+                writeLinePen = new Pen(Color.FromArgb(80, 124, 209), 2);
+                fontColor = Color.White;
+                brushFontColor = new SolidBrush(Color.White);
+            }
+            else
+            {
+                controlBackColorBrush = new SolidBrush(Color.FromArgb(235, 235, 235));
+                diskBackColorBrush = new SolidBrush(Color.FromArgb(247, 247, 247));
+                fileBackColorBrush = new SolidBrush(Color.FromArgb(233, 233, 233));
+                fileBackColorMaxBrush = new SolidBrush(Color.FromArgb(255, 229, 147));
+                fileOthersBackColorBrush = new SolidBrush(Color.FromArgb(231, 232, 233));
+                fileIconBackColorBrush = new SolidBrush(Color.FromArgb(203, 203, 203));
+                fileDarkTextBrush = new SolidBrush(Color.FromArgb(203, 203, 203));
+                fileEmptyActivityBrush = new SolidBrush(Color.FromArgb(166, 166, 166));
+                fileReadActivityBrush = new SolidBrush(Color.FromArgb(57, 160, 48));
+                fileWriteActivityBrush = new SolidBrush(Color.FromArgb(80, 124, 209));
+                fileChartBackColorBrush = new SolidBrush(Color.WhiteSmoke);
+                histogramBotBackBrush = new SolidBrush(Color.WhiteSmoke);
+                outlinePen = new Pen(Color.FromArgb(203, 203, 203));
+                histogramDividerPen = new Pen(Color.FromArgb(233, 233, 233), 4);
+                readHistogramPen = new Pen(Color.FromArgb(57, 160, 48));
+                writeHistorgramPen = new Pen(Color.FromArgb(80, 124, 209));
+                readLinePen = new Pen(Color.FromArgb(57, 160, 48), 2);
+                writeLinePen = new Pen(Color.FromArgb(80, 124, 209), 2);
+                fontColor = Color.Black;
+                brushFontColor = new SolidBrush(Color.Black);
+            }
+                
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            Invalidate();
+            setupColors();
+        }
 
         #endregion
 
@@ -1411,15 +1459,16 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
                 d.Width  = diskUiWidth;
                 d.Height = disksGroupRect.Height - (2 * diskUiMargin);
-                d.Y      = diskUiMargin;
-                d.X      = (i * diskUiWidth) + ((i + 1) * diskUiMargin);
+                d.Y = diskUiMargin;
+                d.X = (i * diskUiWidth) + ((i + 1) * diskUiMargin);
                
                 // save to the disk rectangles list
                 diskRectangles.Add(diskkey, d);
 
                 // now, get the filekeys for this disk and create the file rectangles
                 OrderedSet<string> filekeys = filteredCacheKeys[diskkey];
-                int y = fileUiMargin + diskUiHeaderHeight;
+                //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+                int y = AutoScaleSizeHelper.isScalingRequired ? 90 : fileUiMargin + diskUiHeaderHeight;
 
                 // one rectangle for each file(path)
                 for (int j = 0; j < filekeys.Count; j++)
@@ -1521,15 +1570,17 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
                 // init header values
                 left               = isLeftAligned ? offsetRect.X + 5 : offsetRect.X - (diskRect.Width - offsetRect.Width) + 5;
-                headerTitleYOffset = 10; // top of title text
-                headerDataYOffset  = headerTitleYOffset + 20; // top of reads/writes per second text
-                headerDataXOffset  = 130; // left side of writes/sec text
-
+                headerTitleYOffset = 15; // top of title text (4.12 DarkTheme Babita Manral Margin Issue)
+                headerDataYOffset  = headerTitleYOffset + 12; // top of reads/writes per second text (4.12 DarkTheme Babita Manral Margin Issue)
+                //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+                headerDataXOffset = AutoScaleSizeHelper.isScalingRequired ? 250 : 130; // left side of writes/sec text
+                Font fontForLargeDPI = AutoScaleSizeHelper.isScalingRequired && AutoScaleSizeHelper.isXXLargeSize ? new Font(this.Font.Name, 7.5f) : this.Font;
+                //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
                 // draw the background
                 graphics.FillRectangle(diskBackColorBrush, offsetRect);
-
+        
                 // draw the header
-                TextRenderer.DrawText(graphics, "Drive: " + disk.DriveLetter, this.Font, new Rectangle(left, diskRect.Top + headerTitleYOffset, diskRect.Width, 20), Color.Black, TextFormatFlags.EndEllipsis | TextFormatFlags.PreserveGraphicsClipping);
+                TextRenderer.DrawText(graphics, "Drive: " + disk.DriveLetter, fontForLargeDPI, new Rectangle(left, diskRect.Top-10 + headerTitleYOffset, diskRect.Width, 20), fontColor, TextFormatFlags.EndEllipsis | TextFormatFlags.PreserveGraphicsClipping);
                 SaveTooltip("Drive: " + disk.DriveLetter, new Rectangle(left, diskRect.Top + headerTitleYOffset, diskRect.Width, 25));
 
                 reads = !disk.DiskReadsPerSec.HasValue
@@ -1548,8 +1599,8 @@ namespace Idera.SQLdm.DesktopClient.Controls
                 if (disk.DiskWritesPerSec.HasValue && disk.DiskWritesPerSec.Value == 0) writes = "Writes/Sec: None";
                 if (disk.DiskTransfersPerSec.HasValue && disk.DiskTransfersPerSec.Value == 0) transfers = "Transfers/Sec: None";
                 
-                graphics.DrawString(reads,     this.Font, Brushes.Black, left,                     diskRect.Top + headerDataYOffset);
-                graphics.DrawString(writes,    this.Font, Brushes.Black, left + headerDataXOffset, diskRect.Top + headerDataYOffset);
+                graphics.DrawString(reads, fontForLargeDPI, brushFontColor, left,                     diskRect.Top + headerDataYOffset);
+                graphics.DrawString(writes, fontForLargeDPI, brushFontColor, left + headerDataXOffset, diskRect.Top + headerDataYOffset);
                 //graphics.DrawString(transfers, this.Font, Brushes.Black, left + headerDataXOffset + 130, diskRect.Top + headerDataYOffset);
 
                 // get the filtered files for this disk
@@ -1671,13 +1722,13 @@ namespace Idera.SQLdm.DesktopClient.Controls
             return maxScrollHeight;
         }
 
+
         private void DrawFile(Graphics graphics, Rectangle fileRect, string filekey, bool isMaxFile)
         {            
             FileActivityFile file = GetCurrentFileCache(filekey);
-
             if (file == null)
                 return;
-
+            Rectangle newRectangle;
             // store the clickable area
             AddToggleHotSpot(filekey, new Rectangle(fileRect.X, fileRect.Y, fileRect.Width, fileRect.Height));
 
@@ -1694,21 +1745,36 @@ namespace Idera.SQLdm.DesktopClient.Controls
             // draw file background
             SolidBrush backbrush = file.IsOtherFiles ? fileOthersBackColorBrush : fileBackColorBrush;
             if (isMaxFile) backbrush = fileBackColorMaxBrush;
-            graphics.FillRectangle(backbrush, fileRect);
+            //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                newRectangle = new Rectangle(fileRect.X, fileRect.Y - 20, fileRect.Width, fileRect.Height + 20);
+                dbTypeIconWidth += 24;
+                graphics.FillRectangle(backbrush, newRectangle);
+                graphics.FillRectangle(fileIconBackColorBrush, new Rectangle(x0 + 2, y0 - 20, dbTypeIconWidth, dbTypeIconWidth));
+                if (file.IsOtherFiles)
+                    graphics.DrawImage(AutoScaleImageSizeHelper.ScaleImage(Properties.Resources.Documents_32,1.5f), x0 + 2, y0 - 20);
+                else
+                    graphics.DrawImage(fileTypeImages[file.FileType], x0 + 2, y0 - 10);
 
-            // draw the icon
-            graphics.FillRectangle(fileIconBackColorBrush, new Rectangle(x0+2, y0+2, 32, 32));
-
-            if(file.IsOtherFiles)
-                graphics.DrawImage(Properties.Resources.Documents_32, x0 + 2, y0 + 2);
+                TextRenderer.DrawText(graphics, file.Filename, this.Font, new Rectangle(x0 + dbTypeIconWidth + margin, topline - 20, newRectangle.Width - 74, 30), fontColor, TextFormatFlags.EndEllipsis | TextFormatFlags.PreserveGraphicsClipping);
+                TextRenderer.DrawText(graphics, file.DatabaseName, this.Font, new Rectangle(x0 + dbTypeIconWidth + margin, y0 + 10, fileRect.Width - 74, 30), file.IsOtherFiles ? Color.DarkGray : Color.SteelBlue, TextFormatFlags.EndEllipsis | TextFormatFlags.PreserveGraphicsClipping);
+            }
             else
-                graphics.DrawImage(fileTypeImages[file.FileType], x0+2, y0+2);
-
-            // draw the logical filename
-            TextRenderer.DrawText(graphics, file.Filename, this.Font, new Rectangle(x0 + dbTypeIconWidth + margin, topline, fileRect.Width-74, 20), Color.Black, TextFormatFlags.EndEllipsis | TextFormatFlags.PreserveGraphicsClipping);
-
-            // draw the database name            
-            TextRenderer.DrawText(graphics, file.DatabaseName, this.Font, new Rectangle(x0 + dbTypeIconWidth + margin, y0 + 20, fileRect.Width - 74, 20), file.IsOtherFiles ? Color.DarkGray : Color.SteelBlue, TextFormatFlags.EndEllipsis | TextFormatFlags.PreserveGraphicsClipping);
+            {
+                graphics.FillRectangle(backbrush, fileRect);
+                // draw the icon
+                graphics.FillRectangle(fileIconBackColorBrush, new Rectangle(x0 + 2, y0 + 2, dbTypeIconWidth, dbTypeIconWidth));
+                if (file.IsOtherFiles)
+                    graphics.DrawImage(Properties.Resources.Documents_32, x0 + 2, y0 + 2);
+                else
+                    graphics.DrawImage(fileTypeImages[file.FileType], x0 + 2, y0 + 2);
+                // draw the logical filename
+                TextRenderer.DrawText(graphics, file.Filename, this.Font, new Rectangle(x0 + dbTypeIconWidth + margin, topline, fileRect.Width - 74, 20), fontColor, TextFormatFlags.EndEllipsis | TextFormatFlags.PreserveGraphicsClipping);
+                // draw the database name        
+                TextRenderer.DrawText(graphics, file.DatabaseName, this.Font, new Rectangle(x0 + dbTypeIconWidth + margin, y0 + 20, fileRect.Width - 74, 20), file.IsOtherFiles ? Color.DarkGray : Color.SteelBlue, TextFormatFlags.EndEllipsis | TextFormatFlags.PreserveGraphicsClipping);
+            }
+            //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
 
             // smooth the activity lights
             graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
@@ -1722,7 +1788,13 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
             Rectangle readLightRect  = new Rectangle(r0 - (2 * activityIconWidth) - (2 * margin), topline, 16, 16);
             Rectangle writeLightRect = new Rectangle(r0 - activityIconWidth - margin,             topline, 16, 16);
-
+            //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                readLightRect = new Rectangle(readLightRect.X, readLightRect.Y-20, readLightRect.Width, readLightRect.Height);
+                writeLightRect = new Rectangle(writeLightRect.X, writeLightRect.Y-20, writeLightRect.Width, writeLightRect.Height);
+            }
+            //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
             graphics.FillEllipse(readBrush,  readLightRect);
             graphics.FillEllipse(writeBrush, writeLightRect);
 
@@ -1861,14 +1933,14 @@ namespace Idera.SQLdm.DesktopClient.Controls
                 int top = chartRect.Top + chartRect.Height + margin;
 
                 // labels
-                graphics.DrawString(readsPerSecondText, this.Font, Brushes.Black, chartRect.Left, top);
-                graphics.DrawString(readTextValue, this.Font, Brushes.Black, chartRect.Left + readValueOffset + readSizeLabel.Width, top);
+                graphics.DrawString(readsPerSecondText, this.Font, brushFontColor, chartRect.Left, top);
+                graphics.DrawString(readTextValue, this.Font, brushFontColor, chartRect.Left + readValueOffset + readSizeLabel.Width, top);
 
                 float writeLeft = r0 - writeSizeLabel.Width - writeValueOffset - writeSizeValue.Width - margin;
 
                 // value text
-                graphics.DrawString(writesPerSecondText, this.Font, Brushes.Black, writeLeft, top);
-                graphics.DrawString(writeTextValue, this.Font, Brushes.Black, r0 - writeSizeValue.Width - margin, top);
+                graphics.DrawString(writesPerSecondText, this.Font, brushFontColor, writeLeft, top);
+                graphics.DrawString(writeTextValue, this.Font, brushFontColor, r0 - writeSizeValue.Width - margin, top);
 
                 // trend arrows
                 Image readArrow  = trends[0] > 0 ? Properties.Resources.arrow_up_green_16x16_plain  : Properties.Resources.arrow_down_green_16x16_plain;

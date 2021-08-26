@@ -14,6 +14,8 @@ using Idera.SQLdm.DesktopClient.Helpers;
 using Idera.SQLdm.DesktopClient.Objects;
 using TableAction = Idera.SQLdm.DesktopClient.Objects.TableActionObject.TableAction;
 using Wintellect.PowerCollections;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Controls;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
@@ -39,8 +41,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public SelectTablesDialog(TableAction action, Dictionary<Pair<string, int>, TableActionObject> tables, AlertConfigurationItem alertConfigItem)
         {
+            this.DialogHeader = "Table Action";
             InitializeComponent();
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
 
             this.Text = string.Concat(ApplicationHelper.GetEnumDescription(action), " - Select Tables");
             infoLabel.Text = string.Empty;
@@ -182,6 +187,18 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private void AdaptFontSize()
         {            
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.tablesGrid);
         }
         #endregion
 

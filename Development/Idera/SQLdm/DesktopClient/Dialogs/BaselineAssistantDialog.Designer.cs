@@ -16,6 +16,8 @@ using Idera.SQLdm.DesktopClient.Objects;
 using Idera.SQLdm.DesktopClient.Properties;
 using Infragistics.Win.UltraWinToolbars;
 using Idera.SQLdm.DesktopClient.Helpers;
+using Idera.SQLdm.DesktopClient.Controls.CustomControls;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
@@ -47,19 +49,21 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            this.SelectNumericMertic = new System.Windows.Forms.ComboBox();
-            this.SelectNoOfWeeks = new System.Windows.Forms.ComboBox();
-            this.ChooseMetricLabel = new System.Windows.Forms.Label();
-            this.ChooseWeekLabel = new System.Windows.Forms.Label();
-            this.Monday = new System.Windows.Forms.Label();
-            this.Tuesday = new System.Windows.Forms.Label();
-            this.Wednesday = new System.Windows.Forms.Label();
-            this.Thrusday = new System.Windows.Forms.Label();
-            this.Friday = new System.Windows.Forms.Label();
-            this.Saturday = new System.Windows.Forms.Label();
-            this.Sunday = new System.Windows.Forms.Label();
-            this.Dummy = new System.Windows.Forms.Label();
-            this.chart = new ChartFX.WinForms.Chart();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged1);
+
+            this.SelectNumericMertic = new CustomComboBox();
+            this.SelectNoOfWeeks = new CustomComboBox();
+            this.ChooseMetricLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.ChooseWeekLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.Monday = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.Tuesday = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.Wednesday = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.Thrusday = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.Friday = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.Saturday = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.Sunday = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.Dummy = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.chart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,6 +152,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // 
             // Friday
             // 
+            this.Friday.AutoSize = true;
             this.Friday.BackColor = System.Drawing.Color.White;
             this.Friday.Location = new System.Drawing.Point(760, 353);
             this.Friday.Name = "Friday";
@@ -191,6 +196,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.chart.Name = "chart";
             this.chart.Size = new System.Drawing.Size(770, 350);
             this.chart.TabIndex = 2;
+            setChartBackColor();
+            
             // 
             // BaselineAssistantDialog
             // 
@@ -204,7 +211,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.Controls.Add(this.Friday);
             this.Controls.Add(this.Saturday);
             this.Controls.Add(this.Sunday);
-            this.Controls.Add(this.Dummy);
+            //this.Controls.Add(this.Dummy);
             this.Controls.Add(this.ChooseMetricLabel);
             this.Controls.Add(this.SelectNumericMertic);
             this.Controls.Add(this.SelectNoOfWeeks);
@@ -224,20 +231,39 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.ComboBox SelectNumericMertic;
-        private System.Windows.Forms.ComboBox SelectNoOfWeeks;
-        private System.Windows.Forms.Label ChooseMetricLabel;
-        private System.Windows.Forms.Label ChooseWeekLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox SelectNumericMertic;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox SelectNoOfWeeks;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel ChooseMetricLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel ChooseWeekLabel;
 
-        private System.Windows.Forms.Label Monday;
-        private System.Windows.Forms.Label Tuesday;
-        private System.Windows.Forms.Label Wednesday;
-        private System.Windows.Forms.Label Thrusday;
-        private System.Windows.Forms.Label Friday;
-        private System.Windows.Forms.Label Saturday;
-        private System.Windows.Forms.Label Sunday;
-        private System.Windows.Forms.Label Dummy;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel Monday;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel Tuesday;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel Wednesday;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel Thrusday;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel Friday;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel Saturday;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel Sunday;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel Dummy;
 
-        private ChartFX.WinForms.Chart chart = new ChartFX.WinForms.Chart();
+        private ChartFX.WinForms.Chart chart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+
+        private void setChartBackColor()
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                this.chart.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+            }
+            else
+            {
+                this.chart.BackColor = Color.White;
+            }
+            
+        }
+
+        void OnCurrentThemeChanged1(object sender, EventArgs e)
+        {
+            Invalidate();
+            setChartBackColor();
+        }
     }
 }

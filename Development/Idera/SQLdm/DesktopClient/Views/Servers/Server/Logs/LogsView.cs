@@ -24,6 +24,7 @@ using Wintellect.PowerCollections;
 using ColumnHeader = Infragistics.Win.UltraWinGrid.ColumnHeader;
 using Infragistics.Win.UltraWinDataSource;
 using Idera.SQLdm.Common.Events;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
 {
@@ -91,7 +92,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
         private long agentLogSizeLimitKB = 0;
         private bool errorLogLimitExceeded = false;
         private bool agentLogLimitExceeded = false;
-        
+        ValueListItem listItem1, listItem2, listItem3, listItem4, listItem5;
         private List<LogFile> selectedLogList
         {
             get
@@ -156,6 +157,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
 
         #region constructors
 
+        ThemeSetter themeSetter = new ThemeSetter();
         public LogsView(int instanceId)
             : base(instanceId)
         {
@@ -171,34 +173,92 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
             SetViewStatus(ViewStatus.Loading);
 
             // load value lists for grid display
-            ValueListItem listItem;
+            
 
             logGrid.DisplayLayout.ValueLists["severityValueList"].ValueListItems.Clear();
-            listItem = new ValueListItem(MonitoredState.Critical, "Critical");
-            listItem.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.StatusCriticalSmall;
-            logGrid.DisplayLayout.ValueLists["severityValueList"].ValueListItems.Add(listItem);
-            listItem = new ValueListItem(MonitoredState.Warning, "Warning");
-            listItem.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.StatusWarningSmall;
-            logGrid.DisplayLayout.ValueLists["severityValueList"].ValueListItems.Add(listItem);
-            listItem = new ValueListItem(MonitoredState.Informational, "Informational");
-            listItem.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.InformationSmall;
-            logGrid.DisplayLayout.ValueLists["severityValueList"].ValueListItems.Add(listItem);
-            listItem = new ValueListItem(MonitoredState.OK, "OK");
-            listItem.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Information16x16;
-            logGrid.DisplayLayout.ValueLists["severityValueList"].ValueListItems.Add(listItem);
-            listItem = new ValueListItem(MonitoredState.None, "Unknown");
-            listItem.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Information16x16;
-            logGrid.DisplayLayout.ValueLists["severityValueList"].ValueListItems.Add(listItem);
+            listItem1 = new ValueListItem(MonitoredState.Critical, "Critical");
+            if(Settings.Default.ColorScheme == "Dark")
+                listItem1.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.critical_wht_icon1;
+            else
+                listItem1.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.StatusCriticalSmall;
+            logGrid.DisplayLayout.ValueLists["severityValueList"].ValueListItems.Add(listItem1);
+            listItem2 = new ValueListItem(MonitoredState.Warning, "Warning");
+            if (Settings.Default.ColorScheme == "Dark")
+                listItem2.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.warning_wht_icon1;
+            else
+                listItem2.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.StatusWarningSmall;
+            logGrid.DisplayLayout.ValueLists["severityValueList"].ValueListItems.Add(listItem2);
+            listItem3 = new ValueListItem(MonitoredState.Informational, "Informational");
+            if (Settings.Default.ColorScheme == "Dark")
+                listItem3.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.info_wht_icon1;
+            else
+                listItem3.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.InformationSmall;
+            logGrid.DisplayLayout.ValueLists["severityValueList"].ValueListItems.Add(listItem3);
+            listItem4 = new ValueListItem(MonitoredState.OK, "OK");
+            if (Settings.Default.ColorScheme == "Dark")
+                listItem4.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ok_wht_icon1;
+            else
+                listItem4.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.StatusOKSmall;
+            logGrid.DisplayLayout.ValueLists["severityValueList"].ValueListItems.Add(listItem4);
+            listItem5 = new ValueListItem(MonitoredState.None, "Unknown");
+            if (Settings.Default.ColorScheme == "Dark")
+                listItem5.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.info_wht_icon1;
+            else
+                listItem5.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Information16x16;
+            logGrid.DisplayLayout.ValueLists["severityValueList"].ValueListItems.Add(listItem5);
 
 
             logGrid.DisplayLayout.ValueLists["logTypeValueList"].ValueListItems.Clear();
-            listItem = new ValueListItem(LogFileType.SQLServer, "SQL Server");
-            logGrid.DisplayLayout.ValueLists["logTypeValueList"].ValueListItems.Add(listItem);
-            listItem = new ValueListItem(LogFileType.Agent, "SQL Server Agent");
-            logGrid.DisplayLayout.ValueLists["logTypeValueList"].ValueListItems.Add(listItem);
+            ValueListItem listItem6 = new ValueListItem(LogFileType.SQLServer, "SQL Server");
+            logGrid.DisplayLayout.ValueLists["logTypeValueList"].ValueListItems.Add(listItem6);
+            ValueListItem listItem7 = new ValueListItem(LogFileType.Agent, "SQL Server Agent");
+            logGrid.DisplayLayout.ValueLists["logTypeValueList"].ValueListItems.Add(listItem7);
 
             configurationLogFiles = new OnDemandConfiguration(instanceId);
             configuration = new ErrorLogConfiguration(instanceId);
+
+            SetAboveContentAlertTheme();
+
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                if (AutoScaleSizeHelper.isLargeSize)
+                {
+                    this.boundLogTypeLabel.Location = new System.Drawing.Point(52, 21);
+                    this.boundLogTypeLabel.Size = new System.Drawing.Size(127, 20);
+                    this.boundLogFileLabel.Size = new System.Drawing.Size(127, 20);
+                    this.boundLogFileLabel.Location = new System.Drawing.Point(50, 63);
+                    this.boundLogNameLabel.Size = new System.Drawing.Size(127, 20);
+                    this.boundLogNameLabel.Location = new System.Drawing.Point(50, 43);
+                    this.informationLabel.Size = new System.Drawing.Size(594, 25);
+                    this.infoPanel.Size = new System.Drawing.Size(600, 30);
+                }
+                if (AutoScaleSizeHelper.isXLargeSize)
+                {
+                    this.boundLogTypeLabel.Location = new System.Drawing.Point(58, 21);
+                    this.boundLogTypeLabel.Size = new System.Drawing.Size(127, 23);
+                    this.boundLogFileLabel.Size = new System.Drawing.Size(127, 23);
+                    this.boundLogFileLabel.Location = new System.Drawing.Point(50, 71);
+                    this.boundLogNameLabel.Size = new System.Drawing.Size(127, 23);
+                    this.boundLogNameLabel.Location = new System.Drawing.Point(50, 46);
+                    this.informationLabel.Size = new System.Drawing.Size(594, 30);
+                    this.infoPanel.Size = new System.Drawing.Size(600, 35);
+                }
+                if (AutoScaleSizeHelper.isXXLargeSize)
+                {
+                    this.boundLogTypeLabel.Location = new System.Drawing.Point(65, 21);
+                    this.boundLogTypeLabel.Size = new System.Drawing.Size(127, 26);
+                    this.boundLogFileLabel.Size = new System.Drawing.Size(127, 26);
+                    this.boundLogFileLabel.Location = new System.Drawing.Point(50, 81);
+                    this.boundLogNameLabel.Size = new System.Drawing.Size(127, 26);
+                    this.boundLogNameLabel.Location = new System.Drawing.Point(50, 51);
+                    this.informationLabel.Size = new System.Drawing.Size(594, 35);
+                    this.infoPanel.Size = new System.Drawing.Size(600, 40);
+                }
+            }
+            
         }
 
         #endregion
@@ -911,6 +971,60 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
             {
                 RefreshLogTree();
             }
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetAboveContentAlertTheme();
+            SetGridTheme();
+            SetImages();
+        }
+
+        private void SetImages()
+        {
+            // load value lists for grid display
+            if (Settings.Default.ColorScheme == "Dark")
+                listItem1.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.critical_wht_icon1;
+            else
+                listItem1.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.StatusCriticalSmall;
+            if (Settings.Default.ColorScheme == "Dark")
+                listItem2.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.warning_wht_icon1;
+            else
+                listItem2.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.StatusWarningSmall;
+            if (Settings.Default.ColorScheme == "Dark")
+                listItem3.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.info_wht_icon1;
+            else
+                listItem3.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.InformationSmall;
+            if (Settings.Default.ColorScheme == "Dark")
+                listItem4.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ok_wht_icon1;
+            else
+                listItem4.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.StatusOKSmall;
+            if (Settings.Default.ColorScheme == "Dark")
+                listItem5.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.info_wht_icon1;
+            else
+                listItem5.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Information16x16;
+        }
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.logGrid);
+        }
+
+        private void SetAboveContentAlertTheme()
+        {
+            //if (Settings.Default.ColorScheme == "Dark")
+            //{
+                themeSetter.SetAboveContentAlertPanelTheme(this.infoPanel, instanceId);
+                themeSetter.SetAboveContentAlertLabelTheme(this.informationLabel, instanceId);
+                themeSetter.SetAboveContentAlertPictureBoxTheme(this.pictureBox1, instanceId);
+            /*}
+            else
+            {
+                themeSetter.SetPanelTheme(this.infoPanel, System.Drawing.Color.FromArgb(212, 212, 212));
+                themeSetter.SetLabelTheme(this.informationLabel, System.Drawing.Color.FromArgb(212, 212, 212), System.Drawing.Color.Black);
+                themeSetter.SetPictureBoxTheme(this.pictureBox1, System.Drawing.Color.FromArgb(((int) (((byte) (212)))), ((int) (((byte) (212)))), ((int) (((byte) (212))))), global::Idera.SQLdm.DesktopClient.Properties.Resources.Information16x16);
+            }*/
         }
 
         #endregion
@@ -1863,36 +1977,48 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
         {
             if (!errorLogLimitExceeded && !agentLogLimitExceeded) return;
 
-            informationLabel.ForeColor = Color.Black;
-            informationLabel.BackColor = Color.FromArgb(255, 189, 105);
-            informationLabel.BackColor = Color.FromArgb(255, 189, 105);
+            if (Settings.Default.ColorScheme == "Light")
+            {
+                informationLabel.ForeColor = Color.Black;
+                informationLabel.BackColor = Color.FromArgb(255, 189, 105);
+                informationLabel.BackColor = Color.FromArgb(255, 189, 105);
+            }         
         }
 
         private void informationLabel_MouseLeave(object sender, EventArgs e)
         {
             if (!errorLogLimitExceeded && !agentLogLimitExceeded) return;
 
-            informationLabel.ForeColor = Color.Black;
-            informationLabel.BackColor = Color.FromArgb(211, 211, 211);
-            informationLabel.BackColor = Color.FromArgb(211, 211, 211);
+            if (Settings.Default.ColorScheme == "Light")
+            {
+                informationLabel.ForeColor = Color.Black;
+                informationLabel.BackColor = Color.FromArgb(211, 211, 211);
+                informationLabel.BackColor = Color.FromArgb(211, 211, 211);
+            }           
         }
 
         private void informationLabel_MouseDown(object sender, MouseEventArgs e)
         {
             if (!errorLogLimitExceeded && !agentLogLimitExceeded) return;
 
-            informationLabel.ForeColor = Color.White;
-            informationLabel.BackColor = Color.FromArgb(251, 140, 60);
-            informationLabel.BackColor = Color.FromArgb(251, 140, 60);
+            if (Settings.Default.ColorScheme == "Light")
+            {
+                informationLabel.ForeColor = Color.White;
+                informationLabel.BackColor = Color.FromArgb(251, 140, 60);
+                informationLabel.BackColor = Color.FromArgb(251, 140, 60);
+            }            
         }
 
         private void informationLabel_MouseUp(object sender, MouseEventArgs e)
         {
             if (!errorLogLimitExceeded && !agentLogLimitExceeded) return;
 
-            informationLabel.ForeColor = Color.Black;
-            informationLabel.BackColor = Color.FromArgb(255, 189, 105);
-            informationLabel.BackColor = Color.FromArgb(255, 189, 105);
+            if (Settings.Default.ColorScheme == "Light")
+            {
+                informationLabel.ForeColor = Color.Black;
+                informationLabel.BackColor = Color.FromArgb(255, 189, 105);
+                informationLabel.BackColor = Color.FromArgb(255, 189, 105);
+            }
 
             if (agentLogLimitExceeded && !errorLogLimitExceeded)
             {

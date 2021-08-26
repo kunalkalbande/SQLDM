@@ -1,3 +1,6 @@
+using Idera.SQLdm.DesktopClient.Properties;
+using System.Drawing;
+
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
     partial class ConfigureBaselineDialog
@@ -28,33 +31,38 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            Infragistics.Win.UltraWinEditors.DropDownEditorButton dropDownEditorButton3 = new Infragistics.Win.UltraWinEditors.DropDownEditorButton("DropDownList");
-            Infragistics.Win.UltraWinEditors.DropDownEditorButton dropDownEditorButton4 = new Infragistics.Win.UltraWinEditors.DropDownEditorButton("DropDownList");
+            bool isDarkThemeSelected = Properties.Settings.Default.ColorScheme == "Dark";
+            Color backColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor) : Color.White;
+            Color foreColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridForeColor) : Color.Black;
+            Color activeBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridActiveBackColor) : Color.White;
+            Color hoverBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridHoverBackColor) : Color.White;
+            Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton dropDownEditorButton3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton("DropDownList");
+            Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton dropDownEditorButton4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton("DropDownList");
             Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton3 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
             Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton4 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigureBaselineDialog));
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.office2007PropertyPage1 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.endTimeCombo = new Idera.SQLdm.Common.UI.Controls.TimeComboEditor();
-            this.beginTimeCombo = new Idera.SQLdm.Common.UI.Controls.TimeComboEditor();
-            this.saturdayCheckBox = new System.Windows.Forms.CheckBox();
-            this.fridayCheckBox = new System.Windows.Forms.CheckBox();
-            this.thursdayCheckBox = new System.Windows.Forms.CheckBox();
-            this.wednesdayCheckBox = new System.Windows.Forms.CheckBox();
-            this.tuesdayCheckBox = new System.Windows.Forms.CheckBox();
-            this.sundayCheckbox = new System.Windows.Forms.CheckBox();
-            this.mondayCheckBox = new System.Windows.Forms.CheckBox();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.office2007PropertyPage1 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage(isDarkThemeSelected);
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.endTimeCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor();
+            this.beginTimeCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor();
+            this.saturdayCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.fridayCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.thursdayCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.wednesdayCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.tuesdayCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.sundayCheckbox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.mondayCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             this.propertiesHeaderStrip1 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.customDateToLabel = new System.Windows.Forms.Label();
-            this.customDateToCombo = new Infragistics.Win.UltraWinSchedule.UltraCalendarCombo();
-            this.customDateFromLabel = new System.Windows.Forms.Label();
-            this.customDateFromCombo = new Infragistics.Win.UltraWinSchedule.UltraCalendarCombo();
-            this.customBaselineRadioButton = new System.Windows.Forms.RadioButton();
-            this.informationBox1 = new Divelements.WizardFramework.InformationBox();
-            this.automaticBaselineRadioButton = new System.Windows.Forms.RadioButton();
+            this.customDateToLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.customDateToCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraCalendarCombo();
+            this.customDateFromLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.customDateFromCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraCalendarCombo();
+            this.customBaselineRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.informationBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
+            this.automaticBaselineRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
             this.headerStrip1 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
             this.office2007PropertyPage1.ContentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.endTimeCombo)).BeginInit();
@@ -132,6 +140,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.office2007PropertyPage1.Size = new System.Drawing.Size(519, 360);
             this.office2007PropertyPage1.TabIndex = 2;
             this.office2007PropertyPage1.Text = "Configure a performance baseline for your monitored SQL Server.";
+            this.office2007PropertyPage1.BackColor = backcolor;
             // 
             // label4
             // 
@@ -398,28 +407,28 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
         private Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage office2007PropertyPage1;
-        private System.Windows.Forms.RadioButton automaticBaselineRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton automaticBaselineRadioButton;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip headerStrip1;
-        private Divelements.WizardFramework.InformationBox informationBox1;
-        private System.Windows.Forms.RadioButton customBaselineRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox informationBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton customBaselineRadioButton;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip propertiesHeaderStrip1;
-        private System.Windows.Forms.Label customDateToLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel customDateToLabel;
         private Infragistics.Win.UltraWinSchedule.UltraCalendarCombo customDateToCombo;
-        private System.Windows.Forms.Label customDateFromLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel customDateFromLabel;
         private Infragistics.Win.UltraWinSchedule.UltraCalendarCombo customDateFromCombo;
-        private System.Windows.Forms.CheckBox saturdayCheckBox;
-        private System.Windows.Forms.CheckBox fridayCheckBox;
-        private System.Windows.Forms.CheckBox thursdayCheckBox;
-        private System.Windows.Forms.CheckBox wednesdayCheckBox;
-        private System.Windows.Forms.CheckBox tuesdayCheckBox;
-        private System.Windows.Forms.CheckBox sundayCheckbox;
-        private System.Windows.Forms.CheckBox mondayCheckBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private Idera.SQLdm.Common.UI.Controls.TimeComboEditor endTimeCombo;
-        private Idera.SQLdm.Common.UI.Controls.TimeComboEditor beginTimeCombo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox saturdayCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox fridayCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox thursdayCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox wednesdayCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox tuesdayCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox sundayCheckbox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox mondayCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor endTimeCombo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor beginTimeCombo;
     }
 }

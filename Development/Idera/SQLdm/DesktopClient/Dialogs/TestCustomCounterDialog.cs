@@ -18,14 +18,16 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Idera.SQLdm.Common.Services;
     using Idera.SQLdm.Common.Snapshots;
     using Idera.SQLdm.Common.UI.Dialogs;
+    using Idera.SQLdm.DesktopClient.Controls;
     using Infragistics.Win;
     using Infragistics.Win.UltraWinDataSource;
     using Infragistics.Win.UltraWinGrid;
+    using Infragistics.Windows.Themes;
     using Objects;
     using Properties;
     using Wintellect.PowerCollections;
 
-    public partial class TestCustomCounterDialog : Form
+    public partial class TestCustomCounterDialog : BaseDialog
     {
         private static readonly Logger Log = Logger.GetLogger("TestCustomCounterDialog");
         private CustomCounterDefinition counterDefinition;
@@ -38,25 +40,30 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public TestCustomCounterDialog(CustomCounterDefinition counterDefinition, MetricDescription description, bool useCachedDefinition)
         {
+            this.DialogHeader = "Test Custom Counter";
             this.counterDefinition = counterDefinition;
             this.metricDescription = description;
             this.useCachedDefinition = useCachedDefinition;   
 
             InitializeComponent();
-
+            cancelButton.Visible = false;
             ultraGrid1.DrawFilter = new HideFocusRectangleDrawFilter();
             this.AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
         public TestCustomCounterDialog(CustomCounterDefinition counterDefinition, MetricDescription description)
             : this(counterDefinition, description, true)
         {
+            this.DialogHeader = "Test Custom Counter";
         }
 
         private void ultraGrid1_InitializeLayout(object sender,
                                                  Infragistics.Win.UltraWinGrid.InitializeLayoutEventArgs e)
         {
         }
+
 
         private void backgroundWorker_DoWork(object sender, DoWorkEventArgs args)
         {
@@ -230,6 +237,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
                 return;
 
             testButton.Visible = true;
+            cancelButton.Visible = false;
             UpdateTestButton();
             if (e.Error != null)
             {
@@ -257,6 +265,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         {
             testButton.Enabled = false;
             testButton.Visible = false;
+            cancelButton.Visible = true;
             List<UltraDataRow> selectedInstances = GetSelectedRows();
             backgroundWorker.RunWorkerAsync(selectedInstances);
         }
@@ -519,6 +528,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             finally
             {
                 testButton.Visible = true;
+                cancelButton.Visible = false;
                 UpdateTestButton();
             }
         }
@@ -541,6 +551,18 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.ultraGrid1);
         }
     }
 }

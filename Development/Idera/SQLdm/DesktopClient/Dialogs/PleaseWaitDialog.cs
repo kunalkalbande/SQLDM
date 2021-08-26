@@ -9,7 +9,7 @@ using Idera.SQLdm.DesktopClient.Helpers;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class PleaseWaitDialog : Form
+    public partial class PleaseWaitDialog : BaseDialog
     {
         private volatile Boolean closeForm;
 
@@ -26,6 +26,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public PleaseWaitDialog(string stsMsg)
         {
+            this.DialogHeader = "Please Wait";
             InitializeComponent();
 
             message.Text = stsMsg;

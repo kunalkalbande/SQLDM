@@ -3,8 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:c="clr-namespace:Idera.SQLdm.DesktopClient.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <c:DpiBasisFontSize10Converter x:Key="FontSize10Converter" Ratio="1.2"/>
+        <c:DpiBasisFontSize11Converter x:Key="FontSize11Converter" Ratio="1.2"/>
+        <c:DpiBasisFontSize12Converter x:Key="FontSize12Converter" Ratio="1.2"/>
+        <c:DpiBasisHeightConverter x:Key="HeightConverter" Ratio="1.75"/>
+    </UserControl.Resources>
     <Grid>
         <DockPanel>
             <TabControl x:Name="topMenu" DockPanel.Dock="Left" SelectionChanged="TopMenu_SelectionChanged">
@@ -40,7 +47,7 @@
                         </Setter>
                     </Style>
                     <Style TargetType="{x:Type TextBlock}">
-                        <Setter Property="FontSize" Value="11"></Setter>
+                        <Setter Property="FontSize" Value="{Binding Converter={StaticResource FontSize11Converter}}"></Setter>
                         <Setter Property="FontFamily" Value="Arial"></Setter>
                         <Setter Property="FontWeight" Value="Bold"></Setter>
                         <Setter Property="FontStretch" Value="Normal"></Setter>

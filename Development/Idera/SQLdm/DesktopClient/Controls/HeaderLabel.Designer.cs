@@ -28,7 +28,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
         /// </summary>
         private void InitializeComponent()
         {
-            this.headerText = new System.Windows.Forms.Label();
+            this.headerText = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.SuspendLayout();
             // 
             // headerText
@@ -59,6 +59,6 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
         #endregion
 
-        private System.Windows.Forms.Label headerText;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel headerText;
     }
 }

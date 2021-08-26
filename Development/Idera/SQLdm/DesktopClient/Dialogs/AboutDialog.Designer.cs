@@ -1,3 +1,5 @@
+using Idera.SQLdm.DesktopClient.Properties;
+
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
     partial class AboutDialog
@@ -28,17 +30,17 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.headerPanel = new System.Windows.Forms.Panel();
+            this.headerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.listViewImages = new System.Windows.Forms.ImageList(this.components);
             this.gradientPanel1 = new Idera.SQLdm.DesktopClient.Controls.GradientPanel();
-            this.copyrightLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.copyInfoButton = new System.Windows.Forms.Button();
-            this.componentListView = new System.Windows.Forms.ListView();
+            this.copyrightLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.copyInfoButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.componentListView = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListView();
             this.componentHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.versionHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.okButton = new System.Windows.Forms.Button();
-            this.systemInfoButton = new System.Windows.Forms.Button();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.systemInfoButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.connectionProgressBar = new Idera.SQLdm.DesktopClient.Controls.InfiniteProgressBar();
             this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +65,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // 
             this.gradientPanel1.BackColor = System.Drawing.SystemColors.Control;
             this.gradientPanel1.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(203)))), ((int)(((byte)(204)))));
+            if(Idera.SQLdm.DesktopClient.Properties.Settings.Default.ColorScheme == "Dark")
+            {
+                this.gradientPanel1.BackColor = System.Drawing.ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+                this.gradientPanel1.BackColor2 = System.Drawing.ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+            }
             this.gradientPanel1.BorderColor = System.Drawing.SystemColors.ControlDark;
             this.gradientPanel1.Controls.Add(this.copyrightLabel);
             this.gradientPanel1.Controls.Add(this.label1);
@@ -84,7 +91,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.copyrightLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.copyrightLabel.Location = new System.Drawing.Point(12, 182);
             this.copyrightLabel.Name = "copyrightLabel";
-            this.copyrightLabel.Size = new System.Drawing.Size(359, 26);
+            this.copyrightLabel.Size = new System.Drawing.Size(350, 26);
             this.copyrightLabel.TabIndex = 30;
             this.copyrightLabel.Text = assemblyInfo.GetCommonAssemblyCopyright();
             // 
@@ -101,11 +108,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // copyInfoButton
             // 
             this.copyInfoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.copyInfoButton.Location = new System.Drawing.Point(377, 185);
+            this.copyInfoButton.Location = new System.Drawing.Point(443, 181);
             this.copyInfoButton.Name = "copyInfoButton";
-            this.copyInfoButton.Size = new System.Drawing.Size(87, 23);
+            this.copyInfoButton.Size = new System.Drawing.Size(20, 23);
             this.copyInfoButton.TabIndex = 3;
-            this.copyInfoButton.Text = "Copy Info";
+            this.copyInfoButton.Text = "   Copy Info   ";
             this.copyInfoButton.UseVisualStyleBackColor = true;
             this.copyInfoButton.Click += new System.EventHandler(this.copyInfoButton_Click);
             // 
@@ -139,18 +146,21 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.okButton.Location = new System.Drawing.Point(377, 223);
+            this.okButton.Location = new System.Drawing.Point(443, 223);
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(87, 23);
+            this.okButton.Size = new System.Drawing.Size(20, 23);
             this.okButton.TabIndex = 0;
-            this.okButton.Text = "&OK";
+            if (Settings.Default.ColorScheme == "Dark")
+                this.okButton.Text = "  OK              ";
+            else
+                this.okButton.Text = "       OK          ";
             // 
             // systemInfoButton
             // 
             this.systemInfoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.systemInfoButton.Location = new System.Drawing.Point(377, 252);
+            this.systemInfoButton.Location = new System.Drawing.Point(445, 254);
             this.systemInfoButton.Name = "systemInfoButton";
-            this.systemInfoButton.Size = new System.Drawing.Size(87, 23);
+            this.systemInfoButton.Size = new System.Drawing.Size(18, 23);
             this.systemInfoButton.TabIndex = 1;
             this.systemInfoButton.Text = "System Info...";
             this.systemInfoButton.UseVisualStyleBackColor = true;
@@ -191,17 +201,17 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button systemInfoButton;
-        private System.Windows.Forms.Panel headerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton systemInfoButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  headerPanel;
         private Idera.SQLdm.DesktopClient.Controls.InfiniteProgressBar connectionProgressBar;
         private Idera.SQLdm.DesktopClient.Controls.GradientPanel gradientPanel1;
-        private System.Windows.Forms.Button copyInfoButton;
-        private System.Windows.Forms.ListView componentListView;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton copyInfoButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListView componentListView;
         private System.Windows.Forms.ColumnHeader componentHeader;
         private System.Windows.Forms.ColumnHeader versionHeader;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label copyrightLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel copyrightLabel;
         private System.Windows.Forms.ImageList listViewImages;
     }
 }

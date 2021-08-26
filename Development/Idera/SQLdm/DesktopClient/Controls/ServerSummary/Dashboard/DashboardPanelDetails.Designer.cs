@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.mainGradientPanel = new Idera.SQLdm.DesktopClient.Controls.GradientPanel();
-            this.mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.panelNameLabel = new System.Windows.Forms.Label();
-            this.helpLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.mainTableLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.panelNameLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.helpLinkLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.descriptionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.mainGradientPanel.SuspendLayout();
             this.mainTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
@@ -138,10 +138,10 @@
         #endregion
 
         private Controls.GradientPanel mainGradientPanel;
-        private System.Windows.Forms.Label panelNameLabel;
-        private System.Windows.Forms.LinkLabel helpLinkLabel;
-        private System.Windows.Forms.Label descriptionLabel;
-        private System.Windows.Forms.TableLayoutPanel mainTableLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel panelNameLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel helpLinkLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel descriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel mainTableLayoutPanel;
 
     }
 }

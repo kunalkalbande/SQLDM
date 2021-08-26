@@ -1,4 +1,7 @@
-﻿namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
+﻿using Idera.SQLdm.DesktopClient.Properties;
+using System.Drawing;
+
+namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 {
     partial class NotificationRuleImportWizard
     {
@@ -31,35 +34,38 @@
             //this.components = new System.ComponentModel.Container();
             //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             //this.Text = "NotificationRuleImportWizard";
-
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab3 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+            Color backColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor) : Color.White;
+            Color foreColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridForeColor) : Color.Black;
+            Color activeBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridActiveBackColor) : Color.White;
+            Color hoverBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridHoverBackColor) : Color.White;
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
             this.ultraTabPageControl1 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ultraTabPageControl2 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.lblFileCount = new System.Windows.Forms.Label();
-            this.chkOverWrite = new System.Windows.Forms.CheckBox();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.panelFiles = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnImport = new System.Windows.Forms.Button();
+            this.lblFileCount = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.chkOverWrite = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.btnClear = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.panelFiles = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFlowLayoutPanel();
+            this.groupBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.btnImport = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.ultraTabPageControl3 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.btnDetails = new System.Windows.Forms.Button();
-            this.panelSummary = new System.Windows.Forms.Panel();
-            this.lblSummaryMessage = new System.Windows.Forms.Label();
-            this.lblErrors = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.ultraTabControl1 = new Infragistics.Win.UltraWinTabControl.UltraTabControl();
+            this.btnDetails = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.panelSummary = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.lblSummaryMessage = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblErrors = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.groupBox2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.label5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label6 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnNext = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnBack = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.ultraTabControl1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTabControl(true);
             this.ultraTabSharedControlsPage1 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
             this.ultraTabPageControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -146,7 +152,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(506, 75);
+            this.btnClear.Location = new System.Drawing.Point(510, 75);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 1013;
@@ -194,7 +200,7 @@
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(425, 75);
+            this.btnImport.Location = new System.Drawing.Point(420, 75);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(75, 23);
             this.btnImport.TabIndex = 7;
@@ -353,7 +359,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = backColor; //System.Drawing.Color.White;
+            this.ForeColor = foreColor;
             this.ClientSize = new System.Drawing.Size(609, 516);
             this.Controls.Add(this.ultraTabControl1);
             this.MaximizeBox = false;
@@ -383,26 +390,26 @@
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl1;
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnImport;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnImport;
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.FlowLayoutPanel panelFiles;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Panel panelSummary;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblErrors;
-        private System.Windows.Forms.CheckBox chkOverWrite;
-        private System.Windows.Forms.Button btnDetails;
-        private System.Windows.Forms.Label lblSummaryMessage;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Label lblFileCount;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFlowLayoutPanel panelFiles;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnClear;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panelSummary;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label6;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblErrors;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkOverWrite;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnDetails;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblSummaryMessage;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnNext;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnBack;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblFileCount;
     }
 }

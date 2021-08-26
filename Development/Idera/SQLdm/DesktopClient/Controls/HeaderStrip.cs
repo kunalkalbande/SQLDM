@@ -4,13 +4,16 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using Microsoft.Win32;
-using System.Diagnostics;
+using Idera.SQLdm.DesktopClient.Properties;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Controls.CustomControls;
+using Idera.SQLdm.DesktopClient.Helpers;
 
 namespace Idera.SQLdm.DesktopClient.Controls
 {
     public class HeaderStrip : ToolStrip
     {
-        private static readonly CustomToolstripColorTable _ColorTable = new CustomToolstripColorTable();
+        private static readonly CustomToolstripColorTable _ColorTable = new CustomToolstripColorTableDarkTheme();
 
         private Image headerImage = null;
         private HeaderStripStyle style = HeaderStripStyle.Large;
@@ -19,15 +22,38 @@ namespace Idera.SQLdm.DesktopClient.Controls
         private bool mouseHover = false;
         private bool hotTrackEnabled = true;
 
-        public HeaderStrip()
+        private Color hdrBackColor;
+        private Color hdrBackColor2;
+        private Color hdrBorderColor;
+        private Color hdrForeColor;
+        private bool isHistoryBrowserHeaderStrip = false;
+        private bool isReportsStrip = false;
+        private bool isServerPanelStrip = false;
+        public HeaderStrip(bool isHistoryBrowserHeader = false, bool isReports=false, bool isServerPanel=false)
         {
             Dock = DockStyle.Top;
+            isHistoryBrowserHeaderStrip = isHistoryBrowserHeader;
+            isReportsStrip = isReports;
+            isServerPanelStrip = isServerPanel;
+            if (Settings.Default.ColorScheme == "Dark") 
+            {
+                hdrBackColor = isHistoryBrowserHeaderStrip == true ? ColorTranslator.FromHtml(DarkThemeColorConstants.HistoryBrowserHeaderStripBackColor) : ColorTranslator.FromHtml(DarkThemeColorConstants.HeaderStripBackColor);
+                hdrBackColor2 = isHistoryBrowserHeaderStrip == true ? ColorTranslator.FromHtml(DarkThemeColorConstants.HistoryBrowserHeaderStripBackColor2) : ColorTranslator.FromHtml(DarkThemeColorConstants.HeaderStripBackColor2);
+                hdrBorderColor = isHistoryBrowserHeaderStrip == true ? ColorTranslator.FromHtml(DarkThemeColorConstants.HistoryBrowserHeaderStripBackColor2) : ColorTranslator.FromHtml(DarkThemeColorConstants.HeaderStripBackColor2);
+            } 
+            else
+            {
+                hdrBackColor = isReports ? Color.White : Color.FromArgb(136, 137, 142);
+                hdrBackColor2 = isReports ? Color.White : Color.Silver;
+                hdrBorderColor = Color.FromArgb(203, 203, 203);
+            }
             GripStyle = ToolStripGripStyle.Hidden;
             AutoSize = false;
             ConfigureRenderer();
             SystemEvents.UserPreferenceChanged +=
                 new UserPreferenceChangedEventHandler(HeaderStrip_UserPreferenceChanged);
             UpdateHeaderStyle();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
         protected override void Dispose(bool disposing)
@@ -97,6 +123,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
             }
         }
 
+
         private void HeaderStrip_UserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
         {
             UpdateHeaderStyle();
@@ -139,13 +166,13 @@ namespace Idera.SQLdm.DesktopClient.Controls
             {
                 if (renderer == null)
                 {
-                    renderer = new ToolStripProfessionalRenderer(_ColorTable);
+                    renderer = new CustomToolStripProfessionalRenderer();
                     renderer.RoundedEdges = false;
                     renderer.RenderToolStripBackground += new ToolStripRenderEventHandler(renderer_RenderToolStripBackground);
                     renderer.RenderToolStripBorder += new ToolStripRenderEventHandler(renderer_RenderToolStripBorder);
-                    renderer.RenderDropDownButtonBackground += new ToolStripItemRenderEventHandler(renderer_RenderDropDownButtonBackground);
-                    renderer.RenderSplitButtonBackground += new ToolStripItemRenderEventHandler(renderer_RenderDropDownButtonBackground);
-                    renderer.RenderButtonBackground += new ToolStripItemRenderEventHandler(renderer_RenderDropDownButtonBackground);
+                    //renderer.RenderDropDownButtonBackground += new ToolStripItemRenderEventHandler(renderer_RenderDropDownButtonBackground);
+                    //renderer.RenderSplitButtonBackground += new ToolStripItemRenderEventHandler(renderer_RenderDropDownButtonBackground);
+                    //renderer.RenderButtonBackground += new ToolStripItemRenderEventHandler(renderer_RenderDropDownButtonBackground);
                 }
 
                 Renderer = renderer;
@@ -216,13 +243,13 @@ namespace Idera.SQLdm.DesktopClient.Controls
                         Color backColor2;
                         if (state == HeaderStripState.Pressed)
                         {
-                            backColor1 = Color.FromArgb(250, 250, 250);
-                            backColor2 = Color.FromArgb(195, 195, 195);
+                            backColor2 = Color.White;
+                            backColor1 = Color.White;
                         }
                         else
                         {
-                            backColor2 = Color.FromArgb(236, 236, 236);
-                            backColor1 = Color.FromArgb(196, 196, 196);
+                            backColor1 = Color.White;
+                            backColor2 = Color.White;
                         }
                         Rectangle r = new Rectangle(0, 0, e.Item.Size.Width - 1, e.Item.Size.Height - 1);
                         using (
@@ -238,7 +265,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
         void DrawDropDownButtonBackground(Graphics g, ToolStripItem item)
         {
-            Color backColor1 = Color.FromArgb(83, 83, 83);
+            Color backColor1 = Color.FromArgb(0, 96, 137);// hdrBackColor; //Color.Red;//FromArgb(83, 83, 83);
             Rectangle r = new Rectangle(0, 0, item.Size.Width - 10, item.Size.Height - 1);
             if (item.Selected)
             {
@@ -250,7 +277,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
             else
                 if (item.Pressed)
                 {
-                    using (Brush b = new LinearGradientBrush(r, Color.Silver, backColor1, LinearGradientMode.Vertical))
+                    using (Brush b = new LinearGradientBrush(r, backColor1, backColor1, LinearGradientMode.Vertical))
                     {
                         g.FillRectangle(b, r);
                     }
@@ -288,25 +315,34 @@ namespace Idera.SQLdm.DesktopClient.Controls
         {
             Color backColor1, backColor2;
 
-            if (state == HeaderStripState.Pressed)
-            {
-                backColor1 = Color.FromArgb(250, 250, 250);
-                backColor2 = Color.FromArgb(195, 195, 195);
-            }
+            backColor1 = this.hdrBackColor;
+            backColor2 = this.hdrBackColor2;
+            //if (state == HeaderStripState.Pressed)
+            //{
+            //    backColor2 = Color.White;
+            //    backColor1 = Color.White;
+            //}
+            //else
+            //{
+            //    backColor2 = Color.White;
+            //    backColor1 = Color.White;
+            //}
+            Brush b;
+            if (Settings.Default.ColorScheme == "Dark")
+                b = new LinearGradientBrush(bounds, backColor1, backColor2, LinearGradientMode.Vertical);
             else
-            {
-                backColor1 = Color.FromArgb(236, 236, 236);
-                backColor2 = Color.FromArgb(196, 196, 196);
-            }
-
-            using (Brush b = new LinearGradientBrush(bounds, backColor1, backColor2, LinearGradientMode.Vertical))
+                b = new LinearGradientBrush(bounds, Color.White, Color.White, LinearGradientMode.Vertical);
+            using (b)
             {
                 graphics.FillRectangle(b, bounds);
             }
 
             if (headerImage != null)
             {
-                graphics.DrawImage(headerImage, 5, 5, 16, 16);
+                int imageWidth = 16; int imageheight = 16;
+                imageWidth = AutoScaleSizeHelper.isScalingRequired && (AutoScaleSizeHelper.isLargeSize || AutoScaleSizeHelper.isXLargeSize || AutoScaleSizeHelper.isXXLargeSize) && isServerPanelStrip ? 30 : 16;
+                imageheight = AutoScaleSizeHelper.isScalingRequired && (AutoScaleSizeHelper.isLargeSize || AutoScaleSizeHelper.isXLargeSize || AutoScaleSizeHelper.isXXLargeSize) && isServerPanelStrip ? 30 : 16; 
+                graphics.DrawImage(headerImage, 5, 5, imageWidth, imageheight);
                 Padding = new Padding(20, 2, 0, 0);
             }
             else
@@ -316,8 +352,8 @@ namespace Idera.SQLdm.DesktopClient.Controls
         }
 
         private void DrawLargeHeaderStripBorder(Graphics graphics, Rectangle bounds)
-        {
-            using (Pen pen = new Pen(Color.FromArgb(160,160,160)))
+        {//Color.FromArgb(238, 239, 242)
+            using (Pen pen = new Pen(hdrBorderColor))
             {
                 graphics.DrawRectangle(pen, bounds);
             }
@@ -327,8 +363,8 @@ namespace Idera.SQLdm.DesktopClient.Controls
         {
             if (mouseHover && hotTrackEnabled)
             {
-                Color backColor1 = Color.FromArgb(136, 137, 142);
-                Color backColor2 = Color.White;
+                Color backColor1 = hdrBackColor; //Color.White;
+                Color backColor2 = hdrBackColor2;//Color.White;
 
                 int halfWay = Convert.ToInt32(bounds.Width / 2);
 
@@ -344,9 +380,12 @@ namespace Idera.SQLdm.DesktopClient.Controls
             }
             else
             {
-                Color backColor1 = Color.FromArgb(136, 137, 142);
-                Color backColor2 = Color.Silver;
-                using (Brush brush = new SolidBrush(backColor1))
+                
+
+                Color backColor1 = hdrBackColor; //Color.White;
+                Color backColor2 = hdrBackColor2;//Color.White;
+
+                using (SolidBrush brush = new SolidBrush(backColor1))
                 {
                     graphics.FillRectangle(brush, bounds);
                 }
@@ -362,8 +401,10 @@ namespace Idera.SQLdm.DesktopClient.Controls
         {
             if (mouseHover && hotTrackEnabled)
             {
-                Color backColor1 = Color.FromArgb(235, 235, 235);
-                Color backColor2 = Color.White;
+                //Color backColor1 = Color.White;
+                //Color backColor2 = Color.White;
+                Color backColor1 = hdrBackColor; //Color.White;
+                Color backColor2 = hdrBackColor2;//Color.White;
 
                 int halfWay = Convert.ToInt32(bounds.Width / 2);
 
@@ -379,7 +420,8 @@ namespace Idera.SQLdm.DesktopClient.Controls
             }
             else
             {
-                using (SolidBrush brush = new SolidBrush(Color.FromArgb(231, 231, 231)))
+                //Color.FromArgb(231, 231, 231)
+                using (SolidBrush brush = new SolidBrush(this.hdrBackColor))
                 {
                     graphics.FillRectangle(brush, bounds);
                 }
@@ -402,8 +444,8 @@ namespace Idera.SQLdm.DesktopClient.Controls
             //{
             //    graphics.DrawLine(pen, bounds.X, bounds.Y + bounds.Height, bounds.X + bounds.Width, bounds.Y + bounds.Height);
             //}
-
-            using (Pen pen = new Pen(Color.FromArgb(203, 203, 203)))
+           // Color.FromArgb(203, 203, 203)
+            using (Pen pen = new Pen(hdrBorderColor))
             {
                 graphics.DrawRectangle(pen, bounds);
             }
@@ -411,12 +453,12 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
         private void DrawPropertiesHeaderStripBackground(Graphics graphics, Rectangle bounds)
         {
-            using (SolidBrush brush = new SolidBrush(Color.FromArgb(227, 227, 227)))
+            using (SolidBrush brush = new SolidBrush(Color.White))
             {
                 graphics.FillRectangle(brush, bounds);
             }
-
-            using (Pen pen = new Pen(Color.FromArgb(197, 197, 197)))
+            //Color.FromArgb(197, 197, 197)
+            using (Pen pen = new Pen(hdrBorderColor))
             {
                 graphics.DrawLine(pen, bounds.X, bounds.Y + bounds.Height - 2, bounds.X + bounds.Width,
                                     bounds.Y + bounds.Height - 2);
@@ -426,6 +468,27 @@ namespace Idera.SQLdm.DesktopClient.Controls
         private void DrawPropertiesHeaderStripBorder(Graphics graphics, Rectangle bounds)
         {
 
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                hdrBackColor = isHistoryBrowserHeaderStrip == true ? ColorTranslator.FromHtml(DarkThemeColorConstants.HistoryBrowserHeaderStripBackColor) : ColorTranslator.FromHtml(DarkThemeColorConstants.HeaderStripBackColor);
+                hdrBackColor2 = isHistoryBrowserHeaderStrip == true ? ColorTranslator.FromHtml(DarkThemeColorConstants.HistoryBrowserHeaderStripBackColor2) : ColorTranslator.FromHtml(DarkThemeColorConstants.HeaderStripBackColor2);
+                hdrBorderColor = isHistoryBrowserHeaderStrip == true ? ColorTranslator.FromHtml(DarkThemeColorConstants.HistoryBrowserHeaderStripBackColor2) : ColorTranslator.FromHtml(DarkThemeColorConstants.HeaderStripBackColor2);
+            }
+            else
+            {
+                //hdrBackColor = Color.FromArgb(136, 137, 142);
+                //hdrBackColor2 = Color.Silver;
+                hdrBackColor = isReportsStrip ? Color.White : Color.FromArgb(136, 137, 142);
+                hdrBackColor2 = isReportsStrip ? Color.White : Color.Silver;
+                hdrBorderColor = Color.FromArgb(203, 203, 203);
+            }
+
+            Invalidate();
         }
     }
 

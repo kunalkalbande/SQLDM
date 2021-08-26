@@ -15,10 +15,11 @@ using Idera.SQLdm.DesktopClient.Helpers;
 using Idera.SQLdm.Common.Services;
 using Idera.SQLdm.DesktopClient.Properties;
 using Wintellect.PowerCollections;
+using Idera.SQLdm.DesktopClient.Dialogs;
 
 namespace Idera.SQLdm.StandardClient.Dialogs
 {
-    public partial class BlockRecommendationsDialog : Form
+    public partial class BlockRecommendationsDialog : BaseDialog
     {
         private int _instanceID;
         public bool isModified = false;
@@ -44,12 +45,14 @@ namespace Idera.SQLdm.StandardClient.Dialogs
         }
         private BlockRecommendationsDialog()
         {
+            this.DialogHeader = "Block Objects";
             InitializeComponent();
 
         }
         private BlockRecommendationsDialog(int instanceId)
             : this()
         {
+            this.DialogHeader = "Block Objects";
             _instanceID = instanceId;
             Triple<Dictionary<int, string>, List<int>, List<string>> dataFromDB = RepositoryHelper.GetBlockedRecommendationDatabaseAnalysisConfiguration(Settings.Default.ActiveRepositoryConnection.ConnectionInfo, _instanceID);
             if (dataFromDB != null)

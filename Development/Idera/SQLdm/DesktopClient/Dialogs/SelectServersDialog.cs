@@ -22,7 +22,7 @@ using Idera.SQLdm.DesktopClient.Helpers;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class SelectServersDialog : Form
+    public partial class SelectServersDialog : BaseDialog
     {
         private readonly ICollection<int> excludedServers;
         private readonly List<int> selectedTags = new List<int>();
@@ -38,11 +38,13 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         public SelectServersDialog(string description)
             : this(description, null, null)
         {
+            this.DialogHeader = "Select Servers or Tags";
         }
 
         public SelectServersDialog(string description, ICollection<int> excludedServers,
             ArrayList alertConfiguration)
         {
+            this.DialogHeader = "Select Servers or Tags";
             this.excludedServers = excludedServers;
             InitializeComponent();
             descriptionLabel.Text = description;
@@ -62,6 +64,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         public SelectServersDialog(string description, ICollection<int> excludedServers, bool hideTags)
             : this(description, excludedServers, null)
         {
+            this.DialogHeader = "Select Servers or Tags";
             if (hideTags)
             {
                 selectAllServersCheckBox.Enabled = serversListBox.Enabled = true;
@@ -390,6 +393,42 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
                 this.selectAllServersCheckBox.Location = new System.Drawing.Point(41, 98);
                 this.serversListBox.Location = new System.Drawing.Point(38, 116);
                 this.serversListBox.Size = new System.Drawing.Size(383, 329);
+            }
+            //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2, 
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution(showTemplates);
+        }
+
+        //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2, 
+        private void ScaleControlsAsPerResolution(bool showTemplates)
+        {
+            if (!showTemplates)
+            {
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.serversListBox, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.65F, 1.5F));
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.selectServerRadioButton, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.0F, 1.5F));
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.selectTagsRadioButton, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.0F, 1.5F));
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.tagsDropDownButton, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.0F, 1.5F));
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.selectAllServersCheckBox, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.0F, 1.5F));
+                if (AutoScaleSizeHelper.isLargeSize)
+                {
+                    this.tagsDropDownButton.Height = this.tagsDropDownButton.Height - 20;
+                    this.serversListBox.Location = new Point(this.serversListBox.Location.X - 20, this.serversListBox.Location.Y);
+                }
+                if (AutoScaleSizeHelper.isXLargeSize)
+                {
+                    this.tagsDropDownButton.Height = this.tagsDropDownButton.Height - 30;
+                    this.serversListBox.Location = new Point(this.serversListBox.Location.X - 20, this.serversListBox.Location.Y + 20);
+                    this.serversListBox.Width += 60;
+                    this.selectAllServersCheckBox.Location = new Point(this.selectAllServersCheckBox.Location.X, this.selectAllServersCheckBox.Location.Y + 10);
+                }
+                if (AutoScaleSizeHelper.isXXLargeSize)
+                {
+                    this.tagsDropDownButton.Height = this.tagsDropDownButton.Height - 30;
+                    this.tagsDropDownButton.Width += 40;
+                    this.serversListBox.Location = new Point(this.serversListBox.Location.X - 20, this.serversListBox.Location.Y + 20);
+                    this.serversListBox.Width += 240;
+                    this.selectAllServersCheckBox.Location = new Point(this.selectAllServersCheckBox.Location.X, this.selectAllServersCheckBox.Location.Y + 10);
+                }
             }
         }
     }

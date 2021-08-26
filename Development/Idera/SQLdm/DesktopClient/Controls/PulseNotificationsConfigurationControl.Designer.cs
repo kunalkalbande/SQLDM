@@ -28,16 +28,16 @@ namespace Idera.SQLdm.DesktopClient.Controls
         /// </summary>
         private void InitializeComponent()
         {
-            this._notificationRulesListBox = new System.Windows.Forms.CheckedListBox();
-            this._addRuleButton = new System.Windows.Forms.Button();
-            this._noRulesLabel = new System.Windows.Forms.Label();
-            this._statusPanel = new System.Windows.Forms.Panel();
-            this._statusLabel = new System.Windows.Forms.Label();
+            this._notificationRulesListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckedListBox1();
+            this._addRuleButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this._noRulesLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._statusPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this._statusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this._statusCircle = new MRG.Controls.UI.LoadingCircle();
             this._initializeWorker = new System.ComponentModel.BackgroundWorker();
-            this._selectAllCheckBox = new System.Windows.Forms.CheckBox();
-            this._editRuleButton = new System.Windows.Forms.Button();
-            this._deleteRuleButton = new System.Windows.Forms.Button();
+            this._selectAllCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this._editRuleButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this._deleteRuleButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this._statusPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -187,15 +187,15 @@ namespace Idera.SQLdm.DesktopClient.Controls
         #endregion
 
         private System.Windows.Forms.CheckedListBox _notificationRulesListBox;
-        private System.Windows.Forms.Button _addRuleButton;
-        private System.Windows.Forms.Label _noRulesLabel;
-        private System.Windows.Forms.Panel _statusPanel;
-        private System.Windows.Forms.Label _statusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton _addRuleButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _noRulesLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  _statusPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _statusLabel;
         private MRG.Controls.UI.LoadingCircle _statusCircle;
         private System.ComponentModel.BackgroundWorker _initializeWorker;
-        private System.Windows.Forms.CheckBox _selectAllCheckBox;
-        private System.Windows.Forms.Button _editRuleButton;
-        private System.Windows.Forms.Button _deleteRuleButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox _selectAllCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton _editRuleButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton _deleteRuleButton;
 
     }
 }

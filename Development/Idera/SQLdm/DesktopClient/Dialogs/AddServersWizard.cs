@@ -24,6 +24,8 @@ using System.Linq;
 using Idera.SQLdm.Common.Data;
 using Idera.SQLdm.Common.Events.AzureMonitor.Interfaces;
 using Idera.SQLdm.Common.Events.AzureMonitor;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Controls;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
@@ -78,6 +80,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.commitServers = commitServers;
             this.existingInstances = existingInstances;
             InitializeComponent();
+            SetGridTheme();
+            SetLoadingBackColor();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
             this.topPlanComboBox.Items.Add(0, Duration);
 
             this.topPlanComboBox.Items.Add(1, LogicalDiskReads);
@@ -103,6 +108,37 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.baselineConfiguration1.SetVisibleBaseline(false);
             HideNonQuery();
             if (this.wizardFramework.SelectedPage == this.baselineConfiguration) this.HelpButton = false; //SQLdm9.0: not showing the help link in baseline page.
+            //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                ScaleControlsAsPerResolution();
+            }
+          
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+            SetLoadingBackColor();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.grdCloudProviders);
+        }
+
+        private void SetLoadingBackColor()
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                this.loadingServersProgressControl.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+            }
+            else
+            {
+                this.loadingServersProgressControl.BackColor = System.Drawing.Color.White;
+            }
         }
 
         public void HideNonQuery()
@@ -139,7 +175,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         {
             Dictionary<string, int> cloudProvidersDetail = RepositoryHelper.GetCloudProviders(Settings.Default.ActiveRepositoryConnection.ConnectionInfo);
 
-            Infragistics.Win.ValueList valueList1 = new Infragistics.Win.ValueList(74068277);
+            Infragistics.Win.ValueList valueList1 = new Controls.CustomControls.CustomValueList(74068277);
             valueList1.Key = CLOUDPROVIDER;
             valueList1.PreferredDropDownSize = new System.Drawing.Size(0, 0);
             foreach (string cloudProviderName in cloudProvidersDetail.Keys)
@@ -149,7 +185,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
                 valueList1.ValueListItems.Add(temp);
             }
             // Get AWS regions endpoints
-            Infragistics.Win.ValueList valueListRegions = new Infragistics.Win.ValueList(74068277);
+            Infragistics.Win.ValueList valueListRegions = new Controls.CustomControls.CustomValueList(74068277);
             valueListRegions.Key = CLOUDRDSREGION;
             valueListRegions.PreferredDropDownSize = new System.Drawing.Size(0, 0);
             foreach (string rdsRegion in RegionEndpoint.EnumerableAllRegions.Select(item => item.DisplayName).ToList())
@@ -188,12 +224,41 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             grdCloudProviders.DisplayLayout.Bands[0].Columns[AWSRDSAccessKey].SortIndicator = SortIndicator.Disabled;
             grdCloudProviders.DisplayLayout.Bands[0].Columns[AWSRDSSecretKey].SortIndicator = SortIndicator.Disabled;
             grdCloudProviders.DisplayLayout.Bands[0].Columns[CLOUDRDSREGION].SortIndicator = SortIndicator.Disabled;
-
-            grdCloudProviders.DisplayLayout.Bands[0].Columns["Server Name"].Width = 100;
-            grdCloudProviders.DisplayLayout.Bands[0].Columns[CLOUDPROVIDER].Width = 210;
-            grdCloudProviders.DisplayLayout.Bands[0].Columns[AWSRDSAccessKey].Width = 150;
-            grdCloudProviders.DisplayLayout.Bands[0].Columns[AWSRDSSecretKey].Width = 250;
-            grdCloudProviders.DisplayLayout.Bands[0].Columns[CLOUDRDSREGION].Width = 150;
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                if (AutoScaleSizeHelper.isLargeSize)
+                {
+                    grdCloudProviders.DisplayLayout.Bands[0].Columns["Server Name"].Width = 150;
+                    grdCloudProviders.DisplayLayout.Bands[0].Columns[CLOUDPROVIDER].Width = 300;
+                    grdCloudProviders.DisplayLayout.Bands[0].Columns[AWSRDSAccessKey].Width = 200;
+                    grdCloudProviders.DisplayLayout.Bands[0].Columns[AWSRDSSecretKey].Width = 300;
+                    grdCloudProviders.DisplayLayout.Bands[0].Columns[CLOUDRDSREGION].Width = 200;
+                }
+                if (AutoScaleSizeHelper.isXLargeSize)
+                {
+                    grdCloudProviders.DisplayLayout.Bands[0].Columns["Server Name"].Width = 200;
+                    grdCloudProviders.DisplayLayout.Bands[0].Columns[CLOUDPROVIDER].Width = 400;
+                    grdCloudProviders.DisplayLayout.Bands[0].Columns[AWSRDSAccessKey].Width = 250;
+                    grdCloudProviders.DisplayLayout.Bands[0].Columns[AWSRDSSecretKey].Width = 350;
+                    grdCloudProviders.DisplayLayout.Bands[0].Columns[CLOUDRDSREGION].Width = 250;
+                }
+                if (AutoScaleSizeHelper.isXXLargeSize)
+                {
+                    grdCloudProviders.DisplayLayout.Bands[0].Columns["Server Name"].Width = 250;
+                    grdCloudProviders.DisplayLayout.Bands[0].Columns[CLOUDPROVIDER].Width = 500;
+                    grdCloudProviders.DisplayLayout.Bands[0].Columns[AWSRDSAccessKey].Width = 300;
+                    grdCloudProviders.DisplayLayout.Bands[0].Columns[AWSRDSSecretKey].Width = 400;
+                    grdCloudProviders.DisplayLayout.Bands[0].Columns[CLOUDRDSREGION].Width = 300;
+                }
+            }
+            else
+            {
+                grdCloudProviders.DisplayLayout.Bands[0].Columns["Server Name"].Width = 100;
+                grdCloudProviders.DisplayLayout.Bands[0].Columns[CLOUDPROVIDER].Width = 210;
+                grdCloudProviders.DisplayLayout.Bands[0].Columns[AWSRDSAccessKey].Width = 150;
+                grdCloudProviders.DisplayLayout.Bands[0].Columns[AWSRDSSecretKey].Width = 250;
+                grdCloudProviders.DisplayLayout.Bands[0].Columns[CLOUDRDSREGION].Width = 150;
+            }
 
             DataTableForCloudProvidersGrid.Clear();
 
@@ -694,6 +759,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             if (ApplicationModel.Default.LocalTags.Count > 0)
             {
                 availableTagsStatusLabel.Hide();
+                availableTagsListBox.Show();
                 availableTagsListBox.BeginUpdate();
 
                 //SQLDM 10.1 (Srishti Purohit)
@@ -709,6 +775,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             }
             else
             {
+                availableTagsListBox.Hide();
                 availableTagsStatusLabel.ForeColor = SystemColors.GrayText;
                 availableTagsStatusLabel.Text = "Click the Add Tag button to create a tag.";
                 availableTagsStatusLabel.Show();
@@ -987,7 +1054,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             {
                 availableInstancesListBox.Items.RemoveAt(addedIndex);
             }
-
+            if(availableInstancesListBox != null && availableInstancesListBox.Items.Count > 0)
+            {
+                availableInstancesStatusLabel.Hide();
+            }
+            else
+            {
+                availableInstancesStatusLabel.Show();
+            }
             //UpdateSelectedInstancesPage();
         }
 
@@ -1024,6 +1098,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             foreach (int removedIndex in removedIndices)
             {
                 addedInstancesListBox.Items.RemoveAt(removedIndex);
+            }
+            if (availableInstancesListBox != null && availableInstancesListBox.Items.Count > 0)
+            {
+                availableInstancesStatusLabel.Hide();
+            }
+            else
+            {
+                availableInstancesStatusLabel.Show();
             }
 
             //UpdateSelectedInstancesPage();
@@ -1761,7 +1843,227 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+            //AutoScaleFontResolutionHelper.Default.AutoScaleControl(this, AutoScaleFontResolutionHelper.ControlType.Container);
         }
+
+        //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+        protected void ScaleControlsAsPerResolution()
+        {
+            scaleControls();
+            scaleFonts();
+
+            if (AutoScaleSizeHelper.isLargeSize)
+            {
+                //welcome page.
+                this.ClientSize = new System.Drawing.Size(1000, 1000);
+                this.welcomePage.Width += 200;
+                this.introductoryTextLabel1.Width += 200;
+                this.introductoryTextLabel2.Width += 200;
+                //Configuration Page
+                this.informationBox1.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Top;
+                this.informationBox1.Height += 20;
+                this.configureAuthenticationPage.Scale(new SizeF(1.0F, 1.33F));
+                this.addAzureServerButton.Height -= 10;
+                //Instances Page
+                this.addedInstancesListBox.Scale(new SizeF(1.00F, 0.70F));
+                this.addedInstancesListBox.Location = new Point(this.addedInstancesListBox.Location.X + 200, this.addedInstancesListBox.Location.Y);
+                this.removeInstancesButton.Scale(new SizeF(0.75F, 0.75F));
+                this.removeInstancesButton.Location = new Point(this.removeInstancesButton.Location.X + 180, this.removeInstancesButton.Location.Y + 60);
+                this.addInstancesButton.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                this.removeInstancesButton.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                this.addInstancesButton.Scale(new SizeF(0.75F, 0.75F));
+                this.addInstancesButton.Location = new Point(this.addInstancesButton.Location.X + 180, this.addInstancesButton.Location.Y + 40);
+                this.availableInstancesListBox.Scale(new SizeF(1.00F, 0.70F));
+                this.availableInstancesStatusLabel.Scale(new SizeF(1.00F, 0.70F));
+                this.availableInstancesStatusLabel.Location = new Point(this.availableInstancesStatusLabel.Location.X, this.availableInstancesStatusLabel.Location.Y + 50);
+                this.availableInstancesStatusLabel.Size = new Size(this.availableInstancesStatusLabel.Width, this.availableInstancesStatusLabel.Height - 30);
+                this.loadingServersProgressControl.Scale(new SizeF(1.00F, 0.70F));
+                this.availableLicensesLabel.Location = new Point(this.availableLicensesLabel.Location.X + 200, this.availableLicensesLabel.Location.Y - 50);
+                this.availableInstancesLabel.Location = new Point(this.availableInstancesLabel.Location.X, this.availableInstancesLabel.Location.Y - 50);
+                this.availableInstancesStatusLabel.Location = new Point(this.availableInstancesStatusLabel.Location.X, this.availableInstancesStatusLabel.Location.Y - 50);
+                this.addedInstancesLabel.Location = new Point(this.addedInstancesLabel.Location.X + 200, this.addedInstancesLabel.Location.Y - 50);
+                this.adhocInstancesTextBox.Location = new Point(this.adhocInstancesTextBox.Location.X, this.adhocInstancesTextBox.Location.Y - 50);
+                this.adhocInstancesTextBox.Width += 30;
+                this.addedInstancesListBox.Width += 30;
+                this.addedInstancesLabel.Width += 30;
+                this.availableInstancesListBox.Width += 30;
+                this.availableInstancesLabel.Width += 30;
+                this.availableInstancesStatusLabel.Width += 30;
+                this.addInstancesButton.Width = this.removeInstancesButton.Width;
+                //configuration collection page
+                this.configureCollectionPage.Size = new System.Drawing.Size(900, 900);
+                this.featuresGroupBox.Scale(new SizeF(1.75F, 1.5F));
+                this.dataCollectionGroupBox.Scale(new SizeF(1.75F, 1.5F));
+                this.topPlanComboBox.Scale(new SizeF(0.55F, 1.0F));
+                this.topPlanComboBox.Width += 20;
+                this.queryMonitorAdvancedOptionsButton.Scale(new SizeF(0.5F, 0.5F));
+                this.queryMonitorAdvancedOptionsButton.Size = new Size(this.queryMonitorAdvancedOptionsButton.Width - 20, this.queryMonitorAdvancedOptionsButton.Height - 10);
+                this.queryMonitorAdvancedOptionsButton.Location = new Point(this.queryMonitorAdvancedOptionsButton.Location.X + 250, this.queryMonitorAdvancedOptionsButton.Location.Y + 195);
+                this.selectedAzureProfileNameTextBox.Location = new Point(this.selectedAzureProfileNameTextBox.Location.X + 20, this.selectedAzureProfileNameTextBox.Location.Y + 20);
+                this.selectedAzureProfileLbl.Location = new Point(this.selectedAzureProfileLbl.Location.X, this.selectedAzureProfileLbl.Location.Y + 20);
+                //OS Metric Page(WMI collection)
+                this.wmiConfigPage.Scale(new SizeF(1.0F, 1.33F));
+                //tag page
+                this.groupBox3.Scale(new SizeF(1.2F, 1.2F));
+                this.groupBox2.Scale(new SizeF(1.2F, 1.2F));
+                this.addTagButton.Scale(new SizeF(0.75F, 0.5F));
+                this.addTagButton.Location = new Point(this.addTagButton.Location.X + 150, this.addTagButton.Location.Y + 150);
+                //Cloud provider
+                this.grdCloudProviders.Width += 290;
+                return;
+            }
+            if (AutoScaleSizeHelper.isXLargeSize)
+            {
+                //welcome page.
+                this.ClientSize = new System.Drawing.Size(1000, 1000);
+                this.welcomePage.Size = new System.Drawing.Size(550, 950);
+                this.introductoryTextLabel1.Size = new System.Drawing.Size(437, 95);
+                this.introductoryTextLabel2.Location = new System.Drawing.Point(20, 95);
+                this.introductoryTextLabel2.Size = new System.Drawing.Size(500, 600);
+                this.introductoryTextLabel2.MaximumSize = new System.Drawing.Size(500, 600);
+                //Configuration Page
+                this.informationBox1.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Top;
+                this.informationBox1.Height += 20;
+                this.configureAuthenticationPage.Scale(new SizeF(1.0F, 1.33F));
+                this.addAzureServerButton.Height -= 10;
+                //instances page
+                this.addedInstancesListBox.Scale(new SizeF(1.00F, 0.70F));
+                this.addedInstancesListBox.Location = new Point(this.addedInstancesListBox.Location.X + 200, this.addedInstancesListBox.Location.Y);
+                this.removeInstancesButton.Scale(new SizeF(0.75F, 0.75F));
+                this.removeInstancesButton.Location = new Point(this.removeInstancesButton.Location.X + 180, this.removeInstancesButton.Location.Y + 60);
+                this.addInstancesButton.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                this.removeInstancesButton.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                this.addInstancesButton.Scale(new SizeF(0.75F, 0.75F));
+                this.addInstancesButton.Location = new Point(this.addInstancesButton.Location.X + 180, this.addInstancesButton.Location.Y + 40);
+                this.availableInstancesListBox.Scale(new SizeF(1.00F, 0.70F));
+                this.availableInstancesStatusLabel.Scale(new SizeF(1.00F, 0.70F));
+                this.availableInstancesStatusLabel.Location = new Point(this.availableInstancesStatusLabel.Location.X, this.availableInstancesStatusLabel.Location.Y + 50);
+                this.availableInstancesStatusLabel.Size = new Size(this.availableInstancesStatusLabel.Width, this.availableInstancesStatusLabel.Height - 30);
+                this.loadingServersProgressControl.Scale(new SizeF(1.00F, 0.70F));
+                this.availableLicensesLabel.Location = new Point(this.availableLicensesLabel.Location.X+ 200, this.availableLicensesLabel.Location.Y - 50);
+                this.availableInstancesLabel.Location = new Point(this.availableInstancesLabel.Location.X, this.availableInstancesLabel.Location.Y - 50);
+                this.availableInstancesStatusLabel.Location = new Point(this.availableInstancesStatusLabel.Location.X, this.availableInstancesStatusLabel.Location.Y - 50);
+                this.addedInstancesLabel.Location = new Point(this.addedInstancesLabel.Location.X + 200, this.addedInstancesLabel.Location.Y - 50);
+                this.adhocInstancesTextBox.Location = new Point(this.adhocInstancesTextBox.Location.X, this.adhocInstancesTextBox.Location.Y - 50);
+                this.adhocInstancesTextBox.Width += 30;
+                this.addedInstancesListBox.Width += 30;
+                this.addedInstancesLabel.Width += 30;
+                this.availableInstancesListBox.Width += 30;
+                this.availableInstancesLabel.Width += 30;
+                this.availableInstancesStatusLabel.Width += 30;
+                this.addInstancesButton.Width = this.removeInstancesButton.Width;
+                //configuration collection page
+                this.configureCollectionPage.Size = new System.Drawing.Size(900, 900);
+                this.featuresGroupBox.Scale(new SizeF(1.75F, 1.5F));
+                this.dataCollectionGroupBox.Scale(new SizeF(1.75F, 1.5F));
+                this.topPlanComboBox.Scale(new SizeF(0.55F, 1.0F));
+                this.topPlanComboBox.Width += 20;
+                this.queryMonitorAdvancedOptionsButton.Scale(new SizeF(0.5F, 0.5F));
+                this.queryMonitorAdvancedOptionsButton.Size = new Size(this.queryMonitorAdvancedOptionsButton.Width - 20, this.queryMonitorAdvancedOptionsButton.Height - 10);
+                this.queryMonitorAdvancedOptionsButton.Location = new Point(this.queryMonitorAdvancedOptionsButton.Location.X + 280, this.queryMonitorAdvancedOptionsButton.Location.Y + 210);
+                this.selectedAzureProfileNameTextBox.Location = new Point(this.selectedAzureProfileNameTextBox.Location.X + 20, this.selectedAzureProfileNameTextBox.Location.Y + 20);
+                this.selectedAzureProfileLbl.Location = new Point(this.selectedAzureProfileLbl.Location.X, this.selectedAzureProfileLbl.Location.Y + 20);
+                //OS Metric Page(WMI collection)
+                this.wmiConfigPage.Scale(new SizeF(1.0F, 1.33F));
+                //tag page
+                this.groupBox3.Scale(new SizeF(1.2F, 1.2F));
+                this.groupBox2.Scale(new SizeF(1.2F, 1.2F));
+                this.addTagButton.Scale(new SizeF(0.75F, 0.5F));
+                this.addTagButton.Location = new Point(this.addTagButton.Location.X + 150, this.addTagButton.Location.Y + 200);
+                //Cloud Provider Page
+                //grdCloudProviders.DisplayLayout.Bands[0].Columns["Server Name"].Width = 200;
+                //grdCloudProviders.DisplayLayout.Bands[0].Columns[CLOUDPROVIDER].Width = 200;
+                //grdCloudProviders.DisplayLayout.Bands[0].Columns[AWSRDSAccessKey].Width = 150;
+                //grdCloudProviders.DisplayLayout.Bands[0].Columns[AWSRDSSecretKey].Width = 250;
+                //grdCloudProviders.DisplayLayout.Bands[0].Columns[CLOUDRDSREGION].Width = 150;
+                this.grdCloudProviders.Width += 590;
+                return;
+            }
+            if (AutoScaleSizeHelper.isXXLargeSize)
+            {
+                //welcome page.
+                this.ClientSize = new System.Drawing.Size(1000, 1100);
+                this.welcomePage.Size = new System.Drawing.Size(650, 950);
+                this.introductoryTextLabel1.Size = new System.Drawing.Size(500, 95);
+                this.introductoryTextLabel2.Location = new System.Drawing.Point(20, 95);
+                this.introductoryTextLabel2.Size = new System.Drawing.Size(550, 600);
+                this.introductoryTextLabel2.MaximumSize = new System.Drawing.Size(550, 600);
+                //Configuration Page
+                this.informationBox1.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Top;
+                this.informationBox1.Height += 20;
+                this.configureAuthenticationPage.Scale(new SizeF(1.0F, 1.33F));
+                this.addAzureServerButton.Height -= 10;
+                //instances page
+                this.addedInstancesListBox.Scale(new SizeF(1.00F, 0.70F));
+                this.addedInstancesListBox.Location = new Point(this.addedInstancesListBox.Location.X + 200, this.addedInstancesListBox.Location.Y);
+                this.removeInstancesButton.Scale(new SizeF(0.75F, 0.75F));
+                this.removeInstancesButton.Location = new Point(this.removeInstancesButton.Location.X + 180, this.removeInstancesButton.Location.Y + 60);
+                this.addInstancesButton.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                this.removeInstancesButton.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                this.addInstancesButton.Scale(new SizeF(0.75F, 0.75F));
+                this.addInstancesButton.Location = new Point(this.addInstancesButton.Location.X + 180, this.addInstancesButton.Location.Y + 40);
+                this.availableInstancesListBox.Scale(new SizeF(1.00F, 0.70F));
+                this.availableInstancesStatusLabel.Scale(new SizeF(1.00F, 0.70F));
+                this.availableInstancesStatusLabel.Location = new Point(this.availableInstancesStatusLabel.Location.X, this.availableInstancesStatusLabel.Location.Y + 50);
+                this.availableInstancesStatusLabel.Size = new Size(this.availableInstancesStatusLabel.Width, this.availableInstancesStatusLabel.Height - 30);
+                this.loadingServersProgressControl.Scale(new SizeF(1.00F, 0.70F));
+                this.availableLicensesLabel.Location = new Point(this.availableLicensesLabel.Location.X + 200, this.availableLicensesLabel.Location.Y - 50);
+                this.availableInstancesLabel.Location = new Point(this.availableInstancesLabel.Location.X, this.availableInstancesLabel.Location.Y -50);
+                this.availableInstancesStatusLabel.Location = new Point(this.availableInstancesStatusLabel.Location.X, this.availableInstancesStatusLabel.Location.Y -50);
+                this.addedInstancesLabel.Location = new Point(this.addedInstancesLabel.Location.X + 200, this.addedInstancesLabel.Location.Y - 50);
+                this.adhocInstancesTextBox.Location = new Point(this.adhocInstancesTextBox.Location.X, this.adhocInstancesTextBox.Location.Y -50);
+                this.adhocInstancesTextBox.Width += 30;
+                this.addedInstancesListBox.Width += 30;
+                this.addedInstancesLabel.Width += 30;
+                this.availableInstancesListBox.Width += 30;
+                this.availableInstancesLabel.Width += 30;
+                this.availableInstancesStatusLabel.Width += 30;
+                this.addInstancesButton.Width = this.removeInstancesButton.Width;
+                //configuration collection page
+                this.configureCollectionPage.Size = new System.Drawing.Size(900, 900);
+                this.featuresGroupBox.Scale(new SizeF(1.45F, 1.45F));
+                this.dataCollectionGroupBox.Scale(new SizeF(1.45F, 1.45F));
+                this.topPlanComboBox.Scale(new SizeF(0.75F, 1.0F));
+                this.topPlanComboBox.Width -= 20;
+                this.queryMonitorAdvancedOptionsButton.Scale(new SizeF(0.5F, 0.5F));
+                this.queryMonitorAdvancedOptionsButton.Size = new Size(this.queryMonitorAdvancedOptionsButton.Width - 20, this.queryMonitorAdvancedOptionsButton.Height - 10);
+                this.queryMonitorAdvancedOptionsButton.Location = new Point(this.queryMonitorAdvancedOptionsButton.Location.X + 370, this.queryMonitorAdvancedOptionsButton.Location.Y + 245);
+                this.selectedAzureProfileNameTextBox.Location = new Point(this.selectedAzureProfileNameTextBox.Location.X + 20, this.selectedAzureProfileNameTextBox.Location.Y + 20);
+                this.selectedAzureProfileLbl.Location = new Point(this.selectedAzureProfileLbl.Location.X, this.selectedAzureProfileLbl.Location.Y + 20);
+                //OS Metric Page(WMI collection)
+                this.wmiConfigPage.Scale(new SizeF(1.0F, 1.33F));
+                //tag page
+                this.groupBox3.Scale(new SizeF(1.2F, 1.2F));
+                this.groupBox2.Scale(new SizeF(1.2F, 1.2F));
+                this.addTagButton.Scale(new SizeF(0.75F, 0.5F));
+                this.addTagButton.Location = new Point(this.addTagButton.Location.X + 150, this.addTagButton.Location.Y + 200);
+                //Cloud Provider
+                this.grdCloudProviders.Width += 890;
+                return;
+            }
+        }
+
+        private void scaleControls()
+        {
+           AutoScaleSizeHelper.Default.AutoScaleControl(this.configureAuthenticationPage, AutoScaleSizeHelper.ControlType.Form);
+           AutoScaleSizeHelper.Default.AutoScaleControl(this.selectInstancesPage, AutoScaleSizeHelper.ControlType.Form);
+           AutoScaleSizeHelper.Default.AutoScaleControl(this.chooseCloudProviderPage, AutoScaleSizeHelper.ControlType.Form);
+           AutoScaleSizeHelper.Default.AutoScaleControl(this.configureCollectionPage, AutoScaleSizeHelper.ControlType.Form);
+           AutoScaleSizeHelper.Default.AutoScaleControl(this.wmiConfigPage, AutoScaleSizeHelper.ControlType.Form);
+           AutoScaleSizeHelper.Default.AutoScaleControl(this.selectTagsPage, AutoScaleSizeHelper.ControlType.Form);
+        }
+
+        private void scaleFonts()
+        {
+            AutoScaleFontResolutionHelper.Default.AutoScaleFont(this.welcomePage, AutoScaleFontHelper.ControlType.Container);
+            AutoScaleFontResolutionHelper.Default.AutoScaleFont(this.configureAuthenticationPage, AutoScaleFontHelper.ControlType.Container);
+            AutoScaleFontResolutionHelper.Default.AutoScaleFont(this.selectInstancesPage, AutoScaleFontHelper.ControlType.Container);
+            AutoScaleFontResolutionHelper.Default.AutoScaleFont(this.chooseCloudProviderPage, AutoScaleFontHelper.ControlType.Container);
+            AutoScaleFontResolutionHelper.Default.AutoScaleFont(this.configureCollectionPage, AutoScaleFontHelper.ControlType.Container);
+            AutoScaleFontResolutionHelper.Default.AutoScaleFont(this.wmiConfigPage, AutoScaleFontHelper.ControlType.Container);
+            AutoScaleFontResolutionHelper.Default.AutoScaleFont(this.selectTagsPage, AutoScaleFontHelper.ControlType.Container);
+        }
+        //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
 
         #region "Events - Configure SQL diagnostic manager"
 

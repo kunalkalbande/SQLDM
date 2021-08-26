@@ -1,3 +1,5 @@
+using System.Drawing;
+
 namespace Idera.SQLdm.DesktopClient.Controls
 {
     partial class PropertiesControl
@@ -26,10 +28,10 @@ namespace Idera.SQLdm.DesktopClient.Controls
         /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private void InitializeComponent(bool isDarkThemeSelected = false)
         {
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.propertyPageListBox = new Idera.SQLdm.DesktopClient.Controls.Office2007ListBox();
+            this.propertyPageListBox = new Idera.SQLdm.DesktopClient.Controls.Office2007ListBox(isDarkThemeSelected);
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +69,8 @@ namespace Idera.SQLdm.DesktopClient.Controls
             this.Controls.Add(this.splitContainer);
             this.Name = "PropertiesControl";
             this.Size = new System.Drawing.Size(405, 322);
+            if (isDarkThemeSelected)
+                this.propertyPageListBox.BackColor = ColorTranslator.FromHtml("#012A4F");
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.ResumeLayout(false);
             this.ResumeLayout(false);

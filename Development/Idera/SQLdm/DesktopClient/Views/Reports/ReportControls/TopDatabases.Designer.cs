@@ -29,30 +29,30 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TopDatabases));
-            Infragistics.Win.UltraWinEditors.DropDownEditorButton dropDownEditorButton2 = new Infragistics.Win.UltraWinEditors.DropDownEditorButton("DropDownList");
-            Infragistics.Win.UltraWinEditors.DropDownEditorButton dropDownEditorButton1 = new Infragistics.Win.UltraWinEditors.DropDownEditorButton("DropDownList");
-            this.minTransactions = new System.Windows.Forms.NumericUpDown();
-            this.minGrowth = new System.Windows.Forms.NumericUpDown();
-            this.minWritten = new System.Windows.Forms.NumericUpDown();
-            this.minReads = new System.Windows.Forms.NumericUpDown();
-            this.numDatabases = new System.Windows.Forms.NumericUpDown();
-            this.waitThreshold = new System.Windows.Forms.NumericUpDown();// This is to take wait threshold input. Aditya Shukla (SQLdm 8.6)
-            this.label6 = new System.Windows.Forms.Label();
-            this.minSize = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton dropDownEditorButton2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton("DropDownList");
+            Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton dropDownEditorButton1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton("DropDownList");
+            this.minTransactions = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.minGrowth = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.minWritten = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.minReads = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.numDatabases = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.waitThreshold = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();// This is to take wait threshold input. Aditya Shukla (SQLdm 8.6)
+            this.label6 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.minSize = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label7 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label9 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.dbName = new Idera.SQLdm.DesktopClient.Controls.AllowDeleteTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.includeSystem = new System.Windows.Forms.CheckBox();
-            this.startHoursLbl = new System.Windows.Forms.Label();
-            this.endHoursLbl = new System.Windows.Forms.Label();
-            this.waitThresholdLbl = new System.Windows.Forms.Label();// This is a label for Wait Threshold input control. Aditya Shukla (SQLdm 8.6)
-            this.startHoursTimeEditor = new Idera.SQLdm.Common.UI.Controls.TimeComboEditor();
-            this.endHoursTimeEditor = new Idera.SQLdm.Common.UI.Controls.TimeComboEditor();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label8 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.includeSystem = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.startHoursLbl = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.endHoursLbl = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.waitThresholdLbl = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();// This is a label for Wait Threshold input control. Aditya Shukla (SQLdm 8.6)
+            this.startHoursTimeEditor = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor();
+            this.endHoursTimeEditor = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor();
             this.panel1.SuspendLayout();
             this.filterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minTransactions)).BeginInit();
@@ -471,28 +471,28 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
 
         #endregion
 
-        private System.Windows.Forms.NumericUpDown minTransactions;
-        private System.Windows.Forms.NumericUpDown minGrowth;
-        private System.Windows.Forms.NumericUpDown minWritten;
-        private System.Windows.Forms.NumericUpDown minReads;
-        private System.Windows.Forms.NumericUpDown numDatabases;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown minSize;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown minTransactions;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown minGrowth;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown minWritten;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown minReads;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown numDatabases;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label6;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown minSize;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label7;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label9;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label8;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
         private Controls.AllowDeleteTextBox dbName;
-        private System.Windows.Forms.CheckBox includeSystem;
-        private Common.UI.Controls.TimeComboEditor endHoursTimeEditor;
-        private Common.UI.Controls.TimeComboEditor startHoursTimeEditor;
-        private System.Windows.Forms.Label endHoursLbl;
-        private System.Windows.Forms.Label startHoursLbl;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox includeSystem;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor endHoursTimeEditor;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor startHoursTimeEditor;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel endHoursLbl;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel startHoursLbl;
         //Added a new filter for wait threshold - Aditya Shukla (SQLdm 8.6)
-        private System.Windows.Forms.Label waitThresholdLbl;
-        private System.Windows.Forms.NumericUpDown waitThreshold;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel waitThresholdLbl;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown waitThreshold;
     }
 }

@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.btnCustomCounterImport = new Infragistics.Win.Misc.UltraButton();
-            this.lblImport = new System.Windows.Forms.Label();
-            this.btnCustomReportImport = new Infragistics.Win.Misc.UltraButton();
-            this.btnAlertTemplateImport = new Infragistics.Win.Misc.UltraButton();
-            this.btnAlertResponseImport = new Infragistics.Win.Misc.UltraButton();
-            this.btnCustomCounterExport = new Infragistics.Win.Misc.UltraButton();
-            this.lblExport = new System.Windows.Forms.Label();
-            this.btnCustomReportExport = new Infragistics.Win.Misc.UltraButton();
-            this.btnAlertTemplateExport = new Infragistics.Win.Misc.UltraButton();
-            this.btnAlertResponseExport = new Infragistics.Win.Misc.UltraButton();
+            this.splitContainer1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomSplitContainer();
+            this.splitContainer2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomSplitContainer();
+            this.textBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.splitContainer3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomSplitContainer();
+            this.splitContainer4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomSplitContainer();
+            this.splitContainer5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomSplitContainer();
+            this.btnCustomCounterImport = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraButton();
+            this.lblImport = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.btnCustomReportImport = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraButton();
+            this.btnAlertTemplateImport = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraButton();
+            this.btnAlertResponseImport = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraButton();
+            this.btnCustomCounterExport = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraButton();
+            this.lblExport = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.btnCustomReportExport = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraButton();
+            this.btnAlertTemplateExport = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraButton();
+            this.btnAlertResponseExport = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -173,7 +173,7 @@
             this.splitContainer5.Panel1.Controls.Add(this.btnCustomReportImport);
             this.splitContainer5.Panel1.Controls.Add(this.btnAlertTemplateImport);
             this.splitContainer5.Panel1.Controls.Add(this.btnAlertResponseImport);
-            // 
+			// 
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.btnCustomCounterExport);
@@ -181,8 +181,8 @@
             this.splitContainer5.Panel2.Controls.Add(this.btnCustomReportExport);
             this.splitContainer5.Panel2.Controls.Add(this.btnAlertTemplateExport);
             this.splitContainer5.Panel2.Controls.Add(this.btnAlertResponseExport);
-            this.splitContainer5.Size = new System.Drawing.Size(494, 303);
-            this.splitContainer5.SplitterDistance = 237;
+            this.splitContainer5.Size = new System.Drawing.Size(800, 303);
+            this.splitContainer5.SplitterDistance = 387;
             this.splitContainer5.TabIndex = 0;
             // 
             // btnCustomCounterImport
@@ -192,11 +192,9 @@
             this.btnCustomCounterImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomCounterImport.Location = new System.Drawing.Point(2, 187);
             this.btnCustomCounterImport.Name = "btnCustomCounterImport";
-            this.btnCustomCounterImport.Size = new System.Drawing.Size(233, 28);
+            this.btnCustomCounterImport.MinimumSize = new System.Drawing.Size(233, 28);
             this.btnCustomCounterImport.TabIndex = 5;
             this.btnCustomCounterImport.Text = "Custom Counter";
-            this.btnCustomCounterImport.Appearance.ForeColor = System.Drawing.Color.DarkGray;
-            this.btnCustomCounterImport.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton;
             this.btnCustomCounterImport.Click += new System.EventHandler(this.btnCustomCounterImport_Click);
             // 
             // lblImport
@@ -206,7 +204,7 @@
             this.lblImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblImport.Location = new System.Drawing.Point(20, 18);
             this.lblImport.Name = "lblImport";
-            this.lblImport.Size = new System.Drawing.Size(195, 31);
+            this.lblImport.MinimumSize = new System.Drawing.Size(195, 31);
             this.lblImport.TabIndex = 0;
             this.lblImport.Text = "Import";
             this.lblImport.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -218,7 +216,7 @@
             this.btnCustomReportImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomReportImport.Location = new System.Drawing.Point(2, 144);
             this.btnCustomReportImport.Name = "btnCustomReportImport";
-            this.btnCustomReportImport.Size = new System.Drawing.Size(233, 28);
+            this.btnCustomReportImport.MinimumSize = new System.Drawing.Size(233, 28);
             this.btnCustomReportImport.TabIndex = 4;
             this.btnCustomReportImport.Text = "Custom Report";
             this.btnCustomReportImport.Click += new System.EventHandler(this.btnCustomReportImport_Click);
@@ -230,7 +228,7 @@
             this.btnAlertTemplateImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlertTemplateImport.Location = new System.Drawing.Point(2, 62);
             this.btnAlertTemplateImport.Name = "btnAlertTemplateImport";
-            this.btnAlertTemplateImport.Size = new System.Drawing.Size(233, 28);
+            this.btnAlertTemplateImport.MinimumSize = new System.Drawing.Size(233, 28);
             this.btnAlertTemplateImport.TabIndex = 1;
             this.btnAlertTemplateImport.Text = "Alert Template";
             this.btnAlertTemplateImport.Click += new System.EventHandler(this.btnAlertTemplateImport_Click);
@@ -243,7 +241,7 @@
             this.btnAlertResponseImport.Location = new System.Drawing.Point(2, 103);
             this.btnAlertResponseImport.Margin = new System.Windows.Forms.Padding(10);
             this.btnAlertResponseImport.Name = "btnAlertResponseImport";
-            this.btnAlertResponseImport.Size = new System.Drawing.Size(233, 28);
+            this.btnAlertResponseImport.MinimumSize = new System.Drawing.Size(233, 28);
             this.btnAlertResponseImport.TabIndex = 3;
             this.btnAlertResponseImport.Text = "Alert Response";
             this.btnAlertResponseImport.Click += new System.EventHandler(this.btnAlertResponseImport_Click);
@@ -255,7 +253,7 @@
             this.btnCustomCounterExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomCounterExport.Location = new System.Drawing.Point(2, 187);
             this.btnCustomCounterExport.Name = "btnCustomCounterExport";
-            this.btnCustomCounterExport.Size = new System.Drawing.Size(248, 28);
+            this.btnCustomCounterExport.MinimumSize = new System.Drawing.Size(248, 28);
             this.btnCustomCounterExport.TabIndex = 8;
             this.btnCustomCounterExport.Text = "Custom Counter";
             this.btnCustomCounterExport.Click += new System.EventHandler(this.btnCustomCounterExport_Click);
@@ -267,7 +265,7 @@
             this.lblExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExport.Location = new System.Drawing.Point(21, 18);
             this.lblExport.Name = "lblExport";
-            this.lblExport.Size = new System.Drawing.Size(203, 31);
+            this.lblExport.MinimumSize = new System.Drawing.Size(203, 31);
             this.lblExport.TabIndex = 0;
             this.lblExport.Text = "Export";
             this.lblExport.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -279,7 +277,7 @@
             this.btnCustomReportExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomReportExport.Location = new System.Drawing.Point(2, 144);
             this.btnCustomReportExport.Name = "btnCustomReportExport";
-            this.btnCustomReportExport.Size = new System.Drawing.Size(248, 28);
+            this.btnCustomReportExport.MinimumSize = new System.Drawing.Size(248, 28);
             this.btnCustomReportExport.TabIndex = 7;
             this.btnCustomReportExport.Text = "Custom Report";
             this.btnCustomReportExport.Click += new System.EventHandler(this.btnCustomReportExport_Click);
@@ -291,7 +289,7 @@
             this.btnAlertTemplateExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlertTemplateExport.Location = new System.Drawing.Point(2, 62);
             this.btnAlertTemplateExport.Name = "btnAlertTemplateExport";
-            this.btnAlertTemplateExport.Size = new System.Drawing.Size(248, 28);
+            this.btnAlertTemplateExport.MinimumSize = new System.Drawing.Size(248, 28);
             this.btnAlertTemplateExport.TabIndex = 2;
             this.btnAlertTemplateExport.Text = "Alert Template";
             this.btnAlertTemplateExport.Click += new System.EventHandler(this.btnAlertTemplateExport_Click);
@@ -303,7 +301,7 @@
             this.btnAlertResponseExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlertResponseExport.Location = new System.Drawing.Point(2, 103);
             this.btnAlertResponseExport.Name = "btnAlertResponseExport";
-            this.btnAlertResponseExport.Size = new System.Drawing.Size(248, 28);
+            this.btnAlertResponseExport.MinimumSize = new System.Drawing.Size(248, 28);
             this.btnAlertResponseExport.TabIndex = 6;
             this.btnAlertResponseExport.Text = "Alert Response";
             this.btnAlertResponseExport.Click += new System.EventHandler(this.btnAlertResponseExport_Click);
@@ -350,7 +348,7 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Label lblImport;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblImport;
         private Infragistics.Win.Misc.UltraButton btnCustomCounterImport;
         private Infragistics.Win.Misc.UltraButton btnCustomReportImport;
         private Infragistics.Win.Misc.UltraButton btnAlertResponseImport;
@@ -359,13 +357,13 @@
         private Infragistics.Win.Misc.UltraButton btnCustomReportExport;
         private Infragistics.Win.Misc.UltraButton btnAlertResponseExport;
         private Infragistics.Win.Misc.UltraButton btnAlertTemplateExport;
-        private System.Windows.Forms.Label lblExport;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblExport;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.SplitContainer splitContainer5;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

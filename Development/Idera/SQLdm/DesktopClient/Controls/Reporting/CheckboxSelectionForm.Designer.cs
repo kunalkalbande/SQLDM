@@ -23,7 +23,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.Reporting {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckedListBox1();
             this.SuspendLayout();
             // 
             // checkedListBox1

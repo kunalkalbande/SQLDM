@@ -60,7 +60,7 @@ namespace Idera.SQLdm.DesktopClient.Objects
         /// <summary>
         /// Returns a read-only collection of instance id.
         /// </summary>
-        public abstract ICollection<int> Instances
+        public abstract ICollection<int> Instances 
         {
             get;
         }

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using Idera.SQLdm.DesktopClient.Properties;
+using System.Windows.Forms;
 
 namespace Idera.SQLdm.DesktopClient.Controls.Analysis
 {
@@ -69,41 +70,41 @@ namespace Idera.SQLdm.DesktopClient.Controls.Analysis
             treeNode12,
             treeNode18});
             //end For Category Tree
-
-            Infragistics.Win.UltraWinEditors.DropDownEditorButton dropDownEditorButton5 = new Infragistics.Win.UltraWinEditors.DropDownEditorButton("DropDownList");
-            Infragistics.Win.UltraWinEditors.DropDownEditorButton dropDownEditorButton6 = new Infragistics.Win.UltraWinEditors.DropDownEditorButton("DropDownList");
+            bool isDarkThemeSelected = Settings.Default.ColorScheme == "Dark";
+            Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton dropDownEditorButton5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton("DropDownList");
+            Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton dropDownEditorButton6 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton("DropDownList");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaselineConfigurationPage));
             Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton5 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
             Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton6 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
-            this.office2007PropertyPage1 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
-            this.analysisMainContainer = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.office2007PropertyPage1 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage(isDarkThemeSelected);
+            this.analysisMainContainer = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.propertiesHeaderStripGeneralSettings = new PropertiesHeaderStrip();
-            this.productionServerCheckBox = new CheckBox();
-            this.onlineTranscationProcessingCheckBox = new CheckBox();
-            this.btnAdvancedSettingButton = new Button();
+            this.productionServerCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.onlineTranscationProcessingCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.btnAdvancedSettingButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.propertiesHeaderStripSelectCategory = new PropertiesHeaderStrip();
-            this.labelCategoryTree = new System.Windows.Forms.Label();
+            this.labelCategoryTree = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.headerStrip1 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.timeDateContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.beginTimeCombo = new Idera.SQLdm.Common.UI.Controls.TimeComboEditor();
-            this.label4 = new System.Windows.Forms.Label();
-            this.NumericAnalysisDuration = new System.Windows.Forms.NumericUpDown();
-            this.daysChkContainer = new System.Windows.Forms.TableLayoutPanel();
-            this.sundayCheckbox = new System.Windows.Forms.CheckBox();
-            this.mondayCheckBox = new System.Windows.Forms.CheckBox();
-            this.tuesdayCheckBox = new System.Windows.Forms.CheckBox();
-            this.wednesdayCheckBox = new System.Windows.Forms.CheckBox();
-            this.thursdayCheckBox = new System.Windows.Forms.CheckBox();
-            this.fridayCheckBox = new System.Windows.Forms.CheckBox();
-            this.saturdayCheckBox = new System.Windows.Forms.CheckBox();
-            this.schedulingStatusCheckBox = new CheckBox();// SQLDm 10.0 - Praveen Suhalka - Scheduling status
-            this.customDateMainContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.timeDateContainer = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFlowLayoutPanel();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.beginTimeCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.NumericAnalysisDuration = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.daysChkContainer = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.sundayCheckbox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.mondayCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.tuesdayCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.wednesdayCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.thursdayCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.fridayCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.saturdayCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.schedulingStatusCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();// SQLDm 10.0 - Praveen Suhalka - Scheduling status
+            this.customDateMainContainer = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFlowLayoutPanel();
+            this.panel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.propertiesHeaderScheduling = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.TreeViewCategories = new System.Windows.Forms.TreeView();
+            this.panel3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.TreeViewCategories = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTreeView();
             this.analysisMainContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             this.timeDateContainer.SuspendLayout();
@@ -139,6 +140,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.Analysis
             this.office2007PropertyPage1.Size = new System.Drawing.Size(505, 689);
             this.office2007PropertyPage1.TabIndex = 0;
             this.office2007PropertyPage1.Text = "Setup Analysis Categories and Options.";
+            this.office2007PropertyPage1.BackColor = BackColor;
             // 
             // baselineMainContainer
             // 
@@ -229,13 +231,13 @@ namespace Idera.SQLdm.DesktopClient.Controls.Analysis
             // 
             this.btnAdvancedSettingButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdvancedSettingButton.AutoSize = true;
-            this.btnAdvancedSettingButton.BackColor = System.Drawing.SystemColors.Control;
+            //this.btnAdvancedSettingButton.BackColor = System.Drawing.SystemColors.Control;
             this.btnAdvancedSettingButton.Location = new System.Drawing.Point(4, 456);
             this.btnAdvancedSettingButton.Name = "AdvancedSettingButton";
             this.btnAdvancedSettingButton.Size = new System.Drawing.Size(75, 23);
             this.btnAdvancedSettingButton.TabIndex = 30;
             this.btnAdvancedSettingButton.Text = "Advanced Settings";
-            this.btnAdvancedSettingButton.UseVisualStyleBackColor = false;
+            this.btnAdvancedSettingButton.UseVisualStyleBackColor = true;
             this.btnAdvancedSettingButton.Click += new System.EventHandler(this.btnAdvanceSetting_Click);
               
             
@@ -492,12 +494,12 @@ namespace Idera.SQLdm.DesktopClient.Controls.Analysis
             // 
             this.analysisMainContainer.SetColumnSpan(this.panel3, 4);
             this.panel3.Controls.Add(this.propertiesHeaderStripSelectCategory);
-            //this.panel3.Controls.Add(this.labelCategoryTree);
+            this.panel3.Controls.Add(this.labelCategoryTree);
             
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 288);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(489, 25);
+            this.panel3.Size = new System.Drawing.Size(489, 20);
             this.panel3.TabIndex = 65;
 
             // 
@@ -575,7 +577,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.Analysis
             this.propertiesHeaderStripSelectCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propertiesHeaderStripSelectCategory.Location = new System.Drawing.Point(3, 3);
             this.propertiesHeaderStripSelectCategory.Name = "propertiesHeaderStripGeneralSettings";
-            this.propertiesHeaderStripSelectCategory.Size = new System.Drawing.Size(489, 35);
+            this.propertiesHeaderStripSelectCategory.Size = new System.Drawing.Size(489, 20);
             this.propertiesHeaderStripSelectCategory.TabIndex = 14;
             this.propertiesHeaderStripSelectCategory.Text = "Select Categories";
             this.propertiesHeaderStripSelectCategory.WordWrap = false;
@@ -618,36 +620,47 @@ namespace Idera.SQLdm.DesktopClient.Controls.Analysis
 
         }
 
+        void OnCurrentThemeChanged(object sender, System.EventArgs e)
+        {
+            SetPropertiesTheme();
+        }
+
+        void SetPropertiesTheme()
+        {
+            var propertiesThemeManager = new Controls.PropertiesThemeManager();
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage1);
+        }
+
         #endregion
 
         private Office2007PropertyPage office2007PropertyPage1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown NumericAnalysisDuration;
-        private Common.UI.Controls.TimeComboEditor beginTimeCombo;
-        private System.Windows.Forms.CheckBox saturdayCheckBox;
-        private System.Windows.Forms.CheckBox fridayCheckBox;
-        private System.Windows.Forms.CheckBox thursdayCheckBox;
-        private System.Windows.Forms.CheckBox wednesdayCheckBox;
-        private System.Windows.Forms.CheckBox tuesdayCheckBox;
-        private System.Windows.Forms.CheckBox sundayCheckbox;
-        private System.Windows.Forms.CheckBox mondayCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown NumericAnalysisDuration;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor beginTimeCombo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox saturdayCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox fridayCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox thursdayCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox wednesdayCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox tuesdayCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox sundayCheckbox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox mondayCheckBox;
         private PropertiesHeaderStrip headerStrip1;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip propertiesHeaderStripSelectCategory;
-        private System.Windows.Forms.Label labelCategoryTree;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel labelCategoryTree;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip propertiesHeaderScheduling;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip propertiesHeaderStripGeneralSettings;
-        private System.Windows.Forms.CheckBox productionServerCheckBox;
-        private System.Windows.Forms.CheckBox onlineTranscationProcessingCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox productionServerCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox onlineTranscationProcessingCheckBox;
         private Button btnAdvancedSettingButton;
-        private System.Windows.Forms.FlowLayoutPanel customDateMainContainer;
-        private System.Windows.Forms.TableLayoutPanel daysChkContainer;
-        private System.Windows.Forms.FlowLayoutPanel timeDateContainer;
-        private System.Windows.Forms.TableLayoutPanel analysisMainContainer;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFlowLayoutPanel customDateMainContainer;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel daysChkContainer;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFlowLayoutPanel timeDateContainer;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel analysisMainContainer;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel3;
         private System.Windows.Forms.TreeView TreeViewCategories;
-        private System.Windows.Forms.CheckBox schedulingStatusCheckBox;// SQLDm 10.0 - Praveen Suhalka - Scheduling status
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox schedulingStatusCheckBox;// SQLDm 10.0 - Praveen Suhalka - Scheduling status
     }
 }

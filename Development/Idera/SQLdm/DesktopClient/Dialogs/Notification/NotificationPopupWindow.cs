@@ -12,6 +12,7 @@ using Idera.SQLdm.DesktopClient.Properties;
 using Idera.SQLdm.DesktopClient.Views.Alerts;
 using System.Linq;
 using Idera.SQLdm.Common.Configuration;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 {
@@ -51,6 +52,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             linksLayoutPanel.Visible = false;
             SoundAlertEnabled = true;
             AdaptFontSize();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
         public bool SoundAlertEnabled { get; set; }
@@ -356,7 +358,24 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
         }
-
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                headerPanel.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+                headerPanel.BackColor2 = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+                contentPanel.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+                contentPanel.BackColor2 = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+            }
+            else
+            {
+                headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+                headerPanel.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+                contentPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+                contentPanel.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            }
+            
+        }
         #region P/Invoke
 
         protected const Int32 HWND_TOPMOST = -1;

@@ -12,6 +12,7 @@ using Idera.SQLdm.Common.UI.Dialogs;
 using Idera.SQLdm.DesktopClient.Helpers;
 using Infragistics.Win;
 using Microsoft.Reporting.WinForms;
+using Idera.SQLdm.DesktopClient.Controls.CustomControls;
 
 namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
 {
@@ -552,7 +553,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
             Label likeLabel = null;
             Label lessThanLabel = null;
             Panel memoryPanel = null;
-            NumericUpDown updown = null;
+            CustomNumericUpDown updown = null;
             Label lblUpdown = null;
 
             switch(((Control) sender).Name)

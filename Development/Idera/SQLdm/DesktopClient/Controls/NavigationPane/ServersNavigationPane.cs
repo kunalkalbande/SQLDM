@@ -44,6 +44,9 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
     {
         #region Fields
 
+        //SQLDM-31295
+        private bool isExpanding = false;
+        private bool isCollapsing = false;
         private const string DummyTag = "#dummy#";
         private const string AllServersUserViewName = "All Servers";
         private const string Refreshing_Tag = " (Refreshing...)";
@@ -169,16 +172,18 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                 }
                 downArrowSvg = Resources.DownArrow_Light;
                 leftArrowSvg = Resources.LeftArrow_Light;
-                serverGroupHeaderStripLabel.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Server;
+                serverGroupHeaderStripLabel.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ServerTree_Servers_Icon; //Babita 4.12 DarkTheme Images Changes
                 toolStripLabel1.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Tag16x16;
                 userViewsHeaderStripLabel.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Views16x16;
             }
             else
             {
-                var darkBackColor = System.Drawing.ColorTranslator.FromHtml("#021017");
+                var darkBackColor = System.Drawing.ColorTranslator.FromHtml("#012A4F");
                 var midNightColor = System.Drawing.ColorTranslator.FromHtml("#006089");
-                var halfMidNightColor = Color.FromArgb(127, 0, 96, 137);
-                leftNavTextColor = ColorTranslator.FromHtml("#afb0b6");
+                var halfMidNightColor = System.Drawing.ColorTranslator.FromHtml("#001931");
+                leftNavTextColor = ColorTranslator.FromHtml("#E4E5EA");
+                var hoverColor = ColorTranslator.FromHtml("#006089");
+
                 this.userViewTreeView.BackColor = darkBackColor;
                 this.tagsTreeView.BackColor = darkBackColor;
                 this.userViewsTreeView.BackColor = darkBackColor;
@@ -190,12 +195,15 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                 this.userViewsHeaderStripLabel.ForeColor = leftNavTextColor;
                 this.toolStripLabel1.ForeColor = leftNavTextColor;
                 this.serverGroupHeaderStripLabel.ForeColor = leftNavTextColor;
+
                 this.userViewsHeaderStrip.BackColor = halfMidNightColor;
                 this.tagsHeaderStrip.BackColor = halfMidNightColor;
                 this.userViewHeaderStrip.BackColor = halfMidNightColor;
+
                 this.userViewsPanel.BackColor = darkBackColor;
                 this.tagsPanel.BackColor = darkBackColor;
                 this.serverGroupPanel.BackColor = darkBackColor;
+
                 foreach (TreeNode node in userViewsTreeView.Nodes)
                 {
                     node.ForeColor = leftNavTextColor;
@@ -214,9 +222,9 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                 }
                 downArrowSvg = Resources.DownArrow_Dark;
                 leftArrowSvg = Resources.LeftArrow_Dark;
-                serverGroupHeaderStripLabel.Image = ImageHelper.GetBitmapFromSvgByteArray(Resources.Database_Dark);
-                toolStripLabel1.Image = ImageHelper.GetBitmapFromSvgByteArray(Resources.Tags_Dark);
-                userViewsHeaderStripLabel.Image = ImageHelper.GetBitmapFromSvgByteArray(Resources.MyViews_Dark);
+                serverGroupHeaderStripLabel.Image = Resources.Servers; //Babita 4.12 DarkTheme Images Changes
+                toolStripLabel1.Image = Resources.Tag16x16; //Babita 4.12 DarkTheme Images Changes
+                userViewsHeaderStripLabel.Image = Resources.Views16x16; //Babita 4.12 DarkTheme Images Changes
             }
             UpdateUserViewsPanel();
             UpdateTagsPanel();
@@ -231,9 +239,82 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
 
             if (System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime)
                 return;
-
             Initialize();
+            this.AutoScaleMode = AutoScaleMode.Font;
+            if(AutoScaleSizeHelper.isScalingRequired)
+            {
+                this.serverGroupHeaderStripLabel.Image = Resources.larger_server;
+                this.serverGroupHeaderStripLabel.ImageScaling = ToolStripItemImageScaling.None;
+                this.toolStripLabel1.Image = Resources.larger_tag;
+                this.toolStripLabel1.ImageScaling = ToolStripItemImageScaling.None;
+                this.userViewsHeaderStripLabel.Image = Resources.larger_my_views;
+                this.userViewsHeaderStripLabel.ImageScaling = ToolStripItemImageScaling.None;
+            }
         }
+
+        //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+        private void AdaptFontSize()
+        {
+            AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                AutoScaleFontHelper.Default.AutoScaleControl(this.userViewsTreeView, AutoScaleFontHelper.ControlType.TreeViewFontAdaptor); //upper treeview with server categories
+                AutoScaleFontHelper.Default.AutoScaleControl(this.userViewTreeView, AutoScaleFontHelper.ControlType.TreeViewFontAdaptor); // lower treeview with server instances
+                AutoScaleFontHelper.Default.AutoScaleControl(this.tagsTreeView, AutoScaleFontHelper.ControlType.TreeViewFontAdaptor); // tags view.
+                this.tagsPanel.AutoSize = true;
+            }
+        }
+        private void UpdateNodeFont(TreeNode node)
+        {
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                if (AutoScaleSizeHelper.isLargeSize)
+                {
+                    node.NodeFont = new Font("Tahoma", 17f, GraphicsUnit.Pixel);
+                    this.userViewsHeaderStripLabel.Font = new Font("Tahoma", 19f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+                    this.toolStripLabel1.Font = new Font("Tahoma", 19f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+                    this.serverGroupHeaderStripLabel.Font = new Font("Tahoma", 19f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+                }
+                if (AutoScaleSizeHelper.isXLargeSize)
+                {
+                    node.NodeFont = new Font("Tahoma", 20f, GraphicsUnit.Pixel);
+                    this.userViewsHeaderStripLabel.Font = new Font("Tahoma", 22f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+                    this.toolStripLabel1.Font = new Font("Tahoma", 22f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+                    this.serverGroupHeaderStripLabel.Font = new Font("Tahoma", 22f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+                }
+                if (AutoScaleSizeHelper.isXXLargeSize)
+                {
+                    node.NodeFont = new Font("Tahoma", 23f, GraphicsUnit.Pixel);
+                    this.userViewsHeaderStripLabel.Font = new Font("Tahoma", 25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+                    this.toolStripLabel1.Font = new Font("Tahoma", 25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+                    this.serverGroupHeaderStripLabel.Font = new Font("Tahoma", 25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+                }
+            }
+            else
+            {
+                node.NodeFont = new Font("Tahoma", 11f, GraphicsUnit.Pixel);
+            }
+        }
+        private int UpdateNodeHeight()
+        {
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                if (AutoScaleSizeHelper.isLargeSize)
+                {
+                    return 32;
+                }
+                if (AutoScaleSizeHelper.isXLargeSize)
+                {
+                    return 32;
+                }
+                if (AutoScaleSizeHelper.isXXLargeSize)
+                {
+                    return 30;
+                }
+            }
+            return 16;
+        }
+        //end
 
         private void initializeTreeViewLightImageList()
         {
@@ -299,9 +380,9 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             images.Images.Add("TablesWarning", Resources.TablesViewWarning16x16);
             images.Images.Add("CustomCounterWarning", Resources.CustomCounterWarning16x16);
             images.Images.Add("CustomCounterCritical", Resources.CustomCounterCritical16x16);
-            images.Images.Add("Tag", Resources.Tag16x16);
-            images.Images.Add("TagCritical", Resources.StatusCriticalSmall);
-            images.Images.Add("TagWarning", Resources.StatusWarningSmall);
+            images.Images.Add("Tag", Resources.ServerTree_Tag_Icon); //Babita 4.12 DarkTheme Images Changes
+            images.Images.Add("TagCritical", Resources.darkTheme_TagCritical); //Babita 4.12 DarkTheme Images Changes
+            images.Images.Add("TagWarning", Resources.darkTheme_TagWarning); //Babita 4.12 DarkTheme Images Changes
             images.Images.Add("Mirrored", Resources.DBmirroring_16);
             images.Images.Add("LogsWarning", Resources.LogsWarning16x16);
             images.Images.Add("LogsCritical", Resources.LogsCritical16x16);
@@ -348,10 +429,10 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             imagesDarkTheme.Images.Add("Databases", Resources.Databases);
             imagesDarkTheme.Images.Add("Services", Resources.Services);
             imagesDarkTheme.Images.Add("Logs", Resources.Logs);
-            imagesDarkTheme.Images.Add("ServerOK", ImageHelper.GetBitmapFromSvgByteArray(Resources.Ok_Dark));
-            imagesDarkTheme.Images.Add("ServerWarning", ImageHelper.GetBitmapFromSvgByteArray(Resources.Warning_Dark));
-            imagesDarkTheme.Images.Add("ServerCritical", ImageHelper.GetBitmapFromSvgByteArray(Resources.Critical_Dark));
-            imagesDarkTheme.Images.Add("ServerMaintenanceMode", Resources.ServerMaintenanceMode);
+            imagesDarkTheme.Images.Add("ServerOK", Resources.StatusOKSmall); //Babita 4.12 DarkTheme Images Changes
+            imagesDarkTheme.Images.Add("ServerWarning", Resources.StatusWarningSmall); //Babita 4.12 DarkTheme Images Changes
+            imagesDarkTheme.Images.Add("ServerCritical", Resources.StatusCriticalSmall); //Babita 4.12 DarkTheme Images Changes
+            imagesDarkTheme.Images.Add("ServerMaintenanceMode", Resources.StatusMainentanceModeSmall); //Babita 4.12 DarkTheme Images Changes
             imagesDarkTheme.Images.Add("SubView", Resources.GenericView16x16);
             imagesDarkTheme.Images.Add("Database", Resources.Database);
             imagesDarkTheme.Images.Add("Table", Resources.Table);
@@ -389,10 +470,10 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             imagesDarkTheme.Images.Add("LogsSqlAgent", Resources.LogsSqlAgentFilter16x16);
             imagesDarkTheme.Images.Add("CustomCounter", Resources.CustomCounter16x16);
 
-            imagesDarkTheme.Images.Add("ServersCritical", ImageHelper.GetBitmapFromSvgByteArray(Resources.Critical_Dark));
-            imagesDarkTheme.Images.Add("ServersWarning", ImageHelper.GetBitmapFromSvgByteArray(Resources.Warning_Dark));
-            imagesDarkTheme.Images.Add("ServersOK", ImageHelper.GetBitmapFromSvgByteArray(Resources.Ok_Dark));
-            imagesDarkTheme.Images.Add("ServersMaintenanceMode", ImageHelper.GetBitmapFromSvgByteArray(Resources.MaintenanceMode_Dark));
+            imagesDarkTheme.Images.Add("ServersCritical", Resources.StatusCriticalSmall); //Babita 4.12 DarkTheme Images Changes
+            imagesDarkTheme.Images.Add("ServersWarning", Resources.StatusWarningSmall); //Babita 4.12 DarkTheme Images Changes
+            imagesDarkTheme.Images.Add("ServersOK",Resources.StatusOKSmall); //Babita 4.12 DarkTheme Images Changes
+            imagesDarkTheme.Images.Add("ServersMaintenanceMode", Resources.StatusMainentanceModeSmall); //Babita 4.12 DarkTheme Images Changes
             imagesDarkTheme.Images.Add("SearchServersCritical", Resources.ServerGroupCritical16x16);
             imagesDarkTheme.Images.Add("SearchServersWarning", Resources.ServerGroupWarning16x16);
             imagesDarkTheme.Images.Add("SearchServersOK", Resources.ServerGroupOK16x16);
@@ -401,9 +482,9 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             imagesDarkTheme.Images.Add("TablesWarning", Resources.TablesViewWarning16x16);
             imagesDarkTheme.Images.Add("CustomCounterWarning", Resources.CustomCounterWarning16x16);
             imagesDarkTheme.Images.Add("CustomCounterCritical", Resources.CustomCounterCritical16x16);
-            imagesDarkTheme.Images.Add("Tag", ImageHelper.GetBitmapFromSvgByteArray(Resources.Tag_Dark));
-            imagesDarkTheme.Images.Add("TagCritical", ImageHelper.GetBitmapFromSvgByteArray(Resources.Critical_Dark));
-            imagesDarkTheme.Images.Add("TagWarning", ImageHelper.GetBitmapFromSvgByteArray(Resources.Warning_Dark));
+            imagesDarkTheme.Images.Add("Tag", Resources.ServerTree_Tag_Icon); //Babita 4.12 DarkTheme Images Changes
+            imagesDarkTheme.Images.Add("TagCritical", Resources.darkTheme_TagCritical);  //Babita 4.12 DarkTheme Images Changes
+            imagesDarkTheme.Images.Add("TagWarning", Resources.darkTheme_TagWarning);  //Babita 4.12 DarkTheme Images Changes
             imagesDarkTheme.Images.Add("Mirrored", Resources.DBmirroring_16);
             imagesDarkTheme.Images.Add("LogsWarning", Resources.LogsWarning16x16);
             imagesDarkTheme.Images.Add("LogsCritical", Resources.LogsCritical16x16);
@@ -448,10 +529,8 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             {
                 Settings.Default.ActiveRepositoryConnection.UserViews.Changed += UserViews_Changed;
             }
-            foreach (var k in ApplicationModel.Default.RepoActiveInstances.Keys)
-            {
-                ApplicationModel.Default.RepoActiveInstances[k].Changed += ActiveInstances_Changed;
-            }
+
+            ApplicationModel.Default.ActiveInstances.Changed += ActiveInstances_Changed;
             ApplicationModel.Default.Tags.Changed += Tags_Changed;
             ApplicationModel.Default.FocusObjectChanged += ApplicationModel_FocusObjectChanged;
             ApplicationController.Default.ActiveViewChanging += ApplicationController_ActiveViewChanging;
@@ -480,7 +559,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
 
             if (focusServer != null)
             {
-                if (instanceTreeNodeLookupTable.TryGetValue(focusServer.ClusterRepoId, out instanceNode))
+                if (instanceTreeNodeLookupTable.TryGetValue(focusServer.Id, out instanceNode))
                 {
                     instanceNode.EnsureVisible();
                     userViewTreeView.SelectedNode = instanceNode;
@@ -491,7 +570,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                     userViewsTreeView.Nodes[0].EnsureVisible();
                     userViewsTreeView.SelectedNode = userViewsTreeView.Nodes[0];
                     LoadSelectedUserView();
-                    if (instanceTreeNodeLookupTable.TryGetValue(focusServer.ClusterRepoId, out instanceNode))
+                    if (instanceTreeNodeLookupTable.TryGetValue(focusServer.Id, out instanceNode))
                     {
                         instanceNode.EnsureVisible();
                         userViewTreeView.SelectedNode = instanceNode;
@@ -545,13 +624,12 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             userViewsPanel.ResumeLayout();
             UpdateUserViewsPanel();
             userViewTreeStatusLabel.Hide();
-            foreach (var inst in ApplicationModel.Default.RepoActiveInstances.Values)
-            {
-                foreach (MonitoredSqlServerWrapper wrapper in inst)
-                {   // must know about certain server changes
-                    wrapper.Changed += instance_Changed;
-                }
+
+            foreach (MonitoredSqlServerWrapper wrapper in ApplicationModel.Default.ActiveInstances)
+            {   // must know about certain server changes
+                wrapper.Changed += instance_Changed;
             }
+
             LoadUserView(AllServersUserView.Instance);
 
             //SqlDm 10.2 (Tushar)--Fix for defect SQLDM-27156
@@ -601,8 +679,8 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                 {
                     if (instanceNode is ServerTreeNode)
                     {
-                        int instanceId = RepositoryHelper.GetSelectedInstanceId((Int32)instanceNode.Tag);
-                        MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(instanceId, Settings.Default.RepoId);
+                        int instanceId = (Int32)instanceNode.Tag;
+                        MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(instanceId);
                         ((ServerTreeNode)instanceNode).UpdateStatus(status);
 
 
@@ -696,7 +774,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             if (status != null)
             {
                 //SQLdm 10.0.2: checking for IsRefereshing so that when alerts are getting refreshed for a particular server its Text is not updated 
-                if (startNode.NodeType == TreeNodeType.Instance && status.Instance != null && !status.Instance.IsRefreshing)
+                if (startNode.NodeType == TreeNodeType.Instance && !status.Instance.IsRefreshing)
                 {
                     startNode.Text = displayInstanceName;
                 }
@@ -902,7 +980,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             {
                 // get the selected instance
                 TreeNode selectedNode = userViewTreeView.SelectedNode;
-                if (selectedNode.Level == 2)
+                if (selectedNode.Level == 1)
                 {
                     int selectedInstanceId = (int)userViewTreeView.SelectedNode.Tag;
                     MonitoredSqlServerWrapper selectedInstance = ApplicationModel.Default.ActiveInstances[selectedInstanceId];
@@ -1923,7 +2001,6 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
 
         private void ActiveInstances_Changed(object sender, MonitoredSqlServerCollectionChangedEventArgs e)
         {
-
             userViewTreeView.BeginUpdate();
 
             switch (e.ChangeType)
@@ -1931,7 +2008,6 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                 case KeyedCollectionChangeType.Added:
                     foreach (MonitoredSqlServerWrapper instance in e.Instances)
                     {
-                        var id = Settings.Default.RepoId;
                         AddInstance(instance);
                         instance.Changed += instance_Changed;
                     }
@@ -1993,7 +2069,6 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                     tagTreeNodeLookupTable.Clear();
                     break;
             }
-
             tagsTreeView.EndUpdate();
         }
 
@@ -2007,7 +2082,8 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                     TreeNode node = new TreeNode(String.Format("{0} ({1})", tag.Name, tag.Instances.Count));
                     node.Tag = tag;
                     node.ForeColor = leftNavTextColor;
-                    node.NodeFont = new Font("Tahoma", 11f, GraphicsUnit.Pixel);
+                    //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2, 
+                    UpdateNodeFont(node);//node.NodeFont = new Font("Tahoma", 11f, GraphicsUnit.Pixel);
                     tagsTreeView.Nodes.Add(node);
                     tagsTreeView.Sort();
                     tagTreeNodeLookupTable.Add(tag.Id, node);
@@ -2110,7 +2186,6 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                                 }
                             }
                         }
-
                         UpdateTagStatus(tag.Id);
                     }
                     else
@@ -2151,7 +2226,9 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                 node.ImageKey =
                     node.SelectedImageKey = tagTreeNodeLookupTable[tag.Id].ImageKey;
                 node.Tag = tag;
-                node.NodeFont = new Font("Tahoma", 11f, GraphicsUnit.Pixel);
+                //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2, 
+                UpdateNodeFont(node);
+                //node.NodeFont = new Font("Tahoma", 11f, GraphicsUnit.Pixel);
                 node.ForeColor = leftNavTextColor;
                 userViewTreeView.Nodes.Add(node);
 
@@ -2192,14 +2269,14 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
         void instance_Changed(object sender, MonitoredSqlServerChangedEventArgs e)
         {
             TreeNode node = null;
-            if (instanceTreeNodeLookupTable.TryGetValue(e.Instance.InstanceId, out node))
+            if (instanceTreeNodeLookupTable.TryGetValue(e.Instance.Id, out node))
             {
                 ((ServerTreeNode)node).Refresh();
 
                 bool customCountersExist = InstanceHasCustomCounters(e.Instance);
                 ConfigureCustomCounterNode((TypedTreeNode)node, customCountersExist);
 
-                UpdateInstanceNodes((ServerTreeNode)node, ApplicationModel.Default.GetInstanceStatus(e.Instance.Id, e.Instance.RepoId), e.Instance.DisplayInstanceName);//10.3 Bug fix - SQLDM-25513 : [Friend names keep being deleted]
+                UpdateInstanceNodes((ServerTreeNode)node, ApplicationModel.Default.GetInstanceStatus(e.Instance.Id), e.Instance.DisplayInstanceName);//10.3 Bug fix - SQLDM-25513 : [Friend names keep being deleted]
             }
         }
 
@@ -2207,17 +2284,9 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
         {
             if (instance != null && userViewTreeView.Nodes.Count != 0)
             {
-                Settings.Default.CurrentRepoId = instance.RepoId;
                 if (userViewTreeView.Nodes[0].Tag == AllServersUserView.Instance)
                 {
-                    int repoId = Settings.Default.CurrentRepoId;
-                    bool obj = userViewTreeView.Nodes[0].Nodes.ContainsKey(repoId.ToString());
-                    if (!obj)
-                    {
-                        UserViewTreeView.Nodes[0].Nodes.Add(repoId.ToString(), "Syn-Cluster" + repoId + "");
-                    }
-                    int nodeSeqId = UserViewTreeView.Nodes[0].Nodes.Count;
-                    AddInstanceNode(instance.Id, userViewTreeView.Nodes[0].Nodes[nodeSeqId - 1]);
+                    AddInstanceNode(instance.Id, userViewTreeView.Nodes[0]);
                 }
                 else if (userViewTreeView.Nodes[0].Tag is StaticUserView)
                 {
@@ -2239,13 +2308,13 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                 {
                     TreeNode existingServerNode;
 
-                    if (instanceTreeNodeLookupTable.TryGetValue(instance.ClusterRepoId, out existingServerNode))
+                    if (instanceTreeNodeLookupTable.TryGetValue(instance.Id, out existingServerNode))
                     {
                         TreeNode viewNode = existingServerNode.Parent;
                         userViewTreeView.SelectedNode = viewNode;
 
                         existingServerNode.Remove();
-                        instanceTreeNodeLookupTable.Remove(instance.ClusterRepoId);
+                        instanceTreeNodeLookupTable.Remove(instance.Id);
 
                     }
                 }
@@ -2265,7 +2334,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                 {
                     TreeNode existingServerNode;
 
-                    if (instanceTreeNodeLookupTable.TryGetValue(instance.ClusterRepoId, out existingServerNode))
+                    if (instanceTreeNodeLookupTable.TryGetValue(instance.Id, out existingServerNode))
                     {
                         existingServerNode.ImageKey = MonitoredSqlServerStatus.GetServerImageKey(instance.Id);
                         existingServerNode.SelectedImageKey = existingServerNode.ImageKey;
@@ -2304,9 +2373,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             }
             else
             {
-                count = 0;
-                foreach (var inst in ApplicationModel.Default.RepoActiveInstances.Values)
-                    count = count + inst.Count;
+                count = ApplicationModel.Default.ActiveInstances.Count;
             }
 
             return String.Format("{0} ({1})", name, count);
@@ -2331,7 +2398,9 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                 TreeNode userViewNode = new TreeNode(GetFormattedUserViewName(userView));
                 userViewNode.Tag = userView;
                 userViewNode.ForeColor = leftNavTextColor;
-                userViewNode.NodeFont = new Font("Tahoma", 11f, GraphicsUnit.Pixel);
+                //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+                UpdateNodeFont(userViewNode);
+                //userViewNode.NodeFont = new Font("Tahoma", 11f, GraphicsUnit.Pixel);
                 string imageKey = string.Empty;
                 if (userViewNodeIconDictionary.TryGetValue(userView.Name, out imageKey))
                 {
@@ -2590,22 +2659,22 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                     {
                         TreeNode existingNode;
                         int tabIndex = 0;
-                        if (instanceTreeNodeLookupTable.TryGetValue(instance.InstanceId, out existingNode))
+                        if (instanceTreeNodeLookupTable.TryGetValue(instance.Id, out existingNode))
                         {
                             if (ApplicationModel.Default.AllInstances.ContainsKey(instance.Id) &&
                                 ApplicationModel.Default.AllInstances[instance.Id].CloudProviderId ==
                                 Common.Constants.MicrosoftAzureId)
                             {
                                 if (((ServerViewContainer)sender).SelectedTab.ToString() == "Sessions")
-                                    tabIndex = 1;
-                                if (((ServerViewContainer)sender).SelectedTab.ToString() == "Resources")
+                                    tabIndex = 1; 
+                            if (((ServerViewContainer)sender).SelectedTab.ToString() == "Resources")
                                     tabIndex = 2;
-                                else if (((ServerViewContainer)sender).SelectedTab.ToString() == "Databases")
+                                else if(((ServerViewContainer)sender).SelectedTab.ToString() == "Databases")
                                     tabIndex = 3;
                             }
                             else
                                 tabIndex = (int)e.SelectedTab;
-
+                            
                             //SQLdm 10.0(Srishti Purohit)
                             //Defect fix for : SQLDM-25422
                             //Left side analyze tree node should be visible if Analyze tab is visible on top view
@@ -2613,7 +2682,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
 
                             bool showAnalyzeNode = view.Analyze.Visibility == System.Windows.Visibility.Visible;
                             ConfigureAnalyseNode((TypedTreeNode)existingNode, showAnalyzeNode);
-                            if (ApplicationModel.Default.AllInstances[instance.Id].CloudProviderId == Common.Constants.MicrosoftAzureId)
+                           if( ApplicationModel.Default.AllInstances[instance.Id].CloudProviderId == Common.Constants.MicrosoftAzureId )
                             {
                                 if (((ServerViewContainer)sender).SelectedTab.ToString() == "Analysis")
                                     tabIndex = 4;
@@ -2651,9 +2720,9 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                                 }
 
 
-                                if (ApplicationModel.Default.AllInstances[instance.Id].CloudProviderId == Common.Constants.AmazonRDSId)
+                                if ( ApplicationModel.Default.AllInstances[instance.Id].CloudProviderId == Common.Constants.AmazonRDSId)
                                 {
-                                    if (((ServerViewContainer)sender).SelectedTab.ToString() == "Analysis")
+                                    if(((ServerViewContainer)sender).SelectedTab.ToString() == "Analysis")
                                         tabIndex = 5;
                                 }
                                 //10.6 removes nodes from instance nodes 
@@ -2674,7 +2743,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                                             }
                                         }
                                     }
-                                }
+                                }                            
                             }
                         }
                     }
@@ -2689,17 +2758,15 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
         private void AddInstanceNode(int instanceId, TreeNode userViewNode)
         {
             lock (userViewTreeViewLock)
-            {   //SQLDM-31015
-                if (ApplicationModel.Default.AllRepoInstances.ContainsKey(instanceId))
+            {
+                if (ApplicationModel.Default.ActiveInstances.Contains(instanceId))
                 {
-                    //foreach (ServerTreeNode n in userViewNode.Nodes)
-                    //    if (n.Tag != null && n.Tag is int && (int)n.Tag == instanceId)
-                    //        return;
-                    MonitoredSqlServer instance = ApplicationModel.Default.RepoActiveInstances[Settings.Default.RepoId][instanceId];
-                    // ServerTreeNode instanceNode = new ServerTreeNode(instance.DisplayInstanceName, 0, instanceId);
-                    ServerTreeNode instanceNode = new ServerTreeNode(instance.DisplayInstanceName, 0, instance.ClusterRepoId);
-                    //SQLDM-31053
-                    if (ApplicationModel.Default.AllRepoRegisteredInstances[instanceId].CloudProviderId != null && (ApplicationModel.Default.AllRepoRegisteredInstances[instanceId].CloudProviderId == Common.Constants.AmazonRDSId || ApplicationModel.Default.AllRepoRegisteredInstances[instanceId].CloudProviderId == Common.Constants.MicrosoftAzureId || ApplicationModel.Default.AllRepoRegisteredInstances[instanceId].CloudProviderId == Common.Constants.MicrosoftAzureManagedInstanceId))
+                    foreach (ServerTreeNode n in userViewNode.Nodes)
+                        if (n.Tag != null && n.Tag is int && (int)n.Tag == instanceId)
+                            return;
+                    MonitoredSqlServer instance = ApplicationModel.Default.ActiveInstances[instanceId];
+                    ServerTreeNode instanceNode = new ServerTreeNode(instance.DisplayInstanceName, 0, instanceId);
+                    if (ApplicationModel.Default.AllInstances.ContainsKey(instanceId) && ApplicationModel.Default.AllInstances[instanceId].CloudProviderId != null && (ApplicationModel.Default.AllInstances[instanceId].CloudProviderId == Common.Constants.AmazonRDSId|| ApplicationModel.Default.AllInstances[instanceId].CloudProviderId == Common.Constants.MicrosoftAzureId || ApplicationModel.Default.AllInstances[instanceId].CloudProviderId == Common.Constants.MicrosoftAzureManagedInstanceId))
                     {
                         instanceNode.ImageKey = MonitoredSqlServerStatus.GetAzureImageKey(instanceId);
                     }
@@ -2710,22 +2777,23 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                     instanceNode.SelectedImageKey = instanceNode.ImageKey;
                     instanceNode.Text = instance.DisplayInstanceName;
                     instanceNode.ForeColor = leftNavTextColor;
-                    instanceNode.NodeFont = new Font("Tahoma", 11f, GraphicsUnit.Pixel);
-
+                    //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+                    UpdateNodeFont(instanceNode);
+                    //instanceNode.NodeFont = new Font("Tahoma", 11f, GraphicsUnit.Pixel);
                     //if (InstanceHasCustomCounters(instance))
                     //   instanceNode.Nodes.Add(new TypedTreeNode(TreeNodeType.CustomCounters, "Custom Counters", 48, ServerViews.OverviewDetails));
 
                     userViewNode.Nodes.Insert(GetInstanceInsertIndex(instance.DisplayInstanceName, userViewNode), instanceNode);
                     userViewNode.Expand();
 
-                    if (instanceTreeNodeLookupTable.ContainsKey(instance.ClusterRepoId))
+                    if (instanceTreeNodeLookupTable.ContainsKey(instanceId))
                     {
-                        instanceTreeNodeLookupTable.Remove(instance.ClusterRepoId);
+                        instanceTreeNodeLookupTable.Remove(instanceId);
                     }
 
-                    instanceTreeNodeLookupTable.Add(instance.ClusterRepoId, instanceNode);
-                    //  var id = RepositoryHelper.GetSelectedInstanceId(instanceId);
-                    instanceNode.UpdateStatus(ApplicationModel.Default.GetInstanceStatus(instanceId, Settings.Default.RepoId));
+                    instanceTreeNodeLookupTable.Add(instanceId, instanceNode);
+
+                    instanceNode.UpdateStatus(ApplicationModel.Default.GetInstanceStatus(instanceId));
                 }
             }
         }
@@ -2829,7 +2897,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                         toolbarsManager.SetContextMenuUltra(this, null);
                     }
                 }
-                else if (selectedNode.Level == 2)
+                else if (selectedNode.Level == 1)
                 {
                     toolbarsManager.Tools["deleteButton"].SharedProps.Caption = "Delete";
                     toolbarsManager.Tools["deleteButton"].SharedProps.Visible = ApplicationModel.Default.UserToken.IsSQLdmAdministrator;
@@ -2894,7 +2962,9 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
 
                 TreeNode userViewNode = new TreeNode(userView.Name);
                 userViewNode.Tag = userView;
-                userViewNode.NodeFont = new Font("Tahoma", 11f, GraphicsUnit.Pixel);
+                //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+                UpdateNodeFont(userViewNode);
+                //userViewNode.NodeFont = new Font("Tahoma", 11f, GraphicsUnit.Pixel);
                 userViewNode.ForeColor = leftNavTextColor;
                 string imageKey = string.Empty;
                 if (userViewNodeIconDictionary.TryGetValue(userViewNode.Text, out imageKey))
@@ -2906,23 +2976,11 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                     UpdateUserViewTreeNode(userViewNode, userView);
                 userViewTreeView.Nodes.Add(userViewNode);
 
-                if (userView.Instances.Count > 0)
+                if (userView.Instances != null)
                 {
-                    if (ApplicationModel.Default.RepoActiveInstances.Values.Count > 0 && (userView.Name == AllServersUserViewName ||
-                        userView.Name == "Critical" || userView.Name == "OK" || userView.Name == "Warning" || userView.Name == "Maintenance Mode"))
+                    foreach (int instanceId in userView.Instances)
                     {
-                        foreach (int instanceId in userView.Instances)
-                        {
-                            CreateHierarchyOfTreeView(instanceId);
-                        }
-                    }
-                    else
-                    {
-                        foreach (int instanceId in userView.Instances)
-                        {
-                            var id = RepositoryHelper.GetSelectedInstanceId(instanceId);
-                            AddInstanceNode(id, userViewNode);
-                        }
+                        AddInstanceNode(instanceId, userViewNode);
                     }
                 }
 
@@ -2951,8 +3009,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                 switch (e.ChangeType)
                 {
                     case UserViewInstancesChangeType.Added:
-                        CreateHierarchyOfTreeView(e.InstanceId);
-                        //AddInstanceNode(e.InstanceId, userViewTreeView.Nodes[0]);
+                        AddInstanceNode(e.InstanceId, userViewTreeView.Nodes[0]);
                         break;
                     case UserViewInstancesChangeType.Removed:
                         TreeNode existingNode;
@@ -3315,9 +3372,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                 if (instanceNode == null)
                     return;
 
-                ApplicationModel.Default.SelectedInstanceId = RepositoryHelper.GetSelectedInstanceId((int)instanceNode.Tag);
-                Settings.Default.CurrentRepoId = Settings.Default.RepoId;
-                Settings.Default.ActiveRepositoryConnection.RefreshRepositoryInfo();
+                ApplicationModel.Default.SelectedInstanceId = (int)instanceNode.Tag;
                 object argument = null;
 
                 if (ApplicationModel.Default.ActiveInstances.Contains(ApplicationModel.Default.SelectedInstanceId))
@@ -3326,8 +3381,6 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                     {
                         case TreeNodeType.Instance:
                             ApplicationController.Default.ShowServerView(ApplicationModel.Default.SelectedInstanceId, ApplicationController.Default.GetCurrentServerViewForServer(ApplicationModel.Default.SelectedInstanceId));
-                            // ApplicationController.Default.ShowServerView((int)instanceNode.Tag, ApplicationController.Default.GetCurrentServerViewForServer(ApplicationModel.Default.SelectedInstanceId));
-
                             return;
                         case TreeNodeType.LogsServer:
                             argument = LogsView.LogTreeRoot.SQLServer;
@@ -3358,7 +3411,6 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                     }
                 }
                 ServerViews view = (ServerViews)node.Tag;
-                //  ApplicationController.Default.ShowServerView((int)instanceNode.Tag, view, argument);
                 ApplicationController.Default.ShowServerView(ApplicationModel.Default.SelectedInstanceId, view, argument);
             }
             finally
@@ -3374,138 +3426,129 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             string toolTipHeading = "";
             Image toolTipHeadingImage = null;
 
-            if (mouseOverNode != null && mouseOverNode.Level > 1)
+            if (mouseOverNode != null && mouseOverNode.Level >= 1)
             {
-                TypedTreeNode instanceNode = null;
-                // if (mouseOverNode.NextNode != null)
+                TypedTreeNode instanceNode = GetAncestor((TypedTreeNode)mouseOverNode, TreeNodeType.Instance);
+                MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus((int)instanceNode.Tag);
+                switch (((TypedTreeNode)mouseOverNode).NodeType)
                 {
-                    instanceNode = GetAncestor((TypedTreeNode)mouseOverNode, TreeNodeType.Instance);
-                }
-
-                if (instanceNode != null)
-                {
-                    var Id = RepositoryHelper.GetSelectedInstanceId((int)instanceNode.Tag);
-                    MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(Id, Settings.Default.RepoId);
-                    switch (((TypedTreeNode)mouseOverNode).NodeType)
-                    {
-                        case TreeNodeType.Instance:
-                            if (status != null)
+                    case TreeNodeType.Instance:
+                        if (status != null)
+                        {
+                            toolTipEnabled = true;
+                            if (status.IsSupportedVersion)
+                                toolTipText = status.ToolTip;
+                            toolTipHeading = status.ToolTipHeading;
+                            toolTipHeadingImage = status.ToolTipHeadingImage;
+                        }
+                        break;
+                    case TreeNodeType.Sessions:
+                    case TreeNodeType.Queries:
+                    case TreeNodeType.QueriesSignatureMode:
+                    case TreeNodeType.QueriesStatementMode:
+                    case TreeNodeType.QueriesHistoryMode:
+                    case TreeNodeType.Resources:
+                    case TreeNodeType.Databases:
+                    case TreeNodeType.Services:
+                    case TreeNodeType.Logs:
+                    case TreeNodeType.CustomCounters:
+                        if (mouseOverNode is TypedTreeNode)
+                        {
+                            if (mouseOverNode is IToolTipProvider)
                             {
-                                toolTipEnabled = true;
-                                if (status.IsSupportedVersion)
-                                    toolTipText = status.ToolTip;
-                                toolTipHeading = status.ToolTipHeading;
-                                toolTipHeadingImage = status.ToolTipHeadingImage;
-                            }
-                            break;
-                        case TreeNodeType.Sessions:
-                        case TreeNodeType.Queries:
-                        case TreeNodeType.QueriesSignatureMode:
-                        case TreeNodeType.QueriesStatementMode:
-                        case TreeNodeType.QueriesHistoryMode:
-                        case TreeNodeType.Resources:
-                        case TreeNodeType.Databases:
-                        case TreeNodeType.Services:
-                        case TreeNodeType.Logs:
-                        case TreeNodeType.CustomCounters:
-                            if (mouseOverNode is TypedTreeNode)
-                            {
-                                if (mouseOverNode is IToolTipProvider)
+                                UltraToolTipInfo tooltip = ((IToolTipProvider)mouseOverNode).GetToolTipInfo();
+                                if (tooltip != null)
                                 {
-                                    UltraToolTipInfo tooltip = ((IToolTipProvider)mouseOverNode).GetToolTipInfo();
-                                    if (tooltip != null)
-                                    {
-                                        userViewTreeViewToolTip.Enabled = DefaultableBoolean.True;
-                                        toolTipManager.SetUltraToolTip(userViewTreeView, tooltip);
-                                        return;
-                                    }
+                                    userViewTreeViewToolTip.Enabled = DefaultableBoolean.True;
+                                    toolTipManager.SetUltraToolTip(userViewTreeView, tooltip);
+                                    return;
                                 }
                             }
-                            if (status != null)
+                        }
+                        if (status != null)
+                        {
+                            MetricCategory category = MetricCategory.All;
+                            switch (((TypedTreeNode)mouseOverNode).NodeType)
                             {
-                                MetricCategory category = MetricCategory.All;
-                                switch (((TypedTreeNode)mouseOverNode).NodeType)
+                                case TreeNodeType.Sessions:
+                                    category = MetricCategory.Sessions;
+                                    break;
+                                case TreeNodeType.Queries:
+                                    category = MetricCategory.Queries;
+                                    break;
+                                case TreeNodeType.Resources:
+                                    category = MetricCategory.Resources;
+                                    break;
+                                case TreeNodeType.Databases:
+                                    category = MetricCategory.Databases;
+                                    break;
+                                case TreeNodeType.Services:
+                                    category = MetricCategory.Services;
+                                    break;
+                                case TreeNodeType.Logs:
+                                    category = MetricCategory.Logs;
+                                    break;
+                                case TreeNodeType.CustomCounters:
+                                    category = MetricCategory.Custom;
+                                    break;
+                            }
+                            if (category != MetricCategory.All)
+                            {
+                                ICollection<Issue> issues = status[category];
+                                if (issues != null && issues.Count > 0)
                                 {
-                                    case TreeNodeType.Sessions:
-                                        category = MetricCategory.Sessions;
-                                        break;
-                                    case TreeNodeType.Queries:
-                                        category = MetricCategory.Queries;
-                                        break;
-                                    case TreeNodeType.Resources:
-                                        category = MetricCategory.Resources;
-                                        break;
-                                    case TreeNodeType.Databases:
-                                        category = MetricCategory.Databases;
-                                        break;
-                                    case TreeNodeType.Services:
-                                        category = MetricCategory.Services;
-                                        break;
-                                    case TreeNodeType.Logs:
-                                        category = MetricCategory.Logs;
-                                        break;
-                                    case TreeNodeType.CustomCounters:
-                                        category = MetricCategory.Custom;
-                                        break;
-                                }
-                                if (category != MetricCategory.All)
-                                {
-                                    ICollection<Issue> issues = status[category];
-                                    if (issues != null && issues.Count > 0)
-                                    {
-                                        Issue[] issueArray = Algorithms.ToArray(issues);
-                                        toolTipText = status.GetToolTip(category);
-                                        toolTipHeading = String.Format("{0} are {1}", category, issueArray[0].Severity);
-                                        toolTipHeadingImage =
-                                            MonitoredSqlServerStatus.GetSeverityImage(issueArray[0].Severity);
-                                        toolTipEnabled = true;
-                                    }
+                                    Issue[] issueArray = Algorithms.ToArray(issues);
+                                    toolTipText = status.GetToolTip(category);
+                                    toolTipHeading = String.Format("{0} are {1}", category, issueArray[0].Severity);
+                                    toolTipHeadingImage =
+                                        MonitoredSqlServerStatus.GetSeverityImage(issueArray[0].Severity);
+                                    toolTipEnabled = true;
                                 }
                             }
-                            break;
-                        case TreeNodeType.Database:
-                            if (status != null)
+                        }
+                        break;
+                    case TreeNodeType.Database:
+                        if (status != null)
+                        {
+                            DatabaseStatus dbStatus;
+                            if (status.DatabaseMap.TryGetValue(mouseOverNode.Text, out dbStatus))
                             {
-                                DatabaseStatus dbStatus;
-                                if (status.DatabaseMap.TryGetValue(mouseOverNode.Text, out dbStatus))
+                                if (dbStatus.IssueCount > 0)
                                 {
-                                    if (dbStatus.IssueCount > 0)
+                                    MonitoredState severity = dbStatus.Issues[0].Severity;
+                                    toolTipText = FormatToolTipText(dbStatus.Issues, dbStatus.IssueCount);
+                                    toolTipHeading = String.Format("{0} is {1}", dbStatus.DatabaseName, severity);
+                                    toolTipHeadingImage = MonitoredSqlServerStatus.GetSeverityImage(severity);
+                                    toolTipEnabled = true;
+                                }
+                            }
+                        }
+                        break;
+                    case TreeNodeType.Table:
+                        if (status != null)
+                        {
+                            DatabaseStatus dbStatus;
+                            TypedTreeNode dbNode = GetAncestor((TypedTreeNode)mouseOverNode, TreeNodeType.Database);
+                            if (status.DatabaseMap.TryGetValue(dbNode.Text, out dbStatus))
+                            {
+                                TableStatus tableStatus;
+                                if (dbStatus.TableStatus.TryGetValue(mouseOverNode.Text, out tableStatus))
+                                {
+                                    if (tableStatus.IssueCount > 0)
                                     {
-                                        MonitoredState severity = dbStatus.Issues[0].Severity;
-                                        toolTipText = FormatToolTipText(dbStatus.Issues, dbStatus.IssueCount);
-                                        toolTipHeading = String.Format("{0} is {1}", dbStatus.DatabaseName, severity);
+                                        MonitoredState severity = tableStatus.Issues[0].Severity;
+                                        toolTipText = FormatToolTipText(tableStatus.Issues, tableStatus.IssueCount);
+                                        toolTipHeading = String.Format("{0} is {1}", tableStatus.TableName, severity);
                                         toolTipHeadingImage = MonitoredSqlServerStatus.GetSeverityImage(severity);
                                         toolTipEnabled = true;
                                     }
                                 }
                             }
-                            break;
-                        case TreeNodeType.Table:
-                            if (status != null)
-                            {
-                                DatabaseStatus dbStatus;
-                                TypedTreeNode dbNode = GetAncestor((TypedTreeNode)mouseOverNode, TreeNodeType.Database);
-                                if (status.DatabaseMap.TryGetValue(dbNode.Text, out dbStatus))
-                                {
-                                    TableStatus tableStatus;
-                                    if (dbStatus.TableStatus.TryGetValue(mouseOverNode.Text, out tableStatus))
-                                    {
-                                        if (tableStatus.IssueCount > 0)
-                                        {
-                                            MonitoredState severity = tableStatus.Issues[0].Severity;
-                                            toolTipText = FormatToolTipText(tableStatus.Issues, tableStatus.IssueCount);
-                                            toolTipHeading = String.Format("{0} is {1}", tableStatus.TableName, severity);
-                                            toolTipHeadingImage = MonitoredSqlServerStatus.GetSeverityImage(severity);
-                                            toolTipEnabled = true;
-                                        }
-                                    }
-                                }
-                            }
-                            break;
-                        default:
-                            toolTipEnabled = false;
-                            break;
-                    }
+                        }
+                        break;
+                    default:
+                        toolTipEnabled = false;
+                        break;
                 }
             }
 
@@ -3564,6 +3607,18 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             TreeNode node = userViewTreeView.SelectedNode;
             if (node != null && IsAncestorOf(e.Node, node))
                 ShowViewForNode(e.Node);
+            isCollapsing = true;
+        }
+
+        //SQLDM-31295
+        private void userViewTreeView_AfterCollapse(object sender, TreeViewEventArgs e)
+        {
+            if (isExpanding)
+            {
+                isExpanding = false;
+                e.Node.Expand();
+            }
+            isCollapsing = false;
         }
 
         private bool IsAncestorOf(TreeNode ancestor, TreeNode node)
@@ -3577,12 +3632,11 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
         }
 
         private void userViewTreeView_BeforeExpand(object sender, TreeViewCancelEventArgs e)
-        {
+       {
             if (e.Node.Level == 1 && e.Node.Tag is Int32)
             {
                 // don't allow an instance node to be expanded if it is offline
-                var Id = RepositoryHelper.GetSelectedInstanceId((int)e.Node.Tag);
-                MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(Id, Settings.Default.RepoId);
+                MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus((Int32)e.Node.Tag);
                 if (status != null)
                 {
                     if (status.IsSupportedVersion)
@@ -3600,6 +3654,18 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                 {
                     ((LazyTreeNode)e.Node).ExpandNode();
                 }
+            }
+            //SQLDM-31295
+            isExpanding = true;
+                       
+        }
+
+        private void userViewTreeView_AfterExpand(object sender, TreeViewEventArgs e)
+        {
+            if (isCollapsing)
+            {
+                isExpanding = false;
+                isCollapsing = false;
             }
         }
 
@@ -3660,6 +3726,10 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                                 detailsView.ShowHistoryMode();
                         }
                     }
+                }
+                else //Saurabh SQLDM 30946 UX Modernization 2, PRD 4.11
+                {
+                    ApplicationModel.Default.RefreshActiveInstances();
                 }
             }
         }
@@ -3737,10 +3807,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                     nodes.Add(dbSystemNode);
                 }
 
-                TreeNode instanceNode = GetAncestor(databasesNode, TreeNodeType.Instance);
-                int instanceId = RepositoryHelper.GetSelectedInstanceId((int)instanceNode.Tag);
-                Settings.Default.CurrentRepoId = Settings.Default.RepoId;
-                Settings.Default.ActiveRepositoryConnection.RefreshRepositoryInfo();
+                TreeNode instanceNode = GetAncestor(databasesNode, TreeNodeType.Instance); int instanceId = (int)instanceNode.Tag;
                 IManagementService managementService =
                     ManagementServiceHelper.GetDefaultService(Settings.Default.ActiveRepositoryConnection.ConnectionInfo);
 
@@ -3753,7 +3820,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                     ServerViews viewNavigation = ServerViews.DatabasesSummary;
                     if (database == "tempdb")
                     {
-                        MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(instanceId, Settings.Default.RepoId);
+                        MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(instanceId);
                         if (status != null && status.InstanceVersion != null && status.InstanceVersion.Major > 8)
                         {
                             viewNavigation = ServerViews.DatabasesTempdbView;
@@ -3788,8 +3855,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                 }
 
                 TreeNode instanceNode = GetAncestor(result.First, TreeNodeType.Instance);
-                var Id = RepositoryHelper.GetSelectedInstanceId((int)instanceNode.Tag);
-                MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(Id, Settings.Default.RepoId);
+                MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus((int)instanceNode.Tag);
                 if (status != null)
                 {
                     Log.Verbose("Updating child node status");
@@ -3822,10 +3888,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
 
 
                 TreeNode instanceNode = GetAncestor(databaseNode, TreeNodeType.Instance);
-
-                int instanceId = RepositoryHelper.GetSelectedInstanceId((int)instanceNode.Tag);
-                Settings.Default.CurrentRepoId = Settings.Default.RepoId;
-                Settings.Default.ActiveRepositoryConnection.RefreshRepositoryInfo();
+                int instanceId = (int)instanceNode.Tag;
                 if (ApplicationModel.Default.AllInstances[instanceId].CloudProviderId != null && ApplicationModel.Default.AllInstances[instanceId].CloudProviderId == Common.Constants.MicrosoftAzureId)
                 {
                     nodes.AddRange(new TreeNode[]
@@ -3843,7 +3906,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                                        tablesNode
                                       });
                 }
-                MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(instanceId, Settings.Default.CurrentRepoId);
+                MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(instanceId);
                 if (status != null && status.InstanceVersion != null && status.InstanceVersion.Major > 8)
                 {
                     TreeNode mirrorNode =
@@ -3874,8 +3937,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                         MergeTreeNodes(parentNode, result.Second);
                     }
                     TreeNode instanceNode = GetAncestor(result.First, TreeNodeType.Instance);
-                    int Id = RepositoryHelper.GetSelectedInstanceId((int)instanceNode.Tag);
-                    MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(Id, Settings.Default.RepoId);
+                    MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus((int)instanceNode.Tag);
                     if (status != null)
                     {
                         foreach (TreeNode node in parentNode.Nodes)
@@ -3942,8 +4004,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             }
 
             TreeNode instanceNode = GetAncestor(result.First, TreeNodeType.Instance);
-            int Id = RepositoryHelper.GetSelectedInstanceId((int)instanceNode.Tag);
-            MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(Id, Settings.Default.RepoId);
+            MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus((int)instanceNode.Tag);
             if (status != null)
             {
                 foreach (TreeNode node in parentNode.Nodes)
@@ -4160,18 +4221,14 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             public void Refresh()
             {
                 int instanceId = (int)Tag;
-                int Id = RepositoryHelper.GetSelectedInstanceId(instanceId);
-                MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(Id, Settings.Default.RepoId);
+                MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(instanceId);
                 if (status != null)
                     UpdateStatus(status);
             }
 
             public void ForceScheduledRefresh()
             {
-                int rinstanceId = Convert.ToInt32(Tag);
-                int instanceId = RepositoryHelper.GetSelectedInstanceId(rinstanceId);
-                Settings.Default.CurrentRepoId = Settings.Default.RepoId;
-                Settings.Default.ActiveRepositoryConnection.RefreshRepositoryInfo();
+                int instanceId = (int)Tag;
                 MonitoredSqlServerWrapper wrapper = ApplicationModel.Default.ActiveInstances[instanceId];
                 if (wrapper != null)
                     wrapper.ForceScheduledRefresh();
@@ -4189,14 +4246,16 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             {
                 //using displayInstanceName instead of DisplayText of the current Instance for updating Text(reflected in UI)
 
-                int rinstanceId = Convert.ToInt32(Tag);
-                int instanceId = RepositoryHelper.GetSelectedInstanceId(rinstanceId);
-
+                int instanceId = Tag !=null ? Convert.ToInt32(Tag) : 0;
                 String displayInstanceName = ApplicationModel.Default.GetInstanceDisplayName(instanceId);
 
                 if (status != null)
                 { //Set TreeNode Images for Cloud Instances
-                    if (ApplicationModel.Default.AllRepoInstances[instanceId].CloudProviderId != null && (ApplicationModel.Default.AllRepoInstances[instanceId].CloudProviderId == Common.Constants.MicrosoftAzureId || ApplicationModel.Default.AllRepoInstances[instanceId].CloudProviderId == Common.Constants.AmazonRDSId || ApplicationModel.Default.AllRepoInstances[instanceId].CloudProviderId == Common.Constants.MicrosoftAzureManagedInstanceId))
+                    if (ApplicationModel.Default.AllInstances.ContainsKey(instanceId) 
+                        && ApplicationModel.Default.AllInstances[instanceId].CloudProviderId != null 
+                        && (ApplicationModel.Default.AllInstances[instanceId].CloudProviderId == Common.Constants.MicrosoftAzureId 
+                        || ApplicationModel.Default.AllInstances[instanceId].CloudProviderId == Common.Constants.AmazonRDSId 
+                        || ApplicationModel.Default.AllInstances[instanceId].CloudProviderId == Common.Constants.MicrosoftAzureManagedInstanceId))
                     {
                         ImageKey = status.AzureImageKey;
                     }
@@ -4217,14 +4276,13 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                 {
                     Text = displayInstanceName + Refreshing_Tag;
                 }
-                else
-                    if (status == null || status.Severity == MonitoredState.OK && !status.IsRefreshAvailable)
+                else if (status == null || status.Severity == MonitoredState.OK && !status.IsRefreshAvailable)
                 {
                     Text = displayInstanceName + Initializing_Tag;
                 }
                 else
                 {
-                    if (!Text.Equals(displayText))
+                    if (Text != null && !Text.Equals(displayText))
                         Text = displayInstanceName;
                 }
             }
@@ -4542,7 +4600,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             {
                 toggleTagsPanelButton.Image = ImageHelper.GetBitmapFromSvgByteArray(leftArrowSvg);
                 tagsTreeView.Visible = false;
-                tagsPanel.Height = 33;
+                tagsPanel.Height = AutoScaleSizeHelper.isScalingRequired ? tagsHeaderStrip.Height + 10 : 40; //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
             }
         }
 
@@ -4552,9 +4610,9 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             {
                 manageTagsLabel.Visible = false;
                 int headerHeight = tagsHeaderStrip.Height;
-                int nodeHeight = 16;
+                int nodeHeight = UpdateNodeHeight(); //16 //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
                 int nodeCount = tagsTreeView.Nodes.Count <= GroupPanelsMaxCount ? tagsTreeView.Nodes.Count : GroupPanelsMaxCount;
-                int padding = 3;
+                int padding = 10;
                 tagsPanel.Height = nodeHeight * nodeCount + headerHeight + padding;
             }
             else
@@ -4569,7 +4627,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                 }
 
                 manageTagsLabel.Visible = true;
-                tagsPanel.Height = 58;
+                tagsPanel.Height = AutoScaleSizeHelper.isScalingRequired ? (AutoScaleSizeHelper.isLargeSize ? 90 : (AutoScaleSizeHelper.isXLargeSize ? 100 : (AutoScaleSizeHelper.isXXLargeSize ? 110 : 58))) : 58;
             }
         }
 
@@ -4716,8 +4774,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
                     {
                         if (tagStatus != UserViewStatus.Critical)
                         {
-                            int Id = RepositoryHelper.GetSelectedInstanceId(instanceId);
-                            MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(Id, Settings.Default.RepoId);
+                            MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(instanceId);
 
                             if (status != null)
                             {
@@ -4846,33 +4903,6 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
             {
                 button.SharedProps.Caption = "Follow Updates in Newsfeed";
             }
-        }
-
-        private void CreateHierarchyOfTreeView(int instanceId)
-        {
-            try
-            {
-                MonitoredSqlServerCollection instanceDetail = null;
-                for (int i = 1; i <= ApplicationModel.Default.RepoActiveInstances.Count; i++)
-                {
-                    if (ApplicationModel.Default.RepoActiveInstances.TryGetValue(i, out instanceDetail))
-                    {
-                        var instance = instanceDetail.Where(x => x.InstanceId == instanceId).FirstOrDefault();
-                        if (instance != null)
-                        {
-                            bool obj = userViewTreeView.Nodes[0].Nodes.ContainsKey(i.ToString());
-                            if (!obj)
-                            {
-                                UserViewTreeView.Nodes[0].Nodes.Add(i.ToString(), "Syn-Cluster" + i + "");
-                            }
-                            int nodeSeqId = UserViewTreeView.Nodes[0].Nodes.Count;
-                            var id = RepositoryHelper.GetSelectedInstanceId(instanceId);
-                            AddInstanceNode(id, userViewTreeView.Nodes[0].Nodes[nodeSeqId - 1]);
-                        }
-                    }
-                }
-            }
-            catch { }
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using Common.UI.Dialogs;
     using Infragistics.Win;
 
-    public partial class JobDestinationDialog : Form
+    public partial class JobDestinationDialog : BaseDialog
     {
         private JobDestination destination;
         private MonitoredSqlServer dollarInstance;
@@ -20,6 +20,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public JobDestinationDialog()
         {
+            this.DialogHeader = "SQL Agent Job Action";
             InitializeComponent();
             MonitoredSqlServerConfiguration dollarInstanceConfig = new MonitoredSqlServerConfiguration("$(Instance)");
             dollarInstance = new MonitoredSqlServer(0, DateTime.Now, dollarInstanceConfig);

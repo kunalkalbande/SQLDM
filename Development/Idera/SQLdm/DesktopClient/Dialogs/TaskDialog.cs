@@ -16,7 +16,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 using Infragistics.Win;
     using Idera.SQLdm.Common.Objects;
 
-    public partial class TaskDialog : Form
+    public partial class TaskDialog : BaseDialog
     {
         private const string BAND = "Band 0";
         private DataSourceWithID<int> dataSource;
@@ -26,6 +26,7 @@ using Infragistics.Win;
                           ValueList severityValueList,
                           ValueList statusValueList)
         {
+            this.DialogHeader = "To Do";
             this.dataSource = dataSource;
             InitializeComponent();
             InitializeBindings(metricValueList, severityValueList, statusValueList);

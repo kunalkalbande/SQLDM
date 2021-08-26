@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dashboardNameTextBox = new System.Windows.Forms.TextBox();
-            this.useAsGlobalDefaultCheckBox = new System.Windows.Forms.CheckBox();
-            this.selectedGroupBox = new System.Windows.Forms.GroupBox();
-            this.selectedServersListBox = new System.Windows.Forms.ListBox();
-            this.removeServersButton = new System.Windows.Forms.Button();
-            this.addServersButton = new System.Windows.Forms.Button();
-            this.availableGroupBox = new System.Windows.Forms.GroupBox();
-            this.availableServersLabel = new System.Windows.Forms.Label();
-            this.availableServersListBox = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.dashboardNameTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.useAsGlobalDefaultCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.selectedGroupBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.selectedServersListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListBox();
+            this.removeServersButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.addServersButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.availableGroupBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.availableServersLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.availableServersListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListBox();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.selectedGroupBox.SuspendLayout();
             this.availableGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -132,7 +132,7 @@
             this.removeServersButton.Name = "removeServersButton";
             this.removeServersButton.Size = new System.Drawing.Size(75, 23);
             this.removeServersButton.TabIndex = 4;
-            this.removeServersButton.Text = "< &Remove";
+            this.removeServersButton.Text = "< Remove";
             this.removeServersButton.UseVisualStyleBackColor = true;
             this.removeServersButton.Click += new System.EventHandler(this.removeServersButton_Click);
             // 
@@ -144,7 +144,7 @@
             this.addServersButton.Name = "addServersButton";
             this.addServersButton.Size = new System.Drawing.Size(75, 23);
             this.addServersButton.TabIndex = 3;
-            this.addServersButton.Text = "&Add >";
+            this.addServersButton.Text = "Add >";
             this.addServersButton.UseVisualStyleBackColor = true;
             this.addServersButton.Click += new System.EventHandler(this.addServersButton_Click);
             // 
@@ -237,18 +237,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox dashboardNameTextBox;
-        private System.Windows.Forms.CheckBox useAsGlobalDefaultCheckBox;
-        private System.Windows.Forms.GroupBox selectedGroupBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox dashboardNameTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox useAsGlobalDefaultCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox selectedGroupBox;
         private System.Windows.Forms.ListBox selectedServersListBox;
-        private System.Windows.Forms.Button removeServersButton;
-        private System.Windows.Forms.Button addServersButton;
-        private System.Windows.Forms.GroupBox availableGroupBox;
-        private System.Windows.Forms.Label availableServersLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton removeServersButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton addServersButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox availableGroupBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel availableServersLabel;
         private System.Windows.Forms.ListBox availableServersListBox;
-        private System.Windows.Forms.Label label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
     }
 }

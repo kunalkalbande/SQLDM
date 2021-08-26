@@ -17,7 +17,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         Filegroup      // SQLdm 9.1 (Abhishek Joshi) -Filegroup and Mountpoint Monitoring Improvements --added new filter type for filegroup alerts
     }
 
-    public partial class AlertFilterDialog : Form
+    public partial class AlertFilterDialog : BaseDialog
     {
         private readonly int instanceId;
         private readonly AlertFilterType filterType;

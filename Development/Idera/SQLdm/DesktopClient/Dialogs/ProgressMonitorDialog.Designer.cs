@@ -32,8 +32,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            this.taskLabel = new System.Windows.Forms.Label();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.taskLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
@@ -93,8 +93,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Label taskLabel;
-        private System.Windows.Forms.Button cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel taskLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
         private System.Windows.Forms.ProgressBar progressBar;
     }
 }

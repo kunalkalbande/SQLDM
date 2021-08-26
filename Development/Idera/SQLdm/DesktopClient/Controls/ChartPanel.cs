@@ -14,6 +14,7 @@ using Idera.SQLdm.Common.Snapshots;
 using Idera.SQLdm.DesktopClient.Helpers;
 using Idera.SQLdm.DesktopClient.Objects;
 using Idera.SQLdm.DesktopClient.Views.Servers.Server;
+using Idera.SQLdm.DesktopClient.Controls.CustomControls;
 
 namespace Idera.SQLdm.DesktopClient.Controls
 {
@@ -163,6 +164,9 @@ namespace Idera.SQLdm.DesktopClient.Controls
             selectViewDropDownButton.Visible =
                 chartValuesLabel.Visible =
                 chartValuesNumericUpDown.Visible = false;
+
+            CustomChart customchart = new CustomChart();
+            customchart.SetCurrentChartTheme(chart);
         }
 
         /// <summary>
@@ -542,6 +546,8 @@ namespace Idera.SQLdm.DesktopClient.Controls
             chartInfo = ChartHelper.ReinitializeChartLayout(chart, chartInfo, type, view);
             setTypeDisplay(ChartHelper.ChartTypeName(chartInfo.ChartType));
             setViewDisplay(ChartHelper.ChartViewName(chartInfo.ChartView));
+            CustomChart customchart = new CustomChart();
+            customchart.SetCurrentChartTheme(chart);
             ForceChartColors();
         }
 

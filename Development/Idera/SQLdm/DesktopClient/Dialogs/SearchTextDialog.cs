@@ -10,7 +10,7 @@ using Idera.SQLdm.DesktopClient.Helpers;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class SearchTextDialog : Form
+    public partial class SearchTextDialog : BaseDialog
     {
         #region fields
 
@@ -22,6 +22,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public SearchTextDialog()
         {
+            this.DialogHeader = "Find";
             InitializeComponent();
             AdaptFontSize();
             searchList = new DataTable();

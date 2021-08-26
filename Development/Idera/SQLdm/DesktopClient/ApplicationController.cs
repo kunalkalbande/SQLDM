@@ -188,6 +188,7 @@ namespace Idera.SQLdm.DesktopClient
             {
                 lock (activeViewChangeLock)
                 {
+                    CloseHeatMapOverlayPanels();
                     OnActiveViewChanging(new ActiveViewChangingEventArgs(activeView, value));
                     activeView = value;
                     OnActiveViewChanged(EventArgs.Empty);
@@ -206,6 +207,13 @@ namespace Idera.SQLdm.DesktopClient
         }
         //
 
+        void CloseHeatMapOverlayPanels()
+        {
+            foreach (var panel in ApplicationModel.Default.heatMapOverlayPanels)
+            {
+                panel.Close();
+            }
+        }
 
         private void OnActiveViewChanging(ActiveViewChangingEventArgs e)
         {
@@ -791,7 +799,7 @@ namespace Idera.SQLdm.DesktopClient
 
         public void ShowReportsView()
         {
-            bool showGettingStarted = false;
+            bool showGettingStarted = true;
 
             if (reportsView == null)
             {
@@ -1277,6 +1285,11 @@ namespace Idera.SQLdm.DesktopClient
         public ServerViews GetCurrentServerViewForServer(int instanceId)
         {
             return viewManager.GetServerViewForCachedServer(instanceId);
+        }
+
+        public void DeleteCustomReport()
+        {
+            navigationPaneControl.SecondaryNavigationPane.DeleteCustomReport();
         }
     }
 

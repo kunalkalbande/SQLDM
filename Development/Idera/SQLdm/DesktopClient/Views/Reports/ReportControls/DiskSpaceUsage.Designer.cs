@@ -29,12 +29,12 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
         private void InitializeComponent()
         {
             //SQLDM-26805 - Vamshi Krishna - Code changes to exclude the disks in the disk space usage report
-            this.diskTextbox = new System.Windows.Forms.TextBox();
+            this.diskTextbox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
             this.diskBrowseButton = new Infragistics.Win.Misc.UltraButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
 
-            this.cboOrderBy = new System.Windows.Forms.ComboBox();
-            this.lblOrderBy = new System.Windows.Forms.Label();
+            this.cboOrderBy = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.lblOrderBy = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DiskSpaceUsage));
             this.panel1.SuspendLayout();
             this.filterPanel.SuspendLayout();
@@ -185,10 +185,10 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
         #endregion
 
 
-        protected System.Windows.Forms.TextBox diskTextbox;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox diskTextbox;
         protected Infragistics.Win.Misc.UltraButton diskBrowseButton;
-        protected System.Windows.Forms.Label label1;
-        System.Windows.Forms.ComboBox cboOrderBy;
-        System.Windows.Forms.Label lblOrderBy;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox cboOrderBy;
+        Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblOrderBy;
     }
 }

@@ -1,5 +1,9 @@
+using System;
 using System.Diagnostics;
 using Idera.SQLdm.DesktopClient.Helpers;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Properties;
+using System.Drawing;
 
 namespace Idera.SQLdm.DesktopClient.Views.Administration
 {
@@ -17,10 +21,26 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
         {
             InitializeComponent();
 
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+
             // Autoscale font size.
             AdaptFontSize();
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
         }
-
+        private void ScaleControlsAsPerResolution()
+        {
+            this.headerPanel.Size = new System.Drawing.Size(670, 75);
+            this.pictureBox1.Size = new System.Drawing.Size(1332, 75);
+            this.mainDdescriptionLabel.Location = new System.Drawing.Point(4, 76);
+            this.mainDdescriptionLabel.AutoEllipsis = false;
+            this.mainDdescriptionLabel.Size = new System.Drawing.Size(663, 65);
+            this.dividerProgressBar2.Location = new System.Drawing.Point(185, 142);
+            this.featureButtonAuditedActions.Location = new System.Drawing.Point(4, 366);
+            this.featureButtonCustomCounter.Location = new System.Drawing.Point(3, 285);
+            this.featureButtonImportExport.Location = new System.Drawing.Point(3, 448);
+            this.featureButtonAppSecurity.Location = new System.Drawing.Point(3, 203);
+        }
         public AdministrationNode NodeShown
         {
             get { return nodeShown; }
@@ -136,6 +156,27 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
         protected void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            //START:DarkTheme 4.12 Icons Switching : Babita Manral
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                this.pictureBox1.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.TodayPageHeader;
+                this.pictureBox1.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.ReportColor);
+            }
+            else
+            {
+                this.pictureBox1.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.TodayPageHeader;
+                this.pictureBox1.BackColor = Color.Transparent;
+            }
+            //END:DarkTheme 4.12 Icons Switching : Babita Manral
+            this.featureButtonAppSecurity.HeaderColor = System.Drawing.Color.Red;
+            this.featureButtonCustomCounter.HeaderColor = System.Drawing.Color.Red;
+            this.featureButtonAuditedActions.HeaderColor = System.Drawing.Color.Red;
+            this.featureButtonImportExport.HeaderColor = System.Drawing.Color.Red;
+            Invalidate();
         }
     }
 }

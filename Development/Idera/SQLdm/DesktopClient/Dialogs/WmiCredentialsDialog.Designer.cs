@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtHostPassword = new System.Windows.Forms.TextBox();
-            this.txtHostUser = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.txtHostPassword = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.txtHostUser = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.btnOK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.SuspendLayout();
             // 
             // txtHostPassword
@@ -125,11 +125,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtHostPassword;
-        private System.Windows.Forms.TextBox txtHostUser;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Button btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox txtHostPassword;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox txtHostUser;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
     }
 }

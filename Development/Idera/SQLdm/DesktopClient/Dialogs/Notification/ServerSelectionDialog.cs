@@ -9,7 +9,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 using System.Threading;
     using System.ComponentModel;
 
-    public partial class ServerSelectionDialog : Form
+    public partial class ServerSelectionDialog : BaseDialog
     {
         private IList<string> servers;
         private IList<string> selectedServers;
@@ -20,6 +20,7 @@ using System.Threading;
 
         public ServerSelectionDialog() 
         {
+            this.DialogHeader = "Instances";
             InitializeComponent();
             if (postDelegate == null)
                 postDelegate = new ThreadStart(UpdateButtons);

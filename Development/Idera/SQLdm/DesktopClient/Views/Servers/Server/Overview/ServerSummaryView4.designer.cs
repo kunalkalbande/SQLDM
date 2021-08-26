@@ -38,21 +38,21 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.serverOverviewContentPanel = new System.Windows.Forms.Panel();
-            this.dashboardTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.operationalStatusPanel = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.serverOverviewContentPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.dashboardTableLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.operationalStatusPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.operationalStatusImage = new System.Windows.Forms.PictureBox();
-            this.operationalStatusLabel = new System.Windows.Forms.Label();
-            this.historicalSnapshotStatusLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.viewStatusPanel = new System.Windows.Forms.SplitContainer();
+            this.operationalStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.historicalSnapshotStatusLinkLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.viewStatusPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomSplitContainer();
             this.viewStatusConnectingCircle = new MRG.Controls.UI.LoadingCircle();
             this.viewStatusImage = new System.Windows.Forms.PictureBox();
-            this.viewStatusLabel = new System.Windows.Forms.LinkLabel();
-            this.panelGalleryPanel = new System.Windows.Forms.Panel();
+            this.viewStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.panelGalleryPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.panelGalleryGradientPanel = new Idera.SQLdm.DesktopClient.Controls.GradientPanel();
-            this.galleryPanel = new System.Windows.Forms.Panel();
-            this.galleryTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.galleryPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.galleryTableLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
             this.panelSelectorTrackBar = new Infragistics.Win.UltraWinEditors.UltraTrackBar();
             this.headerStrip1 = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
             this.panelDesignerCloseButton = new System.Windows.Forms.ToolStripButton();
@@ -102,7 +102,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
             // 
             // dashboardTableLayoutPanel
             // 
-            this.dashboardTableLayoutPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
+            //this.dashboardTableLayoutPanel.CellBorderStyle = Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel.CellBorderStyle.OutsetPartial;
             this.dashboardTableLayoutPanel.ColumnCount = 2;
             this.dashboardTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.dashboardTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -417,25 +417,25 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
 
         #endregion
 
-        private System.Windows.Forms.Panel serverOverviewContentPanel;
-        private System.Windows.Forms.Panel operationalStatusPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  serverOverviewContentPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  operationalStatusPanel;
         private System.Windows.Forms.PictureBox operationalStatusImage;
-        private System.Windows.Forms.Label operationalStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel operationalStatusLabel;
         private System.Windows.Forms.SplitContainer viewStatusPanel;
         private MRG.Controls.UI.LoadingCircle viewStatusConnectingCircle;
         private System.Windows.Forms.PictureBox viewStatusImage;
-        private System.Windows.Forms.LinkLabel viewStatusLabel;
-        private System.Windows.Forms.LinkLabel historicalSnapshotStatusLinkLabel;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Panel panelGalleryPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel viewStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel historicalSnapshotStatusLinkLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel linkLabel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panelGalleryPanel;
         private Controls.GradientPanel panelGalleryGradientPanel;
         private Controls.HeaderStrip headerStrip1;
         private System.Windows.Forms.ToolStripButton panelDesignerCloseButton;
-        private System.Windows.Forms.TableLayoutPanel galleryTableLayoutPanel;
-        private System.Windows.Forms.TableLayoutPanel dashboardTableLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel galleryTableLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel dashboardTableLayoutPanel;
         private Infragistics.Win.UltraWinEditors.UltraTrackBar panelSelectorTrackBar;
         private System.Windows.Forms.ToolStripLabel panelDesignerPanelCountLabel;
-        private System.Windows.Forms.Panel galleryPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  galleryPanel;
         private Controls.ServerSummary.Dashboard.DashboardPanelDetails dashboardPanelDetails;
     }
 }

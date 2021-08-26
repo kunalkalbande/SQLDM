@@ -25,6 +25,8 @@ using ColumnHeader = Infragistics.Win.UltraWinGrid.ColumnHeader;
 using DatabaseStatus = Idera.SQLdm.Common.Snapshots.DatabaseStatus;
 using Idera.SQLdm.Common.Events;
 using System.Globalization;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Controls;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
 {
@@ -108,6 +110,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
         public DatabasesSummaryView(int instanceId) : base(instanceId)
         {
             InitializeComponent();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
             ChartFxExtensions.SetContextMenu(recentTrendsChart, toolbarsManager);
             ChartFxExtensions.SetContextMenu(capacityUsageChart, toolbarsManager);
 
@@ -189,8 +193,40 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             AdaptFontSize();
 
             Settings.Default.PropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(Settings_PropertyChanged);
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
         }
-
+        private void ScaleControlsAsPerResolution()
+        {
+            //this.splitContainer.SplitterDistance = 0;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+            if(AutoScaleSizeHelper.isLargeSize)
+            {
+                this.contentContainerPanel.Location = new System.Drawing.Point(0, 45);
+                //this.contentContainerPanel.Height -= 45;
+                this.contentContainerPanel.Location = new Point(this.contentContainerPanel.Location.X, this.contentContainerPanel.Location.Y - 10);
+                this.databasesFilterComboBox.Size = new System.Drawing.Size(3010, 32);
+                this.refreshDatabasesButton.Size = new System.Drawing.Size(27, 37);
+                return;
+            }
+            if(AutoScaleSizeHelper.isXLargeSize)
+            {
+                this.contentContainerPanel.Location = new System.Drawing.Point(0, 45);
+                this.contentContainerPanel.Height -= 45;
+                this.databasesFilterComboBox.Size = new System.Drawing.Size(3000, 32);
+                this.refreshDatabasesButton.Size = new System.Drawing.Size(27, 37);
+                return;
+            }
+            if(AutoScaleSizeHelper.isXXLargeSize)
+            {
+                this.contentContainerPanel.Location = new System.Drawing.Point(0, 45);
+                this.contentContainerPanel.Height -= 45;
+                this.databasesFilterComboBox.Size = new System.Drawing.Size(3000, 32);
+                this.refreshDatabasesButton.Size = new System.Drawing.Size(27, 37);
+                return;
+            }
+           
+        }
         private void Settings_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             switch (e.PropertyName)
@@ -272,6 +308,18 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
 
         public override void ShowHelp() {
             Idera.SQLdm.DesktopClient.Helpers.ApplicationHelper.ShowHelpTopic(HelpTopics.DatabasesSummaryView);
+        }
+
+        //void OnCurrentThemeChanged(object sender, EventArgs e)
+        //{
+        //    SetGridTheme();
+        //}
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.databasesGrid);
         }
 
         public override void SetArgument(object argument)
@@ -1779,6 +1827,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
         private void DatabasesSummaryView_Load(object sender, EventArgs e)
         {
             ApplySettings();
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
         }
 
         #endregion
@@ -2018,6 +2068,33 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);            
+        }
+
+        void mouseEnter_refreshDatabasesButton(Object Sender, EventArgs e)
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+                this.appearance1.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefreshHover;
+        }
+        void mouseLeave_refreshDatabasesButton(Object Sender, EventArgs e)
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+                appearance1.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh;
+        }
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                if (!refreshDatabasesButton.Enabled)
+                    appearance1.Image = Helpers.ImageUtils.ChangeOpacity(global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh, 0.50F);
+                this.refreshDatabasesButton.UseOsThemes = DefaultableBoolean.False;
+                this.refreshDatabasesButton.UseAppStyling = false;
+                this.refreshDatabasesButton.ButtonStyle = UIElementButtonStyle.FlatBorderless;
+            }
+            else
+            {
+                this.refreshDatabasesButton.UseAppStyling = true;
+            }
         }
     }
 }

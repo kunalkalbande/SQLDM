@@ -29,19 +29,19 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DiskDetails));
-            Infragistics.Win.UltraWinEditors.DropDownEditorButton dropDownEditorButton2 = new Infragistics.Win.UltraWinEditors.DropDownEditorButton("DropDownList");
-            Infragistics.Win.UltraWinEditors.DropDownEditorButton dropDownEditorButton1 = new Infragistics.Win.UltraWinEditors.DropDownEditorButton("DropDownList");
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.driveNamesCombo = new System.Windows.Forms.ComboBox();
-            this.forecastTypeCombo = new System.Windows.Forms.ComboBox();
-            this.showTablesCheckbox = new System.Windows.Forms.CheckBox();
-            this.startHoursTimeEditor = new Idera.SQLdm.Common.UI.Controls.TimeComboEditor();
-            this.endHoursTimeEditor = new Idera.SQLdm.Common.UI.Controls.TimeComboEditor();
-            this.startHoursLbl = new System.Windows.Forms.Label();
-            this.endHoursLbl = new System.Windows.Forms.Label();
-            this.cmbAxis = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
+            Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton dropDownEditorButton2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton("DropDownList");
+            Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton dropDownEditorButton1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton("DropDownList");
+            this.textBox2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.driveNamesCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.forecastTypeCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.showTablesCheckbox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.startHoursTimeEditor = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor();
+            this.endHoursTimeEditor = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor();
+            this.startHoursLbl = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.endHoursLbl = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.cmbAxis = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.label5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.panel1.SuspendLayout();
             this.filterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.startHoursTimeEditor)).BeginInit();
@@ -277,16 +277,16 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox driveNamesCombo;
-      private System.Windows.Forms.Label label4;
-      private System.Windows.Forms.ComboBox forecastTypeCombo;
-      private System.Windows.Forms.CheckBox showTablesCheckbox;
-      private System.Windows.Forms.Label startHoursLbl;
-      private System.Windows.Forms.Label endHoursLbl;
-      private Common.UI.Controls.TimeComboEditor endHoursTimeEditor;
-      private Common.UI.Controls.TimeComboEditor startHoursTimeEditor;
-      private System.Windows.Forms.ComboBox cmbAxis;
-      private System.Windows.Forms.Label label5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox textBox2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox driveNamesCombo;
+      private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
+      private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox forecastTypeCombo;
+      private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox showTablesCheckbox;
+      private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel startHoursLbl;
+      private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel endHoursLbl;
+      private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor endHoursTimeEditor;
+      private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor startHoursTimeEditor;
+      private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox cmbAxis;
+      private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label5;
     }
 }

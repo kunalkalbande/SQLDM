@@ -31,29 +31,29 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.loadButton = new System.Windows.Forms.Button();
-            this.serverComboBox = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.tableLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.loadButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.serverComboBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraComboEditor();
             this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
+            this.panel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.contentStackPanel = new Idera.SQLdm.Common.UI.Controls.StackLayoutPanel();
-            this.instructionContentPanel = new System.Windows.Forms.Panel();
-            this.noJobsLabel = new System.Windows.Forms.Label();
-            this.informationBox1 = new Divelements.WizardFramework.InformationBox();
-            this.jobContentPanel = new System.Windows.Forms.Panel();
-            this.jobListBox = new System.Windows.Forms.CheckedListBox();
-            this.waitingContentPanel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.instructionContentPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.noJobsLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.informationBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
+            this.jobContentPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.jobListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckedListBox1();
+            this.waitingContentPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.jobNameLabel = new System.Windows.Forms.TextBox();
-            this.jobPanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.jobNameLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.jobPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.tableLayoutPanel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serverComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
@@ -364,28 +364,28 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
         private Infragistics.Win.UltraWinEditors.UltraComboEditor serverComboBox;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
         private Idera.SQLdm.Common.UI.Controls.StackLayoutPanel contentStackPanel;
-        private System.Windows.Forms.Panel jobContentPanel;
-        private System.Windows.Forms.Panel waitingContentPanel;
-        private System.Windows.Forms.Label label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  jobContentPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  waitingContentPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.BindingSource bindingSource;
         private System.ComponentModel.BackgroundWorker backgroundWorker;
         private System.Windows.Forms.CheckedListBox jobListBox;
-        private System.Windows.Forms.Panel instructionContentPanel;
-        private Divelements.WizardFramework.InformationBox informationBox1;
-        private System.Windows.Forms.Button loadButton;
-        private System.Windows.Forms.Label noJobsLabel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox jobNameLabel;
-        private System.Windows.Forms.Panel jobPanel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Panel panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  instructionContentPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox informationBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton loadButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel noJobsLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox jobNameLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  jobPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
     }
 }

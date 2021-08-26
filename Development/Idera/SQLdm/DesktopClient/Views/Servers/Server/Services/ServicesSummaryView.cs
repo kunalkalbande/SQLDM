@@ -29,6 +29,7 @@ using Wintellect.PowerCollections;
 using ColumnHeader = Infragistics.Win.UltraWinGrid.ColumnHeader;
 using System.Globalization;
 using Constants = Idera.SQLdm.Common.Constants;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Services
 {
@@ -169,6 +170,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Services
             InitializeRealTimeDataTable();
             InitializeChart();
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
         #endregion
@@ -1394,6 +1397,13 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Services
             }
         }
 
+        //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+        private void servicesGrid_InitializeLayout(object sender, InitializeLayoutEventArgs e)
+        {
+            if (AutoScaleSizeHelper.isScalingRequired)
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.servicesGrid, AutoScaleSizeHelper.ControlType.UltraGridCheckbox);
+        }
+
         #endregion
 
         private void restoreChartButton_Click(object sender, EventArgs e)
@@ -1471,6 +1481,18 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Services
         private void AdaptFontSize()
         {            
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.servicesGrid);
         }
     }
 }

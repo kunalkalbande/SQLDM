@@ -9,12 +9,13 @@ using Idera.SQLdm.DesktopClient.Properties;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class AddTagDialog : Form
+    public partial class AddTagDialog : BaseDialog
     {
         private int tagId = -1;
 
         public AddTagDialog()
         {
+            this.DialogHeader = "Add Tag";
             InitializeComponent();
         }
 

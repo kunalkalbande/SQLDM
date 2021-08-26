@@ -42,7 +42,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
             this.borderPanel = new Idera.SQLdm.DesktopClient.Controls.GradientPanel();
             this.historyBrowserPane = new Idera.SQLdm.DesktopClient.Controls.HistoryBrowserPane();
             this.historyBrowserHotTrackLabel = new Idera.SQLdm.DesktopClient.Controls.HistoryBrowserHotTrackLabel();
-            this.headerStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
+            this.headerStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip(true);
             this.titleLabel = new System.Windows.Forms.ToolStripLabel();
             this.closeButton = new System.Windows.Forms.ToolStripButton();
             this.toggleMinimizedButton = new System.Windows.Forms.ToolStripButton();

@@ -18,6 +18,8 @@ using Infragistics.Win.UltraWinToolTip;
 using Infragistics.Win.UltraWinTree;
 using Wintellect.PowerCollections;
 using Idera.SQLdm.Common.Objects;
+using Resources = Idera.SQLdm.DesktopClient.Properties.Resources;
+using System.Drawing;
 
 namespace Idera.SQLdm.DesktopClient.Controls
 {
@@ -68,8 +70,43 @@ namespace Idera.SQLdm.DesktopClient.Controls
         {
             InitializeComponent();
             InitializeAppearance();
+            SetHistoryBrowserTheme();
+            Infragistics.Windows.Themes.ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
             toolTipManager.SetUltraToolTip(historicalSnapshotsTree, historicalSnapshotsTreeToolTip);
             toolTipManager.SetUltraToolTip(recentlyViewedTree, recentlyViewedTreeToolTip);
+        }
+
+        private void SetHistoryBrowserTheme()
+        {
+            if (Settings.Default.ColorScheme == "Dark") {
+                appearance1.BackColor = System.Drawing.ColorTranslator.FromHtml(DarkThemeColorConstants.UltraCalendarBackColor);
+                appearance2.BackColor = System.Drawing.ColorTranslator.FromHtml(DarkThemeColorConstants.UltraCalendarBackColor);
+                this.calendar.BackColor = System.Drawing.ColorTranslator.FromHtml(DarkThemeColorConstants.UltraCalendarBackColor);
+                this.ultraCalendarLook.MonthHeaderAppearance.ForeColor = System.Drawing.ColorTranslator.FromHtml(DarkThemeColorConstants.UltraCalendarForeColor);
+                this.ultraCalendarLook.ActiveDayAppearance.BackColor = System.Drawing.ColorTranslator.FromHtml(DarkThemeColorConstants.UltraCalendarSelectedDateBackColor);
+                this.ultraCalendarLook.DayAppearance.ForeColor = System.Drawing.ColorTranslator.FromHtml(DarkThemeColorConstants.UltraCalendarForeColor);
+
+                this.refreshHistoricalSnapshotsButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Refresh; //need to update
+                appearance15.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh; //need to update
+                this.toggleRecentlyViewedButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.HeaderStripSmallCollapse; //need to update
+            } else {
+                appearance1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (235)))), ((int) (((byte) (235)))), ((int) (((byte) (235)))));
+                appearance2.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (235)))), ((int) (((byte) (235)))), ((int) (((byte) (235)))));
+                this.calendar.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (235)))), ((int) (((byte) (235)))), ((int) (((byte) (235)))));
+                this.ultraCalendarLook.MonthHeaderAppearance.ForeColor = System.Drawing.Color.Black;
+                this.ultraCalendarLook.ActiveDayAppearance.BackColor = System.Drawing.ColorTranslator.FromHtml("#FFDFB7");
+                this.ultraCalendarLook.DayAppearance.ForeColor = System.Drawing.Color.Black;
+
+                this.refreshHistoricalSnapshotsButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Refresh; 
+                appearance15.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh;
+                this.toggleRecentlyViewedButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.HeaderStripSmallCollapse;
+            }
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            InitializeAppearance();
+            SetHistoryBrowserTheme();
         }
 
         private void HistoryBrowserPane_Load(object sender, EventArgs e)
@@ -96,7 +133,47 @@ namespace Idera.SQLdm.DesktopClient.Controls
             calendar.DrawFilter =
                 recentlyViewedTree.DrawFilter =
                     historicalSnapshotsTree.DrawFilter = new HideFocusRectangleDrawFilter();
+            treeImages.Images.Clear();
+            if (Settings.Default.ColorScheme == "Dark") {
+                treeImages.Images.Add(Properties.Resources.Calendar16x16); //need to update
 
+            } else {
+                treeImages.Images.Add(Properties.Resources.Calendar16x16);
+            }
+            
+			if (Settings.Default.ColorScheme == "Dark") {
+				treeImages.Images.Add(Properties.Resources.LeftLink16x16); //need to update
+
+            } else {
+				treeImages.Images.Add(Properties.Resources.LeftLink16x16);
+			}
+
+			if (Settings.Default.ColorScheme == "Dark") {
+                treeImages.Images.Add(ImageHelper.GetBitmapFromSvgByteArray(Resources.Ok_Dark));
+
+            } else {
+                treeImages.Images.Add(Properties.Resources.StatusOKSmall);
+            }
+
+            if (Settings.Default.ColorScheme == "Dark") {
+                treeImages.Images.Add(ImageHelper.GetBitmapFromSvgByteArray(Resources.Warning_Dark));
+
+            } else {
+                treeImages.Images.Add(Properties.Resources.StatusWarningSmall);
+            }
+
+            if (Settings.Default.ColorScheme == "Dark") {
+                treeImages.Images.Add(ImageHelper.GetBitmapFromSvgByteArray(Resources.Critical_Dark));
+
+            } else {
+                treeImages.Images.Add(Properties.Resources.StatusCriticalSmall);
+            }
+
+            if (Settings.Default.ColorScheme == "Dark") {
+                treeImages.Images.Add(Properties.Resources.darkTheme_StatusUnknown16x16);
+            } else {
+                treeImages.Images.Add(Properties.Resources.StatusUnknown16x16);
+            }
             treeImages.Images.Add(Properties.Resources.Calendar16x16);
             treeImages.Images.Add(Properties.Resources.LeftLink16x16);
             treeImages.Images.Add(Properties.Resources.StatusOKSmall);
@@ -104,6 +181,16 @@ namespace Idera.SQLdm.DesktopClient.Controls
             treeImages.Images.Add(Properties.Resources.StatusCriticalSmall);
             treeImages.Images.Add(Properties.Resources.StatusUnknown16x16);
             //treeImages.Images.Add(Properties.Resources.StatusInfoSmall);
+
+            if (historicalSnapshotsTree.Appearances.Count != 0) {
+                historicalSnapshotsTree.Appearances.Remove("SnapshotRoot");
+                historicalSnapshotsTree.Appearances.Remove("SnapshotHotTrack");
+                historicalSnapshotsTree.Appearances.Remove("SnapshotStatusOK");
+                historicalSnapshotsTree.Appearances.Remove("SnapshotStatusWarning");
+                historicalSnapshotsTree.Appearances.Remove("SnapshotStatusCritical");
+                historicalSnapshotsTree.Appearances.Remove("SnapshotStatusUnknown");
+            }
+
 
             Infragistics.Win.Appearance appearance;
             appearance = historicalSnapshotsTree.Appearances.Add("SnapshotRoot");
@@ -513,7 +600,6 @@ namespace Idera.SQLdm.DesktopClient.Controls
                                                       instanceId, (DateTime) e.Argument);
             }
         }
-
         private void loadRecentlyViewedSnapshotBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (e.Error == null)
@@ -565,13 +651,27 @@ namespace Idera.SQLdm.DesktopClient.Controls
         {
             if (expanded)
             {
-                toggleRecentlyViewedButton.Image = Properties.Resources.HeaderStripSmallCollapse;
+
+                toggleRecentlyViewedButton.Image = Properties.Resources.HeaderStripSmallCollapse; //Babita Manral
+                //if (Settings.Default.ColorScheme == "Dark") {
+               //     toggleRecentlyViewedButton.Image = Properties.Resources.HeaderStripSmallCollapse; //need to update
+             //   } else {
+             //       toggleRecentlyViewedButton.Image = Properties.Resources.HeaderStripSmallCollapse;
+             //   }
+            //   toggleRecentlyViewedButton.Image = ImageHelper.GetBitmapFromSvgByteArray(Properties.Resources.darkTheme_Contract); //Babita Manral
                 recentlyViewedTreeContainerPanel.Visible = true;
                 recentlyViewedPanel.Height = 126;
             }
             else
             {
-                toggleRecentlyViewedButton.Image = Properties.Resources.HeaderStripSmallExpand;
+
+                toggleRecentlyViewedButton.Image = Properties.Resources.HeaderStripSmallExpand; //Babita Manral
+               // if (Settings.Default.ColorScheme == "Dark") {
+                  //  toggleRecentlyViewedButton.Image = Properties.Resources.HeaderStripSmallExpand; //need to update
+              //  } else {
+               //     toggleRecentlyViewedButton.Image = Properties.Resources.HeaderStripSmallExpand;
+             //   }
+             //   toggleRecentlyViewedButton.Image = ImageHelper.GetBitmapFromSvgByteArray(Properties.Resources.darkTheme_Expand); //Babita Manral
                 recentlyViewedTreeContainerPanel.Visible = false;
                 recentlyViewedPanel.Height = 20;
             }
@@ -715,16 +815,25 @@ namespace Idera.SQLdm.DesktopClient.Controls
         }
         public void RefreshTimer()
         {
-            DateTime now = DateTime.Now;
-            DateTime selectedDate = ultraCalendarInfo.SelectedDateRanges[0].FirstDay.Date;
-            var startEndDates = GetRangeForDate(selectedDate);
-            DateTime startRange = startEndDates.First;
-            DateTime endRange = startEndDates.Second;
-
-            if ((now >= startRange && now <= endRange) || analysisHistoryMode != ApplicationModel.Default.AnalysisHistoryMode)
+            try
             {
-                analysisHistoryMode = ApplicationModel.Default.AnalysisHistoryMode;
-                LoadSnapshotsForCurrentSelection();
+                DateTime now = DateTime.Now;
+                if (ultraCalendarInfo.SelectedDateRanges.Count > 0)
+                {
+                    DateTime selectedDate = ultraCalendarInfo.SelectedDateRanges[0].FirstDay.Date;
+                    var startEndDates = GetRangeForDate(selectedDate);
+                    DateTime startRange = startEndDates.First;
+                    DateTime endRange = startEndDates.Second;
+
+                    if ((now >= startRange && now <= endRange) || analysisHistoryMode != ApplicationModel.Default.AnalysisHistoryMode)
+                    {
+                        analysisHistoryMode = ApplicationModel.Default.AnalysisHistoryMode;
+                        LoadSnapshotsForCurrentSelection();
+                    }
+                }
+            }catch(Exception e)
+            {
+                //Handle Exception
             }
         }
     }

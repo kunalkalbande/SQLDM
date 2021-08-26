@@ -19,6 +19,12 @@ using Infragistics.Win.UltraWinToolbars;
 using Microsoft.SqlServer.MessageBox;
 using Idera.SQLdm.Common.Objects;
 
+using Infragistics.Windows.Themes;
+using BBS.TracerX;
+using System.Collections.ObjectModel;
+using System.Windows.Data;
+using System.ComponentModel;
+
 namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
 {
     internal partial class ServerGroupDetailsView : UserControl
@@ -29,6 +35,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
         private ServerGroupView parentView;
         private static BBS.TracerX.Logger LOG = BBS.TracerX.Logger.GetLogger("ServerGroupDetailsView");
         private object view;
+        private static readonly Logger Log = Logger.GetLogger("ServerGroupDetailsView");
 
         //last Settings values used to determine if changed for saving when leaving
         private GridSettings lastMainGridSettings = null;
@@ -40,9 +47,22 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
 
             // load value lists for grid display
             ValueListItem listItem;
+            //START: 4.11 part B Add columns in grid :Babita Manral
+            ValueList valueList = detailsGrid.DisplayLayout.ValueLists["statusValueList"];
+            valueList.ValueListItems.Clear();
+            listItem = new ValueListItem(State.OK, "OK");
+            listItem.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.StatusOKSmall;
+            valueList.ValueListItems.Add(listItem);
+            listItem = new ValueListItem(State.Warning, "Warning");
+            listItem.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.StatusWarningSmall;
+            valueList.ValueListItems.Add(listItem);
+            listItem = new ValueListItem(State.Critical, "Critical");
+            listItem.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.StatusCriticalSmall;
+            valueList.ValueListItems.Add(listItem);
+            //END: 4.11 part B Add columns in grid :Babita Manral
 
             // populate the severity value list
-            ValueList valueList = detailsGrid.DisplayLayout.ValueLists["severityValueList"];
+            valueList = detailsGrid.DisplayLayout.ValueLists["severityValueList"];
             valueList.ValueListItems.Clear();
             //valueList.ValueListItems.AddRange(ValueListHelpers.GetSeverityValueListItems());
             listItem = new ValueListItem(MonitoredState.OK, "OK");
@@ -80,10 +100,12 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             valueList.ValueListItems.Add(listItem);
             listItem = new ValueListItem(-3, "Integrated");
             valueList.ValueListItems.Add(listItem);
-            foreach(var key in ApplicationModel.Default.RepoActiveInstances.Keys)
-                ApplicationModel.Default.RepoActiveInstances[key].Changed += ActiveInstances_Changed;
+
+            ApplicationModel.Default.ActiveInstances.Changed += ActiveInstances_Changed;
 
             lblNoSqlServers.Text = "There are no items to show in this view.";
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
         private void ActiveInstances_Changed(object sender, MonitoredSqlServerCollectionChangedEventArgs e)
@@ -95,9 +117,9 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
         {
             switch (e.Tool.Key)
             {
-                    //
-                    // Column context menu
-                    //
+                //
+                // Column context menu
+                //
                 case "sortAscendingButton":
                     SortSelectedColumnAscending();
                     break;
@@ -108,7 +130,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                     ToggleGroupByBox();
                     break;
                 case "groupByThisColumnButton":
-                    GroupBySelectedColumn(((StateButtonTool) e.Tool).Checked);
+                    GroupBySelectedColumn(((StateButtonTool)e.Tool).Checked);
                     break;
                 case "removeThisColumnButton":
                     RemoveSelectedColumn();
@@ -117,9 +139,9 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                     ShowColumnChooser();
                     break;
 
-                    //
-                    // Instance context menu
-                    //
+                //
+                // Instance context menu
+                //
                 case "openInstanceButton":
                     OpenSelectedInstance();
                     break;
@@ -162,7 +184,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             {
                 bool enableRefreshButton = true;
                 int selectedInstanceId = GetSelectedInstanceId();
-                if (selectedInstanceId != -1) 
+                if (selectedInstanceId != -1)
                 {
                     MonitoredSqlServerWrapper selectedInstance = ApplicationModel.Default.ActiveInstances[selectedInstanceId];
                     if (selectedInstance != null)
@@ -211,10 +233,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
 
         public void UpdateData(int instanceId, DataTable dataTable)
         {
-            object[] keys = new object[2];
-            keys[0] = instanceId;
-            keys[1] = Settings.Default.RepoId;
-            DataRow existingRow = detailsGridDataSource.Rows.Find(keys);
+            DataRow existingRow = detailsGridDataSource.Rows.Find(instanceId);
             if (existingRow == null)
                 return; // shouldn't ever be the case
 
@@ -224,32 +243,30 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             DataTable lastCollectionTable = dataTable.Clone();
             lastCollectionTable.Columns["UTCCollectionDateTime"].AllowDBNull = true;
 
-            DataRow[] dataRows = dataTable.Select(string.Format("SQLServerID = {0} and Repo/id={1}", instanceId,Settings.Default.RepoId));
+            DataRow[] dataRows = dataTable.Select(string.Format("SQLServerID = {0}", instanceId));
             if (dataRows.Length > 0)
             {
                 lastCollectionTable.ImportRow(dataRows[dataRows.Length - 1]);
             }
             else
             {
-              
-                if (detailsGridDataSource != null && detailsGridDataSource.Rows.Find(keys) == null)
+                if (detailsGridDataSource != null && detailsGridDataSource.Rows.Find(instanceId) == null)
                 {
                     DataRow nullInstanceRow = lastCollectionTable.NewRow();
                     nullInstanceRow["SQLServerID"] = instanceId;
-                    nullInstanceRow["RepoId"] = Settings.Default.RepoId;
-                    nullInstanceRow["InstanceName"] = ApplicationModel.Default.RepoActiveInstances[Settings.Default.RepoId][instanceId].InstanceName;
+                    nullInstanceRow["InstanceName"] = ApplicationModel.Default.ActiveInstances[instanceId].InstanceName;
                     lastCollectionTable.Rows.Add(nullInstanceRow);
                 }
             }
-            lastCollectionTable.Columns.Add("Severity", typeof (string));
-            lastCollectionTable.Columns.Add("Status", typeof (string));
+            lastCollectionTable.Columns.Add("Severity", typeof(string));
+            lastCollectionTable.Columns.Add("Status", typeof(string));
 
             if (dataRows.Length > 0)
             {
                 foreach (DataColumn col in lastCollectionTable.Columns)
                 {
                     existingRow[col.ColumnName] = lastCollectionTable.Rows[0][col.ColumnName];
-                }            
+                }
                 AdjustValues(existingRow);
             }
 
@@ -273,12 +290,9 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                 List<int> instances = new List<int>();
                 if (view == null)
                 {
-                    foreach (var repoinstance in ApplicationModel.Default.RepoActiveInstances)
+                    foreach (MonitoredSqlServerWrapper instance in ApplicationModel.Default.ActiveInstances)
                     {
-                        foreach (MonitoredSqlServerWrapper instance in repoinstance.Value)
-                        {
-                            instances.Add(instance.InstanceId);
-                        }
+                        instances.Add(instance.Id);
                     }
                 }
                 else if (view is UserView)
@@ -299,10 +313,9 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                 DataTable lastCollectionTable = dataTable.Clone();
                 lastCollectionTable.Columns["UTCCollectionDateTime"].AllowDBNull = true;
 
-                foreach (int id in instances)
+                foreach (int instanceId in instances)
                 {
-                    var instanceId = RepositoryHelper.GetSelectedInstanceId(id);
-                    DataRow[] dataRows = dataTable.Select(string.Format("SQLServerID = {0} and RepoId={1}", instanceId,Settings.Default.RepoId));
+                    DataRow[] dataRows = dataTable.Select(string.Format("SQLServerID = {0}", instanceId));
 
                     if (dataRows.Length > 0)
                     {
@@ -310,18 +323,14 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                     }
                     else
                     {
-                        object[] keys = new object[2];
-                        keys[0] = instanceId;
-                        keys[1] = Settings.Default.RepoId;
-                        if (detailsGridDataSource != null 
-                            && detailsGridDataSource.Rows.Find(keys) == null
-                            && ApplicationModel.Default.RepoActiveInstances[Settings.Default.RepoId].Contains(instanceId))
+                        if (detailsGridDataSource != null
+                            && detailsGridDataSource.Rows.Find(instanceId) == null
+                            && ApplicationModel.Default.ActiveInstances.Contains(instanceId))
                         {
                             DataRow nullInstanceRow = lastCollectionTable.NewRow();
-                            nullInstanceRow["RepoId"] = Settings.Default.RepoId;
                             nullInstanceRow["SQLServerID"] = instanceId;
                             nullInstanceRow["InstanceName"] =
-                                ApplicationModel.Default.RepoActiveInstances[Settings.Default.RepoId][instanceId].InstanceName;
+                                ApplicationModel.Default.ActiveInstances[instanceId].InstanceName;
                             lastCollectionTable.Rows.Add(nullInstanceRow);
                         }
                         else
@@ -330,15 +339,14 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                         }
                     }
                 }
-                lastCollectionTable.Columns.Add("Severity", typeof (string));
-                lastCollectionTable.Columns.Add("Status", typeof (string));
+                lastCollectionTable.Columns.Add("Severity", typeof(string));
+                lastCollectionTable.Columns.Add("Status", typeof(string));
 
                 if (detailsGrid.DataSource == null)
                 {
                     detailsGridDataSource = lastCollectionTable;
-                    DataColumn[] keys = new DataColumn[2];
+                    DataColumn[] keys = new DataColumn[1];
                     keys[0] = detailsGridDataSource.Columns["SQLServerID"];
-                    keys[1] = detailsGridDataSource.Columns["RepoId"];
                     detailsGridDataSource.PrimaryKey = keys;
                     AdjustValues();
 
@@ -360,7 +368,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                     List<DataRow> deleteList = new List<DataRow>();
                     foreach (DataRow row in detailsGridDataSource.Rows)
                     {
-                        if (!instances.Contains((int) row["SQLServerID"]))
+                        if (!instances.Contains((int)row["SQLServerID"]))
                         {
                             deleteList.Add(row);
                         }
@@ -373,10 +381,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                     //update values on each server
                     foreach (DataRow row in lastCollectionTable.Rows)
                     {
-                        object[] keys = new object[2];
-                        keys[0] = (int)row["SQLServerID"];
-                        keys[1] = (int)row["RepoID"];
-                        DataRow existingRow = detailsGridDataSource.Rows.Find(keys);
+                        DataRow existingRow = detailsGridDataSource.Rows.Find((int)row["SQLServerID"]);
                         bool newRow = false;
                         if (existingRow == null)
                         {
@@ -401,9 +406,9 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
 
                 foreach (UltraGridRow gridRow in detailsGrid.Rows.GetAllNonGroupByRows())
                 {
-                    DataRowView dataRowView = (DataRowView) gridRow.ListObject;
+                    DataRowView dataRowView = (DataRowView)gridRow.ListObject;
                     DataRow dataRow = dataRowView.Row;
-                    int instanceId = (int) dataRow["SQLServerID"];
+                    int instanceId = (int)dataRow["SQLServerID"];
 
                     ApplyCellColors(instanceId, gridRow);
                 }
@@ -451,11 +456,10 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             FileSize fs;
             bool v10 = false;
 
-            int instanceId = (int) row["SQLServerID"];
-            int repoId= (int)row["RepoId"];
+            int instanceId = (int)row["SQLServerID"];
             MonitoredSqlServerStatus instanceStatus =
-                ApplicationModel.Default.GetInstanceStatus(instanceId,repoId);
-            if (instanceStatus != null && instanceStatus.Instance!=null)
+                ApplicationModel.Default.GetInstanceStatus(instanceId);
+            if (instanceStatus != null)
             {
                 string status = instanceStatus.ToolTip;
                 if (String.IsNullOrEmpty(status))
@@ -496,49 +500,107 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             }
             if (row["OSAvailableMemoryInKilobytes"] is long)
             {
-                fs = new FileSize((long) row["OSAvailableMemoryInKilobytes"]);
+                fs = new FileSize((long)row["OSAvailableMemoryInKilobytes"]);
                 row["OSAvailableMemoryInKilobytes"] = fs.Megabytes;
             }
 
             if (row["OSTotalPhysicalMemoryInKilobytes"] is long)
             {
-                fs = new FileSize((long) row["OSTotalPhysicalMemoryInKilobytes"]);
+                fs = new FileSize((long)row["OSTotalPhysicalMemoryInKilobytes"]);
                 row["OSTotalPhysicalMemoryInKilobytes"] = fs.Megabytes;
             }
             if (v10 && row["FullTextSearchStatus"] is int)
             {
                 row["FullTextSearchStatus"] = -3;  // hackaroo
             }
-
+            //START: 4.11 part B Add columns in grid :Babita Manral
+            if (row.Table.Columns.Contains("Alert") && row["Alert"] != null && row["Alert"] is int)
+            {
+                detailsGrid.DisplayLayout.Bands[0].Columns["Alert"].Header.VisiblePosition = 3;
+                int metricValue = (int)row["Alert"];
+                row["Alert"] = GetMetricStatus(metricValue);
+            }
+            if (row.Table.Columns.Contains("CPU") && row["CPU"] != null && row["CPU"] is int)
+            {
+                detailsGrid.DisplayLayout.Bands[0].Columns["CPU"].Header.VisiblePosition = 4;
+                int metricValue = (int)row["CPU"];
+                row["CPU"] = GetMetricStatus(metricValue);
+            }
+            if (row.Table.Columns.Contains("Memory") && row["Memory"] != null && row["Memory"] is int)
+            {
+                detailsGrid.DisplayLayout.Bands[0].Columns["Memory"].Header.VisiblePosition = 5;
+                int metricValue = (int)row["Memory"];
+                row["Memory"] = GetMetricStatus(metricValue);
+            }
+            if (row.Table.Columns.Contains("I/O") && row["I/O"] != null && row["I/O"] is int)
+            {
+                detailsGrid.DisplayLayout.Bands[0].Columns["I/O"].Header.VisiblePosition = 6;
+                int metricValue = (int)row["I/O"];
+                row["I/O"] = GetMetricStatus(metricValue);
+            }
+            if (row.Table.Columns.Contains("Database") && row["Database"] != null && row["Database"] is int)
+            {
+                detailsGrid.DisplayLayout.Bands[0].Columns["Database"].Header.VisiblePosition = 7;
+                int metricValue = (int)row["Database"];
+                row["Database"] = GetMetricStatus(metricValue);
+            }
+            if (row.Table.Columns.Contains("Logs") && row["Logs"] !=null && row["Logs"] is int)
+            {
+                detailsGrid.DisplayLayout.Bands[0].Columns["Logs"].Header.VisiblePosition = 8;
+                int metricValue = (int)row["Logs"];
+                row["Logs"] = GetMetricStatus(metricValue);
+            }
+            if (row.Table.Columns.Contains("Queries") && row["Queries"] != null && row["Queries"] is int)
+            {
+                detailsGrid.DisplayLayout.Bands[0].Columns["Queries"].Header.VisiblePosition = 9;
+                int metricValue = (int)row["Queries"];
+                row["Queries"] = GetMetricStatus(metricValue);
+            }
         }
 
+        private int GetMetricStatus(int value)
+        {
+            int status = (int)State.OK;
+            try
+            {
+                if (value == 8)
+                    status = (int)State.Critical;
+                else if (value == 4)
+                    status = (int)State.Warning;
+                else if (value == 2)
+                    status = (int)State.OK;
+            }
+            catch (Exception ex)
+            {
+                Log.Debug(ex);
+            }
+            return status;
+        }
+        //END: 4.11 part B Add columns in grid :Babita Manral
         private void ApplyCellColors(int instanceId, UltraGridRow gridRow)
         {
-            if (ApplicationModel.Default.ActiveInstances.Keys.Contains(instanceId))
+            AlertConfiguration alertConfig = ApplicationModel.Default.ActiveInstances[instanceId].AlertConfiguration;
+            //AlertConfiguration alertConfig = ApplicationModel.Default.GetAlertConfiguration(instanceId);
+            if (alertConfig != null)
             {
-                AlertConfiguration alertConfig = ApplicationModel.Default.ActiveInstances[instanceId].AlertConfiguration;
-                //AlertConfiguration alertConfig = ApplicationModel.Default.GetAlertConfiguration(instanceId);
-                if (alertConfig != null)
-                {
-                    UpdateCellColor(Metric.AgentServiceStatus, alertConfig, gridRow, "AgentServiceStatus", 1);
-                    UpdateCellColor(Metric.DtcServiceStatus, alertConfig, gridRow, "DTCServiceStatus", 1);
-                    UpdateCellColor(Metric.FullTextServiceStatus, alertConfig, gridRow, "FullTextSearchStatus", 1);
-                    UpdateCellColor(Metric.SqlServiceStatus, alertConfig, gridRow, "SqlServerServiceStatus", 1);
-                    UpdateCellColor(Metric.ServerResponseTime, alertConfig, gridRow, "ResponseTimeInMilliseconds", 1);
-                    UpdateCellColor(Metric.OSCPUProcessorQueueLength, alertConfig, gridRow, "ProcessorQueueLength", 1);
-                    UpdateCellColor(Metric.OSMemoryPagesPerSecond, alertConfig, gridRow, "PagesPerSecond", 1);
-                    UpdateCellColor(Metric.OSDiskAverageDiskQueueLength, alertConfig, gridRow, "DiskQueueLength", 1);
-                    UpdateCellColor(Metric.OldestOpenTransMinutes, alertConfig, gridRow, "OldestOpenTransactionsInMinutes", 1);
-                    UpdateCellColor(Metric.SQLCPUUsagePct, alertConfig, gridRow, "CPUActivityPercentage", 1);
-                    UpdateCellColor(Metric.OSUserCPUUsagePct, alertConfig, gridRow, "UserTimePercent", 1);
-                    UpdateCellColor(Metric.OSCPUUsagePct, alertConfig, gridRow, "ProcessorTimePercent", 1);
-                    UpdateCellColor(Metric.OSCPUPrivilegedTimePct, alertConfig, gridRow, "PrivilegedTimePercent", 1);
-                    UpdateCellColor(Metric.OSDiskPhysicalDiskTimePct, alertConfig, gridRow, "DiskTimePercent", 1);
-                    //START: SQLdm 9.1 (Abhishek Joshi) -Monitor additonal SQL Server services --update the metrices in the server group details
-                    UpdateCellColor(Metric.SQLBrowserServiceStatus, alertConfig, gridRow, "SQLBrowserServiceStatus", 1);
-                    UpdateCellColor(Metric.SQLActiveDirectoryHelperServiceStatus, alertConfig, gridRow, "SQLActiveDirectoryHelperServiceStatus", 1);
-                    //END: SQLdm 9.1 (Abhishek Joshi) -Monitor additonal SQL Server services --update the metrices in the server group details
-                }
+                UpdateCellColor(Metric.AgentServiceStatus, alertConfig, gridRow, "AgentServiceStatus", 1);
+                UpdateCellColor(Metric.DtcServiceStatus, alertConfig, gridRow, "DTCServiceStatus", 1);
+                UpdateCellColor(Metric.FullTextServiceStatus, alertConfig, gridRow, "FullTextSearchStatus", 1);
+                UpdateCellColor(Metric.SqlServiceStatus, alertConfig, gridRow, "SqlServerServiceStatus", 1);
+                UpdateCellColor(Metric.ServerResponseTime, alertConfig, gridRow, "ResponseTimeInMilliseconds", 1);
+                UpdateCellColor(Metric.OSCPUProcessorQueueLength, alertConfig, gridRow, "ProcessorQueueLength", 1);
+                UpdateCellColor(Metric.OSMemoryPagesPerSecond, alertConfig, gridRow, "PagesPerSecond", 1);
+                UpdateCellColor(Metric.OSDiskAverageDiskQueueLength, alertConfig, gridRow, "DiskQueueLength", 1);
+                UpdateCellColor(Metric.OldestOpenTransMinutes, alertConfig, gridRow, "OldestOpenTransactionsInMinutes", 1);
+                UpdateCellColor(Metric.SQLCPUUsagePct, alertConfig, gridRow, "CPUActivityPercentage", 1);
+                UpdateCellColor(Metric.OSUserCPUUsagePct, alertConfig, gridRow, "UserTimePercent", 1);
+                UpdateCellColor(Metric.OSCPUUsagePct, alertConfig, gridRow, "ProcessorTimePercent", 1);
+                UpdateCellColor(Metric.OSCPUPrivilegedTimePct, alertConfig, gridRow, "PrivilegedTimePercent", 1);
+                UpdateCellColor(Metric.OSDiskPhysicalDiskTimePct, alertConfig, gridRow, "DiskTimePercent", 1);
+                //START: SQLdm 9.1 (Abhishek Joshi) -Monitor additonal SQL Server services --update the metrices in the server group details
+                UpdateCellColor(Metric.SQLBrowserServiceStatus, alertConfig, gridRow, "SQLBrowserServiceStatus", 1);
+                UpdateCellColor(Metric.SQLActiveDirectoryHelperServiceStatus, alertConfig, gridRow, "SQLActiveDirectoryHelperServiceStatus", 1);
+                //END: SQLdm 9.1 (Abhishek Joshi) -Monitor additonal SQL Server services --update the metrices in the server group details
             }
         }
 
@@ -551,7 +613,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                 UltraGridCell cell = gridRow.Cells[columnName];
                 if (cell != null)
                 {
-                    DataRowView dataRowView = (DataRowView) gridRow.ListObject;
+                    DataRowView dataRowView = (DataRowView)gridRow.ListObject;
                     DataRow dataRow = dataRowView.Row;
                     if (dataRow.IsNull(columnName))
                     {
@@ -559,11 +621,11 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                     }
                     else
                     {
-                        IComparable value = (IComparable) dataRow[columnName];
+                        IComparable value = (IComparable)dataRow[columnName];
                         if (value != null && adjustmentMultiplier != 1)
                         {
-                            double dbl = (double) Convert.ChangeType(value, typeof (double));
-                            value = dbl*adjustmentMultiplier;
+                            double dbl = (double)Convert.ChangeType(value, typeof(double));
+                            value = dbl * adjustmentMultiplier;
                         }
 
                         switch (alertConfigItem.GetSeverity(value))
@@ -602,13 +664,13 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
         private void SaveGrid()
         {
             ValueListDisplayStyle severityStyle =
-                ((ValueList) detailsGrid.DisplayLayout.Bands[0].Columns["Severity"].ValueList).DisplayStyle;
+                ((ValueList)detailsGrid.DisplayLayout.Bands[0].Columns["Severity"].ValueList).DisplayStyle;
             string fileName = "AllServers";
             string viewName = String.Empty;
 
             if (view is UserView)
             {
-                viewName = ((UserView) view).Name;
+                viewName = ((UserView)view).Name;
             }
             else if (view is Tag)
             {
@@ -633,7 +695,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             {
                 try
                 {
-                    ((ValueList) detailsGrid.DisplayLayout.Bands[0].Columns["Severity"].ValueList).DisplayStyle =
+                    ((ValueList)detailsGrid.DisplayLayout.Bands[0].Columns["Severity"].ValueList).DisplayStyle =
                         ValueListDisplayStyle.DisplayText;
                     ultraGridExcelExporter.Export(detailsGrid, saveFileDialog.FileName);
                 }
@@ -642,7 +704,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                     ApplicationMessageBox.ShowError(this, "Unable to export data", ex);
                 }
 
-                ((ValueList) detailsGrid.DisplayLayout.Bands[0].Columns["Severity"].ValueList).DisplayStyle =
+                ((ValueList)detailsGrid.DisplayLayout.Bands[0].Columns["Severity"].ValueList).DisplayStyle =
                     severityStyle;
             }
         }
@@ -725,8 +787,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
         {
             if (detailsGrid.Selected.Rows.Count == 1 && detailsGrid.Selected.Rows[0].Cells != null)
             {
-                Settings.Default.CurrentRepoId = (int)detailsGrid.Selected.Rows[0].Cells["RepoId"].Value;
-                return (int) detailsGrid.Selected.Rows[0].Cells["SQLServerID"].Value;
+                return (int)detailsGrid.Selected.Rows[0].Cells["SQLServerID"].Value;
             }
 
             return -1;
@@ -834,8 +895,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             if (e.Button == MouseButtons.Right)
             {
                 UIElement selectedElement =
-                    ((UltraGrid) sender).DisplayLayout.UIElement.ElementFromPoint(new Point(e.X, e.Y));
-                object contextObject = selectedElement.GetContext(typeof (Infragistics.Win.UltraWinGrid.ColumnHeader));
+                    ((UltraGrid)sender).DisplayLayout.UIElement.ElementFromPoint(new Point(e.X, e.Y));
+                object contextObject = selectedElement.GetContext(typeof(Infragistics.Win.UltraWinGrid.ColumnHeader));
 
                 if (contextObject is Infragistics.Win.UltraWinGrid.ColumnHeader)
                 {
@@ -844,21 +905,21 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                     selectedColumn = columnHeader.Column;
                     ((Infragistics.Win.UltraWinToolbars.StateButtonTool)
                      toolbarsManager.Tools["groupByThisColumnButton"]).Checked = selectedColumn.IsGroupByColumn;
-                    toolbarsManager.SetContextMenuUltra(((UltraGrid) sender), "columnContextMenu");
+                    toolbarsManager.SetContextMenuUltra(((UltraGrid)sender), "columnContextMenu");
                 }
                 else
                 {
-                    contextObject = selectedElement.GetAncestor(typeof (RowUIElement));
+                    contextObject = selectedElement.GetAncestor(typeof(RowUIElement));
 
                     if (contextObject is RowUIElement)
                     {
                         RowUIElement row = contextObject as RowUIElement;
                         row.Row.Selected = true;
-                        toolbarsManager.SetContextMenuUltra(((UltraGrid) sender), "instanceContextMenu");
+                        toolbarsManager.SetContextMenuUltra(((UltraGrid)sender), "instanceContextMenu");
                     }
                     else
                     {
-                        toolbarsManager.SetContextMenuUltra(((UltraGrid) sender), "gridContextMenu");
+                        toolbarsManager.SetContextMenuUltra(((UltraGrid)sender), "gridContextMenu");
                     }
                 }
             }
@@ -867,7 +928,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
         private void detailsGrid_AfterSelectChange(object sender, AfterSelectChangeEventArgs e)
         {
             int selectedInstanceId = GetSelectedInstanceId();
-            Settings.Default.CurrentRepoId = Settings.Default.RepoId;
+
             if (selectedInstanceId != -1 && ApplicationModel.Default.ActiveInstances.Contains(selectedInstanceId))
             {
                 ApplicationModel.Default.FocusObject = ApplicationModel.Default.ActiveInstances[selectedInstanceId];
@@ -918,13 +979,13 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             {
                 foreach (UltraGridRow gridRow in detailsGrid.Rows.GetAllNonGroupByRows())
                 {
-                    DataRowView dataRowView = (DataRowView) gridRow.ListObject;
+                    DataRowView dataRowView = (DataRowView)gridRow.ListObject;
                     if (dataRowView != null)
                     {
                         DataRow row = dataRowView.Row;
                         if (row != null)
                         {
-                            int instanceId = (int) row["SQLServerID"];
+                            int instanceId = (int)row["SQLServerID"];
                             if (instanceId == selectedInstance.Id)
                             {
                                 UpdateData(instanceId, lastUpdateDataTable);
@@ -934,5 +995,59 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                 }
             }
         }
+
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.detailsGrid);
+            //4.11 part B: GroupBy DropDown :Babita Manral
+        }
+        private void toolstripButtonClick(object sender, EventArgs e)
+        {
+            try
+            {
+                ToolStripButton btn = (ToolStripButton)sender;
+                if (btn.Text != null && string.Compare(btn.Text, "Group By", true) != 0)
+                {
+                    this.detailsGrid.Rows.Band.SortedColumns.Clear();
+                    string key = btn.Text;
+                    switch (key)
+                    {
+                        case "Severity":
+                            key = "Alert";
+                            break;
+                        case "SQLdmRepo":
+                            key = "InstanceName";
+                            break;
+                        case "Tags":
+                            key = "Tags";
+                            break;
+                        default:
+                            break;
+                    }
+                    this.detailsGrid.DataSource = detailsGridDataSource;
+                    var band = detailsGrid.DisplayLayout.Bands[0];
+                    var sortedColumns = band.SortedColumns;
+                    sortedColumns.Add(key, false, true);
+                }
+                if (string.Compare(btn.Text, "Group By", true) == 0)
+                {
+                    this.detailsGrid.Rows.Band.SortedColumns.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Debug(ex);
+            }
+
+        }
     }
+
 }

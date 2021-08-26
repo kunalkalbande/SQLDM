@@ -28,17 +28,17 @@ namespace Idera.SQLdm.DesktopClient.Controls
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.messageLabel = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.testLabel = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.instanceLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.componentLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.messageLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label7 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.testLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.instanceLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.componentLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dividerLabel = new System.Windows.Forms.Label();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.dividerLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +62,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.dividerLabel, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            //this.tableLayoutPanel1.GrowStyle = Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -208,17 +208,17 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label messageLabel;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label testLabel;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label instanceLabel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label componentLabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label dividerLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel messageLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label7;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel testLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel instanceLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel componentLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel dividerLabel;
 
 
     }

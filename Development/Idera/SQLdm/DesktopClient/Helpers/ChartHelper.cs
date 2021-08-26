@@ -960,7 +960,17 @@ namespace Idera.SQLdm.DesktopClient.Helpers
 
             chart.AxisX.LabelsFormat.Format = ChartHelper.TimeChartAxisFormat; // SqlDM 10.2 (Anshul Aggarwal) : New History Browser
             chart.AxisX.LabelsFormat.CustomFormat = ChartHelper.TimeChartCustomFormat;
-            chart.LegendBox.Width = 145;
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                if (AutoScaleSizeHelper.isLargeSize)
+                    chart.LegendBox.Width = 190;
+                if (AutoScaleSizeHelper.isXLargeSize)
+                    chart.LegendBox.Width = 225;
+                if (AutoScaleSizeHelper.isXXLargeSize)
+                    chart.LegendBox.Width = 260;
+            }
+            else
+                chart.LegendBox.Width = 145;
             chart.LegendBox.PlotAreaOnly = false;
 
             chartInfo.InitChartDataColumns = true;

@@ -15,8 +15,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Controls;
     using Idera.SQLdm.Common.Objects.ApplicationSecurity;
     using Infragistics.Win.UltraWinTabControl;
+    using Controls.CustomControls;
+    using Infragistics.Windows.Themes;
 
-    public partial class AdvancedAlertConfigurationDialog : Form
+    public partial class AdvancedAlertConfigurationDialog : BaseDialog
     {
         private readonly int instanceId;
         private readonly AdvancedAlertConfigurationSettings alertSettings;
@@ -35,6 +37,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             int instanceId, string alertName, AdvancedAlertConfigurationSettings alertSettings, bool isDefaultAlertConfiguration, bool isDefaultInstanceThreshold, Type checktype)
         {
             InitializeComponent();
+            SetGridTheme();
+            SetPropertiesTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
             tabControl.DrawFilter = new HideFocusRectangleDrawFilter();
             this.checknumerictype = checktype;
             this.instanceId = instanceId;
@@ -52,6 +57,38 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             ConfigureAutogrowSettingsTab();
             ConfigureJobFiltersTab();
             AdaptFontSize();
+            ScaleControlsAsPerResolution();
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+            SetPropertiesTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.userNameGrid);
+            themeManager.updateGridTheme(this.programNameGrid);
+            themeManager.updateGridTheme(this.hostNameGrid);
+            themeManager.updateGridTheme(this.appNameGrid);
+        }
+
+        void SetPropertiesTheme()
+        {
+            var propertiesThemeManager = new Controls.PropertiesThemeManager();
+            propertiesThemeManager.UpdatePropertyTheme(smoothingContentPropertyPage);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage1);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage2);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage3);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage4);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage5);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage6);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage7);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage8);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage9);
         }
 
         // SQLdm 9.1 (Abhishek Joshi) -Filegroup and Mountpoint Monitoring Improvements --constructor overloading with an additional parameter -> threshold instance name (database name) for per database filegroup filters
@@ -60,6 +97,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             : this(instanceId, alertName, alertSettings, isDefaultAlertConfiguration, isDefaultInstanceThreshold, checktype)
         {
             this.thresholdInstanceName = thresholdInstanceName;
+            ScaleControlsAsPerResolution();
         }
 
         private void ConfigureAlertSuppressionTab()
@@ -1881,12 +1919,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         }
         private void FilterOptionNumeric_ValueChanged(object sender, EventArgs e)
         {
-            alertSettings.ThresholdTime = Convert.ToInt32(((NumericUpDown)sender).Value);
+            alertSettings.ThresholdTime = Convert.ToInt32(((CustomNumericUpDown)sender).Value);
         }
 
         private void FilterOptionNumericOutOf_ValueChanged(object sender, EventArgs e)
         {
-            alertSettings.ThresholdRefreshTime = Convert.ToInt32(((NumericUpDown)sender).Value);
+            alertSettings.ThresholdRefreshTime = Convert.ToInt32(((CustomNumericUpDown)sender).Value);
         }
 
         private bool checkMetricSupportAdvancefilterTab(int metricId)
@@ -1913,6 +1951,25 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             }
 
             return isMerticSupportAdvancefilter;
+        }
+
+        private void ScaleControlsAsPerResolution()
+         {
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                //AutoScaleSizeHelper.Default.AutoScaleControl(this.office2007PropertyPage7, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.0F, 1.5F), false);
+                //AutoScaleSizeHelper.Default.AutoScaleControl(this.sessionExludeDMappFilterPanel, AutoScaleSizeHelper.ControlType.Control, new System.Drawing.SizeF(1.0F, 1.5F), false);
+                //this.sessionExludeDMappFilterPanel.Location = new System.Drawing.Point(this.sessionExludeDMappFilterPanel.Location.X, this.sessionExludeDMappFilterPanel.Location.Y + 300);
+                this.Height += 370;
+                this.Width += 530;
+                this.tabControl.TabSize = new System.Drawing.Size(0, 200);
+                this.okButton.Location = new System.Drawing.Point(this.okButton.Location.X + 490, this.okButton.Location.Y + 350);
+                this.cancelButton.Location = new System.Drawing.Point(this.cancelButton.Location.X + 500, this.cancelButton.Location.Y + 350);
+                this.okButton.Height += 10;
+                this.okButton.Width += 10;
+                this.cancelButton.Height += 10;
+                this.cancelButton.Width += 10;
+            }
         }
 
     }

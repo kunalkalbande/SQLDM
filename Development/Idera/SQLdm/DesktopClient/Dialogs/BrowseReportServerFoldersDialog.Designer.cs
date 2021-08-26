@@ -29,14 +29,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.reportServerFolderTreeView = new System.Windows.Forms.TreeView();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.reportServerFolderTreeView = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTreeView();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.loadingPogressControl = new MRG.Controls.UI.LoadingCircle();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.treeImages = new System.Windows.Forms.ImageList(this.components);
-            this.loadingLabel = new System.Windows.Forms.Label();
+            this.loadingLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -159,14 +159,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
         private System.Windows.Forms.TreeView reportServerFolderTreeView;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
         private MRG.Controls.UI.LoadingCircle loadingPogressControl;
         private System.ComponentModel.BackgroundWorker backgroundWorker;
         private System.Windows.Forms.ImageList treeImages;
-        private System.Windows.Forms.Label loadingLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel loadingLabel;
 
     }
 }

@@ -13,7 +13,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using Idera.SQLdm.Common.Notification.Providers;
     using Wintellect.PowerCollections;
 
-    public partial class AddActionDialog : Form
+    public partial class AddActionDialog : BaseDialog
     {
         private IList<NotificationProviderInfo> availableProviders;
         private List<NotificationProviderInfo> selectedProviders = new List<NotificationProviderInfo>();
@@ -22,6 +22,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public AddActionDialog(IList<NotificationProviderInfo> providerList)
         {
+            this.DialogHeader = "Add Action Provider";
             InitializeComponent();
             if (!ApplicationModel.Default.IsTasksViewEnabled)
             {
@@ -44,6 +45,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public AddActionDialog(IList<NotificationProviderInfo> providerList, bool allowAddNew) : this(providerList)
         {
+            this.DialogHeader = "Add Action Provider";
             _allowAddNew = allowAddNew;
         }
 

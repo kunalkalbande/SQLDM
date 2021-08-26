@@ -1,4 +1,7 @@
-﻿namespace Idera.SQLdm.DesktopClient.Dialogs
+﻿using Idera.SQLdm.DesktopClient.Properties;
+using System.Drawing;
+
+namespace Idera.SQLdm.DesktopClient.Dialogs
 {
     partial class AlertTemplateImportWizard
     {
@@ -28,25 +31,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+            Color backColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor) : Color.White;
+            Color foreColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridForeColor) : Color.Black;
+            Color activeBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridActiveBackColor) : Color.White;
+            Color hoverBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridHoverBackColor) : Color.White;
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
             this.ultraTabPageControl1 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ultraTabPageControl2 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.btnClearSelection = new System.Windows.Forms.Button();
-            this.chkOverwrite = new System.Windows.Forms.CheckBox();
-            this.lblMessage = new System.Windows.Forms.Label();
-            this.lblSelectedFile = new System.Windows.Forms.Label();
-            this.btnBrowse = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.ultraTabControl1 = new Infragistics.Win.UltraWinTabControl.UltraTabControl();
+            this.btnClearSelection = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.chkOverwrite = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.lblMessage = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblSelectedFile = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.btnBrowse = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.groupBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnNext = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnBack = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.ultraTabControl1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTabControl(true);
             this.ultraTabSharedControlsPage1 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
             this.ultraTabPageControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -127,7 +134,7 @@
             this.chkOverwrite.Name = "chkOverwrite";
             this.chkOverwrite.Size = new System.Drawing.Size(184, 17);
             this.chkOverwrite.TabIndex = 1015;
-            this.chkOverwrite.Text = "Replace existing alert template";
+            this.chkOverwrite.Text = "Replace existing alert template ";
             this.chkOverwrite.UseVisualStyleBackColor = true;
             this.chkOverwrite.CheckedChanged += new System.EventHandler(this.chkOverwrite_CheckedChanged);
             // 
@@ -149,7 +156,7 @@
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(413, 69);
+            this.btnBrowse.Location = new System.Drawing.Point(408, 69);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(75, 23);
             this.btnBrowse.TabIndex = 1013;
@@ -163,7 +170,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(0, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(609, 60);
+            this.groupBox1.Size = new System.Drawing.Size(600, 60);
             this.groupBox1.TabIndex = 1012;
             this.groupBox1.TabStop = false;
             // 
@@ -252,7 +259,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = backColor; //System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(609, 512);
             this.Controls.Add(this.ultraTabControl1);
             this.Name = "CustomAlertTemplateImportWizard";
@@ -276,19 +283,19 @@
         private Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage ultraTabSharedControlsPage1;
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl1;
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Button btnBrowse;
-        private System.Windows.Forms.Label lblMessage;
-        private System.Windows.Forms.Label lblSelectedFile;
-        private System.Windows.Forms.CheckBox chkOverwrite;
-        private System.Windows.Forms.Button btnClearSelection;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnNext;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnBack;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnBrowse;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblMessage;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblSelectedFile;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkOverwrite;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnClearSelection;
     }
 }

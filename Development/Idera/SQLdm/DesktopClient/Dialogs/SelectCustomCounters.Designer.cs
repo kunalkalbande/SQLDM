@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectCustomCounters));
-            this.lblMessage = new System.Windows.Forms.Label();
-            this.selectedGroupBox = new System.Windows.Forms.GroupBox();
-            this.selectedCountersListBox = new System.Windows.Forms.ListBox();
-            this.availableCountersListBox = new System.Windows.Forms.ListBox();
-            this.removeCountersButton = new System.Windows.Forms.Button();
-            this.addCountersButton = new System.Windows.Forms.Button();
-            this.availableGroupBox = new System.Windows.Forms.GroupBox();
-            this.availableCountersLabel = new System.Windows.Forms.Label();
-            this.informationBox = new Divelements.WizardFramework.InformationBox();
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.lblMessage = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.selectedGroupBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.selectedCountersListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListBox();
+            this.availableCountersListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListBox();
+            this.removeCountersButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.addCountersButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.availableGroupBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.availableCountersLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.informationBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.selectedGroupBox.SuspendLayout();
             this.availableGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -104,7 +104,7 @@
             this.removeCountersButton.Name = "removeCountersButton";
             this.removeCountersButton.Size = new System.Drawing.Size(75, 23);
             this.removeCountersButton.TabIndex = 31;
-            this.removeCountersButton.Text = "< &Remove";
+            this.removeCountersButton.Text = "< Remove";
             this.removeCountersButton.UseVisualStyleBackColor = true;
             this.removeCountersButton.Click += new System.EventHandler(this.removeCountersButton_Click);
             // 
@@ -116,7 +116,7 @@
             this.addCountersButton.Name = "addCountersButton";
             this.addCountersButton.Size = new System.Drawing.Size(75, 23);
             this.addCountersButton.TabIndex = 30;
-            this.addCountersButton.Text = "&Add >";
+            this.addCountersButton.Text = "Add >";
             this.addCountersButton.UseVisualStyleBackColor = true;
             this.addCountersButton.Click += new System.EventHandler(this.addCountersButton_Click);
             // 
@@ -209,16 +209,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblMessage;
-        private System.Windows.Forms.GroupBox selectedGroupBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblMessage;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox selectedGroupBox;
         private System.Windows.Forms.ListBox selectedCountersListBox;
         private System.Windows.Forms.ListBox availableCountersListBox;
-        private System.Windows.Forms.Button removeCountersButton;
-        private System.Windows.Forms.Button addCountersButton;
-        private System.Windows.Forms.GroupBox availableGroupBox;
-        private Divelements.WizardFramework.InformationBox informationBox;
-        private System.Windows.Forms.Label availableCountersLabel;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton removeCountersButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton addCountersButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox availableGroupBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox informationBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel availableCountersLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
     }
 }

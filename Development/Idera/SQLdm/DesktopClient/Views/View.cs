@@ -283,7 +283,7 @@ namespace Idera.SQLdm.DesktopClient.Views
                 }
                 else
                 {
-                     throw;
+                     //throw;
                 }
             }
             finally

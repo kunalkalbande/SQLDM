@@ -24,6 +24,7 @@ using Infragistics.Win.UltraWinToolbars;
 using Wintellect.PowerCollections;
 using ColumnHeader = Infragistics.Win.UltraWinGrid.ColumnHeader;
 using Idera.SQLdm.Common.Helpers;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Sessions
 {
@@ -187,6 +188,9 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Sessions
 
             // create the initial configuration
             configuration = new SessionsConfiguration(instanceId, currentSnapshot);
+            changeBackColor();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
 
         }
 
@@ -1253,8 +1257,6 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Sessions
             }
             else
             {
-                cell.Appearance.BackColor = Color.White;
-                cell.Appearance.ForeColor = Color.Black;
                 cell.Appearance.FontData.Bold = DefaultableBoolean.False;
             }
         }
@@ -1545,6 +1547,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Sessions
         private void SessionsDetailsView_Load(object sender, EventArgs e)
         {
             ApplySettings();
+            if(AutoScaleSizeHelper.isScalingRequired)
+                this.splitContainer.SplitterDistance = 300;
         }
 
         #endregion
@@ -1731,6 +1735,24 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Sessions
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            changeBackColor();
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.sessionsGrid);
+        }
+
+        private void changeBackColor()
+        {
+            BackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.PanelBackColor) : Color.White;
         }
     }
 }

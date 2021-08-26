@@ -1,3 +1,7 @@
+using Idera.SQLdm.DesktopClient.Properties;
+using System.Drawing;
+using System.Windows.Controls;
+
 namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 {
     partial class NotificationRulesDialog
@@ -28,15 +32,19 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         /// </summary>
         private void InitializeComponent()
         {
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+            Color backColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor) : Color.White;
+            Color foreColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridForeColor) : Color.Black;
+            Color activeBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridActiveBackColor) : Color.White;
+            Color hoverBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridHoverBackColor) : Color.White;
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
             this.ultraTabPageControl1 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
             this.ultraTabPageControl2 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.okButton = new System.Windows.Forms.Button();
-            this.ultraTabControl1 = new Infragistics.Win.UltraWinTabControl.UltraTabControl();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.ultraTabControl1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTabControl();
             this.ultraTabSharedControlsPage1 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
-            this.applyButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.applyButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.notificationRulesViewPanel = new Idera.SQLdm.DesktopClient.Dialogs.Notification.NotificationRulesViewPanel();
             this.notificationProviderViewPanel = new Idera.SQLdm.DesktopClient.Dialogs.Notification.NotificationProviderViewPanel();
             this.ultraTabPageControl1.SuspendLayout();
@@ -44,6 +52,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             ((System.ComponentModel.ISupportInitialize)(this.ultraTabControl1)).BeginInit();
             this.ultraTabControl1.SuspendLayout();
             this.SuspendLayout();
+            this.notificationRulesViewPanel.BackColor = backColor;
+            this.notificationRulesViewPanel.ForeColor = foreColor;
+            this.notificationProviderViewPanel.BackColor = backColor;
+            this.notificationProviderViewPanel.ForeColor = foreColor;
+            Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
+            appearance1.BackColor = backColor;
+            appearance1.BackColor2 = backColor;
+            appearance1.ForeColor = foreColor;
             // 
             // ultraTabPageControl1
             // 
@@ -51,6 +67,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.ultraTabPageControl1.Location = new System.Drawing.Point(1, 23);
             this.ultraTabPageControl1.Name = "ultraTabPageControl1";
             this.ultraTabPageControl1.Size = new System.Drawing.Size(497, 497);
+            
+            
             // 
             // ultraTabPageControl2
             // 
@@ -86,14 +104,20 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.ultraTabControl1.SharedControlsPage = this.ultraTabSharedControlsPage1;
             this.ultraTabControl1.Size = new System.Drawing.Size(501, 523);
             this.ultraTabControl1.TabIndex = 4;
+            //this.ultraTabControl1.Appearance = appearance1;
+            //this.ultraTabControl1.TabHeaderAreaAppearance = appearance1;
             ultraTab1.TabPage = this.ultraTabPageControl1;
             ultraTab1.Text = "Alert Responses";
+           
+            ultraTab1.Appearance = appearance1;
             ultraTab2.TabPage = this.ultraTabPageControl2;
             ultraTab2.Text = "Action Providers";
+           
+            ultraTab2.Appearance = appearance1;
             this.ultraTabControl1.Tabs.AddRange(new Infragistics.Win.UltraWinTabControl.UltraTab[] {
             ultraTab1,
             ultraTab2});
-            this.ultraTabControl1.UseAppStyling = false;
+            //this.ultraTabControl1.UseAppStyling = false;
             this.ultraTabControl1.SelectedTabChanged += new Infragistics.Win.UltraWinTabControl.SelectedTabChangedEventHandler(this.ultraTabControl1_SelectedTabChanged);
             // 
             // ultraTabSharedControlsPage1
@@ -101,6 +125,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.ultraTabSharedControlsPage1.Location = new System.Drawing.Point(-10000, -10000);
             this.ultraTabSharedControlsPage1.Name = "ultraTabSharedControlsPage1";
             this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(497, 497);
+            
             // 
             // applyButton
             // 
@@ -128,7 +153,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             // 
             // notificationRulesViewPanel
             // 
-            this.notificationRulesViewPanel.BackColor = System.Drawing.Color.Transparent;
+            this.notificationRulesViewPanel.BackColor = backColor; //System.Drawing.Color.Transparent;
+            this.notificationRulesViewPanel.ForeColor = foreColor;
             this.notificationRulesViewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.notificationRulesViewPanel.Location = new System.Drawing.Point(0, 0);
             this.notificationRulesViewPanel.Margin = new System.Windows.Forms.Padding(4);
@@ -139,7 +165,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             // 
             // notificationProviderViewPanel
             // 
-            this.notificationProviderViewPanel.BackColor = System.Drawing.Color.Transparent;
+            this.notificationProviderViewPanel.BackColor = backColor; //System.Drawing.Color.Transparent;
+            this.notificationProviderViewPanel.ForeColor = foreColor;
             this.notificationProviderViewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.notificationProviderViewPanel.Location = new System.Drawing.Point(0, 0);
             this.notificationProviderViewPanel.Margin = new System.Windows.Forms.Padding(4);
@@ -159,7 +186,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.Controls.Add(this.applyButton);
             this.Controls.Add(this.ultraTabControl1);
             this.Controls.Add(this.okButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+         //   this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -168,6 +195,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Alert Actions and Responses";
+            this.BackColor = backColor;
+            this.ForeColor = foreColor;
             this.ultraTabPageControl1.ResumeLayout(false);
             this.ultraTabPageControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ultraTabControl1)).EndInit();
@@ -179,13 +208,13 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         #endregion
 
         private NotificationRulesViewPanel notificationRulesViewPanel;
-        private System.Windows.Forms.Button okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
         private Infragistics.Win.UltraWinTabControl.UltraTabControl ultraTabControl1;
         private Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage ultraTabSharedControlsPage1;
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl1;
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl2;
         private NotificationProviderViewPanel notificationProviderViewPanel;
-        private System.Windows.Forms.Button applyButton;
-        private System.Windows.Forms.Button cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton applyButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
     }
 }

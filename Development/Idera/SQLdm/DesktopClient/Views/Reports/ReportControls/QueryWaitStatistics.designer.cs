@@ -32,8 +32,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QueryWaitStatistics));
-            this.waitCategoryCombo = new System.Windows.Forms.ComboBox();
-            this.waitCategoryLabel = new System.Windows.Forms.Label();
+            this.waitCategoryCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.waitCategoryLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
 
             this.panel1.SuspendLayout();
             this.filterPanel.SuspendLayout();
@@ -180,7 +180,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
 
         }
         #endregion
-        protected System.Windows.Forms.Label waitCategoryLabel;
-        protected System.Windows.Forms.ComboBox waitCategoryCombo;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel waitCategoryLabel;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox waitCategoryCombo;
     }
 }

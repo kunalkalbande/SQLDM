@@ -36,12 +36,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.gradientPanel1 = new Idera.SQLdm.DesktopClient.Controls.GradientPanel();
             this.ultraPictureBox1 = new Infragistics.Win.UltraWinEditors.UltraPictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.tableLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.linkLabel5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.linkLabel4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.linkLabel3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.linkLabel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.linkLabel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
             this.closeButton = new Infragistics.Win.Misc.UltraButton();
             this.gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -233,12 +233,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         private System.Windows.Forms.Timer timer;
         private Infragistics.Win.Misc.UltraButton closeButton;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel5;
-        private System.Windows.Forms.LinkLabel linkLabel4;
-        private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.LinkLabel linkLabel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel linkLabel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel linkLabel5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel linkLabel4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel linkLabel3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel linkLabel2;
         private Idera.SQLdm.DesktopClient.Controls.GradientPanel gradientPanel1;
         private Infragistics.Win.UltraWinEditors.UltraPictureBox ultraPictureBox1;
     }

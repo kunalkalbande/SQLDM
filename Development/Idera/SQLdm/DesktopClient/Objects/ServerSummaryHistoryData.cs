@@ -3899,9 +3899,9 @@ namespace Idera.SQLdm.DesktopClient.Objects
 
                                 //Loading historical snapshot of a particular day
                                 Infragistics.Win.UltraWinTree.UltraTreeNode historicalSnapshot = historyBrowserPane.LoadSnapshot(historicalSnapshotDateTime);
-                                Infragistics.Win.UltraWinTree.UltraTree historicalSnapshotsTree = new Infragistics.Win.UltraWinTree.UltraTree();
+                                Infragistics.Win.UltraWinTree.UltraTree historicalSnapshotsTree = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTree();
 
-                                KeyValuePair<DateTime, MonitoredSqlServerStatus>? snapshotInfo = null, snapshotInfoTemp;
+                            KeyValuePair<DateTime, MonitoredSqlServerStatus>? snapshotInfo = null, snapshotInfoTemp;
                                 Infragistics.Win.AppearanceBase appearance = null;
                                 if (historicalSnapshot != null && historicalSnapshot.Nodes != null)
                                 {

@@ -23,6 +23,7 @@ using Idera.SQLdm.DesktopClient.Properties;
 using System.Globalization;
 using Infragistics.Win;
 using Infragistics.Win.UltraWinGrid;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
 {
@@ -98,6 +99,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
             Settings.Default.PropertyChanged += Settings_PropertyChanged;
             wrapper.Changed += instance_Changed;
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
         public void SetAmazonRDSResourcesPanel()
         {
@@ -767,6 +770,19 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.topLogIODatabasesGrid);
+            themeManager.updateGridTheme(this.topDataIODatabasesGrid);
         }
 
         private void chartPanel4_Load(object sender, EventArgs e)

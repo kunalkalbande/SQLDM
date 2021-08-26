@@ -1,10 +1,18 @@
-﻿namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
+﻿using Idera.SQLdm.DesktopClient.Helpers;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Windows.Forms;
+
+namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
 {
     partial class DashboardControl
     {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
+        /// 
+       
         private System.ComponentModel.IContainer components = null;
 
         /// <summary> 

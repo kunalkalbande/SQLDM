@@ -29,21 +29,21 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.cboStartTime = new System.Windows.Forms.ComboBox();
-            this.cboEndTime = new System.Windows.Forms.ComboBox();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.chkUseDOW = new System.Windows.Forms.CheckBox();
-            this.chkSunday = new System.Windows.Forms.CheckBox();
-            this.chkMonday = new System.Windows.Forms.CheckBox();
-            this.chkTuesday = new System.Windows.Forms.CheckBox();
-            this.chkWednesday = new System.Windows.Forms.CheckBox();
-            this.chkSaturday = new System.Windows.Forms.CheckBox();
-            this.chkFriday = new System.Windows.Forms.CheckBox();
-            this.chkThursday = new System.Windows.Forms.CheckBox();
-            this.dowPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.cboStartTime = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.cboEndTime = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.btnOK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.chkUseDOW = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.chkSunday = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.chkMonday = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.chkTuesday = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.chkWednesday = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.chkSaturday = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.chkFriday = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.chkThursday = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.dowPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.dowPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
@@ -238,21 +238,21 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cboStartTime;
-        private System.Windows.Forms.ComboBox cboEndTime;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox chkUseDOW;
-        private System.Windows.Forms.CheckBox chkSunday;
-        private System.Windows.Forms.CheckBox chkMonday;
-        private System.Windows.Forms.CheckBox chkTuesday;
-        private System.Windows.Forms.CheckBox chkWednesday;
-        private System.Windows.Forms.CheckBox chkSaturday;
-        private System.Windows.Forms.CheckBox chkFriday;
-        private System.Windows.Forms.CheckBox chkThursday;
-        private System.Windows.Forms.TableLayoutPanel dowPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox cboStartTime;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox cboEndTime;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkUseDOW;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkSunday;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkMonday;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkTuesday;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkWednesday;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkSaturday;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkFriday;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkThursday;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel dowPanel;
         private System.Windows.Forms.ErrorProvider errorProvider;
 
     }

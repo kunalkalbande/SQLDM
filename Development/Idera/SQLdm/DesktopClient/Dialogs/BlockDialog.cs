@@ -28,7 +28,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Properties;
     using Wintellect.PowerCollections;
 
-    public partial class BlockDialog : Form
+    public partial class BlockDialog : BaseDialog
     {
         private const string BAND_RESOURCE = "Resource";
         private const string LOCK_TYPE = "Lock Type";
@@ -53,6 +53,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public BlockDialog(string argBlockXML)
         {
+            this.DialogHeader = "BlockDialog";
             this.blockXML = argBlockXML;
   
             // testing override

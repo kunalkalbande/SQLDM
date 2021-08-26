@@ -63,7 +63,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
             base.InitReport();
             InitializeReportViewer();
             ReportType = ReportTypes.Custom;
-            reportInstructionsControl.ReportTitle = _customReportName;
+            reportInstructionsControl.ReportTitle = _customReportName+ "              ";
             RunReport(true);
         }
 

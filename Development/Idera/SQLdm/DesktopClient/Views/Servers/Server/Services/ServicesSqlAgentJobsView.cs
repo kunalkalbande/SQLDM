@@ -30,6 +30,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Services
 {
     using Infragistics.Win.UltraWinDataSource;
     using Idera.SQLdm.Common.Events;
+    using Infragistics.Windows.Themes;
 
     internal partial class ServicesSqlAgentJobsView : ServerBaseView, IShowFilterDialog
     {
@@ -142,6 +143,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Services
             InitializeCurrentDataTable();
             InitializeHistoryDataSet();
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
 
@@ -1589,6 +1592,19 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Services
         private void AdaptFontSize()
         {            
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.jobHistoryGrid);
+            themeManager.updateGridTheme(this.jobSummaryGrid);
         }
     }
 }

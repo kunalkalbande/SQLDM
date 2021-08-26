@@ -20,10 +20,12 @@ using Idera.SQLdm.DesktopClient.Objects;
 using Resources = Idera.SQLdm.DesktopClient.Properties.Resources;
 using Settings = Idera.SQLdm.DesktopClient.Properties.Settings;
 using System.Runtime.InteropServices;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Controls;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class VirtualizationConfig : Form
+    public partial class VirtualizationConfig : BaseDialog
     {
         private static readonly Logger Log = Logger.GetLogger("VirtualizationConfig");
         private const string STATUS_GATHERING_ALL_VMS = "Contacting Virtualization Host servers to get virtual machine names";
@@ -53,11 +55,13 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public VirtualizationConfig(bool allowDelete) : this ()
         {
+            this.DialogHeader = "VM Configuration";
             this.allowDelete = allowDelete;
         }
 
         public VirtualizationConfig()
         {
+            this.DialogHeader = "VM Configuration";
             InitializeComponent();
 
             vCenterConnectionLabel.Text = string.Empty;
@@ -89,6 +93,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             initializeDataSource();
             btnOK.Enabled = false;
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
         #endregion
@@ -1471,6 +1477,24 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.vmGrid);
+            themeManager.updateGridTheme(this.vcGrid);
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                ultraGridBand1.Override.HeaderAppearance.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+                ultraGridBand1.Override.HeaderAppearance.BackColor2 = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+            }
         }
         #endregion ToolTipItemCreationFilter
     }

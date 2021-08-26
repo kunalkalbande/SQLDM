@@ -14,7 +14,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using System.ComponentModel;
     using Microsoft.SqlServer.MessageBox;
 
-    public partial class SmtpProviderConfigDialog : Form, INotificationProviderConfigDialog
+    public partial class SmtpProviderConfigDialog : BaseDialog, INotificationProviderConfigDialog
     {
         private SmtpNotificationProviderInfo providerInfo;
         private IManagementService managementService;
@@ -27,6 +27,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public SmtpProviderConfigDialog()
         {
+            this.DialogHeader = "SMTP Action Provider";
+
             InitializeComponent();
 
             // Autoscale FontSize.

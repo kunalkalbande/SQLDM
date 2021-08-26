@@ -62,14 +62,16 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance20 = new Infragistics.Win.Appearance();
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.informationBox = new Divelements.WizardFramework.InformationBox();
-            this.rulesListView = new Infragistics.Win.UltraWinGrid.UltraGrid();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+
+            this.informationBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
+            this.rulesListView = new Infragistics.Win.UltraWinGrid.UltraGrid(); 
+
             this.rulesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.stackLayoutPanel1 = new Idera.SQLdm.Common.UI.Controls.StackLayoutPanel();
-            this.noneSelectedLabel = new System.Windows.Forms.Label();
+            this.noneSelectedLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             ((System.ComponentModel.ISupportInitialize)(this.rulesListView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rulesBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
@@ -313,13 +315,13 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         #endregion
 
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
-        private Divelements.WizardFramework.InformationBox informationBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox informationBox;
         private Infragistics.Win.UltraWinGrid.UltraGrid rulesListView;
-        private System.Windows.Forms.Panel panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
         private System.Windows.Forms.BindingSource rulesBindingSource;
         private Idera.SQLdm.Common.UI.Controls.StackLayoutPanel stackLayoutPanel1;
-        private System.Windows.Forms.Label noneSelectedLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel noneSelectedLabel;
     }
 }

@@ -1,3 +1,5 @@
+using Idera.SQLdm.DesktopClient.Helpers;
+
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
 {
     partial class LogsView
@@ -63,83 +65,83 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
             Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList1 = new Infragistics.Win.ValueList(1290415313);
+            Infragistics.Win.ValueList valueList1 = new Controls.CustomControls.CustomValueList(1290415313);
             Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList2 = new Infragistics.Win.ValueList(1295464844);
-            Infragistics.Win.ValueList valueList3 = new Infragistics.Win.ValueList(1300419016);
+            Infragistics.Win.ValueList valueList2 = new Controls.CustomControls.CustomValueList(1295464844);
+            Infragistics.Win.ValueList valueList3 = new Controls.CustomControls.CustomValueList(1300419016);
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool1 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("columnContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortAscendingButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortDescendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Controls.CustomControls.CustomButtonTool("sortAscendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Controls.CustomControls.CustomButtonTool("sortDescendingButton");
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool1 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("groupByThisColumnButton", "");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Infragistics.Win.UltraWinToolbars.ButtonTool("toggleGroupByBoxButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Infragistics.Win.UltraWinToolbars.ButtonTool("removeThisColumnButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showColumnChooserButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showColumnChooserButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Controls.CustomControls.CustomButtonTool("toggleGroupByBoxButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Controls.CustomControls.CustomButtonTool("removeThisColumnButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Controls.CustomControls.CustomButtonTool("showColumnChooserButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Controls.CustomControls.CustomButtonTool("showColumnChooserButton");
             Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Infragistics.Win.UltraWinToolbars.ButtonTool("toggleGroupByBoxButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Controls.CustomControls.CustomButtonTool("toggleGroupByBoxButton");
             Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortAscendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Controls.CustomControls.CustomButtonTool("sortAscendingButton");
             Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortDescendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Controls.CustomControls.CustomButtonTool("sortDescendingButton");
             Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool10 = new Infragistics.Win.UltraWinToolbars.ButtonTool("removeThisColumnButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool10 = new Controls.CustomControls.CustomButtonTool("removeThisColumnButton");
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool2 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("treeContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool11 = new Infragistics.Win.UltraWinToolbars.ButtonTool("refreshTreeButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool12 = new Infragistics.Win.UltraWinToolbars.ButtonTool("refreshTreeButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool11 = new Controls.CustomControls.CustomButtonTool("refreshTreeButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool12 = new Controls.CustomControls.CustomButtonTool("refreshTreeButton");
             Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool13 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool13 = new Controls.CustomControls.CustomButtonTool("printGridButton");
             Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool14 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool14 = new Controls.CustomControls.CustomButtonTool("exportGridButton");
             Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool3 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("gridContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool22 = new Infragistics.Win.UltraWinToolbars.ButtonTool("editAlertsConfigurationButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool15 = new Infragistics.Win.UltraWinToolbars.ButtonTool("collapseAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool16 = new Infragistics.Win.UltraWinToolbars.ButtonTool("expandAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool17 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printGridButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool18 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool22 = new Controls.CustomControls.CustomButtonTool("editAlertsConfigurationButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool15 = new Controls.CustomControls.CustomButtonTool("collapseAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool16 = new Controls.CustomControls.CustomButtonTool("expandAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool17 = new Controls.CustomControls.CustomButtonTool("printGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool18 = new Controls.CustomControls.CustomButtonTool("exportGridButton");
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool2 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("groupByThisColumnButton", "");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool19 = new Infragistics.Win.UltraWinToolbars.ButtonTool("collapseAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool20 = new Infragistics.Win.UltraWinToolbars.ButtonTool("expandAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool21 = new Infragistics.Win.UltraWinToolbars.ButtonTool("editAlertsConfigurationButton");
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.availableLogsContainerPanel = new System.Windows.Forms.Panel();
-            this.availableLogsTreeView = new System.Windows.Forms.TreeView();
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool19 = new Controls.CustomControls.CustomButtonTool("collapseAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool20 = new Controls.CustomControls.CustomButtonTool("expandAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool21 = new Controls.CustomControls.CustomButtonTool("editAlertsConfigurationButton");
+            this.splitContainer1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomSplitContainer();
+            this.availableLogsContainerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.availableLogsTreeView = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTreeView();
             this.availableLogsHeaderStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
             this.hideAvailableLogsPanel = new System.Windows.Forms.ToolStripButton();
             this.availableLogsHeaderLabel = new System.Windows.Forms.ToolStripLabel();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomSplitContainer();
             this.logGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.logProgressControl = new MRG.Controls.UI.LoadingCircle();
-            this.logGridStatusLabel = new System.Windows.Forms.Label();
-            this.detailsContainerPanel = new System.Windows.Forms.Panel();
-            this.detailsPanel = new System.Windows.Forms.Panel();
-            this.detailsLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.boundMessageTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.boundMessageNumberLabel = new System.Windows.Forms.Label();
-            this.messageNumberLabel = new System.Windows.Forms.Label();
-            this.dateLabel = new System.Windows.Forms.Label();
-            this.severityLabel = new System.Windows.Forms.Label();
-            this.boundDateLabel = new System.Windows.Forms.Label();
-            this.sourceLabel = new System.Windows.Forms.Label();
-            this.boundSourceLabel = new System.Windows.Forms.Label();
-            this.detailsLogGroupBox = new System.Windows.Forms.GroupBox();
-            this.boundLogFileLabel = new System.Windows.Forms.Label();
-            this.boundLogNameLabel = new System.Windows.Forms.Label();
-            this.boundLogTypeLabel = new System.Windows.Forms.Label();
-            this.logFileLabel = new System.Windows.Forms.Label();
-            this.logNameLabel = new System.Windows.Forms.Label();
-            this.logTypeLabel = new System.Windows.Forms.Label();
-            this.boundSeverityPanel = new System.Windows.Forms.Panel();
-            this.boundSeverityLabel = new System.Windows.Forms.Label();
+            this.logGridStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.detailsContainerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.detailsPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.detailsLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.boundMessageTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.boundMessageNumberLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.messageNumberLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.dateLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.severityLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.boundDateLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.sourceLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.boundSourceLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.detailsLogGroupBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.boundLogFileLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.boundLogNameLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.boundLogTypeLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.logFileLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.logNameLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.logTypeLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.boundSeverityPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.boundSeverityLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.boundSeverityPictureBox = new System.Windows.Forms.PictureBox();
-            this.detailsPanelLabel = new System.Windows.Forms.Label();
+            this.detailsPanelLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.detailsHeaderStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
             this.hideDetailsPanelButton = new System.Windows.Forms.ToolStripButton();
             this.detailsHeaderStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.lblLogLimitExceeded = new System.Windows.Forms.LinkLabel();
+            this.lblLogLimitExceeded = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
             this.toolbarsManager = new Idera.SQLdm.DesktopClient.Controls.ContextMenuManager(this.components);
-            this.LogsView_Fill_Panel = new System.Windows.Forms.Panel();
+            this.LogsView_Fill_Panel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.infoPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.informationLabel = new System.Windows.Forms.Label();
@@ -147,7 +149,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
             this.ultraGridExcelExporter = new Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter(this.components);
             this.ultraGridPrintDocument = new Infragistics.Win.UltraWinGrid.UltraGridPrintDocument(this.components);
             this.ultraPrintPreviewDialog = new Infragistics.Win.Printing.UltraPrintPreviewDialog(this.components);
-            this.historicalSnapshotStatusLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.historicalSnapshotStatusLinkLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -182,6 +184,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer1.Panel1.Controls.Add(this.availableLogsContainerPanel);
             this.splitContainer1.Panel1.Controls.Add(this.availableLogsHeaderStrip);
             // 
@@ -424,6 +427,34 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
             this.logGrid.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.logGrid_InitializeLayout);
             this.logGrid.AfterSelectChange += new Infragistics.Win.UltraWinGrid.AfterSelectChangeEventHandler(this.logGrid_AfterSelectChange);
             this.logGrid.MouseDown += new System.Windows.Forms.MouseEventHandler(this.logGrid_MouseDown);
+            // Scaling for high resolution screens
+            int detailRowHeight = 20;
+            int detailColumnWidth = 75;
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                if (AutoScaleSizeHelper.isLargeSize)
+                {
+                    detailRowHeight = 22;
+                    detailColumnWidth = 80;
+                }
+                if (AutoScaleSizeHelper.isXLargeSize)
+                {
+                    detailRowHeight = 25;
+                    detailColumnWidth = 90;
+                }
+                if (AutoScaleSizeHelper.isXXLargeSize)
+                {
+                    detailRowHeight = 30;
+                    detailColumnWidth = 100;
+                }
+            }
+            else
+            {
+                detailRowHeight = 20;
+                detailColumnWidth = 75;
+            }
+                
+
             // 
             // logProgressControl
             // 
@@ -479,7 +510,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
             // detailsLayoutPanel
             // 
             this.detailsLayoutPanel.ColumnCount = 3;
-            this.detailsLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.detailsLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, detailColumnWidth));
             this.detailsLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.0531F));
             this.detailsLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.9469F));
             this.detailsLayoutPanel.Controls.Add(this.boundMessageTextBox, 0, 5);
@@ -497,11 +528,11 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
             this.detailsLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.detailsLayoutPanel.Name = "detailsLayoutPanel";
             this.detailsLayoutPanel.RowCount = 6;
-            this.detailsLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.detailsLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.detailsLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.detailsLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.detailsLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.detailsLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10+detailRowHeight));
+            this.detailsLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, detailRowHeight));
+            this.detailsLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, detailRowHeight));
+            this.detailsLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, detailRowHeight));
+            this.detailsLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, detailRowHeight));
             this.detailsLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.detailsLayoutPanel.Size = new System.Drawing.Size(393, 138);
             this.detailsLayoutPanel.TabIndex = 15;
@@ -640,7 +671,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
             this.detailsLogGroupBox.Size = new System.Drawing.Size(191, 94);
             this.detailsLogGroupBox.TabIndex = 22;
             this.detailsLogGroupBox.TabStop = false;
-            this.detailsLogGroupBox.Text = "Log Information";
+            this.detailsLogGroupBox.Text = "Log Information"; 
             // 
             // boundLogFileLabel
             // 
@@ -648,7 +679,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
             | System.Windows.Forms.AnchorStyles.Right)));
             this.boundLogFileLabel.AutoEllipsis = true;
             this.boundLogFileLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.boundLogFileLabel.Location = new System.Drawing.Point(46, 59);
+            this.boundLogFileLabel.Location = new System.Drawing.Point(50, 61);
             this.boundLogFileLabel.Name = "boundLogFileLabel";
             this.boundLogFileLabel.Size = new System.Drawing.Size(127, 16);
             this.boundLogFileLabel.TabIndex = 22;
@@ -661,7 +692,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
             | System.Windows.Forms.AnchorStyles.Right)));
             this.boundLogNameLabel.AutoEllipsis = true;
             this.boundLogNameLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.boundLogNameLabel.Location = new System.Drawing.Point(46, 38);
+            this.boundLogNameLabel.Location = new System.Drawing.Point(50, 41);
             this.boundLogNameLabel.Name = "boundLogNameLabel";
             this.boundLogNameLabel.Size = new System.Drawing.Size(127, 16);
             this.boundLogNameLabel.TabIndex = 21;
@@ -674,7 +705,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
             | System.Windows.Forms.AnchorStyles.Right)));
             this.boundLogTypeLabel.AutoEllipsis = true;
             this.boundLogTypeLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.boundLogTypeLabel.Location = new System.Drawing.Point(46, 17);
+            this.boundLogTypeLabel.Location = new System.Drawing.Point(46, 21);
             this.boundLogTypeLabel.Name = "boundLogTypeLabel";
             this.boundLogTypeLabel.Size = new System.Drawing.Size(127, 16);
             this.boundLogTypeLabel.TabIndex = 20;
@@ -685,7 +716,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
             // 
             this.logFileLabel.AutoSize = true;
             this.logFileLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.logFileLabel.Location = new System.Drawing.Point(6, 61);
+            this.logFileLabel.Location = new System.Drawing.Point(6, 21 + (2 * detailRowHeight));
             this.logFileLabel.Name = "logFileLabel";
             this.logFileLabel.Size = new System.Drawing.Size(26, 13);
             this.logFileLabel.TabIndex = 9;
@@ -696,7 +727,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
             // 
             this.logNameLabel.AutoSize = true;
             this.logNameLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.logNameLabel.Location = new System.Drawing.Point(6, 40);
+            this.logNameLabel.Location = new System.Drawing.Point(6, 21+detailRowHeight);
             this.logNameLabel.Name = "logNameLabel";
             this.logNameLabel.Size = new System.Drawing.Size(28, 13);
             this.logNameLabel.TabIndex = 8;
@@ -707,7 +738,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
             // 
             this.logTypeLabel.AutoSize = true;
             this.logTypeLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.logTypeLabel.Location = new System.Drawing.Point(6, 19);
+            this.logTypeLabel.Location = new System.Drawing.Point(6, 21);
             this.logTypeLabel.Name = "logTypeLabel";
             this.logTypeLabel.Size = new System.Drawing.Size(34, 13);
             this.logTypeLabel.TabIndex = 7;
@@ -723,6 +754,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
             this.boundSeverityPanel.Name = "boundSeverityPanel";
             this.boundSeverityPanel.Size = new System.Drawing.Size(115, 14);
             this.boundSeverityPanel.TabIndex = 27;
+            this.boundSeverityPanel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             // 
             // boundSeverityLabel
             // 
@@ -1009,45 +1041,45 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Logs
         private System.Windows.Forms.ToolStripButton hideDetailsPanelButton;
         private System.Windows.Forms.ToolStripLabel detailsHeaderStripLabel;
         private Infragistics.Win.UltraWinGrid.UltraGrid logGrid;
-        private System.Windows.Forms.Panel detailsContainerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  detailsContainerPanel;
         private Idera.SQLdm.DesktopClient.Controls.HeaderStrip availableLogsHeaderStrip;
         private System.Windows.Forms.ToolStripButton hideAvailableLogsPanel;
         private System.Windows.Forms.ToolStripLabel availableLogsHeaderLabel;
-        private System.Windows.Forms.Panel detailsPanel;
-        private System.Windows.Forms.Panel availableLogsContainerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  detailsPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  availableLogsContainerPanel;
         private Idera.SQLdm.DesktopClient.Controls.ContextMenuManager toolbarsManager;
-        private System.Windows.Forms.Panel LogsView_Fill_Panel;
-        private System.Windows.Forms.Panel infoPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  LogsView_Fill_Panel;
+        private System.Windows.Forms.Panel  infoPanel;
         private System.Windows.Forms.Label informationLabel;
-        private System.Windows.Forms.Label logGridStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel logGridStatusLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label detailsPanelLabel;
-        private System.Windows.Forms.TableLayoutPanel detailsLayoutPanel;
-        private System.Windows.Forms.Label dateLabel;
-        private System.Windows.Forms.Label severityLabel;
-        private System.Windows.Forms.Label boundDateLabel;
-        private System.Windows.Forms.Label sourceLabel;
-        private System.Windows.Forms.Label boundSourceLabel;
-        private System.Windows.Forms.GroupBox detailsLogGroupBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label boundMessageNumberLabel;
-        private System.Windows.Forms.Label messageNumberLabel;
-        private System.Windows.Forms.TextBox boundMessageTextBox;
-        private System.Windows.Forms.Label logTypeLabel;
-        private System.Windows.Forms.Label boundLogTypeLabel;
-        private System.Windows.Forms.Label logFileLabel;
-        private System.Windows.Forms.Label logNameLabel;
-        private System.Windows.Forms.Label boundLogFileLabel;
-        private System.Windows.Forms.Label boundLogNameLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel detailsPanelLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel detailsLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel dateLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel severityLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel boundDateLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel sourceLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel boundSourceLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox detailsLogGroupBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel boundMessageNumberLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel messageNumberLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox boundMessageTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel logTypeLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel boundLogTypeLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel logFileLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel logNameLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel boundLogFileLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel boundLogNameLabel;
         private MRG.Controls.UI.LoadingCircle logProgressControl;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter ultraGridExcelExporter;
         private Infragistics.Win.UltraWinGrid.UltraGridPrintDocument ultraGridPrintDocument;
         private Infragistics.Win.Printing.UltraPrintPreviewDialog ultraPrintPreviewDialog;
-        private System.Windows.Forms.LinkLabel historicalSnapshotStatusLinkLabel;
-        private System.Windows.Forms.Panel boundSeverityPanel;
-        private System.Windows.Forms.Label boundSeverityLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel historicalSnapshotStatusLinkLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  boundSeverityPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel boundSeverityLabel;
         private System.Windows.Forms.PictureBox boundSeverityPictureBox;
-        private System.Windows.Forms.LinkLabel lblLogLimitExceeded;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel lblLogLimitExceeded;
     }
 }

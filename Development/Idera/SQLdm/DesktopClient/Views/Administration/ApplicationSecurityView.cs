@@ -15,6 +15,8 @@ using Idera.SQLdm.Common.UI.Dialogs;
 using Idera.SQLdm.DesktopClient.Dialogs;
 using Idera.SQLdm.DesktopClient.Helpers;
 using Idera.SQLdm.DesktopClient.Properties;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Controls;
 
 namespace Idera.SQLdm.DesktopClient.Views.Administration
 {
@@ -42,6 +44,36 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
             ResumeLayout();
 
             AdaptFontSize();
+            AutoScaleFontHelper.Default.AutoScaleControl(this.panel3, AutoScaleFontHelper.ControlType.Container);
+            //this.panel3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+
+            // Scaling for high resolution
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                if (AutoScaleSizeHelper.isLargeSize)
+                {
+                    this._pnlSystemDefinedInfo.Size = new System.Drawing.Size(814, 32);
+                    this._lblSystemDefinedInfo.Size = new System.Drawing.Size(807, 32);
+                    this._imgSystemDefinedInfo.Location = new System.Drawing.Point(14, 6);
+                    this.panel2.Size = new System.Drawing.Size(224, 402);
+                }
+                if (AutoScaleSizeHelper.isXLargeSize)
+                {
+                    this._pnlSystemDefinedInfo.Size = new System.Drawing.Size(814, 35);
+                    this._lblSystemDefinedInfo.Size = new System.Drawing.Size(807, 35);
+                    this._imgSystemDefinedInfo.Location = new System.Drawing.Point(16, 6);
+                    this.panel2.Size = new System.Drawing.Size(264, 402);
+                }
+                if (AutoScaleSizeHelper.isXXLargeSize)
+                {
+                    this._pnlSystemDefinedInfo.Size = new System.Drawing.Size(814, 38);
+                    this._lblSystemDefinedInfo.Size = new System.Drawing.Size(807, 38);
+                    this._imgSystemDefinedInfo.Location = new System.Drawing.Point(18, 6);
+                    this.panel2.Size = new System.Drawing.Size(310, 402);
+                }
+            }
         }
 
         private void updateTools()
@@ -678,6 +710,11 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
 
         private void _permissionGrid_InitializeLayout(object sender, InitializeLayoutEventArgs e)
         {
+            //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                AutoScaleSizeHelper.Default.AutoScaleControl(this._permissionGrid, AutoScaleSizeHelper.ControlType.UltraGridCheckbox);
+            }
             // Create value list for system column and attach it.
             ValueList vlSystem = e.Layout.ValueLists.Add("System");
             vlSystem.DisplayStyle = ValueListDisplayStyle.DisplayTextAndPicture;
@@ -880,6 +917,18 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this._permissionGrid);
         }
     }
 }

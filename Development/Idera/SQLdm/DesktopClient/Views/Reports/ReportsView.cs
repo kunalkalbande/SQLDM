@@ -11,196 +11,198 @@ using DatabaseStatistics = Idera.SQLdm.DesktopClient.Views.Reports.ReportControl
 using ReplicationSummary = Idera.SQLdm.DesktopClient.Views.Reports.ReportControls.ReplicationSummary;
 using ServerStatistics = Idera.SQLdm.DesktopClient.Views.Reports.ReportControls.ServerStatistics;
 using ServerSummary = Idera.SQLdm.DesktopClient.Views.Reports.ReportControls.ServerSummary;
+using System.Windows;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Reports
 {
     public enum ReportTypes
     {
-        [Title("Getting Started")]
+        [Title("Getting Started              ")]
         GettingStarted,
-        [Title("Enterprise Summary")]
+        [Title("Enterprise Summary              ")]
         [ShortDescription("View the health of your SQL Servers")]
         [LongDescription("The Enterprise Summary report provides an overview of the health and performance of SQL Server instances monitored by SQLDM. Click on an instance and the Server Summary report will display.")]
         [Deployable(true)]
         EnterpriseSummary,
-        [Title("Server Summary")]
+        [Title("Server Summary              ")]
         [ShortDescription("View health details of a single SQL Server")]
         [LongDescription("The Server Summary report provides a detailed overview of the health and performance of a specific SQL Server, such as response time and CPU usage.")]
         [Deployable(true)]
         ServerSummary,
-        [Title("Active Alerts")]
+        [Title("Active Alerts              ")]
         [ShortDescription("View the active alerts for all monitored SQL Servers")]
         [LongDescription("The Active Alerts report lists all outstanding, active alerts that SQLDM has raised against your SQL Server instances. To see more detail about the health of a specific instance, click on that instance and the Server Summary report will display.")]
         [Deployable(true)]
         ActiveAlerts,
-        [Title("Alert History")]
+        [Title("Alert History              ")]
         [ShortDescription("Analyze the alert history for your SQL Servers")]
         [LongDescription("The Alert History report lets you review the alerts that SQLDM has raised for the selected SQL Server instance over a specified period of time. You can also review alerts for multiple instances that belong to a tag.")]
         [Deployable(true)]
         AlertHistory,
-        [Title("Server Inventory")]
+        [Title("Server Inventory              ")]
         [ShortDescription("Find SQL Servers that share the same properties")]
         [LongDescription("The Server Inventory report lets you compile a list of SQL Server instances that share up to 4 different properties, such as the SQL Server version or whether the instance is clustered.")]
         [Deployable(true)]
         ServerInventory,
-        [Title("Top Servers")]
+        [Title("Top Servers              ")]
         [ShortDescription("Identify your worst performing SQL Servers")]
         [LongDescription("The Top Servers report identifies your worst performing SQL Server instances based on the number of active alerts for the current monitored instances, response time, CPU usage, memory usage, and disk activity.  Use this report to compile a list of instances that need immediate attention.")]
         [Deployable(true)]
         TopServers,
-        [Title("Server Statistics")]
+        [Title("Server Statistics              ")]
         [ShortDescription("Analyze and compare performance trends across two SQL Servers")]
         [LongDescription("The Server Statistics report lets you analyze and compare performance trends across two SQL Server instances. You can focus on a single performance statistic, such as memory usage, and track its value on both instances over a specified period of time.")]
         [Deployable(true)]
         ServerStatistics,
-        [Title("Query Overview")]
+        [Title("Query Overview              ")]
         [ShortDescription("Identify your worst performing queries")]
         [LongDescription("The Query Overview report identifies the worst performing queries run on a specific SQL Server instance over time, including the call volume of each query. This report requires that you enabled Query Monitoring in the SQLDM Console and have collected sufficient query data for the specified time period.")]
         [Deployable(true)]
         QueryOverview,
-        [Title("Top Queries")]
+        [Title("Top Queries              ")]
         [ShortDescription("Find queries that are performing poorly or executing frequently")]
         [LongDescription("The Top Queries report lets you compile a list of queries based on call frequency, duration of execution, CPU usage, and the number of reads and writes performed on the databases hosted by the specified SQL Server instance. You can define minimum thresholds for each of these performance metrics and then see which queries match or exceed the selected values. This report requires that you enabled Query Monitoring in the SQLDM Console and have collected sufficient query data for the specified time period.")]
         [Deployable(true)]
         TopQueries,
-        [Title("Query Statistics")]
+        [Title("Query Statistics              ")]
         [ShortDescription("")]
         [LongDescription("The Query Statistics report lets you view details for an individual SQL statement or signature as collected by the Query Monitor. This report requires that you enabled Query Monitoring in the SQLDM Console and have collected sufficient query data for the specified time period.")]
         QueryStatistics,
-        [Title("Top Databases")]
+        [Title("Top Databases              ")]
         [ShortDescription("Identify your worst performing databases")]
         [LongDescription("The Top Databases report identifies your worst performing SQL Server databases based on the size of the database, the growth rate of the database, and the number of reads, writes, and transactions per second performed on the database. Use this report to compile a list of databases that are used most often or have the heaviest loads.")]
         [Deployable(true)]
         TopDatabases,
-        [Title("Database Statistics")]
+        [Title("Database Statistics              ")]
         [ShortDescription("Analyze and compare performance trends across two databases")]
         [LongDescription("The Database Statistics report lets you analyze and compare performance trends, such as the percentage of growth, across two SQL Server databases. You can also compare performance metrics at different points in time for the same database.")]
         [Deployable(true)]
         DatabaseStatistics,
-        [Title("Top Database Applications")]
+        [Title("Top Database Applications              ")]
         [ShortDescription("Analyze and compare performance trends across two databases")]
         [LongDescription("The Top Database Applications report lets you find the applications that are consuming the highest amount of your system resources, such as CPU usage, when run on a specific database. You can define minimum thresholds for each of these performance metrics and then see which applications match or exceed the selected values. This report requires that you enabled Query Monitoring in the SQLDM Console and have collected sufficient query data for the specified time period.")]
         [Deployable(true)]
         TopDatabaseApps,
-        [Title("Top Tables by Growth")]
+        [Title("Top Tables by Growth              ")]
         [ShortDescription("Identify the fastest growing tables")]
         [LongDescription("The Top Tables by Growth report identifies the fastest growing tables in a database. You can select a specific database to analyze or evaluate all databases on a specific SQL Server instance. You can also choose a growth metric and its minimum threshold to see which tables match or exceed the selected value.")]
         [Deployable(true)]
         TopTablesGrowth,
-        [Title("Top Tables by Fragmentation")]
+        [Title("Top Tables by Fragmentation              ")]
         [ShortDescription("Identify the most fragmented tables")]
         [LongDescription("The Top Tables by Fragmentation report identifies the most fragmented tables in a database. You can select a specific database to analyze or evaluate all databases on a specific SQL Server instance. You can also choose a fragmentation metric and its minimum threshold to see which tables match or exceed the selected value.")]
         [Deployable(true)]
         TopTableFrag,
-        [Title("Disk Space Usage Forecast")]
+        [Title("Disk Space Usage Forecast              ")]
         [ShortDescription("Forecast disk space needs based on average historical growth rates")]
         [LongDescription("The Disk Space Usage Forecast report lets you predict how much disk space may be needed in the future based on current and historical growth rate trends. For more accurate forecasting, select the largest possible period of historical data and the shortest possible projection into the future. To successfully collect disk metrics, ensure that OS Metrics collection is enabled for the monitored instance.")]
         DiskSpaceForecast,
-        [Title("Database Growth Forecast")]
+        [Title("Database Growth Forecast              ")]
         [ShortDescription("Forecast future database growth based on historical trends")]
         [LongDescription("The Database Growth Forecast report lets you predict how large selected databases may grow based on current and historical growth rate trends. For more accurate forecasting, select the largest possible period of historical data and the shortest possible projection into the future.")]
         DatabaseGrowthForecast,
-        [Title("Table Growth Forecast")]
+        [Title("Table Growth Forecast              ")]
         [ShortDescription("Forecast future table growth based on historical trends")]
         [LongDescription("The Table Growth Forecast report lets you predict how large selected tables may grow based on current and historical growth rate trends. For more accurate forecasting, select the largest possible period of historical data and the shortest possible projection into the future.")]
         TableGrowthForecast,
-        [Title("Mirroring Summary")]
+        [Title("Mirroring Summary              ")]
         [ShortDescription("View the health of your mirrored databases")]
         [LongDescription("The Mirroring Summary report provides an overview of the health of mirrored databases and the health of their mirrors, such as the mirrored state and operational status.")]
         [Deployable(true)]
         MirroringSummary,
-        [Title("Mirroring History")]
+        [Title("Mirroring History              ")]
         [ShortDescription("Analyze the event history for a mirrored database")]
         [LongDescription("The Mirroring History report lets you analyze metrics collected for a mirrored database during the specified time period. You can filter the results to show only those metrics for which alerts have been raised. To filter your results, check Show Problems Only.")]
         [Deployable(true)]
         MirroringHistory,
-        [Title("Memory Statistics")]
+        [Title("Memory Statistics              ")]
         [ShortDescription("Track key memory performance metrics")]
         [LongDescription("The Memory Statistics report lets you view trends for memory usage on a monitored SQL Server instance over a specified period of time. Check Show Baseline to include baseline data points in the graphical results and numeric baseline metrics in the tabular results. To successfully monitor OS metrics, ensure that OS Metrics collection is enabled on the monitored instance.")]
         [Deployable(true)]
         MemorySummary,
-        [Title("Disk Statistics")]
+        [Title("Disk Statistics              ")]
         [ShortDescription("Track key disk performance metrics")]
         [LongDescription("The Disk Statistics report lets you view trends for the disk activity of a monitored SQL Server instance over a specified period of time. Check Show Baseline to include baseline data points in the graphical results and numeric baseline metrics in the tabular results. To successfully monitor OS metrics, ensure that OS Metrics collection is enabled on the monitored instance.")]
         [Deployable(true)]
         DiskSummary,
-        [Title("CPU Statistics")]
+        [Title("CPU Statistics              ")]
         [ShortDescription("Track key CPU performance metrics")]
         [LongDescription("The CPU Statistics report lets you view trends for CPU usage on a monitored SQL Server instance over a specified period of time. Check Show Tabular Data to display results in a single tabular or grid format.Check Show Baseline to include baseline data points in the graphical results and numeric baseline metrics in the tabular results.")]
         [Deployable(true)]
         CPUSummary,
-        [Title("Session Statistics")]
+        [Title("Session Statistics              ")]
         [ShortDescription("Track key session and network performance metrics over time")]
         [LongDescription("The Session Statistics report lets you view trends for sessions and network connectivity, such as transactions per minute, on a monitored SQL Server instance over a specified period of time. Check Show Baseline to include baseline data points in the graphical results and numeric baseline metrics in the tabular results.")]
         [Deployable(true)]
         SessionsSummary,
-        [Title("Replication Statistics")]
+        [Title("Replication Statistics              ")]
         [ShortDescription("Track key replication performance metrics")]
         [LongDescription("The Replication Statistics report lets you view trends for the replicated transactions on a monitored SQL Server instance over a specified period of time. Check Show Baseline to include baseline data points in the graphical results and numeric baseline metrics in the tabular results.")]
         [Deployable(true)]
         ReplicationSummary,
-        [Title("Custom Reports")]
+        [Title("Custom Reports              ")]
         [CustomReport(true)]
         [LongDescription("This report lets you view trends for your choice of SQLDM metrics on a monitored SQL Server instance over a specified period of time. To successfully monitor OS metrics, ensure that WMI/OLE Automation is enabled on the monitored instance.")]
         Custom,
-        [Title("Metric Thresholds")]
+        [Title("Metric Thresholds              ")]
         [ShortDescription("List all metric thresholds for a server")]
         [LongDescription("The Metric Thresholds report will display all the metric thresholds for a server.")]
         [Deployable(true)]
         MetricThresholds,
-        [Title("Disk Details")]
+        [Title("Disk Details              ")]
         [ShortDescription("List key disk metrics for a server")]
         [LongDescription("The Disk Details report will display key disk metrics for a selected server.")]
         [Deployable(true)]
         DiskDetails,
-        [Title("Virtualization Summary")]
+        [Title("Virtualization Summary              ")]
         [ShortDescription("Summary of your virtualized environment")]
         [LongDescription("The Virtualization Summary report will give you an overall performance summary of your virtualized servers.")]
         [Deployable(true)]
         VirtualizationSummary,
-        [Title("Tempdb Statistics")]
+        [Title("Tempdb Statistics              ")]
         [ShortDescription("Analyze the performance and space utilization of tempdb over time")]
         [LongDescription("The Tempdb Statistics report lets you view space utilization and data throughout statistics over time for the tempdb database.")]
         [Deployable(true)]
         TempdbStatistics,
-        [Title("Virtualization Statistics")]
+        [Title("Virtualization Statistics              ")]
         [ShortDescription("Analyze your virtualization performance trends for a specific virtualized server")]
         [LongDescription("The Virtualization Statistics report lets you analyze your virtualization performance trends for a specific virtualized SQL Server instance. You can track CPU, Memory, Disk and Network performance metrics for the virtual machine and its host server to help identify potential performance bottle necks.")]
         [Deployable(true)]
         VirtualizationStatistics,
-        [Title("Transaction Log Statistics")]
+        [Title("Transaction Log Statistics              ")]
         [ShortDescription("Analyze the database transaction log")]
         [LongDescription("The Transaction Log Statistics report provides data about the database transaction log size and activity on a per-database basis. Note that SQLDM displays the Cache Reads and Flushes chart types as data per second. This report helps you troubleshoot performance problems related to transaction logs.")]
         [Deployable(true)]
         TransactionLogStatistics,
-        [Title("Baseline Statistics")]
+        [Title("Baseline Statistics              ")]
         [ShortDescription("Analyze and compare performance baselines across two SQL Server instances")]
         [LongDescription("The Baselines Statistics report lets you analyze and compare metric baselines either within a single SQL Server instance or between two instances at the same time. You can focus on a baseline for a specific date range, and compare it with the same or different baseline configuration on another instance to measure server performance.")]
         [Deployable(true)]
         BaselineStatistics,
-        [Title("Change Log Summary")]
+        [Title("Change Log Summary              ")]
         [ShortDescription("Summary of all the key actions performed in SQLDM")]
         [LongDescription("The Change Log Summary report lists all key actions/changes performed in your SQLDM environment.")]
         [Deployable(true)]
         ChangeLogSummary,
-        [Title("Availability Group Statistics")]
+        [Title("Availability Group Statistics              ")]
         [ShortDescription("View the historical health of your availability groups, availability replicas, and availability databases")]
         [LongDescription("The Availability Group Statistics report shows the health of your availability groups, availability replicas, and availability databases over a selected period of time.")]
         [Deployable(true)]
         AlwaysOnStatistics,
-        [Title("Availability Group Topology")]
+        [Title("Availability Group Topology              ")]
         [ShortDescription("View the current topology of your Availability Groups configuration")]
         [LongDescription("The Availability Group Topology report displays all of the availability groups on monitored servers, replicas that participate in the groups as well as the databases within these groups.")]
         [Deployable(true)]
         AlwaysOnTopology,
-        [Title("Availability Group Database Statistics")]
+        [Title("Availability Group Database Statistics              ")]
         [ShortDescription("A sub-report from the Availability Group Statistics report")]
         [LongDescription("A sub-report from the Availability Group Statistics report")]
         [Deployable(true)]
         AlwaysOnDatabaseStatistics
         //Start: SQLdm 8.6 (Vineet Kumar): Added for Query Wait Stats Report
         ,
-        [Title("Query Wait Statistics")]
+        [Title("Query Wait Statistics              ")]
         [ShortDescription("Analyze the wait statistics for a server.")]
         [LongDescription("The Query Wait Statistics report lets you analyze different wait type categories on your SQL Server instance. By analyzing these waits you can better determine where your biggest bottlenecks are occurring and what changes could have the greatest performance impact. You can select from various wait type categories such as Backup, Excluded, I/O, Lock, Memory, Non-I/O Page Latch, Non-Page Latch, Transaction Log, and Other.")]
         [Deployable(true)]
@@ -209,13 +211,13 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports
 
         //START: SQLdm 9.1 (Ankit Srivastava) -Filegroup and Mount Point Monitoring Improvements - Added for Disk Space Usage and Disk Space History
         ,
-        [Title("Disk Space Usage")]
+        [Title("Disk Space Usage              ")]
         [ShortDescription("Analyze the Disk Space Usage for the disks on a server")]
         [LongDescription("The Disk Space Usage lets you analyze the most recent snapshot of available disk space. By analyzing these waits you can better determine where in their environment they have the most and the least disk space available.")]
         [Deployable(true)]
         DiskSpaceUsage
         ,
-        [Title("Disk Space History")]
+        [Title("Disk Space History              ")]
         [ShortDescription("Analyze the Disk Space history for the disks on a server")]
         [LongDescription("The Disk Space History report lets you analyze the history of activity for a disk. By analyzing these waits you can better determine how are the disks are performing in their envirnoment.")]
         [Deployable(true)]
@@ -223,7 +225,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports
         //END: SQLdm 9.1 (Ankit Srivastava) -Filegroup and Mount Point Monitoring Improvements - Added for Disk Space Usage and Disk Space History
         ,
         //START: SQLdm-4789 10.2 (Varun Chopra) -Customer Enhancement Request for Deadlock report
-        [Title("Deadlock Report")]
+        [Title("Deadlock Report              ")]
         [ShortDescription("Analyze deadlock trends across database")]
         [LongDescription("The Deadlock report lets you analyze deadlock trends across SQL Server database.")]
         [Deployable(true)]
@@ -231,7 +233,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports
         //END: SQLdm-4789 10.2 (Varun Chopra) -Customer Enhancement Request for Deadlock report
         ,
         //START: SQLdm-26953 10.2.1 (Varun Chopra) -Enhancement Request for Detailed Session Information report
-        [Title("Detailed Session Report")]
+        [Title("Detailed Session Report              ")]
         [ShortDescription("Analyze Detailed Session Information across database")]
         [LongDescription("The Detailed Session report provides detailed session information across SQL Server database.")]
         [Deployable(true)]
@@ -240,19 +242,19 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports
         ,
         //START:
 
-        [Title("Template Comparison")]
+        [Title("Template Comparison              ")]
         [ShortDescription("Template Comparison for Source and Tartget Metrics")]
         [LongDescription("The Template Comparison report will display all the metric thresholds differences for selected Source and Target templates.")]
         [Deployable(true)]
         TemplateComparison
         ,
-        [Title("Alert Template Report")]
+        [Title("Alert Template Report              ")]
         [ShortDescription("Alert Template for Instance with applied Alert template")]
         [LongDescription("The Alert Template report will display list of Instances with Alert Template Assigned per instance ")]
         [Deployable(true)]
         AlertTemplateReport
          ,
-        [Title("Alert Threshold Report")]
+        [Title("Alert Threshold Report              ")]
         [ShortDescription("Alert Threshold for Server comparison threshold value")]
         [LongDescription("TheAlert Threshold report provides will display all the metric thresholds differences for Default and Metric Threshold.")]
         [Deployable(true)]
@@ -260,7 +262,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports
 		,
         //END
 		//START: SQLdm-29252 10.4.1 Feature Request for Uptime report
-        [Title("Server Uptime")]
+        [Title("Server Uptime              ")]
         [ShortDescription("Analyze Uptime Information")]
         [LongDescription("Analyse Uptime Information")]
         [Deployable(true)]
@@ -272,7 +274,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports
     {
         private const int ReportHistoryLimit = 10;
 
-        private const string TitleLabelText = "Reports - {0}";
+        private const string TitleLabelText = "  Reports - {0}";
         private ReportTypes currentView;
         private GettingStartedControl gettingStartedControl;
         private int reportHistoryActiveIndex = -1;
@@ -288,6 +290,29 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports
             ShowGettingStarted();
             stopWatch.Stop();
             StartUpTimeLog.DebugFormat("Time taken by ReportsView : {0}", stopWatch.ElapsedMilliseconds);
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            UpdateButtons();
+        }
+
+        private void UpdateButtons()
+        {
+            this.backDropDownButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Back24x24;
+            this.forwardButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Forward24x24;
+            this.refreshButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Refresh24x24;
+            this.cancelButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Cancel24x24;
+            this.deployActionButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Deploy24x24;
+            this.scheduleEmailButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Schedule24x24;
+            this.addReportButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.New24x24;
+            this.editReportButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Edit24x24;
+            this.deleteReportButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Delete24x24;
+            this.importReportButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Import24x24;
+            this.exportReportButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Export24x24;
+            this.gettingStartedButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Home24x24;
+            this.resetFiltersButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Clear24x24;
         }
 
         public ReportTypes CurrentView
@@ -394,9 +419,14 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports
                 
                 _FullCustomPath = fullPath;
 
+                bool isEnabled = false;
+                bool isVisible = false;
+
                 switch (report)
                 {
                     case ReportTypes.Custom:
+                        isEnabled = true;
+                        isVisible = true;
                         reportControl = new CustomReport(fullPath, defaultServerID);
                         break;
                     case ReportTypes.GettingStarted:
@@ -546,6 +576,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports
                         break;
                 }
 
+                ToggleActionBtns(isEnabled, isVisible);
                 if (reportControl != null)
                 {
                     ShowReport(report, reportControl, drillThroughArguments, false);
@@ -553,7 +584,20 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports
                 }
             }
         }
+        private void ToggleActionBtns(bool isEnabled, bool isVisible)
+        {
+            deleteReportButton.Enabled = isEnabled;
+            editReportButton.Enabled = isEnabled;
+            exportReportButton.Enabled = isEnabled;
+            addReportButton.Enabled = isEnabled;
+            importReportButton.Enabled = isEnabled;
 
+            deleteReportButton.Available = isVisible;
+            editReportButton.Available = isVisible;
+            exportReportButton.Available = isVisible;
+            addReportButton.Available = isVisible;
+            importReportButton.Available = isVisible;
+        }
         private void AddReportHistoryItem(ReportTypes reportType, ReportContol reportControl, bool removeForwardHistory)
         {
             string reportDescription = ReportsHelper.GetReportTitle(reportType);

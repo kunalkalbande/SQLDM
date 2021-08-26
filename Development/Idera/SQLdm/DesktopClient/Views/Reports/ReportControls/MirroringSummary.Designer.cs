@@ -29,7 +29,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MirroringSummary));
-            this.chkProblemsOnly = new System.Windows.Forms.CheckBox();
+            this.chkProblemsOnly = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             this.panel1.SuspendLayout();
             this.filterPanel.SuspendLayout();
             this.SuspendLayout();
@@ -134,6 +134,6 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
 
         #endregion
 
-        private System.Windows.Forms.CheckBox chkProblemsOnly;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkProblemsOnly;
     }
 }

@@ -32,9 +32,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.headerStrip1 = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
             this.copyAllButton = new System.Windows.Forms.ToolStripButton();
             this.copySelectedButton = new System.Windows.Forms.ToolStripButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.closeButton = new System.Windows.Forms.Button();
-            this.textBox = new System.Windows.Forms.TextBox();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.closeButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.textBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
             this.contentPanel.SuspendLayout();
             this.headerStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -164,8 +164,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private System.Windows.Forms.ToolStripButton copyAllButton;
         private System.Windows.Forms.ToolStripButton copySelectedButton;
         private Idera.SQLdm.DesktopClient.Controls.GradientPanel contentPanel;
-        private System.Windows.Forms.TextBox textBox;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button closeButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox textBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton closeButton;
     }
 }

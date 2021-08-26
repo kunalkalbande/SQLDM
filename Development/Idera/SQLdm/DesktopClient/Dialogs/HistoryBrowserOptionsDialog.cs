@@ -5,10 +5,12 @@ using Idera.SQLdm.Common.UI.Dialogs;
 using Idera.SQLdm.DesktopClient.Helpers;
 using System.ComponentModel;
 using Idera.SQLdm.Common;
+using Idera.SQLdm.DesktopClient.Properties;
+using System.Drawing;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class HistoryBrowserOptionsDialog : Form
+    public partial class HistoryBrowserOptionsDialog : BaseDialog
     {
         #region Constants
 
@@ -25,9 +27,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public HistoryBrowserOptionsDialog()
         {
+            this.DialogHeader = "History Browser Range";
             InitializeComponent();
             AdaptFontSize();
             RefreshScale();
+            UpdateTheme();
         }
     
         /// <summary>
@@ -66,6 +70,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             beginTimeDateTimePicker.ValueChanged += DateTimePicker_ValueChanged;
             endDateDateTimePicker.ValueChanged += DateTimePicker_ValueChanged;
             endTimeDateTimePicker.ValueChanged += DateTimePicker_ValueChanged;
+            UpdateTheme();
         }
 
         /// <summary>
@@ -199,6 +204,67 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         {
             if (e != null) e.Cancel = true;
             ApplicationHelper.ShowHelpTopic(HelpTopics.HistoryBrowserOptionsDialogHelp);
+        }
+
+        public void UpdateTheme()
+        {
+            if(Settings.Default.ColorScheme == "Dark")
+            {
+                Color backcolor = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+                Color forecolor = ColorTranslator.FromHtml(DarkThemeColorConstants.ForeColor);
+                Color buttonBackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.EnabledActionButtonBackColor);
+                this.BackColor = backcolor;
+                this.okButton.BackColor = buttonBackColor;
+                this.okButton.FlatAppearance.BorderColor = buttonBackColor;
+                this.okButton.FlatStyle = FlatStyle.Flat;
+                this.okButton.ForeColor = forecolor;
+                this.okButton.MouseEnter += new EventHandler(this.ok_button_MouseEnter);
+                this.okButton.MouseLeave += new EventHandler(this.ok_button_MouseLeave);
+
+                this.cancelButton.BackColor = buttonBackColor;
+                this.cancelButton.FlatAppearance.BorderColor = buttonBackColor;
+                this.cancelButton.FlatStyle = FlatStyle.Flat;
+                this.cancelButton.ForeColor = forecolor;
+                this.cancelButton.MouseEnter += new EventHandler(this.cancel_button_MouseEnter);
+                this.cancelButton.MouseLeave += new EventHandler(this.cancel_button_MouseLeave);
+
+            }
+            else
+            {
+                this.BackColor = SystemColors.Window;
+                this.okButton.BackColor = SystemColors.ButtonFace;
+                this.okButton.FlatStyle = FlatStyle.System;
+                this.okButton.TextAlign = ContentAlignment.MiddleCenter;
+
+                this.cancelButton.BackColor = SystemColors.ButtonFace;
+                this.cancelButton.FlatStyle = FlatStyle.System;
+                this.cancelButton.TextAlign = ContentAlignment.MiddleCenter;
+            }
+        }
+
+
+        private void ok_button_MouseEnter(object sender, EventArgs e)
+        {
+            OnMouseHover(e);
+            this.okButton.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.HoveredActionButtonBackColor);
+        }
+
+        private void ok_button_MouseLeave(object sender, EventArgs e)
+        {
+            OnMouseHover(e);
+            this.okButton.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.EnabledActionButtonBackColor);
+        }
+
+        private void cancel_button_MouseEnter(object sender, EventArgs e)
+        {
+            OnMouseHover(e);
+            this.cancelButton.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.HoveredActionButtonBackColor);
+        }
+
+        private void cancel_button_MouseLeave(object sender, EventArgs e)
+        {
+            OnMouseHover(e);
+            this.cancelButton.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.EnabledActionButtonBackColor);
         }
     }
 }

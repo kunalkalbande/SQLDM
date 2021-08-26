@@ -28,20 +28,20 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            this.okButton = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.objectNameLabel = new System.Windows.Forms.TextBox();
-            this.objectDescriptionLabel = new System.Windows.Forms.TextBox();
-            this.counterNameLabel = new System.Windows.Forms.TextBox();
-            this.counterDescriptionLabel = new System.Windows.Forms.TextBox();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.label12 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label13 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.objectNameLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.objectDescriptionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.counterNameLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.counterDescriptionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.splitContainer1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomSplitContainer();
+            this.panel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.panel4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.panel3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -242,19 +242,19 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox objectNameLabel;
-        private System.Windows.Forms.TextBox objectDescriptionLabel;
-        private System.Windows.Forms.TextBox counterNameLabel;
-        private System.Windows.Forms.TextBox counterDescriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label12;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label13;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox objectNameLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox objectDescriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox counterNameLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox counterDescriptionLabel;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel3;
     }
 }

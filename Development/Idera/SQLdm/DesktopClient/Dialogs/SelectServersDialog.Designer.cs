@@ -31,19 +31,19 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.components = new System.ComponentModel.Container();
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool1 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("tagsPopupMenu");
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.descriptionLabel = new System.Windows.Forms.Label();
-            this.selectTagsRadioButton = new System.Windows.Forms.RadioButton();
-            this.selectServerRadioButton = new System.Windows.Forms.RadioButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.selectTemplateCheckBox = new System.Windows.Forms.CheckBox();
-            this.templateDropDownButton = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
-            this.selectAllServersCheckBox = new System.Windows.Forms.CheckBox();
-            this.serversStatusLabel = new System.Windows.Forms.Label();
-            this.serversListBox = new System.Windows.Forms.CheckedListBox();
-            this.tagsDropDownButton = new Infragistics.Win.Misc.UltraDropDownButton();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.descriptionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.selectTagsRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.selectServerRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.groupBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.selectTemplateCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.templateDropDownButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraComboEditor();
+            this.selectAllServersCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.serversStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.serversListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckedListBox1();
+            this.tagsDropDownButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraDropDownButton();
             this.toolbarsManager = new Idera.SQLdm.DesktopClient.Controls.ContextMenuManager(this.components);
             this._SelectServersDialog_Toolbars_Dock_Area_Left = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
             this._SelectServersDialog_Toolbars_Dock_Area_Right = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
@@ -205,10 +205,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // 
             this.tagsDropDownButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            appearance2.BackColor = System.Drawing.Color.White;
-            appearance2.BorderColor = System.Drawing.SystemColors.ControlDark;
-            appearance2.TextHAlignAsString = "Left";
-            this.tagsDropDownButton.Appearance = appearance2;
+            //appearance2.BackColor = System.Drawing.Color.White;
+            //appearance2.BorderColor = System.Drawing.SystemColors.ControlDark;
+            //appearance2.TextHAlignAsString = "Left";
+            //this.tagsDropDownButton.Appearance = appearance2;
             this.tagsDropDownButton.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton;
             this.tagsDropDownButton.Location = new System.Drawing.Point(38, 101);
             this.tagsDropDownButton.Name = "tagsDropDownButton";
@@ -315,23 +315,23 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Label descriptionLabel;
-        private System.Windows.Forms.RadioButton selectTagsRadioButton;
-        private System.Windows.Forms.RadioButton selectServerRadioButton;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private Infragistics.Win.Misc.UltraDropDownButton tagsDropDownButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel descriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton selectTagsRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton selectServerRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraDropDownButton tagsDropDownButton;
         private Idera.SQLdm.DesktopClient.Controls.ContextMenuManager toolbarsManager;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _SelectServersDialog_Toolbars_Dock_Area_Left;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _SelectServersDialog_Toolbars_Dock_Area_Right;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _SelectServersDialog_Toolbars_Dock_Area_Top;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _SelectServersDialog_Toolbars_Dock_Area_Bottom;
         private System.Windows.Forms.CheckedListBox serversListBox;
-        private System.Windows.Forms.Label serversStatusLabel;
-        private System.Windows.Forms.CheckBox selectAllServersCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel serversStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox selectAllServersCheckBox;
         private Infragistics.Win.UltraWinEditors.UltraComboEditor templateDropDownButton;
-        private System.Windows.Forms.CheckBox selectTemplateCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox selectTemplateCheckBox;
     }
 }

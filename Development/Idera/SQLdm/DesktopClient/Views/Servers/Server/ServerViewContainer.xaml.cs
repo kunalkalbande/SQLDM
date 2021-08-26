@@ -58,7 +58,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server
         private const double DecreasedOffset = 0.75d;
 
         private int instanceId;
-        private System.Windows.Forms.Label analyzeOperationalStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel analyzeOperationalStatusLabel;
         private System.Windows.Forms.PictureBox analyzeOperationalStatusImage;
         private Panel analyzeOperationalStatusPanel;
         private ServerViewMode viewMode = ServerViewMode.RealTime;
@@ -164,6 +164,14 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server
             InstanceComboBox.MouseEnter+= InstanceComboBox_MouseEnter;
             InstanceComboBox.MouseLeave += InstanceComboBox_MouseLeave;
             ApplicationModel.Default.ActiveInstances.Changed += ActiveInstances_Changed;
+            this.toggleCustomDashboard.Margin = new Thickness(0, 0, 170, 0);
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                showPreviousSnapshotButton.Width = 24;
+                showPreviousSnapshotButton.Height = 24;
+                showNextSnapshotButton.Width = 24;
+                showNextSnapshotButton.Height = 24;
+            }
         }
         private void InstanceComboBox_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
@@ -6836,7 +6844,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server
                 this.analyzeOperationalStatusImage.TabIndex = 3;
                 this.analyzeOperationalStatusImage.TabStop = false;
 
-                this.analyzeOperationalStatusLabel = new System.Windows.Forms.Label();
+                this.analyzeOperationalStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
                 this.analyzeOperationalStatusLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                 | System.Windows.Forms.AnchorStyles.Right)));
                 this.analyzeOperationalStatusLabel.BackColor = System.Drawing.Color.LightGray;

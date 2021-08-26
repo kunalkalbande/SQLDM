@@ -22,6 +22,7 @@ using Idera.SQLdm.DesktopClient.Objects;
 using Idera.SQLdm.DesktopClient.Properties;
 using Idera.SQLdm.DesktopClient.Views.Servers.Server;
 using System.Globalization;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
 {
@@ -40,8 +41,28 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
             InitializeComponent();
 
             helpTopic = HelpTopics.ServerDashboardViewDiskPanel;
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+            else
+            {
+                this.sqlServerPhysicalIoPanel.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+                this.throughputPanel.Padding = new System.Windows.Forms.Padding(10);
+                this.latencyPanel.Padding = new System.Windows.Forms.Padding(10);
+            }
         }
-
+        private void ScaleControlsAsPerResolution()
+        {
+            this.sqlServerPhysicalIoPanel.Padding = new System.Windows.Forms.Padding(10,0,10,10);
+            this.throughputPanel.Padding = new System.Windows.Forms.Padding(10);
+            this.latencyPanel.Padding = new System.Windows.Forms.Padding(10);
+            this.physicalIoChart.LegendBox.AutoSize = true;
+            this.physicalIoChart.AxesStyle = AxesStyle.Frame3D;
+            this.throughputChart.LegendBox.AutoSize = true;
+            this.throughputChart.LegendBox.Style = LegendBoxStyles.HidePartial;
+            this.throughputChart.AxesStyle = AxesStyle.Math;
+            this.latencyChart.LegendBox.AutoSize = true;
+            this.latencyChart.AxesStyle = AxesStyle.FlatFrame;
+        }
         internal override void Initialize(ServerBaseView baseView, ServerSummaryHistoryData history)
         {
             base.Initialize(baseView, history);

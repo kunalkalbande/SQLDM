@@ -9,7 +9,7 @@ using Idera.SQLdm.DesktopClient.Properties;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs.AzureConfigurations
 {
-    public partial class AddEditAzureApplication : Form
+    public partial class AddEditAzureApplication : BaseDialog
     {
         #region private properties
         private readonly AzureApplication azureApplication;

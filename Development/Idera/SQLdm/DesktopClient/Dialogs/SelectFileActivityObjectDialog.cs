@@ -26,6 +26,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public SelectFileActivityObjectDialog(ObjectType objectType, IEnumerable<string> available, IEnumerable<string> selected)
         {
+            this.DialogHeader = "Select Object";
             InitializeComponent();
 
             this.objectType = objectType;

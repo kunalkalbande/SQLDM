@@ -18,7 +18,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs {
     /// <summary>
     /// This class was explicitly created to support the ApplicationContext class.
     /// </summary>
-    public partial class LicenseChecker : Form {
+    public partial class LicenseChecker : BaseDialog
+    {
         private bool _passed;
         private bool _activated;
 

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.designLabel = new System.Windows.Forms.Label();
+            this.designLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.SuspendLayout();
             // 
             // designLabel
@@ -55,6 +55,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label designLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel designLabel;
     }
 }

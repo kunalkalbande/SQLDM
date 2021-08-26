@@ -20,6 +20,7 @@ using Idera.SQLdm.DesktopClient.Views.Servers.Server;
 using Idera.SQLdm.DesktopClient.Helpers;
 using ChartFX.WinForms;
 using System.Data;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
 {
@@ -37,8 +38,8 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
         private Logger logger;
         protected string helpTopic = HelpTopics.ServerDashboardView;
 
-        protected readonly Color headerBackColor;
-        protected readonly Color headerBackColor2;
+        protected Color headerBackColor;
+        protected Color headerBackColor2;
         protected readonly Color headerForeColor;
 
         protected static readonly Color selectColor = Color.FromArgb(245, 159, 75);
@@ -75,10 +76,9 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
         public DashboardControl()
         {
             InitializeComponent();
-
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
             // pull the normal colors from the designer so they match
-            headerBackColor = dashboardHeaderStrip.BackColor;
-            headerBackColor2 = dashboardHeaderStrip.BackColor2;
+            setBackColor();
             headerForeColor = dashboardHeaderStrip.ForeColor;
         }
 
@@ -520,6 +520,18 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
         internal virtual void OnServerAlertConfigurationChanged(IEnumerable<MetricThresholdEntry> thresholdEntries)
         {
 
+        }
+
+        private void setBackColor()
+        {
+            headerBackColor = dashboardHeaderStrip.BackColor;
+            headerBackColor2 = dashboardHeaderStrip.BackColor2;
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            Invalidate();
+            setBackColor();
         }
 
         #endregion

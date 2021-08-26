@@ -1,3 +1,5 @@
+using System.Drawing;
+
 namespace Idera.SQLdm.DesktopClient.Controls
 {
     partial class Office2007PropertyPage
@@ -26,7 +28,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
         /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private void InitializeComponent(bool isDarkThemeSelected = false)
         {
             this.backgroundPanel = new Idera.SQLdm.DesktopClient.Controls.GradientPanel();
             this.contentPanel = new Idera.SQLdm.DesktopClient.Controls.GradientPanel();
@@ -42,8 +44,6 @@ namespace Idera.SQLdm.DesktopClient.Controls
             // 
             // backgroundPanel
             // 
-            this.backgroundPanel.BackColor2 = System.Drawing.Color.White;
-            this.backgroundPanel.BorderColor = System.Drawing.SystemColors.ControlDark;
             this.backgroundPanel.Controls.Add(this.contentPanel);
             this.backgroundPanel.Controls.Add(this.headerPanel);
             this.backgroundPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -57,8 +57,6 @@ namespace Idera.SQLdm.DesktopClient.Controls
             // 
             // contentPanel
             // 
-            this.contentPanel.BackColor2 = System.Drawing.Color.White;
-            this.contentPanel.BorderColor = System.Drawing.SystemColors.ControlDark;
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPanel.FillStyle = Idera.SQLdm.DesktopClient.Controls.GradientPanelFillStyle.Solid;
             this.contentPanel.Location = new System.Drawing.Point(3, 70);
@@ -71,9 +69,6 @@ namespace Idera.SQLdm.DesktopClient.Controls
             // 
             // headerPanel
             // 
-            this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.headerPanel.BackColor2 = System.Drawing.Color.White;
-            this.headerPanel.BorderColor = System.Drawing.SystemColors.ControlDark;
             this.headerPanel.Controls.Add(this.headerImagePanel);
             this.headerPanel.Controls.Add(this.descriptionLabel);
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -102,7 +97,6 @@ namespace Idera.SQLdm.DesktopClient.Controls
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.descriptionLabel.BackColor = System.Drawing.Color.Transparent;
             this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLabel.ForeColor = System.Drawing.SystemColors.WindowText;
             this.descriptionLabel.Location = new System.Drawing.Point(68, 18);
             this.descriptionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.descriptionLabel.Name = "descriptionLabel";
@@ -123,7 +117,10 @@ namespace Idera.SQLdm.DesktopClient.Controls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            if (isDarkThemeSelected)
+                applyDarkThemeColors();
+            else
+                applyLightThemeColors();
             this.Controls.Add(this.backgroundPanel);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Office2007PropertyPage";
@@ -134,6 +131,40 @@ namespace Idera.SQLdm.DesktopClient.Controls
             ((System.ComponentModel.ISupportInitialize)(this._picBoxImageHeader)).EndInit();
             this.ResumeLayout(false);
 
+        }
+
+        public void applyDarkThemeColors()
+        {
+            this.backgroundPanel.BackColor2 = ColorTranslator.FromHtml("#012A4F");
+            this.backgroundPanel.BorderColor = ColorTranslator.FromHtml("#E4E5EA");
+
+            this.contentPanel.BackColor2 = ColorTranslator.FromHtml("#012A4F");
+            this.contentPanel.BorderColor = ColorTranslator.FromHtml("#E4E5EA");
+
+            this.headerPanel.BackColor = ColorTranslator.FromHtml("#012A4F");
+            this.headerPanel.BackColor2 = ColorTranslator.FromHtml("#012A4F");
+            this.headerPanel.BorderColor = ColorTranslator.FromHtml("#E4E5EA");
+
+            this.descriptionLabel.ForeColor = ColorTranslator.FromHtml("#E4E5EA");
+
+            this.BackColor = ColorTranslator.FromHtml("#012A4F");
+        }
+
+        public void applyLightThemeColors()
+        {
+            this.backgroundPanel.BackColor2 = System.Drawing.Color.White;
+            this.backgroundPanel.BorderColor = System.Drawing.SystemColors.ControlDark;
+
+            this.contentPanel.BackColor2 = System.Drawing.Color.White;
+            this.contentPanel.BorderColor = System.Drawing.SystemColors.ControlDark;
+
+            this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.headerPanel.BackColor2 = System.Drawing.Color.White;
+            this.headerPanel.BorderColor = System.Drawing.SystemColors.ControlDark;
+
+            this.descriptionLabel.ForeColor = System.Drawing.SystemColors.WindowText;
+
+            this.BackColor = System.Drawing.Color.White;
         }
 
         #endregion

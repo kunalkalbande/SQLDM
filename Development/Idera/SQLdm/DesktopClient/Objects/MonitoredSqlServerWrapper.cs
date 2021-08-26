@@ -23,7 +23,7 @@ namespace Idera.SQLdm.DesktopClient.Objects
         private MonitoredSqlServer instance;
         private AlertConfiguration alertConfiguration;
         private string machineName;
-
+        private decimal _baseHealthIndex;
         private BackgroundWorker refreshWorker;
         private bool refreshing = false;
 
@@ -50,6 +50,7 @@ namespace Idera.SQLdm.DesktopClient.Objects
                 FireChanged();
             }
         }
+
         public int Id
         {
             get
@@ -60,26 +61,7 @@ namespace Idera.SQLdm.DesktopClient.Objects
                 }
             }
         }
-        public int RepoId
-        {
-            get
-            {
-                lock (SyncRoot)
-                {
-                    return instance.RepoId;
-                }
-            }
-        }
-        public int InstanceId
-        {
-            get
-            {
-                lock (SyncRoot)
-                {
-                    return instance.ClusterRepoId;
-                }
-            }
-        }
+
         public string InstanceName
         {
             get
@@ -135,13 +117,22 @@ namespace Idera.SQLdm.DesktopClient.Objects
             }
         }
 
+        public decimal BaseHealthIndex
+        {
+            get { return _baseHealthIndex; }
+            set
+            {
+                _baseHealthIndex = value;
+            }
+        }
+
         public AlertConfiguration AlertConfiguration
         {
             get
             {
                 if (alertConfiguration == null)
                 {
-                    alertConfiguration = new AlertConfiguration(InstanceId);
+                    alertConfiguration = new AlertConfiguration(Id);
                 }
                 return alertConfiguration;
             }
@@ -243,7 +234,7 @@ namespace Idera.SQLdm.DesktopClient.Objects
             IManagementService managementService =
                 ManagementServiceHelper.GetDefaultService(Settings.Default.ActiveRepositoryConnection.ConnectionInfo);
 
-            string xml = managementService.ForceScheduledRefresh(InstanceId);
+            string xml = managementService.ForceScheduledRefresh(Id);
 
             XmlDocument document = null;
             if (xml != null)
@@ -258,7 +249,7 @@ namespace Idera.SQLdm.DesktopClient.Objects
                 if (document.DocumentElement.ChildNodes.Count > 0)
                 {
                     XmlNode node = document.DocumentElement.FirstChild;
-                    MonitoredSqlServerStatus currentStatus = ApplicationModel.Default.GetInstanceStatus(InstanceId);
+                    MonitoredSqlServerStatus currentStatus = ApplicationModel.Default.GetInstanceStatus(Id);
                     if (currentStatus != null)
                     {
                         currentStatus.Update(node);
@@ -298,10 +289,5 @@ namespace Idera.SQLdm.DesktopClient.Objects
             Instance = instance;
         }
     }
-    public class ClusterRepoInstance
-    {
-        public int Id { get; set; }
-        public int ServerId { get; set; }
-        public int RepoId { get; set; }
-    }
+
 }

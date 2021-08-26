@@ -8,7 +8,7 @@ using Infragistics.Win.Misc;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class AddJobFilter : Form
+    public partial class AddJobFilter : BaseDialog
     {
 
         private const string WILDCARD = "%";
@@ -20,6 +20,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public AddJobFilter(int instanceID, bool editStep)
         {
+            this.DialogHeader = "Add Job Filter";
             InitializeComponent();
 
             this.instanceId = instanceID;

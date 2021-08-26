@@ -20,7 +20,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Properties;
     using Wintellect.PowerCollections;
 
-    public partial class ApplyCustomCounterToServersDialog : Form
+    public partial class ApplyCustomCounterToServersDialog : BaseDialog
     {
         private const string NewTagToolKey = "New tag...";
 
@@ -54,6 +54,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public ApplyCustomCounterToServersDialog(int initialMetric)
         {
+            this.DialogHeader = "Link Custom Counter";
             InitializeComponent();
             selectedMetricID = initialMetric;
             this.AdaptFontSize();

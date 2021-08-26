@@ -11,7 +11,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using Common.UI.Dialogs;
     using Infragistics.Win.Misc;
 
-    public partial class ProgramDestinationDialog : Form
+    public partial class ProgramDestinationDialog : BaseDialog
     {
         private ProgramDestination destination;
 
@@ -20,6 +20,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public ProgramDestinationDialog()
         {
+            this.DialogHeader = "Program Action";
             InitializeComponent();
             pgmCaretData = new CaretData();
             pgmCaretData.editor = programTextBox;

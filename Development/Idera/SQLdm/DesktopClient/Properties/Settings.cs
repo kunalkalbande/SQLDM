@@ -13,9 +13,6 @@ using Idera.SQLdm.DesktopClient.Helpers;
 using Idera.SQLdm.Common.Objects;
 using System.Xml.Serialization;
 using System.IO;
-using System.Data.SqlClient;
-using Idera.SQLdm.Common.Configuration;
-using System.Linq;
 
 namespace Idera.SQLdm.DesktopClient.Properties 
 {
@@ -79,37 +76,7 @@ namespace Idera.SQLdm.DesktopClient.Properties
             // 88 refers to the DPI settings
             return (short)GetDeviceCaps(desktop, 88);
         }
-       private List<RepositoryConnection> repositoryConnections = null;
-        private int currentRepoId;
-        public int CurrentRepoId
-        {
-            get
-            {
-                if (currentRepoId == 0) currentRepoId = RepoId;
-                return currentRepoId;
-            }
-            set
-            {
-                currentRepoId = value;
-            }
-        }
-        public int RepoId
-        {
-            get;
-            set;
-        }
-        private int prevRepoId;
-        public int PrevRepoId
-        {
-            get
-            {
-                return prevRepoId;
-            }
-            set
-            {
-                prevRepoId = value;
-            }
-        }
+
         [UserScopedSetting]
         [DebuggerNonUserCode]
         [SettingsSerializeAs(SettingsSerializeAs.Binary)]
@@ -117,52 +84,12 @@ namespace Idera.SQLdm.DesktopClient.Properties
         {
             get
             {
-                if (repositoryConnections==null)
+                if (this["RepositoryConnections"] == null)
                 {
-                    PrevRepoId = CurrentRepoId;
-                    using (SqlConnection connection = new SqlConnection(
-       "Server=ULTP851;Database=SqldmClusterRepository;Trusted_Connection=true"))
-                    {
-                        connection.Open();
-
-                        using (SqlCommand cmd = new SqlCommand())
-                        {
-                            cmd.Connection = connection;
-                            cmd.CommandText = "select * from RepositoryConnections";
-                            var reader = cmd.ExecuteReader();
-                            if (reader.HasRows)
-                            {
-                                repositoryConnections = new List<RepositoryConnection>();
-
-                                while (reader.Read())
-                                {
-                                    SqlConnectionInfo connectionInfo = new SqlConnectionInfo();
-                                    currentRepoId = reader.GetInt32(0);
-                                    connectionInfo.InstanceName = reader.GetString(1);
-                                    connectionInfo.DatabaseName = reader.GetString(2);
-                                    connectionInfo.UseIntegratedSecurity = reader.GetBoolean(6);
-                                    if(connectionInfo.UseIntegratedSecurity==false)
-                                    {
-                                        connectionInfo.UserName = reader.GetString(3);
-                                        connectionInfo.EncryptedPassword = reader.GetString(4);
-                                        
-                                    }
-                                    RepositoryConnection repositoryConnection = new RepositoryConnection(connectionInfo);
-                                    repositoryConnection.RepositiryId = currentRepoId;
-                                    repositoryConnections.Add(repositoryConnection);
-                                }
-                            }
-                        }
-                        connection.Close();
-                    }
+                    this["RepositoryConnections"] = new List<RepositoryConnection>();
                 }
-                return repositoryConnections;
-                //if (this["RepositoryConnections"] == null)
-                //{
-                //    this["RepositoryConnections"] = new List<RepositoryConnection>();
-                //}
 
-                //return ((List<RepositoryConnection>)(this["RepositoryConnections"]));
+                return ((List<RepositoryConnection>)(this["RepositoryConnections"]));
             }
         }
 
@@ -178,8 +105,7 @@ namespace Idera.SQLdm.DesktopClient.Properties
                 {
                     // Since the RepositoryConnectionTimeoutInSeconds is an application level setting,
                     // it needs to be applied to previously saved connections
-                    var conn = repositoryConnections.Where(x => x.RepositiryId == currentRepoId).FirstOrDefault();
-                    RepositoryConnection activeConnection =conn==null? RepositoryConnections[RepositoryConnections.Count - 1]:conn;
+                    RepositoryConnection activeConnection = RepositoryConnections[RepositoryConnections.Count - 1];
                     activeConnection.ConnectionInfo.ConnectionTimeout = RepositoryConnectionTimeoutInSeconds;
                     activeConnection.ConnectionInfo.AllowAsynchronousCommands = false;
                     return activeConnection;

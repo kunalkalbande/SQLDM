@@ -16,7 +16,7 @@ using System.Diagnostics;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    internal partial class RepositoryConnectionDialog : Form
+    internal partial class RepositoryConnectionDialog : BaseDialog
     {
         private static readonly Logger Log = Logger.GetLogger("RepositoryConnectionDialog");
         private static readonly Logger StartUpTimeLog = Logger.GetLogger(TextConstants.StartUpTimeLogName);//SqlDm 10.2 (Tushar)--Adding start up logger.
@@ -68,6 +68,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public RepositoryConnectionDialog()
         {
+            this.DialogHeader = "Connect to SQLDM Repository";
             InitializeComponent();
             Icon = Resources.ConnectionIcon;
             AcceptButton = connectButton;
@@ -81,6 +82,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // is if a successful connection has been established.
             DialogResult = DialogResult.Cancel;
             AdaptFontSize();
+            //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
         }
 
         private void InitializeForm()
@@ -604,6 +608,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+        
+        //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+        private void ScaleControlsAsPerResolution()
+        {
+            this.headerImage.SizeMode = PictureBoxSizeMode.StretchImage;
         }
     }
 }

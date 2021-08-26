@@ -22,6 +22,7 @@ using Idera.SQLdm.DesktopClient.Objects;
 using Idera.SQLdm.DesktopClient.Properties;
 using Idera.SQLdm.DesktopClient.Views.Servers.Server;
 using Idera.SQLdm.Common.Snapshots;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
 {
@@ -30,12 +31,16 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
         private const string chartTitleFormat = "{0} {1}";
         private Control contextControl = null;
         private static BBS.TracerX.Logger LOG = BBS.TracerX.Logger.GetLogger("CPUControl");
+
         public CpuControl() : base(DashboardPanel.Cpu)
         {
             InitializeComponent();
-            
             helpTopic = HelpTopics.ServerDashboardViewCpuPanel;
+            updateLinearScaleFontAsPerTheme(this.linearScale1);
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
+
+        
 
         internal override void Initialize(ServerBaseView baseView, ServerSummaryHistoryData history)
         {
@@ -51,6 +56,9 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
             }
             InitializeCharts();
             ConfigureDataSource();
+            //SQLDM-30848, adapting resolutions, Kartik
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
         }
 
         private void InitializeCharts()
@@ -468,5 +476,25 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
         }
 
         #endregion
+        //SQLDM-30848, adapting resolutions, Kartik
+        private void ScaleControlsAsPerResolution()
+        {
+            this.cpuUsageChart.LegendBox.AutoSize = true;
+            this.callRatesChart.AxisY.Max = 100D;
+            this.callRatesChart.AxisY.Min = 0D;
+            this.callRatesChart.LegendBox.LineSpacing = 1D;
+            this.cpuUsagePanel.Padding = new System.Windows.Forms.Padding(0,10,10,10);
+            this.callRatesPanel.Padding = new System.Windows.Forms.Padding(0,10,10,10);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            updateLinearScaleFontAsPerTheme(this.linearScale1);
+        }
+        public void updateLinearScaleFontAsPerTheme(LinearScale linearscale)
+        {
+            ThemeSetter ts = new ThemeSetter();
+            ts.SetLinearScale(linearscale);
+        }
     }
 }

@@ -550,6 +550,7 @@
     <Compile Include="Snapshots\WaitStatisticsSnapshot.cs" />
     <Compile Include="Snapshots\SqlParsingHelper.cs" />
     <Compile Include="Snapshots\WmiConfigurationTestSnapshot.cs" />
+    <Compile Include="State.cs" />
     <Compile Include="Status\MonitoredObjectStateGraph.cs" />
     <Compile Include="Status\OutstandingDatabaseEventEntry.cs" />
     <Compile Include="Status\OutstandingEventEntry.cs" />

@@ -26,7 +26,7 @@ using Wintellect.PowerCollections;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class AddPermissionWizard : Form
+    public partial class AddPermissionWizard : BaseDialog
     {
         private const string NewTagToolKey = "New tag...";
         private const int WindowsAuthenticationIndex = 0;
@@ -223,7 +223,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         {
             if (_userPageCmbBxAuthentication.SelectedIndex == SQLServerAuthenticationIndex)
             {
-                _userPageLblUser.Text = "&User name:";
+                _userPageLblUser.Text = "User name:";
                 hideUserPageErrMsg();
                 userPageAllowMoveNext();
             }

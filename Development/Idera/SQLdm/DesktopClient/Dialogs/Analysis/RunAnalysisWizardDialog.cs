@@ -22,7 +22,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Analysis
         FiltersPage
     }
 
-    public partial class RunAnalysisWizard : Form
+    public partial class RunAnalysisWizard : BaseDialog
     {
         #region constants
         private const string QUERY_OPTIMIZATION = "Query Optimization";
@@ -139,6 +139,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Analysis
 
         private RunAnalysisWizard(MonitoredSqlServer serverInstance, ViewContainer vHost)
         {
+            this.DialogHeader = "Run Analysis";
             viewHost = vHost;
             try
             {
@@ -164,6 +165,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Analysis
                 waitConfig = ApplicationModel.Default.AllInstances[this.instanceID].ActiveWaitsConfiguration;
                 queryConfig = ApplicationModel.Default.AllInstances[this.instanceID].QueryMonitorConfiguration;
                 Log.Info("Successfully constructed Run Analysis Configuration popup page.");
+                SetPropertiesTheme();
+                Infragistics.Windows.Themes.ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
             }
             catch (Exception ex)
             {

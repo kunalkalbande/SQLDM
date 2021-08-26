@@ -19,11 +19,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Idera.SQLdm.DesktopClient.Objects;
     using Idera.SQLdm.DesktopClient.Properties;
     using Infragistics.Win;
+    using Infragistics.Windows.Themes;
     using Ionic.Zip;
     using System.Diagnostics;
     using Resources = Idera.SQLdm.DesktopClient.Properties.Resources;
 
-    public partial class SystemDiagnosticsDialog : Form
+    public partial class SystemDiagnosticsDialog : BaseDialog
     {
         private ValueList testStatusValueList;
         private ValueList testValueList;
@@ -34,6 +35,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public SystemDiagnosticsDialog()
         {
+            this.DialogHeader = "System Diagnostics";
             InitializeComponent();
             _tabControl.DrawFilter = new HideFocusRectangleDrawFilter();
             _pnlPermissionServersGrid.DrawFilter = new HideFocusRectangleDrawFilter();
@@ -88,6 +90,57 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             item = new ValueListItem(Component.NewsFeedService, "Newsfeed Service");
             componentValueList.ValueListItems.Add(item);
             AdaptFontSize();
+            // AdaptScreenSize();
+            //Saurabh SQLDM - 30848 - UX - Modernization, PRD 4.2,
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+            SetGridTheme();
+            SetPropertiesTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+        //Saurabh SQLDM-30848 - UX-Modernization, PRD 4.2,
+        private void ScaleControlsAsPerResolution()
+        {
+            AutoScaleSizeHelper.Default.AutoScaleControl(this.propertiesHeaderStrip1, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.0F, 1.5F));
+            AutoScaleSizeHelper.Default.AutoScaleControl(this.desktopRepositoryDatabaseLabel, AutoScaleSizeHelper.ControlType.Control, new SizeF(2.0F, 1.75F));
+            AutoScaleSizeHelper.Default.AutoScaleControl(this._generalHdrStrpStatus, AutoScaleSizeHelper.ControlType.Control,new SizeF(1.0F, 1.5F));
+            AutoScaleSizeHelper.Default.AutoScaleControl(this.desktopRepositoryHostLabel, AutoScaleSizeHelper.ControlType.Control,new SizeF(2.0F, 1.75F));
+            AutoScaleSizeHelper.Default.AutoScaleControl(this.label12, AutoScaleSizeHelper.ControlType.Control,new SizeF(2.0F, 1.75F));
+            AutoScaleSizeHelper.Default.AutoScaleControl(this.label10, AutoScaleSizeHelper.ControlType.Control, new SizeF(2.0F, 1.75F));
+            this.propertiesHeaderStrip1.Location = new Point(this.propertiesHeaderStrip1.Location.X, this.propertiesHeaderStrip1.Location.Y + 20);
+            this.stackLayoutPanel1.Location = new Point(this.stackLayoutPanel1.Location.X, this.stackLayoutPanel1.Location.Y + 70);
+            AutoScaleSizeHelper.Default.AutoScaleControl(this._pnlPermissionStatusHdr, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.0F,1.5F));
+            AutoScaleSizeHelper.Default.AutoScaleControl(this._pnlPermissionSysadminLbl, AutoScaleSizeHelper.ControlType.Control, new SizeF(2.0F, 1.75F)); 
+            AutoScaleSizeHelper.Default.AutoScaleControl(this._pnlPermissionAdminVal, AutoScaleSizeHelper.ControlType.Control, new SizeF(2.0F, 1.75F)); 
+            AutoScaleSizeHelper.Default.AutoScaleControl(this._pnlPermissionAdminLbl, AutoScaleSizeHelper.ControlType.Control, new SizeF(2.0F, 1.75F));
+            AutoScaleSizeHelper.Default.AutoScaleControl(this._pnlPermissionSysadminVal, AutoScaleSizeHelper.ControlType.Control, new SizeF(2.0F, 1.75F)); 
+            AutoScaleSizeHelper.Default.AutoScaleControl(this._pnlPermissionAssignedServersHdr, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.0F, 1.5F));
+            this._pnlPermissionAssignedServersHdr.Location = new Point(this.propertiesHeaderStrip1.Location.X, this.propertiesHeaderStrip1.Location.Y + 20);
+            this._pnlPermissionServersGrid.Location = new Point(this.stackLayoutPanel1.Location.X, this.stackLayoutPanel1.Location.Y + 20);
+            this._pnlPermissionServersGrid.Height -= 100;
+            this.Size = new Size(this.Width, this.Height + 250);
+            this._tabControl.TabSize = new System.Drawing.Size(0, 200);
+           
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+            SetPropertiesTheme();
+        }
+
+        void SetPropertiesTheme()
+        {
+            var propertiesThemeManager = new Controls.PropertiesThemeManager();
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage1);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage2);
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this._pnlPermissionServersGrid);
         }
 
         private void SystemDiagnosticsDialog_Load(object sender, EventArgs e)
@@ -574,6 +627,13 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
         }
 
+        /// <summary>
+        /// Adapts the resolution for the size, based on the DPI applied for the operating system.
+        /// </summary>
+        private void AdaptScreenSize()
+        {
+            AutoScaleSizeHelper.Default.AutoScaleControl(this, AutoScaleSizeHelper.ControlType.Container);
+        }
 
         //SQLdm 8.5 (Ankit Srivastava): for One Click Diagnostics - starts here
         private void collectAndLogButton_Click(object sender, EventArgs e)

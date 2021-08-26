@@ -1,1 +1,5 @@
-Infragistics.Win.UltraWinToolTip.UltraToolTipManager, Infragistics2.Win.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+ChartFX.WinForms.Gauge.RadialGauge, ChartFX.WinForms.Gauge, Version=1.0.2601.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce
+ChartFX.WinForms.Gauge.HorizontalGauge, ChartFX.WinForms.Gauge, Version=1.0.2601.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce
+ChartFX.WinForms.Chart, ChartFX.WinForms, Version=7.0.2664.18481, Culture=neutral, PublicKeyToken=a1878e2052c08dce
+ActiproSoftware.Products.SyntaxEditor.SyntaxEditorLicenseToken, ActiproSoftware.SyntaxEditor.WinForms, Version=14.1.323.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763
+Divelements.WizardFramework.Wizard, Divelements.WizardFramework, Version=1.1.2.1, Culture=neutral, PublicKeyToken=75b7ec17dd7c14c3

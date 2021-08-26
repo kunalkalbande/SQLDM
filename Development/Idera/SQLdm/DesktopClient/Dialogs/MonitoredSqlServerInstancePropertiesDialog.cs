@@ -80,7 +80,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         WaitStatistics = 7
     }
 
-    public partial class MonitoredSqlServerInstancePropertiesDialog : Form
+    public partial class MonitoredSqlServerInstancePropertiesDialog : BaseDialog
     {
         private const string PasswordDecoyText = "XXXXXXXXXXXXXXX";
         private const string NewTagToolKey = "New tag...";
@@ -140,11 +140,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         public MonitoredSqlServerInstancePropertiesDialog(int id)
         {
             this.id = id;
-
             MonitoredSqlServer instance =
                 RepositoryHelper.GetMonitoredSqlServer(Settings.Default.ActiveRepositoryConnection.ConnectionInfo, id);
 
             this.alertRefreshInMinutes = instance.AlertRefresInMinutes;
+
+            this.DialogHeader ="Monitored SQL Server Properties - "+ instance.DisplayInstanceName;
 
             ApplicationModel.Default.RefreshLocalTags();
             //SQLDM 10.1 (srishti purohit)
@@ -177,6 +178,13 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             InitializeForm();
 
             this.AdaptFontSize();
+            this.Size = new Size(730, 700);
+            //SQLDM-30848, adapting resolutions, Saurabh
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+            //AdaptControlSize();
+            SetPropertiesTheme();
+            Infragistics.Windows.Themes.ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
 
         }
 
@@ -196,8 +204,35 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             cloudProviderId = configuration.CloudProviderId;
             InitializeComponent();
             InitializeForm();
-
+            this.Size = new Size(730, 700);
             this.AdaptFontSize();
+            //SQLDM-30848, adapting resolutions, Saurabh
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+            SetPropertiesTheme();
+            Infragistics.Windows.Themes.ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, System.EventArgs e)
+        {
+            SetPropertiesTheme();
+        }
+
+        void SetPropertiesTheme()
+        {
+            var propertiesThemeManager = new Controls.PropertiesThemeManager();
+            propertiesThemeManager.UpdatePropertyTheme(propertiesControl);
+            propertiesThemeManager.UpdatePropertyTheme(popularPropertiesContentPage);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage2);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage4);
+            propertiesThemeManager.UpdatePropertyTheme(maintenanceModeContentPage);
+            propertiesThemeManager.UpdatePropertyTheme(customCountersContentPage);
+            propertiesThemeManager.UpdatePropertyTheme(replicationPropertyPageContentPanel);
+            propertiesThemeManager.UpdatePropertyTheme(osContentPage);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage1);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage3);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage5);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPageAnalysisConfiguration);
         }
 
         private void AdaptFontSize()
@@ -4412,6 +4447,395 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             {
                 configuration.CloudProviderId = ((KeyValuePair<string, int>)cmbServerType.SelectedItem).Value;
             }
+        }
+        //SQLDM-30848, adapting resolutions, Saurabh
+        private void ScaleControlsAsPerResolution()
+        {
+            if (AutoScaleSizeHelper.isLargeSize)
+            {
+                this.Size = new Size(this.Size.Width+50, this.Size.Height + 70);
+                this.propertiesControl.Size = new Size(this.Size.Width - 50, this.Size.Height - 180);
+                this.okButton.Location = new Point(this.okButton.Location.X, this.propertiesControl.Size.Height + 30);
+                this.cancelButton.Location = new Point(this.cancelButton.Location.X, this.propertiesControl.Size.Height + 30);
+                this.propertiesControl.MenuListBoxWidth = 250;
+                this.propertiesControl.CustomSplitterDistance = 250;
+                this.groupBox1.Size = new Size(600, 150);
+                this.trustServerCertificateCheckbox.Location = new Point(this.trustServerCertificateCheckbox.Location.X, this.trustServerCertificateCheckbox.Location.Y + 4);
+                this.mainTableLayout.Location = new System.Drawing.Point(5, 80);
+                this.propertiesHeaderStripServerType.Size = new System.Drawing.Size(550, 40);
+                this.propertiesHeaderStrip17.Size = new System.Drawing.Size(550, 40);
+                this.propertiesHeaderStrip1.Size = new System.Drawing.Size(550, 40);
+                this.headerStrip1.Size = new System.Drawing.Size(550, 40);
+                this.headerStrip2.Size = new System.Drawing.Size(550, 40);
+                this.propertiesHeaderStrip8.Size = new System.Drawing.Size(550, 40);
+                this.tableLayoutPanel6.Size = new System.Drawing.Size(700, 800);
+                this.mainTableLayout.Size = new System.Drawing.Size(800, 900);
+                this.serverPingTimeSpanEditor.Size = new System.Drawing.Size(120, 21);
+                this.collectionIntervalTimeSpanEditor.Size = new System.Drawing.Size(120, 21);
+                this.databaseStatisticsTimeSpanEditor.Size = new System.Drawing.Size(120, 21);
+                //Baseline configuration tab
+                //this.propertyPage1.Size = new Size(this.propertyPage1.Width + 81, this.propertyPage1.Height + 50);
+                //Query Monitor tab
+                this.tableLayoutPanel18.Location = new System.Drawing.Point(5, 80);
+                this.durationThresholdLabel.Size = new Size(this.durationThresholdLabel.Width + 5, this.durationThresholdLabel.Height + 3);
+                this.tableLayoutPanel17.SetRowSpan(this.enableQueryMonitorTraceCheckBox, 2);
+                this.topPlanComboBox.Size = new Size(this.topPlanComboBox.Width + 70, this.topPlanComboBox.Height);
+                this.lblQueryPlanMessage.Size = new Size(this.lblQueryPlanMessage.Width, this.lblQueryPlanMessage.Height + 40);
+                //Activity Monitor
+                this.tableLayoutPanel4.Location = new System.Drawing.Point(5, 90);
+                this.propertiesHeaderStrip22.Size = new System.Drawing.Size(489, 35);
+                this.propertiesHeaderStrip28.Size = new System.Drawing.Size(489, 35);
+                this.lblBlockedProcessWarning.Location = new System.Drawing.Point(30, 1);
+                //Replication Page
+                this.informationBox3.Scale(new SizeF(1.2F, 1.2F));
+                this.replicationMainContainer.Location = new Point(replicationMainContainer.Location.X, replicationMainContainer.Location.Y + 50);
+                //Table statistics
+                this.tableLayoutPanel9.Scale(new SizeF(1.0F, 1.5F));
+                this.tableLayoutPanel9.Location = new Point(this.tableLayoutPanel9.Location.X, this.tableLayoutPanel9.Location.Y + 30);
+                var scale = new SizeF(1.00f, 0.75f);
+                this.quietTimeStartEditor.Width += 50;
+                this.minimumTableSize.Width += 50;
+                this.propertiesHeaderStrip9.Scale(scale);
+                this.propertiesHeaderStrip7.Scale(scale);
+                this.propertiesHeaderStrip10.Scale(scale);
+                this.propertiesHeaderStrip6.Scale(scale);
+                this.propertiesHeaderStrip5.Scale(scale);
+                //Custom Counter
+                this.informationBox7.Height += 50;
+                this.testCustomCountersButton.Location = new Point(this.testCustomCountersButton.Location.X - 10, this.testCustomCountersButton.Location.Y - 100);
+                this.tableLayoutPanel10.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                this.tableLayoutPanel10.Size = new Size(730, 970);
+                this.tableLayoutPanel10.AutoScroll = true;
+                //Maintenance Mode
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.maintenanceModeControlsContainer, AutoScaleSizeHelper.ControlType.Form, new SizeF(1.0F, 1.2F));
+                this.maintenanceModeControlsContainer.Location = new Point(this.maintenanceModeControlsContainer.Location.X, this.maintenanceModeControlsContainer.Location.Y + 20);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.panel2, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.5F, 1.5F), false);
+                this.maintenanceModeControlsContainer.Height += 300;
+                this.mmMonthlyOfTheEveryLabel.Location = new Point(this.mmMonthlyOfTheEveryLabel.Location.X + 30, this.mmMonthlyOfTheEveryLabel.Location.Y - 40);
+                this.inputOfEveryTheMonthLimiter.Location = new Point(this.inputOfEveryTheMonthLimiter.Location.X + 30, this.inputOfEveryTheMonthLimiter.Location.Y - 30);
+                this.mmMonthlyLabel2.Location = new Point(this.mmMonthlyLabel2.Location.X + 30, this.mmMonthlyLabel2.Location.Y - 40);
+                this.mmMonthlyAtLabel.Location = new Point(this.mmMonthlyAtLabel.Location.X, this.mmMonthlyAtLabel.Location.Y - 30);
+                this.inputDayLimiter.Location = new Point(this.inputDayLimiter.Location.X, this.inputDayLimiter.Location.Y - 30);
+                this.mmMonthlyOfEveryLabel.Location = new Point(this.mmMonthlyOfEveryLabel.Location.X, this.mmMonthlyOfEveryLabel.Location.Y - 40);
+                this.inputOfEveryMonthLimiter.Location = new Point(this.inputOfEveryMonthLimiter.Location.X, this.inputOfEveryMonthLimiter.Location.Y - 30);
+                this.mmMonthlyLabel1.Location = new Point(this.mmMonthlyLabel1.Location.X, this.mmMonthlyLabel1.Location.Y - 40);
+
+                //OS Metrics
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.osMetricsMainContainer, AutoScaleSizeHelper.ControlType.Form, new SizeF(1.0F, 1.5F));
+                this.osMetricsMainContainer.Location = new Point(this.osMetricsMainContainer.Location.X, this.osMetricsMainContainer.Location.Y + 20);
+                this.wmiCredentialsSecondaryContainer.Scale(new SizeF(1.25F, 1.00F));
+                this.wmiCredentialsContainer.Scale(new SizeF(1.25F, 1.00F));
+                this.wmiTestButton.Scale(new SizeF(1.0F, 0.75F));
+                //Disk Drives
+                AutoScaleFontResolutionHelper.Default.AutoScaleFont(this.diskDriversMainContainer, AutoScaleFontHelper.ControlType.Container);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.diskDriversMainContainer, AutoScaleSizeHelper.ControlType.Form, new SizeF(1.0F, 1.5F));
+                this.diskDriversMainContainer.Location = new Point(this.diskDriversMainContainer.Location.X, this.diskDriversMainContainer.Location.Y + 20);
+                this.removeDiskButton.Width -= 35;
+                this.removeDiskButton.Height -= 20;
+                this.addDiskButton.Width -= this.removeDiskButton.Width;
+                this.addDiskButton.Height -= this.removeDiskButton.Height;
+
+                //cluster settings
+                //AutoScaleSizeHelper.Default.AutoScaleControl(this.clusterSettingsMainContainer, AutoScaleSizeHelper.ControlType.Form, new SizeF(1.0F, 1.5F));
+                this.clusterSettingsMainContainer.Location = new Point(this.clusterSettingsMainContainer.Location.X, this.clusterSettingsMainContainer.Location.Y + 20);
+                this.informationBox10.Height += 20;
+                //wait monitoring
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.waitMonitoringMainContainer, AutoScaleSizeHelper.ControlType.Form, new SizeF(1.0F, 1.65F));
+                this.waitMonitoringMainContainer.Location = new Point(this.waitMonitoringMainContainer.Location.X, this.waitMonitoringMainContainer.Location.Y + 20);
+                this.informationBox13.Dock = DockStyle.Left;
+                this.informationBox12.Dock = DockStyle.None;
+                this.informationBox12.Size = new Size(this.informationBox12.Width + 300, this.informationBox12.Height);
+                this.tableLayoutPanel3.Scale(new SizeF(1.25F, 1.00F));
+                this.collectStatisticsSecondaryContainer.Scale(new SizeF(1.25F, 1.00F));
+                this.waitStatisticsFilterButton.Scale(new SizeF(1.5F, 1.0f));
+                this.waitStatisticsStartTime.Scale(new SizeF(1.25F, 1.0f));
+                this.refreshWaitCollectorStatus.Width -= 10;
+                this.refreshWaitCollectorStatus.Height -= 10;
+                this.waitStatisticsFilterButton.Width -= 40;
+                this.waitStatisticsFilterButton.Height -= 20;
+                this.Width += 50;
+                // Virtualization Page
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.virtualizationMainContainer, AutoScaleSizeHelper.ControlType.Form, new SizeF(1.0F, 1.5F));
+                this.virtualizationMainContainer.Location = new Point(this.virtualizationMainContainer.Location.X, this.virtualizationMainContainer.Location.Y + 20);
+                this.btnVMConfig.Scale(new SizeF(0.5F, 1.0F));
+                this.tableLayoutPanel5.Scale(new SizeF(3.0F, 1.0F));
+
+                //this.propertiesControl.AllowListResize = true;
+                return;
+            }
+            if(AutoScaleSizeHelper.isXLargeSize)
+            {
+                this.Size = new Size(this.Size.Width + 100, this.Size.Height + 170);
+                this.propertiesControl.Size = new Size(this.Size.Width - 50, this.Size.Height - 180);
+                this.okButton.Location = new Point(this.okButton.Location.X, this.propertiesControl.Size.Height + 30);
+                this.cancelButton.Location = new Point(this.cancelButton.Location.X, this.propertiesControl.Size.Height + 30);
+                this.propertiesControl.MenuListBoxWidth = 250;
+                this.propertiesControl.CustomSplitterDistance = 250;
+                //General Tab
+                this.groupBox1.Size = new Size(600, 150);
+                this.trustServerCertificateCheckbox.Location = new Point(this.trustServerCertificateCheckbox.Location.X, this.trustServerCertificateCheckbox.Location.Y + 4);
+                this.mainTableLayout.Location = new System.Drawing.Point(5, 80);
+                this.propertiesHeaderStripServerType.Size = new System.Drawing.Size(489, 40);
+                this.propertiesHeaderStrip17.Size = new System.Drawing.Size(489, 40);
+                this.propertiesHeaderStrip1.Size = new System.Drawing.Size(489, 40);
+                this.headerStrip1.Size = new System.Drawing.Size(489, 40);
+                this.headerStrip2.Size = new System.Drawing.Size(489, 40);
+                this.propertiesHeaderStrip8.Size = new System.Drawing.Size(489, 40);
+                this.tableLayoutPanel6.Size = new System.Drawing.Size(700, 800);
+                this.mainTableLayout.Size = new System.Drawing.Size(1000, 900);
+                this.serverPingTimeSpanEditor.Size = new System.Drawing.Size(120, 21);
+                this.collectionIntervalTimeSpanEditor.Size = new System.Drawing.Size(120, 21);
+                this.databaseStatisticsTimeSpanEditor.Size = new System.Drawing.Size(120, 21);
+                //Baseline configuration tab
+                this.propertyPage1.Size = new Size(this.propertyPage1.Width + 81, this.propertyPage1.Height + 50);
+                //Query Monitor tab
+                this.tableLayoutPanel18.Location = new System.Drawing.Point(5, 80);
+                this.durationThresholdLabel.Size = new Size(this.durationThresholdLabel.Width + 5, this.durationThresholdLabel.Height + 3);
+                this.tableLayoutPanel17.SetRowSpan(this.enableQueryMonitorTraceCheckBox, 2);
+                this.topPlanComboBox.Size = new Size(this.topPlanComboBox.Width + 70, this.topPlanComboBox.Height);
+                this.lblQueryPlanMessage.Size = new Size(this.lblQueryPlanMessage.Width, this.lblQueryPlanMessage.Height + 40);
+                //this.queryMonitorAdvancedOptionsButton.Location = new Point(this.queryMonitorAdvancedOptionsButton.Location.X - 30, this.queryMonitorAdvancedOptionsButton.Location.Y - 50);
+                //Activity Monitor
+                this.tableLayoutPanel4.Location = new System.Drawing.Point(5, 90);
+                this.propertiesHeaderStrip22.Size = new System.Drawing.Size(489, 35);
+                this.propertiesHeaderStrip28.Size = new System.Drawing.Size(489, 35);
+                this.lblBlockedProcessWarning.Location = new System.Drawing.Point(30, 1);
+                //Replication Page
+                this.informationBox3.Scale(new SizeF(1.2F, 1.2F));
+                this.replicationMainContainer.Location = new Point(replicationMainContainer.Location.X, replicationMainContainer.Location.Y + 50);
+                //Table statistics
+                this.tableLayoutPanel9.Scale(new SizeF(1.0F, 1.5F));
+                this.tableLayoutPanel9.Location = new Point(this.tableLayoutPanel9.Location.X, this.tableLayoutPanel9.Location.Y + 30);
+                var scale = new SizeF(1.00f, 0.75f);
+                this.quietTimeStartEditor.Width += 50;
+                this.minimumTableSize.Width += 50;
+                this.propertiesHeaderStrip9.Scale(scale);
+                this.propertiesHeaderStrip7.Scale(scale);
+                this.propertiesHeaderStrip10.Scale(scale);
+                this.propertiesHeaderStrip6.Scale(scale);
+                this.propertiesHeaderStrip5.Scale(scale);
+                //Custom Counter
+                this.informationBox7.Height += 50;
+                this.testCustomCountersButton.Location = new Point(this.testCustomCountersButton.Location.X - 10, this.testCustomCountersButton.Location.Y - 100);
+                this.tableLayoutPanel10.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                this.tableLayoutPanel10.Size = new Size(880, 1150);
+                this.customCounterStackLayoutPanel.Location = new Point(this.customCounterStackLayoutPanel.Location.X, this.customCounterStackLayoutPanel.Location.Y - 20);
+                //Maintenance Mode
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.maintenanceModeControlsContainer, AutoScaleSizeHelper.ControlType.Form, new SizeF(1.0F, 1.2F));
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.mmMonthlyRecurringPanel, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.5F, 1.25F), false);
+                this.maintenanceModeControlsContainer.Location = new Point(this.maintenanceModeControlsContainer.Location.X, this.maintenanceModeControlsContainer.Location.Y + 20);
+                this.maintenanceModeControlsContainer.Height += 300;
+                this.mmMonthlyOfTheEveryLabel.Location = new Point(this.mmMonthlyOfTheEveryLabel.Location.X + 20, this.mmMonthlyOfTheEveryLabel.Location.Y - 50);
+                this.inputOfEveryTheMonthLimiter.Location = new Point(this.inputOfEveryTheMonthLimiter.Location.X + 20, this.inputOfEveryTheMonthLimiter.Location.Y - 40);
+                this.mmMonthlyLabel2.Location = new Point(this.mmMonthlyLabel2.Location.X + 20, this.mmMonthlyLabel2.Location.Y - 50);
+                this.mmMonthlyAtLabel.Location = new Point(this.mmMonthlyAtLabel.Location.X, this.mmMonthlyAtLabel.Location.Y - 50);
+                this.inputDayLimiter.Location = new Point(this.inputDayLimiter.Location.X, this.inputDayLimiter.Location.Y - 40);
+                this.mmMonthlyOfEveryLabel.Location = new Point(this.mmMonthlyOfEveryLabel.Location.X, this.mmMonthlyOfEveryLabel.Location.Y - 50);
+                this.inputOfEveryMonthLimiter.Location = new Point(this.inputOfEveryMonthLimiter.Location.X, this.inputOfEveryMonthLimiter.Location.Y - 40);
+                this.mmMonthlyLabel1.Location = new Point(this.mmMonthlyLabel1.Location.X, this.mmMonthlyLabel1.Location.Y - 40);
+                this.mmRecurringBegin.Width += 50;
+                this.mmRecurringDuration.Width += 50;
+                this.flowLayoutPanel4.Width += 50;
+                this.flowLayoutPanel3.Width += 50;
+                this.mmBeginSatCheckbox.Location = new Point(this.mmBeginSatCheckbox.Location.X + 150, this.mmBeginSatCheckbox.Location.Y);
+                this.mmBeginFriCheckbox.Location = new Point(this.mmBeginFriCheckbox.Location.X + 125, this.mmBeginFriCheckbox.Location.Y);
+                this.mmBeginThurCheckbox.Location = new Point(this.mmBeginThurCheckbox.Location.X + 100, this.mmBeginThurCheckbox.Location.Y);
+                this.mmBeginWedCheckbox.Location = new Point(this.mmBeginWedCheckbox.Location.X + 75, this.mmBeginWedCheckbox.Location.Y);
+                this.mmBeginTueCheckbox.Location = new Point(this.mmBeginTueCheckbox.Location.X + 50, this.mmBeginTueCheckbox.Location.Y);
+                this.mmBeginMonCheckbox.Location = new Point(this.mmBeginMonCheckbox.Location.X + 25, this.mmBeginMonCheckbox.Location.Y);
+                this.mmBeginSatCheckbox.Width += 20;
+                this.mmBeginFriCheckbox.Width += 20;
+                this.mmBeginThurCheckbox.Width += 20;
+                this.mmBeginWedCheckbox.Width += 20;
+                this.mmBeginTueCheckbox.Width += 20;
+                this.mmBeginMonCheckbox.Width += 20;
+                this.mmBeginSunCheckbox.Width += 20;
+                this.mmRecurringPanel.Size = new Size(this.mmRecurringPanel.Width + 150, this.mmRecurringPanel.Height);
+                this.mmOnceBeginTime.Width += 50;
+                this.mmOnceBeginDate.Width += 50;
+                this.mmOnceStopTime.Width += 50;
+                this.mmOnceStopDate.Width += 50;
+                //OS Metrics
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.osMetricsMainContainer, AutoScaleSizeHelper.ControlType.Form, new SizeF(1.0F, 1.5F));
+                this.osMetricsMainContainer.Location = new Point(this.osMetricsMainContainer.Location.X, this.osMetricsMainContainer.Location.Y + 20);
+                this.wmiCredentialsSecondaryContainer.Scale(new SizeF(1.25F, 1.00F));
+                this.wmiCredentialsContainer.Scale(new SizeF(1.25F, 1.00F));
+                this.wmiTestButton.Scale(new SizeF(1.0F, 0.75F));
+                //Disk Drives
+                AutoScaleFontResolutionHelper.Default.AutoScaleFont(this.diskDriversMainContainer, AutoScaleFontHelper.ControlType.Container);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.diskDriversMainContainer, AutoScaleSizeHelper.ControlType.Form, new SizeF(1.0F, 1.5F));
+                this.diskDriversMainContainer.Location = new Point(this.diskDriversMainContainer.Location.X, this.diskDriversMainContainer.Location.Y + 20);
+                this.removeDiskButton.Width -= 45;
+                this.removeDiskButton.Height -= 30;
+                this.addDiskButton.Width -= this.removeDiskButton.Width;
+                this.addDiskButton.Height -= this.removeDiskButton.Height;
+                //cluster settings
+                //AutoScaleSizeHelper.Default.AutoScaleControl(this.clusterSettingsMainContainer, AutoScaleSizeHelper.ControlType.Form, new SizeF(1.0F, 1.5F));
+                this.clusterSettingsMainContainer.Location = new Point(this.clusterSettingsMainContainer.Location.X, this.clusterSettingsMainContainer.Location.Y + 20);
+                this.informationBox10.Height += 20;
+                //wait monitoring
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.waitMonitoringMainContainer, AutoScaleSizeHelper.ControlType.Form, new SizeF(1.0F, 1.65F));
+                this.waitMonitoringMainContainer.Location = new Point(this.waitMonitoringMainContainer.Location.X, this.waitMonitoringMainContainer.Location.Y + 20);
+                this.informationBox13.Dock = DockStyle.Left;
+                this.informationBox12.Dock = DockStyle.None;
+                this.informationBox12.Size = new Size(this.informationBox12.Width + 300, this.informationBox12.Height);
+                this.tableLayoutPanel3.Scale(new SizeF(1.25F, 1.00F));
+                this.collectStatisticsSecondaryContainer.Scale(new SizeF(1.25F, 1.00F));
+                this.waitStatisticsFilterButton.Scale(new SizeF(1.5F, 1.0f));
+                this.waitStatisticsStartTime.Scale(new SizeF(1.25F, 1.0f));
+                this.collectStatisticsSecondaryContainer.Height += 300;
+                this.refreshWaitCollectorStatus.Width -= 10;
+                this.refreshWaitCollectorStatus.Height -= 10;
+                this.waitMonitoringMainContainer.Height += 200;
+                this.waitStatisticsFilterButton.Width -= 50;
+                this.waitStatisticsFilterButton.Height -= 30;
+                this.Width += 90;
+                // Virtualization Page
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.virtualizationMainContainer, AutoScaleSizeHelper.ControlType.Form, new SizeF(1.0F, 1.5F));
+                this.virtualizationMainContainer.Location = new Point(this.virtualizationMainContainer.Location.X, this.virtualizationMainContainer.Location.Y + 20);
+                this.btnVMConfig.Scale(new SizeF(0.5F, 1.0F));
+                this.tableLayoutPanel5.Scale(new SizeF(3.0F, 1.0F));
+
+                //this.propertiesControl.AllowListResize = true;
+                return;
+            }
+            if(AutoScaleSizeHelper.isXXLargeSize)
+            {
+                this.Size = new Size(this.Size.Width + 100, this.Size.Height + 170);
+                this.propertiesControl.Size = new Size(this.Size.Width - 50, this.Size.Height - 180);
+                this.okButton.Location = new Point(this.okButton.Location.X, this.propertiesControl.Size.Height + 30);
+                this.cancelButton.Location = new Point(this.cancelButton.Location.X, this.propertiesControl.Size.Height + 30);
+                this.propertiesControl.MenuListBoxWidth = 250;
+                this.propertiesControl.CustomSplitterDistance = 250;
+                //General Tab
+                this.groupBox1.Size = new Size(650, 150);
+                this.trustServerCertificateCheckbox.Location = new Point(this.trustServerCertificateCheckbox.Location.X, this.trustServerCertificateCheckbox.Location.Y + 8);
+                this.mainTableLayout.Location = new System.Drawing.Point(5, 100);
+                this.propertiesHeaderStripServerType.Size = new System.Drawing.Size(600, 40);
+                this.propertiesHeaderStrip17.Size = new System.Drawing.Size(600, 40);
+                this.propertiesHeaderStrip1.Size = new System.Drawing.Size(600, 40);
+                this.headerStrip1.Size = new System.Drawing.Size(600, 40);
+                this.headerStrip2.Size = new System.Drawing.Size(600, 40);
+                this.propertiesHeaderStrip8.Size = new System.Drawing.Size(600, 40);
+                this.testConnectionCredentialsButton.Size = new System.Drawing.Size(71, 35);
+                this.tableLayoutPanel6.Size = new System.Drawing.Size(500, 800);
+                this.mainTableLayout.Size = new System.Drawing.Size(1000, 1000);
+                this.serverPingTimeSpanEditor.Size = new System.Drawing.Size(140, 21);
+                this.collectionIntervalTimeSpanEditor.Size = new System.Drawing.Size(140, 21);
+                this.databaseStatisticsTimeSpanEditor.Size = new System.Drawing.Size(140, 21);
+                //Baseline configuration tab
+                this.propertyPage1.Size = new Size(this.propertyPage1.Width + 81, this.propertyPage1.Height + 50);
+                //Query Monitor tab
+                this.tableLayoutPanel18.Location = new System.Drawing.Point(5, 100);
+                this.durationThresholdLabel.Size = new Size(this.durationThresholdLabel.Width + 5, this.durationThresholdLabel.Height + 3);
+                this.tableLayoutPanel17.SetRowSpan(this.enableQueryMonitorTraceCheckBox, 2);
+                this.topPlanComboBox.Size = new Size(this.topPlanComboBox.Width + 100, this.topPlanComboBox.Height);
+                this.lblQueryPlanMessage.Size = new Size(this.lblQueryPlanMessage.Width, this.lblQueryPlanMessage.Height + 40);
+                this.queryMonitorPropertyPage.Height += 20;
+                //Activity Monitor
+                this.tableLayoutPanel4.Location = new System.Drawing.Point(5, 90);
+                this.propertiesHeaderStrip22.Size = new System.Drawing.Size(489, 35);
+                this.propertiesHeaderStrip28.Size = new System.Drawing.Size(489, 35);
+                this.lblBlockedProcessWarning.Location = new System.Drawing.Point(30, 1);
+                //Replication Page
+                this.informationBox3.Scale(new SizeF(1.2F, 1.2F));
+                this.replicationMainContainer.Location = new Point(replicationMainContainer.Location.X, replicationMainContainer.Location.Y + 50);
+                //Table statistics
+                this.tableLayoutPanel9.Scale(new SizeF(1.0F, 1.5F));
+                this.tableLayoutPanel9.Location = new Point(this.tableLayoutPanel9.Location.X, this.tableLayoutPanel9.Location.Y + 30);
+                var scale = new SizeF(1.00f, 0.75f);
+                this.quietTimeStartEditor.Width += 50;
+                this.minimumTableSize.Width += 50;
+                this.propertiesHeaderStrip9.Scale(scale);
+                this.propertiesHeaderStrip7.Scale(scale);
+                this.propertiesHeaderStrip10.Scale(scale);
+                this.propertiesHeaderStrip6.Scale(scale);
+                this.propertiesHeaderStrip5.Scale(scale);
+                //Custom Counter
+                this.informationBox7.Height += 50;
+                this.testCustomCountersButton.Location = new Point(this.testCustomCountersButton.Location.X - 10, this.testCustomCountersButton.Location.Y - 110);
+                this.tableLayoutPanel10.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                this.tableLayoutPanel10.Size = new Size(1030, 1280);
+                this.customCounterStackLayoutPanel.Location = new Point(this.customCounterStackLayoutPanel.Location.X, this.customCounterStackLayoutPanel.Location.Y - 20);
+                //Maintenance Mode
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.maintenanceModeControlsContainer, AutoScaleSizeHelper.ControlType.Form, new SizeF(1.0F, 1.2F));
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.mmMonthlyRecurringPanel, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.5F, 1.25F), false);
+                this.maintenanceModeControlsContainer.Location = new Point(this.maintenanceModeControlsContainer.Location.X, this.maintenanceModeControlsContainer.Location.Y + 20);
+                this.maintenanceModeControlsContainer.Height += 300;
+                this.mmMonthlyOfTheEveryLabel.Location = new Point(this.mmMonthlyOfTheEveryLabel.Location.X + 20, this.mmMonthlyOfTheEveryLabel.Location.Y - 40);
+                this.inputOfEveryTheMonthLimiter.Location = new Point(this.inputOfEveryTheMonthLimiter.Location.X + 20, this.inputOfEveryTheMonthLimiter.Location.Y - 30);
+                this.mmMonthlyLabel2.Location = new Point(this.mmMonthlyLabel2.Location.X + 20, this.mmMonthlyLabel2.Location.Y - 40);
+                this.mmMonthlyAtLabel.Location = new Point(this.mmMonthlyAtLabel.Location.X, this.mmMonthlyAtLabel.Location.Y - 40);
+                this.inputDayLimiter.Location = new Point(this.inputDayLimiter.Location.X, this.inputDayLimiter.Location.Y - 30);
+                this.mmMonthlyOfEveryLabel.Location = new Point(this.mmMonthlyOfEveryLabel.Location.X, this.mmMonthlyOfEveryLabel.Location.Y - 40);
+                this.inputOfEveryMonthLimiter.Location = new Point(this.inputOfEveryMonthLimiter.Location.X, this.inputOfEveryMonthLimiter.Location.Y - 30);
+                this.mmMonthlyLabel1.Location = new Point(this.mmMonthlyLabel1.Location.X, this.mmMonthlyLabel1.Location.Y - 30);
+                this.mmRecurringBegin.Width += 50;
+                this.mmRecurringDuration.Width += 50;
+                this.flowLayoutPanel4.Width += 50;
+                this.flowLayoutPanel3.Width += 50;
+                this.mmBeginSatCheckbox.Location = new Point(this.mmBeginSatCheckbox.Location.X + 150, this.mmBeginSatCheckbox.Location.Y);
+                this.mmBeginFriCheckbox.Location = new Point(this.mmBeginFriCheckbox.Location.X + 125, this.mmBeginFriCheckbox.Location.Y);
+                this.mmBeginThurCheckbox.Location = new Point(this.mmBeginThurCheckbox.Location.X + 100, this.mmBeginThurCheckbox.Location.Y);
+                this.mmBeginWedCheckbox.Location = new Point(this.mmBeginWedCheckbox.Location.X + 75, this.mmBeginWedCheckbox.Location.Y);
+                this.mmBeginTueCheckbox.Location = new Point(this.mmBeginTueCheckbox.Location.X + 50, this.mmBeginTueCheckbox.Location.Y);
+                this.mmBeginMonCheckbox.Location = new Point(this.mmBeginMonCheckbox.Location.X + 25, this.mmBeginMonCheckbox.Location.Y);
+                this.mmBeginSatCheckbox.Width += 20;
+                this.mmBeginFriCheckbox.Width += 20;
+                this.mmBeginThurCheckbox.Width += 20;
+                this.mmBeginWedCheckbox.Width += 20;
+                this.mmBeginTueCheckbox.Width += 20;
+                this.mmBeginMonCheckbox.Width += 20;
+                this.mmBeginSunCheckbox.Width += 20;
+                this.mmRecurringPanel.Size = new Size(this.mmRecurringPanel.Width + 150, this.mmRecurringPanel.Height);
+                this.mmOnceBeginTime.Width += 50;
+                this.mmOnceBeginDate.Width += 50;
+                this.mmOnceStopTime.Width += 50;
+                this.mmOnceStopDate.Width += 50;
+                //OS Metrics
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.osMetricsMainContainer, AutoScaleSizeHelper.ControlType.Form, new SizeF(1.0F, 1.5F));
+                this.osMetricsMainContainer.Location = new Point(this.osMetricsMainContainer.Location.X, this.osMetricsMainContainer.Location.Y + 20);
+                this.wmiCredentialsSecondaryContainer.Scale(new SizeF(1.25F, 1.00F));
+                this.wmiCredentialsContainer.Scale(new SizeF(1.25F, 1.00F));
+                this.wmiTestButton.Scale(new SizeF(1.0F, 0.75F));
+                //Disk Drives
+                AutoScaleFontResolutionHelper.Default.AutoScaleFont(this.diskDriversMainContainer, AutoScaleFontHelper.ControlType.Container);
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.diskDriversMainContainer, AutoScaleSizeHelper.ControlType.Form, new SizeF(1.0F, 1.5F));
+                this.diskDriversMainContainer.Location = new Point(this.diskDriversMainContainer.Location.X, this.diskDriversMainContainer.Location.Y + 20);
+                this.removeDiskButton.Width -= 45;
+                this.removeDiskButton.Height -= 30;
+                this.addDiskButton.Width -= this.removeDiskButton.Width;
+                this.addDiskButton.Height -= this.removeDiskButton.Height;
+                //cluster settings
+                //AutoScaleSizeHelper.Default.AutoScaleControl(this.clusterSettingsMainContainer, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.0F, 1.25F));
+                this.clusterSettingsMainContainer.Location = new Point(this.clusterSettingsMainContainer.Location.X, this.clusterSettingsMainContainer.Location.Y + 30);
+                this.informationBox10.Height += 20;
+                //wait monitoring
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.waitMonitoringMainContainer, AutoScaleSizeHelper.ControlType.Form, new SizeF(1.0F, 1.65F));
+                this.waitMonitoringMainContainer.Location = new Point(this.waitMonitoringMainContainer.Location.X, this.waitMonitoringMainContainer.Location.Y + 20);
+                this.informationBox13.Dock = DockStyle.Left;
+                this.informationBox12.Dock = DockStyle.None;
+                this.informationBox12.Size = new Size(this.informationBox12.Width + 300, this.informationBox12.Height);
+                this.tableLayoutPanel3.Scale(new SizeF(1.25F, 1.00F));
+                this.collectStatisticsSecondaryContainer.Scale(new SizeF(1.25F, 1.00F));
+                this.waitStatisticsFilterButton.Width -= 40;
+                this.waitStatisticsFilterButton.Height -= 20;
+                this.waitStatisticsStartTime.Scale(new SizeF(1.25F, 1.0f));
+                this.collectStatisticsSecondaryContainer.Height += 300;
+                this.refreshWaitCollectorStatus.Width -= 10;
+                this.refreshWaitCollectorStatus.Height -= 10;
+                this.waitMonitoringMainContainer.Height += 200;
+                this.informationBox13.Width -= 50;
+                // Virtualization Page
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.virtualizationMainContainer, AutoScaleSizeHelper.ControlType.Form, new SizeF(1.0F, 1.5F));
+                this.virtualizationMainContainer.Location = new Point(this.virtualizationMainContainer.Location.X, this.virtualizationMainContainer.Location.Y + 20);
+                this.btnVMConfig.Scale(new SizeF(0.5F, 1.0F));
+                this.tableLayoutPanel5.Scale(new SizeF(3.0F, 1.0F));
+
+                //this.propertiesControl.AllowListResize = true;
+                return;
+            }
+            
         }
     }
 }

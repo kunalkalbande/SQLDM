@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxLoginName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.azureProfileComboBox = new System.Windows.Forms.ComboBox();
-            this.addAzureProfileButton = new System.Windows.Forms.Button();
-            this.selectAzureProfileLbl = new System.Windows.Forms.Label();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnOK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.groupBox2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.textBoxPassword = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.textBoxLoginName = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.azureProfileComboBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.addAzureProfileButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.selectAzureProfileLbl = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -171,17 +171,17 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBoxPassword;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxLoginName;
-        private System.Windows.Forms.Label label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox textBoxPassword;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox textBoxLoginName;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
         private Infragistics.Win.Misc.UltraValidator azureApplicationValidator;
-        private System.Windows.Forms.Button addAzureProfileButton;
-        private System.Windows.Forms.Label selectAzureProfileLbl;
-        private System.Windows.Forms.ComboBox azureProfileComboBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton addAzureProfileButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel selectAzureProfileLbl;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox azureProfileComboBox;
 
 
     }

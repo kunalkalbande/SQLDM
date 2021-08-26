@@ -12,7 +12,7 @@ using Idera.SQLdm.DesktopClient.Helpers;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs.Analysis
 {
-    public partial class ServerSettingsDialog : Form
+    public partial class ServerSettingsDialog : BaseDialog
     {
         private bool _loading = false;
         private int instnceID;
@@ -34,6 +34,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Analysis
 
         public ServerSettingsDialog(int instnceID, int filterDatabase, string filterApplication, List<int> databases, List<string> recommendations)
         {
+            this.DialogHeader = "Server Settings";
             this.instnceID = instnceID;
             this.includeDatabase = filterDatabase;
             this.filterApplicationText = filterApplication;

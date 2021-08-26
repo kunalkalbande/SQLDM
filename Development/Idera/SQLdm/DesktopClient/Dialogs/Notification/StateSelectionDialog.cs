@@ -8,12 +8,13 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using Idera.SQLdm.Common.Notification;
     using System.ComponentModel;
 
-    public partial class StateSelectionDialog : Form
+    public partial class StateSelectionDialog : BaseDialog
     {
         private NotificationRule rule;
 
         public StateSelectionDialog()
         {
+            this.DialogHeader = "Severity";
             InitializeComponent();
             AdaptFontSize();
         }

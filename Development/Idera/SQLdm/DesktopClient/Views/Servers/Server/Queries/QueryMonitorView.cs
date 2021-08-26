@@ -30,6 +30,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Queries
     using Idera.SQLdm.DesktopClient.Dialogs.Query;
     using System.Data.SqlClient;
     using System.Linq;
+    using Infragistics.Windows.Themes;
+    using Idera.SQLdm.DesktopClient.Controls.CustomControls;
 
     internal partial class QueryMonitorView : ServerBaseView, IShowFilterDialog
     {
@@ -129,6 +131,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Queries
         // Delegate for the save estimated plan method to save the estimated plan asynchronously..
         private delegate void SaveEstimatedPlan_Delegate(SqlConnectionInfo connectionInfo, int statementID, int queryStatisticsID, string queryPlan);
 
+        ThemeSetter themeSetter = new ThemeSetter();
         public QueryMonitorView(int instanceId) : base (instanceId)
         {
             InitializeComponent();
@@ -156,8 +159,154 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Queries
                 maxReadsValueLabel.Text =
                 maxWritesValueLabel.Text =
                 executionsPerDayValueLabel.Text = string.Empty;
+
+            SetAboveContentAlertTheme();
+            SetGridTheme();
+            SetDividerColor();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
             
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
         }
+        
+        private void ScaleControlsAsPerResolution()
+        {
+            //queryMonitorFiltersPanel.BackColor = Color.Red;
+            this.queryMonitorFiltersPanel.Size = new System.Drawing.Size(1073, 156);
+            this.queryMonitorFiltersPanel.Location = new System.Drawing.Point(0, 81);
+
+            this.beginDateLabel.Size = new System.Drawing.Size(230, 30);
+            this.beginDateLabel.Location = new System.Drawing.Point(5, 35);
+            this.beginDateDateTimePicker.Location = new System.Drawing.Point(246, 35);
+            this.beginDateDateTimePicker.Size = new System.Drawing.Size(147, 20);
+
+            this.endDateLabel.Size = new System.Drawing.Size(80, 25);
+            this.endDateLabel.Location = new System.Drawing.Point(410, 35);
+            this.endDateDateTimePicker.Size = new System.Drawing.Size(147, 25);
+            this.endDateDateTimePicker.Location = new System.Drawing.Point(500, 35);
+
+            this.beginTimeLabel.Size = new System.Drawing.Size(250, 30);
+            this.beginTimeLabel.Location = new System.Drawing.Point(700, 35);
+
+            this.beginTimeDateTimePicker.Size = new System.Drawing.Size(150, 25);
+            this.beginTimeDateTimePicker.Location = new System.Drawing.Point(960, 35);
+
+            this.EndTimeLabel.Size = new System.Drawing.Size(84, 25);
+            this.EndTimeLabel.Location = new System.Drawing.Point(1110, 35);
+
+            this.endTimeDateTimePicker.Location = new System.Drawing.Point(1200, 35);
+            this.endTimeDateTimePicker.Size = new System.Drawing.Size(150, 25);
+
+            // second row
+            this.appLabel.Location = new System.Drawing.Point(5, 72);
+            this.appLabel.Size = new System.Drawing.Size(160, 30);
+
+            this.applicationTextBox.Location = new System.Drawing.Point(172, 72);
+            this.applicationTextBox.Size = new System.Drawing.Size(200, 30);
+
+            this.userLabel.Location = new System.Drawing.Point(373, 72);
+            this.userLabel.Size = new System.Drawing.Size(80, 30);
+
+            this.userTextBox.Location = new System.Drawing.Point(453, 72);
+            this.userTextBox.Size = new System.Drawing.Size(200, 30);
+
+            this.excludeSqlLabel.Location = new System.Drawing.Point(700, 72);
+            this.excludeSqlLabel.Size = new System.Drawing.Size(200, 30);
+
+            this.sqlTextExcludeTextBox.Location = new System.Drawing.Point(900, 72);
+            this.sqlTextExcludeTextBox.Size = new System.Drawing.Size(450, 30);
+            //third row
+
+            this.dbLabel.Location = new System.Drawing.Point(5, 102);
+            this.dbLabel.Size = new System.Drawing.Size(160, 30);
+
+            this.databaseTextBox.Location = new System.Drawing.Point(172, 102);
+            this.databaseTextBox.Size = new System.Drawing.Size(200, 30);
+
+            this.wsLabel.Location = new System.Drawing.Point(373, 102);
+            this.wsLabel.Size = new System.Drawing.Size(80, 30);
+
+            this.hostTextBox.Location = new System.Drawing.Point(453, 102);
+            this.hostTextBox.Size = new System.Drawing.Size(200, 30);
+
+            this.includeSqlLabel.Location = new System.Drawing.Point(700, 102);
+            this.includeSqlLabel.Size = new System.Drawing.Size(200, 30);
+
+            this.sqlTextIncludeTextBox.Location = new System.Drawing.Point(900, 102);
+            this.sqlTextIncludeTextBox.Size = new System.Drawing.Size(450, 30);
+
+            //checkboxes
+            this.includeSqlStatementsCheckBox.Location = new System.Drawing.Point(1400, 35);
+            this.includeSqlStatementsCheckBox.Size = new System.Drawing.Size(133, 25);
+
+            this.includeStoredProcedureCheckBox.Location = new System.Drawing.Point(1400, 60);
+            this.includeStoredProcedureCheckBox.Size = new System.Drawing.Size(133, 25);
+
+            this.includeSqlBatchesCheckBox.Location = new System.Drawing.Point(1400, 85);
+            this.includeSqlBatchesCheckBox.Size = new System.Drawing.Size(133, 25);
+
+            this.includeOnlyResourceRowsCheckBox.Location = new System.Drawing.Point(1400, 110);
+            this.includeOnlyResourceRowsCheckBox.Size = new System.Drawing.Size(133, 25);
+            //queryMonitorHistoryPanel
+            this.queryMonitorHistoryPanel.Size = new System.Drawing.Size(1073, 140);
+
+            this.queryNameLabel.Location = new System.Drawing.Point(5, 35);
+            this.queryNameLabel.Size = new System.Drawing.Size(129, 20);
+
+            this.avgCPULabel.Location = new System.Drawing.Point(5, 70);
+            this.avgCPULabel.Size = new System.Drawing.Size(100, 20);
+
+            this.avgCPUValueLabel.Location = new System.Drawing.Point(150, 70);
+            this.avgCPUValueLabel.Size = new System.Drawing.Size(150, 20);
+
+            this.avgReadsLabel.Location = new System.Drawing.Point(350, 70);
+            this.avgReadsLabel.Size = new System.Drawing.Size(150, 20);
+
+            this.avgReadsValueLabel.Location = new System.Drawing.Point(500, 70);
+            this.avgReadsValueLabel.Size = new System.Drawing.Size(150, 20);
+
+            this.avgWritesLabel.Location = new System.Drawing.Point(700, 70);
+            this.avgWritesLabel.Size = new System.Drawing.Size(150, 20);
+
+            this.avgWritesValueLabel.Location = new System.Drawing.Point(900, 70);
+            this.avgWritesValueLabel.Size = new System.Drawing.Size(150, 20);
+
+            this.executionsPerDayLabel.Location = new System.Drawing.Point(1200, 70);
+            this.executionsPerDayLabel.Size = new System.Drawing.Size(150, 20);
+
+            this.executionsPerDayValueLabel.Location = new System.Drawing.Point(1400, 70);
+            this.executionsPerDayValueLabel.Size = new System.Drawing.Size(150, 20);
+
+            //second row
+            this.maxCPULabel.Location = new System.Drawing.Point(5, 100);
+            this.maxCPULabel.Size = new System.Drawing.Size(100, 20);
+
+            this.maxCPUValueLabel.Location = new System.Drawing.Point(150, 100);
+            this.maxCPUValueLabel.Size = new System.Drawing.Size(150, 20);
+
+            this.maxReadsLabel.Location = new System.Drawing.Point(350, 100);
+            this.maxReadsLabel.Size = new System.Drawing.Size(150, 20);
+
+            this.maxReadsValueLabel.Location = new System.Drawing.Point(500, 100);
+            this.maxReadsValueLabel.Size = new System.Drawing.Size(150, 20);
+
+            this.maxWritesLabel.Location = new System.Drawing.Point(700, 100);
+            this.maxWritesLabel.Size = new System.Drawing.Size(150, 20);
+
+            this.maxWritesValueLabel.Location = new System.Drawing.Point(900, 100);
+            this.maxWritesValueLabel.Size = new System.Drawing.Size(150, 20);
+
+            this.executionsLabel.Location = new System.Drawing.Point(1200, 100);
+            this.executionsLabel.Size = new System.Drawing.Size(150, 20);
+
+            this.executionsValueLabel.Location = new System.Drawing.Point(1400, 100);
+            this.executionsValueLabel.Size = new System.Drawing.Size(150, 20);
+
+            this.splitLabel.Location = new Point(this.splitLabel.Location.X, this.splitLabel.Location.Y + 10);
+            this.splitLabel.Height = 5;
+            this.splitLabel.Width += 1800;
+        }
+
 
 
         protected void Initialize()
@@ -841,6 +990,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Queries
 
             chart.StatusText = Idera.SQLdm.Common.Constants.LOADING;
             chart.ChartVisible = false;
+            CustomChart customchart = new CustomChart();
+            customchart.SetCurrentChartTheme(chart.Chart);
         }
 
         private void ConfigureChartDataSource(QueryMonitorData dataObject, DataTable dataSource)
@@ -1923,6 +2074,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Queries
 
         private void UpdateOperationalStatus(MonitoredSqlServer instance)
         {
+            SetAboveContentAlertTheme();
+
             if (HistoricalSnapshotDateTime != null)
             {
                 operationalStatusLabel.Text = Properties.Resources.HistoryModeOperationalStatusLabel;
@@ -1954,30 +2107,42 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Queries
 
         private void operationalStatusLabel_MouseEnter(object sender, EventArgs e)
         {
-            operationalStatusLabel.ForeColor = Color.Black;
-            operationalStatusLabel.BackColor = Color.FromArgb(255, 189, 105);
-            operationalStatusImage.BackColor = Color.FromArgb(255, 189, 105);
+            if (Settings.Default.ColorScheme == "Light")
+            {
+                operationalStatusLabel.ForeColor = Color.Black;
+                operationalStatusLabel.BackColor = Color.FromArgb(255, 189, 105);
+                operationalStatusImage.BackColor = Color.FromArgb(255, 189, 105);
+            }           
         }
 
         private void operationalStatusLabel_MouseLeave(object sender, EventArgs e)
         {
-            operationalStatusLabel.ForeColor = Color.Black;
-            operationalStatusLabel.BackColor = Color.FromArgb(211, 211, 211);
-            operationalStatusImage.BackColor = Color.FromArgb(211, 211, 211);
+            if (Settings.Default.ColorScheme == "Light")
+            {
+                operationalStatusLabel.ForeColor = Color.Black;
+                operationalStatusLabel.BackColor = Color.FromArgb(211, 211, 211);
+                operationalStatusImage.BackColor = Color.FromArgb(211, 211, 211);
+            }           
         }
 
         private void operationalStatusLabel_MouseDown(object sender, MouseEventArgs e)
         {
-            operationalStatusLabel.ForeColor = Color.White;
-            operationalStatusLabel.BackColor = Color.FromArgb(251, 140, 60);
-            operationalStatusImage.BackColor = Color.FromArgb(251, 140, 60);
+            if (Settings.Default.ColorScheme == "Light")
+            {
+                operationalStatusLabel.ForeColor = Color.White;
+                operationalStatusLabel.BackColor = Color.FromArgb(251, 140, 60);
+                operationalStatusImage.BackColor = Color.FromArgb(251, 140, 60);
+            }           
         }
 
         private void operationalStatusLabel_MouseUp(object sender, MouseEventArgs e)
         {
-            operationalStatusLabel.ForeColor = Color.Black;
-            operationalStatusLabel.BackColor = Color.FromArgb(255, 189, 105);
-            operationalStatusImage.BackColor = Color.FromArgb(255, 189, 105);
+            if (Settings.Default.ColorScheme == "Light")
+            {
+                operationalStatusLabel.ForeColor = Color.Black;
+                operationalStatusLabel.BackColor = Color.FromArgb(255, 189, 105);
+                operationalStatusImage.BackColor = Color.FromArgb(255, 189, 105);
+            }        
 
             if (HistoricalSnapshotDateTime != null)
             {
@@ -1987,6 +2152,48 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Queries
             else
             {
                 ShowConfigurationProperties();
+            }
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetAboveContentAlertTheme();
+            SetGridTheme();
+            SetDividerColor();
+        }
+
+        private void SetDividerColor()
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                this.splitLabel.BackColor = System.Drawing.Color.White;
+            }
+            else
+            {
+                this.splitLabel.BackColor = System.Drawing.Color.Black;
+            }
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.queryMonitorGrid);
+        }
+
+        private void SetAboveContentAlertTheme()
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                themeSetter.SetAboveContentAlertPanelTheme(this.operationalStatusPanel, instanceId);
+                themeSetter.SetAboveContentAlertLabelTheme(this.operationalStatusLabel, instanceId);
+                themeSetter.SetAboveContentAlertPictureBoxTheme(this.operationalStatusImage, instanceId);
+            }
+            else
+            {
+                themeSetter.SetPanelTheme(this.operationalStatusPanel, System.Drawing.Color.FromArgb(212, 212, 212));
+                themeSetter.SetLabelTheme(this.operationalStatusLabel, System.Drawing.Color.FromArgb(212, 212, 212), System.Drawing.Color.Black);
+                themeSetter.SetPictureBoxTheme(this.operationalStatusImage, System.Drawing.Color.FromArgb(((int) (((byte) (212)))), ((int) (((byte) (212)))), ((int) (((byte) (212))))), global::Idera.SQLdm.DesktopClient.Properties.Resources.StatusWarningSmall);
             }
         }
 

@@ -15,7 +15,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using Microsoft.SqlServer.MessageBox;
     using Idera.SQLdm.DesktopClient.Helpers;
 
-    public partial class SnmpProviderConfigDialog : Form, INotificationProviderConfigDialog
+    public partial class SnmpProviderConfigDialog : BaseDialog, INotificationProviderConfigDialog
     {
         private SnmpNotificationProviderInfo providerInfo;
         private SnmpNotificationProviderInfo oldProvider;
@@ -26,6 +26,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public SnmpProviderConfigDialog()
         {
+            this.DialogHeader = "SNMP Action Provider";
             InitializeComponent();
             AdaptFontSize();
         }

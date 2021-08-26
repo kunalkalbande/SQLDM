@@ -25,6 +25,7 @@ using Wintellect.PowerCollections;
 using ColumnHeader = Infragistics.Win.UltraWinGrid.ColumnHeader;
 using DatabaseStatus = Idera.SQLdm.Common.Snapshots.DatabaseStatus;
 using Idera.SQLdm.Common.Events;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
 {
@@ -255,6 +256,39 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             InitializeDisksDataTable();
             InitializeCharts();
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+        }
+        private void ScaleControlsAsPerResolution()
+        {
+            //this.databasesFilterComboBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            if(AutoScaleSizeHelper.isLargeSize)
+            {
+                this.databasesFilterComboBox.Size = new System.Drawing.Size(3010, 35);
+                this.contentContainerPanel.Location = new System.Drawing.Point(0, 45);
+                this.contentContainerPanel.Height -= 20;
+                this.refreshDatabasesButton.Size = new System.Drawing.Size(27, 37);
+                return;
+            }
+            if (AutoScaleSizeHelper.isXLargeSize)
+            {
+                this.databasesFilterComboBox.Size = new System.Drawing.Size(3000, 35);
+                this.contentContainerPanel.Location = new System.Drawing.Point(0, 45);
+                this.contentContainerPanel.Height -= 20;
+                this.refreshDatabasesButton.Size = new System.Drawing.Size(27, 37);
+                return;
+            }
+            if (AutoScaleSizeHelper.isXXLargeSize)
+            {
+                this.databasesFilterComboBox.Size = new System.Drawing.Size(3000, 35);
+                this.contentContainerPanel.Location = new System.Drawing.Point(0, 45);
+                this.contentContainerPanel.Height -= 20;
+                this.refreshDatabasesButton.Size = new System.Drawing.Size(27, 37);
+                return;
+            }
+
         }
 
         #endregion
@@ -3158,6 +3192,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
         private void DatabasesFilesView_Load(object sender, EventArgs e)
         {
             ApplySettings();
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
         }
 
         #endregion
@@ -3393,13 +3429,49 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             ApplicationController.Default.ActiveView.CancelRefresh();
             ApplicationController.Default.RefreshActiveView();
         }
-
+        void mouseEnter_refreshDatabasesButton(Object Sender, EventArgs e)
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+                this.appearance1.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefreshHover;
+        }
+        void mouseLeave_refreshDatabasesButton(Object Sender, EventArgs e)
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+                appearance1.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh;
+        }
         /// <summary>
         /// Adapts the size of the font for this control in case of OS font changes.
         /// </summary>
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                if (!refreshDatabasesButton.Enabled)
+                    appearance1.Image = Helpers.ImageUtils.ChangeOpacity(global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh, 0.50F);
+                this.refreshDatabasesButton.UseOsThemes = DefaultableBoolean.False;
+                this.refreshDatabasesButton.UseAppStyling = false;
+                this.refreshDatabasesButton.ButtonStyle = UIElementButtonStyle.FlatBorderless;
+            }
+            else
+            {
+                this.refreshDatabasesButton.UseAppStyling = true;
+            }
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.transactionLogsGrid);
+            themeManager.updateGridTheme(this.databasesGrid);
+            themeManager.updateGridTheme(this.filesGrid);
+            themeManager.updateGridTheme(this.fileGroupsGrid);
         }
     }
 }

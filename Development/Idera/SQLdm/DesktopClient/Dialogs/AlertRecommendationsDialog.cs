@@ -1,3 +1,4 @@
+
 using System.Data;
 using System.Windows.Forms;
 using Idera.SQLdm.DesktopClient.Helpers;
@@ -18,11 +19,13 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Idera.SQLdm.Common.Events;
     using Idera.SQLdm.Common.Thresholds;
     using Idera.SQLdm.Common.UI.Dialogs;
+    using Idera.SQLdm.DesktopClient.Controls;
     using Infragistics.Win;
     using Infragistics.Win.UltraWinGrid;
+    using Infragistics.Windows.Themes;
     using Properties;
 
-    public partial class AlertRecommendationsDialog : Form
+    public partial class AlertRecommendationsDialog : BaseDialog
     {
         private readonly string AlertConfigurationGroupBoxText;
 
@@ -61,6 +64,37 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             }
             RefreshSuggestions(baselineItems);
             AdaptFontSize();
+            SetGridTheme();
+            SetPropertiesTheme();
+            updateLinearScaleFontAsPerTheme(this.linearScale1);
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        public void updateLinearScaleFontAsPerTheme(LinearScale linearscale)
+        {
+            ThemeSetter ts = new ThemeSetter();
+            ts.SetLinearScale(linearscale);
+
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+            SetPropertiesTheme();
+            updateLinearScaleFontAsPerTheme(this.linearScale1);
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.recommendationsGrid);
+        }
+
+        void SetPropertiesTheme()
+        {
+            var propertiesThemeManager = new Controls.PropertiesThemeManager();
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage1);
         }
 
         private void RefreshSuggestions(IEnumerable<BaselineItemData> baselineItems)

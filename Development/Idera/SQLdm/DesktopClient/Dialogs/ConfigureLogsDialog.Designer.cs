@@ -28,15 +28,15 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
-            this.optionsGroupBox = new System.Windows.Forms.GroupBox();
-            this.configureLogsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.archiveNumberLabel = new System.Windows.Forms.Label();
-            this.archiveNumberNumericEditor = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
-            this.archiveNumberLabel1 = new System.Windows.Forms.Label();
-            this.infoLabel = new System.Windows.Forms.Label();
-            this.unlimitedCheckBox = new System.Windows.Forms.CheckBox();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.optionsGroupBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.configureLogsFlowLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFlowLayoutPanel();
+            this.archiveNumberLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.archiveNumberNumericEditor = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraNumericEditor();
+            this.archiveNumberLabel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.infoLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.unlimitedCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             this.optionsGroupBox.SuspendLayout();
             this.configureLogsFlowLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.archiveNumberNumericEditor)).BeginInit();
@@ -174,14 +174,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.GroupBox optionsGroupBox;
-        private System.Windows.Forms.CheckBox unlimitedCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox optionsGroupBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox unlimitedCheckBox;
         private Infragistics.Win.UltraWinEditors.UltraNumericEditor archiveNumberNumericEditor;
-        private System.Windows.Forms.Label archiveNumberLabel;
-        private System.Windows.Forms.Label infoLabel;
-        private System.Windows.Forms.FlowLayoutPanel configureLogsFlowLayoutPanel;
-        private System.Windows.Forms.Label archiveNumberLabel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel archiveNumberLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel infoLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFlowLayoutPanel configureLogsFlowLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel archiveNumberLabel1;
     }
 }

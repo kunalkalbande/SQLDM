@@ -17,6 +17,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
     using Wintellect.PowerCollections;
     using ColumnHeader = Infragistics.Win.UltraWinGrid.ColumnHeader;
     using Idera.SQLdm.Common.UI.Dialogs;
+    using Infragistics.Windows.Themes;
 
     enum PeriodFilter
     {
@@ -45,6 +46,43 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
             this.SetDetailsVisibility(false);
 
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.ultraGridAuditActions);
+            //START:DarkTheme 4.12 QAIssue152-Period Dropdown Styling : Babita Manral
+            if (Settings.Default.ColorScheme == "Dark")
+            {                              
+                this.valueListItem3.Appearance.ImageBackground = global::Idera.SQLdm.DesktopClient.Properties.Resources.SelectedTabBackground;
+                this.valueListItem3.Appearance.ImageBackgroundStyle = Infragistics.Win.ImageBackgroundStyle.Stretched;
+                this.valueListItem4.Appearance.ImageBackground = global::Idera.SQLdm.DesktopClient.Properties.Resources.SelectedTabBackground;
+                this.valueListItem4.Appearance.ImageBackgroundStyle = Infragistics.Win.ImageBackgroundStyle.Stretched;
+                this.valueListItem5.Appearance.ImageBackground = global::Idera.SQLdm.DesktopClient.Properties.Resources.SelectedTabBackground;
+                this.valueListItem5.Appearance.ImageBackgroundStyle = Infragistics.Win.ImageBackgroundStyle.Stretched;
+                this.valueListItem6.Appearance.ImageBackground = global::Idera.SQLdm.DesktopClient.Properties.Resources.SelectedTabBackground;
+                this.valueListItem6.Appearance.ImageBackgroundStyle = Infragistics.Win.ImageBackgroundStyle.Stretched;
+                this.valueListItem7.Appearance.ImageBackground = global::Idera.SQLdm.DesktopClient.Properties.Resources.SelectedTabBackground;
+                this.valueListItem7.Appearance.ImageBackgroundStyle = Infragistics.Win.ImageBackgroundStyle.Stretched;
+            }
+            else
+            {
+                this.valueListItem3.ResetAppearance();
+                this.valueListItem4.ResetAppearance();
+                this.valueListItem5.ResetAppearance();
+                this.valueListItem6.ResetAppearance();
+                this.valueListItem7.ResetAppearance();
+            }
+            //END:DarkTheme 4.12 QAIssue152-Period Dropdown Styling : Babita Manral            
         }
 
         private void SetDetailsVisibility(bool showDetails)
@@ -120,6 +158,13 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
                     }
                 }
             } 
+        }
+
+        //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+        private void ultraGridAuditActions_Initializelayout(object sender, InitializeLayoutEventArgs e)
+        {
+            if (AutoScaleSizeHelper.isScalingRequired)
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.ultraGridAuditActions, AutoScaleSizeHelper.ControlType.UltraGridCheckbox);
         }
 
         /// <summary>

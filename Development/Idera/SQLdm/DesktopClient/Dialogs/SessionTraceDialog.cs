@@ -21,11 +21,12 @@ using Infragistics.Win;
 using Infragistics.Win.UltraWinDataSource;
 using Infragistics.Win.UltraWinGrid;
 using Infragistics.Win.UltraWinToolbars;
+using Infragistics.Windows.Themes;
 using ColumnHeader = Infragistics.Win.UltraWinGrid.ColumnHeader;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class SessionTraceDialog : Form
+    public partial class SessionTraceDialog : BaseDialog
     {
         #region constants
 
@@ -88,6 +89,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public SessionTraceDialog(int instanceId, int sessionId)
         {
+            this.DialogHeader = "Session Trace";
             InitializeComponent();
             Icon = Properties.Resources.SessionTraceIcon;
             traceGrid.DrawFilter = new HideFocusRectangleDrawFilter();
@@ -108,6 +110,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // Start the trace
             StartTrace();
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
         #endregion
@@ -849,6 +853,18 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.traceGrid);
         }
         #endregion
     }

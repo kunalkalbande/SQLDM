@@ -8,8 +8,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:p="clr-namespace:Idera.SQLdm.DesktopClient.Controls.Presentation" 
     xmlns:igDock="http://infragistics.com/DockManager"
+    xmlns:c="clr-namespace:Idera.SQLdm.DesktopClient.Converters"
     mc:Ignorable="d">
-
+    <c:BoolToImageConverterBasedOnResolution x:Key="BoolToImageConverter1" FalseValue="/SQLdmDesktopClient;component/Resources/Customize16x16.png" TrueValue="/SQLdmDesktopClient;component/Resources/larger_Customize16x16.png" />
+    <c:BoolToImageConverterBasedOnResolution x:Key="BoolToImageConverter2" FalseValue="/SQLdmDesktopClient;component/Resources/Customize16x16.png" TrueValue="/SQLdmDesktopClient;component/Resources/Customize24Hover.png" />
+    <c:DpiBasisHeightConverter x:Key="HeightConverter" Ratio="2.00"/>
     <SolidColorBrush x:Key="BodyBackgroundColor" Color="White"></SolidColorBrush>
     <SolidColorBrush x:Key="ContentAreaBackground" Color="#eeeff4"></SolidColorBrush>
     <SolidColorBrush x:Key="BarAboveContentPane" Color="#3a3b3d"></SolidColorBrush>
@@ -24,7 +27,70 @@
     <SolidColorBrush x:Key="RightFlyoutForeground" Color="#006089"></SolidColorBrush>
     <SolidColorBrush x:Key="RightFlyoutBackground" Color="White"></SolidColorBrush>
     <SolidColorBrush x:Key="RightFlyoutBorder" Color="#eeeff2"></SolidColorBrush>
+    <SolidColorBrush x:Key="ViewCotainerBackground" Color="White"></SolidColorBrush>
 
+    <SolidColorBrush x:Key="NavPaneBackground" Color="White"></SolidColorBrush>
+    <SolidColorBrush x:Key="NavPaneForeground" Color="Black"></SolidColorBrush>
+
+    <Style x:Key="CustomizeDashboardText" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="#006089"></Setter>
+    </Style>
+    <Style x:Key="RefreshViewButtonStyle" TargetType="Button">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Margin" Value="0,-8,9,0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="border" BorderThickness="0" Padding="10, 0, 0, 10" BorderBrush="Black" Background="{TemplateBinding Background}">
+                        <ContentPresenter x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.7" />
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.4" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/SQLdmDesktopClient;component/Resources/ToolbarRefresh.png"></ImageBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="PauseAutoRefreshButtonStyle" TargetType="ToggleButton">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border Name="border" BorderThickness="0" Padding="10, 0, 0, 10" BorderBrush="Black" Background="{TemplateBinding Background}">
+                        <ContentPresenter x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.7" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.4" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/SQLdmDesktopClient;component/Resources/ToolbarPause.png"></ImageBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="SelectLayout" TargetType="{x:Type TextBlock}">
+        
+        <Setter Property="Foreground" Value="#006089"></Setter>
+    </Style>
     <Style x:Key="LeftNavMainSectionStyle" TargetType="{x:Type Border}">
         <Setter Property="Background" Value="#88898e"></Setter>
         <Setter Property="Height" Value="24"></Setter>
@@ -51,6 +117,7 @@
         <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
         <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
         <Setter Property="Margin" Value="0,0,0,0"></Setter>
+        <Setter Property="CaretBrush" Value="#006089"></Setter>
         <Setter Property="Background" Value="Transparent"/>
         <Style.Triggers>
             <Trigger Property="IsFocused" Value="true">
@@ -84,6 +151,136 @@
                 <Setter Property="Opacity" Value="0.5"/>
             </Trigger>
         </Style.Triggers>
+    </Style>
+    <Style x:Key="ReportRightFlyoutMenu" TargetType="MenuItem">
+        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="Foreground" Value="#006089"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="BorderBrush" Value="#acacac"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+        <Setter Property="FontSize" Value="10px"></Setter>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ReportRightFlyoutMenu1" TargetType="MenuItem">
+        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="Foreground" Value="#006089"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="BorderBrush" Value="#acacac"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+        <Setter Property="FontSize" Value="10px"></Setter>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ReportRightFlyoutMenu2" TargetType="MenuItem">
+        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="Foreground" Value="#006089"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="BorderBrush" Value="#acacac"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+        <Setter Property="FontSize" Value="10px"></Setter>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ReportRightFlyoutMenu3" TargetType="MenuItem">
+        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="Foreground" Value="#006089"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="BorderBrush" Value="#acacac"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+        <Setter Property="FontSize" Value="10px"></Setter>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ReportRightFlyoutMenu4" TargetType="MenuItem">
+        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="Foreground" Value="#006089"></Setter>
+        <Setter Property="BorderThickness" Value="2,2,2,0"></Setter>
+        <Setter Property="BorderBrush" Value="#acacac"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+        <Setter Property="FontSize" Value="10px"></Setter>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ReportRightFlyoutMenu5" TargetType="MenuItem">
+        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="Foreground" Value="#006089"></Setter>
+        <Setter Property="BorderThickness" Value="2,0,2,0"></Setter>
+        <Setter Property="BorderBrush" Value="#acacac"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+        <Setter Property="FontSize" Value="10px"></Setter>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ReportRightFlyoutMenu6" TargetType="MenuItem">
+        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="Foreground" Value="#006089"></Setter>
+        <Setter Property="BorderThickness" Value="2,0,2,2"></Setter>
+        <Setter Property="BorderBrush" Value="#acacac"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+        <Setter Property="FontSize" Value="10px"></Setter>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ReportLeftFlyoutMenu" TargetType="MenuItem">
+        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="Foreground" Value="#006089"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+        <Setter Property="FontSize" Value="10px"></Setter>
+    </Style>
+    <Style x:Key="ReportLeftFlyoutMenu1" TargetType="MenuItem">
+        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="Foreground" Value="#006089"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+        <Setter Property="FontSize" Value="10px"></Setter>
+    </Style>
+    <Style x:Key="ReportLeftFlyoutMenu2" TargetType="MenuItem">
+        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="Foreground" Value="#006089"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+        <Setter Property="FontSize" Value="10px"></Setter>
+    </Style>
+    <Style x:Key="HelpLeftFlyoutMenu" TargetType="MenuItem">
+        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="Foreground" Value="#006089"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+        <Setter Property="FontSize" Value="10px"></Setter>
     </Style>
     <Style x:Key="LeftFlyoutMenu" TargetType="MenuItem">
         <Setter Property="Background" Value="White"></Setter>
@@ -176,4 +373,344 @@
         <Setter Property="Background" Value="Transparent"></Setter>
         <Setter Property="Foreground" Value="White"></Setter>
     </Style>
+    <Style TargetType="{x:Type ToggleButton}" x:Key="HistoryBrowserToggleButtonStyle">
+        <Setter Property="Height" Value="24"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+        <Setter Property="FontSize" Value="10"></Setter>
+        <Setter Property="Foreground" Value="#006089"></Setter>
+        <Setter Property="Margin" Value="0,0,12,0"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#00a1dd"/>
+                <Setter Property="BorderBrush" Value="#00a1dd"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="Foreground" Value="#00a1dd" />
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Foreground" Value="#072d40" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.2" />
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsChecked" Value="True" />
+                    <Condition Property="IsMouseOver" Value="True" />
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter Property="Foreground" Value="#00a1dd" />
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+
+        </Style.Triggers>
+    </Style>
+    <Style TargetType="ToggleButton" x:Key="toggleCustomDashboardStyle">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border Name="border" BorderThickness="0" Padding="10, 0, 0, 10" BorderBrush="Black" Background="{TemplateBinding Background}">
+                        <ContentPresenter x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="{DynamicResource BoolToImageConverter2}" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!-- START:DarkTheme 4.12 Images Changes :Babita Manral-->
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="{DynamicResource BoolToImageConverter1}" />
+            </Setter.Value>
+        </Setter>
+        <!-- END:DarkTheme 4.12 Images Changes :Babita Manral-->
+    </Style>
+    <Style x:Key="QuickHistorySnapshotNavBackButtonStyle" TargetType="Button">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                        <ContentPresenter x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.7" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.4" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!-- START:DarkTheme 4.12 Images Changes :Babita Manral-->
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/SQLdmDesktopClient;component/Resources/back16x16.png"></ImageBrush>
+            </Setter.Value>
+        </Setter>
+        <!-- END:DarkTheme 4.12 Images Changes :Babita Manral-->
+    </Style>
+    <Style x:Key="QuickHistorySnapshotNavForwardButtonStyle" TargetType="Button">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                        <ContentPresenter x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.7" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.4" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!-- START:DarkTheme 4.12 Images Changes :Babita Manral-->
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/SQLdmDesktopClient;component/Resources/forward16x16.png"></ImageBrush>
+            </Setter.Value>
+        </Setter>
+        <!-- END:DarkTheme 4.12 Images Changes :Babita Manral-->
+    </Style>
+
+    <!-- START:DarkTheme 4.12 Customize Select Layout Icons Styling :Babita Manral-->
+    <Style x:Key="Grid_2x2_ImagesLayout" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="0,0,9,0"></Setter>
+        <Setter Property="Height" Value="{Binding Converter={StaticResource HeightConverter}}"></Setter>
+        <Setter Property="Width" Value="{Binding Converter={StaticResource HeightConverter}}"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderBrush" Value = "Transparent"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType = "Button">
+                    <Border Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness ="0.5" >
+                        <Image Source="/SQLdmDesktopClient;component/Resources/larger_Grid_2x2.png"  Width="{Binding Converter={StaticResource HeightConverter}}" Height="{Binding Converter={StaticResource HeightConverter}}"></Image>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value ="#012a4f"></Setter>
+                            <Setter Property="Background" Value= "#b0e0e6"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="Grid_2x3_ImagesLayout" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="0,0,9,0"></Setter>
+        <Setter Property="Height" Value="{Binding Converter={StaticResource HeightConverter}}"></Setter>
+        <Setter Property="Width" Value="{Binding Converter={StaticResource HeightConverter}}"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderBrush" Value = "Transparent"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType = "Button">
+                    <Border Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness ="0.5" >
+                        <Image Source="/SQLdmDesktopClient;component/Resources/larger_Grid_2x3.png" Width="{Binding Converter={StaticResource HeightConverter}}" Height="{Binding Converter={StaticResource HeightConverter}}"></Image>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">                            
+                            <Setter Property="BorderBrush" Value = "#012a4f"></Setter>
+                            <Setter Property="Background" Value="#b0e0e6"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+   
+    <Style x:Key="Grid_2x4_ImagesLayout" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="0,0,9,0"></Setter>
+        <Setter Property="Height" Value="{Binding Converter={StaticResource HeightConverter}}"></Setter>
+        <Setter Property="Width" Value="{Binding Converter={StaticResource HeightConverter}}"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderBrush" Value = "Transparent"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType = "Button">
+                    <Border Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness ="0.5">
+                        <Image Source="/SQLdmDesktopClient;component/Resources/larger_Grid_2x4.png" Width="{Binding Converter={StaticResource HeightConverter}}" Height="{Binding Converter={StaticResource HeightConverter}}"></Image>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value = "#012a4f"></Setter>
+                            <Setter Property="Background" Value="#b0e0e6"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+   
+    <Style x:Key="Grid_2x5_ImagesLayout" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="0,0,9,0"></Setter>
+        <Setter Property="Height" Value="{Binding Converter={StaticResource HeightConverter}}"></Setter>
+        <Setter Property="Width" Value="{Binding Converter={StaticResource HeightConverter}}"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderBrush" Value = "Transparent"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType = "Button">
+                    <Border Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness ="0.5">
+                        <Image Source="/SQLdmDesktopClient;component/Resources/larger_Grid_2x5.png" Width="{Binding Converter={StaticResource HeightConverter}}" Height="{Binding Converter={StaticResource HeightConverter}}"></Image>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value = "#012a4f"></Setter>
+                            <Setter Property="Background" Value="#b0e0e6"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="Grid_3x2_ImagesLayout" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="0,0,9,0"></Setter>
+        <Setter Property="Height" Value="{Binding Converter={StaticResource HeightConverter}}"></Setter>
+        <Setter Property="Width" Value="{Binding Converter={StaticResource HeightConverter}}"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderBrush" Value = "Transparent"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType = "Button">
+                    <Border Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness ="0.5">
+                        <Image Source="/SQLdmDesktopClient;component/Resources/larger_Grid_3x2.png" Width="{Binding Converter={StaticResource HeightConverter}}" Height="{Binding Converter={StaticResource HeightConverter}}"></Image>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value = "#012a4f"></Setter>
+                            <Setter Property="Background" Value="#b0e0e6"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="Grid_3x3_ImagesLayout" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="0,0,9,0"></Setter>
+        <Setter Property="Height" Value="{Binding Converter={StaticResource HeightConverter}}"></Setter>
+        <Setter Property="Width" Value="{Binding Converter={StaticResource HeightConverter}}"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderBrush" Value = "Transparent"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType = "Button">
+                    <Border Name="border" Background="{TemplateBinding Background}"  BorderBrush="{TemplateBinding BorderBrush}" BorderThickness ="0.5">
+                        <Image Source="/SQLdmDesktopClient;component/Resources/larger_Grid_3x3.png" Width="{Binding Converter={StaticResource HeightConverter}}" Height="{Binding Converter={StaticResource HeightConverter}}"></Image>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value = "#012a4f"></Setter>
+                            <Setter Property="Background" Value="#b0e0e6"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="Grid_3x4_ImagesLayout" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="0,0,9,0"></Setter>
+        <Setter Property="Height" Value="{Binding Converter={StaticResource HeightConverter}}"></Setter>
+        <Setter Property="Width" Value="{Binding Converter={StaticResource HeightConverter}}"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderBrush" Value = "Transparent"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType = "Button">
+                    <Border Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness ="0.5">
+                        <Image Source="/SQLdmDesktopClient;component/Resources/larger_Grid_3x4.png" Width="{Binding Converter={StaticResource HeightConverter}}" Height="{Binding Converter={StaticResource HeightConverter}}" ></Image>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value = "#012a4f"></Setter>
+                            <Setter Property="Background" Value="#b0e0e6"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="Grid_4x2_ImagesLayout" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="0,0,9,0"></Setter>
+        <Setter Property="Height" Value="{Binding Converter={StaticResource HeightConverter}}"></Setter>
+        <Setter Property="Width" Value="{Binding Converter={StaticResource HeightConverter}}"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderBrush" Value = "Transparent"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType = "Button">
+                    <Border Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness ="0.5">
+                        <Image Source="/SQLdmDesktopClient;component/Resources/larger_Grid_4x2.png" Width="{Binding Converter={StaticResource HeightConverter}}" Height="{Binding Converter={StaticResource HeightConverter}}"></Image>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value = "#012a4f"></Setter>
+                            <Setter Property="Background" Value="#b0e0e6"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="Grid_4x3_ImagesLayout" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="0,0,9,0"></Setter>
+        <Setter Property="Height" Value="{Binding Converter={StaticResource HeightConverter}}"></Setter>
+        <Setter Property="Width" Value="{Binding Converter={StaticResource HeightConverter}}"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderBrush" Value = "Transparent"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType = "Button">
+                    <Border Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness ="0.5">
+                        <Image Source="/SQLdmDesktopClient;component/Resources/larger_Grid_4x3.png" Width="{Binding Converter={StaticResource HeightConverter}}" Height="{Binding Converter={StaticResource HeightConverter}}"></Image>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value = "#012a4f"></Setter>
+                            <Setter Property="Background" Value="#b0e0e6"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- END:DarkTheme 4.12 Customize Select Layout Icons Styling :Babita Manral-->
 </ResourceDictionary>

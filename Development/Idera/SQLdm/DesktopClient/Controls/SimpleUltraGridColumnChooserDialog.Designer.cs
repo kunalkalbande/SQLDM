@@ -29,7 +29,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
         private void InitializeComponent()
         {
             this.columnChooser = new Infragistics.Win.UltraWinGrid.UltraGridColumnChooser();
-            this.close_Button = new System.Windows.Forms.Button();
+            this.close_Button = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.SuspendLayout();
             // 
             // columnChooser
@@ -73,7 +73,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
             this.close_Button.Name = "close_Button";
             this.close_Button.Size = new System.Drawing.Size(75, 23);
             this.close_Button.TabIndex = 1;
-            this.close_Button.Text = "&Close";
+            this.close_Button.Text = "Close";
             this.close_Button.UseVisualStyleBackColor = true;
             this.close_Button.Click += new System.EventHandler(this.close_Button_Click);
             // 
@@ -102,6 +102,6 @@ namespace Idera.SQLdm.DesktopClient.Controls
         #endregion
 
         private Infragistics.Win.UltraWinGrid.UltraGridColumnChooser columnChooser;
-        private System.Windows.Forms.Button close_Button;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton close_Button;
     }
 }

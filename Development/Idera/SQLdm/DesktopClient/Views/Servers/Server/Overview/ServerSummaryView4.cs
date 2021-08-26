@@ -24,6 +24,7 @@ using Idera.SQLdm.DesktopClient.Helpers;
 using Idera.SQLdm.DesktopClient.Objects;
 using Idera.SQLdm.DesktopClient.Properties;
 using System.Globalization;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
 {
@@ -68,6 +69,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
         ViewContainer vHost = null;
         public event EventHandler PanelGalleryVisibleChanged;
 
+        ThemeSetter themeSetter = new ThemeSetter();
         public ServerSummaryView4(int instanceId, ServerSummaryHistoryData historyData)
             : base(instanceId)
         {
@@ -85,6 +87,11 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
             Settings.Default.PropertyChanged += Settings_PropertyChanged;
 
             metricDefinitions = ApplicationModel.Default.MetricDefinitions;
+
+            SetAboveContentAlertTheme();
+
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+            ScaleControlAsPerResolution();
         }
 
         public ServerSummaryView4(int instanceId, ServerSummaryHistoryData historyData, ViewContainer vHost)
@@ -106,6 +113,12 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
             Settings.Default.PropertyChanged += Settings_PropertyChanged;
 
             metricDefinitions = ApplicationModel.Default.MetricDefinitions;
+
+            SetAboveContentAlertTheme();
+
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+
+            ScaleControlAsPerResolution();
         }
 
         #region Properties
@@ -273,6 +286,13 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
                 {
                     dashboardTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, size));
                 }
+                dashboardTableLayoutPanel.ColumnCount = dashboardConfiguration.Columns;
+                size = 100f / dashboardConfiguration.Columns;
+
+                for (int columns = 1; columns <= dashboardConfiguration.Columns; columns++)
+                {
+                    dashboardTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, size));
+                }
                 dashboardControls = new List<DashboardControl>();
 
                 foreach (DashboardPanelConfiguration panelConfig in dashboardConfiguration.Panels)
@@ -407,23 +427,32 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
 
         private void operationalStatusLabel_MouseEnter(object sender, EventArgs e)
         {
-            operationalStatusLabel.ForeColor = Color.Black;
-            operationalStatusLabel.BackColor = Color.FromArgb(255, 189, 105);
-            operationalStatusImage.BackColor = Color.FromArgb(255, 189, 105);
+            if (Settings.Default.ColorScheme == "Light")
+            {
+                operationalStatusLabel.ForeColor = Color.Black;
+                operationalStatusLabel.BackColor = Color.FromArgb(255, 189, 105);
+                operationalStatusImage.BackColor = Color.FromArgb(255, 189, 105);
+            }          
         }
 
         private void operationalStatusLabel_MouseLeave(object sender, EventArgs e)
         {
-            operationalStatusLabel.ForeColor = Color.Black;
-            operationalStatusLabel.BackColor = Color.FromArgb(211, 211, 211);
-            operationalStatusImage.BackColor = Color.FromArgb(211, 211, 211);
+            if (Settings.Default.ColorScheme == "Light")
+            {
+                operationalStatusLabel.ForeColor = Color.Black;
+                operationalStatusLabel.BackColor = Color.FromArgb(211, 211, 211);
+                operationalStatusImage.BackColor = Color.FromArgb(211, 211, 211);
+            }            
         }
 
         private void operationalStatusLabel_MouseDown(object sender, MouseEventArgs e)
         {
-            operationalStatusLabel.ForeColor = Color.White;
-            operationalStatusLabel.BackColor = Color.FromArgb(251, 140, 60);
-            operationalStatusImage.BackColor = Color.FromArgb(251, 140, 60);
+            if (Settings.Default.ColorScheme == "Light")
+            {
+                operationalStatusLabel.ForeColor = Color.White;
+                operationalStatusLabel.BackColor = Color.FromArgb(251, 140, 60);
+                operationalStatusImage.BackColor = Color.FromArgb(251, 140, 60);
+            }           
 
             if (HistoricalSnapshotDateTime != null)
             {
@@ -477,9 +506,12 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
 
         private void operationalStatusLabel_MouseUp(object sender, MouseEventArgs e)
         {
-            operationalStatusLabel.ForeColor = Color.Black;
-            operationalStatusLabel.BackColor = Color.FromArgb(255, 189, 105);
-            operationalStatusImage.BackColor = Color.FromArgb(255, 189, 105);
+            if (Settings.Default.ColorScheme == "Light")
+            {
+                operationalStatusLabel.ForeColor = Color.Black;
+                operationalStatusLabel.BackColor = Color.FromArgb(255, 189, 105);
+                operationalStatusImage.BackColor = Color.FromArgb(255, 189, 105);
+            }           
         }
 
         private void ServerSummaryView_Load(object sender, EventArgs e)
@@ -501,16 +533,60 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
 
         public void ShowOperationalStatusPanel(bool visible)
         {
+            SetAboveContentAlertTheme();
+
             if (visible)
             {
                 serverOverviewContentPanel.AutoScrollMinSize = new Size(dashboardTableLayoutPanel.MinimumSize.Width, dashboardTableLayoutPanel.MinimumSize.Height + operationalStatusPanel.Height);
                 operationalStatusPanel.Visible = true;
+
+                ThemeSetter themeSetter = new ThemeSetter();
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    themeSetter.SetAboveContentAlertLabelTheme(this.operationalStatusLabel, instanceId);
+                    themeSetter.SetAboveContentAlertPictureBoxTheme(this.operationalStatusImage, instanceId);
+                }
             }
             else
             {
                 serverOverviewContentPanel.AutoScrollMinSize = new Size(dashboardTableLayoutPanel.MinimumSize.Width, dashboardTableLayoutPanel.MinimumSize.Height);
                 operationalStatusPanel.Visible = false;
                 historyBannerShowing = false;
+            }
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetAboveContentAlertTheme();
+        }
+
+        private void SetAboveContentAlertTheme()
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                themeSetter.SetAboveContentAlertLabelTheme(this.operationalStatusLabel, instanceId);
+                themeSetter.SetAboveContentAlertPictureBoxTheme(this.operationalStatusImage, instanceId);
+            }
+            else
+            {
+                themeSetter.SetLabelTheme(this.operationalStatusLabel, System.Drawing.Color.LightGray, System.Drawing.Color.Black);
+                themeSetter.SetPictureBoxTheme(this.operationalStatusImage, System.Drawing.Color.LightGray, global::Idera.SQLdm.DesktopClient.Properties.Resources.StatusWarningSmall);
+            }
+        }
+
+        private void ScaleControlAsPerResolution()
+        {
+            if(AutoScaleSizeHelper.isScalingRequired)
+            {
+                this.panelGalleryPanel.Width += 200;
+                this.panelGalleryPanel.Location = new Point(this.panelGalleryPanel.Location.X - 200, this.panelGalleryGradientPanel.Location.Y);
+                this.panelGalleryGradientPanel.Width += 200;
+                this.panelGalleryGradientPanel.Location = new Point(this.panelGalleryGradientPanel.Location.X - 200, this.panelGalleryGradientPanel.Location.Y);
+                this.galleryPanel.Width += 200;
+                this.galleryPanel.Location = new Point(this.galleryPanel.Location.X - 200, this.galleryPanel.Location.Y);
+                this.galleryTableLayoutPanel.Width += 200;
+                this.panelSelectorTrackBar.Location = new Point(this.panelSelectorTrackBar.Location.X - 50, this.panelSelectorTrackBar.Location.Y-10);
+                //this.galleryTableLayoutPanel.Location = new Point(this.galleryTableLayoutPanel.Location.X - 200, this.galleryTableLayoutPanel.Location.Y);
             }
         }
 
@@ -703,6 +779,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
                     top = Math.Max(0, top);
                 }
                 dashboardPanelDetails.Top = top;
+                if (AutoScaleSizeHelper.isScalingRequired) dashboardPanelDetails.Left = galleryPanel.Location.X+ 2440;
                 dashboardPanelDetails.ShowPanel(this, panel.DashboardPanel, historyData, this.vHost);
                 dashboardPanelDetails.BringToFront();
             }
@@ -883,6 +960,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
                     }
                 }
                 dashboardControl.Dock = DockStyle.Fill;
+                dashboardControl.Margin = new Padding(0,0,10,0);
                 dashboardControl.DragDropPanel += HandleChangePanel;
                 dashboardControl.ChartDrilldown += OnChartDrilldown;  //SQLdm 10.2 (Anshul Aggarwal) : Chart Drilldown functionality
                                                                       // initialize the control and backfill

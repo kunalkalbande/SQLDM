@@ -13,7 +13,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Properties;
     using Objects;
 
-    public partial class SelectAlertTemplateForm : Form
+    public partial class SelectAlertTemplateForm : BaseDialog
     {
         private const String AffectedServerTemplate = "Affected Server";
 

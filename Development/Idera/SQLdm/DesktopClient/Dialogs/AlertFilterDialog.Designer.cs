@@ -28,16 +28,16 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.excludePanel = new System.Windows.Forms.Panel();
-            this.excludeFilterTextBox = new System.Windows.Forms.TextBox();
-            this.appendExcludeFiltersButton = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.excludePanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.excludeFilterTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.appendExcludeFiltersButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.panel3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.refreshProgressControl = new MRG.Controls.UI.LoadingCircle();
-            this.refreshLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.filterOptionsListView = new System.Windows.Forms.ListView();
+            this.refreshLinkLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.filterOptionsListView = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.refreshBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
@@ -217,17 +217,17 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel excludePanel;
-        private System.Windows.Forms.TextBox excludeFilterTextBox;
-        private System.Windows.Forms.Button appendExcludeFiltersButton;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ListView filterOptionsListView;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  excludePanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox excludeFilterTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton appendExcludeFiltersButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListView filterOptionsListView;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.ComponentModel.BackgroundWorker refreshBackgroundWorker;
-        private System.Windows.Forms.LinkLabel refreshLinkLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel refreshLinkLabel;
         private MRG.Controls.UI.LoadingCircle refreshProgressControl;
     }
 }

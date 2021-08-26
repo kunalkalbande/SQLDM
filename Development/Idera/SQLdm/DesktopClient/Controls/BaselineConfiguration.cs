@@ -110,6 +110,11 @@ namespace Idera.SQLdm.DesktopClient.Controls
             baselineConfigList = new Dictionary<int, BaselineConfiguration>();
             //[END] SQLdm 10.0 (Rajesh Gupta): Baseline Enhancement - Added a list for multiple BaselineConfiguration 
             Init();
+            //SQLDM-30848, adapting resolutions, Saurabh
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+            SetPropertiesTheme();
+            Infragistics.Windows.Themes.ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
         public bool CheckForErrors()
@@ -341,6 +346,8 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
             customDateFromCombo.Enabled = customBaselineRadioButton.Checked;
             customDateToCombo.Enabled = customBaselineRadioButton.Checked;
+            customDateFromLabel.Enabled = customBaselineRadioButton.Checked;
+            customDateToLabel.Enabled = customBaselineRadioButton.Checked;
 
             baselineConfig.Template.UseDefault = !customBaselineRadioButton.Checked;
             baselineConfig.Template.CalculationStartDate = ((DateTime)customDateFromCombo.Value).Date + baselineConfig.Template.CalculationStartDate.TimeOfDay;
@@ -560,5 +567,34 @@ namespace Idera.SQLdm.DesktopClient.Controls
         //    } 
         //}
         //END SQLdm 10.0 (Tarun Sapra) : Add event for BaselineAssistant button click 
+
+
+
+        //SQLDM-30848, adapting resolutions, Saurabh
+        private void ScaleControlsAsPerResolution()
+        {
+            if (AutoScaleSizeHelper.isLargeSize)
+            {
+                this.baselineMainContainer.Size = new System.Drawing.Size(695, 800);
+                this.btnSelectOtherServers.Size = new Size(this.btnSelectOtherServers.Width, this.btnSelectOtherServers.Height - 2);
+                this.baselineMainContainer.AutoScroll = true;
+                this.btnSelectOtherServers.Location = new Point(this.btnSelectOtherServers.Location.X, this.btnSelectOtherServers.Location.Y - 10);
+                return;
+            }
+            if (AutoScaleSizeHelper.isXLargeSize)
+            {
+                this.baselineMainContainer.Size = new System.Drawing.Size(900, 1000);
+                this.btnSelectOtherServers.Size = new Size(this.btnSelectOtherServers.Width, this.btnSelectOtherServers.Height - 2);
+                this.baselineMainContainer.AutoScroll = true;
+                return;
+            }
+            if (AutoScaleSizeHelper.isXXLargeSize)
+            {
+                this.baselineMainContainer.Size = new System.Drawing.Size(900, 1000);
+                this.btnSelectOtherServers.Size = new Size(this.btnSelectOtherServers.Width, this.btnSelectOtherServers.Height - 2);
+                this.baselineMainContainer.AutoScroll = true;
+                return;
+            }
+        }
     }
 }

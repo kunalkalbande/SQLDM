@@ -28,11 +28,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.informationBox1 = new Divelements.WizardFramework.InformationBox();
-            this.generateAlertButton = new System.Windows.Forms.RadioButton();
-            this.skipAlertButton = new System.Windows.Forms.RadioButton();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.informationBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
+            this.generateAlertButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.skipAlertButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
             this.SuspendLayout();
             // 
             // okButton
@@ -113,10 +113,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
-        private Divelements.WizardFramework.InformationBox informationBox1;
-        private System.Windows.Forms.RadioButton generateAlertButton;
-        private System.Windows.Forms.RadioButton skipAlertButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox informationBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton generateAlertButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton skipAlertButton;
     }
 }

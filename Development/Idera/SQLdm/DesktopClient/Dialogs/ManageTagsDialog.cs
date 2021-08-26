@@ -13,14 +13,31 @@ using Microsoft.SqlServer.MessageBox;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class ManageTagsDialog : Form
+    public partial class ManageTagsDialog : BaseDialog
     {
         private readonly Dictionary<int, ListViewItem> tagItemLookupTable = new Dictionary<int, ListViewItem>();
 
         public ManageTagsDialog()
         {
+            this.DialogHeader = "Manage Tags";
             InitializeComponent();
             getTagsWorker.RunWorkerAsync();
+            //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+            SetPropertiesTheme();
+            Infragistics.Windows.Themes.ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, System.EventArgs e)
+        {
+            SetPropertiesTheme();
+        }
+
+        void SetPropertiesTheme()
+        {
+            var propertiesThemeManager = new Controls.PropertiesThemeManager();
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage1);
         }
 
         private void getTagsWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
@@ -279,6 +296,68 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private static void ShowHelp()
         {
             ApplicationHelper.ShowHelpTopic(HelpTopics.TagsManageTags);
+        }
+
+        //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+        private void ScaleControlsAsPerResolution()
+        {
+            if (AutoScaleSizeHelper.isLargeSize)
+            {
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.manageTagsMainContainer, AutoScaleSizeHelper.ControlType.Form, new SizeF(1.2F, 1.2F));
+                this.statusLabel.Size = new Size(this.statusLabel.Width - 50, this.statusLabel.Height + 20);
+                this.statusLabel.Location = new Point(this.statusLabel.Location.X + 5, this.statusLabel.Location.Y);
+                this.label4.Scale(new SizeF(1.2F, 1.2F));
+                this.columnHeader1.Width = 308;
+                this.columnHeader2.Width = 154;
+                this.columnHeader3.Width = 154;
+                this.columnHeader4.Width = 154;
+                this.addButton.Height -= 10;
+                this.addButton.Location = new Point(this.addButton.Location.X, this.addButton.Location.Y - 10);
+                this.removeButton.Height -= 10;
+                this.removeButton.Location = new Point(this.removeButton.Location.X, this.removeButton.Location.Y - 10);
+                this.editButton.Height -= 10;
+                this.editButton.Location = new Point(this.editButton.Location.X, this.editButton.Location.Y - 10);
+                manageTagsButtonsContainer.Height += 10;
+                return;
+            }
+            if (AutoScaleSizeHelper.isXLargeSize)
+            {
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.manageTagsMainContainer, AutoScaleSizeHelper.ControlType.Form, new SizeF(1.2F, 1.2F));
+                this.statusLabel.Size = new Size(this.statusLabel.Width - 50, this.statusLabel.Height + 20);
+                this.statusLabel.Location = new Point(this.statusLabel.Location.X + 5, this.statusLabel.Location.Y);
+                this.label4.Scale(new SizeF(1.2F, 1.2F));
+                this.columnHeader1.Width = 350;
+                this.columnHeader2.Width = 200;
+                this.columnHeader3.Width = 200;
+                this.columnHeader4.Width = 200;
+                this.addButton.Height -= 10;
+                this.addButton.Location = new Point(this.addButton.Location.X, this.addButton.Location.Y - 10);
+                this.removeButton.Height -= 10;
+                this.removeButton.Location = new Point(this.removeButton.Location.X, this.removeButton.Location.Y - 10);
+                this.editButton.Height -= 10;
+                this.editButton.Location = new Point(this.editButton.Location.X, this.editButton.Location.Y - 10);
+                manageTagsButtonsContainer.Height += 10;
+                return;
+            }
+            if (AutoScaleSizeHelper.isXXLargeSize)
+            {
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.manageTagsMainContainer, AutoScaleSizeHelper.ControlType.Form, new SizeF(1.2F, 1.2F));
+                this.statusLabel.Size = new Size(this.statusLabel.Width - 50, this.statusLabel.Height + 20);
+                this.statusLabel.Location = new Point(this.statusLabel.Location.X + 5, this.statusLabel.Location.Y);
+                this.label4.Scale(new SizeF(1.2F, 1.2F));
+                this.columnHeader1.Width = 416;
+                this.columnHeader2.Width = 208;
+                this.columnHeader3.Width = 208;
+                this.columnHeader4.Width = 208;
+                this.addButton.Height -= 10;
+                this.addButton.Location = new Point(this.addButton.Location.X, this.addButton.Location.Y - 10);
+                this.removeButton.Height -= 10;
+                this.removeButton.Location = new Point(this.removeButton.Location.X, this.removeButton.Location.Y - 10);
+                this.editButton.Height -= 10;
+                this.editButton.Location = new Point(this.editButton.Location.X, this.editButton.Location.Y - 10);
+                manageTagsButtonsContainer.Height += 10;
+                return;
+            }
         }
     }
 }

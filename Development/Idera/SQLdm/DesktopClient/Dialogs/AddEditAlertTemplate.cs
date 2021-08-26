@@ -19,7 +19,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Infragistics.Win.Misc;
     using Objects;
 
-    public partial class AddEditAlertTemplate : Form
+    public partial class AddEditAlertTemplate : BaseDialog
     {
         /// <summary>
         /// Application logger.
@@ -50,6 +50,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             //addNewTemplate = false;
             // need save old values information to be compared between templates
             oldTemplateInfo = new AlertTemplate(Template.Name, Template.Description, Template.TemplateID, Template.DefaultIndicator);
+            HelpButton = true;
             AdaptFontSize();
         }
 
@@ -62,6 +63,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             templateCreated = false;
             // need save old values information to be compared between templates
             oldTemplateInfo = new AlertTemplate(Template.Name, Template.Description, Template.TemplateID, Template.DefaultIndicator);
+            HelpButton = true;
             AdaptFontSize();
         }
 
@@ -72,6 +74,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // need save old values information to be compared between templates
             oldTemplateInfo = new AlertTemplate(Template.Name, Template.Description, Template.TemplateID,Template.DefaultIndicator);
             templateCreated = editing = true;
+            HelpButton = true;
             AdaptFontSize();
         }
 

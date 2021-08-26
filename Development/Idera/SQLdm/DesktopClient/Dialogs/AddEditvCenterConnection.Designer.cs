@@ -32,20 +32,20 @@
             Infragistics.Win.Misc.ValidationGroup validationGroup1 = new Infragistics.Win.Misc.ValidationGroup("vCenterInfo");
             Infragistics.Win.Misc.ValidationGroup validationGroup2 = new Infragistics.Win.Misc.ValidationGroup("vCenterName");
             Infragistics.Win.Misc.ValidationGroup validationGroup3 = new Infragistics.Win.Misc.ValidationGroup("vCenterAddress");
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnOK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.validator = new Infragistics.Win.Misc.UltraValidator(this.components);
-            this.txtHostPassword = new System.Windows.Forms.TextBox();
-            this.txtHostUser = new System.Windows.Forms.TextBox();
-            this.txtHostAddress = new System.Windows.Forms.TextBox();
-            this.txtHostName = new System.Windows.Forms.TextBox();
-            this.btnTest = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtHostPassword = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.txtHostUser = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.txtHostAddress = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.txtHostName = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.btnTest = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.label5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.bgWorker = new System.ComponentModel.BackgroundWorker();
-            this.statusMessage = new System.Windows.Forms.Label();
+            this.statusMessage = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.loadingCircle = new MRG.Controls.UI.LoadingCircle();
             this.vCenterHostsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.validator)).BeginInit();
@@ -146,7 +146,7 @@
             // btnTest
             // 
             this.btnTest.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnTest.Location = new System.Drawing.Point(10, 148);
+            this.btnTest.Location = new System.Drawing.Point(10, 153);  //4.12 DarkTheme UI Alignment issue  Babita Manral
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(74, 23);
             this.btnTest.TabIndex = 4;
@@ -265,21 +265,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnOK;
         private Infragistics.Win.Misc.UltraValidator validator;
-        private System.Windows.Forms.Button btnTest;
-        private System.Windows.Forms.TextBox txtHostPassword;
-        private System.Windows.Forms.TextBox txtHostUser;
-        private System.Windows.Forms.TextBox txtHostAddress;
-        private System.Windows.Forms.TextBox txtHostName;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnTest;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox txtHostPassword;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox txtHostUser;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox txtHostAddress;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox txtHostName;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
         private System.Windows.Forms.BindingSource vCenterHostsBindingSource;
         private System.ComponentModel.BackgroundWorker bgWorker;
-        private System.Windows.Forms.Label statusMessage;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel statusMessage;
         private MRG.Controls.UI.LoadingCircle loadingCircle;
     }
 }

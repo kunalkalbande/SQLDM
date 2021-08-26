@@ -1,3 +1,7 @@
+using Idera.SQLdm.DesktopClient.Helpers;
+using System.Drawing;
+using System.Windows.Forms;
+
 namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
 {
     partial class ServerGroupDetailsView
@@ -16,8 +20,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             if (disposing)
             {
                 // unhook event handlers to allow view to dispose
-                 foreach (var key in ApplicationModel.Default.RepoActiveInstances.Keys)
-                    ApplicationModel.Default.ActiveInstances.Changed -= ActiveInstances_Changed;
+                ApplicationModel.Default.ActiveInstances.Changed -= ActiveInstances_Changed;
             }
 
             if (disposing && (components != null))
@@ -37,49 +40,49 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
         {
             this.components = new System.ComponentModel.Container();
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool1 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("columnContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortAscendingButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortDescendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Controls.CustomControls.CustomButtonTool("sortAscendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Controls.CustomControls.CustomButtonTool("sortDescendingButton");
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool1 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("groupByThisColumnButton", "");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Infragistics.Win.UltraWinToolbars.ButtonTool("toggleGroupByBoxButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Infragistics.Win.UltraWinToolbars.ButtonTool("removeThisColumnButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showColumnChooserButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showColumnChooserButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Controls.CustomControls.CustomButtonTool("toggleGroupByBoxButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Controls.CustomControls.CustomButtonTool("removeThisColumnButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Controls.CustomControls.CustomButtonTool("showColumnChooserButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Controls.CustomControls.CustomButtonTool("showColumnChooserButton");
             Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Infragistics.Win.UltraWinToolbars.ButtonTool("toggleGroupByBoxButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Controls.CustomControls.CustomButtonTool("toggleGroupByBoxButton");
             Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortAscendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Controls.CustomControls.CustomButtonTool("sortAscendingButton");
             Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortDescendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Controls.CustomControls.CustomButtonTool("sortDescendingButton");
             Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool2 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("instanceContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool10 = new Infragistics.Win.UltraWinToolbars.ButtonTool("openInstanceButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool11 = new Infragistics.Win.UltraWinToolbars.ButtonTool("refreshInstanceButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool12 = new Infragistics.Win.UltraWinToolbars.ButtonTool("deleteInstanceButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool13 = new Infragistics.Win.UltraWinToolbars.ButtonTool("collapseAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool14 = new Infragistics.Win.UltraWinToolbars.ButtonTool("expandAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool15 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printGridButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool16 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportGridButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool17 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showInstancePropertiesButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool18 = new Infragistics.Win.UltraWinToolbars.ButtonTool("refreshInstanceButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool10 = new Controls.CustomControls.CustomButtonTool("openInstanceButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool11 = new Controls.CustomControls.CustomButtonTool("refreshInstanceButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool12 = new Controls.CustomControls.CustomButtonTool("deleteInstanceButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool13 = new Controls.CustomControls.CustomButtonTool("collapseAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool14 = new Controls.CustomControls.CustomButtonTool("expandAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool15 = new Controls.CustomControls.CustomButtonTool("printGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool16 = new Controls.CustomControls.CustomButtonTool("exportGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool17 = new Controls.CustomControls.CustomButtonTool("showInstancePropertiesButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool18 = new Controls.CustomControls.CustomButtonTool("refreshInstanceButton");
             Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool19 = new Infragistics.Win.UltraWinToolbars.ButtonTool("openInstanceButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool20 = new Infragistics.Win.UltraWinToolbars.ButtonTool("deleteInstanceButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool19 = new Controls.CustomControls.CustomButtonTool("openInstanceButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool20 = new Controls.CustomControls.CustomButtonTool("deleteInstanceButton");
             Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool21 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showInstancePropertiesButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool21 = new Controls.CustomControls.CustomButtonTool("showInstancePropertiesButton");
             Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool22 = new Infragistics.Win.UltraWinToolbars.ButtonTool("removeThisColumnButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool22 = new Controls.CustomControls.CustomButtonTool("removeThisColumnButton");
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool2 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("groupByThisColumnButton", "");
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool3 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("gridContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool23 = new Infragistics.Win.UltraWinToolbars.ButtonTool("collapseAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool24 = new Infragistics.Win.UltraWinToolbars.ButtonTool("expandAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool25 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printGridButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool26 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportGridButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool27 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool23 = new Controls.CustomControls.CustomButtonTool("collapseAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool24 = new Controls.CustomControls.CustomButtonTool("expandAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool25 = new Controls.CustomControls.CustomButtonTool("printGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool26 = new Controls.CustomControls.CustomButtonTool("exportGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool27 = new Controls.CustomControls.CustomButtonTool("exportGridButton");
             Infragistics.Win.Appearance appearance20 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool28 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printGridButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool28 = new Controls.CustomControls.CustomButtonTool("printGridButton");
             Infragistics.Win.Appearance appearance21 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool29 = new Infragistics.Win.UltraWinToolbars.ButtonTool("collapseAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool30 = new Infragistics.Win.UltraWinToolbars.ButtonTool("expandAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool29 = new Controls.CustomControls.CustomButtonTool("collapseAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool30 = new Controls.CustomControls.CustomButtonTool("expandAllGroupsButton");
             Infragistics.Win.Appearance appearance22 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Main Band", -1);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("SQLServerID");
@@ -156,6 +159,14 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn71 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Status");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn72 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("SQLBrowserServiceStatus", -1, 195913626);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn73 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("SQLActiveDirectoryHelperServiceStatus", -1, 195913626);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn74 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Alert", -1,987654); //Babita
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn75 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("CPU", -1, 987654); //Babita
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn76 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Memory", 1, 987654); //Babita
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn77 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("I/O", -1, 987654); //Babita
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn78 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Database", -1, 987654); //Babita
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn79 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Logs", -1, 987654); //Babita
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn80 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Queries", -1, 987654); //Babita
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn81 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Tags"); //Babita
             Infragistics.Win.Appearance appearance24 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance25 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance26 = new Infragistics.Win.Appearance();
@@ -164,18 +175,20 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             Infragistics.Win.Appearance appearance29 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance30 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance31 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance32 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList1 = new Infragistics.Win.ValueList(195913626);
-            Infragistics.Win.ValueList valueList2 = new Infragistics.Win.ValueList(972251);
+            Infragistics.Win.Appearance appearance32 = new Infragistics.Win.Appearance();           
+            Infragistics.Win.ValueList valueList1 = new Controls.CustomControls.CustomValueList(195913626);
+            Infragistics.Win.ValueList valueList2 = new Controls.CustomControls.CustomValueList(972251);
             Infragistics.Win.Appearance appearance33 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance34 = new Infragistics.Win.Appearance();  //Babita 
+            Infragistics.Win.ValueList valueList3 = new Controls.CustomControls.CustomValueList(987654);  //Babita 
             this.toolbarsManager = new Idera.SQLdm.DesktopClient.Controls.ContextMenuManager(this.components);
-            this.ServerGroupDetailsView2_Fill_Panel = new System.Windows.Forms.Panel();
+            this.ServerGroupDetailsView2_Fill_Panel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.detailsGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.ultraGridExcelExporter = new Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter(this.components);
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.ultraGridPrintDocument = new Infragistics.Win.UltraWinGrid.UltraGridPrintDocument(this.components);
             this.ultraPrintPreviewDialog = new Infragistics.Win.Printing.UltraPrintPreviewDialog(this.components);
-            this.lblNoSqlServers = new System.Windows.Forms.Label();
+            this.lblNoSqlServers = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarsManager)).BeginInit();
             this.ServerGroupDetailsView2_Fill_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.detailsGrid)).BeginInit();
@@ -281,6 +294,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             this.ServerGroupDetailsView2_Fill_Panel.Name = "ServerGroupDetailsView2_Fill_Panel";
             this.ServerGroupDetailsView2_Fill_Panel.Size = new System.Drawing.Size(453, 433);
             this.ServerGroupDetailsView2_Fill_Panel.TabIndex = 0;
+            
             // 
             // detailsGrid
             // 
@@ -289,204 +303,204 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             this.detailsGrid.DisplayLayout.Appearance = appearance22;
             ultraGridColumn1.Format = "";
             ultraGridColumn1.Header.Caption = "SQLdm ID";
-            ultraGridColumn1.Header.VisiblePosition = 2;
+            ultraGridColumn1.Header.VisiblePosition = 2;            
             ultraGridColumn1.Hidden = true;
             ultraGridColumn2.Header.Caption = "Instance";
             ultraGridColumn2.Header.Fixed = true;
             ultraGridColumn2.Header.VisiblePosition = 1;
             ultraGridColumn3.Format = "G";
             ultraGridColumn3.Header.Caption = "Last Refresh";
-            ultraGridColumn3.Header.VisiblePosition = 3;
+            ultraGridColumn3.Header.VisiblePosition = 10;  //3
             ultraGridColumn4.Header.Caption = "SQL Agent Status";
-            ultraGridColumn4.Header.VisiblePosition = 7;
+            ultraGridColumn4.Header.VisiblePosition = 14; //7
             ultraGridColumn5.Header.Caption = "Available Memory (MB)";
-            ultraGridColumn5.Header.VisiblePosition = 10;
+            ultraGridColumn5.Header.VisiblePosition = 17; //10
             ultraGridColumn6.Format = "N0";
             ultraGridColumn6.Header.Caption = "Blocked Processes";
-            ultraGridColumn6.Header.VisiblePosition = 11;
+            ultraGridColumn6.Header.VisiblePosition = 18; //11
             ultraGridColumn7.Format = "0.00\\%";
             ultraGridColumn7.Header.Caption = "Buffer Cache Hit Ratio";
-            ultraGridColumn7.Header.VisiblePosition = 12;
+            ultraGridColumn7.Header.VisiblePosition = 19; //12
             ultraGridColumn8.Format = "N0";
             ultraGridColumn8.Header.Caption = "Checkpoint Writes";
-            ultraGridColumn8.Header.VisiblePosition = 13;
+            ultraGridColumn8.Header.VisiblePosition = 20; //13
             ultraGridColumn9.Format = "N0";
             ultraGridColumn9.Header.Caption = "Client Computers";
-            ultraGridColumn9.Header.VisiblePosition = 14;
+            ultraGridColumn9.Header.VisiblePosition = 21; //14
             ultraGridColumn10.Format = "0.00\\%";
             ultraGridColumn10.Header.Caption = "CPU Activity";
-            ultraGridColumn10.Header.VisiblePosition = 15;
+            ultraGridColumn10.Header.VisiblePosition = 22; //15
             ultraGridColumn11.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.True;
-            ultraGridColumn11.Header.VisiblePosition = 16;
+            ultraGridColumn11.Header.VisiblePosition = 23; //16
             ultraGridColumn11.Hidden = true;
             ultraGridColumn12.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.True;
-            ultraGridColumn12.Header.VisiblePosition = 17;
+            ultraGridColumn12.Header.VisiblePosition = 24; //17
             ultraGridColumn12.Hidden = true;
             ultraGridColumn13.Format = "N2";
             ultraGridColumn13.Header.Caption = "Disk Queue Length";
-            ultraGridColumn13.Header.VisiblePosition = 18;
+            ultraGridColumn13.Header.VisiblePosition = 25; //18
             ultraGridColumn14.Format = "0.00\\%";
             ultraGridColumn14.Header.Caption = "% Disk Time";
-            ultraGridColumn14.Header.VisiblePosition = 19;
+            ultraGridColumn14.Header.VisiblePosition = 26; //19
             ultraGridColumn15.Header.Caption = "DTC Status";
-            ultraGridColumn15.Header.VisiblePosition = 8;
+            ultraGridColumn15.Header.VisiblePosition = 15; //8
             ultraGridColumn16.Format = "N0";
             ultraGridColumn16.Header.Caption = "Full Scans";
-            ultraGridColumn16.Header.VisiblePosition = 20;
+            ultraGridColumn16.Header.VisiblePosition = 27; //20
             ultraGridColumn17.Header.Caption = "Full Text Search Status";
-            ultraGridColumn17.Header.VisiblePosition = 9;
+            ultraGridColumn17.Header.VisiblePosition = 16; //9
             ultraGridColumn18.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.True;
-            ultraGridColumn18.Header.VisiblePosition = 21;
+            ultraGridColumn18.Header.VisiblePosition = 28; //21
             ultraGridColumn18.Hidden = true;
             ultraGridColumn19.Format = "0.00\\%";
             ultraGridColumn19.Header.Caption = "Idle Time";
-            ultraGridColumn19.Header.VisiblePosition = 22;
+            ultraGridColumn19.Header.VisiblePosition = 29; //22
             ultraGridColumn20.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.True;
-            ultraGridColumn20.Header.VisiblePosition = 23;
+            ultraGridColumn20.Header.VisiblePosition = 30; //23
             ultraGridColumn20.Hidden = true;
             ultraGridColumn21.Format = "0.00\\%";
             ultraGridColumn21.Header.Caption = "I/O Activity";
-            ultraGridColumn21.Header.VisiblePosition = 24;
+            ultraGridColumn21.Header.VisiblePosition = 31; //24
             ultraGridColumn22.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.True;
-            ultraGridColumn22.Header.VisiblePosition = 25;
+            ultraGridColumn22.Header.VisiblePosition = 32; //25
             ultraGridColumn22.Hidden = true;
             ultraGridColumn23.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.True;
-            ultraGridColumn23.Header.VisiblePosition = 26;
+            ultraGridColumn23.Header.VisiblePosition = 33; //26
             ultraGridColumn23.Hidden = true;
             ultraGridColumn24.Format = "N0";
             ultraGridColumn24.Header.Caption = "Lazy Writer Writes";
-            ultraGridColumn24.Header.VisiblePosition = 27;
+            ultraGridColumn24.Header.VisiblePosition = 34; //27
             ultraGridColumn25.Format = "N0";
             ultraGridColumn25.Header.Caption = "Lock Waits";
-            ultraGridColumn25.Header.VisiblePosition = 28;
+            ultraGridColumn25.Header.VisiblePosition = 35; //28
             ultraGridColumn26.Format = "N0";
-            ultraGridColumn26.Header.VisiblePosition = 29;
+            ultraGridColumn26.Header.VisiblePosition = 36; //29
             ultraGridColumn27.Format = "N0";
             ultraGridColumn27.Header.Caption = "Log Writes";
-            ultraGridColumn27.Header.VisiblePosition = 30;
+            ultraGridColumn27.Header.VisiblePosition = 37; //30
             ultraGridColumn28.Format = "N0";
             ultraGridColumn28.Header.Caption = "Memory Allocated (MB)";
-            ultraGridColumn28.Header.VisiblePosition = 31;
+            ultraGridColumn28.Header.VisiblePosition = 38; //31
             ultraGridColumn29.Format = "N0";
             ultraGridColumn29.Header.Caption = "Memory Used (MB)";
-            ultraGridColumn29.Header.VisiblePosition = 32;
+            ultraGridColumn29.Header.VisiblePosition = 39; //32
             ultraGridColumn30.Format = "N0";
             ultraGridColumn30.Header.Caption = "Oldest Open Transactions (mins)";
-            ultraGridColumn30.Header.VisiblePosition = 33;
+            ultraGridColumn30.Header.VisiblePosition = 40; //33
             ultraGridColumn31.Format = "N0";
             ultraGridColumn31.Header.Caption = "Open Transactions";
-            ultraGridColumn31.Header.VisiblePosition = 34;
+            ultraGridColumn31.Header.VisiblePosition = 41; //34
             ultraGridColumn32.Format = "N0";
             ultraGridColumn32.Header.Caption = "Packet Errors";
-            ultraGridColumn32.Header.VisiblePosition = 35;
+            ultraGridColumn32.Header.VisiblePosition = 42; //35
             ultraGridColumn33.Format = "N0";
             ultraGridColumn33.Header.Caption = "Packets Received";
-            ultraGridColumn33.Header.VisiblePosition = 36;
+            ultraGridColumn33.Header.VisiblePosition = 43; //36
             ultraGridColumn34.Format = "N0";
             ultraGridColumn34.Header.Caption = "Packets Sent";
-            ultraGridColumn34.Header.VisiblePosition = 37;
+            ultraGridColumn34.Header.VisiblePosition = 44; //37
             ultraGridColumn35.Format = "N0";
             ultraGridColumn35.Header.Caption = "Page Errors";
-            ultraGridColumn35.Header.VisiblePosition = 38;
+            ultraGridColumn35.Header.VisiblePosition = 45; //38
             ultraGridColumn36.Format = "N0";
             ultraGridColumn36.Header.Caption = "Page Life Expectancy";
-            ultraGridColumn36.Header.VisiblePosition = 39;
+            ultraGridColumn36.Header.VisiblePosition = 46; //39
             ultraGridColumn37.Format = "N0";
             ultraGridColumn37.Header.Caption = "Page Lookups";
-            ultraGridColumn37.Header.VisiblePosition = 40;
+            ultraGridColumn37.Header.VisiblePosition = 47;
             ultraGridColumn38.Format = "N0";
             ultraGridColumn38.Header.Caption = "Page Reads";
-            ultraGridColumn38.Header.VisiblePosition = 41;
+            ultraGridColumn38.Header.VisiblePosition = 48;
             ultraGridColumn39.Format = "N2";
             ultraGridColumn39.Header.Caption = "Pages Per Second";
-            ultraGridColumn39.Header.VisiblePosition = 42;
+            ultraGridColumn39.Header.VisiblePosition = 49;
             ultraGridColumn40.Format = "N0";
             ultraGridColumn40.Header.Caption = "Page Splits";
-            ultraGridColumn40.Header.VisiblePosition = 43;
+            ultraGridColumn40.Header.VisiblePosition = 50;
             ultraGridColumn41.Format = "N0";
             ultraGridColumn41.Header.Caption = "Page Writes";
-            ultraGridColumn41.Header.VisiblePosition = 44;
+            ultraGridColumn41.Header.VisiblePosition = 51;
             ultraGridColumn42.Format = "0.00\\%";
             ultraGridColumn42.Header.Caption = "Privileged Time";
-            ultraGridColumn42.Header.VisiblePosition = 45;
+            ultraGridColumn42.Header.VisiblePosition = 52;
             ultraGridColumn43.Format = "0.00\\%";
             ultraGridColumn43.Header.Caption = "Procedure Cache Hit Ratio";
-            ultraGridColumn43.Header.VisiblePosition = 46;
+            ultraGridColumn43.Header.VisiblePosition = 53;
             ultraGridColumn44.Format = "N0";
             ultraGridColumn44.Header.Caption = "Procedure Cache Size (KB)";
-            ultraGridColumn44.Header.VisiblePosition = 47;
+            ultraGridColumn44.Header.VisiblePosition = 54;
             ultraGridColumn45.Format = "0.00\\%";
             ultraGridColumn45.Header.Caption = "Procedure Cache Size Percent";
-            ultraGridColumn45.Header.VisiblePosition = 48;
+            ultraGridColumn45.Header.VisiblePosition = 55;
             ultraGridColumn46.Format = "N2";
             ultraGridColumn46.Header.Caption = "Processor Queue Length";
-            ultraGridColumn46.Header.VisiblePosition = 49;
+            ultraGridColumn46.Header.VisiblePosition = 56;
             ultraGridColumn47.Format = "0.00\\%";
             ultraGridColumn47.Header.Caption = "Processor Time";
-            ultraGridColumn47.Header.VisiblePosition = 50;
+            ultraGridColumn47.Header.VisiblePosition = 57; //50
             ultraGridColumn48.Format = "N0";
             ultraGridColumn48.Header.Caption = "Read Ahead Pages";
-            ultraGridColumn48.Header.VisiblePosition = 51;
+            ultraGridColumn48.Header.VisiblePosition = 58; //51
             ultraGridColumn49.Format = "N2";
             ultraGridColumn49.Header.Caption = "Replication Latency";
-            ultraGridColumn49.Header.VisiblePosition = 52;
+            ultraGridColumn49.Header.VisiblePosition = 59; //52
             ultraGridColumn50.Format = "N0";
             ultraGridColumn50.Header.Caption = "Replication Subscribed";
-            ultraGridColumn50.Header.VisiblePosition = 53;
+            ultraGridColumn50.Header.VisiblePosition = 60; //53
             ultraGridColumn51.Format = "N0";
             ultraGridColumn51.Header.Caption = "Replication Undistributed";
-            ultraGridColumn51.Header.VisiblePosition = 54;
+            ultraGridColumn51.Header.VisiblePosition = 61; //54
             ultraGridColumn52.Format = "N0";
             ultraGridColumn52.Header.Caption = "Replication Unsubscribed";
-            ultraGridColumn52.Header.VisiblePosition = 55;
+            ultraGridColumn52.Header.VisiblePosition = 62; //55
             ultraGridColumn53.Format = "N0";
             ultraGridColumn53.Header.Caption = "Response Time (ms)";
-            ultraGridColumn53.Header.VisiblePosition = 56;
+            ultraGridColumn53.Header.VisiblePosition = 63; //56
             ultraGridColumn54.Header.Caption = "SQL Server Version";
-            ultraGridColumn54.Header.VisiblePosition = 4;
+            ultraGridColumn54.Header.VisiblePosition = 11; //4
             ultraGridColumn55.Format = "N0";
             ultraGridColumn55.Header.Caption = "SQL Compilations";
-            ultraGridColumn55.Header.VisiblePosition = 57;
+            ultraGridColumn55.Header.VisiblePosition = 64; //57
             ultraGridColumn56.Format = "N0";
             ultraGridColumn56.Header.Caption = "SQL Recompilations";
-            ultraGridColumn56.Header.VisiblePosition = 58;
+            ultraGridColumn56.Header.VisiblePosition = 65; //58
             ultraGridColumn57.Header.Caption = "SQL Server Status";
-            ultraGridColumn57.Header.VisiblePosition = 6;
+            ultraGridColumn57.Header.VisiblePosition = 13; //6
             ultraGridColumn58.Format = "N0";
             ultraGridColumn58.Header.Caption = "System Processes";
-            ultraGridColumn58.Header.VisiblePosition = 59;
+            ultraGridColumn58.Header.VisiblePosition = 66; //59
             ultraGridColumn59.Format = "N0";
             ultraGridColumn59.Header.Caption = "System Processes Consuming CPU";
-            ultraGridColumn59.Header.VisiblePosition = 60;
+            ultraGridColumn59.Header.VisiblePosition = 67;
             ultraGridColumn60.Format = "N0";
             ultraGridColumn60.Header.Caption = "Table Lock Escalations";
-            ultraGridColumn60.Header.VisiblePosition = 61;
+            ultraGridColumn60.Header.VisiblePosition = 68;
             ultraGridColumn61.Format = "N0";
             ultraGridColumn61.Header.Caption = "Tempdb Size (KB)";
-            ultraGridColumn61.Header.VisiblePosition = 62;
+            ultraGridColumn61.Header.VisiblePosition = 69;
             ultraGridColumn62.Format = "0.00\\%";
             ultraGridColumn62.Header.Caption = "Tempdb Size Percent";
-            ultraGridColumn62.Header.VisiblePosition = 63;
+            ultraGridColumn62.Header.VisiblePosition = 70;
             ultraGridColumn63.Format = "N0";
             ultraGridColumn63.Header.Caption = "Physical Memory (MB)";
-            ultraGridColumn63.Header.VisiblePosition = 64;
+            ultraGridColumn63.Header.VisiblePosition = 71;
             ultraGridColumn64.Format = "N0";
-            ultraGridColumn64.Header.VisiblePosition = 65;
+            ultraGridColumn64.Header.VisiblePosition = 72;
             ultraGridColumn65.Format = "N0";
             ultraGridColumn65.Header.Caption = "User Processes";
-            ultraGridColumn65.Header.VisiblePosition = 66;
+            ultraGridColumn65.Header.VisiblePosition = 73;
             ultraGridColumn66.Format = "N0";
             ultraGridColumn66.Header.Caption = "User Processes Consuming CPU";
-            ultraGridColumn66.Header.VisiblePosition = 67;
+            ultraGridColumn66.Header.VisiblePosition = 74;
             ultraGridColumn67.Format = "0.00\\%";
             ultraGridColumn67.Header.Caption = "User Time";
-            ultraGridColumn67.Header.VisiblePosition = 68;
+            ultraGridColumn67.Header.VisiblePosition = 75;
             ultraGridColumn68.Format = "N0";
             ultraGridColumn68.Header.Caption = "Work Files Created";
-            ultraGridColumn68.Header.VisiblePosition = 69;
+            ultraGridColumn68.Header.VisiblePosition = 76;
             ultraGridColumn69.Format = "N0";
             ultraGridColumn69.Header.Caption = "Work Tables Created";
-            ultraGridColumn69.Header.VisiblePosition = 70;
+            ultraGridColumn69.Header.VisiblePosition = 77; //70
             appearance23.FontData.BoldAsString = "True";
             appearance23.ForeColor = System.Drawing.Color.Red;
             appearance23.TextHAlignAsString = "Center";
@@ -497,13 +511,45 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             ultraGridColumn70.MaxWidth = 20;
             ultraGridColumn70.MinWidth = 20;
             ultraGridColumn70.Width = 20;
-            ultraGridColumn71.Header.VisiblePosition = 5;
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                ultraGridColumn70.MaxWidth = 50;
+                ultraGridColumn70.MinWidth = 50;
+                ultraGridColumn70.Width = 50;
+            }
+            ultraGridColumn71.Header.VisiblePosition = 12; //5
             ultraGridColumn71.Hidden = true;
             ultraGridColumn71.Width = 235;
             ultraGridColumn72.Header.Caption = "SQL Browser Service Status";
-            ultraGridColumn72.Header.VisiblePosition = 71;
+            ultraGridColumn72.Header.VisiblePosition = 78; //71
             ultraGridColumn73.Header.Caption = "SQL Active Directory Helper Service Status";
-            ultraGridColumn73.Header.VisiblePosition = 72;
+            ultraGridColumn73.Header.VisiblePosition = 79; //72
+            //START: 4.11 PartB Add columns to grid :Babita Manral          
+            ultraGridColumn74.Header.Caption = "Alert";
+            ultraGridColumn74.Header.VisiblePosition = 3;
+            ultraGridColumn74.Header.Fixed = true; 
+            ultraGridColumn75.Header.Caption = "CPU";
+            ultraGridColumn75.Header.VisiblePosition = 4;
+            ultraGridColumn75.Header.Fixed = true;
+            ultraGridColumn76.Header.Caption = "Memory";
+            ultraGridColumn76.Header.VisiblePosition = 5;
+            ultraGridColumn76.Header.Fixed = true;
+            ultraGridColumn77.Header.Caption = "I/O";
+            ultraGridColumn77.Header.VisiblePosition = 6;
+            ultraGridColumn77.Header.Fixed = true;
+            ultraGridColumn78.Header.Caption = "Database";
+            ultraGridColumn78.Header.VisiblePosition = 7;
+            ultraGridColumn78.Header.Fixed = true;
+            ultraGridColumn79.Header.Caption = "Logs";
+            ultraGridColumn79.Header.VisiblePosition = 8;
+            ultraGridColumn79.Header.Fixed = true;
+            ultraGridColumn80.Header.Caption = "Queries";
+            ultraGridColumn80.Header.VisiblePosition = 9;
+            ultraGridColumn80.Header.Fixed = true;
+            ultraGridColumn81.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.True;
+            ultraGridColumn81.Header.VisiblePosition = 80; 
+            ultraGridColumn81.Hidden = true;
+            //END: 4.11 PartB Add columns to grid :Babita Manral  
             ultraGridBand1.Columns.AddRange(new object[] {
             ultraGridColumn1,
             ultraGridColumn2,
@@ -577,7 +623,18 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             ultraGridColumn70,
             ultraGridColumn71,
             ultraGridColumn72,
-            ultraGridColumn73});
+            ultraGridColumn73,
+            //START: 4.11 PartB Add columns to grid :Babita Manral
+            ultraGridColumn74,
+            ultraGridColumn75,
+            ultraGridColumn76,
+            ultraGridColumn77,
+            ultraGridColumn78,
+            ultraGridColumn79,
+            ultraGridColumn80,
+            ultraGridColumn81});
+            //END: 4.11 PartB Add columns to grid :Babita Manral
+            this.detailsGrid.Rows.Band.SortedColumns.Clear(); //Babita                               
             this.detailsGrid.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
             this.detailsGrid.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.None;
             this.detailsGrid.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
@@ -640,17 +697,23 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             valueList2.DisplayStyle = Infragistics.Win.ValueListDisplayStyle.Picture;
             valueList2.Key = "severityValueList";
             valueList2.PreferredDropDownSize = new System.Drawing.Size(0, 0);
+            appearance34.ImageHAlign = Infragistics.Win.HAlign.Center; //Babita
+            valueList3.Appearance = appearance34;   //Babita
+            valueList3.DisplayStyle = Infragistics.Win.ValueListDisplayStyle.Picture; //Babita
+            valueList3.Key = "statusValueList";    //Babita           
             this.detailsGrid.DisplayLayout.ValueLists.AddRange(new Infragistics.Win.ValueList[] {
             valueList1,
-            valueList2});
+            valueList2,
+            valueList3});  //Babita           
             this.detailsGrid.DisplayLayout.ViewStyle = Infragistics.Win.UltraWinGrid.ViewStyle.SingleBand;
             this.detailsGrid.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
             this.detailsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.detailsGrid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailsGrid.Location = new System.Drawing.Point(0, 0);
+            this.detailsGrid.Location = new System.Drawing.Point(0, 70);
             this.detailsGrid.Name = "detailsGrid";
             this.detailsGrid.Size = new System.Drawing.Size(453, 433);
             this.detailsGrid.TabIndex = 0;
+            //this.detailsGrid.Margin = new Padding(0, 20, 0, 0);
             this.detailsGrid.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.detailsGrid_InitializeLayout);
             this.detailsGrid.AfterSelectChange += new Infragistics.Win.UltraWinGrid.AfterSelectChangeEventHandler(this.detailsGrid_AfterSelectChange);
             this.detailsGrid.DoubleClickRow += new Infragistics.Win.UltraWinGrid.DoubleClickRowEventHandler(this.detailsGrid_DoubleClickRow);
@@ -675,12 +738,13 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             this.lblNoSqlServers.Size = new System.Drawing.Size(662, 553);
             this.lblNoSqlServers.TabIndex = 2;
             this.lblNoSqlServers.Text = "< status label >";
-            this.lblNoSqlServers.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblNoSqlServers.TextAlign = System.Drawing.ContentAlignment.TopCenter;            
             // 
             // ServerGroupDetailsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            
             this.Controls.Add(this.ServerGroupDetailsView2_Fill_Panel);
             this.Controls.Add(this.lblNoSqlServers);
             this.Name = "ServerGroupDetailsView";
@@ -690,19 +754,78 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             this.ServerGroupDetailsView2_Fill_Panel.ResumeLayout(false);
             this.ServerGroupDetailsView2_Fill_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.detailsGrid)).EndInit();
-            this.ResumeLayout(false);
+            this.ResumeLayout(false);            
 
         }
 
         #endregion
 
         private Idera.SQLdm.DesktopClient.Controls.ContextMenuManager toolbarsManager;
-        private System.Windows.Forms.Panel ServerGroupDetailsView2_Fill_Panel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  ServerGroupDetailsView2_Fill_Panel;
         private Infragistics.Win.UltraWinGrid.UltraGrid detailsGrid;
         private Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter ultraGridExcelExporter;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private Infragistics.Win.UltraWinGrid.UltraGridPrintDocument ultraGridPrintDocument;
         private Infragistics.Win.Printing.UltraPrintPreviewDialog ultraPrintPreviewDialog;
-        private System.Windows.Forms.Label lblNoSqlServers;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblNoSqlServers;
+
+        
+        #region group By Commented for removing
+        //Babita 4.11b
+        //private ToolStrip toolStripGrpBy;
+        //private System.Windows.Forms.ToolStripDropDownButton toolstripGroupByButton;
+        //private System.Windows.Forms.ToolStripDropDown toolstripGroupByDropDown;
+        //private System.Windows.Forms.ToolStripButton toolstripButtonSeverity;
+        //private System.Windows.Forms.ToolStripButton toolstripButtonTags;
+        //private System.Windows.Forms.ToolStripButton toolstripButtonSQLdmRepo;
+        //private System.Windows.Forms.ToolStripButton toolstripButtonGroupBy;
+
+        ////Babita 4.11b
+        //this.toolStripGrpBy = new ToolStrip();
+        //this.toolstripGroupByButton = new ToolStripDropDownButton();
+        //this.toolstripGroupByDropDown = new ToolStripDropDown();
+        //this.toolstripButtonSeverity = new ToolStripButton("Severity");
+        //this.toolstripButtonTags = new ToolStripButton("Tags");
+        //this.toolstripButtonSQLdmRepo = new ToolStripButton("SQLdmRepo");
+        //this.toolstripButtonGroupBy = new ToolStripButton("Group By");
+
+        //
+        // Group By dropdown
+        //
+        //this.toolstripButtonSeverity.Text = "Severity";
+        //this.toolstripButtonSeverity.BackColor = Color.FromArgb(238, 239, 244);
+        //this.toolstripButtonSeverity.ForeColor = Color.FromArgb(0, 96, 137);
+        //this.toolstripButtonSeverity.Size = new Size(150, 50);
+        //this.toolstripButtonSeverity.Click += new System.EventHandler(toolstripButtonClick);
+        //this.toolstripButtonSQLdmRepo.Text = "SQLdmRepo";
+        //this.toolstripButtonSQLdmRepo.BackColor = Color.FromArgb(238, 239, 244);
+        //this.toolstripButtonSQLdmRepo.ForeColor = Color.FromArgb(0, 96, 137);
+        //this.toolstripButtonSQLdmRepo.Size = new Size(150, 50);
+        //this.toolstripButtonSQLdmRepo.Click += new System.EventHandler(toolstripButtonClick);
+        //this.toolstripButtonGroupBy.Text = "Group By";
+        //this.toolstripButtonGroupBy.BackColor = Color.FromArgb(238, 239, 244);
+        //this.toolstripButtonGroupBy.ForeColor = Color.FromArgb(0, 96, 137);
+        //this.toolstripButtonGroupBy.Size = new Size(150, 50);
+        //this.toolstripButtonGroupBy.Click += new System.EventHandler(toolstripButtonClick);
+        //this.toolstripButtonTags.Text = "Tags";
+        //this.toolstripButtonTags.BackColor = Color.FromArgb(238, 239, 244);
+        //this.toolstripButtonTags.ForeColor = Color.FromArgb(0, 96, 137);
+        //this.toolstripButtonTags.Size = new Size(150, 50);
+        //this.toolstripButtonTags.Click += new System.EventHandler(toolstripButtonClick);
+        //this.toolstripGroupByDropDown.Items.AddRange(new ToolStripItem[] { toolstripButtonGroupBy, toolstripButtonSeverity, toolstripButtonTags, toolstripButtonSQLdmRepo });
+        //this.toolstripGroupByButton.Text = "-Group  By-";
+        //this.toolstripGroupByButton.DropDown = this.toolstripGroupByDropDown;
+        //this.toolstripGroupByButton.BackColor = Color.FromArgb(0, 96, 137);
+        //this.toolstripGroupByButton.ForeColor = Color.FromArgb(238, 239, 244);
+        //this.toolstripGroupByButton.ShowDropDownArrow = true;
+        ////this.toolstripGroupByButton.Size = new Size(150, 50);
+        //this.toolStripGrpBy.Items.Add(this.toolstripGroupByButton);
+        //this.toolStripGrpBy.Margin = new Padding(0, 20, 0, 20);
+        //this.toolStripGrpBy.Location = new Point(10, 0);
+        //this.toolStripGrpBy.Size = new Size(453, 70);
+
+        //this.ServerGroupDetailsView2_Fill_Panel.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);  //Babita
+        //this.ServerGroupDetailsView2_Fill_Panel.Controls.Add(this.toolStripGrpBy);
+        #endregion
     }
 }

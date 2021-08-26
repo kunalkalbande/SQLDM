@@ -28,15 +28,15 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            this.searchTextLabel = new System.Windows.Forms.Label();
-            this.searchTextTextBox = new System.Windows.Forms.TextBox();
-            this.matchCaseCheckBox = new System.Windows.Forms.CheckBox();
-            this.searchUpCheckBox = new System.Windows.Forms.CheckBox();
-            this.findNextButton = new System.Windows.Forms.Button();
-            this.optionsGroupBox = new System.Windows.Forms.GroupBox();
-            this.LookInLabel = new System.Windows.Forms.Label();
-            this.searchListComboBox = new System.Windows.Forms.ComboBox();
-            this.closeButton = new System.Windows.Forms.Button();
+            this.searchTextLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.searchTextTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.matchCaseCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.searchUpCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.findNextButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.optionsGroupBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.LookInLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.searchListComboBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.closeButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.optionsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,7 +86,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.findNextButton.Name = "findNextButton";
             this.findNextButton.Size = new System.Drawing.Size(85, 23);
             this.findNextButton.TabIndex = 5;
-            this.findNextButton.Text = "&Find Next";
+            this.findNextButton.Text = "Find Next";
             this.findNextButton.UseVisualStyleBackColor = true;
             this.findNextButton.Click += new System.EventHandler(this.findNextButton_Click);
             // 
@@ -111,7 +111,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.LookInLabel.Name = "LookInLabel";
             this.LookInLabel.Size = new System.Drawing.Size(45, 13);
             this.LookInLabel.TabIndex = 6;
-            this.LookInLabel.Text = "&Look in:";
+            this.LookInLabel.Text = "Look in:";
             // 
             // searchListComboBox
             // 
@@ -170,14 +170,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Label searchTextLabel;
-        private System.Windows.Forms.TextBox searchTextTextBox;
-        private System.Windows.Forms.CheckBox matchCaseCheckBox;
-        private System.Windows.Forms.CheckBox searchUpCheckBox;
-        private System.Windows.Forms.Button findNextButton;
-        private System.Windows.Forms.GroupBox optionsGroupBox;
-        private System.Windows.Forms.Label LookInLabel;
-        private System.Windows.Forms.ComboBox searchListComboBox;
-        private System.Windows.Forms.Button closeButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel searchTextLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox searchTextTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox matchCaseCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox searchUpCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton findNextButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox optionsGroupBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel LookInLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox searchListComboBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton closeButton;
     }
 }

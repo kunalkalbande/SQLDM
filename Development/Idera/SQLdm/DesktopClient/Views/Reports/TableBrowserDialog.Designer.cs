@@ -30,10 +30,10 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TableBrowserDialog));
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
-            this.descriptionLabel = new System.Windows.Forms.Label();
-            this.tableTreeView = new System.Windows.Forms.TreeView();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.descriptionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.tableTreeView = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTreeView();
             this.treeViewImages = new System.Windows.Forms.ImageList(this.components);
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.browseProgressControl = new MRG.Controls.UI.LoadingCircle();
@@ -143,9 +143,9 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports
 
         #endregion
 
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Label descriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel descriptionLabel;
         private System.Windows.Forms.TreeView tableTreeView;
         private System.Windows.Forms.ImageList treeViewImages;
         private System.ComponentModel.BackgroundWorker backgroundWorker;

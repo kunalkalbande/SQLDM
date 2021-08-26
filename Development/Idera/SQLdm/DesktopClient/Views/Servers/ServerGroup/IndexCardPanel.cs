@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
 {
+    using Helpers;
+    using Idera.SQLdm.DesktopClient.Properties;
+    using Infragistics.Windows.Themes;
     using System.Diagnostics;
     public static class StringExt
     {
@@ -19,7 +22,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
     {
         protected const int IndexCardPadding = 10;
         protected const int IndexCardShadowOffset = 7;
-        protected const int HeaderHeight = 15;
+        protected int HeaderHeight = 15;
         protected const int HeaderTitlePadding = 3;
 
         protected Rectangle selectionRectangleBounds;
@@ -44,11 +47,15 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                 ControlStyles.ResizeRedraw |
                 ControlStyles.SupportsTransparentBackColor, true);
 
+            //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
             UpdateClientBounds();
 
             Font = new Font(Font.FontFamily, Font.Size, FontStyle.Bold, GraphicsUnit.Point, 0);
             Title = "Card Title";
             Margin = new Padding(0);
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
         protected override void OnControlAdded(ControlEventArgs e)
@@ -170,6 +177,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            DrawCardBorder(e.Graphics);
             if (mouseOver)
             {
                 DrawHoverRectangle(e.Graphics);
@@ -228,6 +236,15 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                 Color selectionRectangle2ColorBottom1 = Color.FromArgb(244, 169, 65);
                 Color selectionRectangle2ColorBottom2 = Color.FromArgb(236, 152, 49);
 
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    borderColor = ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelSelectionBorderColor);
+                    selectionRectangle2ColorTop1 = ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelSelectionRectangle2ColorTop1);
+                    selectionRectangle2ColorTop2 = ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelSelectionRectangle2ColorTop2);
+                    selectionRectangle2ColorBottom1 = ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelSelectionRectangle2ColorBottom1);
+                    selectionRectangle2ColorBottom2 = ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelSelectionRectangle2ColorBottom2);
+                }
+
                 using (Pen borderPen1 = new Pen(borderColor))
                 {
                     graphics.DrawRectangle(borderPen1, selectionRectangleBounds);
@@ -263,6 +280,15 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                 Color selectionRectangle1ColorBottom1 = Color.FromArgb(255, 195, 79);
                 Color selectionRectangle1ColorBottom2 = Color.FromArgb(255, 199, 83);
 
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    borderColor = ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelHoverBorderColor);
+                    selectionRectangle1ColorTop1 = ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelSelectionRectangle1ColorTop1);
+                    selectionRectangle1ColorTop2 = ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelSelectionRectangle1ColorTop2);
+                    selectionRectangle1ColorBottom1 = ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelSelectionRectangle1ColorBottom1);
+                    selectionRectangle1ColorBottom2 = ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelSelectionRectangle1ColorBottom2);
+                }
+
                 using (Pen borderPen1 = new Pen(borderColor))
                 {
                     graphics.DrawRectangle(borderPen1, selectionRectangleBounds);
@@ -296,6 +322,13 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                 Color contentBackColor1 = Color.FromArgb(255, 255, 255);
                 Color contentBackColor2 = Color.FromArgb(241, 245, 249);
 
+                if(Settings.Default.ColorScheme == "Dark")
+                {
+                    borderColor = ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelBorderColor);
+                    contentBackColor1 = ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelContentBackColor1);
+                    contentBackColor2 = ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelContentBackColor2);
+                }
+
                 // Draw the card shadow first so it's in the background
                 DrawIndexCardShadow(graphics, indexCardBounds);
 
@@ -319,6 +352,50 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                                                 LinearGradientMode.Vertical))
                 {
                     graphics.FillRectangle(contentBackgroundBrush, contentAreaBounds);
+                }
+            }
+        }
+
+        private void DrawCardBorder(Graphics graphics)
+        {
+            if (graphics != null)
+            {
+                Color borderColor = Color.White;
+                Color selectionRectangle2ColorTop1 = Color.White;
+                Color selectionRectangle2ColorTop2 = Color.White;
+                Color selectionRectangle2ColorBottom1 = Color.White;
+                Color selectionRectangle2ColorBottom2 = Color.White;
+
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    borderColor = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+                    selectionRectangle2ColorTop1 = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+                    selectionRectangle2ColorTop2 = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+                    selectionRectangle2ColorBottom1 = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+                    selectionRectangle2ColorBottom2 = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+                }
+
+                using (Pen borderPen1 = new Pen(borderColor))
+                {
+                    graphics.DrawRectangle(borderPen1, selectionRectangleBounds);
+                }
+
+                float oneThirdHeight1 = selectionRectangleBounds.Height / 3;
+                RectangleF topBounds1 = selectionRectangleBounds;
+                topBounds1.X += 1;
+                topBounds1.Y += 1;
+                topBounds1.Width -= 1;
+                topBounds1.Height = oneThirdHeight1;
+                RectangleF bottomBounds1 = selectionRectangleBounds;
+                bottomBounds1.X += 1;
+                bottomBounds1.Y += oneThirdHeight1;
+                bottomBounds1.Width -= 1;
+                bottomBounds1.Height -= oneThirdHeight1;
+                using (LinearGradientBrush selectionRectangleBrushTop = new LinearGradientBrush(topBounds1, selectionRectangle2ColorTop1, selectionRectangle2ColorTop2, LinearGradientMode.Vertical))
+                using (LinearGradientBrush selectionRectangleBrushBottom = new LinearGradientBrush(bottomBounds1, selectionRectangle2ColorBottom1, selectionRectangle2ColorBottom2, LinearGradientMode.Vertical))
+                {
+                    graphics.FillRectangle(selectionRectangleBrushTop, topBounds1);
+                    graphics.FillRectangle(selectionRectangleBrushBottom, bottomBounds1);
                 }
             }
         }
@@ -360,6 +437,16 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                 Color bottomColor1 = Color.FromArgb(203, 203, 203);
                 Color bottomColor2 = Color.FromArgb(214, 214, 214);
                 float oneThirdHeight = HeaderHeight/3;
+                Brush titleFontColor = Brushes.Black;
+
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    topColor1 = ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelHeaderTopColor1);
+                    topColor2 = ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelHeaderTopColor2);
+                    bottomColor1 = ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelHeaderBottomColor1);
+                    bottomColor2 = ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelHeaderBottomColor2);
+                    titleFontColor = new SolidBrush(ColorTranslator.FromHtml(DarkThemeColorConstants.IndexCardPanelHeaderTitleColor));
+                }
 
                 RectangleF topBounds = new RectangleF(bounds.X, bounds.Y, bounds.Width, oneThirdHeight);
                 using (
@@ -387,13 +474,27 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                 titleFormat.FormatFlags |= StringFormatFlags.NoWrap;
                 titleFormat.Trimming = StringTrimming.EllipsisWord;
                
-                graphics.DrawString(Title.Length> 35? Title.Substring(0,35)+"...":Title, Font, Brushes.Black, titleBounds, titleFormat);
+                graphics.DrawString(Title.Length> 35? Title.Substring(0,35)+"...":Title, Font, titleFontColor, titleBounds, titleFormat);
 
                 if (ApplicationModel.Default.AllInstances[instanceId].CloudProviderId != null && (ApplicationModel.Default.AllInstances[instanceId].CloudProviderId == Common.Constants.MicrosoftAzureId || ApplicationModel.Default.AllInstances[instanceId].CloudProviderId == Common.Constants.AmazonRDSId || ApplicationModel.Default.AllInstances[instanceId].CloudProviderId == Common.Constants.MicrosoftAzureManagedInstanceId))
                 {
                     graphics.DrawImage(DesktopClient.Properties.Resources.CloudServerNormal, new Point(bounds.Width - 5, bounds.Y));
                 }
             }
+        }
+
+
+        //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+        private void ScaleControlsAsPerResolution()
+        {
+            if (AutoScaleSizeHelper.isLargeSize) HeaderHeight += 10;
+            if (AutoScaleSizeHelper.isXLargeSize) HeaderHeight += 15;
+            if (AutoScaleSizeHelper.isXXLargeSize) HeaderHeight += 20;
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            Invalidate();
         }
     }
 }

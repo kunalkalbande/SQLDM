@@ -1,3 +1,5 @@
+using Idera.SQLdm.DesktopClient.Helpers;
+
 namespace Idera.SQLdm.DesktopClient.Views.Administration
 {
     partial class ApplicationSecurityView
@@ -29,52 +31,52 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Infragistics.Win.UltraWinToolbars.RibbonTab ribbonTab1 = new Infragistics.Win.UltraWinToolbars.RibbonTab("Home");
-            Infragistics.Win.UltraWinToolbars.RibbonGroup ribbonGroup1 = new Infragistics.Win.UltraWinToolbars.RibbonGroup("_grpAction");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnEnableSecurity");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnDisableSecurity");
-            Infragistics.Win.UltraWinToolbars.RibbonGroup ribbonGroup2 = new Infragistics.Win.UltraWinToolbars.RibbonGroup("_grpPermission");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnAddPermission");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnEditPermission");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnDeletePermission");
-            Infragistics.Win.UltraWinToolbars.RibbonGroup ribbonGroup3 = new Infragistics.Win.UltraWinToolbars.RibbonGroup("_grpShowHide");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool11 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnGroupByBox");
+            Infragistics.Win.UltraWinToolbars.RibbonTab ribbonTab1 = new Controls.CustomControls.CustomRibbonTab("Home");
+            Infragistics.Win.UltraWinToolbars.RibbonGroup ribbonGroup1 = new Controls.CustomControls.CustomRibbonGroup("_grpAction");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Controls.CustomControls.CustomButtonTool("_btnEnableSecurity");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Controls.CustomControls.CustomButtonTool("_btnDisableSecurity");
+            Infragistics.Win.UltraWinToolbars.RibbonGroup ribbonGroup2 = new Controls.CustomControls.CustomRibbonGroup("_grpPermission");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Controls.CustomControls.CustomButtonTool("_btnAddPermission");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Controls.CustomControls.CustomButtonTool("_btnEditPermission");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Controls.CustomControls.CustomButtonTool("_btnDeletePermission");
+            Infragistics.Win.UltraWinToolbars.RibbonGroup ribbonGroup3 = new Controls.CustomControls.CustomRibbonGroup("_grpShowHide");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool11 = new Controls.CustomControls.CustomButtonTool("_btnGroupByBox");
             Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool27 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnShowSysadmins");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool27 = new Controls.CustomControls.CustomButtonTool("_btnShowSysadmins");
             Infragistics.Win.Appearance appearance20 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnEnableSecurity");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Controls.CustomControls.CustomButtonTool("_btnEnableSecurity");
             Infragistics.Win.Appearance appearance21 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnDisableSecurity");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Controls.CustomControls.CustomButtonTool("_btnDisableSecurity");
             Infragistics.Win.Appearance appearance22 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnAddPermission");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Controls.CustomControls.CustomButtonTool("_btnAddPermission");
             Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnEditPermission");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Controls.CustomControls.CustomButtonTool("_btnEditPermission");
             Infragistics.Win.Appearance appearance24 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool10 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnDeletePermission");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool10 = new Controls.CustomControls.CustomButtonTool("_btnDeletePermission");
             Infragistics.Win.Appearance appearance25 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool12 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnGroupByBox");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool12 = new Controls.CustomControls.CustomButtonTool("_btnGroupByBox");
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool2 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("GridContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool13 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnAddPermission");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool14 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnDeletePermission");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool15 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnEditPermission");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool21 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnEnableDisable");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool22 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnCollapseAllGroups");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool23 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnExpandAllGroups");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool24 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnPrint");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool25 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnExportToExcel");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool16 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnEnableDisable");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool17 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnCollapseAllGroups");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool18 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnExpandAllGroups");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool19 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnPrint");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool20 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnExportToExcel");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool26 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnShowSysadmins");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool28 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnSortAscending");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool29 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnSortDescending");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool13 = new Controls.CustomControls.CustomButtonTool("_btnAddPermission");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool14 = new Controls.CustomControls.CustomButtonTool("_btnDeletePermission");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool15 = new Controls.CustomControls.CustomButtonTool("_btnEditPermission");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool21 = new Controls.CustomControls.CustomButtonTool("_btnEnableDisable");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool22 = new Controls.CustomControls.CustomButtonTool("_btnCollapseAllGroups");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool23 = new Controls.CustomControls.CustomButtonTool("_btnExpandAllGroups");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool24 = new Controls.CustomControls.CustomButtonTool("_btnPrint");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool25 = new Controls.CustomControls.CustomButtonTool("_btnExportToExcel");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool16 = new Controls.CustomControls.CustomButtonTool("_btnEnableDisable");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool17 = new Controls.CustomControls.CustomButtonTool("_btnCollapseAllGroups");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool18 = new Controls.CustomControls.CustomButtonTool("_btnExpandAllGroups");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool19 = new Controls.CustomControls.CustomButtonTool("_btnPrint");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool20 = new Controls.CustomControls.CustomButtonTool("_btnExportToExcel");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool26 = new Controls.CustomControls.CustomButtonTool("_btnShowSysadmins");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool28 = new Controls.CustomControls.CustomButtonTool("_btnSortAscending");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool29 = new Controls.CustomControls.CustomButtonTool("_btnSortDescending");
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool1 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("HeaderContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool33 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnSortAscending");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool34 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnSortDescending");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool33 = new Controls.CustomControls.CustomButtonTool("_btnSortAscending");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool34 = new Controls.CustomControls.CustomButtonTool("_btnSortDescending");
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool2 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("_btnGroupByThisColumn", "");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool37 = new Infragistics.Win.UltraWinToolbars.ButtonTool("_btnGroupByBox");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool37 = new Controls.CustomControls.CustomButtonTool("_btnGroupByBox");
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool1 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("_btnGroupByThisColumn", "");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicationSecurityView));
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
@@ -98,25 +100,25 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList1 = new Infragistics.Win.ValueList(84474157);
+            Infragistics.Win.ValueList valueList1 = new Controls.CustomControls.CustomValueList(84474157);
             Infragistics.Win.ValueListItem valueListItem1 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem2 = new Infragistics.Win.ValueListItem();
             this._tlbrsMngr = new Idera.SQLdm.DesktopClient.Controls.ContextMenuManager(this.components);
-            this.ApplicationSecurityView_Fill_Panel = new System.Windows.Forms.Panel();
-            this._pnlGettingStarted = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this._gettingStartedTitle = new System.Windows.Forms.Label();
+            this.ApplicationSecurityView_Fill_Panel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this._pnlGettingStarted = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.panel3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this._gettingStartedTitle = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this._gettingStartedSeperator = new Idera.SQLdm.DesktopClient.Controls.InfiniteProgressBar();
-            this._gettingStartedEnableSecurityLinkLabel = new System.Windows.Forms.LinkLabel();
-            this._gettingStartedDescription = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this._pnlGrid = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this._gettingStartedEnableSecurityLinkLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this._gettingStartedDescription = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.panel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this._pnlGrid = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this._permissionGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this._permissionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._pnlSystemDefinedInfo = new System.Windows.Forms.Panel();
+            this._pnlSystemDefinedInfo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this._imgSystemDefinedInfo = new System.Windows.Forms.PictureBox();
-            this._lblSystemDefinedInfo = new System.Windows.Forms.Label();
+            this._lblSystemDefinedInfo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this._ultraGridExcelExporter = new Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter(this.components);
             this._saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this._ultraGridPrintDocument = new Infragistics.Win.UltraWinGrid.UltraGridPrintDocument(this.components);
@@ -286,6 +288,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(650, 402);
             this.panel3.TabIndex = 15;
+            
             // 
             // _gettingStartedTitle
             // 
@@ -337,6 +340,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
             this._gettingStartedDescription.Size = new System.Drawing.Size(623, 120);
             this._gettingStartedDescription.TabIndex = 8;
             this._gettingStartedDescription.Text = resources.GetString("_gettingStartedDescription.Text");
+            this._gettingStartedDescription.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel2
             // 
@@ -626,25 +630,25 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
         #endregion
 
         private Idera.SQLdm.DesktopClient.Controls.ContextMenuManager _tlbrsMngr;
-        private System.Windows.Forms.Panel ApplicationSecurityView_Fill_Panel;
-        private System.Windows.Forms.Panel _pnlGrid;
-        private System.Windows.Forms.Panel _pnlGettingStarted;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  ApplicationSecurityView_Fill_Panel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  _pnlGrid;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  _pnlGettingStarted;
         private System.Windows.Forms.BindingSource _permissionBindingSource;
         private Infragistics.Win.UltraWinGrid.UltraGrid _permissionGrid;
         private Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter _ultraGridExcelExporter;
         private System.Windows.Forms.SaveFileDialog _saveFileDialog;
         private Infragistics.Win.UltraWinGrid.UltraGridPrintDocument _ultraGridPrintDocument;
         private Infragistics.Win.Printing.UltraPrintPreviewDialog _ultraPrintPreviewDialog;
-        private System.Windows.Forms.Label _gettingStartedTitle;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _gettingStartedTitle;
         private Idera.SQLdm.DesktopClient.Controls.InfiniteProgressBar _gettingStartedSeperator;
-        private System.Windows.Forms.Label _gettingStartedDescription;
-        private System.Windows.Forms.LinkLabel _gettingStartedEnableSecurityLinkLabel;
-        private System.Windows.Forms.Label _lblSystemDefinedInfo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _gettingStartedDescription;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel _gettingStartedEnableSecurityLinkLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _lblSystemDefinedInfo;
         private System.Windows.Forms.PictureBox _imgSystemDefinedInfo;
-        private System.Windows.Forms.Panel _pnlSystemDefinedInfo;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  _pnlSystemDefinedInfo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel3;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _ApplicationSecurityView_Toolbars_Dock_Area_Left;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _ApplicationSecurityView_Toolbars_Dock_Area_Right;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _ApplicationSecurityView_Toolbars_Dock_Area_Top;

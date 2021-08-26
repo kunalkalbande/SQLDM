@@ -28,10 +28,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-           this.cancelButton = new System.Windows.Forms.Button();
-           this.okButton = new System.Windows.Forms.Button();
-           this.filterPropertiesGrid = new System.Windows.Forms.PropertyGrid();
-           this.resetButton = new System.Windows.Forms.Button();
+           this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+           this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+           this.filterPropertiesGrid = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPropertyGrid();
+           this.resetButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
            this.SuspendLayout();
            // 
            // cancelButton
@@ -105,9 +105,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
         private System.Windows.Forms.PropertyGrid filterPropertiesGrid;
-        private System.Windows.Forms.Button resetButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton resetButton;
     }
 }

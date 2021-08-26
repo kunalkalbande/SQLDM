@@ -28,21 +28,21 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            this.viewNameTextBox = new System.Windows.Forms.TextBox();
-            this.viewNameLabel = new System.Windows.Forms.Label();
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.monitoredInstancesListBox = new System.Windows.Forms.ListBox();
-            this.monitoredInstancesLabel = new System.Windows.Forms.Label();
-            this.divider1 = new System.Windows.Forms.Label();
-            this.viewInstancesLabel = new System.Windows.Forms.Label();
-            this.viewInstancesListBox = new System.Windows.Forms.ListBox();
-            this.removeButton = new System.Windows.Forms.Button();
-            this.addButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.addRemovePanel = new System.Windows.Forms.Panel();
-            this.monitoredInstancesPanel = new System.Windows.Forms.Panel();
-            this.monitoredInstancesStatusLabel = new System.Windows.Forms.Label();
+            this.viewNameTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.viewNameLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.monitoredInstancesListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListBox();
+            this.monitoredInstancesLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.divider1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.viewInstancesLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.viewInstancesListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListBox();
+            this.removeButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.addButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.tableLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.addRemovePanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.monitoredInstancesPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.monitoredInstancesStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.loadMonitoredInstancesBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.tableLayoutPanel1.SuspendLayout();
             this.addRemovePanel.SuspendLayout();
@@ -170,7 +170,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 0;
-            this.addButton.Text = "Add >";
+            this.addButton.Text = "   Add >    ";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
@@ -270,21 +270,21 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.TextBox viewNameTextBox;
-        private System.Windows.Forms.Label viewNameLabel;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox viewNameTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel viewNameLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
         private System.Windows.Forms.ListBox monitoredInstancesListBox;
-        private System.Windows.Forms.Label monitoredInstancesLabel;
-        private System.Windows.Forms.Label divider1;
-        private System.Windows.Forms.Label viewInstancesLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel monitoredInstancesLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel divider1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel viewInstancesLabel;
         private System.Windows.Forms.ListBox viewInstancesListBox;
-        private System.Windows.Forms.Button removeButton;
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel addRemovePanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton removeButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton addButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  addRemovePanel;
         private System.ComponentModel.BackgroundWorker loadMonitoredInstancesBackgroundWorker;
-        private System.Windows.Forms.Panel monitoredInstancesPanel;
-        private System.Windows.Forms.Label monitoredInstancesStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  monitoredInstancesPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel monitoredInstancesStatusLabel;
     }
 }

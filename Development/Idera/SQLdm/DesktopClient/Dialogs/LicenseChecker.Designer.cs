@@ -24,7 +24,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs {
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LicenseChecker));
-            this.label1 = new System.Windows.Forms.Label();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -53,6 +53,6 @@ namespace Idera.SQLdm.DesktopClient.Dialogs {
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
     }
 }

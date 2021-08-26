@@ -13,7 +13,7 @@ using Infragistics.Win.Misc;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 {
-    public partial class PulseDestinationDialog : Form
+    public partial class PulseDestinationDialog : BaseDialog
     {
         private PulseDestination destination;
         private CaretData current;
@@ -22,6 +22,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public PulseDestinationDialog()
         {
+            this.DialogHeader = "Create Newsfeed Message";
             InitializeComponent();
             bodyCaret = new CaretData();
             bodyCaret.editor = bodyTextBox;

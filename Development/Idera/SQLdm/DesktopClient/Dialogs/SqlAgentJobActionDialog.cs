@@ -11,7 +11,7 @@ using Idera.SQLdm.DesktopClient.Properties;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class SqlAgentJobActionDialog : Form
+    public partial class SqlAgentJobActionDialog : BaseDialog
     {
         private readonly int instanceId;
         private readonly string jobName;
@@ -21,6 +21,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public SqlAgentJobActionDialog(int instanceId, string jobName, JobControlAction jobAction)
         {
+            this.DialogHeader = "< Action Title >";
             InitializeComponent();
 
             this.instanceId = instanceId;

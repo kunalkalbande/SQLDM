@@ -32,10 +32,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             Infragistics.Win.UltraWinListView.UltraListViewItem ultraListViewItem2 = new Infragistics.Win.UltraWinListView.UltraListViewItem("Item 2", null, null);
             Infragistics.Win.UltraWinListView.UltraListViewItem ultraListViewItem3 = new Infragistics.Win.UltraWinListView.UltraListViewItem("Item 3", null, null);
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.ultraListView1 = new Infragistics.Win.UltraWinListView.UltraListView();
-            this.cbCheckitems = new System.Windows.Forms.CheckBox();
+            this.cbCheckitems = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             this.ultraLabel1 = new Infragistics.Win.Misc.UltraLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ultraListView1)).BeginInit();
             this.SuspendLayout();
@@ -141,10 +141,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
         private Infragistics.Win.UltraWinListView.UltraListView ultraListView1;
         private Infragistics.Win.Misc.UltraLabel ultraLabel1;
-        private System.Windows.Forms.CheckBox cbCheckitems;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox cbCheckitems;
     }
 }

@@ -42,32 +42,32 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.filterPanel = new System.Windows.Forms.Panel();
-            this.rangeLabel = new System.Windows.Forms.Label();
-            this.rangeInfoLabel = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.filterPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.rangeLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.rangeInfoLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.panel3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.runReportButton = new Infragistics.Win.Misc.UltraButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tagsComboBox = new System.Windows.Forms.ComboBox();
-            //this.serverNameText = new System.Windows.Forms.TextBox();
-            this.serverNameLabel = new System.Windows.Forms.Label();
-            this.instanceCombo = new System.Windows.Forms.ComboBox();
-            this.targetCombo = new System.Windows.Forms.ComboBox();
-            this.sourceCombo = new System.Windows.Forms.ComboBox();
-            this.sampleSizeCombo = new System.Windows.Forms.ComboBox();
-            this.periodCombo = new System.Windows.Forms.ComboBox();
-            this.instanceLabel = new System.Windows.Forms.Label();
-            this.sourceLabel = new System.Windows.Forms.Label();
-            this.targetLabel = new System.Windows.Forms.Label();
-            this.sampleLabel = new System.Windows.Forms.Label();
-            this.periodLabel = new System.Windows.Forms.Label();
-            this.tagsLabel = new System.Windows.Forms.Label();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.tagsComboBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            //this.serverNameText = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.serverNameLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.instanceCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.targetCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.sourceCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.sampleSizeCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.periodCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.instanceLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.sourceLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.targetLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.sampleLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.periodLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.tagsLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.mainContentPanel = new System.Windows.Forms.Panel();
-            this.loadingPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.mainContentPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.loadingPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.loadingCircle = new MRG.Controls.UI.LoadingCircle();
             this.reportInstructionsControl = new Idera.SQLdm.DesktopClient.Views.Reports.ReportControls.ReportInstructionsControl();
             this.panel1.SuspendLayout();
@@ -157,13 +157,17 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
             // runReportButton
             // 
             this.runReportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.runReportButton.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton;
             this.runReportButton.Location = new System.Drawing.Point(671, 5);
             this.runReportButton.Name = "runReportButton";
             this.runReportButton.ShowFocusRect = false;
             this.runReportButton.ShowOutline = false;
             this.runReportButton.TabIndex = 0;
             this.runReportButton.Text = "Run Report";
+            this.runReportButton.Appearance.ForeColor = System.Drawing.Color.White;
+            this.runReportButton.Appearance.BorderColor3DBase = System.Drawing.Color.FromArgb(((int)(((byte)(00)))), ((int)(((byte)(96)))), ((int)(((byte)(137)))));
+            this.runReportButton.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(00)))), ((int)(((byte)(96)))), ((int)(((byte)(137)))));
+            this.runReportButton.Appearance.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(00)))), ((int)(((byte)(96)))), ((int)(((byte)(137)))));
+            this.runReportButton.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(00)))), ((int)(((byte)(96)))), ((int)(((byte)(137)))));
             this.runReportButton.UseAppStyling = false;
             this.runReportButton.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
             this.runReportButton.Click += new System.EventHandler(this.runReportButton_Click);
@@ -198,7 +202,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
             // instanceCombo
             // 
             this.instanceCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.instanceCombo.FormattingEnabled = true;
+            this.instanceCombo.FormattingEnabled = false;
             this.instanceCombo.Location = new System.Drawing.Point(349, 7);
             this.instanceCombo.Name = "instanceCombo";
             this.instanceCombo.Size = new System.Drawing.Size(211, 21);
@@ -423,33 +427,33 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
 
         #endregion
 
-        protected System.Windows.Forms.Panel panel1;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
         protected Microsoft.Reporting.WinForms.ReportViewer reportViewer;
-        protected System.Windows.Forms.Panel filterPanel;
-        protected System.Windows.Forms.Label tagsLabel;
-        protected System.Windows.Forms.Label serverNameLabel;
-        protected System.Windows.Forms.Label periodLabel;
-        protected System.Windows.Forms.Label sampleLabel;
-        protected System.Windows.Forms.Label instanceLabel;
-        protected System.Windows.Forms.Label sourceLabel;
-        protected System.Windows.Forms.Label targetLabel;
-        protected System.Windows.Forms.ComboBox periodCombo;
-        protected System.Windows.Forms.ComboBox sampleSizeCombo;
-        protected System.Windows.Forms.ComboBox instanceCombo;
-        protected System.Windows.Forms.ComboBox targetCombo;
-        protected System.Windows.Forms.ComboBox sourceCombo;
-        protected System.Windows.Forms.ComboBox tagsComboBox;
-        protected System.Windows.Forms.TextBox serverNameText;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel3;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  filterPanel;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel tagsLabel;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel serverNameLabel;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel periodLabel;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel sampleLabel;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel instanceLabel;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel sourceLabel;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel targetLabel;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox periodCombo;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox sampleSizeCombo;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox instanceCombo;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox targetCombo;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox sourceCombo;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox tagsComboBox;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox serverNameText;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel3;
         private Infragistics.Win.Misc.UltraButton runReportButton;
-        private System.Windows.Forms.Panel mainContentPanel;
-        private System.Windows.Forms.Panel loadingPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  mainContentPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  loadingPanel;
         private MRG.Controls.UI.LoadingCircle loadingCircle;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
         protected ReportInstructionsControl reportInstructionsControl;
-        protected System.Windows.Forms.Label rangeLabel;
-        protected System.Windows.Forms.Label rangeInfoLabel;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel rangeLabel;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel rangeInfoLabel;
     }
 }

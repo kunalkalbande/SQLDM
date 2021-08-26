@@ -29,8 +29,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
         private void InitializeComponent()
         {
             this.databaseBrowseButton = new Infragistics.Win.Misc.UltraButton();
-            this.databaseTextbox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.databaseTextbox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.panel1.SuspendLayout();
             this.filterPanel.SuspendLayout();
             this.SuspendLayout();
@@ -135,9 +135,9 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
 
         #endregion
 
-        protected System.Windows.Forms.TextBox databaseTextbox;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox databaseTextbox;
         protected Infragistics.Win.Misc.UltraButton databaseBrowseButton;
-        protected System.Windows.Forms.Label label1;
+        protected Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
 
 
     }

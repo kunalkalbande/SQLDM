@@ -21,6 +21,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using Wintellect.PowerCollections;
    // using Microsoft.VisualBasic.Logging;
     using System.IO;
+    using Infragistics.Windows.Themes;
+    using Idera.SQLdm.DesktopClient.Controls;
 
     public partial class NotificationRulesViewPanel : UserControl
     {
@@ -37,6 +39,20 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             InitializeComponent();
             rulesListView.DrawFilter = new HideFocusRectangleDrawFilter();
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.rulesListView);
         }
 
         public void LoadInstances(IManagementService managementService)
@@ -370,7 +386,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             if (rulesListView.Selected.Rows.Count != 1)
             {
                 string message = "";
-                rulePreview.DocumentText = String.Format("<html><body><center>{0}</center></body></html>", message);
+                var backColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor) : Color.White;
+                rulePreview.DocumentText = String.Format("<html><body style='background:" + backColor + "'><center>{0}</center></body></html>", message);
             }
             else
             {

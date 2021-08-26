@@ -22,6 +22,7 @@ using System.Drawing.Drawing2D;
 using Idera.SQLdm.Common;
 using Infragistics.Win.UltraWinToolbars;
 using Idera.SQLdm.Common.UI.Dialogs;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
 {
@@ -69,9 +70,24 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
         public DatabasesControl() : base(DashboardPanel.Databases)
         {
             InitializeComponent();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
             ChartFxExtensions.SetContextMenu(databaseChart, toolbarsManager);
 
             helpTopic = HelpTopics.ServerDashboardViewDatabasesPanel;
+            AutoScaleControlAsPerResolution();
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.topDatabasesGrid);
         }
 
         internal override void Initialize(ServerBaseView baseView, ServerSummaryHistoryData history)
@@ -792,7 +808,6 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
         {
             Chart chart = (Chart)sender;
             int maxLegendWidth = chart.Width / 3;
-
             chart.LegendBox.AutoSize = true;
             chart.UpdateSizeNow();
             if (chart.LegendBox.Width > maxLegendWidth)
@@ -807,6 +822,18 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
             UltraGridBand band = topDatabasesGrid.DisplayLayout.Bands[0];
 
             band.Columns["DatabaseName"].CellAppearance.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter;
+        }
+
+        private void AutoScaleControlAsPerResolution()
+        {
+            if(AutoScaleSizeHelper.isScalingRequired)
+            {
+                this.topDatabasesGrid.Size = new Size(220, 0);
+                this.gridPanel.Size = new Size(220, 0);
+                this.gridPanel.BackColor = Color.White;
+                this.chartPanel.Location = new Point(chartPanel.Location.X + 100, chartPanel.Location.Y);
+                this.chartPanel.Padding = new Padding(0,0,0,10);
+            }
         }
     }
 

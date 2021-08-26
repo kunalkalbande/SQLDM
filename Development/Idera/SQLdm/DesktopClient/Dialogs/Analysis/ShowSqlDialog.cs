@@ -10,7 +10,7 @@ using Idera.SQLdm.Common.UI.Dialogs;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class ShowSqlDialog : Form
+    public partial class ShowSqlDialog : BaseDialog
     {
         private static Logger LOG = Logger.GetLogger("ShowSqlDialog");
 
@@ -18,6 +18,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public ShowSqlDialog()
         {
+            this.DialogHeader = "T-SQL Viewer";
             InitializeComponent();
         }
 

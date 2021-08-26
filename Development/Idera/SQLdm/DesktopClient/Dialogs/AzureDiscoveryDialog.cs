@@ -11,7 +11,7 @@ using Idera.SQLdm.DesktopClient.Dialogs.AzureConfigurations;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class AzureDiscoveryDialog : Form
+    public partial class AzureDiscoveryDialog : BaseDialog
     {
         #region private properties
         private readonly String _loginName;
@@ -24,6 +24,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         #region Constructor
         public AzureDiscoveryDialog(String LoginName, String Password, string azureApplicationName)
         {
+            this.DialogHeader = "Azure Application Configuration";
             _loginName = LoginName;
             _password = Password;
             _azureApplicationName = azureApplicationName;

@@ -26,7 +26,7 @@ using Infragistics.Win.UltraWinToolbars;
 using Wintellect.PowerCollections;
 using Idera.SQLdm.Common.Objects;
 using System.Globalization;
-
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
 {
@@ -104,6 +104,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             ChartFxExtensions.SetContextMenu(contentionChart, toolbarsManager);
             InitializeCharts();
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
 
             Settings.Default.PropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(Settings_PropertyChanged);
         }
@@ -2123,6 +2125,18 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.tempdbSessionsGrid);
         }
 
 

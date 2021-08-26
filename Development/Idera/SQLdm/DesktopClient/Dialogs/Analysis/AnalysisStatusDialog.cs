@@ -14,10 +14,12 @@ using Idera.PrescriptiveAnalytics.PrescriptiveAnalyzer.Common.Resources;
 using Idera.Newsfeed.Plugins.UI.Dialogs;
 using Idera.SQLdm.DesktopClient.Views;
 using System.Diagnostics;
+using System.Drawing;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs.Analysis
 {
-    public partial class AnalysisStatusDialog : Form
+    public partial class AnalysisStatusDialog :Form
     {
         private static int count = 0;
         private MonitoredSqlServer serverInstance;
@@ -81,7 +83,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Analysis
 
         public AnalysisStatusDialog()
         {
+            
             InitializeComponent();
+            setDialogTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+
         }
 
         public AnalysisStatusDialog(MonitoredSqlServer mserverInstance, List<int> BlockedCategoryID, ActiveWaitsConfiguration waitConfig,
@@ -113,12 +119,30 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Analysis
             setOfAllCategories = new List<int>();
             IsAnalysisDone = false;
             InitializeComponent();
+            setDialogTheme();
             label3.Text = "Idera SQL DM is analyzing " + serverInstance.InstanceName + " - " + databaseNameDiagnoses + "...";
             GetMasterRecommendations();
             count = 0;
             AnalysisDuration = analysisDuration;
             config.BlockedCategories = blockedCategories;
             callBackgroundWorker(ConstructorType.analysis);
+
+        }
+        private void setDialogTheme()
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                Color backColor = ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor);
+                this.BackColor = backColor;
+            }
+            else
+            {
+                this.BackColor = System.Drawing.SystemColors.Window;
+            }
+        }
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            setDialogTheme();
 
         }
         private void CancelAnalysis()

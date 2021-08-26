@@ -20,7 +20,7 @@ using Microsoft.SqlServer.MessageBox;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    internal partial class MassMaintenanceModeDialog : Form
+    internal partial class MassMaintenanceModeDialog : BaseDialog
     {
         private class DummyClass
         {
@@ -36,10 +36,13 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public MassMaintenanceModeDialog()
         {
+            this.DialogHeader = "Maintenance Mode";
             InitializeComponent();
             _presenter = new ServerTreeViewPresenter(treeView);
             InitializeTime();
             InitializeComboBox();
+            SetPropertiesTheme();
+            Infragistics.Windows.Themes.ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
         public MassMaintenanceModeDialog(Tag tag)
@@ -48,6 +51,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             _presenter = new ServerTreeViewPresenter(treeView, tag);
             InitializeTime();
             InitializeComboBox();
+            SetPropertiesTheme();
+            Infragistics.Windows.Themes.ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
         public MassMaintenanceModeDialog(UserView view)
@@ -56,7 +61,28 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             _presenter = new ServerTreeViewPresenter(treeView, view);
             InitializeTime();
             InitializeComboBox();
+            SetPropertiesTheme();
+            Infragistics.Windows.Themes.ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
+
+        void OnCurrentThemeChanged(object sender, System.EventArgs e)
+        {
+            SetPropertiesTheme();
+        }
+
+        void SetPropertiesTheme()
+        {
+            var propertiesThemeManager = new Controls.PropertiesThemeManager();
+            propertiesThemeManager.UpdatePropertyTheme(maintenanceModeContentPage);
+        }
+
+
+        private void MassMaintenanceMonitor_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            if (e != null) e.Cancel = true;
+            Idera.SQLdm.DesktopClient.Helpers.ApplicationHelper.ShowHelpTopic(HelpTopics.MaintenanceMode);
+        }
+
 
         /// <summary>
         /// Initializes the Current time from the first server

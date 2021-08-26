@@ -16,6 +16,7 @@ using Idera.SQLdm.DesktopClient.Properties;
 using Infragistics.Win;
 using Infragistics.Win.UltraWinGrid;
 using Infragistics.Win.UltraWinToolbars;
+using Infragistics.Windows.Themes;
 using ColumnHeader = Infragistics.Win.UltraWinGrid.ColumnHeader;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
@@ -93,6 +94,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
 
             InitializeDataTable();
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
 
             // load value lists for grid display
             ValueListItem listItem;
@@ -125,6 +128,26 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
 
             databasesFilterComboBox.Enabled = false;
             databasesFilterComboBox.Items.Add(null, "< "+ Idera.SQLdm.Common.Constants.LOADING+" >");
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+        }
+        private void ScaleControlsAsPerResolution()
+        {
+            if (AutoScaleSizeHelper.isLargeSize)
+            {
+                this.panel1.Location = new Point(this.panel1.Location.X, this.panel1.Location.Y + 5);
+                return;
+            }
+            if(AutoScaleSizeHelper.isXLargeSize)
+            {
+                this.panel1.Location = new Point(this.panel1.Location.X, this.panel1.Location.Y + 8);
+                return;
+            }
+            if(AutoScaleSizeHelper.isXXLargeSize)
+            {
+                this.panel1.Location = new Point(this.panel1.Location.X, this.panel1.Location.Y + 10);
+                return;
+            }
         }
 
         #endregion
@@ -784,6 +807,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
         private void DatabasesConfigurationView_Load(object sender, EventArgs e)
         {
             ApplySettings();
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
         }
 
         #endregion
@@ -883,6 +908,16 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             ApplicationController.Default.ActiveView.CancelRefresh();
             ApplicationController.Default.RefreshActiveView();
         }
+        private void mouseEnter_refreshDatabasesButton(Object Sender, EventArgs e)
+        {
+            if (Settings.Default.ColorScheme == "Dark" && appearance1 != null)
+                appearance1.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefreshHover;
+        }
+        private void mouseLeave_refreshDatabasesButton(Object Sender, EventArgs e)
+        {
+            if (Settings.Default.ColorScheme == "Dark" && appearance1 != null)
+                appearance1.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh;
+        }
 
         /// <summary>
         /// Adapts the size of the font for this control in case of OS font changes.
@@ -890,6 +925,30 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                if (!refreshDatabasesButton.Enabled)
+                    appearance1.Image = Helpers.ImageUtils.ChangeOpacity(global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh, 0.50F);
+                this.refreshDatabasesButton.UseOsThemes = DefaultableBoolean.False;
+                this.refreshDatabasesButton.UseAppStyling = false;
+                this.refreshDatabasesButton.ButtonStyle = UIElementButtonStyle.FlatBorderless;
+            }
+            else
+            {
+                this.refreshDatabasesButton.UseAppStyling = true;
+            }
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.configurationGrid);
         }
     }
 }

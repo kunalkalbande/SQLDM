@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblHeader = new System.Windows.Forms.Label();
-            this.availableInstancesStatusLabel = new System.Windows.Forms.Label();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblHeader = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.availableInstancesStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.loadingServersProgressControl = new MRG.Controls.UI.LoadingCircle();
-            this.addedInstancesListBox = new System.Windows.Forms.ListBox();
-            this.removeInstancesButton = new System.Windows.Forms.Button();
-            this.addInstancesButton = new System.Windows.Forms.Button();
-            this.availableInstancesLabel = new System.Windows.Forms.Label();
-            this.addedInstancesLabel = new System.Windows.Forms.Label();
-            this.availableInstancesListBox = new System.Windows.Forms.ListBox();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
+            this.addedInstancesListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListBox();
+            this.removeInstancesButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.addInstancesButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.availableInstancesLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.addedInstancesLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.availableInstancesListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListBox();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnOK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.loadServersWorker = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
@@ -133,7 +133,7 @@
             this.removeInstancesButton.Name = "removeInstancesButton";
             this.removeInstancesButton.Size = new System.Drawing.Size(75, 23);
             this.removeInstancesButton.TabIndex = 24;
-            this.removeInstancesButton.Text = "< &Remove";
+            this.removeInstancesButton.Text = "< Remove";
             this.removeInstancesButton.UseVisualStyleBackColor = true;
             this.removeInstancesButton.Click += new System.EventHandler(this.removeInstancesButton_Click);
             // 
@@ -145,7 +145,7 @@
             this.addInstancesButton.Name = "addInstancesButton";
             this.addInstancesButton.Size = new System.Drawing.Size(75, 23);
             this.addInstancesButton.TabIndex = 23;
-            this.addInstancesButton.Text = "&Add >";
+            this.addInstancesButton.Text = "Add >";
             this.addInstancesButton.UseVisualStyleBackColor = true;
             this.addInstancesButton.Click += new System.EventHandler(this.addInstancesButton_Click);
             // 
@@ -245,19 +245,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.Label availableInstancesStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblHeader;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel availableInstancesStatusLabel;
         private MRG.Controls.UI.LoadingCircle loadingServersProgressControl;
         private System.Windows.Forms.ListBox addedInstancesListBox;
-        private System.Windows.Forms.Button removeInstancesButton;
-        private System.Windows.Forms.Button addInstancesButton;
-        private System.Windows.Forms.Label availableInstancesLabel;
-        private System.Windows.Forms.Label addedInstancesLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton removeInstancesButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton addInstancesButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel availableInstancesLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel addedInstancesLabel;
         private System.Windows.Forms.ListBox availableInstancesListBox;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnOK;
         private System.ComponentModel.BackgroundWorker loadServersWorker;
 
 

@@ -9,12 +9,13 @@ using Idera.SQLdm.DesktopClient.Helpers;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class AffectedServersConfirmationDialog: Form
+    public partial class AffectedServersConfirmationDialog: BaseDialog
     {
         private string helpLink = String.Empty;
 
         public AffectedServersConfirmationDialog()
         {
+            this.DialogHeader = "Affected Instances";
             InitializeComponent();
             AdaptFontSize();
         }

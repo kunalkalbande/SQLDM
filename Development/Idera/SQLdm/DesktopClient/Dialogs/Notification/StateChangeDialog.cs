@@ -8,12 +8,13 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using System.ComponentModel;
     using Idera.SQLdm.DesktopClient.Helpers;
 
-    public partial class StateChangeDialog : Form
+    public partial class StateChangeDialog : BaseDialog
     {
         public MetricStateChangeRule rule;
 
         public StateChangeDialog()
         {
+            this.DialogHeader = "State Change";
             InitializeComponent();
             AdaptFontSize();
         }

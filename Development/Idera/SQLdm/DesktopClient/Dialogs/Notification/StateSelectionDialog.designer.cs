@@ -28,14 +28,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.chkInfo = new System.Windows.Forms.CheckBox();
-            this.informationBox2 = new Divelements.WizardFramework.InformationBox();
-            this.chkOK = new System.Windows.Forms.CheckBox();
-            this.chkCritical = new System.Windows.Forms.CheckBox();
-            this.chkWarning = new System.Windows.Forms.CheckBox();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnOK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.chkInfo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.informationBox2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
+            this.chkOK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.chkCritical = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.chkWarning = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -160,13 +160,13 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         #endregion
 
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckBox chkCritical;
-        private System.Windows.Forms.CheckBox chkWarning;
-        private System.Windows.Forms.CheckBox chkOK;
-        private Divelements.WizardFramework.InformationBox informationBox2;
-        private System.Windows.Forms.CheckBox chkInfo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkCritical;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkWarning;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox informationBox2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkInfo;
     }
 }

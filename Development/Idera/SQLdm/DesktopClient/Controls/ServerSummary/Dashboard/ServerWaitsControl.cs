@@ -16,6 +16,8 @@ using Idera.SQLdm.DesktopClient.Objects;
 using Idera.SQLdm.DesktopClient.Views.Servers.Server;
 using Idera.SQLdm.Common.UI.Dialogs;
 using Idera.SQLdm.DesktopClient.Dialogs;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Properties;
 
 namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
 {
@@ -38,6 +40,12 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
             base.Initialize(baseView, history);
 
             InitializeCharts();
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+            else
+            {
+                this.serverWaitsPanel.Padding = new Padding(0, 0, 10, 10);
+            }
         }
 
 
@@ -100,8 +108,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
                     }
                     else
                     {
-                        int Id = RepositoryHelper.GetSelectedInstanceId(instanceId);
-                        MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(Id);
+                        MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(instanceId);
                         if (status != null)
                         {
                             serverVersion = status.InstanceVersion;
@@ -260,6 +267,11 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
                 // hit type of other means they clicked on the chart toolbar
                 ShowControlDetails((Chart)sender);
             }
+        }
+
+        private void ScaleControlsAsPerResolution()
+        {
+            this.serverWaitsPanel.Padding = new Padding(0,0,10,10);
         }
 
         #endregion

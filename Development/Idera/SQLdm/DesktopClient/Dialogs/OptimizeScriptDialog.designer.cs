@@ -30,15 +30,15 @@
         {
             ActiproSoftware.SyntaxEditor.Document document1 = new ActiproSoftware.SyntaxEditor.Document();
             ActiproSoftware.SyntaxEditor.VisualStudio2005SyntaxEditorRenderer visualStudio2005SyntaxEditorRenderer1 = new ActiproSoftware.SyntaxEditor.VisualStudio2005SyntaxEditorRenderer();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.syntaxEditor1 = new ActiproSoftware.SyntaxEditor.SyntaxEditor();
 
-            //this.txtActiSyntax = new System.Windows.Forms.TextBox();
-            this.btnOptimizeNow = new System.Windows.Forms.Button();
+            //this.txtActiSyntax = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.btnOptimizeNow = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.workerLoad = new System.ComponentModel.BackgroundWorker();
             this._loading = new MRG.Controls.UI.LoadingCircle();
-            this.lblLoading = new System.Windows.Forms.Label();
-            this.btnCopy = new System.Windows.Forms.Button();
+            this.lblLoading = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.btnCopy = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -177,12 +177,12 @@
 
         private ActiproSoftware.SyntaxEditor.SyntaxEditor syntaxEditor1;
         //Temp TextBox
-        //private System.Windows.Forms.TextBox txtActiSyntax;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnOptimizeNow;
+        //private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox txtActiSyntax;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnOptimizeNow;
         private System.ComponentModel.BackgroundWorker workerLoad;
         private MRG.Controls.UI.LoadingCircle _loading;
-        private System.Windows.Forms.Label lblLoading;
-        private System.Windows.Forms.Button btnCopy;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblLoading;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCopy;
     }
 }

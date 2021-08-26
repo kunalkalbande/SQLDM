@@ -1,3 +1,7 @@
+using Idera.SQLdm.DesktopClient.Controls.CustomControls;
+using Idera.SQLdm.DesktopClient.Properties;
+using System;
+
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
     partial class ManageServersDialog
@@ -30,29 +34,29 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageServersDialog));
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
-            this.headerPanel = new System.Windows.Forms.Panel();
-            this.descriptionLabel = new System.Windows.Forms.Label();
-            this.dividerLabel1 = new System.Windows.Forms.Label();
-            this.instancesListView = new System.Windows.Forms.ListView();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.headerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.descriptionLabel = new Controls.CustomControls.CustomLabel();
+            this.dividerLabel1 = new Controls.CustomControls.CustomLabel();
+            this.instancesListView = new CustomListView();
             this.testStatusHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.instanceNameHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.authenticationModeHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.vCenterHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.vmNameHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.connectionTestStatusImages = new System.Windows.Forms.ImageList(this.components);
-            this.addButton = new System.Windows.Forms.Button();
-            this.removeButton = new System.Windows.Forms.Button();
-            this.testButton = new System.Windows.Forms.Button();
-            this.editButton = new System.Windows.Forms.Button();
-            this.applyButton = new System.Windows.Forms.Button();
-            this.instanceCountLabel = new System.Windows.Forms.Label();
+            this.addButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.removeButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.testButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.editButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.applyButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.instanceCountLabel = new Controls.CustomControls.CustomLabel(); ;
             this.licenseInformationPictureBox = new System.Windows.Forms.PictureBox();
-            this.licenseInformationLabel = new System.Windows.Forms.Label();
-            this.gettingStartedLabel = new System.Windows.Forms.Label();
+            this.licenseInformationLabel = new Controls.CustomControls.CustomLabel(); ;
+            this.gettingStartedLabel = new Controls.CustomControls.CustomLabel(); ;
             this.applyChangesBackgroundWorker = new System.ComponentModel.BackgroundWorker();
-            this.btnVMConfig = new System.Windows.Forms.Button();
+            this.btnVMConfig = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.statusProgressBar = new Idera.SQLdm.DesktopClient.Controls.InfiniteProgressBar();
             this.headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.licenseInformationPictureBox)).BeginInit();
@@ -83,14 +87,16 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // headerPanel
             // 
             this.headerPanel.BackColor = System.Drawing.Color.White;
-            this.headerPanel.BackgroundImage = global::Idera.SQLdm.DesktopClient.Properties.Resources.AddServersManagerDialogHeader;
+            if (Settings.Default.ColorScheme != "Dark")
+                this.headerPanel.BackgroundImage = global::Idera.SQLdm.DesktopClient.Properties.Resources.AddServersManagerDialogHeader;
             this.headerPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.headerPanel.Controls.Add(this.descriptionLabel);
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPanel.Location = new System.Drawing.Point(0, 0);
             this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(565, 60);
+            this.headerPanel.Size = new System.Drawing.Size(500, 60);
             this.headerPanel.TabIndex = 7;
+            //this.headerPanel.BackColor = System.Drawing.Color.Yellow;
             // 
             // descriptionLabel
             // 
@@ -98,13 +104,17 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.descriptionLabel.BackColor = System.Drawing.Color.Transparent;
             this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLabel.Location = new System.Drawing.Point(64, 6);
+            if (Settings.Default.ColorScheme == "Dark")
+                this.descriptionLabel.Location = new System.Drawing.Point(10, 6);
+            else
+                this.descriptionLabel.Location = new System.Drawing.Point(60, 6);
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.descriptionLabel.Size = new System.Drawing.Size(498, 47);
+            this.descriptionLabel.Size = new System.Drawing.Size(430, 47);
             this.descriptionLabel.TabIndex = 0;
             this.descriptionLabel.Text = resources.GetString("descriptionLabel.Text");
             this.descriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            
             // 
             // dividerLabel1
             // 
@@ -127,6 +137,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.authenticationModeHeader,
             this.vCenterHeader,
             this.vmNameHeader});
+            //this.instancesListView.BackColor = backcolor;
             this.instancesListView.FullRowSelect = true;
             this.instancesListView.HideSelection = false;
             this.instancesListView.Location = new System.Drawing.Point(12, 112);
@@ -163,6 +174,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // vCenterHeader
             // 
             this.vCenterHeader.Text = "Virtualization Host";
+            this.vCenterHeader.Width = 119;
             // 
             // vmNameHeader
             // 
@@ -289,7 +301,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.btnVMConfig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnVMConfig.Location = new System.Drawing.Point(294, 373);
             this.btnVMConfig.Name = "btnVMConfig";
-            this.btnVMConfig.Size = new System.Drawing.Size(97, 23);
+            //this.btnVMConfig.Size = new System.Drawing.Size(97, 23);
             this.btnVMConfig.TabIndex = 15;
             this.btnVMConfig.Text = "VM Configuration";
             this.btnVMConfig.UseVisualStyleBackColor = true;
@@ -332,6 +344,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(480, 400);
+            Console.WriteLine("Current color in designer after redraw" + this.backcolor);
+         //  this.BackColor = this.backcolor;// System.Drawing.Color.Red;
             this.Name = "ManageServersDialog";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
@@ -347,29 +361,29 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Panel headerPanel;
-        private System.Windows.Forms.Label dividerLabel1;
-        private System.Windows.Forms.ListView instancesListView;
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button removeButton;
-        private System.Windows.Forms.Button testButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  headerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel dividerLabel1;
+        private CustomListView instancesListView;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton addButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton removeButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton testButton;
         private Idera.SQLdm.DesktopClient.Controls.InfiniteProgressBar statusProgressBar;
-        private System.Windows.Forms.Button editButton;
-        private System.Windows.Forms.Label descriptionLabel;
-        private System.Windows.Forms.Button applyButton;
-        private System.Windows.Forms.Label instanceCountLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton editButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel descriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton applyButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel instanceCountLabel;
         private System.Windows.Forms.PictureBox licenseInformationPictureBox;
-        private System.Windows.Forms.Label licenseInformationLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel licenseInformationLabel;
         private System.Windows.Forms.ColumnHeader testStatusHeader;
         private System.Windows.Forms.ColumnHeader instanceNameHeader;
         private System.Windows.Forms.ColumnHeader authenticationModeHeader;
         private System.Windows.Forms.ImageList connectionTestStatusImages;
-        private System.Windows.Forms.Label gettingStartedLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel gettingStartedLabel;
         private System.ComponentModel.BackgroundWorker applyChangesBackgroundWorker;
         private System.Windows.Forms.ColumnHeader vCenterHeader;
-        private System.Windows.Forms.Button btnVMConfig;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnVMConfig;
         private System.Windows.Forms.ColumnHeader vmNameHeader;
 
 

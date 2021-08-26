@@ -31,6 +31,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
             this.reportDescriptionLabel = new System.Windows.Forms.Label();
             this.reportTitleLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             // 
             // reportDescriptionLabel
             // 

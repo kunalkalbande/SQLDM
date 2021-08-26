@@ -1,3 +1,6 @@
+using Idera.SQLdm.DesktopClient.Properties;
+using System.Drawing;
+
 namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 {
     partial class NotificationRuleDialog
@@ -28,10 +31,18 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         /// </summary>
         private void InitializeComponent()
         {
+            Color backColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor) : Color.White;
+            Color foreColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridForeColor) : Color.Black;
+            Color activeBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridActiveBackColor) : Color.White;
+            Color hoverBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridHoverBackColor) : Color.White;
             this.components = new System.ComponentModel.Container();
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance headerAppearance1 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance headerAppearance2 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance headerAppearance3 = new Infragistics.Win.Appearance();
+
             Infragistics.Win.UltraWinToolTip.UltraToolTipInfo ultraToolTipInfo1 = new Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("", Infragistics.Win.ToolTipImage.Info, null, Infragistics.Win.DefaultableBoolean.Default);
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Item 1");
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Item 2");
@@ -39,18 +50,18 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Item 4");
             System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Item 5");
             System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Item 6");
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.ultraGroupBox1 = new Infragistics.Win.Misc.UltraGroupBox();
-            this.ultraGroupBox2 = new Infragistics.Win.Misc.UltraGroupBox();
-            this.providersListBrowser = new System.Windows.Forms.WebBrowser();
-            this.ultraGroupBox3 = new Infragistics.Win.Misc.UltraGroupBox();
-            this.rulePreview = new System.Windows.Forms.WebBrowser();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.addActionButton = new System.Windows.Forms.Button();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.ultraGroupBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraGroupBox();
+            this.ultraGroupBox2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraGroupBox();
+            this.providersListBrowser = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomWebBrowser();
+            this.ultraGroupBox3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraGroupBox();
+            this.rulePreview = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomWebBrowser();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.txtDescription = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.addActionButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.splitContainer1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomSplitContainer();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.nameErrorPictureBox = new System.Windows.Forms.PictureBox();
             this.actionErrorPictureBox = new System.Windows.Forms.PictureBox();
             this.ruleErrorPictureBox = new System.Windows.Forms.PictureBox();
@@ -100,8 +111,17 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.ultraGroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.ultraGroupBox1.BorderStyle = Infragistics.Win.Misc.GroupBoxBorderStyle.RectangularSolid;
-            appearance1.BackColor = System.Drawing.SystemColors.Window;
+           
+            appearance1.BackColor = backColor;
+            appearance1.BackColor2 = backColor;
+            appearance1.ForeColor = foreColor;
+            headerAppearance1.BackColor = hoverBackColor;
+            headerAppearance1.BackColor2 = hoverBackColor;
+            headerAppearance1.ForeColor = foreColor;
+           
+            this.ultraGroupBox1.HeaderAppearance = headerAppearance1;
             this.ultraGroupBox1.ContentAreaAppearance = appearance1;
+            this.ultraGroupBox1.Appearance = appearance1;
             this.ultraGroupBox1.ContentPadding.Bottom = 1;
             this.ultraGroupBox1.ContentPadding.Left = 1;
             this.ultraGroupBox1.ContentPadding.Right = 1;
@@ -114,7 +134,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.ultraGroupBox1.Size = new System.Drawing.Size(488, 121);
             this.ultraGroupBox1.TabIndex = 2;
             this.ultraGroupBox1.Text = "Step 1:  Add condition(s)";
-            this.ultraGroupBox1.UseAppStyling = false;
+           
+            //this.ultraGroupBox1.UseAppStyling = false;
             // 
             // ultraGroupBox2
             // 
@@ -122,8 +143,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.ultraGroupBox2.BorderStyle = Infragistics.Win.Misc.GroupBoxBorderStyle.RectangularSolid;
-            appearance2.BackColor = System.Drawing.SystemColors.Window;
-            this.ultraGroupBox2.ContentAreaAppearance = appearance2;
+            appearance2.BackColor = backColor;
+            headerAppearance2.BackColor = hoverBackColor;
+            this.ultraGroupBox2.HeaderAppearance = headerAppearance1;
+            this.ultraGroupBox2.ContentAreaAppearance = appearance1;
+            this.ultraGroupBox2.Appearance = appearance1;
             this.ultraGroupBox2.ContentPadding.Bottom = 1;
             this.ultraGroupBox2.ContentPadding.Left = 1;
             this.ultraGroupBox2.ContentPadding.Right = 1;
@@ -135,7 +159,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.ultraGroupBox2.Size = new System.Drawing.Size(481, 147);
             this.ultraGroupBox2.TabIndex = 3;
             this.ultraGroupBox2.Text = "Step 2:  Select action(s)";
-            this.ultraGroupBox2.UseAppStyling = false;
+            //this.ultraGroupBox2.UseAppStyling = false;
             // 
             // providersListBrowser
             // 
@@ -156,8 +180,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.ultraGroupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.ultraGroupBox3.BorderStyle = Infragistics.Win.Misc.GroupBoxBorderStyle.RectangularSolid;
-            appearance3.BackColor = System.Drawing.SystemColors.Window;
-            this.ultraGroupBox3.ContentAreaAppearance = appearance3;
+            appearance3.BackColor = backColor; //System.Drawing.SystemColors.Window;
+            headerAppearance3.BackColor = hoverBackColor;
+            this.ultraGroupBox3.HeaderAppearance = headerAppearance1;
+            this.ultraGroupBox3.ContentAreaAppearance = appearance1;
+            this.ultraGroupBox3.Appearance = appearance1;
             this.ultraGroupBox3.ContentPadding.Bottom = 1;
             this.ultraGroupBox3.ContentPadding.Left = 1;
             this.ultraGroupBox3.ContentPadding.Right = 1;
@@ -169,7 +196,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.ultraGroupBox3.Size = new System.Drawing.Size(488, 170);
             this.ultraGroupBox3.TabIndex = 4;
             this.ultraGroupBox3.Text = "Step 3:  Edit the rule description (click an underlined value)";
-            this.ultraGroupBox3.UseAppStyling = false;
+            //this.ultraGroupBox3.UseAppStyling = false;
             // 
             // rulePreview
             // 
@@ -226,6 +253,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.splitContainer1.Location = new System.Drawing.Point(12, 155);
             this.splitContainer1.Margin = new System.Windows.Forms.Padding(0);
             this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.BackColor = backColor;
+            this.splitContainer1.ForeColor = foreColor;
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
@@ -243,6 +272,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             // 
             this.panel1.Controls.Add(this.ultraGroupBox2);
             this.panel1.Controls.Add(this.addActionButton);
+            this.panel1.BackColor = backColor;
+            this.panel1.ForeColor = foreColor;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -254,6 +285,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.nameErrorPictureBox.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.RefreshError;
             this.nameErrorPictureBox.Location = new System.Drawing.Point(501, 12);
             this.nameErrorPictureBox.Name = "nameErrorPictureBox";
+            this.nameErrorPictureBox.BackColor = backColor;
             this.nameErrorPictureBox.Size = new System.Drawing.Size(16, 16);
             this.nameErrorPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.nameErrorPictureBox.TabIndex = 9;
@@ -261,12 +293,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             ultraToolTipInfo1.ToolTipImage = Infragistics.Win.ToolTipImage.Info;
             this.tooltipManager.SetUltraToolTip(this.nameErrorPictureBox, ultraToolTipInfo1);
             this.nameErrorPictureBox.Visible = false;
+            this.tooltipManager.Appearance = appearance1;
             // 
             // actionErrorPictureBox
             // 
             this.actionErrorPictureBox.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.RefreshError;
             this.actionErrorPictureBox.Location = new System.Drawing.Point(501, 179);
             this.actionErrorPictureBox.Name = "actionErrorPictureBox";
+            this.actionErrorPictureBox.BackColor = backColor;
             this.actionErrorPictureBox.Size = new System.Drawing.Size(16, 16);
             this.actionErrorPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.actionErrorPictureBox.TabIndex = 10;
@@ -278,6 +312,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.ruleErrorPictureBox.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.RefreshError;
             this.ruleErrorPictureBox.Location = new System.Drawing.Point(501, 362);
             this.ruleErrorPictureBox.Name = "ruleErrorPictureBox";
+            this.ruleErrorPictureBox.BackColor = backColor;
             this.ruleErrorPictureBox.Size = new System.Drawing.Size(16, 16);
             this.ruleErrorPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.ruleErrorPictureBox.TabIndex = 11;
@@ -288,6 +323,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             // 
             this.tooltipManager.AutoPopDelay = 0;
             this.tooltipManager.ContainingControl = this;
+            this.tooltipManager.Appearance = appearance1;
             this.tooltipManager.DisplayStyle = Infragistics.Win.ToolTipDisplayStyle.Office2007;
             // 
             // conditionListBox
@@ -317,6 +353,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             listViewItem5});
             this.conditionListBox.LabelWrap = false;
             this.conditionListBox.LinkColor = System.Drawing.SystemColors.WindowText;
+            this.conditionListBox.BackColor = backColor;
+            this.conditionListBox.ForeColor = foreColor;
             this.conditionListBox.Location = new System.Drawing.Point(3, 21);
             this.conditionListBox.Name = "conditionListBox";
             this.conditionListBox.OwnerDraw = true;
@@ -342,7 +380,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.Controls.Add(this.ultraGroupBox1);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+          //  this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -351,6 +389,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Alert Response";
+            this.BackColor = backColor;
             this.Load += new System.EventHandler(this.NotificationRuleDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ultraGroupBox1)).EndInit();
             this.ultraGroupBox1.ResumeLayout(false);
@@ -372,19 +411,19 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         #endregion
 
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
         private Infragistics.Win.Misc.UltraGroupBox ultraGroupBox1;
         private Infragistics.Win.Misc.UltraGroupBox ultraGroupBox2;
         private Infragistics.Win.Misc.UltraGroupBox ultraGroupBox3;
         private CustomCheckedListBox conditionListBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.WebBrowser rulePreview;
-        private System.Windows.Forms.Button addActionButton;
-        private System.Windows.Forms.WebBrowser providersListBrowser;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox txtDescription;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomWebBrowser rulePreview;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton addActionButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomWebBrowser providersListBrowser;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Panel panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
         private System.Windows.Forms.PictureBox nameErrorPictureBox;
         private System.Windows.Forms.PictureBox actionErrorPictureBox;
         private System.Windows.Forms.PictureBox ruleErrorPictureBox;

@@ -33,17 +33,17 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TopTablesFragmentation));
-            this.sizeFilter = new System.Windows.Forms.NumericUpDown();
-            this.chartType = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.sizeComparison = new System.Windows.Forms.ComboBox();
-            this.scanDensityComparison = new System.Windows.Forms.ComboBox();
-            this.scanDensityFilter = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tableCount = new System.Windows.Forms.NumericUpDown();
+            this.sizeFilter = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.chartType = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.sizeComparison = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.scanDensityComparison = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.scanDensityFilter = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.groupBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.label5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.tableCount = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
             this.panel1.SuspendLayout();
             this.filterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sizeFilter)).BeginInit();
@@ -308,16 +308,16 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
 
         #endregion
 
-        private System.Windows.Forms.ComboBox chartType;
-        private System.Windows.Forms.NumericUpDown sizeFilter;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox sizeComparison;
-        private System.Windows.Forms.ComboBox scanDensityComparison;
-        private System.Windows.Forms.NumericUpDown scanDensityFilter;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.NumericUpDown tableCount;
-        private System.Windows.Forms.Label label5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox chartType;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown sizeFilter;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox sizeComparison;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox scanDensityComparison;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown scanDensityFilter;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown tableCount;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label5;
     }
 }

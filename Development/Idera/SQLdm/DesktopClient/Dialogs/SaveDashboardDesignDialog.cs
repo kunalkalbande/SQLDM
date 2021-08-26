@@ -25,6 +25,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public SaveDashboardDesignDialog(int instanceID, string userName, int dashboardLayoutID, string dashboardName)
         {
+            this.DialogHeader = "Save Dashboard Design";
             InitializeComponent();
 
             ReplaceDashboardLayoutId =

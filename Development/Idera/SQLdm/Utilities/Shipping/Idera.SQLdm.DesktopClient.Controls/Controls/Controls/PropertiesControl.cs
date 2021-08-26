@@ -16,9 +16,9 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
         public event EventHandler PropertyPageChanged;
 
-        public PropertiesControl()
+        public PropertiesControl(bool isDarkThemeSelected = false)
         {
-            InitializeComponent();
+            InitializeComponent(isDarkThemeSelected);
             AllowListResize = false;
 
             propertyPages.PageAdded += new EventHandler(propertyPages_PageAdded);
@@ -31,6 +31,22 @@ namespace Idera.SQLdm.DesktopClient.Controls
         {
             get { return !splitContainer.IsSplitterFixed; }
             set { splitContainer.IsSplitterFixed = !value; }
+        }
+
+        [Category("Behavior")]
+        [DefaultValue(150)]
+        public int MenuListBoxWidth
+        {
+            get { return this.propertyPageListBox.Width; }
+            set { this.propertyPageListBox.Width = value; }
+        }
+
+        [Category("Behavior")]
+        [DefaultValue(150)]
+        public int CustomSplitterDistance
+        {
+            get { return this.splitContainer.SplitterDistance; }
+            set { this.splitContainer.SplitterDistance = value; }
         }
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
@@ -229,6 +245,26 @@ namespace Idera.SQLdm.DesktopClient.Controls
                 {
                     PropertyPageChanged(this, EventArgs.Empty);
                 }
+            }
+        }
+
+        public void applyDarkThemeColors()
+        {
+            if (this.propertyPageListBox != null)
+            {
+                this.propertyPageListBox.isDarkThemeSelected = true;
+                this.propertyPageListBox.BackColor = ColorTranslator.FromHtml("#012A4F");
+                this.propertyPageListBox.Invalidate();
+            }
+        }
+
+        public void applyLightThemeColors()
+        {
+            if (this.propertyPageListBox != null)
+            {
+                this.propertyPageListBox.isDarkThemeSelected = false;
+                this.propertyPageListBox.BackColor = Color.White;
+                this.propertyPageListBox.Invalidate();
             }
         }
     }

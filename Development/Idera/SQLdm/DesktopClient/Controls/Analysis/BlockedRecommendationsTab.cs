@@ -15,6 +15,7 @@ using Idera.PrescriptiveAnalytics.PrescriptiveAnalyzer.Common.Resources;
 using Idera.PrescriptiveAnalytics.PrescriptiveAnalyzer.Common.Recommendations;
 using Idera.SQLdm.Common.Services;
 using Idera.SQLdm.DesktopClient.Properties;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Controls.Analysis
 {
@@ -36,6 +37,8 @@ namespace Idera.SQLdm.DesktopClient.Controls.Analysis
         public BlockedRecommendationsTab(List<string> blockedRecommendations)
         {
             InitializeComponent();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
 
             if (DesignMode) return;
             blockedRecommendationID = new List<string>();
@@ -57,6 +60,19 @@ namespace Idera.SQLdm.DesktopClient.Controls.Analysis
             }
 
         }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this._blockedGrid);
+        }
+
         //To get master recommendation data from database through Management Service
         private void GetMasterRecommendations()
         {

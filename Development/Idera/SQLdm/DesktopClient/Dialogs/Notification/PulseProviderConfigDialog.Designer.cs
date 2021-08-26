@@ -32,17 +32,17 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             Infragistics.Win.Misc.ValidationGroup validationGroup1 = new Infragistics.Win.Misc.ValidationGroup("Name");
             Infragistics.Win.Misc.ValidationGroup validationGroup2 = new Infragistics.Win.Misc.ValidationGroup("PulsePort");
             Infragistics.Win.Misc.ValidationGroup validationGroup3 = new Infragistics.Win.Misc.ValidationGroup("PulseAddress");
-            this.pulsePortSpinner = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
-            this.label14 = new System.Windows.Forms.Label();
-            this.pulseAddressTextBox = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.testButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.pulsePortSpinner = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraNumericEditor();
+            this.label14 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.pulseAddressTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label13 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.testButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.validator = new Infragistics.Win.Misc.UltraValidator(this.components);
-            this.providerName = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.ultraGroupBox1 = new Infragistics.Win.Misc.UltraGroupBox();
+            this.providerName = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label8 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.ultraGroupBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraGroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pulsePortSpinner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.validator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGroupBox1)).BeginInit();
@@ -217,15 +217,15 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         #endregion
 
         private Infragistics.Win.UltraWinEditors.UltraNumericEditor pulsePortSpinner;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox pulseAddressTextBox;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button testButton;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label14;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox pulseAddressTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label13;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton testButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
         private Infragistics.Win.Misc.UltraValidator validator;
-        private System.Windows.Forms.TextBox providerName;
-        private System.Windows.Forms.Label label8;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox providerName;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label8;
         private Infragistics.Win.Misc.UltraGroupBox ultraGroupBox1;
     }
 }

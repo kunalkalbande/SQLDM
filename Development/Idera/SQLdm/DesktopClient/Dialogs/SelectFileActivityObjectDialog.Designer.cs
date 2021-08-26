@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonLayoutPanel = new System.Windows.Forms.Panel();
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.infoLabel = new System.Windows.Forms.Label();
-            this.contentLayoutPanel = new System.Windows.Forms.Panel();
-            this.selectionTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.selectedGroupBox = new System.Windows.Forms.GroupBox();
-            this.selectedObjectsListBox = new System.Windows.Forms.ListBox();
-            this.buttonPanel = new System.Windows.Forms.Panel();
-            this.addButton = new System.Windows.Forms.Button();
-            this.removeButton = new System.Windows.Forms.Button();
-            this.availableGroupBox = new System.Windows.Forms.GroupBox();
-            this.availableObjectsListBox = new System.Windows.Forms.ListBox();
-            this.availableStatusLabel = new System.Windows.Forms.Label();
+            this.buttonLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.infoLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.contentLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.selectionTableLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.selectedGroupBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.selectedObjectsListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListBox();
+            this.buttonPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.addButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.removeButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.availableGroupBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.availableObjectsListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListBox();
+            this.availableStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.buttonLayoutPanel.SuspendLayout();
             this.contentLayoutPanel.SuspendLayout();
             this.selectionTableLayoutPanel.SuspendLayout();
@@ -169,7 +169,7 @@
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 2;
-            this.addButton.Text = "&Add >";
+            this.addButton.Text = "Add >";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
@@ -181,7 +181,7 @@
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(75, 23);
             this.removeButton.TabIndex = 3;
-            this.removeButton.Text = "< &Remove";
+            this.removeButton.Text = "< Remove";
             this.removeButton.UseVisualStyleBackColor = true;
             this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
@@ -253,19 +253,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel buttonLayoutPanel;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Label infoLabel;
-        private System.Windows.Forms.Panel contentLayoutPanel;
-        private System.Windows.Forms.GroupBox selectedGroupBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  buttonLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel infoLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  contentLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox selectedGroupBox;
         private System.Windows.Forms.ListBox selectedObjectsListBox;
-        private System.Windows.Forms.Button removeButton;
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.GroupBox availableGroupBox;
-        private System.Windows.Forms.Label availableStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton removeButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton addButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox availableGroupBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel availableStatusLabel;
         private System.Windows.Forms.ListBox availableObjectsListBox;
-        private System.Windows.Forms.TableLayoutPanel selectionTableLayoutPanel;
-        private System.Windows.Forms.Panel buttonPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel selectionTableLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  buttonPanel;
     }
 }

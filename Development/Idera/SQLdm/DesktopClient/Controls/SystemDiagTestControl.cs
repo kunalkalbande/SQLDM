@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace Idera.SQLdm.DesktopClient.Controls
 {
+    using Helpers;
     using Properties;
 
     public partial class SystemDiagTestControl : UserControl
@@ -17,6 +18,9 @@ namespace Idera.SQLdm.DesktopClient.Controls
         public SystemDiagTestControl()
         {
             InitializeComponent();
+            //SQLDM - 30848 - UX - Modernization, PRD 4.2,
+            if (AutoScaleSizeHelper.isScalingRequired)
+                this.dividerLabel.Height = 1;
         }
         public void SetStatusImage(Image image)
         {

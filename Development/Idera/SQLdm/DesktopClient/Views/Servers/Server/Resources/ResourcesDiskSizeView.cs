@@ -30,6 +30,7 @@ using System.Text;
 using Idera.SQLdm.Common.Helpers;
 using System.Globalization;
 using System.Collections;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
 {
@@ -91,6 +92,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
             InitializeChartDataTable();
             InitializeChart();
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
 
             drivesGridStatusLabel.Text = Idera.SQLdm.Common.Constants.LOADING;
             driveStatisticsStatusLabel.Text = Idera.SQLdm.Common.Constants.LOADING;
@@ -1139,7 +1142,17 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
             driveStatisticsOptionsButton.Text = string.Format(FORMAT_DISKS_CHARTTYPE, usageType);
 
             driveStatisticsChart.SuspendLayout();
-            driveStatisticsChart.LegendBox.Width = 125;
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                if (AutoScaleSizeHelper.isLargeSize)
+                    driveStatisticsChart.LegendBox.Width = 175;
+                if (AutoScaleSizeHelper.isXLargeSize)
+                    driveStatisticsChart.LegendBox.Width = 210;
+                if (AutoScaleSizeHelper.isXXLargeSize)
+                    driveStatisticsChart.LegendBox.Width = 250;
+            }
+            else
+                driveStatisticsChart.LegendBox.Width = 125;
             driveStatisticsChart.DataSourceSettings.Fields.Clear();
 
             FieldMap fileFieldMap = new FieldMap("Disk Name", FieldUsage.Label);
@@ -1552,6 +1565,18 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
         private void AdaptFontSize()
         {            
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.drivesGrid);
         }
 
         #endregion

@@ -1,3 +1,6 @@
+using Idera.SQLdm.DesktopClient.Properties;
+using Infragistics.Windows.Themes;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -27,6 +30,12 @@ namespace Idera.SQLdm.DesktopClient.Controls
                 ControlStyles.SupportsTransparentBackColor, true);
 
             InitializeComponent();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+        
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            Invalidate();
         }
 
         [Category("Appearance")]
@@ -69,7 +78,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
             {
                 case GroupPanelStyle.Dashboard:
                     {
-                        Color borderColor = Color.FromArgb(163, 175, 201);
+                        Color borderColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.GroupPanelBorderColor) : Color.FromArgb(163, 175, 201);
                         float arcRadius = 15;
 
                         DrawRoundRectangleShadow(e.Graphics, Rectangle.Inflate(ClientRectangle, -1, -1), arcRadius);
@@ -100,6 +109,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
             }
             
             base.OnPaint(e);
+            this.groupBoxBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.GroupPanelGroupBoxBackColor) : Color.White;
         }
 
         private void DrawHeader1(Graphics graphics, Color borderColor, Rectangle bounds, float radius)
@@ -155,6 +165,11 @@ namespace Idera.SQLdm.DesktopClient.Controls
             {
                 using (GraphicsPath gp = new GraphicsPath())
                 {
+                    if(Settings.Default.ColorScheme == "Dark")
+                    {
+                        fillColor1 = ColorTranslator.FromHtml(DarkThemeColorConstants.GroupPanelHeaderColor);
+                        fillColor2 = ColorTranslator.FromHtml(DarkThemeColorConstants.GroupPanelHeaderColor1);
+                    }
                     gp.AddLine(bounds.X, radius, bounds.X, bounds.Y + bounds.Height);
                     gp.AddArc(bounds.X, bounds.Y, radius * 2, radius * 2, 180, 90);
                     gp.AddLine(radius, bounds.Y, bounds.X + bounds.Width - radius, bounds.Y);

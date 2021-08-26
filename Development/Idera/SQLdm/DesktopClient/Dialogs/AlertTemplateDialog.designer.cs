@@ -1,3 +1,6 @@
+using Idera.SQLdm.DesktopClient.Properties;
+using System.Drawing;
+
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
     partial class AlertTemplateDialog
@@ -28,7 +31,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
+            bool isDarkThemeSelected = Properties.Settings.Default.ColorScheme == "Dark";
             this.components = new System.ComponentModel.Container();
+            Color backColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor) : Color.White;
+            Color foreColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridForeColor) : Color.Black;
+            Color activeBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridActiveBackColor) : Color.White;
+            Color hoverBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridHoverBackColor) : Color.White;
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("AlertTemplate", -1);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Name");
@@ -46,24 +54,27 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
+
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlertTemplateDialog));
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
-            this.office2007PropertyPage1 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.office2007PropertyPage1 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage(isDarkThemeSelected);
+            this.tableLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
             this.alertTemplatesGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.alertTemplatesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.informationBox1 = new Divelements.WizardFramework.InformationBox();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.informationBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
             this.propertiesHeaderStrip3 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.btnAddTemplate = new System.Windows.Forms.Button();
-            this.btnSetDefault = new System.Windows.Forms.Button();
-            this.btnEditTemplate = new System.Windows.Forms.Button();
-            this.btnImport = new System.Windows.Forms.Button();
-            this.btnExport = new System.Windows.Forms.Button();
-            this.btnDeleteTemplate = new System.Windows.Forms.Button();
-            this.btnApplyTemplate = new System.Windows.Forms.Button();
-            this.lnkCommunitySite = new System.Windows.Forms.LinkLabel();
+            this.btnAddTemplate = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnSetDefault = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnEditTemplate = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnImport = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnExport = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnDeleteTemplate = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnApplyTemplate = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.lnkCommunitySite = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alertTemplatesGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alertTemplatesBindingSource)).BeginInit();
@@ -117,6 +128,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.office2007PropertyPage1.Size = new System.Drawing.Size(769, 420);
             this.office2007PropertyPage1.TabIndex = 0;
             this.office2007PropertyPage1.Text = "Configure Alert Templates";
+            this.office2007PropertyPage1.BackColor = backColor;
+            //this.office2007PropertyPage1.ContentPanel.
             // 
             // tableLayoutPanel1
             // 
@@ -158,16 +171,23 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.alertTemplatesGrid, 9);
             this.alertTemplatesGrid.DataSource = this.alertTemplatesBindingSource;
-            appearance1.BackColor = System.Drawing.SystemColors.Window;
+            appearance1.BackColor = backcolor; //System.Drawing.SystemColors.Window;
             appearance1.BorderColor = System.Drawing.SystemColors.InactiveCaption;
+         
+            appearance14.BackColor = backColor;
+            appearance14.ForeColor = foreColor;
             this.alertTemplatesGrid.DisplayLayout.Appearance = appearance1;
             this.alertTemplatesGrid.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ExtendLastColumn;
             ultraGridColumn1.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append;
             ultraGridColumn1.Header.VisiblePosition = 0;
             ultraGridColumn1.Width = 179;
+            ultraGridColumn1.Header.Appearance = appearance14;
+            ultraGridColumn1.CellAppearance = appearance14;
             ultraGridColumn2.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append;
             ultraGridColumn2.Header.VisiblePosition = 1;
             ultraGridColumn2.Width = 323;
+            ultraGridColumn2.Header.Appearance = appearance14;
+            ultraGridColumn2.CellAppearance = appearance14;
             ultraGridColumn3.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append;
             ultraGridColumn3.Header.VisiblePosition = 2;
             ultraGridColumn3.Hidden = true;
@@ -411,21 +431,21 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         private Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage office2007PropertyPage1;
         private System.Windows.Forms.BindingSource alertTemplatesBindingSource;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel1;
         private Infragistics.Win.UltraWinGrid.UltraGrid alertTemplatesGrid;
-        private System.Windows.Forms.Label label1;
-        private Divelements.WizardFramework.InformationBox informationBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox informationBox1;
         private Controls.PropertiesHeaderStrip propertiesHeaderStrip3;
-        private System.Windows.Forms.Button btnAddTemplate;
-        private System.Windows.Forms.Button btnSetDefault;
-        private System.Windows.Forms.Button btnEditTemplate;
-        private System.Windows.Forms.Button btnDeleteTemplate;
-        private System.Windows.Forms.Button btnApplyTemplate;
-        private System.Windows.Forms.Button btnImport;
-        private System.Windows.Forms.Button btnExport;
-        private System.Windows.Forms.LinkLabel lnkCommunitySite;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnAddTemplate;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnSetDefault;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnEditTemplate;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnDeleteTemplate;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnApplyTemplate;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnImport;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnExport;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel lnkCommunitySite;
 
         
     }

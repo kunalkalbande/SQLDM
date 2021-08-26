@@ -31,19 +31,19 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.components = new System.ComponentModel.Container();
             Infragistics.Win.Misc.ValidationGroup validationGroup1 = new Infragistics.Win.Misc.ValidationGroup("Name");
             Infragistics.Win.Misc.ValidationGroup validationGroup2 = new Infragistics.Win.Misc.ValidationGroup("ManagerAddress");
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
-            this.testButton = new System.Windows.Forms.Button();
-            this.providerName = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.testButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.providerName = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label8 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.validator = new Infragistics.Win.Misc.UltraValidator(this.components);
-            this.managerAddress = new System.Windows.Forms.TextBox();
-            this.ultraGroupBox1 = new Infragistics.Win.Misc.UltraGroupBox();
-            this.managerCommunity = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.managerPort = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.managerAddress = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.ultraGroupBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraGroupBox();
+            this.managerCommunity = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label12 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.managerPort = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraNumericEditor();
+            this.label11 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label10 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             ((System.ComponentModel.ISupportInitialize)(this.validator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGroupBox1)).BeginInit();
             this.ultraGroupBox1.SuspendLayout();
@@ -235,18 +235,18 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         #endregion
 
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button testButton;
-        private System.Windows.Forms.TextBox providerName;
-        private System.Windows.Forms.Label label8;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton testButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox providerName;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label8;
         private Infragistics.Win.Misc.UltraValidator validator;
         private Infragistics.Win.Misc.UltraGroupBox ultraGroupBox1;
-        private System.Windows.Forms.TextBox managerCommunity;
-        private System.Windows.Forms.Label label12;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox managerCommunity;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label12;
         private Infragistics.Win.UltraWinEditors.UltraNumericEditor managerPort;
-        private System.Windows.Forms.TextBox managerAddress;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox managerAddress;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label11;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label10;
     }
 }

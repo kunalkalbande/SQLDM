@@ -130,7 +130,19 @@
   <data name="_serversPageInfo.Text" xml:space="preserve">
     <value>You can link this permission to SQLDM tags and specific SQL Servers. Linking to a tag is convenient if you plan to tag servers in the future to which this permission should have access. The Available Servers list shows active and inactive SQL Servers that are registered in SQLdm. Active servers are servers that are currently monitored by SQLdm. Servers that are no longer monitored but for which data has been retained are considered inactive.</value>
   </data>
-  <metadata name="toolbarsManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
+  <metadata name="_AddPermissionWizard_Toolbars_Dock_Area_Left.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="_AddPermissionWizard_Toolbars_Dock_Area_Right.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>334, 17</value>
+  </metadata>
+  <metadata name="_AddPermissionWizard_Toolbars_Dock_Area_Top.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>659, 17</value>
+  </metadata>
+  <metadata name="_AddPermissionWizard_Toolbars_Dock_Area_Bottom.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
   </metadata>
 </root>

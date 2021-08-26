@@ -24,6 +24,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
     using Properties;
     using Wintellect.PowerCollections;
     using System.IO;
+    using Infragistics.Windows.Themes;
 
     internal partial class CustomCountersView : View
     {
@@ -52,6 +53,42 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
             InitializeComponent();
             counterGrid.DrawFilter = new HideFocusRectangleDrawFilter();
             this.AdaptFontSize();
+            if(AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+            AutoScaleFontHelper.Default.AutoScaleControl(this.panel3, AutoScaleFontHelper.ControlType.Container);
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        private void ScaleControlsAsPerResolution()
+        {
+            this.panel2.Size = new System.Drawing.Size(290, 466);
+            this.introductoryTextLabel2.Size = new System.Drawing.Size(650, 333);
+            this.panel3.Size = new Size(this.panel3.Size.Width, this.panel3.Size.Height + 200);
+            this.addCustomCounterLinkLabel.Location = new System.Drawing.Point(152, 390);
+            this.addCustomCounterLinkLabel.Size = new Size(this.addCustomCounterLinkLabel.Size.Width + 50, this.addCustomCounterLinkLabel.Size.Height);
+            this.communitySiteLinkLabel.Location = new Point(this.communitySiteLinkLabel.Location.X + 50, this.communitySiteLinkLabel.Location.Y + 100);
+            this.communitySiteLabel1.Location = new Point(this.communitySiteLabel1.Location.X, this.communitySiteLabel1.Location.Y + 100);
+            this.communitySiteLabel2.Location = new Point(this.communitySiteLabel2.Location.X + 100, this.communitySiteLabel2.Location.Y + 100);
+            this.communitySiteLinkLabel.Size = new Size(this.communitySiteLinkLabel.Size.Width + 50, this.communitySiteLinkLabel.Size.Height);
+            this.communitySiteLabel1.Size = new Size(this.communitySiteLabel1.Size.Width + 50, this.communitySiteLabel1.Size.Height);
+            this.communitySiteLabel2.Size = new Size(this.communitySiteLabel2.Size.Width + 50, this.communitySiteLabel2.Size.Height);
+            if (AutoScaleSizeHelper.isXLargeSize)
+            {
+                this.addCustomCounterLinkLabel.Location = new System.Drawing.Point(152, 550);
+                this.communitySiteLabel1.Location = new Point(this.communitySiteLabel1.Location.X, this.communitySiteLabel1.Location.Y + 200);
+                this.communitySiteLinkLabel.Location = new Point(this.communitySiteLinkLabel.Location.X + 50, this.communitySiteLinkLabel.Location.Y + 200);
+                this.communitySiteLinkLabel.Size = new Size(this.communitySiteLinkLabel.Size.Width + 50, this.communitySiteLinkLabel.Size.Height);
+                this.communitySiteLabel2.Location = new Point(this.communitySiteLabel2.Location.X + 100, this.communitySiteLabel2.Location.Y + 210);
+            }
+            else if (AutoScaleSizeHelper.isXXLargeSize)
+            {
+                this.addCustomCounterLinkLabel.Location = new System.Drawing.Point(152, 550);
+                this.communitySiteLabel1.Location = new Point(this.communitySiteLabel1.Location.X, this.communitySiteLabel1.Location.Y + 200);
+                this.communitySiteLinkLabel.Location = new Point(this.communitySiteLinkLabel.Location.X + 50, this.communitySiteLinkLabel.Location.Y + 200);
+                this.communitySiteLinkLabel.Size = new Size(this.communitySiteLinkLabel.Size.Width + 50, this.communitySiteLinkLabel.Size.Height);
+                this.communitySiteLabel2.Location = new Point(this.communitySiteLabel2.Location.X + 100, this.communitySiteLabel2.Location.Y + 210);
+            }
         }
 
         private void ultraToolbarsManager1_ToolClick(object sender, Infragistics.Win.UltraWinToolbars.ToolClickEventArgs e)
@@ -618,6 +655,13 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
             UpdateToolbarItems();
         }
 
+        //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+        private void counterGrid_InitializeLayout(object sender, InitializeLayoutEventArgs e)
+        {
+            if (AutoScaleSizeHelper.isScalingRequired)
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.counterGrid, AutoScaleSizeHelper.ControlType.UltraGridCheckbox);
+        }
+
         private void UpdateToolbarItems() 
         {
             bool singleSelected = counterGrid.Selected.Rows.Count == 1;
@@ -720,6 +764,31 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+            SetBackgroundImage();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.counterGrid);
+        }
+
+        private void SetBackgroundImage()
+        {
+            if (Properties.Settings.Default.ColorScheme == "Dark")
+            {
+                this.panel2.BackgroundImage = null;
+            }
+            else
+            {
+                this.panel2.BackgroundImage = global::Idera.SQLdm.DesktopClient.Properties.Resources.CustomCounterWizardWelcomePageMarginImage;
+            }
         }
     }
 

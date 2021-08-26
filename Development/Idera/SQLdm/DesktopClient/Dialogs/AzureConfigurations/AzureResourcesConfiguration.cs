@@ -10,10 +10,11 @@ using Idera.SQLdm.Common.UI.Dialogs;
 using Idera.SQLdm.DesktopClient.Controls;
 using Idera.SQLdm.DesktopClient.Helpers;
 using Idera.SQLdm.DesktopClient.Properties;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs.AzureConfigurations
 {
-    public partial class AzureResourcesConfiguration : Form
+    public partial class AzureResourcesConfiguration : BaseDialog
     {
         private static readonly Logger Log = Logger.GetLogger("AzureResourcesConfiguration");
         private const string ResourceDetailsformat = "{0} - {1}";
@@ -32,7 +33,23 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.AzureConfigurations
             this.statusProgressBar = new InfiniteProgressBar();
             InitializeComponent();
             InitializeProgressBar();
+
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.azureResourcesGrid);
+        }
+
         private void InitializeProgressBar()
         {
             // Initialize the progress bar

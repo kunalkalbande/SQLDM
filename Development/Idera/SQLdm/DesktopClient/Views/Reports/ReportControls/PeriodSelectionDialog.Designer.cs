@@ -32,17 +32,17 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
             Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton1 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton2 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.endRangePicker = new Infragistics.Win.UltraWinSchedule.UltraCalendarCombo();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.endRangePicker = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraCalendarCombo();
             this.ultraCalendarLook = new Infragistics.Win.UltraWinSchedule.UltraCalendarLook(this.components);
-            this.startRangePicker = new Infragistics.Win.UltraWinSchedule.UltraCalendarCombo();
+            this.startRangePicker = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraCalendarCombo();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.okBtn = new System.Windows.Forms.Button();
-            this.cancelBtn = new System.Windows.Forms.Button();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.okBtn = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelBtn = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.endRangePicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.startRangePicker)).BeginInit();
@@ -158,9 +158,9 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
             // okBtn
             // 
             this.okBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.okBtn.Location = new System.Drawing.Point(187, 72);
+            this.okBtn.Location = new System.Drawing.Point(171, 76);
             this.okBtn.Name = "okBtn";
-            this.okBtn.Size = new System.Drawing.Size(52, 23);
+            this.okBtn.Size = new System.Drawing.Size(52, 20);
             this.okBtn.TabIndex = 19;
             this.okBtn.Text = "OK";
             this.okBtn.UseVisualStyleBackColor = true;
@@ -169,9 +169,9 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
             // cancelBtn
             // 
             this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelBtn.Location = new System.Drawing.Point(245, 72);
+            this.cancelBtn.Location = new System.Drawing.Point(245, 76);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(52, 23);
+            this.cancelBtn.Size = new System.Drawing.Size(52, 20);
             this.cancelBtn.TabIndex = 20;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
@@ -203,16 +203,16 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Infragistics.Win.UltraWinSchedule.UltraCalendarCombo startRangePicker;
         private Infragistics.Win.UltraWinSchedule.UltraCalendarCombo endRangePicker;
         private Infragistics.Win.UltraWinSchedule.UltraCalendarLook ultraCalendarLook;
-        private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.Button okBtn;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelBtn;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okBtn;
     }
 }

@@ -84,12 +84,16 @@ namespace Idera.SQLdm.DesktopClient.Controls.Analysis
                 analysisConfig.BlockedRecommendationID = new List<string>();
                 Init();
                 Log.Info("Successfully constructed Analysis Configuration page.");
+                SetPropertiesTheme();
+                Infragistics.Windows.Themes.ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
             }
             catch (Exception ex)
             {
                 Log.Error("Error while constructing analysis configuration view.", ex);
                 throw;
             }
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
         }
 
         public bool CheckForErrors()
@@ -597,5 +601,13 @@ namespace Idera.SQLdm.DesktopClient.Controls.Analysis
             return isChildUnchecked;
         }
         #endregion
+
+
+        private void ScaleControlsAsPerResolution()
+        {
+            this.propertiesHeaderStripSelectCategory.Dock = DockStyle.None;
+            this.btnAdvancedSettingButton.Anchor = AnchorStyles.None;
+            this.btnAdvancedSettingButton.Location = new Point(this.btnAdvancedSettingButton.Location.X + 100, this.btnAdvancedSettingButton.Location.Y);
+        }
     }
 }

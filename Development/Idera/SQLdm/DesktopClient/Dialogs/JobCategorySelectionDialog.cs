@@ -7,13 +7,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using System.Windows.Forms;
     using Infragistics.Win.UltraWinListView;
 
-    public partial class JobCategorySelectionDialog : Form
+    public partial class JobCategorySelectionDialog : BaseDialog
     {
         private List<string> listItems = new List<string>();
         private List<string> selectedItems = new List<string>();
 
         public JobCategorySelectionDialog()
         {
+            this.DialogHeader = "Excluded Job Categories";
             InitializeComponent();
 
             jobCategoriesListBox.Items.Clear();

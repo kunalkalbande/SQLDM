@@ -39,8 +39,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 	using Appearance = Infragistics.Win.Appearance;
 	using ColumnStyle = Infragistics.Win.UltraWinGrid.ColumnStyle;
 	using Idera.SQLdm.Common.Services;
+    using Idera.SQLdm.DesktopClient.Controls;
+    using Infragistics.Windows.Themes;
 
-	public partial class AlertConfigurationDialog : Form
+    public partial class AlertConfigurationDialog : BaseDialog
 	{
 		#region Private Fields
 		private static readonly Logger LOG = Logger.GetLogger(typeof(AlertConfigurationDialog));
@@ -108,6 +110,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 			alertsGrid.DisplayLayout.Bands[0].Columns["Enabled"].PerformAutoResize();
 
 			initialSelection = null;
+
+			
+			
+
 
 			TemplateName = template;
 
@@ -191,6 +197,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 			}
 
 			AdaptFontSize();
+			SetGridTheme();
+			updateLinearScaleFontAsPerTheme(this.linearScale1);
+			ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
 		}
 
 		#endregion
@@ -747,8 +756,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 					if (((UltraGridColumn)contextObject).Key == "Enabled")
 					{
 						UltraGridRow selectedRow = selectedElement.SelectableItem as UltraGridRow;
+                        selectedRow.Appearance.BackColor = Settings.Default.ColorScheme == "Dark" ?
+                            ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor) : Color.White;
 
-						if (selectedRow != null)
+                        if (selectedRow != null)
 						{
 							bool newValue = true;
 							CurrencyManager cm =
@@ -815,6 +826,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 		private void alertConfigurationGrid_InitializeRow(object sender, InitializeRowEventArgs e)
 		{
 			FlattenedThreshold threshold = e.Row.ListObject as FlattenedThreshold;
+			e.Row.Appearance.BackColor = Settings.Default.ColorScheme == "Dark" ?
+							ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor) : Color.White;
 
 			// set activation for editable fields based on meta data for the row
 			if (!e.Row.Cells["RangeStart"].Column.Hidden)
@@ -1038,7 +1051,6 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 						endColumn.Hidden = true;
 					}
 
-					
 					//SQLdm 8.6 -(Ankit Srivastava) : Preferred Node Feature -- hiding all the other column when not needed
 					if (isSingleAlertTypeConfigured)
 					{
@@ -1194,9 +1206,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 			column.CellClickAction = permissionType <= PermissionType.ReadOnlyPlus ? CellClickAction.RowSelect : CellClickAction.EditAndSelectText;
 
 
-			ultraCheckEditor1_CheckedChanged(ultraCheckEditor1, null);
+			ultraCheckEditor1_CheckedChanged(checkBox1, null); //CustomCheckbox 4.12 DarkTheme  Babita Manral 
 
-			UltraGridRow[] rows = alertsGrid.Rows.GetAllNonGroupByRows();
+            UltraGridRow[] rows = alertsGrid.Rows.GetAllNonGroupByRows();
 			if (rows.Length > 0)
 			{
 				if (initialSelection != null)
@@ -1362,14 +1374,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 				categoryColumn.Hidden = true;
 				sortColumns.Remove(categoryColumn);
 			}
-			if (ultraCheckEditor1.Checked)
-			{
-				categoryColumn.Hidden = false;
-				sortColumns.Add(categoryColumn, false, true);
-			}
-		}
+            if (checkBox1.Checked) //CustomCheckbox 4.12 DarkTheme  Babita Manral 
+            {
+                categoryColumn.Hidden = false;
+                sortColumns.Add(categoryColumn, false, true);
+            }
+        }
 
-		private void AlertConfigurationDialog_HelpButtonClicked(object sender, CancelEventArgs e)
+        private void AlertConfigurationDialog_HelpButtonClicked(object sender, CancelEventArgs e)
 		{
 			if (e != null) e.Cancel = true;
 			if (editingAlertTemplate)
@@ -2449,7 +2461,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 			else
 				recommendations.Clear();
 
-			MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(configuration.InstanceID,Settings.Default.RepoId);
+			MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(configuration.InstanceID);
 			UpdateAlertRecommendationsVisibility();
 			UpdateGauge(configBindingSource.Current as AlertConfigurationItem);
 		}
@@ -2833,6 +2845,39 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 		private void AdaptFontSize()
 		{
 			AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+		}
+
+		void OnCurrentThemeChanged(object sender, EventArgs e)
+		{
+			SetGridTheme();
+			if (Settings.Default.ColorScheme == "Dark")
+			{
+				appearance18.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+				appearance18.BackColor2 = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+			}
+			else
+            {
+				appearance18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
+				appearance18.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
+			}
+			updateLinearScaleFontAsPerTheme(this.linearScale1);
+		}
+
+		private void SetGridTheme()
+		{
+			// Update UltraGrid Theme
+			var themeManager = new GridThemeManager();
+			themeManager.updateGridTheme(this.alertsGrid);
+			themeManager.updateGridTheme(this.alertConfigurationGrid);
+			themeManager.updateGridTheme(this.instanceConfigGrid);
+			themeManager.updateGridTheme(this.baselineAlertConfigurationGrid);
+		}
+
+	
+		public void updateLinearScaleFontAsPerTheme(LinearScale linearscale)
+		{
+			ThemeSetter ts = new ThemeSetter();
+			ts.SetLinearScale(linearscale);
 		}
 	}
 }

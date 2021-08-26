@@ -1,6 +1,8 @@
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
     using Idera.SQLdm.Common.Services;
+    using Idera.SQLdm.DesktopClient.Properties;
+    using System.Drawing;
 
     partial class SystemDiagnosticsDialog
     {
@@ -35,6 +37,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
+            bool isDarkThemeSelected = Properties.Settings.Default.ColorScheme == "Dark";
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SystemDiagnosticsDialog));
             Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
@@ -50,7 +53,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance24 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance25 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList1 = new Infragistics.Win.ValueList(84474157);
+            Infragistics.Win.ValueList valueList1 = new Controls.CustomControls.CustomValueList(84474157);
             Infragistics.Win.ValueListItem valueListItem1 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem2 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
@@ -58,47 +61,47 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance6 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab3 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab5 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
             this.ultraTabPageControl2 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.office2007PropertyPage1 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
-            this._pnlDiagnostics = new System.Windows.Forms.Panel();
+            this.office2007PropertyPage1 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage(isDarkThemeSelected);
+            this._pnlDiagnostics = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.propertiesHeaderStrip1 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.desktopRepositoryDatabaseLabel = new System.Windows.Forms.Label();
+            this.desktopRepositoryDatabaseLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this._generalHdrStrpStatus = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.desktopRepositoryHostLabel = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.desktopRepositoryHostLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label12 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.stackLayoutPanel1 = new Idera.SQLdm.Common.UI.Controls.StackLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.systemDiagTestControl1 = new Idera.SQLdm.DesktopClient.Controls.SystemDiagTestControl();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.viewStatusPanel = new System.Windows.Forms.SplitContainer();
+            this.panel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.viewStatusPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomSplitContainer();
             this.viewStatusConnectingCircle = new MRG.Controls.UI.LoadingCircle();
             this.viewStatusImage = new System.Windows.Forms.PictureBox();
-            this.viewStatusLabel = new System.Windows.Forms.LinkLabel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.viewStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.label10 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.ultraTabPageControl3 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.office2007PropertyPage2 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
+            this.office2007PropertyPage2 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage(isDarkThemeSelected);
             this.stackLayoutPanelPermission = new Idera.SQLdm.Common.UI.Controls.StackLayoutPanel();
-            this._pnlNoPermissions = new System.Windows.Forms.Panel();
-            this._pnlNoPermissionInfo = new Divelements.WizardFramework.InformationBox();
-            this._pnlPermissions = new System.Windows.Forms.Panel();
+            this._pnlNoPermissions = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this._pnlNoPermissionInfo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
+            this._pnlPermissions = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this._pnlPermissionStatusHdr = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
             this._pnlPermissionServersGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this._pnlPermissionSysadminLbl = new System.Windows.Forms.Label();
-            this._pnlPermissionAdminVal = new System.Windows.Forms.Label();
-            this._pnlPermissionAdminLbl = new System.Windows.Forms.Label();
-            this._pnlPermissionSysadminVal = new System.Windows.Forms.Label();
+            this._pnlPermissionSysadminLbl = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._pnlPermissionAdminVal = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._pnlPermissionAdminLbl = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._pnlPermissionSysadminVal = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this._pnlPermissionAssignedServersHdr = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.label2 = new System.Windows.Forms.Label();
-            this.okButton = new System.Windows.Forms.Button();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
-            this._tabControl = new Infragistics.Win.UltraWinTabControl.UltraTabControl();
+            this._tabControl = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTabControl();
             this.ultraTabSharedControlsPage1 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
-            this.refreshButton = new System.Windows.Forms.Button();
-            this.configToolButton = new System.Windows.Forms.Button();
-            this.collectAndLogButton = new System.Windows.Forms.Button();
+            this.refreshButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.configToolButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.collectAndLogButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.ultraTabPageControl2.SuspendLayout();
             this.office2007PropertyPage1.ContentPanel.SuspendLayout();
             this._pnlDiagnostics.SuspendLayout();
@@ -619,7 +622,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 2;
-            this.okButton.Text = "&Close";
+            this.okButton.Text = "Close";
             this.okButton.UseVisualStyleBackColor = false;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
@@ -660,7 +663,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this._tabControl.Size = new System.Drawing.Size(567, 531);
             this._tabControl.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.StateButtons;
             this._tabControl.TabButtonStyle = Infragistics.Win.UIElementButtonStyle.Flat;
-            appearance5.BackColor = System.Drawing.Color.White;
+            appearance5.BackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor) : System.Drawing.Color.White;
             appearance5.BorderColor = System.Drawing.Color.Black;
             this._tabControl.TabHeaderAreaAppearance = appearance5;
             this._tabControl.TabIndex = 0;
@@ -691,11 +694,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // 
             this.refreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.refreshButton.BackColor = System.Drawing.SystemColors.Control;
-            this.refreshButton.Location = new System.Drawing.Point(275, 549);
+            this.refreshButton.Location = new System.Drawing.Point(260, 549);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(98, 23);
             this.refreshButton.TabIndex = 1;
-            this.refreshButton.Text = "&Run Diagnostics";
+            this.refreshButton.Text = "Run Diagnostics";
             this.refreshButton.UseVisualStyleBackColor = false;
             this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
@@ -719,7 +722,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.collectAndLogButton.Name = "collectAndLogButton";
             this.collectAndLogButton.Size = new System.Drawing.Size(119, 23);
             this.collectAndLogButton.TabIndex = 4;
-            this.collectAndLogButton.Text = "&Run and Gather Logs";
+            this.collectAndLogButton.Text = "Run and Gather Logs";
             this.collectAndLogButton.UseVisualStyleBackColor = false;
             this.collectAndLogButton.Click += new System.EventHandler(this.collectAndLogButton_Click);
             // 
@@ -774,44 +777,44 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
         private System.Windows.Forms.SplitContainer viewStatusPanel;
         private MRG.Controls.UI.LoadingCircle viewStatusConnectingCircle;
         private System.Windows.Forms.PictureBox viewStatusImage;
-        private System.Windows.Forms.LinkLabel viewStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel viewStatusLabel;
         private Idera.SQLdm.Common.UI.Controls.StackLayoutPanel stackLayoutPanel1;
         private System.ComponentModel.BackgroundWorker backgroundWorker;
-        private System.Windows.Forms.Button refreshButton;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton refreshButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label12;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label10;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
         private Idera.SQLdm.DesktopClient.Controls.SystemDiagTestControl systemDiagTestControl1;
-        private System.Windows.Forms.Panel _pnlDiagnostics;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  _pnlDiagnostics;
         private Infragistics.Win.UltraWinTabControl.UltraTabControl _tabControl;
         private Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage ultraTabSharedControlsPage1;
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl2;
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl3;
         private Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage office2007PropertyPage1;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip propertiesHeaderStrip1;
-        private System.Windows.Forms.Label desktopRepositoryDatabaseLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel desktopRepositoryDatabaseLabel;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip _generalHdrStrpStatus;
-        private System.Windows.Forms.Label desktopRepositoryHostLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel desktopRepositoryHostLabel;
         private Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage office2007PropertyPage2;
-        private System.Windows.Forms.Label _pnlPermissionSysadminLbl;
-        private System.Windows.Forms.Label label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _pnlPermissionSysadminLbl;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip _pnlPermissionStatusHdr;
-        private System.Windows.Forms.Label _pnlPermissionAdminVal;
-        private System.Windows.Forms.Label _pnlPermissionSysadminVal;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _pnlPermissionAdminVal;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _pnlPermissionSysadminVal;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip _pnlPermissionAssignedServersHdr;
-        private System.Windows.Forms.Label _pnlPermissionAdminLbl;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _pnlPermissionAdminLbl;
         private System.Windows.Forms.BindingSource bindingSource1;
         private Infragistics.Win.UltraWinGrid.UltraGrid _pnlPermissionServersGrid;
         private Idera.SQLdm.Common.UI.Controls.StackLayoutPanel stackLayoutPanelPermission;
-        private System.Windows.Forms.Panel _pnlPermissions;
-        private System.Windows.Forms.Panel _pnlNoPermissions;
-        private Divelements.WizardFramework.InformationBox _pnlNoPermissionInfo;
-        private System.Windows.Forms.Button configToolButton;
-        private System.Windows.Forms.Button collectAndLogButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  _pnlPermissions;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  _pnlNoPermissions;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox _pnlNoPermissionInfo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton configToolButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton collectAndLogButton;
     }
 }

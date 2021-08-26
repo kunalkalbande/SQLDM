@@ -28,21 +28,21 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            this.connectButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.dividerLabel = new System.Windows.Forms.Label();
-            this.serverLabel = new System.Windows.Forms.Label();
-            this.databaseLabel = new System.Windows.Forms.Label();
-            this.authenticationLabel = new System.Windows.Forms.Label();
-            this.userNameLabel = new System.Windows.Forms.Label();
-            this.passwordLabel = new System.Windows.Forms.Label();
-            this.rememberPasswordCheckbox = new System.Windows.Forms.CheckBox();
-            this.serversDropDownList = new System.Windows.Forms.ComboBox();
-            this.databaseDropDownList = new System.Windows.Forms.ComboBox();
-            this.authenticationDropDownList = new System.Windows.Forms.ComboBox();
-            this.userNameTextbox = new System.Windows.Forms.TextBox();
-            this.passwordTextbox = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.connectButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.dividerLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.serverLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.databaseLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.authenticationLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.userNameLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.passwordLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.rememberPasswordCheckbox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.serversDropDownList = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.databaseDropDownList = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.authenticationDropDownList = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.userNameTextbox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.passwordTextbox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.tableLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
             this.headerImage = new System.Windows.Forms.PictureBox();
             this.browseServersWorker = new System.ComponentModel.BackgroundWorker();
             this.browseDatabasesWorker = new System.ComponentModel.BackgroundWorker();
@@ -290,21 +290,23 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button connectButton;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Label dividerLabel;
-        private System.Windows.Forms.Label serverLabel;
-        private System.Windows.Forms.Label databaseLabel;
-        private System.Windows.Forms.Label authenticationLabel;
-        private System.Windows.Forms.Label userNameLabel;
-        private System.Windows.Forms.Label passwordLabel;
-        private System.Windows.Forms.CheckBox rememberPasswordCheckbox;
-        private System.Windows.Forms.ComboBox serversDropDownList;
-        private System.Windows.Forms.ComboBox databaseDropDownList;
-        private System.Windows.Forms.ComboBox authenticationDropDownList;
-        private System.Windows.Forms.TextBox userNameTextbox;
-        private System.Windows.Forms.TextBox passwordTextbox;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton connectButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel dividerLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel serverLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel databaseLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel authenticationLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel userNameLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel passwordLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox rememberPasswordCheckbox;
+
+
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox serversDropDownList;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox databaseDropDownList;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox authenticationDropDownList;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox userNameTextbox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox passwordTextbox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox headerImage;
         private Idera.SQLdm.DesktopClient.Controls.InfiniteProgressBar connectionProgressBar;
         private System.ComponentModel.BackgroundWorker browseServersWorker;

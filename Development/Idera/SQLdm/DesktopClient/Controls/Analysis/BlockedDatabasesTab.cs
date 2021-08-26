@@ -17,6 +17,7 @@ using Idera.SQLdm.Common.Services;
 using Idera.SQLdm.DesktopClient.Properties;
 using Idera.SQLdm.DesktopClient.Presenters.GridEntries;
 using Idera.SQLdm.DesktopClient.Dialogs.Analysis;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Controls.Analysis
 {
@@ -54,6 +55,8 @@ namespace Idera.SQLdm.DesktopClient.Controls.Analysis
         public BlockedDatabasesTab(int instanceID, List<int> blockedDBlist)
         {
             InitializeComponent();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
             if (DesignMode) return;
 
             this.sqlServerID = instanceID;            
@@ -80,6 +83,18 @@ namespace Idera.SQLdm.DesktopClient.Controls.Analysis
             blockedDatabaseIDList.Clear();
             _blockedRows.Clear();
             RefreshDatabases();
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this._blockedGrid);
         }
 
         private void RefreshDatabases()

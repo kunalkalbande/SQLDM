@@ -1,3 +1,4 @@
+using Idera.SQLdm.DesktopClient.Properties;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -21,8 +22,16 @@ namespace Idera.SQLdm.DesktopClient.Controls
             timer = new System.Timers.Timer();
             timer.Elapsed += new ElapsedEventHandler(timer_Elapsed);
 
-            color1 = Color.White;
-            color2 = Color.Orange;
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                color1 = ColorTranslator.FromHtml(DarkThemeColorConstants.ProgressBarForeColor);
+                color2 = ColorTranslator.FromHtml(DarkThemeColorConstants.ProgressBarBackColor);
+            }
+            else
+            {
+                color1 = Color.White;
+                color2 = Color.Orange;
+            }           
             SetStyle(ControlStyles.DoubleBuffer, true);
         }
 
@@ -118,24 +127,52 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
         protected override void OnPaintBackground(PaintEventArgs e)
         {
-            Color[] colors = new Color[] {color1, color2};
-            float l = Width/colors.Length + 1;
-            float end = pos;
-            int x = 0;
-            for (int i = 0; i < colors.Length + 1; i++, end = (end + l)%(Width + l))
+            if (Settings.Default.ColorScheme == "Dark")
             {
-                RectangleF r = new RectangleF(end - l, 0, l, Height);
-                using (
-                    Brush brush =
-                        new LinearGradientBrush(r, colors[(i - x)%colors.Length], colors[(i - x + 1)%colors.Length], 0f)
-                    )
-                using (Pen pen = new Pen(colors[(i - x)%colors.Length]))
+                Color darkcolor2 = ColorTranslator.FromHtml(DarkThemeColorConstants.ProgressBarForeColor);
+                Color darkcolor1 = ColorTranslator.FromHtml(DarkThemeColorConstants.ProgressBarBackColor);
+
+                Color[] colors = new Color[] { darkcolor1, darkcolor2 };
+                float l = Width / colors.Length + 1;
+                float end = pos;
+                int x = 0;
+                for (int i = 0; i < colors.Length + 1; i++, end = (end + l) % (Width + l))
                 {
-                    e.Graphics.FillRectangle(brush, r);
-                    e.Graphics.DrawLine(pen, r.Left, r.Top, r.Left, r.Bottom);
-                    // needed due to a GDI+ bug in FillRectangle
+                    RectangleF r = new RectangleF(end - l, 0, l, Height);
+                    using (
+                        Brush brush =
+                            new LinearGradientBrush(r, colors[(i - x) % colors.Length], colors[(i - x + 1) % colors.Length], 0f)
+                        )
+                    using (Pen pen = new Pen(colors[(i - x) % colors.Length]))
+                    {
+                        e.Graphics.FillRectangle(brush, r);
+                        e.Graphics.DrawLine(pen, r.Left, r.Top, r.Left, r.Bottom);
+                        // needed due to a GDI+ bug in FillRectangle
+                    }
+                    if (end >= Width) x = 1;
                 }
-                if (end >= Width) x = 1;
+            }
+            else{
+                Color[] colors = new Color[] { color1, color2 };
+                float l = Width / colors.Length + 1;
+                float end = pos;
+                int x = 0;
+                for (int i = 0; i < colors.Length + 1; i++, end = (end + l) % (Width + l))
+                {
+                    RectangleF r = new RectangleF(end - l, 0, l, Height);
+                    using (
+                        Brush brush =
+                            new LinearGradientBrush(r, colors[(i - x) % colors.Length], colors[(i - x + 1) % colors.Length], 0f)
+                        )
+                    using (Pen pen = new Pen(colors[(i - x) % colors.Length]))
+                    {
+                        e.Graphics.FillRectangle(brush, r);
+                        e.Graphics.DrawLine(pen, r.Left, r.Top, r.Left, r.Bottom);
+                        // needed due to a GDI+ bug in FillRectangle
+                    }
+                    if (end >= Width) x = 1;
+                }
+
             }
         }
 

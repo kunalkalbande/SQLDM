@@ -22,8 +22,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Properties;
     using Wintellect.PowerCollections;
     using Idera.PrescriptiveAnalytics.PrescriptiveAnalyzer.Common.Recommendations;
+    using Infragistics.Windows.Themes;
 
-    public partial class DeadlockDialog : Form
+    public partial class DeadlockDialog : BaseDialog
     {
         private const string BAND_RESOURCE = "Resource";
         private const string LOCK_TYPE = "Lock Type";
@@ -73,6 +74,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public DeadlockDialog(string xdl)
         {
+            this.DialogHeader = "DeadlockDialog";
             this.xdl = xdl;
   
             // testing override
@@ -81,6 +83,20 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             InitializeComponent();
             flatGrid.DrawFilter = new HideFocusRectangleDrawFilter();
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.flatGrid);
         }
 
         private void DeadlockDialog_Load(object sender, EventArgs args)

@@ -66,7 +66,7 @@ namespace Idera.SQLdm.DesktopClient.Objects
             get { return savePassword; }
             set { savePassword = value; }
         }
-        public int RepositiryId { get; set; }
+
         private void AddDefaultServerGroups()
         {
             SearchUserView criticalUsers = SearchUserView.CreateView(SearchUserView.CriticalUserViewID);

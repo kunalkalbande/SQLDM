@@ -11008,11 +11008,11 @@ Last Error Log Read: {2}",
                                                    : null,
                                                refresh,
                                                LOG, cloudProviderId);
-
-                rd.NextResult();
-                ProbeHelpers.ReadAzureManagedInstancePages(rd, refresh, LOG, refresh.Server, GenericFailureDelegate);
+                                
                 if (cloudProviderId == Constants.MicrosoftAzureManagedInstanceId)
                 {
+                    rd.NextResult();
+                    ProbeHelpers.ReadAzureManagedInstancePages(rd, refresh, LOG, refresh.Server, GenericFailureDelegate);
                     rd.NextResult();
                     ProbeHelpers.ReadAvgCpuPercent(rd, refresh, LOG, refresh.Server, GenericFailureDelegate);
                 }

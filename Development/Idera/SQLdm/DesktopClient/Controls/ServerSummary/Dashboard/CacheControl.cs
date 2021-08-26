@@ -19,6 +19,8 @@ using Idera.SQLdm.DesktopClient.Views.Servers.Server;
 using Idera.SQLdm.Common.Events;
 using Idera.SQLdm.DesktopClient.Dialogs;
 using Idera.SQLdm.Common.UI.Dialogs;
+using Idera.SQLdm.DesktopClient.Properties;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
 {
@@ -34,8 +36,25 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
             ChartFxExtensions.SetContextMenu(pageLifeChart, toolbarsManager);
 
             helpTopic = HelpTopics.ServerDashboardViewCachePanel;
-        }
+            updateLinearScaleFontAsPerTheme(this.linearScale1);
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
 
+
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+            else
+            {
+                this.areasPanel.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+                this.pageLifePanel.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            }
+        }
+        private void ScaleControlsAsPerResolution()
+        {
+            this.areasChart.LegendBox.AutoSize = true;
+            this.pageLifeChart.LegendBox.AutoSize = true;
+            this.areasPanel.Padding = new System.Windows.Forms.Padding(0,10,0,10);
+            this.pageLifePanel.Padding = new System.Windows.Forms.Padding(0,10,0,10);
+        }
         internal override void Initialize(ServerBaseView baseView, ServerSummaryHistoryData history)
         {
             base.Initialize(baseView, history);            
@@ -355,5 +374,15 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
         }
 
         #endregion
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            updateLinearScaleFontAsPerTheme(this.linearScale1);
+        }
+        public void updateLinearScaleFontAsPerTheme(LinearScale linearscale)
+        {
+            ThemeSetter ts = new ThemeSetter();
+            ts.SetLinearScale(linearscale);
+        }
     }
 }

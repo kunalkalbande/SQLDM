@@ -29,7 +29,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
         private void InitializeComponent()
         {
             this.backgroundPanel = new Idera.SQLdm.DesktopClient.Controls.RoundedPanel();
-            this.textLabel = new System.Windows.Forms.Label();
+            this.textLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.toggleImage = new System.Windows.Forms.PictureBox();
             this.backgroundPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toggleImage)).BeginInit();
@@ -96,6 +96,6 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
         private RoundedPanel backgroundPanel;
         private System.Windows.Forms.PictureBox toggleImage;
-        private System.Windows.Forms.Label textLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel textLabel;
     }
 }

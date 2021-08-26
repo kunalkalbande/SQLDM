@@ -18,6 +18,7 @@ using Infragistics.Win;
 using Infragistics.Win.UltraWinDataSource;
 using Infragistics.Win.UltraWinGrid;
 using Infragistics.Win.UltraWinToolbars;
+using Infragistics.Windows.Themes;
 using ColumnHeader = Infragistics.Win.UltraWinGrid.ColumnHeader;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
@@ -45,6 +46,20 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
             AdaptFontSize();
             configurationGrid.DrawFilter = new HideFocusRectangleDrawFilter();
             historicalSnapshotStatusLinkLabel.Text = Properties.Resources.HistoryModeUnsupportedViewLabel;
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.configurationGrid);
         }
 
         public override DateTime? HistoricalSnapshotDateTime

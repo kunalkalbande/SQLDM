@@ -1,4 +1,6 @@
 ﻿
+using Idera.SQLdm.DesktopClient.Properties;
+
 namespace Idera.SQLdm.DesktopClient.Dialogs.AzureConfigurations
 {
     partial class AzureProfilesConfiguration
@@ -52,7 +54,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.AzureConfigurations
             Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList1 = new Infragistics.Win.ValueList(35772059);
+            Infragistics.Win.ValueList valueList1 = new Controls.CustomControls.CustomValueList(35772059);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AzureProfilesConfiguration));
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand3 = new Infragistics.Win.UltraWinGrid.UltraGridBand("IAzureProfile", -1);
@@ -69,28 +71,28 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.AzureConfigurations
             Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList2 = new Infragistics.Win.ValueList(35772059);
-            this.btnClose = new System.Windows.Forms.Button();
+            Infragistics.Win.ValueList valueList2 = new Controls.CustomControls.CustomValueList(35772059);
+            this.btnClose = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.azureProfileWorker = new System.ComponentModel.BackgroundWorker();
             this.appProfileGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.iAzureApplicationProfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnDeleteAppProfile = new System.Windows.Forms.Button();
-            this.btnEditAppProfile = new System.Windows.Forms.Button();
-            this.btnAddAppProfile = new System.Windows.Forms.Button();
-            this.btnTestAppProfile = new System.Windows.Forms.Button();
-            this.btnViewResources = new System.Windows.Forms.Button();
-            this.headerPanel = new System.Windows.Forms.Panel();
-            this.descriptionLabel = new System.Windows.Forms.Label();
-            this.lblAzureAppProfileNoInstances = new System.Windows.Forms.Label();
-            this.lblNoLinkedAzureProfile = new System.Windows.Forms.Label();
-            this.buttonDeleteProfile = new System.Windows.Forms.Button();
-            this.buttonEditProfile = new System.Windows.Forms.Button();
-            this.buttonAddProfile = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDeleteAppProfile = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnEditAppProfile = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnAddAppProfile = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnTestAppProfile = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnViewResources = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.headerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.descriptionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblAzureAppProfileNoInstances = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblNoLinkedAzureProfile = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.buttonDeleteProfile = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.buttonEditProfile = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.buttonAddProfile = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.groupBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
             this.azureProfileGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.iAzureProfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.azureTestStatusLabel = new System.Windows.Forms.Label();
+            this.groupBox2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.azureTestStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             ((System.ComponentModel.ISupportInitialize)(this.appProfileGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iAzureApplicationProfileBindingSource)).BeginInit();
             this.headerPanel.SuspendLayout();
@@ -244,9 +246,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.AzureConfigurations
             // btnDeleteAppProfile
             // 
             this.btnDeleteAppProfile.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDeleteAppProfile.Location = new System.Drawing.Point(189, 187);
+            this.btnDeleteAppProfile.Location = new System.Drawing.Point(189, 183);
             this.btnDeleteAppProfile.Name = "btnDeleteAppProfile";
-            this.btnDeleteAppProfile.Size = new System.Drawing.Size(84, 23);
+            this.btnDeleteAppProfile.Size = new System.Drawing.Size(84, 22);
             this.btnDeleteAppProfile.TabIndex = 3;
             this.btnDeleteAppProfile.Text = "Delete";
             this.btnDeleteAppProfile.UseVisualStyleBackColor = true;
@@ -255,9 +257,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.AzureConfigurations
             // btnEditAppProfile
             // 
             this.btnEditAppProfile.BackColor = System.Drawing.SystemColors.Control;
-            this.btnEditAppProfile.Location = new System.Drawing.Point(99, 187);
+            this.btnEditAppProfile.Location = new System.Drawing.Point(99, 183);
             this.btnEditAppProfile.Name = "btnEditAppProfile";
-            this.btnEditAppProfile.Size = new System.Drawing.Size(84, 23);
+            this.btnEditAppProfile.Size = new System.Drawing.Size(84, 22);
             this.btnEditAppProfile.TabIndex = 2;
             this.btnEditAppProfile.Text = "View/Edit";
             this.btnEditAppProfile.UseVisualStyleBackColor = true;
@@ -266,9 +268,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.AzureConfigurations
             // btnAddAppProfile
             // 
             this.btnAddAppProfile.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAddAppProfile.Location = new System.Drawing.Point(9, 187);
+            this.btnAddAppProfile.Location = new System.Drawing.Point(9, 183);
             this.btnAddAppProfile.Name = "btnAddAppProfile";
-            this.btnAddAppProfile.Size = new System.Drawing.Size(84, 23);
+            this.btnAddAppProfile.Size = new System.Drawing.Size(84, 22);
             this.btnAddAppProfile.TabIndex = 1;
             this.btnAddAppProfile.Text = "New";
             this.btnAddAppProfile.UseVisualStyleBackColor = true;
@@ -278,9 +280,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.AzureConfigurations
             // 
             this.btnTestAppProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTestAppProfile.BackColor = System.Drawing.SystemColors.Control;
-            this.btnTestAppProfile.Location = new System.Drawing.Point(389, 187);
+            this.btnTestAppProfile.Location = new System.Drawing.Point(389, 183);
             this.btnTestAppProfile.Name = "btnTestAppProfile";
-            this.btnTestAppProfile.Size = new System.Drawing.Size(118, 23);
+            this.btnTestAppProfile.Size = new System.Drawing.Size(118, 22);
             this.btnTestAppProfile.TabIndex = 4;
             this.btnTestAppProfile.Text = "Test";
             this.btnTestAppProfile.UseVisualStyleBackColor = true;
@@ -300,7 +302,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.AzureConfigurations
             // headerPanel
             // 
             this.headerPanel.BackColor = System.Drawing.Color.White;
-            this.headerPanel.BackgroundImage = global::Idera.SQLdm.DesktopClient.Properties.Resources.CloudDialogHeader;
+            if (Settings.Default.ColorScheme != "Dark")
+                this.headerPanel.BackgroundImage = global::Idera.SQLdm.DesktopClient.Properties.Resources.CloudDialogHeader;
             this.headerPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.headerPanel.Controls.Add(this.descriptionLabel);
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -315,7 +318,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.AzureConfigurations
             | System.Windows.Forms.AnchorStyles.Right)));
             this.descriptionLabel.BackColor = System.Drawing.Color.Transparent;
             this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLabel.Location = new System.Drawing.Point(64, 6);
+            if (Settings.Default.ColorScheme == "Dark")
+                this.descriptionLabel.Location = new System.Drawing.Point(10, 6);
+            else
+                this.descriptionLabel.Location = new System.Drawing.Point(64, 6);
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.descriptionLabel.Size = new System.Drawing.Size(465, 47);
@@ -539,7 +545,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.AzureConfigurations
             this.azureTestStatusLabel.Location = new System.Drawing.Point(9, 153);
             this.azureTestStatusLabel.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.azureTestStatusLabel.Name = "azureTestStatusLabel";
-            this.azureTestStatusLabel.Size = new System.Drawing.Size(501, 31);
+            this.azureTestStatusLabel.Size = new System.Drawing.Size(501, 27);
             this.azureTestStatusLabel.TabIndex = 15;
             this.azureTestStatusLabel.Text = "Testing access for the Azure Application...";
             this.azureTestStatusLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -574,28 +580,28 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.AzureConfigurations
         }
 
         #endregion
-        //private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Button btnClose;
+        //private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnClose;
         private System.ComponentModel.BackgroundWorker azureProfileWorker;
         private Infragistics.Win.UltraWinGrid.UltraGrid appProfileGrid;
-        private System.Windows.Forms.Button btnDeleteAppProfile;
-        private System.Windows.Forms.Button btnEditAppProfile;
-        private System.Windows.Forms.Button btnAddAppProfile;
-        private System.Windows.Forms.Button btnTestAppProfile;
-        private System.Windows.Forms.Button btnViewResources;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnDeleteAppProfile;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnEditAppProfile;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnAddAppProfile;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnTestAppProfile;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnViewResources;
         private Controls.InfiniteProgressBar statusProgressBar;
-        private System.Windows.Forms.Panel headerPanel;
-        private System.Windows.Forms.Label descriptionLabel;
-        private System.Windows.Forms.Label lblAzureAppProfileNoInstances;
-        private System.Windows.Forms.Label lblNoLinkedAzureProfile;
-        private System.Windows.Forms.Button buttonDeleteProfile;
-        private System.Windows.Forms.Button buttonEditProfile;
-        private System.Windows.Forms.Button buttonAddProfile;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  headerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel descriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblAzureAppProfileNoInstances;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblNoLinkedAzureProfile;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton buttonDeleteProfile;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton buttonEditProfile;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton buttonAddProfile;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox2;
         private System.Windows.Forms.BindingSource iAzureApplicationProfileBindingSource;
         private System.Windows.Forms.BindingSource iAzureProfileBindingSource;
-        private System.Windows.Forms.Label azureTestStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel azureTestStatusLabel;
         private Infragistics.Win.UltraWinGrid.UltraGrid azureProfileGrid;
     }
 }

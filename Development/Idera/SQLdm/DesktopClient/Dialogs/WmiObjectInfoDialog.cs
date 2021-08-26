@@ -9,10 +9,11 @@ using Idera.SQLdm.DesktopClient.Helpers;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class WmiObjectInfoDialog : Form
+    public partial class WmiObjectInfoDialog : BaseDialog
     {
         public WmiObjectInfoDialog(string objectName, string objectDesc, string counterName, string counterDesc)
         {
+            this.DialogHeader = "Wmi Object Info";
             InitializeComponent();
             this.AdaptFontSize();
 

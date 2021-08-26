@@ -8,12 +8,13 @@ using Idera.SQLdm.DesktopClient.Properties;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class BrowseReportServerFoldersDialog : Form
+    public partial class BrowseReportServerFoldersDialog : BaseDialog
     {
         private readonly ReportServerData serverData;
 
         public BrowseReportServerFoldersDialog(ReportServerData serverData)
         {
+            this.DialogHeader = "Browse For Deployment Folder";
             this.serverData = serverData;
             InitializeComponent();
             reportServerFolderTreeView.ImageList.Images.Add("ServerRoot", Resources.Server);

@@ -9,15 +9,32 @@ using System.Windows.Forms;
 namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 {
     using Idera.SQLdm.Common.Notification;
+    using Idera.SQLdm.DesktopClient.Controls;
     using Idera.SQLdm.DesktopClient.Helpers;
+    using Infragistics.Windows.Themes;
 
-    public partial class AffectedRulesWarningDialog : Form
+    public partial class AffectedRulesWarningDialog : BaseDialog
     {
         public AffectedRulesWarningDialog()
         {
+            this.DialogHeader = "Affected Alert Responses";
             InitializeComponent();
             rulesListView.DrawFilter = new HideFocusRectangleDrawFilter();
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.rulesListView);
         }
 
         public string InfoText

@@ -30,6 +30,7 @@ using TableActionStatus = Idera.SQLdm.DesktopClient.Objects.TableActionObject.Ta
 using Idera.SQLdm.Common;
 using Idera.SQLdm.Common.Data;
 using Idera.SQLdm.Common.Events;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
 {
@@ -188,8 +189,24 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
 
             RefreshAvailableDatabases();
             AdaptFontSize();
+
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+
         }
 
+        private void ScaleControlsAsPerResolution()
+        {
+            this.tablesGridStatusMessage.Size = new Size(this.tablesGridStatusMessage.Width-8,this.tablesGridStatusMessage.Height -8);
+            this.tablesGridStatusMessage.Location = new System.Drawing.Point(0, 36);
+            this.splitContainer.Location = new System.Drawing.Point(4, 40);
+            this.tableSizeChart.LegendBox.AutoSize = true;
+            this.tablesGrid.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ResizeAllColumns;
+
+        }
         public string SelectedDatabaseFilter
         {
             get { return selectedDatabase; }
@@ -1340,6 +1357,16 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
         {
             RefreshAvailableDatabases();
         }
+        void mouseEnter_refreshDatabasesButton(Object Sender, EventArgs e)
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+                this.appearance1.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefreshHover;
+        }
+        void mouseLeave_refreshDatabasesButton(Object Sender, EventArgs e)
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+                appearance1.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh;
+        }
 
         private void refreshAvailableDatabasesBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -1590,6 +1617,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
                 case "chartContextMenu":
                     Chart chart = (Chart)e.SourceControl;
                     ((StateButtonTool)((PopupMenuTool)e.Tool).Tools["toggleChartToolbarButton"]).InitializeChecked(chart.ToolBar.Visible);
+                    chart.LegendBox.AutoSize = true;
                     contextMenuSelectedChart = chart;
                     break;
                 case "gridDataContextMenu":
@@ -2897,21 +2925,25 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
 
         private void ToggleChartToolbar(Chart chart, bool Visible)
         {
+            chart.LegendBox.AutoSize = true;
             chart.ToolBar.Visible = Visible;
         }
 
         private void PrintChart(Chart chart)
         {
+            chart.LegendBox.AutoSize = true;
             ExportHelper.ChartHelper.PrintChartWithTitle(this, chart, chart.Tag as string, ultraPrintPreviewDialog);
         }
 
         private void SaveChartData(Chart chart)
         {
+            chart.LegendBox.AutoSize = true;
             ExportHelper.ChartHelper.ExportToCsv(this, chart, ExportHelper.GetValidFileName(chart.Tag as string, true));
         }
 
         private void SaveChartImage(Chart chart)
         {
+            chart.LegendBox.AutoSize = true;
             ExportHelper.ChartHelper.ExportImageWithTitle(this, chart, chart.Tag as string, ExportHelper.GetValidFileName(chart.Tag as string, true));
         }
 
@@ -2947,6 +2979,34 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                if (!refreshDatabasesButton.Enabled)
+                    appearance1.Image = Helpers.ImageUtils.ChangeOpacity(global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh, 0.50F);
+                this.refreshDatabasesButton.UseOsThemes = DefaultableBoolean.False;
+                this.refreshDatabasesButton.UseAppStyling = false;
+                this.refreshDatabasesButton.ButtonStyle = UIElementButtonStyle.FlatBorderless;
+            }
+            else
+            {
+                this.refreshDatabasesButton.UseAppStyling = true;
+            }
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.dependenciesGrid);
+            themeManager.updateGridTheme(this.indexesGrid);
+            themeManager.updateGridTheme(this.indexStatisticsColumnsGrid);
+            themeManager.updateGridTheme(this.indexStatisticsDataDistributionGrid);
+            themeManager.updateGridTheme(this.tablesGrid);
         }
     }
 }

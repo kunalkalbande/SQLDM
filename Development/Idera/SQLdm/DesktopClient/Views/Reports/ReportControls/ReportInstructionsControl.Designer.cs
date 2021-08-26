@@ -28,14 +28,14 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.reportTitleLabel = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.reportDescriptionLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.reportInstructionsLabel = new System.Windows.Forms.Label();
+            this.reportTitleLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.panel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.reportDescriptionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.panel4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.reportInstructionsLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -157,13 +157,13 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label reportTitleLabel;
-        private System.Windows.Forms.Label reportDescriptionLabel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label reportInstructionsLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel reportTitleLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel reportDescriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel reportInstructionsLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

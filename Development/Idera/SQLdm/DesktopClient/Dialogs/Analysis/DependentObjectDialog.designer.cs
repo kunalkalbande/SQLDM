@@ -29,13 +29,13 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.textBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.loadWorker = new System.ComponentModel.BackgroundWorker();
             this.gradientPanel1 = new GradientPanel();
-            this.dependencyTree = new Infragistics.Win.UltraWinTree.UltraTree();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dependencyTree = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTree();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.loadingCircle = new MRG.Controls.UI.LoadingCircle();
             this.gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dependencyTree)).BeginInit();
@@ -153,12 +153,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox textBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
         private GradientPanel gradientPanel1;
         private MRG.Controls.UI.LoadingCircle loadingCircle;
-        private System.Windows.Forms.Label label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
         private System.ComponentModel.BackgroundWorker loadWorker;
         private Infragistics.Win.UltraWinTree.UltraTree dependencyTree;
     }

@@ -1,17 +1,19 @@
 ﻿using Idera.Newsfeed.Plugins.Helpers;
+using Idera.SQLdm.DesktopClient.Controls.CustomControls;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 {
-    public partial class AlertRankValuesDialog : Form
+    public partial class AlertRankValuesDialog : BaseDialog
     {
         public Int32 rankValue { get; set; }
         public string cmbRankValue { get; set; }
        
         public AlertRankValuesDialog()
         {
+            this.DialogHeader = "Alert Rank Value";
             InitializeComponent();
         }
        
@@ -26,8 +28,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         }
         private void durationInMunitesSpinner_ValueChanged(object sender, EventArgs e)
         {
-            NotificationRuleLabelGenerator.Rvalue = Convert.ToInt32(((NumericUpDown)sender).Value);
-            rankValue = Convert.ToInt32(((NumericUpDown)sender).Value);
+            NotificationRuleLabelGenerator.Rvalue = Convert.ToInt32(((CustomNumericUpDown)sender).Value);
+            rankValue = Convert.ToInt32(((CustomNumericUpDown)sender).Value);
         }
         private void AlertRankValuesDialog_Load(object sender, EventArgs e)
         {

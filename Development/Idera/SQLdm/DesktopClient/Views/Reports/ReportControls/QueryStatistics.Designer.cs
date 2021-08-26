@@ -35,16 +35,16 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QueryStatistics));
             this.appName = new Idera.SQLdm.DesktopClient.Controls.AllowDeleteTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.eventTypeCombo = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.eventTypeCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.dbName = new Idera.SQLdm.DesktopClient.Controls.AllowDeleteTextBox();
-            this.sigMode = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.sigMode = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.queryText = new Idera.SQLdm.DesktopClient.Controls.AllowDeleteTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.caseInsensitive = new System.Windows.Forms.CheckBox();
+            this.label5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.caseInsensitive = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             this.panel1.SuspendLayout();
             this.filterPanel.SuspendLayout();
             this.SuspendLayout();
@@ -265,16 +265,16 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
         private Controls.AllowDeleteTextBox appName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox eventTypeCombo;
-        private System.Windows.Forms.Label label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox eventTypeCombo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
         private Controls.AllowDeleteTextBox dbName;
-        private System.Windows.Forms.Label label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
         private Controls.AllowDeleteTextBox queryText;
-        private System.Windows.Forms.CheckBox sigMode;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox caseInsensitive;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox sigMode;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox caseInsensitive;
     }
 }

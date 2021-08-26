@@ -12,7 +12,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using Idera.SQLdm.DesktopClient.Properties;
     using System.ComponentModel;
 
-    public partial class MetricSelectionDialog : Form
+    public partial class MetricSelectionDialog : BaseDialog
     {
         private List<int> metrics;
         private List<int> selectedMetrics;
@@ -22,6 +22,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public MetricSelectionDialog(MetricDefinitions metricDefinitions)
         {
+            this.DialogHeader = "Metrics";
             this.metricDefinitions = metricDefinitions;
             InitializeComponent();
             AdaptFontSize();

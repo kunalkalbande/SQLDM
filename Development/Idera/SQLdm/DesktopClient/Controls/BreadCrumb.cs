@@ -6,6 +6,8 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using Idera.SQLdm.Common.UI.Dialogs;
+using Idera.SQLdm.DesktopClient.Properties;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Controls
 {
@@ -52,7 +54,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
             trail  = new List<string>();
             crumbs = new List<Crumb>();
 
-            coldForeColor  = Color.Black;
+            coldForeColor  = Settings.Default.ColorScheme == "Dark"? ColorTranslator.FromHtml(DarkThemeColorConstants.ChartForeColor) : Color.Black;
             hotForeColor   = Color.Blue;
             hoverForeColor = Color.Red;
             coldFont       = new Font(this.Font, FontStyle.Regular);
@@ -102,6 +104,14 @@ namespace Idera.SQLdm.DesktopClient.Controls
                 this.flowLayoutPanel1.Controls.Add(star);
                 this.flowLayoutPanel1.Controls.Add(arrow);
             }
+
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            coldForeColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.ChartForeColor) : Color.Black;
+            UpdateTrail();
         }
 
         private void star_MouseClick( object sender, MouseEventArgs e )

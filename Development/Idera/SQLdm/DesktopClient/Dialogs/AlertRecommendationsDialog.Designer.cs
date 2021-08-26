@@ -32,6 +32,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
+            bool isDarkThemeSelected = Properties.Settings.Default.ColorScheme == "Dark";
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlertRecommendationsDialog));
             Infragistics.Win.Appearance appearance35 = new Infragistics.Win.Appearance();
@@ -57,32 +58,32 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             Infragistics.Win.Appearance appearance54 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance55 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance56 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList1 = new Infragistics.Win.ValueList(426658501);
+            Infragistics.Win.ValueList valueList1 = new Controls.CustomControls.CustomValueList(426658501);
             Infragistics.Win.ValueListItem valueListItem1 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem2 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem3 = new Infragistics.Win.ValueListItem();
-            ChartFX.WinForms.Gauge.LinearScale linearScale1 = new ChartFX.WinForms.Gauge.LinearScale();
+             linearScale1 = new ChartFX.WinForms.Gauge.LinearScale();
             ChartFX.WinForms.Gauge.Marker marker1 = new ChartFX.WinForms.Gauge.Marker();
             ChartFX.WinForms.Gauge.Marker marker2 = new ChartFX.WinForms.Gauge.Marker();
             ChartFX.WinForms.Gauge.Section section1 = new ChartFX.WinForms.Gauge.Section();
             ChartFX.WinForms.Gauge.Section section2 = new ChartFX.WinForms.Gauge.Section();
             ChartFX.WinForms.Gauge.Section section3 = new ChartFX.WinForms.Gauge.Section();
             ChartFX.WinForms.Gauge.LinearStrip linearStrip1 = new ChartFX.WinForms.Gauge.LinearStrip();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.gridBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.refreshSuggestionsWorker = new System.ComponentModel.BackgroundWorker();
-            this.office2007PropertyPage1 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
+            this.office2007PropertyPage1 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage(isDarkThemeSelected);
             this.dividerProgressBar2 = new Idera.SQLdm.DesktopClient.Controls.InfiniteProgressBar();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.recommendationsGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.applyAllCheckBox = new System.Windows.Forms.CheckBox();
-            this.alertConfigurationGroupBox = new System.Windows.Forms.GroupBox();
+            this.applyAllCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.alertConfigurationGroupBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
             this.alertConfigurationGauge = new ChartFX.WinForms.Gauge.HorizontalGauge();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.alertRecommendationOptionsButton = new System.Windows.Forms.Button();
-            this.configureBaselineButton = new System.Windows.Forms.Button();
-            this.mainContainerPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFlowLayoutPanel();
+            this.alertRecommendationOptionsButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.configureBaselineButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.mainContainerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.gridBindingSource)).BeginInit();
             this.office2007PropertyPage1.ContentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recommendationsGrid)).BeginInit();
@@ -501,19 +502,20 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         #endregion
 
         private Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage office2007PropertyPage1;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button alertRecommendationOptionsButton;
-        private System.Windows.Forms.Button configureBaselineButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton alertRecommendationOptionsButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton configureBaselineButton;
         private ChartFX.WinForms.Gauge.HorizontalGauge alertConfigurationGauge;
-        private System.Windows.Forms.GroupBox alertConfigurationGroupBox;
-        private System.Windows.Forms.CheckBox applyAllCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox alertConfigurationGroupBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox applyAllCheckBox;
         private Infragistics.Win.UltraWinGrid.UltraGrid recommendationsGrid;
         private System.Windows.Forms.BindingSource gridBindingSource;
         private System.ComponentModel.BackgroundWorker refreshSuggestionsWorker;
         private Idera.SQLdm.DesktopClient.Controls.InfiniteProgressBar dividerProgressBar2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel mainContainerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomFlowLayoutPanel flowLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel mainContainerPanel;
+        private ChartFX.WinForms.Gauge.LinearScale linearScale1;
     }
 }

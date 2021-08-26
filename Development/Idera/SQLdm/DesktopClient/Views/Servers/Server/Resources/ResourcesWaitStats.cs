@@ -24,7 +24,7 @@ using Infragistics.Win.UltraWinGrid;
 using ColumnHeader = Infragistics.Win.UltraWinGrid.ColumnHeader;
 using Idera.SQLdm.DesktopClient.Controls;
 using System.Globalization;
-
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
 {
@@ -227,6 +227,10 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
 
             Interlocked.Increment( ref ctorInitialized );
             AdaptFontSize();
+            updateColor();
+            SetGridTheme();
+
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }        
 
         #endregion        
@@ -2121,6 +2125,35 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            updateColor();
+        }
+
+        void updateColor()
+        {
+            if(Settings.Default.ColorScheme == "Dark")
+            {
+                this.categoryLegend.BackgroundColor = ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor);
+                this.categoryLegend.DefaultCellStyle.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor);
+            }
+            else
+            {
+                this.categoryLegend.BackgroundColor = Color.White;
+                this.categoryLegend.DefaultCellStyle.BackColor = Color.White;
+            }
+            if (waitsChart != null)
+                waitsChart.ForeColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.ChartForeColor) : Color.Black;
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.waitTypesGrid);
         }
         #endregion
     }

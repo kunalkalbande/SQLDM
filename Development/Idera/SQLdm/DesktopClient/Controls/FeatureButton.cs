@@ -1,3 +1,5 @@
+using Idera.SQLdm.DesktopClient.Properties;
+using Infragistics.Windows.Themes;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -10,6 +12,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
     public partial class FeatureButton : UserControl
     {
         private FeatureButtonState state = FeatureButtonState.Normal;
+        private Color backColorHoverDark = ColorTranslator.FromHtml(DarkThemeColorConstants.SelectionColor);
 
         private enum FeatureButtonState
         {
@@ -29,6 +32,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
             UpdateStyles();
 
             InitializeComponent();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
         [Category("Appearance")]
@@ -159,6 +163,12 @@ namespace Idera.SQLdm.DesktopClient.Controls
             }
         }
 
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            state = FeatureButtonState.Normal;
+            Invalidate(false);
+        }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             switch (state)
@@ -169,6 +179,22 @@ namespace Idera.SQLdm.DesktopClient.Controls
                 case FeatureButtonState.Clicked:
                     DrawClicked(e.Graphics);
                     break;
+                case FeatureButtonState.Normal:
+                    DrawNormal(e.Graphics);
+                    break;
+            }
+        }
+
+        private void DrawNormal(Graphics graphics)
+        {
+            this.BackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor) : Color.White;
+            try
+            {
+                this.featureImagePictureBox.BackColor = Color.Transparent;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
             }
         }
 
@@ -176,11 +202,11 @@ namespace Idera.SQLdm.DesktopClient.Controls
         {
             if (graphics != null)
             {
-                using (Pen pen = new Pen(Color.FromArgb(255, 232, 166)))
+                using (Pen pen = new Pen(Settings.Default.ColorScheme == "Dark" ? backColorHoverDark : Color.FromArgb(255, 232, 166)))
                 {
                     Rectangle bounds = Rectangle.Inflate(ClientRectangle, -1, -1);
-                    DrawRoundRectangle(graphics, pen, Color.FromArgb(255, 255, 255), Color.FromArgb(255, 243, 205),
-                                       bounds, 5);
+                    DrawRoundRectangle(graphics, pen, Settings.Default.ColorScheme == "Dark" ? backColorHoverDark : Color.FromArgb(255, 255, 255),
+                        Settings.Default.ColorScheme == "Dark" ? backColorHoverDark : Color.FromArgb(255, 243, 205), bounds, 5);
                 }
             }
         }
@@ -189,11 +215,11 @@ namespace Idera.SQLdm.DesktopClient.Controls
         {
             if (graphics != null)
             {
-                using (Pen pen = new Pen(Color.FromArgb(220, 220, 220)))
+                using (Pen pen = new Pen(Settings.Default.ColorScheme == "Dark" ? backColorHoverDark : Color.FromArgb(220, 220, 220)))
                 {
                     Rectangle bounds = Rectangle.Inflate(ClientRectangle, -1, -1);
-                    DrawRoundRectangle(graphics, pen, Color.FromArgb(243, 243, 243), Color.FromArgb(226, 226, 226),
-                                       bounds, 5);
+                    DrawRoundRectangle(graphics, pen, Settings.Default.ColorScheme == "Dark" ? backColorHoverDark : Color.FromArgb(243, 243, 243),
+                        Settings.Default.ColorScheme == "Dark" ? backColorHoverDark : Color.FromArgb(226, 226, 226), bounds, 5);
                 }
             }
         }

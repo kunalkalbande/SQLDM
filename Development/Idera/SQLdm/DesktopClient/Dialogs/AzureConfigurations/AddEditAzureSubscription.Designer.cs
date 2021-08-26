@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             Infragistics.Win.Misc.ValidationGroup validationGroup2 = new Infragistics.Win.Misc.ValidationGroup("subscriptionValidationGroup");
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxSubscription = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBoxDescription = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnOK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.textBoxSubscription = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.groupBox3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.textBoxDescription = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label8 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.subscriptionsValidator = new Infragistics.Win.Misc.UltraValidator(this.components);
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.subscriptionsValidator)).BeginInit();
@@ -152,13 +152,13 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxSubscription;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBoxDescription;
-        private System.Windows.Forms.Label label8;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox textBoxSubscription;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox textBoxDescription;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label8;
         private Infragistics.Win.Misc.UltraValidator subscriptionsValidator;
     }
 }

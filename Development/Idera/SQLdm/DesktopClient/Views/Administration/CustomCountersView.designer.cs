@@ -29,60 +29,60 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Infragistics.Win.UltraWinToolbars.RibbonTab ribbonTab1 = new Infragistics.Win.UltraWinToolbars.RibbonTab("Home");
-            Infragistics.Win.UltraWinToolbars.RibbonGroup ribbonGroup1 = new Infragistics.Win.UltraWinToolbars.RibbonGroup("CustomCounters");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Infragistics.Win.UltraWinToolbars.ButtonTool("createCounterButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Infragistics.Win.UltraWinToolbars.ButtonTool("changeCounterButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Infragistics.Win.UltraWinToolbars.ButtonTool("deleteCounterButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Infragistics.Win.UltraWinToolbars.ButtonTool("testCounterButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Infragistics.Win.UltraWinToolbars.ButtonTool("viewAssociatedServersButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonToolImport2 = new Infragistics.Win.UltraWinToolbars.ButtonTool("importCounterButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonToolExport2 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportCounterButton");
-            Infragistics.Win.UltraWinToolbars.RibbonGroup ribbonGroup2 = new Infragistics.Win.UltraWinToolbars.RibbonGroup("ribbonGroup2");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool10 = new Infragistics.Win.UltraWinToolbars.ButtonTool("toggleGroupByBoxButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Infragistics.Win.UltraWinToolbars.ButtonTool("createCounterButton");
+            Infragistics.Win.UltraWinToolbars.RibbonTab ribbonTab1 = new Controls.CustomControls.CustomRibbonTab("Home");
+            Infragistics.Win.UltraWinToolbars.RibbonGroup ribbonGroup1 = new Controls.CustomControls.CustomRibbonGroup("CustomCounters");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Controls.CustomControls.CustomButtonTool("createCounterButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Controls.CustomControls.CustomButtonTool("changeCounterButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Controls.CustomControls.CustomButtonTool("deleteCounterButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Controls.CustomControls.CustomButtonTool("testCounterButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Controls.CustomControls.CustomButtonTool("viewAssociatedServersButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonToolImport2 = new Controls.CustomControls.CustomButtonTool("importCounterButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonToolExport2 = new Controls.CustomControls.CustomButtonTool("exportCounterButton");
+            Infragistics.Win.UltraWinToolbars.RibbonGroup ribbonGroup2 = new Controls.CustomControls.CustomRibbonGroup("ribbonGroup2");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool10 = new Controls.CustomControls.CustomButtonTool("toggleGroupByBoxButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Controls.CustomControls.CustomButtonTool("createCounterButton");
             Infragistics.Win.Appearance appearance21 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Infragistics.Win.UltraWinToolbars.ButtonTool("changeCounterButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Controls.CustomControls.CustomButtonTool("changeCounterButton");
             Infragistics.Win.Appearance appearance22 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Infragistics.Win.UltraWinToolbars.ButtonTool("deleteCounterButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Controls.CustomControls.CustomButtonTool("deleteCounterButton");
             Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonToolImport = new Infragistics.Win.UltraWinToolbars.ButtonTool("importCounterButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonToolImport = new Controls.CustomControls.CustomButtonTool("importCounterButton");
             Infragistics.Win.Appearance appearanceImport = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonToolExport = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportCounterButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonToolExport = new Controls.CustomControls.CustomButtonTool("exportCounterButton");
             Infragistics.Win.Appearance appearanceExport = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Infragistics.Win.UltraWinToolbars.ButtonTool("viewAssociatedServersButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Controls.CustomControls.CustomButtonTool("viewAssociatedServersButton");
             Infragistics.Win.Appearance appearance24 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool11 = new Infragistics.Win.UltraWinToolbars.ButtonTool("toggleGroupByBoxButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool11 = new Controls.CustomControls.CustomButtonTool("toggleGroupByBoxButton");
             Infragistics.Win.Appearance appearance25 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool12 = new Infragistics.Win.UltraWinToolbars.ButtonTool("testCounterButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool12 = new Controls.CustomControls.CustomButtonTool("testCounterButton");
             Infragistics.Win.Appearance appearance26 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool1 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("GridRowMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool13 = new Infragistics.Win.UltraWinToolbars.ButtonTool("changeCounterButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool14 = new Infragistics.Win.UltraWinToolbars.ButtonTool("deleteCounterButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonToolImport1 = new Infragistics.Win.UltraWinToolbars.ButtonTool("importCounterButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonToolExport1 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportCounterButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool32 = new Infragistics.Win.UltraWinToolbars.ButtonTool("enableDisableCounterButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool35 = new Infragistics.Win.UltraWinToolbars.ButtonTool("testCounterButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool15 = new Infragistics.Win.UltraWinToolbars.ButtonTool("viewAssociatedServersButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool33 = new Infragistics.Win.UltraWinToolbars.ButtonTool("collapseAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool34 = new Infragistics.Win.UltraWinToolbars.ButtonTool("expandAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool16 = new Infragistics.Win.UltraWinToolbars.ButtonTool("enableDisableCounterButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool13 = new Controls.CustomControls.CustomButtonTool("changeCounterButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool14 = new Controls.CustomControls.CustomButtonTool("deleteCounterButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonToolImport1 = new Controls.CustomControls.CustomButtonTool("importCounterButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonToolExport1 = new Controls.CustomControls.CustomButtonTool("exportCounterButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool32 = new Controls.CustomControls.CustomButtonTool("enableDisableCounterButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool35 = new Controls.CustomControls.CustomButtonTool("testCounterButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool15 = new Controls.CustomControls.CustomButtonTool("viewAssociatedServersButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool33 = new Controls.CustomControls.CustomButtonTool("collapseAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool34 = new Controls.CustomControls.CustomButtonTool("expandAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool16 = new Controls.CustomControls.CustomButtonTool("enableDisableCounterButton");
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool2 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("columnContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool26 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortAscendingButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool27 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortDescendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool26 = new Controls.CustomControls.CustomButtonTool("sortAscendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool27 = new Controls.CustomControls.CustomButtonTool("sortDescendingButton");
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool2 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("groupByThisColumnButton", "");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool29 = new Infragistics.Win.UltraWinToolbars.ButtonTool("toggleGroupByBoxButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool30 = new Infragistics.Win.UltraWinToolbars.ButtonTool("removeThisColumnButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool31 = new Infragistics.Win.UltraWinToolbars.ButtonTool("columnChooserButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool17 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortAscendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool29 = new Controls.CustomControls.CustomButtonTool("toggleGroupByBoxButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool30 = new Controls.CustomControls.CustomButtonTool("removeThisColumnButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool31 = new Controls.CustomControls.CustomButtonTool("columnChooserButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool17 = new Controls.CustomControls.CustomButtonTool("sortAscendingButton");
             Infragistics.Win.Appearance appearance27 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool19 = new Infragistics.Win.UltraWinToolbars.ButtonTool("sortDescendingButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool19 = new Controls.CustomControls.CustomButtonTool("sortDescendingButton");
             Infragistics.Win.Appearance appearance28 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool22 = new Infragistics.Win.UltraWinToolbars.ButtonTool("removeThisColumnButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool23 = new Infragistics.Win.UltraWinToolbars.ButtonTool("columnChooserButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool22 = new Controls.CustomControls.CustomButtonTool("removeThisColumnButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool23 = new Controls.CustomControls.CustomButtonTool("columnChooserButton");
             Infragistics.Win.Appearance appearance29 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool24 = new Infragistics.Win.UltraWinToolbars.ButtonTool("collapseAllGroupsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool25 = new Infragistics.Win.UltraWinToolbars.ButtonTool("expandAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool24 = new Controls.CustomControls.CustomButtonTool("collapseAllGroupsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool25 = new Controls.CustomControls.CustomButtonTool("expandAllGroupsButton");
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool1 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("groupByThisColumnButton", "");
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("CustomCounter", -1);
@@ -112,7 +112,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
             Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList1 = new Infragistics.Win.ValueList(84474157);
+            Infragistics.Win.ValueList valueList1 = new Controls.CustomControls.CustomValueList(84474157);
             Infragistics.Win.ValueListItem valueListItem1 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem2 = new Infragistics.Win.ValueListItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomCountersView));
@@ -123,18 +123,18 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
             this._CustomCountersView_Toolbars_Dock_Area_Right = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
             this._CustomCountersView_Toolbars_Dock_Area_Top = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
             this._CustomCountersView_Toolbars_Dock_Area_Bottom = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
-            this.gettingStartedPanel = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.errorLoadingCountersLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.addCustomCounterLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.communitySiteLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.communitySiteLabel1 = new System.Windows.Forms.Label();
-            this.communitySiteLabel2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.introductoryTextLabel2 = new System.Windows.Forms.Label();
+            this.gettingStartedPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.panel3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.errorLoadingCountersLinkLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.addCustomCounterLinkLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.communitySiteLinkLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.communitySiteLabel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.communitySiteLabel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.introductoryTextLabel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.dividerProgressBar2 = new Idera.SQLdm.DesktopClient.Controls.InfiniteProgressBar();
-            this.mainDdescriptionLabel = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.mainDdescriptionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.panel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarsManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.counterGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.counterBindingSource)).BeginInit();
@@ -447,6 +447,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
             this.counterGrid.AfterSelectChange += new Infragistics.Win.UltraWinGrid.AfterSelectChangeEventHandler(this.counterGrid_AfterSelectChange);
             this.counterGrid.DoubleClickRow += new Infragistics.Win.UltraWinGrid.DoubleClickRowEventHandler(this.counterGrid_DoubleClickRow);
             this.counterGrid.MouseDown += new System.Windows.Forms.MouseEventHandler(this.counterGrid_MouseDown);
+            this.counterGrid.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.counterGrid_InitializeLayout);
             // 
             // counterBindingSource
             // 
@@ -665,7 +666,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
             this.gettingStartedPanel.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
-
+            SetBackgroundImage();
         }
 
         /// <summary>
@@ -689,15 +690,15 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
         private System.Windows.Forms.BindingSource counterBindingSource;
         private System.Windows.Forms.LinkLabel addCustomCounterLinkLabel;
         private System.Windows.Forms.LinkLabel communitySiteLinkLabel;//SQLdm 9.1 (Vineet Kumar) (Community Integration) -- UI changes for Custom counter import/export
-        private System.Windows.Forms.Label communitySiteLabel1;//SQLdm 9.1 (Vineet Kumar) (Community Integration) -- UI changes for Custom counter import/export
-        private System.Windows.Forms.Label communitySiteLabel2;//SQLdm 9.1 (Vineet Kumar) (Community Integration) -- UI changes for Custom counter import/export
-        private System.Windows.Forms.Panel gettingStartedPanel;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel communitySiteLabel1;//SQLdm 9.1 (Vineet Kumar) (Community Integration) -- UI changes for Custom counter import/export
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel communitySiteLabel2;//SQLdm 9.1 (Vineet Kumar) (Community Integration) -- UI changes for Custom counter import/export
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  gettingStartedPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
         private Idera.SQLdm.DesktopClient.Controls.InfiniteProgressBar dividerProgressBar2;
-        private System.Windows.Forms.Label mainDdescriptionLabel;
-        private System.Windows.Forms.Label introductoryTextLabel2;
-        private System.Windows.Forms.Panel panel3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel mainDdescriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel introductoryTextLabel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel3;
         private System.Windows.Forms.LinkLabel errorLoadingCountersLinkLabel;
         //SQLdm 9.0 (Gaurav Karwal): Initializing the three variables used above
     }

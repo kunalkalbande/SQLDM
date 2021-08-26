@@ -1,3 +1,7 @@
+using Idera.SQLdm.DesktopClient.Properties;
+using System.Drawing;
+using System.Windows.Media;
+
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
     partial class AddPermissionWizard
@@ -32,50 +36,50 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPermissionWizard));
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool1 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("tagsPopupMenu");
-            this._wizard = new Divelements.WizardFramework.Wizard();
-            this._introPage = new Divelements.WizardFramework.IntroductionPage();
-            this._introPageChkBx = new System.Windows.Forms.CheckBox();
+            this._wizard = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CusotmWizard();
+            this._introPage = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomIntroductionPage();
+            this._introPageChkBx = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             this._introPageText = new System.Windows.Forms.RichTextBox();
             this._userPage = new Divelements.WizardFramework.WizardPage();
-            this._userPageErrMsg = new Divelements.WizardFramework.InformationBox();
-            this._userPageCmbBxAuthentication = new System.Windows.Forms.ComboBox();
-            this._userPageLblAuthentication = new System.Windows.Forms.Label();
-            this._userPageTxtBxUser = new System.Windows.Forms.TextBox();
-            this._userPageLblUser = new System.Windows.Forms.Label();
-            this._userPageInfo = new Divelements.WizardFramework.InformationBox();
+            this._userPageErrMsg = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
+            this._userPageCmbBxAuthentication = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this._userPageLblAuthentication = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._userPageTxtBxUser = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this._userPageLblUser = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._userPageInfo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
             this._passwordPage = new Divelements.WizardFramework.WizardPage();
-            this._passwordPageTxtBxConfirmPassword = new System.Windows.Forms.TextBox();
-            this._passwordPageTxtBxPassword = new System.Windows.Forms.TextBox();
-            this._passwordPageInfo = new Divelements.WizardFramework.InformationBox();
-            this._passwordPageLblConfirmPassword = new System.Windows.Forms.Label();
-            this._passwordPageLblPassword = new System.Windows.Forms.Label();
+            this._passwordPageTxtBxConfirmPassword = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this._passwordPageTxtBxPassword = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this._passwordPageInfo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
+            this._passwordPageLblConfirmPassword = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._passwordPageLblPassword = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this._permissionPage = new Divelements.WizardFramework.WizardPage();
-            this._permissionPageWebInfo = new Divelements.WizardFramework.InformationBox();
-            this._permissionPageChkBxWebAppAccess = new System.Windows.Forms.CheckBox();
-            this._permissionPageRdBtnAdministrator = new System.Windows.Forms.RadioButton();
-            this._permissionPageRdBtnModify = new System.Windows.Forms.RadioButton();
-            this._permissionPageRdBtnView = new System.Windows.Forms.RadioButton();
+            this._permissionPageWebInfo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
+            this._permissionPageChkBxWebAppAccess = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this._permissionPageRdBtnAdministrator = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this._permissionPageRdBtnModify = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this._permissionPageRdBtnView = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
             //Operator Security Role Changes - 10.3
-            this._permissionPageRdBtnReadOnlyPlus = new System.Windows.Forms.RadioButton();
-            this._permissionPageInfo = new Divelements.WizardFramework.InformationBox();
+            this._permissionPageRdBtnReadOnlyPlus = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this._permissionPageInfo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
             this._serversPage = new Divelements.WizardFramework.WizardPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this._serversPageInfo = new Divelements.WizardFramework.InformationBox();
-            this.tagsDropDownButton = new Infragistics.Win.Misc.UltraDropDownButton();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._serversPageInfo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
+            this.tagsDropDownButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraDropDownButton();
             this.toolbarsManager = new Idera.SQLdm.DesktopClient.Controls.ContextMenuManager(this.components);
             this._serversListSelectorControl = new Idera.SQLdm.DesktopClient.Controls.DualListSelectorControl();
             this._finishPage = new Divelements.WizardFramework.FinishPage();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this._finishPagelLstBxServers = new System.Windows.Forms.ListBox();
-            this._finishPageLblServers = new System.Windows.Forms.Label();
-            this._finishPageLblUser = new System.Windows.Forms.Label();
-            this._finishPageLblUserVal = new System.Windows.Forms.Label();
-            this._finishPageLblAuhthentication = new System.Windows.Forms.Label();
-            this._finishPageLblAuhthenticationVal = new System.Windows.Forms.Label();
-            this._finishPageLblPermission = new System.Windows.Forms.Label();
-            this._finishPageLblPermissionVal = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this._finishLabelTagsValue = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this._finishPagelLstBxServers = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListBox();
+            this._finishPageLblServers = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._finishPageLblUser = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._finishPageLblUserVal = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._finishPageLblAuhthentication = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._finishPageLblAuhthenticationVal = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._finishPageLblPermission = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._finishPageLblPermissionVal = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._finishLabelTagsValue = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this._AddPermissionWizard_Toolbars_Dock_Area_Left = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
             this._AddPermissionWizard_Toolbars_Dock_Area_Right = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
             this._AddPermissionWizard_Toolbars_Dock_Area_Top = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
@@ -146,6 +150,18 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this._introPageText.Size = new System.Drawing.Size(368, 154);
             this._introPageText.TabIndex = 0;
             this._introPageText.Text = resources.GetString("_introPageText.Text");
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                this._introPageText.ForeColor = System.Drawing.Color.White;
+                this._introPage.ForeColor = System.Drawing.Color.Black;
+                this._introPageText.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.PanelBackColor);
+            }
+            else
+            {
+                this._introPage.ForeColor = System.Drawing.Color.Black;
+                this._introPageText.BackColor = System.Drawing.Color.White;
+                this._introPageText.ForeColor = System.Drawing.Color.Black;
+            }
             // 
             // _userPage
             // 
@@ -195,7 +211,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this._userPageLblAuthentication.Name = "_userPageLblAuthentication";
             this._userPageLblAuthentication.Size = new System.Drawing.Size(78, 13);
             this._userPageLblAuthentication.TabIndex = 3;
-            this._userPageLblAuthentication.Text = "&Authentication:";
+            this._userPageLblAuthentication.Text = "Authentication:";
             // 
             // _userPageTxtBxUser
             // 
@@ -278,7 +294,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this._passwordPageLblConfirmPassword.Name = "_passwordPageLblConfirmPassword";
             this._passwordPageLblConfirmPassword.Size = new System.Drawing.Size(93, 13);
             this._passwordPageLblConfirmPassword.TabIndex = 3;
-            this._passwordPageLblConfirmPassword.Text = "&Confirm password:";
+            this._passwordPageLblConfirmPassword.Text = "Confirm password:";
             // 
             // _passwordPageLblPassword
             // 
@@ -287,7 +303,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this._passwordPageLblPassword.Name = "_passwordPageLblPassword";
             this._passwordPageLblPassword.Size = new System.Drawing.Size(56, 13);
             this._passwordPageLblPassword.TabIndex = 1;
-            this._passwordPageLblPassword.Text = "&Password:";
+            this._passwordPageLblPassword.Text = "Password:";
             // 
             // _permissionPage
             // 
@@ -340,7 +356,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this._permissionPageRdBtnReadOnlyPlus.Name = "_permissionPageRdBtnReadOnlyPlus";
             this._permissionPageRdBtnReadOnlyPlus.Size = new System.Drawing.Size(252, 17);//252
             this._permissionPageRdBtnReadOnlyPlus.TabIndex = 4;
-            this._permissionPageRdBtnReadOnlyPlus.Text = "&View data, acknowledge alarms, and control maintenance mode status";
+            this._permissionPageRdBtnReadOnlyPlus.Text = "View data, acknowledge alarms, and control maintenance mode status";
             this._permissionPageRdBtnReadOnlyPlus.UseVisualStyleBackColor = true;
             // 
             // _permissionPageRdBtnAdministrator
@@ -350,7 +366,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this._permissionPageRdBtnAdministrator.Name = "_permissionPageRdBtnAdministrator";
             this._permissionPageRdBtnAdministrator.Size = new System.Drawing.Size(526, 17);
             this._permissionPageRdBtnAdministrator.TabIndex = 3;
-            this._permissionPageRdBtnAdministrator.Text = "&Administrator powers in SQL diagnostic manager";
+            this._permissionPageRdBtnAdministrator.Text = "Administrator powers in SQL diagnostic manager";
             this._permissionPageRdBtnAdministrator.UseVisualStyleBackColor = true;
             // 
             // _permissionPageRdBtnModify
@@ -360,7 +376,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this._permissionPageRdBtnModify.Name = "_permissionPageRdBtnModify";
             this._permissionPageRdBtnModify.Size = new System.Drawing.Size(406, 17);
             this._permissionPageRdBtnModify.TabIndex = 2;
-            this._permissionPageRdBtnModify.Text = "&Modify configuration and view data collected for monitored SQL Server instances";
+            this._permissionPageRdBtnModify.Text = "Modify configuration and view data collected for monitored SQL Server instances";
             this._permissionPageRdBtnModify.UseVisualStyleBackColor = true;
             // 
             // _permissionPageRdBtnView
@@ -372,7 +388,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this._permissionPageRdBtnView.Size = new System.Drawing.Size(288, 17);
             this._permissionPageRdBtnView.TabIndex = 1;
             this._permissionPageRdBtnView.TabStop = true;
-            this._permissionPageRdBtnView.Text = "&View data collected for monitored SQL Server instances";
+            this._permissionPageRdBtnView.Text = "View data collected for monitored SQL Server instances";
             this._permissionPageRdBtnView.UseVisualStyleBackColor = true;
             // 
             // _permissionPageInfo
@@ -421,10 +437,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // 
             // tagsDropDownButton
             // 
-            appearance1.BackColor = System.Drawing.Color.White;
-            appearance1.BorderColor = System.Drawing.SystemColors.ControlDark;
-            appearance1.TextHAlignAsString = "Left";
-            this.tagsDropDownButton.Appearance = appearance1;
+            //appearance1.BackColor = System.Drawing.Color.White;
+            //appearance1.BorderColor = System.Drawing.SystemColors.ControlDark;
+            //appearance1.TextHAlignAsString = "Left";
             this.tagsDropDownButton.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton;
             this.tagsDropDownButton.Location = new System.Drawing.Point(26, 83);
             this.tagsDropDownButton.Name = "tagsDropDownButton";
@@ -438,6 +453,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.tagsDropDownButton.UseAppStyling = false;
             this.tagsDropDownButton.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
             this.tagsDropDownButton.WrapText = false;
+            
+
             // 
             // toolbarsManager
             // 
@@ -474,6 +491,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this._finishPage.TabIndex = 1006;
             this._finishPage.Text = "Completing the Add Permission Wizard";
             this._finishPage.BeforeDisplay += new System.EventHandler(this._finishPage_BeforeDisplay);
+            this._finishPage.ForeColor = SystemColors.WindowText;
             // 
             // tableLayoutPanel1
             // 
@@ -693,48 +711,48 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private Divelements.WizardFramework.WizardPage _userPage;
         private Divelements.WizardFramework.FinishPage _finishPage;
         private System.Windows.Forms.RichTextBox _introPageText;
-        private System.Windows.Forms.CheckBox _introPageChkBx;
-        private Divelements.WizardFramework.InformationBox _userPageInfo;
-        private System.Windows.Forms.TextBox _userPageTxtBxUser;
-        private System.Windows.Forms.Label _userPageLblUser;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox _introPageChkBx;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox _userPageInfo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox _userPageTxtBxUser;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _userPageLblUser;
         private Divelements.WizardFramework.WizardPage _permissionPage;
-        private System.Windows.Forms.ComboBox _userPageCmbBxAuthentication;
-        private System.Windows.Forms.Label _userPageLblAuthentication;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox _userPageCmbBxAuthentication;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _userPageLblAuthentication;
         private Divelements.WizardFramework.WizardPage _passwordPage;
-        private System.Windows.Forms.TextBox _passwordPageTxtBxConfirmPassword;
-        private System.Windows.Forms.Label _passwordPageLblConfirmPassword;
-        private System.Windows.Forms.TextBox _passwordPageTxtBxPassword;
-        private System.Windows.Forms.Label _passwordPageLblPassword;
-        private Divelements.WizardFramework.InformationBox _passwordPageInfo;
-        private Divelements.WizardFramework.InformationBox _permissionPageInfo;
-        private System.Windows.Forms.RadioButton _permissionPageRdBtnView;
-        private System.Windows.Forms.RadioButton _permissionPageRdBtnAdministrator;
-        private System.Windows.Forms.RadioButton _permissionPageRdBtnModify;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox _passwordPageTxtBxConfirmPassword;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _passwordPageLblConfirmPassword;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox _passwordPageTxtBxPassword;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _passwordPageLblPassword;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox _passwordPageInfo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox _permissionPageInfo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton _permissionPageRdBtnView;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton _permissionPageRdBtnAdministrator;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton _permissionPageRdBtnModify;
         //Operator Security Role Changes - 10.3
-        private System.Windows.Forms.RadioButton _permissionPageRdBtnReadOnlyPlus;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton _permissionPageRdBtnReadOnlyPlus;
         private Divelements.WizardFramework.WizardPage _serversPage;
-        private Divelements.WizardFramework.InformationBox _serversPageInfo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox _serversPageInfo;
         private Idera.SQLdm.DesktopClient.Controls.DualListSelectorControl _serversListSelectorControl;
-        private Divelements.WizardFramework.InformationBox _userPageErrMsg;
-        private System.Windows.Forms.Label label1;
-        private Infragistics.Win.Misc.UltraDropDownButton tagsDropDownButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox _userPageErrMsg;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraDropDownButton tagsDropDownButton;
         private Idera.SQLdm.DesktopClient.Controls.ContextMenuManager toolbarsManager;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _AddPermissionWizard_Toolbars_Dock_Area_Left;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _AddPermissionWizard_Toolbars_Dock_Area_Right;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _AddPermissionWizard_Toolbars_Dock_Area_Top;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _AddPermissionWizard_Toolbars_Dock_Area_Bottom;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ListBox _finishPagelLstBxServers;
-        private System.Windows.Forms.Label _finishPageLblServers;
-        private System.Windows.Forms.Label _finishPageLblUser;
-        private System.Windows.Forms.Label _finishPageLblUserVal;
-        private System.Windows.Forms.Label _finishPageLblAuhthentication;
-        private System.Windows.Forms.Label _finishPageLblAuhthenticationVal;
-        private System.Windows.Forms.Label _finishPageLblPermission;
-        private System.Windows.Forms.Label _finishPageLblPermissionVal;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label _finishLabelTagsValue;
-        private Divelements.WizardFramework.InformationBox _permissionPageWebInfo;
-        private System.Windows.Forms.CheckBox _permissionPageChkBxWebAppAccess;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _finishPageLblServers;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _finishPageLblUser;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _finishPageLblUserVal;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _finishPageLblAuhthentication;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _finishPageLblAuhthenticationVal;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _finishPageLblPermission;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _finishPageLblPermissionVal;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _finishLabelTagsValue;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox _permissionPageWebInfo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox _permissionPageChkBxWebAppAccess;
     }
 }

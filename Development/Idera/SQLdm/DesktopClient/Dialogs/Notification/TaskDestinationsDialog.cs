@@ -13,7 +13,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using System.ComponentModel;
     using Idera.SQLdm.DesktopClient.Helpers;
 
-    public partial class TaskDestinationsDialog : Form
+    public partial class TaskDestinationsDialog : BaseDialog
     {
         private TaskDestination destination;
         private CaretData current;
@@ -22,6 +22,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public TaskDestinationsDialog()
         {
+            this.DialogHeader = "Create To Do";
             InitializeComponent();
             bodyCaret = new CaretData();
             bodyCaret.editor = bodyTextBox;

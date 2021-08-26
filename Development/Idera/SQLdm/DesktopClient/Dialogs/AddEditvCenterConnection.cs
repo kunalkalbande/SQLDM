@@ -15,7 +15,7 @@ using Idera.SQLdm.Common.Helpers;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class AddEditvCenterConnection : Form
+    public partial class AddEditvCenterConnection : BaseDialog
     {
 
         vCenterHosts workingHost = null;
@@ -28,6 +28,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public AddEditvCenterConnection(vCenterHosts host, Dictionary<string, vCenterHosts> hosts)
         {
+            this.DialogHeader = "Virtualization Host Configuration";
             InitializeComponent();
 
             if (host == null)

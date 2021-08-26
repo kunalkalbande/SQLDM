@@ -11,10 +11,11 @@ using Idera.PrescriptiveAnalytics.PrescriptiveAnalyzer.Common.Recommendations;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class WarningListDialog : Form
+    public partial class WarningListDialog : BaseDialog
     {
         public WarningListDialog(List<Pair<IRecommendation, List<string>>> recommendationsWithMessages)
         {
+            this.DialogHeader = "Warnings";
             InitializeComponent();
             int counter = 0;
 

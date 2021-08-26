@@ -5,11 +5,12 @@ using Idera.SQLdm.DesktopClient.Helpers;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class WmiCredentialsDialog : Form
+    public partial class WmiCredentialsDialog : BaseDialog
     {
         private readonly WmiConfiguration wmiConfiguration;
         public WmiCredentialsDialog(WmiConfiguration wmiConfiguration)
         {
+            this.DialogHeader = "WMI Credentials";
             InitializeComponent();
             this.AdaptFontSize();
             this.wmiConfiguration = wmiConfiguration;

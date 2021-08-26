@@ -25,6 +25,8 @@ using Infragistics.Win.UltraWinToolbars;
 using Idera.SQLdm.Common.UI.Dialogs;
 using System.Text;
 using System.Collections.Generic;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Controls;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Sessions
 {
@@ -124,8 +126,17 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Sessions
             InitializeCharts();
             Settings.Default.PropertyChanged += Settings_PropertyChanged;
             AdaptFontSize();
+
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
+        private void ScaleControlsAsPerResolution()
+        {
+            this.lockStatisticsChart.LegendBox.AutoSize = true;
+        }
         #endregion
 
         #region properties
@@ -1192,6 +1203,18 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Sessions
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.topDatabasesGrid);
         }
 
         private void tableLayoutPanel_Paint(object sender, PaintEventArgs e)

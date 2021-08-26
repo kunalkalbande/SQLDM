@@ -14,6 +14,8 @@ using Idera.SQLdm.DesktopClient.Objects;
 using Idera.SQLdm.DesktopClient.Views.Servers.Server;
 using Infragistics.Win.UltraWinToolbars;
 using Wintellect.PowerCollections;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Properties;
 
 namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
 {
@@ -45,6 +47,9 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
             vmNetUsageChart.SetContextMenu(toolbarsManager);
             hostNetUsageChart.SetContextMenu(toolbarsManager);
 
+            updateLinearScaleFontAsPerTheme(this.linearScale1);
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+
             headerSelectTypeDropDownButton.DropDownItems.Clear();
 
             foreach (networkChartType type in Enum.GetValues(typeof(networkChartType)))
@@ -55,8 +60,14 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
             }
 
             helpTopic = HelpTopics.ServerDashboardViewNetworkPanel;
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
         }
-
+        private void ScaleControlsAsPerResolution()
+        {
+            this.responseTimePanel.Padding =  new System.Windows.Forms.Padding(0,0,0,10);
+            this.throughputPanel.Padding = new System.Windows.Forms.Padding(0,0,0,10);
+        }
         internal override void Initialize(ServerBaseView baseView, ServerSummaryHistoryData history)
         {
             base.Initialize(baseView, history);
@@ -479,5 +490,16 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
         {
             UpdateResponseTimeDisplay();
         }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            updateLinearScaleFontAsPerTheme(this.linearScale1);
+        }
+        public void updateLinearScaleFontAsPerTheme(LinearScale linearscale)
+        {
+            ThemeSetter ts = new ThemeSetter();
+            ts.SetLinearScale(linearscale);
+        }
+
     }
 }

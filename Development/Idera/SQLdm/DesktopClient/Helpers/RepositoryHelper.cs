@@ -214,8 +214,7 @@ namespace Idera.SQLdm.DesktopClient.Helpers
         private const string GetCloudByInstanceId = "p_GetCloudByInstanceID";
         private const string AddUpdateAzureApplicationProcedure = "p_AddAzureApplication";
         private const string AddUpdateAzureLinkedProfileProcedure = "p_AddAzureLinkedProfile";
-		private const string GetCustomCountersForTemplate = "p_GetCustomCountersForTemplate";
-        private static List<ClusterRepoInstance> clusterRepoInstances = new List<ClusterRepoInstance>();
+		private const string GetCustomCountersForTemplate = "p_GetCustomCountersForTemplate";     
 		/// <summary>
         /// SqlDm 10.2 - Mitul Kapoor - Save user setting in database(Table : UserSessionSettings)
         /// SP call to save user preferences in database.
@@ -412,46 +411,6 @@ namespace Idera.SQLdm.DesktopClient.Helpers
                     }
                 }
             }
-        }
-
-        internal static int GetClusterRepoServerID(int id, int repositiryId)
-        {
-            var instance=clusterRepoInstances.Where(i => i.ServerId == id && i.RepoId == repositiryId).SingleOrDefault();
-            if (instance == null)
-            {
-                using (SqlConnection connection = new SqlConnection(
-            "Server=ULTP851;Database=SqldmClusterRepository;Trusted_Connection=true"))
-                {
-                    connection.Open();
-
-                    using (SqlCommand cmd = new SqlCommand())
-                    {
-                        cmd.Connection = connection;
-                        cmd.CommandText = String.Format("SELECT Id,ServerId , RepoId FROM [MonitoredServers] ");
-                        var reader = cmd.ExecuteReader();
-                        clusterRepoInstances = new List<ClusterRepoInstance>();
-                        if (reader.HasRows)
-                        {
-                            while (reader.Read())
-                            {
-                                clusterRepoInstances.Add(new ClusterRepoInstance
-                                {
-                                    Id = reader.GetInt32(0),
-                                    ServerId = reader.GetInt32(1),
-                                    RepoId = reader.GetInt32(2)
-                                });
-                            }
-                        }
-                    }
-                }
-                 instance = clusterRepoInstances.Where(i => i.ServerId == id && i.RepoId == repositiryId).SingleOrDefault();
-            
-            }
-            if (instance != null)
-            {
-                return instance.Id;
-            }
-            return 0;
         }
 
         //START: SQLdm 10.0 (Tarun Sapra) - Get the list of the metrics for which bda is rqd
@@ -1420,28 +1379,6 @@ namespace Idera.SQLdm.DesktopClient.Helpers
             }
             return new Triple<Dictionary<int, string>, List<int>, List<string>>(listOfAllDatabases, blockedDB, blockedRecomm);
         }
-
-        internal static int AddUpdateClusterMonitorServer(int serverId,string name)
-        {
-            using (SqlConnection connection = new SqlConnection(
-        "Server=ULTP851;Database=SqldmClusterRepository;Trusted_Connection=true"))
-            {
-                connection.Open();
-
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = connection;
-                    cmd.CommandText = String.Format("INSERT INTO [MonitoredServers] ([Name],[ServerId],[RepoId])  VALUES ('{0}',{1},{2});SELECT SCOPE_IDENTITY();", name,serverId, Settings.Default.CurrentRepoId);
-                    var reader = cmd.ExecuteScalar();
-                    if (reader != null)
-                    {
-                        return Convert.ToInt32(reader);
-                    }
-                }
-            }
-            return 0;
-        }
-
         //to Convert array of strings to List<int>
         private static List<string> GetListFromStringArray(string[] arrToconvert)
         {
@@ -2079,6 +2016,9 @@ namespace Idera.SQLdm.DesktopClient.Helpers
 
         public static DataTable GetServerWideStatistics(SqlConnectionInfo connectionInfo, XmlDocument serversXml, DateTime? startTime)
         {
+            DataTable mainTable;
+            DataTable newTable;
+            DataTable finalTable;
             if (connectionInfo == null)
             {
                 throw new ArgumentNullException("connectionInfo");
@@ -2103,9 +2043,20 @@ namespace Idera.SQLdm.DesktopClient.Helpers
                                                 startTime.HasValue ? (object)startTime.Value.ToUniversalTime() : null,
                                                 null))
                 {
-                    return GetTable(dataReader, true, false);
+                    mainTable = GetTable(dataReader, true, false);
                 }
             }
+            try // changed for SQLDM 30946, Saurabh
+            {
+                newTable = CreateNewTableForNewValues(connectionInfo);
+                finalTable = HealthIndicesModel.CommonData.JoinDataTables(newTable, mainTable, (row1, row2) => row1.Field<int>("SQLServerID") == row2.Field<int>("SQLServerID"));
+            }
+            catch (Exception e)
+            {
+                Log.Debug(e);
+                return mainTable;
+            }
+            return finalTable;
         }
 
         public static DataTable GetServerWideStatistics(SqlConnectionInfo connectionInfo, DateTime? startTime)
@@ -2114,7 +2065,9 @@ namespace Idera.SQLdm.DesktopClient.Helpers
             {
                 throw new ArgumentNullException("connectionInfo");
             }
-
+            DataTable mainTable;
+            DataTable newTable;
+            DataTable finalTable;
             using (
                 SqlConnection connection =
                     connectionInfo.GetConnection(Constants.DesktopClientConnectionStringApplicationName))
@@ -2129,27 +2082,119 @@ namespace Idera.SQLdm.DesktopClient.Helpers
                                                 startTime.HasValue ? (object)startTime.Value.ToUniversalTime() : null,
                                                 null))
                 {
-                    
-                    return GetTable(dataReader, true, false);
+                    mainTable = GetTable(dataReader, true, false);
                 }
             }
+            try // changed for SQLDM 30946, Saurabh
+            {
+                newTable = CreateNewTableForNewValues(connectionInfo);
+                finalTable = HealthIndicesModel.CommonData.JoinDataTables(newTable, mainTable, (row1, row2) => row1.Field<int>("SQLServerID") == row2.Field<int>("SQLServerID"));
+            }
+            catch (Exception e)
+            {
+                Log.Debug(e);
+                return mainTable;
+            }
+            return finalTable;
         }
 
-        //public static DataTable GetServerOverview(SqlConnectionInfo connectionInfo, int id) {
-        //    if (connectionInfo == null) {
-        //        throw new ArgumentNullException("connectionInfo");
-        //    }
+        private static DataTable CreateNewTableForNewValues(SqlConnectionInfo connectioninfo)
+        {
+            HealthIndicesHelper summaryHelper = new HealthIndicesHelper();
+            IList<HealthIndicesModel.ServerSummaryContainer> container = summaryHelper.GetAllInstancesSummary(connectioninfo);
+            //performance enhancement
+            try
+            {
+                if (ApplicationModel.Default.ActiveInstances.Count > 0 && container != null)
+                {
+                    foreach (var c in container)
+                    {
+                        if (ApplicationModel.Default.ActiveInstances[c.Overview.SQLServerId] != null) ApplicationModel.Default.ActiveInstances[c.Overview.SQLServerId].BaseHealthIndex = c.ServerStatus.BaseHealthIndex;
+                    }
+                }
+            }
+            catch (Exception ex) { } // even if the above call fails, the data table will be created and no exception will be in UI.
 
-        //    using (
-        //        SqlConnection connection =
-        //            connectionInfo.GetConnection(Constants.DesktopClientConnectionStringApplicationName)) {
-        //        using (
-        //            SqlDataReader dataReader =
-        //                SqlHelper.ExecuteReader(connection, GetServerOverviewStoredProcedure, id, null)) {
-        //            return GetTable(dataReader);
-        //        }
-        //    }
-        //}
+            DataTable table = new DataTable();
+            //first data coumn must be a unique identifier for both the tables through which merge will happen, need to identify that.As of now adding a dummy identifier name.
+            DataColumn columnIdentifier = new DataColumn();
+            columnIdentifier.AllowDBNull = false;
+            columnIdentifier.ColumnName = "SQLServerID";
+            columnIdentifier.DataType = typeof(int);
+            table.Columns.Add(columnIdentifier);
+
+            //create as many columns as you want.
+            DataColumn columnAlert = new DataColumn();
+            columnAlert.AllowDBNull = true;
+            columnAlert.ColumnName = "Alert";
+            columnAlert.DataType = typeof(int);
+            table.Columns.Add(columnAlert);
+
+            DataColumn columnCPU = new DataColumn();
+            columnCPU.AllowDBNull = true;
+            columnCPU.ColumnName = "CPU";
+            columnCPU.DataType = typeof(int);
+            table.Columns.Add(columnCPU);
+
+            DataColumn columnIO = new DataColumn();
+            columnIO.AllowDBNull = true;
+            columnIO.ColumnName = "I/O";
+            columnIO.DataType = typeof(int);
+            table.Columns.Add(columnIO);
+
+            DataColumn columnMemory = new DataColumn();
+            columnMemory.AllowDBNull = true;
+            columnMemory.ColumnName = "Memory";
+            columnMemory.DataType = typeof(int);
+            table.Columns.Add(columnMemory);
+
+            DataColumn columnDatabase = new DataColumn();
+            columnDatabase.AllowDBNull = true;
+            columnDatabase.ColumnName = "Database";
+            columnDatabase.DataType = typeof(int);
+            table.Columns.Add(columnDatabase);
+
+            DataColumn columnLogs = new DataColumn();
+            columnLogs.AllowDBNull = true;
+            columnLogs.ColumnName = "Logs";
+            columnLogs.DataType = typeof(int);
+            table.Columns.Add(columnLogs);
+
+            DataColumn columnQueries = new DataColumn();
+            columnQueries.AllowDBNull = true;
+            columnQueries.ColumnName = "Queries";
+            columnQueries.DataType = typeof(int);
+            table.Columns.Add(columnQueries);
+
+            foreach (HealthIndicesModel.ServerSummaryContainer cont in container)
+            {
+                var row = table.NewRow();
+                row["SQLServerID"] = cont.Overview.SQLServerId;
+                row["Alert"] = cont.ServerStatus.MaxSeverity !=null ? cont.ServerStatus.MaxSeverity : 2 ;
+                row["CPU"] = cont.AlertCategoryWiseMaxSeverity.Cpu != null ? Convert.ToInt16(cont.AlertCategoryWiseMaxSeverity.Cpu) : 2;
+                row["I/O"] = cont.AlertCategoryWiseMaxSeverity.IO != null ? Convert.ToInt16(cont.AlertCategoryWiseMaxSeverity.IO) : 2;
+                row["Memory"] = cont.AlertCategoryWiseMaxSeverity.Memory != null ? Convert.ToInt16(cont.AlertCategoryWiseMaxSeverity.Memory) : 2;
+                row["Database"] = cont.AlertCategoryWiseMaxSeverity.Databases != null ? Convert.ToInt16(cont.AlertCategoryWiseMaxSeverity.Databases) : 2;
+                row["Logs"] = cont.AlertCategoryWiseMaxSeverity.Logs != null ? Convert.ToInt16(cont.AlertCategoryWiseMaxSeverity.Logs) : 2;
+                row["Queries"] = cont.AlertCategoryWiseMaxSeverity.Queries != null ? Convert.ToInt16(cont.AlertCategoryWiseMaxSeverity.Queries) : 2;
+                table.Rows.Add(row);
+            }
+            return table;
+        }
+
+        private static string getFormatedTags(HealthIndicesModel.ServerSummaryContainer container)
+        {
+            var tagString = string.Empty;
+            if(container != null && container.Overview != null && container.Overview.Tags != null)
+            {
+                var tags = container.Overview.Tags;
+                foreach(string tag in tags)
+                {
+                    tagString = tagString + tag + ",";
+                }
+            }
+            return tagString.Length > 0 ? tagString.Substring(0,tagString.Length - 1) : string.Empty;
+        }
 
         public static DataTable GetServerOverviewStatistics(SqlConnectionInfo connectionInfo, int id, DateTime startDate, DateTime endDate)
         {
@@ -2368,7 +2413,6 @@ namespace Idera.SQLdm.DesktopClient.Helpers
 
             for (int i = 0; i < schemaTable.Rows.Count; i++)
             {
-                
                 if (!dataTable.Columns.Contains(schemaTable.Rows[i]["ColumnName"].ToString()))
                 {
                     DataColumn dataColumn = new DataColumn();
@@ -3265,70 +3309,6 @@ namespace Idera.SQLdm.DesktopClient.Helpers
             }
 
             return result;
-        }
-
-        internal static int GetSelectedInstanceId(int id)
-        {
-            //    Settings.Default.PrevRepoId = Settings.Default.CurrentRepoId;
-            //    using (SqlConnection connection = new SqlConnection(
-            //"Server=ULTP851;Database=SqldmClusterRepository;Trusted_Connection=true"))
-            //    {
-            //        connection.Open();
-
-            //        using (SqlCommand cmd = new SqlCommand())
-            //        {
-            //            cmd.Connection = connection;
-            //            cmd.CommandText = String.Format("SELECT top 1 ServerId,RepoId  FROM [MonitoredServers] where Id = {0}", id);
-            //            var reader = cmd.ExecuteReader();
-            //            if (reader.HasRows)
-            //            {
-            //                while (reader.Read())
-            //                {
-            //                    Settings.Default.RepoId = reader.GetInt32(1);
-            //                   // Settings.Default.ActiveRepositoryConnection.RefreshRepositoryInfo();
-            //                    return Convert.ToInt32(reader.GetInt32(0));
-            //                }
-            //            }
-            //        }
-            //    }
-            var instance = clusterRepoInstances.Where(i => i.Id == id).SingleOrDefault();
-            if (instance == null)
-            {
-                using (SqlConnection connection = new SqlConnection(
-            "Server=ULTP851;Database=SqldmClusterRepository;Trusted_Connection=true"))
-                {
-                    connection.Open();
-
-                    using (SqlCommand cmd = new SqlCommand())
-                    {
-                        cmd.Connection = connection;
-                        cmd.CommandText = String.Format("SELECT Id,ServerId , RepoId FROM [MonitoredServers] ");
-                        var reader = cmd.ExecuteReader();
-                        clusterRepoInstances = new List<ClusterRepoInstance>();
-                        if (reader.HasRows)
-                        {
-                            while (reader.Read())
-                            {
-                                clusterRepoInstances.Add(new ClusterRepoInstance
-                                {
-                                    Id = reader.GetInt32(0),
-                                    ServerId = reader.GetInt32(1),
-                                    RepoId = reader.GetInt32(2)
-                                });
-                            }
-                        }
-                    }
-                }
-                instance = clusterRepoInstances.Where(i => i.Id == id).SingleOrDefault();
-
-            }
-            if (instance != null)
-            {
-                Settings.Default.RepoId = instance.RepoId;
-                return instance.ServerId;
-            }
-            return 0;
-         
         }
 
         private static Dictionary<int, List<MetricThresholdEntry>> GetMetricThresholds(SqlDataReader reader)

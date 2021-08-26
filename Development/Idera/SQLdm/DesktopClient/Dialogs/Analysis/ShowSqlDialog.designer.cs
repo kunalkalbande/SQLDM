@@ -30,9 +30,9 @@
         {
             ActiproSoftware.SyntaxEditor.Document document1 = new ActiproSoftware.SyntaxEditor.Document();
             ActiproSoftware.SyntaxEditor.VisualStudio2005SyntaxEditorRenderer visualStudio2005SyntaxEditorRenderer1 = new ActiproSoftware.SyntaxEditor.VisualStudio2005SyntaxEditorRenderer();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.btnClose = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.syntaxEditor1 = new ActiproSoftware.SyntaxEditor.SyntaxEditor();
-            this.btnCopy = new System.Windows.Forms.Button();
+            this.btnCopy = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.SuspendLayout();
             // 
             // btnClose
@@ -99,7 +99,7 @@
         #endregion
 
         private ActiproSoftware.SyntaxEditor.SyntaxEditor syntaxEditor1;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnCopy;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnClose;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCopy;
     }
 }

@@ -21,6 +21,7 @@ using Idera.SQLdm.DesktopClient.Dialogs;
 using Idera.SQLdm.DesktopClient.Helpers;
 using Idera.SQLdm.DesktopClient.Objects;
 using Idera.SQLdm.DesktopClient.Views.Servers.Server;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
 {
@@ -34,8 +35,11 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
             : base(DashboardPanel.TempDB)
         {
             InitializeComponent();
+
             ChartFxExtensions.SetContextMenu(usageChart, toolbarsManager);
             ChartFxExtensions.SetContextMenu(contentionChart, toolbarsManager);
+            updateLinearScaleFontAsPerTheme(this.linearScale1);
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
 
             helpTopic = HelpTopics.ServerDashboardViewTempDBPanel;
         }
@@ -152,8 +156,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
                     }
                     else
                     {
-                        int Id = RepositoryHelper.GetSelectedInstanceId(instanceId);
-                        MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(Id);
+                        MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(instanceId);
                         if (status != null)
                         {
                             serverVersion = status.InstanceVersion;
@@ -427,5 +430,16 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
         }
 
         #endregion
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            updateLinearScaleFontAsPerTheme(this.linearScale1);
+        }
+        public void updateLinearScaleFontAsPerTheme(LinearScale linearscale)
+        {
+            ThemeSetter ts = new ThemeSetter();
+            ts.SetLinearScale(linearscale);
+        }
+
     }
 }

@@ -1,3 +1,6 @@
+using Idera.SQLdm.DesktopClient.Properties;
+using System.Drawing;
+
 namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 {
     partial class AddActionDialog
@@ -28,8 +31,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         /// </summary>
         private void InitializeComponent()
         {
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
+            Color backColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridBackColor) : Color.White;
+            Color foreColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridForeColor) : Color.Black;
+            Color activeBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridActiveBackColor) : Color.White;
+            Color hoverBackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.UltraGridHoverBackColor) : Color.White;
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.providerListBox = new Idera.SQLdm.DesktopClient.Dialogs.Notification.CustomCheckedListBox();
             this.SuspendLayout();
             // 
@@ -55,7 +62,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
             // providerListBox
-            // 
+            //
             this.providerListBox.CheckBoxes = true;
             this.providerListBox.FullRowSelect = true;
             this.providerListBox.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
@@ -68,6 +75,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.providerListBox.TabIndex = 2;
             this.providerListBox.UseCompatibleStateImageBehavior = false;
             this.providerListBox.View = System.Windows.Forms.View.Details;
+            this.providerListBox.BackColor = backColor;
+            this.providerListBox.ForeColor = foreColor;
             // 
             // AddActionDialog
             // 
@@ -88,6 +97,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Action Provider";
+            this.BackColor = backColor;
+            this.ForeColor = foreColor;
             this.Load += new System.EventHandler(this.AddActionDialog_Load);
             this.ResumeLayout(false);
 
@@ -95,8 +106,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         #endregion
 
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
         private CustomCheckedListBox providerListBox;
     }
 }

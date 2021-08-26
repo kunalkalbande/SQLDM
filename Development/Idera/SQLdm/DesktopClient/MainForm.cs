@@ -1178,7 +1178,7 @@ namespace Idera.SQLdm.DesktopClient
 
                 foreach (MonitoredSqlServerWrapper wrapper in ApplicationModel.Default.ActiveInstances)
                 {
-                    MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(wrapper.Id,wrapper.RepoId);
+                    MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(wrapper.Id);
 
                     if (status != null)
                     {

@@ -25,6 +25,7 @@ using ColumnHeader = Infragistics.Win.UltraWinGrid.ColumnHeader;
 using Idera.SQLdm.Common.Events;
 using System.Runtime.Remoting.Messaging;
 using Idera.SQLdm.Common.Auditing;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Services
 {
@@ -232,8 +233,20 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Services
             InitializeTablesDataTable();
             InitializeColumnsDataTable();
             AdaptFontSize();
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+             SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
-
+        private void ScaleControlsAsPerResolution()
+        {
+            this.catalogsGridStatusLabel.Location = new System.Drawing.Point(0, 34);
+            this.tablesGrid.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ResizeAllColumns;
+            this.catalogsGrid.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ResizeAllColumns;
+            this.columnsGrid.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ResizeAllColumns;
+            this.tablesGridStatusLabel.Location = new System.Drawing.Point(0, 34);
+            this.columnsGridStatusLabel.Location = new System.Drawing.Point(0, 34);
+        }
         #endregion
 
         #region Properties
@@ -1674,6 +1687,20 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Services
         private void AdaptFontSize()
         {            
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.catalogsGrid);
+            themeManager.updateGridTheme(this.tablesGrid);
+            themeManager.updateGridTheme(this.columnsGrid);
         }
     }
 }

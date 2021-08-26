@@ -11,11 +11,17 @@ using Wintellect.PowerCollections;
 using Resources = Idera.SQLdm.DesktopClient.Properties.Resources;
 using System.Diagnostics;
 using Idera.SQLdm.DesktopClient.Controls;
+using System.Runtime.InteropServices;
+using System.Threading.Tasks;
+using Infragistics.Windows.Themes;
+using System.Drawing;
+
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
 {
     internal partial class ServerGroupView : View
     {
+        /*private const int EM_SETCUEBANNER = 0x1501;*/ // to set the cue text in search text box, Saurabh UX-DM
         private object view;
         private readonly object updateLock = new object();
         private static readonly BBS.TracerX.Logger StartUpTimeLog = BBS.TracerX.Logger.GetLogger(TextConstants.StartUpTimeLogName);
@@ -36,9 +42,19 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
 
             // Autoscale font size.
             this.AdaptFontSize();
+
+            //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+            this.searchInstances.ForeColor = string.Compare(Settings.Default.ColorScheme, "Dark", true)==0 ? Color.White : Color.Black;
+            this.searchInstances.BackColor = string.Compare(Settings.Default.ColorScheme, "Dark", true) == 0 ? Color.Black : Color.White;
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
             stopWatch.Stop();
             StartUpTimeLog.DebugFormat("Time taken by ServerGroupView : {0}", stopWatch.ElapsedMilliseconds);
         }
+
+        //[DllImport("user32.dll", CharSet = CharSet.Auto)]
+        //private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam, [MarshalAs(UnmanagedType.LPWStr)]string lParam);
 
 
         private void Initialize(object initView, bool properties)
@@ -71,10 +87,15 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                     ApplicationModel.Default.Tags.Changed += Tags_Changed;
                 }
             }
-
+            //performance enhancement
             thumbnailView.Initialize(this, view);
             detailsView.Initialize(this, view);
             propertiesView.Initialize(this, view);
+            heatmapView.Initialize(this, view);
+            
+            //detailsView.Initialize(this, view);
+            //propertiesView.Initialize(this, view);
+            //heatmapView.Initialize(this, view); //Saurabh UX-DM
             if (properties)
             {
                 ShowPropertiesView();
@@ -167,7 +188,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
         {
             switch (e.Tool.Key)
             {
-                case "showHeatmapButton":
+                case "showHeatmapButton": //Saurabh UX-DM
                     ShowHeatmapView();
                     break;
                 case "showThumbnailsButton":
@@ -188,7 +209,26 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             showThumbnailsViewButton.Checked = false;
             showDetailsViewButton.Checked = false;
             showPropertiesViewButton.Checked = false;
+            showHeatMapViewButton.Checked = true;//Saurabh UX-DM
+            searchInstances.Visible = true;//Saurabh UX-DM
             ((StateButtonTool)(toolbarsManager.Tools["showHeatmapButton"])).Checked = true;
+        }
+
+        //Saurabh UX-DM
+        private void UpdateHeatMapInstancesOnSearch(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Return)
+                heatmapView.OnEnterPress(sender, e);
+        }
+        //Saurabh UX-DM
+        private void focusGained(object sender, EventArgs e) 
+        {
+            searchInstances.Text = "";
+        }
+        //Saurabh UX-DM
+        private void focusLost(object sender, EventArgs e)
+        {
+            searchInstances.Text = "Search Instances..";
         }
 
         private void ShowThumbnailsView()
@@ -197,7 +237,9 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             showThumbnailsViewButton.Checked = true;
             showDetailsViewButton.Checked = false;
             showPropertiesViewButton.Checked = false;
-            ((StateButtonTool)(toolbarsManager.Tools["showThumbnailsButton"])).Checked = true;
+            showHeatMapViewButton.Checked = false; //Saurabh UX-DM
+            searchInstances.Visible = false; //saurabh UX-DM
+            //((StateButtonTool)(toolbarsManager.Tools["showThumbnailsButton"])).Checked = true;
         }
 
         private void ShowDetailsView()
@@ -206,6 +248,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             showThumbnailsViewButton.Checked = false;
             showDetailsViewButton.Checked = true;
             showPropertiesViewButton.Checked = false;
+            showHeatMapViewButton.Checked = false; //Saurabh UX-DM
+            searchInstances.Visible = false; //Saurabh UX-DM
             ((StateButtonTool)(toolbarsManager.Tools["showDetailsButton"])).Checked = true;
         }
 
@@ -215,6 +259,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             showThumbnailsViewButton.Checked = false;
             showDetailsViewButton.Checked = false;
             showPropertiesViewButton.Checked = true;
+            showHeatMapViewButton.Checked = false; //Saurabh UX-DM
+            searchInstances.Visible = false; //Saurabh UX-DM
             ((StateButtonTool)(toolbarsManager.Tools["showPropertiesButton"])).Checked = true;
         }
 
@@ -235,42 +281,14 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
 
             if (view == null)
             {
-                foreach (var conn in Settings.Default.RepositoryConnections)
-                {
-                    System.Data.DataColumn newColumn = new System.Data.DataColumn("RepoId", typeof(System.Int32));
-                    newColumn.DefaultValue = conn.RepositiryId;
-                    var dt1=RepositoryHelper.GetServerWideStatistics(conn.ConnectionInfo, null);
-                    dt1.Columns.Add(newColumn);
-                    if (data.First == null) data.First = dt1; else data.First.Merge(dt1);
-                    var dt2= RepositoryHelper.GetServerWideStatistics(conn.ConnectionInfo, historyMarker);
-                    newColumn = new System.Data.DataColumn("RepoId", typeof(System.Int32));
-                    newColumn.DefaultValue = conn.RepositiryId;
-                    dt2.Columns.Add(newColumn);
-                    if (data.Second == null) data.Second = dt2; else data.Second.Merge(dt2);
-
-
-                }
+                data.First = RepositoryHelper.GetServerWideStatistics(Settings.Default.ActiveRepositoryConnection.ConnectionInfo, null);
+                data.Second = RepositoryHelper.GetServerWideStatistics(Settings.Default.ActiveRepositoryConnection.ConnectionInfo, historyMarker);
             }
             else if (view is UserView)
             {
                 UserView userView = view as UserView;
-                foreach (var conn in Settings.Default.RepositoryConnections)
-                {
-                    System.Data.DataColumn newColumn = new System.Data.DataColumn("RepoId", typeof(System.Int32));
-                    newColumn.DefaultValue = conn.RepositiryId;
-                    var dt1 = RepositoryHelper.GetServerWideStatistics(conn.ConnectionInfo, userView, null);
-                    dt1.Columns.Add(newColumn);
-                    if (data.First == null) data.First = dt1; else data.First.Merge(dt1);
-                    var dt2 = RepositoryHelper.GetServerWideStatistics(conn.ConnectionInfo, userView, historyMarker);
-                    newColumn = new System.Data.DataColumn("RepoId", typeof(System.Int32));
-                    newColumn.DefaultValue = conn.RepositiryId;
-                    dt2.Columns.Add(newColumn);
-                    if (data.Second == null) data.Second = dt2; else data.Second.Merge(dt2);
-
-
-                }
-               // data.First = RepositoryHelper.GetServerWideStatistics(Settings.Default.ActiveRepositoryConnection.ConnectionInfo, userView, null);
-               // data.Second = RepositoryHelper.GetServerWideStatistics(Settings.Default.ActiveRepositoryConnection.ConnectionInfo, userView, historyMarker);
+                data.First = RepositoryHelper.GetServerWideStatistics(Settings.Default.ActiveRepositoryConnection.ConnectionInfo, userView, null);
+                data.Second = RepositoryHelper.GetServerWideStatistics(Settings.Default.ActiveRepositoryConnection.ConnectionInfo, userView, historyMarker);
             }
             else if (view is int)
             {
@@ -296,6 +314,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                     Pair<DataTable, DataTable> dataTable = (Pair<DataTable, DataTable>)data;
 
                     thumbnailView.UpdateData(dataTable);
+                    heatmapView.UpdateData(dataTable);
                     detailsView.UpdateData(dataTable.Second);
                     propertiesView.UpdateData();
 
@@ -310,6 +329,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             thumbnailView.instance_Changed(sender, e);
             detailsView.instance_Changed(sender, e);
             propertiesView.instance_Changed(sender, e);
+            
         }
 
         private void showThumbnailsViewButton_Click(object sender, EventArgs e)
@@ -348,6 +368,107 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
         protected void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+        protected void ScaleControlsAsPerResolution()
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                this.showHeatMapViewButton.Image = Properties.Resources.ServerGroupHeatMapView32x32;
+                this.showThumbnailsViewButton.Image = Properties.Resources.larger_wht_server_group_thumbnail_view;
+                this.showDetailsViewButton.Image = Properties.Resources.larger_wht_list_view;
+                this.showPropertiesViewButton.Image = Properties.Resources.larger_wht_properties;
+                this.headerStrip.Font = new Font("Arial", 15F, System.Drawing.FontStyle.Bold);
+                this.headerStrip.Size = new Size(this.headerStrip.Width, this.headerStrip.Height + 10);
+            }
+            else
+            {
+                this.showHeatMapViewButton.Image = Properties.Resources.ServerGroupHeatMapView32x32;
+                this.showThumbnailsViewButton.Image = Properties.Resources.ServerGroupThumbnailView32x32;
+                this.showDetailsViewButton.Image = Properties.Resources.ServerGroupDetailsView32x32;
+                this.showPropertiesViewButton.Image = Properties.Resources.Properties32x32;
+                //this.headerStrip.HeaderImage = Properties.Resources.NavigationPaneServer32x32;
+                this.headerStrip.Font = new Font("Arial", 15F, System.Drawing.FontStyle.Bold);
+                this.headerStrip.Size = new Size(this.headerStrip.Width, this.headerStrip.Height + 10);
+            }
+            if (AutoScaleSizeHelper.isLargeSize)
+            {
+                this.headerStrip.ImageScalingSize = new System.Drawing.Size(30, 30);
+                this.searchInstances.Size = new System.Drawing.Size(220, 40);
+                this.titleLabel.Margin = new Padding(20, 0, 0, 0);
+                this.headerStrip.Padding = new Padding(20, 0, 20, 0);
+                this.showPropertiesViewButton.Margin = new Padding(10, 0, 7, 0);
+                this.showDetailsViewButton.Padding = new Padding(7, 0, 7, 0);
+                this.showThumbnailsViewButton.Padding = new Padding(7, 0, 7, 0);
+                this.showHeatMapViewButton.Padding = new Padding(7, 0, 7, 0);
+                this.searchInstances.Padding = new Padding(7, 0, 7, 0);
+                this.headerStrip.HeaderImage = Settings.Default.ColorScheme == "Dark" ? Properties.Resources.larger_navigation_pane_servers : Properties.Resources.NavigationPaneServer32x32; ;
+            }
+            if (AutoScaleSizeHelper.isXLargeSize)
+            {
+                this.headerStrip.ImageScalingSize = new System.Drawing.Size(33, 30);
+                this.searchInstances.Size = new System.Drawing.Size(270, 50);
+                this.titleLabel.Margin = new Padding(20, 0, 0, 0);
+                this.headerStrip.Padding = new Padding(20, 0, 20, 0);
+                this.showPropertiesViewButton.Margin = new Padding(7, 0, 7, 0);
+                this.showDetailsViewButton.Padding = new Padding(7, 0, 7, 0);
+                this.showThumbnailsViewButton.Padding = new Padding(7, 0, 7, 0);
+                this.showHeatMapViewButton.Padding = new Padding(7, 0, 7, 0);
+                this.searchInstances.Padding = new Padding(7, 0, 7, 0);
+                this.headerStrip.HeaderImage = Settings.Default.ColorScheme == "Dark" ? Properties.Resources.larger_navigation_pane_servers : Properties.Resources.NavigationPaneServer32x32; ;
+            }
+            if (AutoScaleSizeHelper.isXXLargeSize)
+            {
+                this.headerStrip.ImageScalingSize = new System.Drawing.Size(38, 35);
+                this.searchInstances.Size = new System.Drawing.Size(300, 60);
+                this.titleLabel.Margin = new Padding(20, 0, 0, 0);
+                this.headerStrip.Padding = new Padding(20, 0, 20, 0);
+                this.showPropertiesViewButton.Margin = new Padding(10, 0, 10, 0);
+                this.showDetailsViewButton.Padding = new Padding(10, 0, 10, 0);
+                this.showThumbnailsViewButton.Padding = new Padding(10, 0, 10, 0);
+                this.showHeatMapViewButton.Padding = new Padding(10, 0, 10, 0);
+                this.searchInstances.Padding = new Padding(7, 0, 7, 0);
+                this.headerStrip.HeaderImage = Settings.Default.ColorScheme == "Dark" ? Properties.Resources.larger_navigation_pane_servers : Properties.Resources.NavigationPaneServer32x32; ;
+            }
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.searchInstances != null)
+                {
+                    this.searchInstances.ForeColor = string.Compare(Settings.Default.ColorScheme, "DARK", true) == 0 ? System.Drawing.Color.White : System.Drawing.Color.Black;
+                    this.searchInstances.BackColor = string.Compare(Settings.Default.ColorScheme, "DARK", true) == 0 ? System.Drawing.Color.Black : System.Drawing.Color.White;
+                    //START:DarkTheme 4.12 Icons Switching : Babita Manral
+                    if (Settings.Default.ColorScheme == "Dark")
+                    {
+                        this.headerStrip.HeaderImage = global::Idera.SQLdm.DesktopClient.Properties.Resources.NavigationPaneServersSmall;                        
+                        this.showPropertiesViewButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Properties;                        
+                        this.showDetailsViewButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ServerGroupDetailsView;
+                        this.showThumbnailsViewButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ServerGroupThumbnailView;
+                    }
+                    else
+                    {
+                        this.headerStrip.HeaderImage = global::Idera.SQLdm.DesktopClient.Properties.Resources.NavigationPaneServersSmall;
+                        this.showPropertiesViewButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.Properties;
+                        this.showDetailsViewButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ServerGroupDetailsView;
+                        this.showThumbnailsViewButton.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ServerGroupThumbnailView;
+                        this.headerStrip.BackColor = Color.Transparent;
+                    }
+                    //END:DarkTheme 4.12 Icons Switching : Babita Manral
+                }
+                if(this.borderPanel != null)
+                    this.borderPanel.Padding = string.Compare(Settings.Default.ColorScheme, "DARK", true) == 0 ? new System.Windows.Forms.Padding(0, 0, 0, 0) : new Padding(1);
+                if (AutoScaleSizeHelper.isScalingRequired)
+                    ScaleControlsAsPerResolution();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                //Handle Exception
+            }
         }
     }
 }

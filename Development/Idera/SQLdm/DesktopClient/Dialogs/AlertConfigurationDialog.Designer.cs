@@ -1,3 +1,5 @@
+using Idera.SQLdm.DesktopClient.Properties;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
@@ -105,18 +107,18 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             Infragistics.Win.Appearance appearance35 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance36 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance37 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList2 = new Infragistics.Win.ValueList(10018657);
+            Infragistics.Win.ValueList valueList2 = new Controls.CustomControls.CustomValueList(10018657);
             Infragistics.Win.ValueListItem valueListItem3 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem4 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem5 = new Infragistics.Win.ValueListItem();
-            Infragistics.Win.ValueList valueList3 = new Infragistics.Win.ValueList(5632719);
+            Infragistics.Win.ValueList valueList3 = new Controls.CustomControls.CustomValueList(5632719);
             Infragistics.Win.ValueListItem valueListItem6 = new Infragistics.Win.ValueListItem();
 
             //10.0 Srishti purohit // For baseline alert
             //Making copy of State grid to give baseline alert functioanlity
-            Infragistics.Win.ValueList valueListBaselineAlertState = new Infragistics.Win.ValueList(10018657);
-            Infragistics.Win.ValueList valueListBaselineRadioButton = new Infragistics.Win.ValueList(5632719);
-            Infragistics.Win.ValueList valueListBaselineCheckBox = new Infragistics.Win.ValueList(5686891);
+            Infragistics.Win.ValueList valueListBaselineAlertState = new Controls.CustomControls.CustomValueList(10018657);
+            Infragistics.Win.ValueList valueListBaselineRadioButton = new Controls.CustomControls.CustomValueList(5632719);
+            Infragistics.Win.ValueList valueListBaselineCheckBox = new Controls.CustomControls.CustomValueList(5686891);
             Infragistics.Win.ValueListItem valueListItemOK = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItemWarning = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItemCritical = new Infragistics.Win.ValueListItem();
@@ -128,12 +130,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             Infragistics.Win.Appearance appearance38 = new Infragistics.Win.Appearance();
             Infragistics.Win.ValueListItem valueListItem7 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.Appearance appearance39 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList4 = new Infragistics.Win.ValueList(5686891);
+            Infragistics.Win.ValueList valueList4 = new Controls.CustomControls.CustomValueList(5686891);
             Infragistics.Win.ValueListItem valueListItem8 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.Appearance appearance40 = new Infragistics.Win.Appearance();
             Infragistics.Win.ValueListItem valueListItem9 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.Appearance appearance41 = new Infragistics.Win.Appearance();
-            ChartFX.WinForms.Gauge.LinearScale linearScale1 = new ChartFX.WinForms.Gauge.LinearScale();
+             linearScale1 = new ChartFX.WinForms.Gauge.LinearScale();
             ChartFX.WinForms.Gauge.Marker marker1 = new ChartFX.WinForms.Gauge.Marker();
             ChartFX.WinForms.Gauge.Marker marker2 = new ChartFX.WinForms.Gauge.Marker();
             ChartFX.WinForms.Gauge.Marker marker3 = new ChartFX.WinForms.Gauge.Marker();
@@ -217,75 +219,76 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList1 = new Infragistics.Win.ValueList(8767172);
+            Infragistics.Win.ValueList valueList1 = new Controls.CustomControls.CustomValueList(8767172);
             Infragistics.Win.ValueListItem valueListItem1 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
             Infragistics.Win.ValueListItem valueListItem2 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
+            appearance18 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
             this.dialogEditor = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
             this.ultraTabPageControl1 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.instanceConfigPanel = new System.Windows.Forms.Panel();
-            this.instanceGridPanel = new System.Windows.Forms.Panel();
+            this.instanceConfigPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.instanceGridPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.instanceConfigGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.ultraCalcManager1 = new Infragistics.Win.UltraWinCalcManager.UltraCalcManager(this.components);
-            this.instanceButtonPanel = new System.Windows.Forms.Panel();
-            this.btnDeleteInstance = new System.Windows.Forms.Button();
-            this.btnEditInstance = new System.Windows.Forms.Button();
-            this.btnAddInstance = new System.Windows.Forms.Button();
-            this.configurationLayoutPanel = new System.Windows.Forms.Panel();
-            this.configurationGridPanel = new System.Windows.Forms.Panel();
+            this.instanceButtonPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.btnDeleteInstance = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnEditInstance = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnAddInstance = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.configurationLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.configurationGridPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.alertConfigurationGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
             //10.0 Srishti purohit // For baseline alert
             //Making copy of State grid to give baseline alert functioanlity
             this.baselineAlertConfigurationGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.configBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.informationLabelPanel = new System.Windows.Forms.Panel();
+            this.informationLabelPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.informationLabelPictureBox = new System.Windows.Forms.PictureBox();
-            this.informationLabel = new System.Windows.Forms.Label();
-            this.configurationGaugePanel = new System.Windows.Forms.Panel();
+            this.informationLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.configurationGaugePanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.alertConfigurationGauge = new ChartFX.WinForms.Gauge.HorizontalGauge();
-            this.advancedPanel = new System.Windows.Forms.Panel();
+            this.advancedPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
 
             //10.0 srishti purohit -- for baseline alert modifications
-            //this.isBaselineEnabledCheckBox = new System.Windows.Forms.CheckBox();
-            this.advancedButton = new System.Windows.Forms.Button();
-            this.editButton = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.categoryTextBox = new System.Windows.Forms.TextBox();
-            this.metricNameDescriptionLabel = new System.Windows.Forms.Label();
-            this.RankLabel = new System.Windows.Forms.Label();
-            this.descriptionTextBox = new System.Windows.Forms.TextBox();
-            this.metricNameTextBox = new System.Windows.Forms.TextBox();
-            this.RankTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            //this.isBaselineEnabledCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.advancedButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.editButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.panel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.categoryTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.metricNameDescriptionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.RankLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.descriptionTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.metricNameTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.RankTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.ultraTabPageControl2 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.commentsTextBox = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.commentsInformationBox = new Divelements.WizardFramework.InformationBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.applyButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
-            this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.commentsTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.commentsInformationBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.spacelabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.applyButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.splitContainer = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomSplitContainer();
             this.alertsGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.ultraCheckEditor1 = new Infragistics.Win.UltraWinEditors.UltraCheckEditor();
-            this.alertTabControl = new Infragistics.Win.UltraWinTabControl.UltraTabControl();
+            this.checkBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox(); //CustomCheckbox 4.12 DarkTheme  Babita Manral 
+            this.alertTabControl = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTabControl(true);
             this.ultraTabSharedControlsPage1 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
-            this.applyTemplateButton = new System.Windows.Forms.Button();
-            this.createTemplateButton = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.alertRecommendationsPanel = new System.Windows.Forms.Panel();
+            this.applyTemplateButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.createTemplateButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.panel3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.alertRecommendationsPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.alertRecommendationsWarningImage = new System.Windows.Forms.PictureBox();
-            this.alertRecommendationsLabel = new System.Windows.Forms.Label();
+            this.alertRecommendationsLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.alertRecommendationsBackgroundWorker = new System.ComponentModel.BackgroundWorker();
-            this.configureBaselineButton = new System.Windows.Forms.Button();
-            this.AlertConfigurationDialog_Fill_Panel = new System.Windows.Forms.Panel();
+            this.configureBaselineButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.AlertConfigurationDialog_Fill_Panel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.existingDatabasesBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dialogEditor)).BeginInit();
             this.ultraTabPageControl1.SuspendLayout();
@@ -314,7 +317,6 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alertsGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ultraCheckEditor1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alertTabControl)).BeginInit();
             this.alertTabControl.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -1239,6 +1241,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             //10.0 srishti purohit -- for baseline alert modifications
             //this.advancedPanel.Controls.Add(this.isBaselineEnabledCheckBox);
             this.advancedPanel.Controls.Add(this.advancedButton);
+            this.advancedPanel.Controls.Add(this.spacelabel);
             this.advancedPanel.Controls.Add(this.editButton);
             this.advancedPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.advancedPanel.Location = new System.Drawing.Point(0, 252);
@@ -1267,9 +1270,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.advancedButton.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.advancedButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.advancedButton.Location = new System.Drawing.Point(336, 10);
-            this.advancedButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.advancedButton.Margin = new System.Windows.Forms.Padding(40, 4, 40, 4);
             this.advancedButton.Name = "advancedButton";
-            this.advancedButton.Size = new System.Drawing.Size(85, 28);
+            this.advancedButton.Size = new System.Drawing.Size(75, 28);
             this.advancedButton.TabIndex = 1;
             this.advancedButton.Text = "Advanced";
             this.advancedButton.UseVisualStyleBackColor = false;
@@ -1280,9 +1283,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.editButton.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.editButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.editButton.Location = new System.Drawing.Point(432, 10);
-            this.editButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.editButton.Margin = new System.Windows.Forms.Padding(40, 4, 40, 4);
             this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(85, 28);
+            this.editButton.Size = new System.Drawing.Size(75, 28);
             this.editButton.TabIndex = 2;
             this.editButton.Text = "Edit";
             this.editButton.UseVisualStyleBackColor = false;
@@ -1462,6 +1465,16 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.label3.TabIndex = 5;
             this.label3.Text = resources.GetString("label3.Text");
             // 
+            // space label
+            // 
+            this.spacelabel.Dock = System.Windows.Forms.DockStyle.Right;
+            //this.label3.AutoEllipsis = true;
+            this.spacelabel.Location = new System.Drawing.Point(400, 10);
+            this.spacelabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.spacelabel.Name = "spacelabel";
+            this.spacelabel.Size = new System.Drawing.Size(5, 20);
+            this.spacelabel.Text = "  ";
+            // 
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -1510,7 +1523,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // splitContainer.Panel1
             // 
             this.splitContainer.Panel1.Controls.Add(this.alertsGrid);
-            this.splitContainer.Panel1.Controls.Add(this.ultraCheckEditor1);
+            this.splitContainer.Panel1.Controls.Add(this.checkBox1); //CustomCheckbox 4.12 DarkTheme Babita Manral           
             // 
             // splitContainer.Panel2
             // 
@@ -1806,23 +1819,20 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.alertsGrid.TabIndex = 4;
             this.alertsGrid.UpdateMode = Infragistics.Win.UltraWinGrid.UpdateMode.OnCellChangeOrLostFocus;
             this.alertsGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.alertsGrid_MouseClick);
-            // 
-            // ultraCheckEditor1
-            // 
-            this.ultraCheckEditor1.Checked = global::Idera.SQLdm.DesktopClient.Properties.Settings.Default.AlertConfigurationDialogGroupByCategory;
-            this.ultraCheckEditor1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ultraCheckEditor1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Idera.SQLdm.DesktopClient.Properties.Settings.Default, "AlertConfigurationDialogGroupByCategory", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.ultraCheckEditor1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ultraCheckEditor1.GlyphInfo = Infragistics.Win.UIElementDrawParams.Office2007CheckBoxGlyphInfo;
-            this.ultraCheckEditor1.Location = new System.Drawing.Point(0, 0);
-            this.ultraCheckEditor1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ultraCheckEditor1.Name = "ultraCheckEditor1";
-            this.ultraCheckEditor1.Size = new System.Drawing.Size(289, 22);
-            this.ultraCheckEditor1.TabIndex = 5;
-            this.ultraCheckEditor1.Text = "Group by metric category";
-            this.ultraCheckEditor1.UseAppStyling = false;
-            this.ultraCheckEditor1.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
-            this.ultraCheckEditor1.CheckedChanged += new System.EventHandler(this.ultraCheckEditor1_CheckedChanged);
+            //
+            //CustomCheckbox 4.12 DarkTheme  Babita Manral           
+            //
+            this.checkBox1.Checked = global::Idera.SQLdm.DesktopClient.Properties.Settings.Default.AlertConfigurationDialogGroupByCategory;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Idera.SQLdm.DesktopClient.Properties.Settings.Default, "AlertConfigurationDialogGroupByCategory", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.checkBox1.Location = new System.Drawing.Point(0, 0);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Name = "checkBox1";            
+            this.checkBox1.Size= new System.Drawing.Size(289, 22);
+            this.checkBox1.TabIndex = 5;
+            this.checkBox1.Text = "Group by metric category";                       
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.ultraCheckEditor1_CheckedChanged);
             // 
             // alertTabControl
             // 
@@ -1830,6 +1840,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.alertTabControl.Appearance = appearance17;
             appearance18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
             appearance18.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
+            if(Settings.Default.ColorScheme == "Dark")
+            {
+                appearance18.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+                appearance18.BackColor2 = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+            }
             this.alertTabControl.ClientAreaAppearance = appearance18;
             this.alertTabControl.Controls.Add(this.ultraTabPageControl1);
             this.alertTabControl.Controls.Add(this.ultraTabSharedControlsPage1);
@@ -1840,7 +1855,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.alertTabControl.Name = "alertTabControl";
             this.alertTabControl.SharedControlsPage = this.ultraTabSharedControlsPage1;
             this.alertTabControl.Size = new System.Drawing.Size(533, 484);
-            appearance19.BackColor = System.Drawing.SystemColors.ControlDark;//SQLdm 9.1 (Vineet Kumar) -- Making inactive tab visible.
+            appearance19.BackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor) : System.Drawing.SystemColors.ControlDark;//SQLdm 9.1 (Vineet Kumar) -- Making inactive tab visible.
             this.alertTabControl.TabHeaderAreaAppearance = appearance19;
             this.alertTabControl.TabIndex = 0;
             ultraTab1.TabPage = this.ultraTabPageControl1;
@@ -1877,7 +1892,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // createTemplateButton
             // 
             this.createTemplateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.createTemplateButton.Location = new System.Drawing.Point(151, 534);
+            this.createTemplateButton.Location = new System.Drawing.Point(165, 534);
             this.createTemplateButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.createTemplateButton.Name = "createTemplateButton";
             this.createTemplateButton.Size = new System.Drawing.Size(127, 28);
@@ -2036,7 +2051,6 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.alertsGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ultraCheckEditor1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alertTabControl)).EndInit();
             this.alertTabControl.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -2053,64 +2067,67 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button applyButton;
-        private System.Windows.Forms.Button okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton applyButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
         private System.Windows.Forms.SplitContainer splitContainer;
         private Infragistics.Win.UltraWinTabControl.UltraTabControl alertTabControl;
         private Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage ultraTabSharedControlsPage1;
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl1;
         private Infragistics.Win.UltraWinGrid.UltraGrid alertsGrid;
-        private System.Windows.Forms.Label metricNameDescriptionLabel;
-        private System.Windows.Forms.TextBox metricNameTextBox;
-        private System.Windows.Forms.Label RankLabel;
-        private System.Windows.Forms.TextBox RankTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel metricNameDescriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox metricNameTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel RankLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox RankTextBox;
         private Infragistics.Win.UltraWinGrid.UltraGrid alertConfigurationGrid;
         //10.0 Srishti purohit // For baseline alert
         //Making copy of State grid to give baseline alert functioanlity
         private Infragistics.Win.UltraWinGrid.UltraGrid baselineAlertConfigurationGrid;
         private System.Windows.Forms.BindingSource configBindingSource;
-        private System.Windows.Forms.TextBox descriptionTextBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox categoryTextBox;
-        private System.Windows.Forms.Label label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox descriptionTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox categoryTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl2;
-        private System.Windows.Forms.TextBox commentsTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox commentsTextBox;
         private Infragistics.Win.UltraWinEditors.UltraTextEditor dialogEditor;
-        private System.Windows.Forms.Panel configurationLayoutPanel;
-        private System.Windows.Forms.Panel configurationGaugePanel;
-        private System.Windows.Forms.Panel configurationGridPanel;
-        private System.Windows.Forms.Panel informationLabelPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  configurationLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  configurationGaugePanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  configurationGridPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  informationLabelPanel;
         private System.Windows.Forms.PictureBox informationLabelPictureBox;
-        private System.Windows.Forms.Label informationLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel informationLabel;
         private ChartFX.WinForms.Gauge.HorizontalGauge alertConfigurationGauge;
-        private Divelements.WizardFramework.InformationBox commentsInformationBox;
-        private System.Windows.Forms.Panel advancedPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox commentsInformationBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  advancedPanel;
         //10.0 srishti purohit -- for baseline alert modifications
-        //private System.Windows.Forms.CheckBox isBaselineEnabledCheckBox;      // Pruthviraj Nikam: Done changes for 5.1.7 Baseline Alerts     Date: 22-Jan-2019
-        private System.Windows.Forms.Button advancedButton;
-        private System.Windows.Forms.Button editButton;
-        private System.Windows.Forms.Button applyTemplateButton;
-        private System.Windows.Forms.Button createTemplateButton;
-        private Infragistics.Win.UltraWinEditors.UltraCheckEditor ultraCheckEditor1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel2;
+        //private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox isBaselineEnabledCheckBox;      // Pruthviraj Nikam: Done changes for 5.1.7 Baseline Alerts     Date: 22-Jan-2019
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton advancedButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton editButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton applyTemplateButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton createTemplateButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox checkBox1; //CustomCheckbox 4.12 DarkTheme Babita Manral
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel spacelabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel2;
         private Infragistics.Win.UltraWinCalcManager.UltraCalcManager ultraCalcManager1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel alertRecommendationsPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  alertRecommendationsPanel;
         private System.Windows.Forms.PictureBox alertRecommendationsWarningImage;
-        private System.Windows.Forms.Label alertRecommendationsLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel alertRecommendationsLabel;
         private System.ComponentModel.BackgroundWorker alertRecommendationsBackgroundWorker;
-        private System.Windows.Forms.Button configureBaselineButton;
-        private System.Windows.Forms.Panel AlertConfigurationDialog_Fill_Panel;
-        private System.Windows.Forms.Panel instanceConfigPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton configureBaselineButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  AlertConfigurationDialog_Fill_Panel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  instanceConfigPanel;
         private Infragistics.Win.UltraWinGrid.UltraGrid instanceConfigGrid;
-        private System.Windows.Forms.Button btnAddInstance;
-        private System.Windows.Forms.Panel instanceGridPanel;
-        private System.Windows.Forms.Panel instanceButtonPanel;
-        private System.Windows.Forms.Button btnDeleteInstance;
-        private System.Windows.Forms.Button btnEditInstance;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnAddInstance;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  instanceGridPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  instanceButtonPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnDeleteInstance;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnEditInstance;
         private System.ComponentModel.BackgroundWorker existingDatabasesBackgroundWorker;
+        private Infragistics.Win.Appearance appearance18;
+        private ChartFX.WinForms.Gauge.LinearScale linearScale1;
     }
 }

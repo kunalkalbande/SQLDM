@@ -397,6 +397,18 @@
   <data name="RestoreDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RestoreDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="larger_funnel_delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\larger_funnel_delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="larger_Maximize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\larger_Maximize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="larger_Office2007Close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\larger_Office2007Close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="larger_RestoreDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\larger_RestoreDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="DatabasesWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\16x16\DatabasesWarning16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -663,6 +675,33 @@
   </data>
   <data name="Stop24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Stop24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cancel24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancel-24-x-24@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clear24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filter-clear@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Schedule24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schedule-24-x-24@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Deploy24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deploy-24-x-24@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Edit24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-24-x-24@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete-24-x-24@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Export24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\export-24-x-24@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Import24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\import-24-x-24@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="New24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new-24-x-24@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="help_disabled_icon_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\help-disabled-icon_2.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1805,6 +1844,9 @@
   <data name="ServerGroupThumbnailView" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ServerGroupThumbnailView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ServerGroupHeatMapView" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ServerGroupHeatmapView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="prev_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\prev-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1961,7 +2003,6 @@
   <data name="CloudDialogHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CloudDialogHeader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  
   <data name="CloudServerNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\16x16\CloudServer\cloud_database_icon_normal_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -1992,9 +2033,6 @@
   <data name="Grid_2x2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Grid_2x2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StatusMainentanceModeSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\StatusMainentanceModeSmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Grid_2x3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Grid_2x3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -2021,6 +2059,64 @@
   </data>
   <data name="Customize16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Customize16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="larger_tag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tag-32-x-32.png ;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="larger_server" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\server@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="larger_properties" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\properties@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+    <data name="larger_my-views" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\my-views-icon@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="larger_Grid_4x3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\larger_Grid_4x3.png ;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="larger_Grid_4x2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\larger_Grid_4x2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="larger_Grid_3x4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\larger_Grid_3x4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="larger_Grid_3x3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\larger_Grid_3x3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="larger_Grid_3x2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\larger_Grid_3x2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="larger_Grid_2x5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\larger_Grid_2x5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="larger_Grid_2x4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\larger_Grid_2x4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="larger_Grid_2x3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\larger_Grid_2x3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="larger_Grid_2x2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\larger_Grid_2x2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="larger_wht-server-group-thumbnail-view" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\wht-server-group-thumbnail-view@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="larger_wht-properties" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\wht-properties@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="larger_wht-list-view" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\wht-list-view@2x.png ;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="larger_navigation-pane-servers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\navigation-pane-servers-small@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  
+  <data name="larger_Customize16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\larger_Customize16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="larger_Customize16x16_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\larger_Customize16x16 _dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="back16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\back16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -2051,5 +2147,605 @@
   </data>
   <data name="PanelAzureDisk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PanelDisk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_AdministrationArea16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\administration-area-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Analyze16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\analyze-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Analyze32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\analyze-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_arrow_down_blue_16x16_plain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\arrow-down-blue-16-x-16-plain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_arrow_up_blue_16x16_plain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\arrow-up-blue-16-x-16-plain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Block16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\block-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_block32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\block-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Calendar16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\calendar-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ChartGridHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\chart-grid-header.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_cloud_database_icon_critical_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\cloud-database-icon-critical-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_cloud_database_icon_critical_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\cloud-database-icon-critical-32-x-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_cloud_database_icon_disabled_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\cloud-database-icon-disabled-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_cloud_database_icon_disabled_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\cloud-database-icon-disabled-32-x-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_cloud_database_icon_normal_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\cloud-database-icon-normal-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_cloud_database_icon_normal_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\cloud-database-icon-normal-32-x-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_cloud_database_icon_warning_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\cloud-database-icon-warning-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_cloud_database_icon_warning_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\cloud-database-icon-warning-32-x-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Connected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\connected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Critical32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\critical-32-x-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Database" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\database.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Database32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\database-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_DatabaseIndex32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\database-index-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Databases" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\databases.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_DatabasesInfoThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\databases-info-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_DatabasesCritical16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\databases-critical-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_DatabasesCriticalThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\databases-critical-thumbnail-copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_DatabasesThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\databases-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_DatabasesWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\databases-warning-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_DatabasesWarningThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\databases-warning-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Delete24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\delete-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_DeleteSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\delete-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Documents_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\documents-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Error16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\error-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ErrorStop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\error-stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_FilterLarge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\filter-large.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_FlagClear16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\flag-clear-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_FlagEnabled16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\flag-enabled-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_FolderClosed16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\folder-closed-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_FolderClosedCritical16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\folder-closed-critical-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_FolderClosedWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\folder-closed-warning-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_funnel_delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\funnel-delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_GotoNextError" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\goto-next-error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_GotoPreviousError" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\goto-previous-error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Grid_2x2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\grid-2-x-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Grid_2x3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\grid-2-x-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Grid_2x4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\grid-2-x-4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Grid_2x5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\grid-2-x-5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Grid_3x2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\grid-3-x-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Grid_3x3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\grid-3-x-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Grid_3x4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\grid-3-x-4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Grid_4x2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\grid-4-x-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Grid_4x3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\grid-4-x-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_heat_map" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\heat-map.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Help_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\help-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Information16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\information-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Information32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\information-32-x-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_InformationSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\information-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_KillProcess" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\kill-process.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Logs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\logs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_LogsCritical16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\logs-critical-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_LogsCriticalThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\logs-critical-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_LogsInfoThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\logs-info-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_LogsThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\logs-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_LogsWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\logs-warning-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_LogsWarningThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\logs-warning-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_LoweredToInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\lowered-to-info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_MaintenanceMode16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\maintenance-mode-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_MaintenanceMode32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\maintenance-mode-32-x-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_MaintenanceModeLarge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\maintenance-mode-large.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_NavigationPaneAlertsSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\navigation-pane-alerts-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_NavigationPaneServersSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\navigation-pane-servers-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_NewFilter16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\new-filter-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Queries" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\queries.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_QueriesCritical16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\queries-critical-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_QueriesCriticalThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\queries-critical-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_QueriesInfoThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\queries-info-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_QueriesThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\queries-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_QueriesWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\queries-warning-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_QueriesWarningThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\queries-warning-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_RaisedToInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\raised-to-info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Recommendations_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\recommendations-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_RefreshError" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\refresh-error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_RemainedInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\remained-info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\remove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ResourcesCritical16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\resou-resources-critical-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ResourcesCriticalThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\resources-critical-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ResourcesInfoThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\resources-info-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ResourcesSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\resources.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ResourcesThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\resources-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ResourcesWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\resources-warning-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ResourcesWarningThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\resources-warning-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Server" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\server.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ServerCritical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\server-critical.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ServerGroupCritical16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\server-group-critical-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ServerGroupDetailsView" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\wht-list-view.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ServerGroupHeatMapView" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\heat-map.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ServerGroupOK16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\server-group-ok-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ServerGroupWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\server-group-warning-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ServerInformation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\server-information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ServerMaintenanceMode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\server-maintenance-mode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ServerOK16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\server-ok-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Servers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\server-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ServersMaintenanceMode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\servers-maintenance-mode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ServerWarning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\server-warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ServerWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\server-warning-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Services" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\services.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ServicesCritical16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\services-critical-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ServicesCriticalThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\services-critical-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ServicesInfoThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\services-info-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ServicesThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\services-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ServicesWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\services-warning-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ServicesWarningThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\services-warning-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Sessions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\sessions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_SessionsCritical16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\sessions-critical-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_SessionsCriticalThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\sessions-critical-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_SessionsInfoThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\sessions-info-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_SessionsThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\sessions-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_SessionsWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\sessions-warning-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_SessionsWarningThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\sessions-warning-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_StatusCriticalSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\status-critical-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_StatusInfoSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\status-info-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_StatusMainentanceModeSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\status-mainentance-mode-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_StatusSummaryCriticalLarge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\status-summary-critical-large.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_StatusSummaryInformationLarge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\status-summary-information-large.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_StatusUnknown16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\status-unknown-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Stop24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\stop-24-x-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_StopTrace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\stop-trace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_SystemDefinedPermission16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\system-defined-permission-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_SystemSession" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\system-session.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Tag16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\tags-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Tag32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\tag-32-x-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_TaskNotStarted2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\task-not-started-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_TestConnectionUnknown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\question-bubble.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ToolbarHelp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\toolbar-help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_UserDefinedPermission16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\user-defined-permission-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_UserPermission32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\user-permission-32-x-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_UserSession" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\user-session.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_AlertInfoIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\info-wht-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_AlertOKIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\ok-wht-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_AlertWarningIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\warning-wht-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_AlertCriticalIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\critical-wht-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Views16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\my-views-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Properties" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\wht-properties.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_ServerGroupThumbnailView" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\wht-server-group-thumbnail-view.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ToolbarRefreshHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ToolbarRefreshHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hoverforward16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\hover-forward-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hoverbackward16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\hover-back-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="whtback16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\wht-back-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="whtfwd16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\wht-forward-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkcustomize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dark_customize16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bluecustomize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\blue-customize-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_LeftArrowWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\left-arrow-wht-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="darkTheme_RefreshWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\refresh-wht-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="darkTheme_Contract" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\contract-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="darkTheme_Expand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\expand-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="darkTheme_HotTrackTabBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\HotTrackTabBackgroundHover.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_SelectedTabBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\SelectedTabBackgroundDarkTheme.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DownArrowsDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DownArrowsDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UpArrowsDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UpArrowsDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_TagCritical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\tag-critical-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_TagWarning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\tag-warning-16-x-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BackDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\dk-back-24-x-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeleteReportDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\dk-delete-report.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeployActionsDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\dk-deploy-actions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditReportDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\dk-edit-report.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExportReportDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\dk-export-report.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FilterDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\dk-filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FilterClearDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\dk-filter-clear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FilterRefreshDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\dk-filter-refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ForwardDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\dk-forward-24-x-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImportReportDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\dk-import-report.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewReportDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\dk-new-report.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ScheduleEmailDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\dk-schedule-email.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HomeDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\home-24-x-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PauseHoverDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\pause-dk-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RefreshDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\refresh-24-x-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StopReportDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\stop-24-x-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Properties32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\properties32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ServerGroupHeatMapView32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ServerGroupHeatmapView32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ServerGroupThumbnailView32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ServerGroupThumbnailView32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ServerGroupDetailsView32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ServerGroupDetailsView32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="critical_wht_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\critical-wht-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info_wht_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info-wht-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ok_wht_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ok-wht-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warning_wht_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warning-wht-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_TodayPageHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\TodayPageHeader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_HeaderStripSmallCollapse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\HeaderStripSmallCollapse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>  
+  <data name="darkTheme_HeaderStripSmallExpand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\HeaderStripSmallExpand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data> 
+  <data name="darkTheme_Hide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\Hide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_LeftLink16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\LeftLink16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_OptionsGlyph" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\OptionsGlyph.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_OptionsGlyphUp16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\OptionsGlyphUp16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_Refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\Refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkTheme_SQLdmLogoHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\SQLdmLogoHeader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ServerTree_Tag_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tags-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ServerTree_Servers_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\server-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+   <data name="NavigationPaneServer32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NavigationPaneServer32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -1,3 +1,8 @@
+using Idera.SQLdm.DesktopClient.Properties;
+using Infragistics.Windows.Themes;
+using System;
+using System.Drawing;
+
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
 {
     partial class ResourcesFileActivity
@@ -28,27 +33,28 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
         /// </summary>
         private void InitializeComponent()
         {
-            this.operationalStatusPanel = new System.Windows.Forms.Panel();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+            this.operationalStatusPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.operationalStatusImage = new System.Windows.Forms.PictureBox();
-            this.operationalStatusLabel = new System.Windows.Forms.Label();
-            this.msgPanel = new System.Windows.Forms.Panel();
-            this.msgLabel = new System.Windows.Forms.Label();
-            this.filterPanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.rbSortDescending = new System.Windows.Forms.RadioButton();
-            this.rbSortAscending = new System.Windows.Forms.RadioButton();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.rbSortByDatabasename = new System.Windows.Forms.RadioButton();
-            this.label7 = new System.Windows.Forms.Label();
-            this.rbSortbyFilename = new System.Windows.Forms.RadioButton();
-            this.rbSortbyReads = new System.Windows.Forms.RadioButton();
-            this.rbSortbyWrites = new System.Windows.Forms.RadioButton();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbFiletypeOther = new System.Windows.Forms.CheckBox();
-            this.cbFiletypeLog = new System.Windows.Forms.CheckBox();
-            this.cbFiletypeData = new System.Windows.Forms.CheckBox();
+            this.operationalStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.msgPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.msgLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.filterPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.panel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.rbSortDescending = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.rbSortAscending = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.label9 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.rbSortByDatabasename = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.label7 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.rbSortbyFilename = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.rbSortbyReads = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.rbSortbyWrites = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.label8 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label6 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.cbFiletypeOther = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.cbFiletypeLog = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.cbFiletypeData = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             this.queryMonitorFiltersHeaderStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.hideFilterButton = new System.Windows.Forms.ToolStripButton();
@@ -56,13 +62,13 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
             this.useWildcardLabel = new System.Windows.Forms.ToolStripLabel();
             this.databasesComboBox = new Idera.SQLdm.DesktopClient.Controls.CheckedComboBox();
             this.drivesComboBox = new Idera.SQLdm.DesktopClient.Controls.CheckedComboBox();
-            this.filepathLike = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.filenameLike = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.filepathLike = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.filenameLike = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.fileActivityPanel1 = new Idera.SQLdm.DesktopClient.Controls.FileActivityPanel();
             this.operationalStatusPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.operationalStatusImage)).BeginInit();
@@ -489,7 +495,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            setBackColor();
             this.Controls.Add(this.fileActivityPanel1);
             this.Controls.Add(this.filterPanel);
             this.Controls.Add(this.operationalStatusPanel);
@@ -514,21 +520,39 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
 
         }
 
+        private void setBackColor()
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                this.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor);
+            }
+            else
+            {
+                this.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            Invalidate();
+            setBackColor();
+        }
+
         #endregion
 
-        private System.Windows.Forms.Panel operationalStatusPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  operationalStatusPanel;
         private System.Windows.Forms.PictureBox operationalStatusImage;
-        private System.Windows.Forms.Label operationalStatusLabel;
-        private System.Windows.Forms.Panel msgPanel;
-        private System.Windows.Forms.Label msgLabel;
-        private System.Windows.Forms.Panel filterPanel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox filenameLike;
-        private System.Windows.Forms.TextBox filepathLike;
-        private System.Windows.Forms.Label label5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel operationalStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  msgPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel msgLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  filterPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox filenameLike;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox filepathLike;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label5;
         private Idera.SQLdm.DesktopClient.Controls.CheckedComboBox databasesComboBox;
         private Idera.SQLdm.DesktopClient.Controls.CheckedComboBox drivesComboBox;
         private Idera.SQLdm.DesktopClient.Controls.HeaderStrip queryMonitorFiltersHeaderStrip;
@@ -536,22 +560,22 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
         private System.Windows.Forms.ToolStripButton hideFilterButton;
         private System.Windows.Forms.ToolStripButton clearQueryMonitorFiltersButton;
         private System.Windows.Forms.ToolStripLabel useWildcardLabel;
-        private System.Windows.Forms.CheckBox cbFiletypeData;
-        private System.Windows.Forms.CheckBox cbFiletypeOther;
-        private System.Windows.Forms.CheckBox cbFiletypeLog;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton rbSortbyWrites;
-        private System.Windows.Forms.RadioButton rbSortbyReads;
-        private System.Windows.Forms.RadioButton rbSortbyFilename;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox cbFiletypeData;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox cbFiletypeOther;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox cbFiletypeLog;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label6;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton rbSortbyWrites;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton rbSortbyReads;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton rbSortbyFilename;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label7;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label8;
         private Idera.SQLdm.DesktopClient.Controls.FileActivityPanel fileActivityPanel1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton rbSortDescending;
-        private System.Windows.Forms.RadioButton rbSortAscending;
-        private System.Windows.Forms.RadioButton rbSortByDatabasename;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label9;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton rbSortDescending;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton rbSortAscending;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton rbSortByDatabasename;
 
     }
 }

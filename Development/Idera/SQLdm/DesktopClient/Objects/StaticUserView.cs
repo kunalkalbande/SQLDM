@@ -129,8 +129,7 @@ namespace Idera.SQLdm.DesktopClient.Objects
                 }
                 instances.Add(id);
             }
-            var instanceId=Helpers.RepositoryHelper.GetSelectedInstanceId(id);
-            OnInstancesChanged(new UserViewInstancesChangedEventArgs(UserViewInstancesChangeType.Added, instanceId));
+            OnInstancesChanged(new UserViewInstancesChangedEventArgs(UserViewInstancesChangeType.Added, id));
         }
 
         public void RemoveInstance(int id)
@@ -142,8 +141,7 @@ namespace Idera.SQLdm.DesktopClient.Objects
                 else
                     return;
             }
-            var instanceId=Helpers.RepositoryHelper.GetSelectedInstanceId(id);
-            OnInstancesChanged(new UserViewInstancesChangedEventArgs(UserViewInstancesChangeType.Removed, instanceId));
+            OnInstancesChanged(new UserViewInstancesChangedEventArgs(UserViewInstancesChangeType.Removed, id));
         }
 
         public void ClearInstances()

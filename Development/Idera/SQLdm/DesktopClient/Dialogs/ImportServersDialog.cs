@@ -11,7 +11,8 @@ using Microsoft.Win32;
 using Idera.SQLdm.Common.UI.Dialogs;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs {
-    internal partial class ImportServersDialog : Form {
+    internal partial class ImportServersDialog : BaseDialog
+    {
         // List of available servers displayed in the left-hand listbox.
         private readonly ListBox.ObjectCollection AvailableServers;
 
@@ -44,6 +45,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs {
         /// Ctor is only called by the static Display method.
         /// </summary>
         private ImportServersDialog() {
+            this.DialogHeader = "Import Servers";
             InitializeComponent();
             AvailableServers = dualListSelectorControl1.Available.Items;
             SelectedServers = dualListSelectorControl1.Selected.Items;

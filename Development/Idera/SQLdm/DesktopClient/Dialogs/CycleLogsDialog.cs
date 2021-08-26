@@ -27,6 +27,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public CycleLogsDialog(bool AgentSupported)
         {
+            this.DialogHeader = " Cycle Logs";
             InitializeComponent();
 
             sqlAgentCheckBox.Enabled = AgentSupported;

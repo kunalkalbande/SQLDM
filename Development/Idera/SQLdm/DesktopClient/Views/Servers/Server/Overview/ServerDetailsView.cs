@@ -24,6 +24,7 @@ using Wintellect.PowerCollections;
 using ColumnHeader = Infragistics.Win.UltraWinGrid.ColumnHeader;
 using Idera.SQLdm.Common.Events;
 using Idera.SQLdm.Common.Objects;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
 {
@@ -443,6 +444,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
 
             // Autoscale font size.
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
         #endregion
@@ -5877,6 +5880,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
             chart.AxisX.LabelsFormat.Format = ChartHelper.TimeChartAxisFormat; // SqlDM 10.2 (Anshul Aggarwal) : New History Browser
             chart.AxisX.LabelsFormat.CustomFormat = ChartHelper.TimeChartCustomFormat;
             chart.LegendBox.PlotAreaOnly = false;
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
             chart.Printer.Orientation = PageOrientation.Landscape;
             chart.Printer.Compress = true;
             chart.Printer.ForceColors = true;
@@ -5894,7 +5899,11 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
             AddMetricToChart(ServerDetailsMetrics.PagesPerSecond);
             InitalizeDrilldown(chart); //SQLdm 10.2 (Anshul Aggarwal) : Chart Drilldown functionality
         }
-
+        //SQLDM-30848, adapting resolutions, Kartik
+        private void ScaleControlsAsPerResolution()
+        {
+            chart.LegendBox.AutoSize = true;
+        }
         private void AddSelectedMetricToChart()
         {
             if (detailsGrid.Selected.Rows.Count == 1)
@@ -6156,18 +6165,24 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
 
         private void detailsGrid_InitializeLayout(object sender, InitializeLayoutEventArgs e)
         {
+
+            //Saurabh, UX_Meodernization_2 SQLDM-30848
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.detailsGrid, AutoScaleSizeHelper.ControlType.UltraGridCheckbox);
+            }
             UltraGridColumn col;
             UltraGridBand band;
 
 
             band = detailsGrid.DisplayLayout.Bands[0];
             col = band.Columns[COL_VISIBLE];
+            //col.PerformAutoResize(PerformAutoSizeType.AllRowsInBand, true);
             col.Header.Caption = string.Empty;
             col.Header.Appearance.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ChartGridHeader;
             col.Header.Appearance.ImageHAlign = HAlign.Center;
             col.Header.Fixed = true;
             col.Width = 33;
-
             col = band.Columns["State"];
             detailsGrid.DisplayLayout.Bands[0].SortedColumns.Add(col, true);
 
@@ -6270,6 +6285,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
                 {
                     row[COL_VISIBLE] = System.DBNull.Value;
                     e.Row.Cells[0].Style = Infragistics.Win.UltraWinGrid.ColumnStyle.Image;
+
                 }
             }
         }
@@ -6611,6 +6627,58 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Overview
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+            if(AutoScaleSizeHelper.isScalingRequired)
+            {
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.detailsGrid, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.2F, 1.2F), false);
+            }
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.propertiesGrid);
+            themeManager.updateGridTheme(this.detailsGrid);
         }
     }
+
+    //public class CheckBoxCreationFilter : IUIElementCreationFilter
+    //{
+    //    #region IUIElementCreationFilter Members
+
+    //    void IUIElementCreationFilter.AfterCreateChildElements(UIElement parent)
+    //    {
+    //        if (!AutoScaleSizeHelper.isScalingRequired)
+    //            return;
+    //        if (parent is CheckEditorCheckBoxUIElement)
+    //        {
+    //            UIElement checkIndicatorUIElement = parent.GetDescendant(typeof(CheckIndicatorUIElement));
+    //            if (checkIndicatorUIElement != null)
+    //            {
+    //                int maxExtent = (Math.Min(parent.Rect.Width, parent.Rect.Height))-5;
+    //                int newX = parent.Rect.X + ((parent.Rect.Width - maxExtent) / 2);
+    //                int newY = parent.Rect.Y + ((parent.Rect.Height - maxExtent) / 2);
+    //                Rectangle rect = new Rectangle(
+    //                    newX,
+    //                    newY,
+    //                    maxExtent,
+    //                    maxExtent
+    //                    );
+    //                checkIndicatorUIElement.Rect = rect;
+    //            }
+    //        }
+    //    }
+
+    //    bool IUIElementCreationFilter.BeforeCreateChildElements(UIElement parent)
+    //    {
+    //        return false;
+    //    }
+
+    //    #endregion
+    //}
 }

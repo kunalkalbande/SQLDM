@@ -23,7 +23,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using System.Diagnostics;
     using BBS.TracerX;
     using Microsoft.Win32;
-    public partial class PowerShellDialog : Form
+    public partial class PowerShellDialog : BaseDialog
     {
         private static readonly Logger LOG = Logger.GetLogger("PowerShellDialog");
         private PowerShellDestination destination;
@@ -35,6 +35,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public PowerShellDialog()
         {
+            this.DialogHeader = "Power Shell Command Action";
             InitializeComponent();
             sqlCaretData = new CaretData();
             sqlCaretData.editor = tPowerShellTextBox;

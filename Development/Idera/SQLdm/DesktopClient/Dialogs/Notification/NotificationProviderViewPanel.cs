@@ -17,6 +17,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using Infragistics.Win;
     using System.Drawing;
     using System.ComponentModel;
+    using Infragistics.Windows.Themes;
+    using Idera.SQLdm.DesktopClient.Controls;
 
     public partial class NotificationProviderViewPanel : UserControl
     {
@@ -38,6 +40,20 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
             updating = 0;
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.providerListView);
         }
 
         public Type ProviderType

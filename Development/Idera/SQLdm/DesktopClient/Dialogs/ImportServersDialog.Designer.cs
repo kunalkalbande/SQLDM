@@ -23,10 +23,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonOK = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.buttonOK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.buttonCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.dualListSelectorControl1 = new Idera.SQLdm.DesktopClient.Controls.DualListSelectorControl();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -108,10 +108,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs {
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button buttonOK;
-        private System.Windows.Forms.Button buttonCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton buttonOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton buttonCancel;
         private Idera.SQLdm.DesktopClient.Controls.DualListSelectorControl dualListSelectorControl1;
     }
 }

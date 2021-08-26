@@ -12,7 +12,7 @@ using Idera.SQLdm.DesktopClient.Properties;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs.AzureConfigurations
 {
-    public partial class AddEditAzureAppProfile : Form
+    public partial class AddEditAzureAppProfile : BaseDialog
     {
         private static readonly Logger Log = Logger.GetLogger("AzureProfilesConfiguration");
         private readonly IAzureApplicationProfile inputAppProfile;

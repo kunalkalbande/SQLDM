@@ -10,7 +10,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using System.Collections.Generic;
     using System.ComponentModel;
 
-    public partial class NotificationRulesDialog : Form
+    public partial class NotificationRulesDialog : BaseDialog
     {
         private bool providersInitialized;
 
@@ -18,6 +18,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public NotificationRulesDialog(IManagementService managementService)
         {
+            this.DialogHeader = "Alert Actions and Responses";
             InitializeComponent();
             ultraTabControl1.DrawFilter = new HideFocusRectangleDrawFilter();
             this.managementService = managementService;

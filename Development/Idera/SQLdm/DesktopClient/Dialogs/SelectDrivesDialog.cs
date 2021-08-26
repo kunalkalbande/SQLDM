@@ -7,7 +7,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Properties;
     using Wintellect.PowerCollections;
 
-    public partial class SelectDrivesDialog : Form, IEqualityComparer<string>
+    public partial class SelectDrivesDialog : BaseDialog, IEqualityComparer<string>
     {
         private int serverId;
         private Set<string> selectedDrives;
@@ -15,6 +15,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         
         public SelectDrivesDialog(int serverId, IEnumerable<string> selectedDrives)
         {
+            this.DialogHeader = "Excluded Disk Drives";
             this.serverId = serverId;
             
             this.selectedDrives = new Set<string>(this);

@@ -12,7 +12,7 @@ using Wintellect.PowerCollections;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class EditConfigurationValueDialog : Form
+    public partial class EditConfigurationValueDialog : BaseDialog
     {
         private readonly int instanceId;
         private readonly string configurationOptionName;
@@ -21,6 +21,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public EditConfigurationValueDialog(int instanceId, string configurationOptionName, int minimumValue, int maximumValue, bool restartRequired)
         {
+            this.DialogHeader = "Edit Configuration Value";
             InitializeComponent();
 
             this.instanceId = instanceId;

@@ -14,7 +14,7 @@ using Idera.SQLdm.DesktopClient.Properties;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class ConfigureLogsDialog : Form
+    public partial class ConfigureLogsDialog : BaseDialog
     {
         #region constants
 
@@ -34,6 +34,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public ConfigureLogsDialog(int instanceId)
         {
+            this.DialogHeader = "Configure SQL Server Logs";
             InitializeComponent();
             AdaptFontSize();
             this.instanceId = instanceId;
@@ -48,6 +49,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public ConfigureLogsDialog(int instanceId, int? maxLogs, bool unlimited)
         {
+            this.DialogHeader = "Configure SQL Server Logs";
             InitializeComponent();
             AdaptFontSize();
             this.instanceId = instanceId;

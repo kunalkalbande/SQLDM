@@ -1,3 +1,5 @@
+using Idera.SQLdm.DesktopClient.Properties;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
@@ -30,6 +32,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
+            bool isDarkThemeSelected = Properties.Settings.Default.ColorScheme == "Dark";
             this.components = new System.ComponentModel.Container();
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool1 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("tagsPopupMenu");
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
@@ -39,44 +42,44 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance6 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab3 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab5 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
             this.ultraTabPageControl2 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this._generalPropertyPage = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
-            this.mainContainerPanel = new System.Windows.Forms.TableLayoutPanel();
+            this._generalPropertyPage = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage(isDarkThemeSelected);
+            this.mainContainerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
             this._generalHdrStrpStatus = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this._generalChkBxEnabled = new System.Windows.Forms.CheckBox();
+            this._generalChkBxEnabled = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             this._generalHdrStrpPermission = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this._generalRdBtnView = new System.Windows.Forms.RadioButton();
-            this._generalRdBtnModify = new System.Windows.Forms.RadioButton();
-            this._generalRdBtnAdministrator = new System.Windows.Forms.RadioButton();
+            this._generalRdBtnView = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this._generalRdBtnModify = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this._generalRdBtnAdministrator = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
             //Operator Security Role Changes - 10.3
-            this._generalRdBtnReadOnlyPlus = new System.Windows.Forms.RadioButton();
+            this._generalRdBtnReadOnlyPlus = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
             this._generalHdrStrpComment = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this._generalTxtBxComment = new System.Windows.Forms.TextBox();
+            this._generalTxtBxComment = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
             this._generalHdrStrpWebAppPermission = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this._generalChkBxWebAppPermission = new System.Windows.Forms.CheckBox();
+            this._generalChkBxWebAppPermission = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             this.ultraTabPageControl3 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this._serversPropertyPage = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
+            this._serversPropertyPage = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage(isDarkThemeSelected);
             this._AddPermissionWizard_Toolbars_Dock_Area_Top = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
             this.toolbarsManager = new Idera.SQLdm.DesktopClient.Controls.ContextMenuManager(this.components);
             this._AddPermissionWizard_Toolbars_Dock_Area_Bottom = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
             this._AddPermissionWizard_Toolbars_Dock_Area_Left = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
             this._AddPermissionWizard_Toolbars_Dock_Area_Right = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tagsDropDownButton = new Infragistics.Win.Misc.UltraDropDownButton();
-            this._serversPageInfo = new Divelements.WizardFramework.InformationBox();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.tagsDropDownButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraDropDownButton();
+            this._serversPageInfo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
             this._serversListSelectorControl = new Idera.SQLdm.DesktopClient.Controls.DualListSelectorControl();
             this.ultraTabPageControl8 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.office2007PropertyPage7 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
+            this.office2007PropertyPage7 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage(isDarkThemeSelected);
             this.ultraTabPageControl6 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.office2007PropertyPage5 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
+            this.office2007PropertyPage5 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage(isDarkThemeSelected);
             this.ultraTabPageControl1 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.smoothingContentPropertyPage = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
+            this.smoothingContentPropertyPage = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage(isDarkThemeSelected);
             this.ultraTabSharedControlsPage1 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
-            this._tabControl = new Infragistics.Win.UltraWinTabControl.UltraTabControl();
-            this._btnCancel = new System.Windows.Forms.Button();
-            this._btnOK = new System.Windows.Forms.Button();
+            this._tabControl = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTabControl();
+            this._btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this._btnOK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this._PermissionPropertyDialog_Toolbars_Dock_Area_Left = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
             this._PermissionPropertyDialog_Toolbars_Dock_Area_Right = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
             this._PermissionPropertyDialog_Toolbars_Dock_Area_Top = new Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea();
@@ -213,7 +216,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this._generalRdBtnView.Size = new System.Drawing.Size(288, 17);
             this._generalRdBtnView.TabIndex = 1;
             this._generalRdBtnView.TabStop = true;
-            this._generalRdBtnView.Text = "&View data collected for monitored SQL Server instances";
+            this._generalRdBtnView.Text = "View data collected for monitored SQL Server instances";
             this._generalRdBtnView.UseVisualStyleBackColor = true;
             this._generalRdBtnView.CheckedChanged += new System.EventHandler(this._generalRdBtnView_CheckedChanged);
             // 
@@ -224,7 +227,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this._generalRdBtnModify.Name = "_generalRdBtnModify";
             this._generalRdBtnModify.Size = new System.Drawing.Size(406, 17);
             this._generalRdBtnModify.TabIndex = 17;
-            this._generalRdBtnModify.Text = "&Modify configuration and view data collected for monitored SQL Server instances";
+            this._generalRdBtnModify.Text = "Modify configuration and view data collected for monitored SQL Server instances";
             this._generalRdBtnModify.UseVisualStyleBackColor = true;
             this._generalRdBtnModify.CheckedChanged += new System.EventHandler(this._generalRdBtnModify_CheckedChanged);
 			// 
@@ -235,7 +238,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 			this._generalRdBtnReadOnlyPlus.Name = "_generalRdBtnReadOnlyPlus";
 			this._generalRdBtnReadOnlyPlus.Size = new System.Drawing.Size(406, 17);
 			this._generalRdBtnReadOnlyPlus.TabIndex = 18;
-			this._generalRdBtnReadOnlyPlus.Text = "&View data, acknowledge alarms, and control maintenance mode status";
+			this._generalRdBtnReadOnlyPlus.Text = "View data, acknowledge alarms, and control maintenance mode status";
 			this._generalRdBtnReadOnlyPlus.UseVisualStyleBackColor = true;
 			this._generalRdBtnReadOnlyPlus.CheckedChanged += new System.EventHandler(this._generalRdBtnReadOnlyPlus_CheckedChanged);
             // 
@@ -246,7 +249,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this._generalRdBtnAdministrator.Name = "_generalRdBtnAdministrator";
             this._generalRdBtnAdministrator.Size = new System.Drawing.Size(252, 17);
             this._generalRdBtnAdministrator.TabIndex = 19;
-            this._generalRdBtnAdministrator.Text = "&Administrator powers in SQL Diagnostic Manager";
+            this._generalRdBtnAdministrator.Text = "Administrator powers in SQL Diagnostic Manager";
             this._generalRdBtnAdministrator.UseVisualStyleBackColor = true;
             this._generalRdBtnAdministrator.CheckedChanged += new System.EventHandler(this._generalRdBtnAdministrator_CheckedChanged);
             // 
@@ -409,11 +412,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // 
             this.tagsDropDownButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            appearance1.BackColor = System.Drawing.Color.White;
-            appearance1.BorderColor = System.Drawing.SystemColors.ControlDark;
-            appearance1.TextHAlignAsString = "Left";
-            this.tagsDropDownButton.Appearance = appearance1;
-            this.tagsDropDownButton.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton;
+            //appearance1.BackColor = System.Drawing.Color.White;
+            //appearance1.BorderColor = System.Drawing.SystemColors.ControlDark;
+            //appearance1.TextHAlignAsString = "Left";
+            //this.tagsDropDownButton.Appearance = appearance1;
+            this.tagsDropDownButton.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Flat;
             this.tagsDropDownButton.Location = new System.Drawing.Point(23, 105);
             this.tagsDropDownButton.Name = "tagsDropDownButton";
             this.tagsDropDownButton.PopupItemKey = "tagsPopupMenu";
@@ -421,7 +424,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.tagsDropDownButton.ShowFocusRect = false;
             this.tagsDropDownButton.ShowOutline = false;
             this.tagsDropDownButton.Size = new System.Drawing.Size(459, 22);
-            this.tagsDropDownButton.Style = Infragistics.Win.Misc.SplitButtonDisplayStyle.DropDownButtonOnly;
+            //this.tagsDropDownButton.Style = Infragistics.Win.Misc.SplitButtonDisplayStyle.DropDownButtonOnly;
             this.tagsDropDownButton.TabIndex = 24;
             this.tagsDropDownButton.UseAppStyling = false;
             this.tagsDropDownButton.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
@@ -583,7 +586,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this._tabControl.Size = new System.Drawing.Size(646, 499);
             this._tabControl.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.StateButtons;
             this._tabControl.TabButtonStyle = Infragistics.Win.UIElementButtonStyle.Flat;
-            appearance5.BackColor = System.Drawing.Color.White;
+            appearance5.BackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor) : System.Drawing.Color.White;
             appearance5.BorderColor = System.Drawing.Color.Black;
             this._tabControl.TabHeaderAreaAppearance = appearance5;
             this._tabControl.TabIndex = 0;
@@ -612,7 +615,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this._btnCancel.Name = "_btnCancel";
             this._btnCancel.Size = new System.Drawing.Size(75, 23);
             this._btnCancel.TabIndex = 2;
-            this._btnCancel.Text = "&Cancel";
+            this._btnCancel.Text = "Cancel";
             this._btnCancel.UseVisualStyleBackColor = true;
             // 
             // _btnOK
@@ -623,7 +626,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this._btnOK.Name = "_btnOK";
             this._btnOK.Size = new System.Drawing.Size(75, 23);
             this._btnOK.TabIndex = 1;
-            this._btnOK.Text = "&OK";
+            this._btnOK.Text = "OK";
             this._btnOK.UseVisualStyleBackColor = true;
             this._btnOK.Click += new System.EventHandler(this._btnOK_Click);
             // 
@@ -733,24 +736,24 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private Infragistics.Win.UltraWinTabControl.UltraTabControl _tabControl;
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl2;
         private Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage _generalPropertyPage;
-        private System.Windows.Forms.Button _btnCancel;
-        private System.Windows.Forms.Button _btnOK;
-        private System.Windows.Forms.TextBox _generalTxtBxComment;
-        private System.Windows.Forms.RadioButton _generalRdBtnAdministrator;
-        private System.Windows.Forms.RadioButton _generalRdBtnModify;
-        private System.Windows.Forms.RadioButton _generalRdBtnView;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton _btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton _btnOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox _generalTxtBxComment;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton _generalRdBtnAdministrator;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton _generalRdBtnModify;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton _generalRdBtnView;
         //Operator Security Role Changes - 10.3
-        private System.Windows.Forms.RadioButton _generalRdBtnReadOnlyPlus;
-        private System.Windows.Forms.CheckBox _generalChkBxEnabled;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton _generalRdBtnReadOnlyPlus;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox _generalChkBxEnabled;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip _generalHdrStrpComment;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip _generalHdrStrpPermission;
         private Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip _generalHdrStrpStatus;
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl3;
         private Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage _serversPropertyPage;
         private Idera.SQLdm.DesktopClient.Controls.DualListSelectorControl _serversListSelectorControl;
-        private Divelements.WizardFramework.InformationBox _serversPageInfo;
-        private System.Windows.Forms.Label label1;
-        private Infragistics.Win.Misc.UltraDropDownButton tagsDropDownButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox _serversPageInfo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraDropDownButton tagsDropDownButton;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _AddPermissionWizard_Toolbars_Dock_Area_Top;
         private Idera.SQLdm.DesktopClient.Controls.ContextMenuManager toolbarsManager;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _PermissionPropertyDialog_Toolbars_Dock_Area_Left;
@@ -761,7 +764,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _AddPermissionWizard_Toolbars_Dock_Area_Left;
         private Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea _AddPermissionWizard_Toolbars_Dock_Area_Right;
         private System.ComponentModel.BackgroundWorker initializationWorker;
-        private System.Windows.Forms.TableLayoutPanel mainContainerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel mainContainerPanel;
         private Controls.PropertiesHeaderStrip _generalHdrStrpWebAppPermission;
         private CheckBox _generalChkBxWebAppPermission;
 

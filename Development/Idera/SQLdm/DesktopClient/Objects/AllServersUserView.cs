@@ -10,7 +10,6 @@ using System.Text;
 namespace Idera.SQLdm.DesktopClient.Objects
 {
     using System.Collections.Generic;
-    using System.Linq;
 
     internal sealed class AllServersUserView : UserView
     {
@@ -32,12 +31,7 @@ namespace Idera.SQLdm.DesktopClient.Objects
         {
             get
             {
-                var i = new List<int>();
-                foreach(var inst in ApplicationModel.Default.RepoActiveInstances)
-                {
-                    i.AddRange(inst.Value.Select(x => x.InstanceId).ToList());
-                }
-                return i;
+                return ApplicationModel.Default.ActiveInstances.Keys;
             }
         }
 
@@ -73,8 +67,7 @@ namespace Idera.SQLdm.DesktopClient.Objects
                 {
                     if (uvs != UserViewStatus.Critical)
                     {
-                        var instanceId = Helpers.RepositoryHelper.GetSelectedInstanceId(id);
-                        MonitoredSqlServerStatus status = applicationModel.GetInstanceStatus(instanceId);
+                        MonitoredSqlServerStatus status = applicationModel.GetInstanceStatus(id);
 
                         if (status != null)
                         {

@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelApplicationName = new System.Windows.Forms.Label();
-            this._applicationNameTextBox = new System.Windows.Forms.TextBox();
+            this.labelApplicationName = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._applicationNameTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
             this.propertiesHeaderStrip1 = new PropertiesHeaderStrip();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this._databaseFilterTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._databaseFilterTypeComboBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
             this.propertiesHeaderStrip2 = new PropertiesHeaderStrip();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -144,12 +144,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelApplicationName;
-        private System.Windows.Forms.TextBox _applicationNameTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel labelApplicationName;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox _applicationNameTextBox;
         private PropertiesHeaderStrip propertiesHeaderStrip1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox _databaseFilterTypeComboBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox _databaseFilterTypeComboBox;
         private PropertiesHeaderStrip propertiesHeaderStrip2;
        
     }

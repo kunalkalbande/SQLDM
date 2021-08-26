@@ -12,7 +12,7 @@ using Idera.SQLdm.DesktopClient.Properties;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    internal partial class StaticViewPropertiesDialog : Form
+    internal partial class StaticViewPropertiesDialog : BaseDialog
     {
         private const string NewViewDialogText = "Create View";
         private const string UserViewPropertiesDialogText = "My View - {0}";
@@ -25,6 +25,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public StaticViewPropertiesDialog(StaticUserView userView)
         {
+            this.DialogHeader = "Create View";
             this.userView = userView;
 
             InitializeComponent();

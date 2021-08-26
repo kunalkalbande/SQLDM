@@ -46,19 +46,19 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList1 = new Infragistics.Win.ValueList(551181110);
+            Infragistics.Win.ValueList valueList1 = new Controls.CustomControls.CustomValueList(551181110);
             Infragistics.Win.ValueListItem valueListItem1 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem2 = new Infragistics.Win.ValueListItem();
-            Infragistics.Win.ValueList valueList2 = new Infragistics.Win.ValueList(551429563);
+            Infragistics.Win.ValueList valueList2 = new Controls.CustomControls.CustomValueList(551429563);
             Infragistics.Win.ValueListItem valueListItem3 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem4 = new Infragistics.Win.ValueListItem();
-            this.contentLayoutPanel = new System.Windows.Forms.Panel();
+            this.contentLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.tablesGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.infoLabel = new System.Windows.Forms.Label();
-            this.selectAll = new System.Windows.Forms.CheckBox();
-            this.buttonLayoutPanel = new System.Windows.Forms.Panel();
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.infoLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.selectAll = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.buttonLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.contentLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablesGrid)).BeginInit();
             this.buttonLayoutPanel.SuspendLayout();
@@ -278,13 +278,13 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Panel contentLayoutPanel;
-        private System.Windows.Forms.CheckBox selectAll;
-        private System.Windows.Forms.Panel buttonLayoutPanel;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  contentLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox selectAll;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  buttonLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
         private Infragistics.Win.UltraWinGrid.UltraGrid tablesGrid;
-        private System.Windows.Forms.Label infoLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel infoLabel;
 
     }
 }

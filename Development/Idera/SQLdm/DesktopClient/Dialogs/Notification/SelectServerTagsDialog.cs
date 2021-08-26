@@ -12,7 +12,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using System.Threading;
     using Common;
 
-    public partial class SelectServerTagsDialog : Form
+    public partial class SelectServerTagsDialog : BaseDialog
     {
         private ICollection<string> tags;
         private ICollection<string> selectedTags;
@@ -23,6 +23,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public SelectServerTagsDialog()
         {
+            this.DialogHeader = "Tags";
             InitializeComponent();
             if (postDelegate == null)
                 postDelegate = new ThreadStart(UpdateButtons);

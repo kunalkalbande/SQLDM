@@ -24,6 +24,9 @@ using Idera.SQLdm.DesktopClient.Properties;
 using Idera.SQLdm.DesktopClient.Views.Tasks;
 using Idera.SQLdm.DesktopClient.Objects;
 
+using System.IO;
+using System.Drawing.Imaging;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
 {
@@ -38,18 +41,83 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
 
         private XamNavigationPanes selectedPane = XamNavigationPanes.Servers;
 
-       
+        public System.Drawing.Color npBackColor = Settings.Default.ColorScheme == "Dark" ? System.Drawing.ColorTranslator.FromHtml("#012A4F") : System.Drawing.Color.White;
+        public System.Drawing.Color npForeColor = Settings.Default.ColorScheme == "Dark" ? System.Drawing.Color.White : System.Drawing.Color.Black;
+
 
         public XamSecondaryNavigationPane()
         {
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+
             InitializeComponent();
+
+            var addBitmap = DesktopClient.Properties.Resources.New24x24;
+            BitmapImage addBitmapImg = ConvertBitmapToBitmapImg(addBitmap);
+            imgAddReport.Source = addBitmapImg;
+
+            var impBitmap = DesktopClient.Properties.Resources.Import24x24;
+            BitmapImage impBitmapImg = ConvertBitmapToBitmapImg(impBitmap);
+            imgImpReport.Source = impBitmapImg;
+
+            Brush bgBrush = GetBrush(npBackColor);
+            Brush frBrush = GetBrush(npForeColor);
+
+            SetCustomReportColor(bgBrush, frBrush);
 
             ApplicationModel.Default.ActiveInstances.Changed += ActiveInstances_Changed;
 
             Change(selectedPane, 0);
 
-            
+
         }
+
+        private void SetCustomReportColor(Brush bgBrush, Brush frBrush)
+        {
+            newCustomReport.Background = bgBrush;
+            importCustomReport.Background = bgBrush;
+            menuSavedReports.Background = bgBrush;
+
+            newCustomReport.Foreground = frBrush;
+            importCustomReport.Foreground = frBrush;
+            menuSavedReports.Foreground = frBrush;
+        }
+
+        private Brush GetBrush(System.Drawing.Color color)
+        {
+            System.Windows.Media.Color mediaColor =
+            System.Windows.Media.Color.FromArgb(color.A, color.R, color.G, color.B);
+            Brush brush = new SolidColorBrush(mediaColor);
+            return brush;
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            npBackColor = Settings.Default.ColorScheme == "Dark" ? System.Drawing.ColorTranslator.FromHtml("#00a1dd") : System.Drawing.Color.White;
+            npForeColor = Settings.Default.ColorScheme == "Dark" ? System.Drawing.Color.White : System.Drawing.Color.Black;
+
+            Brush bgBrush = GetBrush(npBackColor);
+            Brush frBrush = GetBrush(npForeColor);
+
+            SetCustomReportColor(bgBrush, frBrush);
+        }
+
+        private static BitmapImage ConvertBitmapToBitmapImg(System.Drawing.Bitmap bitmap)
+        {
+            BitmapImage result = null;
+            using (MemoryStream stream = new MemoryStream())
+            {
+                result = new BitmapImage();
+                bitmap.Save(stream, ImageFormat.Png); // Was .Bmp, but this did not show a transparent background.
+                stream.Position = 0;
+                result.BeginInit();
+                result.CacheOption = BitmapCacheOption.OnLoad;
+                result.StreamSource = stream;
+                result.EndInit();
+                result.Freeze();
+            }
+            return result;
+        }
+
         bool firstInstanceChange = true;
         private void ActiveInstances_Changed(object sender, MonitoredSqlServerCollectionChangedEventArgs e)
         {
@@ -685,9 +753,13 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
 
         private void DeleteCustomReport_Click(object sender, RoutedEventArgs e)
         {
-            ((MainWindowViewModel)this.DataContext).DeleteCustomReport();
-
+            DeleteCustomReport();
             e.Handled = true;
+        }
+
+        public void DeleteCustomReport()
+        {
+            ((MainWindowViewModel)this.DataContext).DeleteCustomReport();
         }
 
         private void EditCustomReport_Click(object sender, RoutedEventArgs e)

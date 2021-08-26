@@ -10,10 +10,11 @@ using Constants=Idera.SQLdm.Common.Constants;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class GenericFilterDialog : Form
+    public partial class GenericFilterDialog : BaseDialog
     {
         public GenericFilterDialog(IUserFilter filterObject)
         {
+            this.DialogHeader = "Filter Settings";
             InitializeComponent();
             Icon = Resources.FilterIcon;
 

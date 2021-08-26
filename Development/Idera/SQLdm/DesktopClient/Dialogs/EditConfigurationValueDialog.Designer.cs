@@ -28,11 +28,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
-            this.informationBox = new Divelements.WizardFramework.InformationBox();
-            this.newValueDescriptionLabel = new System.Windows.Forms.Label();
-            this.newValueTextBox = new System.Windows.Forms.TextBox();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.informationBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
+            this.newValueDescriptionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.newValueTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
@@ -121,11 +121,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
-        private Divelements.WizardFramework.InformationBox informationBox;
-        private System.Windows.Forms.Label newValueDescriptionLabel;
-        private System.Windows.Forms.TextBox newValueTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox informationBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel newValueDescriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox newValueTextBox;
         private System.ComponentModel.BackgroundWorker backgroundWorker;
     }
 }

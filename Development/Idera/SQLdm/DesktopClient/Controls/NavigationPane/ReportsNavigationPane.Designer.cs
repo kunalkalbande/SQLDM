@@ -38,39 +38,39 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
         /// </summary>
         private void InitializeComponent()
         {
-            this.reportOptionsPanel = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.reportOptionsPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.panel3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.helpPanel = new Idera.SQLdm.DesktopClient.Controls.RoundedPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.reportAbout = new System.Windows.Forms.LinkLabel();
-            this.lblCommunityCentre = new System.Windows.Forms.LinkLabel();
-            this.customReportOptionsContainerPanel = new System.Windows.Forms.Panel();
+            this.reportAbout = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.lblCommunityCentre = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.customReportOptionsContainerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.customReportsPanel = new Idera.SQLdm.DesktopClient.Controls.RoundedPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblDeleteCustomReport = new System.Windows.Forms.LinkLabel();
-            this.lblImportCustomReport = new System.Windows.Forms.LinkLabel();
-            this.lblExportCustomReport = new System.Windows.Forms.LinkLabel();
-            this.lblNewCustomReport = new System.Windows.Forms.LinkLabel();
-            this.lblEditCustomReport = new System.Windows.Forms.LinkLabel();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblDeleteCustomReport = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.lblImportCustomReport = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.lblExportCustomReport = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.lblNewCustomReport = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.lblEditCustomReport = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBoxImport = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.deploymentOptionsContainerPanel = new System.Windows.Forms.Panel();
+            this.deploymentOptionsContainerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.deploymentOptionsPanel = new Idera.SQLdm.DesktopClient.Controls.RoundedPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.scheduleEmail = new System.Windows.Forms.LinkLabel();
-            this.reportDeploy = new System.Windows.Forms.LinkLabel();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.scheduleEmail = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.reportDeploy = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.reportsNavigationTreePanel = new System.Windows.Forms.Panel();
-            this.reportsNavigationTreeView = new System.Windows.Forms.TreeView();
+            this.reportsNavigationTreePanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.reportsNavigationTreeView = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTreeView();
             this.reportOptionsPanel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.helpPanel.SuspendLayout();
@@ -636,35 +636,35 @@ namespace Idera.SQLdm.DesktopClient.Controls.NavigationPane
 
         private RoundedPanel deploymentOptionsPanel;
         private RoundedPanel helpPanel;
-        private System.Windows.Forms.LinkLabel reportAbout;
-        private System.Windows.Forms.LinkLabel lblCommunityCentre;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel reportAbout;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel lblCommunityCentre;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.LinkLabel reportDeploy;
-        private System.Windows.Forms.Panel reportOptionsPanel;
-        private System.Windows.Forms.LinkLabel scheduleEmail;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel reportDeploy;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  reportOptionsPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel scheduleEmail;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel reportsNavigationTreePanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  reportsNavigationTreePanel;
         private System.Windows.Forms.TreeView reportsNavigationTreeView;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel deploymentOptionsContainerPanel;
-        private System.Windows.Forms.Panel customReportOptionsContainerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  deploymentOptionsContainerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  customReportOptionsContainerPanel;
         private RoundedPanel customReportsPanel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.LinkLabel lblDeleteCustomReport;
-        private System.Windows.Forms.LinkLabel lblImportCustomReport;//SQLdm 9.1 (Vineet Kumar)  (Community Integration) -- Adding import/export icons
-        private System.Windows.Forms.LinkLabel lblExportCustomReport;//SQLdm 9.1 (Vineet Kumar)  (Community Integration) -- Adding import/export icons
-        private System.Windows.Forms.LinkLabel lblEditCustomReport;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel lblDeleteCustomReport;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel lblImportCustomReport;//SQLdm 9.1 (Vineet Kumar)  (Community Integration) -- Adding import/export icons
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel lblExportCustomReport;//SQLdm 9.1 (Vineet Kumar)  (Community Integration) -- Adding import/export icons
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel lblEditCustomReport;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBoxImport;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.LinkLabel lblNewCustomReport;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel lblNewCustomReport;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox8;
     }

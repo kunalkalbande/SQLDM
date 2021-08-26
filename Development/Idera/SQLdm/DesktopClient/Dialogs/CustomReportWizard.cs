@@ -25,6 +25,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Wintellect.PowerCollections;
     using Infragistics.Win;
     using System.Globalization;
+    using Idera.SQLdm.DesktopClient.Controls;
+    using Infragistics.Windows.Themes;
 
     public partial class CustomReportWizard : Form
     {
@@ -137,6 +139,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
             // Autoscale font size.
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
         #endregion
         #region Form and control Events
@@ -1500,6 +1504,18 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.grdSelectedCounters);
         }
 
 

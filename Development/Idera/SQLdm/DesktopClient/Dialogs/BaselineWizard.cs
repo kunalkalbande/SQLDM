@@ -14,6 +14,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
     using Idera.SQLdm.Common.Data;
     using Idera.SQLdm.Common.Objects;
     using Idera.SQLdm.Common.UI.Dialogs;
+    using Idera.SQLdm.DesktopClient.Controls;
+    using Infragistics.Windows.Themes;
     using Properties;
 
     public partial class BaselineWizard : Form
@@ -34,6 +36,20 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
             instance = ApplicationModel.Default.ActiveInstances[instanceId];
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.alertsGrid);
         }
 
         public static DialogResult Show(IWin32Window owner, int instanceId, ref DateTime?  StartTime, ref DateTime? EndTime, out List<BaselineItemData> baselineData)

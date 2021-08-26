@@ -17,30 +17,47 @@ using Idera.SQLdm.Common.Configuration;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
+    using Controls.CustomControls;
     using Idera.SQLdm.Common.Services;
     using Idera.SQLdm.DesktopClient.Properties;
+    using Infragistics.Windows.Themes;
 
-    public partial class GroomingOptionsDialog : Form
+    public partial class GroomingOptionsDialog : BaseDialog
     {
         string _timeFormat;
         TimeSpan _timeOffset;
         private bool isScheduleOutOfSync = false;
         private bool isAggregationScheduleOutOfSync = false;
-     
+
         public GroomingOptionsDialog()
         {
+            this.DialogHeader = "Grooming Options";
             InitializeComponent();
-            
+
             _timeFormat = currentTimeLabel.Text;
-        
+
             // Create the job if it doesn't exist.
             ManagementServiceHelper.GetDefaultService().CreateGroomJob();
             AdaptFontSize();
+            //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+            else
+            {
+                this.ClientSize = new Size(650, 600);
+                this.containerPanel.Size = new Size(600, 550);
+                this.containerPanel.AutoScrollMinSize = new Size(550, 750);
+                this.containerPanel.AutoScroll = true;
+            }
+            FormBorderStyle = FormBorderStyle.Sizable;
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+
         }
 
-        private void GroomingOptionsDialog_Load(object sender, EventArgs e) {
+        private void GroomingOptionsDialog_Load(object sender, EventArgs e)
+        {
             GroomingConfiguration configuration = ManagementServiceHelper.GetDefaultService().GetGrooming();
-            groomingTimeEditor.Value = DateTime.Today + configuration.GroomTime ;
+            groomingTimeEditor.Value = DateTime.Today + configuration.GroomTime;
             metricsGroomingThresholdNumericUpDown.Value = configuration.MetricsDays;
             alertsGroomingThresholdNumericUpDown.Value = configuration.AlertsDays;
             activityGroomingThresholdNumericUpDown.Value = configuration.ActivityDays;
@@ -65,14 +82,15 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             apply.Enabled = false;
 
 
-            if (!configuration.AgentIsRunning) {
+            if (!configuration.AgentIsRunning)
+            {
                 ShowAgentMessage();
             }
         }
 
         private void UpdateSchedule(GroomingConfiguration configuration, bool showWarningMsg)
         {
-            if(configuration.ScheduleSubDayType != GroomingConfiguration.SubDayType.Once 
+            if (configuration.ScheduleSubDayType != GroomingConfiguration.SubDayType.Once
                         && configuration.ScheduleSubDayType != GroomingConfiguration.SubDayType.Hours)
             {
                 onceDailyButton.Checked = true;
@@ -89,7 +107,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             {
                 hourlyButton.Checked = true;
                 groomingTimeEditor.Value = DateTime.Today + TimeSpan.FromHours(3);
-                groomTimeIntervalCombo.SelectedIndex = configuration.GroomTime.Seconds != 0 ? 
+                groomTimeIntervalCombo.SelectedIndex = configuration.GroomTime.Seconds != 0 ?
                     configuration.GroomTime.Seconds - 1 : 3;
             }
 
@@ -133,7 +151,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         }
 
 
-        private void groomNow_Click(object sender, EventArgs e) {
+        private void groomNow_Click(object sender, EventArgs e)
+        {
             GroomingConfiguration configuration = null;
             try
             {
@@ -293,25 +312,30 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             }
         }
 
-        private void ShowAgentMessage() {
+        private void ShowAgentMessage()
+        {
             ApplicationMessageBox.ShowWarning(this, "The SQL Server Agent is not running on the repository.  You can edit the grooming options, but grooming will not occur unless the SQL Server Agent is running.");
         }
 
-        private void okButton_Click(object sender, EventArgs e) {
+        private void okButton_Click(object sender, EventArgs e)
+        {
             apply_Click(okButton, null);
         }
 
-        protected override void OnHelpButtonClicked(CancelEventArgs e) {
+        protected override void OnHelpButtonClicked(CancelEventArgs e)
+        {
             if (e != null) e.Cancel = true;
             Idera.SQLdm.DesktopClient.Helpers.ApplicationHelper.ShowHelpTopic(HelpTopics.GroomingOptions);
         }
 
-        protected override void OnHelpRequested(HelpEventArgs hevent) {
+        protected override void OnHelpRequested(HelpEventArgs hevent)
+        {
             if (hevent != null) hevent.Handled = true;
             Idera.SQLdm.DesktopClient.Helpers.ApplicationHelper.ShowHelpTopic(HelpTopics.GroomingOptions);
         }
 
-    private void refresh_Click(object sender, EventArgs e) {
+        private void refresh_Click(object sender, EventArgs e)
+        {
             try
             {
                 GroomingConfiguration configuration = ManagementServiceHelper.GetDefaultService().GetGrooming();
@@ -328,19 +352,22 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             }
         }
 
-        private void numericUpDown_Validating(object sender, CancelEventArgs e) {
-            NumericUpDown nud = sender as NumericUpDown;
+        private void numericUpDown_Validating(object sender, CancelEventArgs e)
+        {
+            CustomNumericUpDown nud = sender as CustomNumericUpDown;
             if (nud != null && nud.Text == "")
             {
                 nud.Text = nud.Value.ToString();
             }
         }
 
-        private void ConfigValueChanged(object sender, EventArgs e) {
+        private void ConfigValueChanged(object sender, EventArgs e)
+        {
             apply.Enabled = true;
         }
 
-        private void apply_Click(object sender, EventArgs e) {
+        private void apply_Click(object sender, EventArgs e)
+        {
             GroomingConfiguration configuration = new GroomingConfiguration();
             configuration.ActivityDays = (int)activityGroomingThresholdNumericUpDown.Value;
             //10.0 SQLdm srishti purohit
@@ -348,7 +375,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             configuration.PADataDays = (int)PAGroomingThresholdNumericUpDown.Value;
             configuration.AlertsDays = (int)alertsGroomingThresholdNumericUpDown.Value;
             configuration.MetricsDays = (int)metricsGroomingThresholdNumericUpDown.Value;
-            configuration.AuditDays = (int) auditGroomingThresholdNumericUpDown.Value;
+            configuration.AuditDays = (int)auditGroomingThresholdNumericUpDown.Value;
             configuration.GroomForecastingDays = (int)GroomForecastNumericUpDown.Value;
             configuration.FADataDays = (int)ForecastingAggregationThresholdNumericUpDown.Value;
             configuration.ScheduleSubDayType = onceDailyButton.Checked
@@ -356,7 +383,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
                                                    : GroomingConfiguration.SubDayType.Hours;
 
             configuration.GroomTime = onceDailyButton.Checked
-                                          ? ((DateTime) groomingTimeEditor.Value).TimeOfDay
+                                          ? ((DateTime)groomingTimeEditor.Value).TimeOfDay
                                           : TimeSpan.FromHours(groomTimeIntervalCombo.SelectedIndex + 1);
 
             if (isScheduleOutOfSync)
@@ -465,6 +492,60 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+        private void ScaleControlsAsPerResolution()
+        {
+            if (AutoScaleSizeHelper.isLargeSize)
+            {
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.tableLayoutPanel4, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.0F, 0.5F), false);
+                this.ClientSize = new Size(950, 900);
+                this.containerPanel.Size = new Size(900, 750);
+                this.tableLayoutPanel4.Location = new Point(this.tableLayoutPanel4.Location.X, this.tableLayoutPanel4.Location.Y * 2);
+                this.tableLayoutPanel3.Location = new Point(this.tableLayoutPanel3.Location.X, this.tableLayoutPanel3.Location.Y);
+                this.containerPanel.AutoScroll = true;
+                this.containerPanel.AutoScrollMinSize = new Size(850, 1250);
+                this.okButton.Location = new Point(this.okButton.Location.X, this.okButton.Location.Y - 70);
+                this.cancelButton.Location = new Point(this.cancelButton.Location.X, this.cancelButton.Location.Y - 70);
+                this.groomNow.Location = new Point(this.groomNow.Location.X, this.groomNow.Location.Y - 70);
+                this.apply.Location = new Point(this.apply.Location.X, this.apply.Location.Y - 70);
+                this.aggregateNow.Location = new Point(this.aggregateNow.Location.X, this.aggregateNow.Location.Y - 70);
+            }
+            else if (AutoScaleSizeHelper.isXLargeSize)
+            {
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.tableLayoutPanel4, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.0F, 0.5F), false);
+                this.ClientSize = new Size(1050, 900);
+                this.containerPanel.Size = new Size(1000, 750);
+                this.tableLayoutPanel4.Location = new Point(this.tableLayoutPanel4.Location.X, this.tableLayoutPanel4.Location.Y * 2);
+                this.tableLayoutPanel3.Location = new Point(this.tableLayoutPanel3.Location.X, this.tableLayoutPanel3.Location.Y);
+                this.containerPanel.AutoScroll = true;
+                this.containerPanel.AutoScrollMinSize = new Size(950, 1570);
+                this.okButton.Location = new Point(this.okButton.Location.X, this.okButton.Location.Y - 70);
+                this.cancelButton.Location = new Point(this.cancelButton.Location.X, this.cancelButton.Location.Y - 70);
+                this.groomNow.Location = new Point(this.groomNow.Location.X, this.groomNow.Location.Y - 70);
+                this.apply.Location = new Point(this.apply.Location.X, this.apply.Location.Y - 70);
+                this.aggregateNow.Location = new Point(this.aggregateNow.Location.X, this.aggregateNow.Location.Y - 70);
+            }
+            else if (AutoScaleSizeHelper.isXXLargeSize)
+            {
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.tableLayoutPanel4, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.0F, 0.5F), false);
+                this.ClientSize = new Size(1050, 900);
+                this.containerPanel.Size = new Size(1000, 750);
+                this.tableLayoutPanel4.Location = new Point(this.tableLayoutPanel4.Location.X, this.tableLayoutPanel4.Location.Y * 2);
+                this.tableLayoutPanel3.Location = new Point(this.tableLayoutPanel3.Location.X, this.tableLayoutPanel3.Location.Y);
+                this.containerPanel.AutoScrollMinSize = new Size(950, 1730);
+                this.okButton.Location = new Point(this.okButton.Location.X, this.okButton.Location.Y - 50);
+                this.cancelButton.Location = new Point(this.cancelButton.Location.X, this.cancelButton.Location.Y - 50);
+                this.groomNow.Location = new Point(this.groomNow.Location.X, this.groomNow.Location.Y - 50);
+                this.apply.Location = new Point(this.apply.Location.X, this.apply.Location.Y - 50);
+                this.aggregateNow.Location = new Point(this.aggregateNow.Location.X, this.aggregateNow.Location.Y - 50);
+            }
+            else
+            {
+                this.containerPanel.AutoScrollMinSize = new Size(500, 750);
+                this.containerPanel.AutoScroll = true;
+            }
         }
     }
 }

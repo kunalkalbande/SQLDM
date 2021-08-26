@@ -23,7 +23,7 @@ using Idera.SQLdm.DesktopClient.Properties;
 //------------------------------------------------------------------------------
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class DependentObjectDialog : Form
+    public partial class DependentObjectDialog : BaseDialog
     {
         private readonly TracerX.Logger _logX = TracerX.Logger.GetLogger(typeof(DependentObjectDialog));
 
@@ -36,6 +36,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             {
                 try
                 {
+                    this.DialogHeader = "Object Dependencies";
                     InitializeComponent();
                     this.instanceID = instanceId;
                 }

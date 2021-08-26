@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.ultraActivityIndicator1 = new Infragistics.Win.UltraActivityIndicator.UltraActivityIndicator();
-            this.message = new System.Windows.Forms.Label();
+            this.message = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
@@ -78,7 +78,7 @@
         #endregion
 
         private Infragistics.Win.UltraActivityIndicator.UltraActivityIndicator ultraActivityIndicator1;
-        private System.Windows.Forms.Label message;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel message;
         private System.Windows.Forms.Timer timer;
     }
 }

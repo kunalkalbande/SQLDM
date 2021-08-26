@@ -19,7 +19,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
     public partial class AlertForecastPanel : UserControl
     {
         #region Nested Types
-
+//Test
         private class ForecastWindow
         {
             private DataTable data;
@@ -55,19 +55,36 @@ namespace Idera.SQLdm.DesktopClient.Controls
             {
                 get
                 {
-                    bool useSmall = forecastPanel.useSmallStatusImages;
+                    if (AutoScaleSizeHelper.isScalingRequired)
+                    {
+                        if (topSeverity == (int)MonitoredState.Critical)
+                            return Properties.Resources.StatusCriticalSmall;
 
-                    if (topSeverity == (int)MonitoredState.Critical)
-                        return useSmall ? Properties.Resources.StatusCriticalSmall : Properties.Resources.Critical32x32;
+                        else if (topSeverity == (int)MonitoredState.Warning)
+                            return Properties.Resources.StatusWarningSmall;
 
-                    else if (topSeverity == (int)MonitoredState.Warning)
-                        return useSmall ? Properties.Resources.StatusWarningSmall : Properties.Resources.Warning32x32;
+                        else if (topSeverity == (int)MonitoredState.OK)
+                            return Properties.Resources.StatusOKSmall;
 
-                    else if (topSeverity == (int)MonitoredState.OK)
-                        return useSmall ? Properties.Resources.StatusOKSmall : Properties.Resources.OK32x32;
-
+                        else
+                            return Properties.Resources.StatusInfoSmall;
+                    }
                     else
-                        return useSmall ? Properties.Resources.Information16x16 : Properties.Resources.Information32x32;
+                    {
+                        bool useSmall = forecastPanel.useSmallStatusImages;
+
+                        if (topSeverity == (int)MonitoredState.Critical)
+                            return useSmall ? Properties.Resources.StatusCriticalSmall : Properties.Resources.Critical32x32;
+
+                        else if (topSeverity == (int)MonitoredState.Warning)
+                            return useSmall ? Properties.Resources.StatusWarningSmall : Properties.Resources.Warning32x32;
+
+                        else if (topSeverity == (int)MonitoredState.OK)
+                            return useSmall ? Properties.Resources.StatusOKSmall : Properties.Resources.OK32x32;
+
+                        else
+                            return useSmall ? Properties.Resources.Information16x16 : Properties.Resources.Information32x32;
+                    }
                 }
             }
 
@@ -257,6 +274,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
             ApplicationModel.Default.PredictiveAnalyticsStateChanged += new EventHandler(Default_PredictiveAnalyticsStateChanged);
 
             this.VisibleChanged += new EventHandler(AlertForecastPanel_VisibleChanged);
+
         }
 
         void AlertForecastPanel_VisibleChanged(object sender, EventArgs e)

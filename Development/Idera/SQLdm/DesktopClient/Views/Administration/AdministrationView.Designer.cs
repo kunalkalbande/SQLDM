@@ -31,16 +31,16 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministrationView));
             this.headerStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
             this.titleLabel = new System.Windows.Forms.ToolStripLabel();
-            this.contentPanel = new System.Windows.Forms.Panel();
-            this.adminPanel = new System.Windows.Forms.Panel();
+            this.contentPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.adminPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.featureButtonAuditedActions = new Idera.SQLdm.DesktopClient.Controls.FeatureButton();
             this.featureButtonCustomCounter = new Idera.SQLdm.DesktopClient.Controls.FeatureButton();
             this.featureButtonImportExport = new Idera.SQLdm.DesktopClient.Controls.FeatureButton();
             this.dividerProgressBar2 = new Idera.SQLdm.DesktopClient.Controls.InfiniteProgressBar();
-            this.mainDdescriptionLabel = new System.Windows.Forms.Label();
-            this.headerPanel = new System.Windows.Forms.Panel();
+            this.mainDdescriptionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.headerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.headerLabel = new System.Windows.Forms.Label();
+            this.headerLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.featureButtonAppSecurity = new Idera.SQLdm.DesktopClient.Controls.FeatureButton();
             this.headerStrip.SuspendLayout();
             this.adminPanel.SuspendLayout();
@@ -107,10 +107,10 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
             this.featureButtonAuditedActions.HeaderFont = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
             this.featureButtonAuditedActions.HeaderText = "Change Log";
             this.featureButtonAuditedActions.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ChangeLog32x32;
-            this.featureButtonAuditedActions.Location = new System.Drawing.Point(4, 306);
+            this.featureButtonAuditedActions.Location = new System.Drawing.Point(13, 306);
             this.featureButtonAuditedActions.MinimumSize = new System.Drawing.Size(0, 40);
             this.featureButtonAuditedActions.Name = "featureButtonAuditedActions";
-            this.featureButtonAuditedActions.Size = new System.Drawing.Size(664, 76);
+            this.featureButtonAuditedActions.Size = new System.Drawing.Size(644, 76);
             this.featureButtonAuditedActions.TabIndex = 9;
             this.featureButtonAuditedActions.MouseClick += new System.Windows.Forms.MouseEventHandler(this.featureButtonAuditedActions_MouseClick);
             // 
@@ -124,10 +124,10 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
             this.featureButtonCustomCounter.HeaderFont = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
             this.featureButtonCustomCounter.HeaderText = "Custom Counters";
             this.featureButtonCustomCounter.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.CustomCounter32x32;
-            this.featureButtonCustomCounter.Location = new System.Drawing.Point(3, 225);
+            this.featureButtonCustomCounter.Location = new System.Drawing.Point(13, 225);
             this.featureButtonCustomCounter.MinimumSize = new System.Drawing.Size(0, 40);
             this.featureButtonCustomCounter.Name = "featureButtonCustomCounter";
-            this.featureButtonCustomCounter.Size = new System.Drawing.Size(664, 76);
+            this.featureButtonCustomCounter.Size = new System.Drawing.Size(644, 76);
             this.featureButtonCustomCounter.TabIndex = 8;
             this.featureButtonCustomCounter.MouseClick += new System.Windows.Forms.MouseEventHandler(this.featureButtonCustomCounter_MouseClick);
 
@@ -144,10 +144,10 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
             this.featureButtonImportExport.HeaderText = "Import/Export";
             this.featureButtonImportExport.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ImportExport32x32;
            // this.featureButtonImportExport.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ChangeLog32x32;
-            this.featureButtonImportExport.Location = new System.Drawing.Point(3, 388);
+            this.featureButtonImportExport.Location = new System.Drawing.Point(13, 388);
             this.featureButtonImportExport.MinimumSize = new System.Drawing.Size(0, 40);
             this.featureButtonImportExport.Name = "featureButtonImportExport";
-            this.featureButtonImportExport.Size = new System.Drawing.Size(664, 76);
+            this.featureButtonImportExport.Size = new System.Drawing.Size(644, 76);
             this.featureButtonImportExport.TabIndex = 10;
             this.featureButtonImportExport.MouseClick += new System.Windows.Forms.MouseEventHandler(this.featureButtonImportExport_MouseClick);
 
@@ -171,9 +171,9 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
             this.mainDdescriptionLabel.AutoEllipsis = true;
             this.mainDdescriptionLabel.BackColor = System.Drawing.Color.Transparent;
             this.mainDdescriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainDdescriptionLabel.Location = new System.Drawing.Point(4, 55);
+            this.mainDdescriptionLabel.Location = new System.Drawing.Point(14, 55);
             this.mainDdescriptionLabel.Name = "mainDdescriptionLabel";
-            this.mainDdescriptionLabel.Size = new System.Drawing.Size(663, 48);
+            this.mainDdescriptionLabel.Size = new System.Drawing.Size(643, 48);
             this.mainDdescriptionLabel.TabIndex = 6;
             this.mainDdescriptionLabel.Text = resources.GetString("mainDdescriptionLabel.Text");
             // 
@@ -207,7 +207,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
             this.headerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headerLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(111)))), ((int)(((byte)(101)))));
             this.headerLabel.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.headerLabel.Location = new System.Drawing.Point(294, 0);
+            this.headerLabel.Location = new System.Drawing.Point(274, 0);
             this.headerLabel.Name = "headerLabel";
             this.headerLabel.Size = new System.Drawing.Size(375, 37);
             this.headerLabel.TabIndex = 0;
@@ -224,10 +224,10 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
             this.featureButtonAppSecurity.HeaderFont = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
             this.featureButtonAppSecurity.HeaderText = "Application Security";
             this.featureButtonAppSecurity.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.AppSecurity32x32;
-            this.featureButtonAppSecurity.Location = new System.Drawing.Point(3, 143);
+            this.featureButtonAppSecurity.Location = new System.Drawing.Point(13, 143);
             this.featureButtonAppSecurity.MinimumSize = new System.Drawing.Size(0, 40);
             this.featureButtonAppSecurity.Name = "featureButtonAppSecurity";
-            this.featureButtonAppSecurity.Size = new System.Drawing.Size(664, 76);
+            this.featureButtonAppSecurity.Size = new System.Drawing.Size(644, 76);
             this.featureButtonAppSecurity.TabIndex = 0;
             this.featureButtonAppSecurity.MouseClick += new System.Windows.Forms.MouseEventHandler(this.featureButtonAppSecurity_MouseClick);
             // 
@@ -251,13 +251,13 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
 
         private Idera.SQLdm.DesktopClient.Controls.HeaderStrip headerStrip;
         private System.Windows.Forms.ToolStripLabel titleLabel;
-        private System.Windows.Forms.Panel contentPanel;
-        private System.Windows.Forms.Panel adminPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  contentPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  adminPanel;
         private Idera.SQLdm.DesktopClient.Controls.FeatureButton featureButtonAppSecurity;
-        private System.Windows.Forms.Panel headerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  headerPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label headerLabel;
-        private System.Windows.Forms.Label mainDdescriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel headerLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel mainDdescriptionLabel;
         private Idera.SQLdm.DesktopClient.Controls.FeatureButton featureButtonCustomCounter;
         private Idera.SQLdm.DesktopClient.Controls.FeatureButton featureButtonImportExport;
         private Idera.SQLdm.DesktopClient.Controls.InfiniteProgressBar dividerProgressBar2;

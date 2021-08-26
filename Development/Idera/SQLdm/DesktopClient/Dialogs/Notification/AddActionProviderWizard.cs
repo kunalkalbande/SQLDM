@@ -63,6 +63,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
             //    }
             //}
             AdaptFontSize();
+            if(AutoScaleSizeHelper.isScalingRequired)
+            {
+                ScaleControlsAsPerResolution();
+            }
         }
 
         public AddActionProviderWizard(IManagementService managementService, string pulseProviderName)
@@ -719,6 +723,55 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         protected void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        private void ScaleControlsAsPerResolution()
+        {
+            AutoScaleSizeHelper.Default.AutoScaleControl(this.welcomePage, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.5F, 2.0F), false);
+            AutoScaleSizeHelper.Default.AutoScaleControl(this.chooseProviderTypePage, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.5F, 2.0F), false);
+            AutoScaleSizeHelper.Default.AutoScaleControl(this.snmpConfig, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.5F, 1.90F), false);
+            AutoScaleSizeHelper.Default.AutoScaleControl(this.smtpConfig, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.5F, 1.90F), false);
+            AutoScaleSizeHelper.Default.AutoScaleControl(this.pulseConfig, AutoScaleSizeHelper.ControlType.Control, new SizeF(1.5F, 1.90F), false);
+            
+            if (AutoScaleSizeHelper.isLargeSize)
+            {
+                this.Height += 400;
+                this.Width += 400;
+                this.testSmtpButton.Height -= 30;
+                this.logonName.Location = new Point(this.logonName.Location.X + 20, this.logonName.Location.Y);
+                this.password.Location = new Point(this.password.Location.X + 20, this.password.Location.Y);
+                this.informationBox3.Width -= 300;
+                return;
+            }
+            if (AutoScaleSizeHelper.isXLargeSize)
+            {
+                this.Height += 400;
+                this.Width += 400;
+                this.testSmtpButton.Height -= 30;
+                this.logonName.Location = new Point(this.logonName.Location.X + 20, this.logonName.Location.Y);
+                this.password.Location = new Point(this.password.Location.X + 20, this.password.Location.Y);
+                this.fromName.Location = new Point(this.fromName.Location.X + 20, this.fromName.Location.Y);
+                this.fromAddress.Location = new Point(this.fromAddress.Location.X + 20, this.fromAddress.Location.Y);
+                this.informationBox3.Height += 30;
+                this.informationBox3.Width -= 300;
+                return;
+            }
+            if (AutoScaleSizeHelper.isXXLargeSize)
+            {
+                AutoScaleFontResolutionHelper.Default.AutoScaleFont(this, AutoScaleFontHelper.ControlType.Container);
+                this.Height += 500;
+                this.Width += 400;
+                this.testSmtpButton.Height -= 30;
+                this.logonName.Location = new Point(this.logonName.Location.X + 20, this.logonName.Location.Y);
+                this.password.Location = new Point(this.password.Location.X + 20, this.password.Location.Y);
+                this.fromName.Location = new Point(this.fromName.Location.X + 20, this.fromName.Location.Y);
+                this.fromAddress.Location = new Point(this.fromAddress.Location.X + 20, this.fromAddress.Location.Y);
+                this.informationBox3.Height += 30;
+                this.informationBox3.Width -= 300;
+                this.informationBox1.Width -= 100;
+                this.hideWelcomePageCheckbox.Location = new Point(this.hideWelcomePageCheckbox.Location.X, this.hideWelcomePageCheckbox.Location.Y - 430);
+                return;
+            }
         }
         #endregion
     }

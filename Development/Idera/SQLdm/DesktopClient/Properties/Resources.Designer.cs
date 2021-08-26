@@ -8,10 +8,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Idera.SQLdm.DesktopClient.Properties {
+namespace Idera.SQLdm.DesktopClient.Properties
+{
     using System;
-    
-    
+    using System.Drawing;
+    using System.Drawing.Drawing2D;
+    using Idera.SQLdm.DesktopClient.Helpers;
+    using System.Runtime.InteropServices;
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -19,3819 +24,5280 @@ namespace Idera.SQLdm.DesktopClient.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
-        
+    internal class Resources
+    {
+
         private static global::System.Resources.ResourceManager resourceMan;
-        
+
         private static global::System.Globalization.CultureInfo resourceCulture;
-        
+
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal Resources()
+        {
         }
-        
+
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
-            get {
-                if (object.ReferenceEquals(resourceMan, null)) {
+        internal static global::System.Resources.ResourceManager ResourceManager
+        {
+            get
+            {
+                if (object.ReferenceEquals(resourceMan, null))
+                {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Idera.SQLdm.DesktopClient.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-        
+
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
-            get {
+        internal static global::System.Globalization.CultureInfo Culture
+        {
+            get
+            {
                 return resourceCulture;
             }
-            set {
+            set
+            {
                 resourceCulture = value;
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1 {
-            get {
+        internal static System.Drawing.Bitmap _1
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2 {
-            get {
+        internal static System.Drawing.Bitmap _2
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _3 {
-            get {
+        internal static System.Drawing.Bitmap _3
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _4 {
-            get {
+        internal static System.Drawing.Bitmap _4
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _5 {
-            get {
+        internal static System.Drawing.Bitmap _5
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _6 {
-            get {
+        internal static System.Drawing.Bitmap _6
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("6", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Add {
-            get {
-                object obj = ResourceManager.GetObject("Add", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Add
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Add", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Add", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] add_disabled_icon {
-            get {
+        internal static byte[] add_disabled_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("add_disabled_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] add_hover_icon {
-            get {
+        internal static byte[] add_hover_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("add_hover_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] add_icon {
-            get {
+        internal static byte[] add_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("add_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AddPermission32x32 {
-            get {
+        internal static System.Drawing.Bitmap AddPermission32x32
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("AddPermission32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AddPermission48x48 {
-            get {
+        internal static System.Drawing.Bitmap AddPermission48x48
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("AddPermission48x48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AddServersFeature {
-            get {
+        internal static System.Drawing.Bitmap AddServersFeature
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("AddServersFeature", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AddServersManagerDialogHeader {
-            get {
+        internal static System.Drawing.Bitmap AddServersManagerDialogHeader
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("AddServersManagerDialogHeader", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AddServersWizardBannerImage {
-            get {
+        internal static System.Drawing.Bitmap AddServersWizardBannerImage
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("AddServersWizardBannerImage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AddServersWizardFeaturesImage {
-            get {
+        internal static System.Drawing.Bitmap AddServersWizardFeaturesImage
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("AddServersWizardFeaturesImage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AddServersWizardWelcomePageMarginImage {
-            get {
+        internal static System.Drawing.Bitmap AddServersWizardWelcomePageMarginImage
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("AddServersWizardWelcomePageMarginImage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AddUserPermissionsWizardMarginImage {
-            get {
+        internal static System.Drawing.Bitmap AddUserPermissionsWizardMarginImage
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("AddUserPermissionsWizardMarginImage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] admin_disabled_icon {
-            get {
+        internal static byte[] admin_disabled_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("admin_disabled_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] admin_hover_icon {
-            get {
+        internal static byte[] admin_hover_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("admin_hover_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] admin_icon {
-            get {
+        internal static byte[] admin_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("admin_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AdministrationArea16x16 {
-            get {
-                object obj = ResourceManager.GetObject("AdministrationArea16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap AdministrationArea16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "AdministrationArea16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("AdministrationArea16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AlarmClockPause32x32 {
-            get {
+        internal static System.Drawing.Bitmap AlarmClockPause32x32
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("AlarmClockPause32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AlarmClockStart32x32 {
-            get {
+        internal static System.Drawing.Bitmap AlarmClockStart32x32
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("AlarmClockStart32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] alerts_disabled_icon {
-            get {
+        internal static byte[] alerts_disabled_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("alerts_disabled_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] alerts_hover_icon {
-            get {
+        internal static byte[] alerts_hover_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("alerts_hover_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] alerts_icon {
-            get {
+        internal static byte[] alerts_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("alerts_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AlertsFeature {
-            get {
+        internal static System.Drawing.Bitmap AlertsFeature
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("AlertsFeature", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AlertsFeature1 {
-            get {
+        internal static System.Drawing.Bitmap AlertsFeature1
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("AlertsFeature1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] analyze_icon {
-            get {
+        internal static byte[] analyze_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("analyze_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Analyze16 {
-            get {
-                object obj = ResourceManager.GetObject("Analyze16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Analyze16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Analyze16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Analyze16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Analyze32 {
-            get {
-                object obj = ResourceManager.GetObject("Analyze32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Analyze32
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Analyze32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Analyze32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon App16CriticalIcon {
-            get {
+        internal static System.Drawing.Icon App16CriticalIcon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("App16CriticalIcon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon App16Icon {
-            get {
+        internal static System.Drawing.Icon App16Icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("App16Icon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon App16OKIcon {
-            get {
+        internal static System.Drawing.Icon App16OKIcon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("App16OKIcon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon App16WarningIcon {
-            get {
+        internal static System.Drawing.Icon App16WarningIcon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("App16WarningIcon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon AppIcon {
-            get {
+        internal static System.Drawing.Icon AppIcon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("AppIcon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AppImage16x16 {
-            get {
+        internal static System.Drawing.Bitmap AppImage16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("AppImage16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ApplicationSecurityGettingStartedImage {
-            get {
+        internal static System.Drawing.Bitmap ApplicationSecurityGettingStartedImage
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("ApplicationSecurityGettingStartedImage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AppSecurity16x16 {
-            get {
+        internal static System.Drawing.Bitmap AppSecurity16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("AppSecurity16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AppSecurity32x32 {
-            get {
+        internal static System.Drawing.Bitmap AppSecurity32x32
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("AppSecurity32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap arrow_down_blue_16x16_plain {
-            get {
-                object obj = ResourceManager.GetObject("arrow_down_blue_16x16_plain", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap arrow_down_blue_16x16_plain
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "arrow_down_blue_16x16_plain", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("arrow_down_blue_16x16_plain", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap arrow_down_green_16x16_plain {
-            get {
+        internal static System.Drawing.Bitmap arrow_down_green_16x16_plain
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("arrow_down_green_16x16_plain", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap arrow_up_blue_16x16_plain {
-            get {
-                object obj = ResourceManager.GetObject("arrow_up_blue_16x16_plain", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap arrow_up_blue_16x16_plain
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "arrow_up_blue_16x16_plain", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("arrow_up_blue_16x16_plain", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap arrow_up_green_16x16_plain {
-            get {
+        internal static System.Drawing.Bitmap arrow_up_green_16x16_plain
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("arrow_up_green_16x16_plain", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap back16x16 {
-            get {
+        internal static System.Drawing.Bitmap back16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("back16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Back24x24 {
-            get {
+        internal static System.Drawing.Bitmap Back24x24
+        {
+            get
+            {
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj1 = ResourceManager.GetObject("BackDark", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj1));
+                }
                 object obj = ResourceManager.GetObject("Back24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap background_gradient_blue {
-            get {
+        internal static System.Drawing.Bitmap background_gradient_blue
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("background_gradient_blue", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap background_gradient_gold {
-            get {
+        internal static System.Drawing.Bitmap background_gradient_gold
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("background_gradient_gold", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap background_gradient_gray {
-            get {
+        internal static System.Drawing.Bitmap background_gradient_gray
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("background_gradient_gray", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Block16 {
-            get {
-                object obj = ResourceManager.GetObject("Block16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Block16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Block16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Block16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap block32 {
-            get {
-                object obj = ResourceManager.GetObject("block32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap block32
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "block32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("block32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bullet_ball_glass_grey {
-            get {
+        internal static System.Drawing.Bitmap bullet_ball_glass_grey
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("bullet_ball_glass_grey", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bullet_ball_glass_red {
-            get {
+        internal static System.Drawing.Bitmap bullet_ball_glass_red
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("bullet_ball_glass_red", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] calendar_disabled_icon {
-            get {
+        internal static byte[] calendar_disabled_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("calendar_disabled_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] calendar_hover_icon {
-            get {
+        internal static byte[] calendar_hover_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("calendar_hover_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] calendar_icon {
-            get {
+        internal static byte[] calendar_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("calendar_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] calendar_icon_2 {
-            get {
+        internal static byte[] calendar_icon_2
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("calendar_icon_2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Calendar16x16 {
-            get {
-                object obj = ResourceManager.GetObject("Calendar16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Calendar16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Calendar16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Calendar16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] canceled_icon {
-            get {
+        internal static byte[] canceled_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("canceled_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] card_view_disabled_icon {
-            get {
+        internal static byte[] card_view_disabled_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("card_view_disabled_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] card_view_hover_icon {
-            get {
+        internal static byte[] card_view_hover_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("card_view_hover_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] card_view_icon {
-            get {
+        internal static byte[] card_view_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("card_view_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CellBorder {
-            get {
+        internal static System.Drawing.Bitmap CellBorder
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("CellBorder", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ChangeLog16x16 {
-            get {
+        internal static System.Drawing.Bitmap ChangeLog16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("ChangeLog16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ChangeLog32x32 {
-            get {
+        internal static System.Drawing.Bitmap ChangeLog32x32
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("ChangeLog32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Chart32x32 {
-            get {
+        internal static System.Drawing.Bitmap Chart32x32
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("Chart32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ChartGridHeader {
-            get {
-                object obj = ResourceManager.GetObject("ChartGridHeader", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap ChartGridHeader
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ChartGridHeader", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ChartGridHeader", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] check_circle_icon {
-            get {
+        internal static byte[] check_circle_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("check_circle_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap checkbox_checked {
-            get {
+        internal static System.Drawing.Bitmap checkbox_checked
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("checkbox_checked", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CheckBoxBackground {
-            get {
+        internal static System.Drawing.Bitmap CheckBoxBackground
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("CheckBoxBackground", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ClearTrace {
-            get {
+        internal static System.Drawing.Bitmap ClearTrace
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("ClearTrace", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] close_circle_icon {
-            get {
+        internal static byte[] close_circle_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("close_circle_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] close_disabled_icon {
-            get {
+        internal static byte[] close_disabled_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("close_disabled_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] close_hover_icon {
-            get {
+        internal static byte[] close_hover_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("close_hover_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] close_icon {
-            get {
+        internal static byte[] close_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("close_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CloseHelpPopup {
-            get {
+        internal static System.Drawing.Bitmap CloseHelpPopup
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("CloseHelpPopup", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CloseHelpPopupHotTracked {
-            get {
+        internal static System.Drawing.Bitmap CloseHelpPopupHotTracked
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("CloseHelpPopupHotTracked", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cloud_database_icon_critical_16x16 {
-            get {
-                object obj = ResourceManager.GetObject("cloud_database_icon_critical_16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap cloud_database_icon_critical_16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "cloud_database_icon_critical_16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("cloud_database_icon_critical_16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cloud_database_icon_critical_32x32 {
-            get {
-                object obj = ResourceManager.GetObject("cloud_database_icon_critical_32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap cloud_database_icon_critical_32x32
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "cloud_database_icon_critical_32x32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("cloud_database_icon_critical_32x32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cloud_database_icon_disabled_16x16 {
-            get {
-                object obj = ResourceManager.GetObject("cloud_database_icon_disabled_16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap cloud_database_icon_disabled_16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "cloud_database_icon_disabled_16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("cloud_database_icon_disabled_16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cloud_database_icon_disabled_32x32 {
-            get {
-                object obj = ResourceManager.GetObject("cloud_database_icon_disabled_32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap cloud_database_icon_disabled_32x32
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "cloud_database_icon_disabled_32x32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("cloud_database_icon_disabled_32x32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cloud_database_icon_normal_16x16 {
-            get {
-                object obj = ResourceManager.GetObject("cloud_database_icon_normal_16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap cloud_database_icon_normal_16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "cloud_database_icon_normal_16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("cloud_database_icon_normal_16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cloud_database_icon_normal_32x32 {
-            get {
-                object obj = ResourceManager.GetObject("cloud_database_icon_normal_32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap cloud_database_icon_normal_32x32
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "cloud_database_icon_normal_32x32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("cloud_database_icon_normal_32x32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cloud_database_icon_warning_16x16 {
-            get {
-                object obj = ResourceManager.GetObject("cloud_database_icon_warning_16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap cloud_database_icon_warning_16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "cloud_database_icon_warning_16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("cloud_database_icon_warning_16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cloud_database_icon_warning_32x32 {
-            get {
-                object obj = ResourceManager.GetObject("cloud_database_icon_warning_32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap cloud_database_icon_warning_32x32
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "cloud_database_icon_warning_32x32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("cloud_database_icon_warning_32x32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CloudDialogHeader {
-            get {
+        internal static System.Drawing.Bitmap CloudDialogHeader
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("CloudDialogHeader", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CloudServerCritical {
-            get {
+        internal static System.Drawing.Bitmap CloudServerCritical
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("CloudServerCritical", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CloudServerDisabled {
-            get {
+        internal static System.Drawing.Bitmap CloudServerDisabled
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("CloudServerDisabled", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CloudServerHover {
-            get {
+        internal static System.Drawing.Bitmap CloudServerHover
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("CloudServerHover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CloudServerInformation {
-            get {
+        internal static System.Drawing.Bitmap CloudServerInformation
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("CloudServerInformation", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CloudServerMaintenance {
-            get {
+        internal static System.Drawing.Bitmap CloudServerMaintenance
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("CloudServerMaintenance", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CloudServerNormal {
-            get {
+        internal static System.Drawing.Bitmap CloudServerNormal
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("CloudServerNormal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CloudServerOk {
-            get {
+        internal static System.Drawing.Bitmap CloudServerOk
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("CloudServerOk", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CloudServerWarning {
-            get {
+        internal static System.Drawing.Bitmap CloudServerWarning
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("CloudServerWarning", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] cog_disabled_icon {
-            get {
+        internal static byte[] cog_disabled_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("cog_disabled_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] cog_hover_icon {
-            get {
+        internal static byte[] cog_hover_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("cog_hover_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] cog_icon {
-            get {
+        internal static byte[] cog_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("cog_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] cog_icon_wht {
-            get {
+        internal static byte[] cog_icon_wht
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("cog_icon_wht", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] collapse_tree_icon {
-            get {
+        internal static byte[] collapse_tree_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("collapse_tree_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] collapse_tree_icon_2 {
-            get {
+        internal static byte[] collapse_tree_icon_2
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("collapse_tree_icon_2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] collapse_tree_icon_3 {
-            get {
+        internal static byte[] collapse_tree_icon_3
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("collapse_tree_icon_3", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] collapse_tree_icon_4 {
-            get {
+        internal static byte[] collapse_tree_icon_4
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("collapse_tree_icon_4", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] collapse_tree_icon_5 {
-            get {
+        internal static byte[] collapse_tree_icon_5
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("collapse_tree_icon_5", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] collapse_tree_icon_6 {
-            get {
+        internal static byte[] collapse_tree_icon_6
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("collapse_tree_icon_6", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] collapse_tree_icon_7 {
-            get {
+        internal static byte[] collapse_tree_icon_7
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("collapse_tree_icon_7", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] collapse_tree_icon_8 {
-            get {
+        internal static byte[] collapse_tree_icon_8
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("collapse_tree_icon_8", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] collapse_tree_icon_9 {
-            get {
+        internal static byte[] collapse_tree_icon_9
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("collapse_tree_icon_9", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ColumnChooser {
-            get {
+        internal static System.Drawing.Bitmap ColumnChooser
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("ColumnChooser", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CommunityMenu {
-            get {
-                object obj = ResourceManager.GetObject("CommunityMenu", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap communitysite {
-            get {
+        internal static System.Drawing.Bitmap communitysite
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("communitysite", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ConfigurationView16x16 {
-            get {
+        internal static System.Drawing.Bitmap ConfigurationView16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("ConfigurationView16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ConfigureLogs32x32 {
-            get {
+        internal static System.Drawing.Bitmap ConfigureLogs32x32
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("ConfigureLogs32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Connected {
-            get {
-                object obj = ResourceManager.GetObject("Connected", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Connected
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Connected", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Connected", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon ConnectionIcon {
-            get {
+        internal static System.Drawing.Icon ConnectionIcon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("ConnectionIcon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap copy {
-            get {
-                object obj = ResourceManager.GetObject("copy", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap copy
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "copy", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("copy", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] copy_disabled_icon {
-            get {
+        internal static byte[] copy_disabled_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("copy_disabled_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] copy_hover_icon {
-            get {
+        internal static byte[] copy_hover_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("copy_hover_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] copy_icon {
-            get {
+        internal static byte[] copy_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("copy_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] Critical_Dark {
-            get {
+        internal static byte[] Critical_Dark
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("Critical_Dark", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] critical_icon {
-            get {
+        internal static byte[] critical_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("critical_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] critical_icon_10 {
-            get {
+        internal static byte[] critical_icon_10
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("critical_icon_10", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] critical_icon_11 {
-            get {
+        internal static byte[] critical_icon_11
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("critical_icon_11", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] critical_icon_2 {
-            get {
+        internal static byte[] critical_icon_2
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("critical_icon_2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] critical_icon_3 {
-            get {
+        internal static byte[] critical_icon_3
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("critical_icon_3", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] critical_icon_4 {
-            get {
+        internal static byte[] critical_icon_4
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("critical_icon_4", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] critical_icon_5 {
-            get {
+        internal static byte[] critical_icon_5
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("critical_icon_5", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] critical_icon_6 {
-            get {
+        internal static byte[] critical_icon_6
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("critical_icon_6", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] critical_icon_7 {
-            get {
+        internal static byte[] critical_icon_7
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("critical_icon_7", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] critical_icon_8 {
-            get {
+        internal static byte[] critical_icon_8
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("critical_icon_8", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] critical_icon_9 {
-            get {
+        internal static byte[] critical_icon_9
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("critical_icon_9", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] critical_wht_icon {
-            get {
+        internal static byte[] critical_wht_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("critical_wht_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Critical32x32 {
-            get {
-                object obj = ResourceManager.GetObject("Critical32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Critical32x32
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Critical32x32", resourceCulture);
+                    return (System.Drawing.Bitmap)(obj);
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Critical32x32", resourceCulture);
+                    return (System.Drawing.Bitmap)(obj);
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CustomCounter16x16 {
-            get {
+        internal static System.Drawing.Bitmap CustomCounter16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("CustomCounter16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CustomCounter32x32 {
-            get {
+        internal static System.Drawing.Bitmap CustomCounter32x32
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("CustomCounter32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CustomCounterCritical16x16 {
-            get {
+        internal static System.Drawing.Bitmap CustomCounterCritical16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("CustomCounterCritical16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CustomCounterWarning16x16 {
-            get {
+        internal static System.Drawing.Bitmap CustomCounterWarning16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("CustomCounterWarning16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CustomCounterWizardBannerImage {
-            get {
+        internal static System.Drawing.Bitmap CustomCounterWizardBannerImage
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("CustomCounterWizardBannerImage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CustomCounterWizardWelcomePageMarginImage {
-            get {
+        internal static System.Drawing.Bitmap CustomCounterWizardWelcomePageMarginImage
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("CustomCounterWizardWelcomePageMarginImage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Customize16x16 {
-            get {
-                object obj = ResourceManager.GetObject("Customize16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Customize16x16
+        {
+            get
+            {
+                object obj;
+                if (AutoScaleSizeHelper.isScalingRequired)
+                {
+                    obj = ResourceManager.GetObject("larger_Customize16x16", resourceCulture);
+                    if (Settings.Default.ColorScheme == "Dark")
+                        obj = ResourceManager.GetObject("larger_Customize16x16_dark", resourceCulture);
+                }
+
+
+                else
+                    obj = ResourceManager.GetObject("Customize16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap data_edit {
-            get {
+        internal static System.Drawing.Bitmap data_edit
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("data_edit", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Database {
-            get {
-                object obj = ResourceManager.GetObject("Database", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Database
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Database", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Database", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] Database_Dark {
-            get {
+        internal static byte[] Database_Dark
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("Database_Dark", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Database32 {
-            get {
-                object obj = ResourceManager.GetObject("Database32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DatabaseIndex32 {
-            get {
-                object obj = ResourceManager.GetObject("DatabaseIndex32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DatabaseMirrorFailover16x16 {
-        get {
-                object obj = ResourceManager.GetObject("DatabaseMirrorFailover16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Database32
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Database32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Database32", resourceCulture);
+                    //return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                    return (System.Drawing.Bitmap)(obj);
+                }
             }
         }
 
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Databases {
-            get {
-                object obj = ResourceManager.GetObject("Databases", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap DatabaseIndex32
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "DatabaseIndex32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("DatabaseIndex32", resourceCulture);
+                    //return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                    return (System.Drawing.Bitmap)(obj);
+                }
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DatabaseMirrorFailover16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("DatabaseMirrorFailover16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Databases
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Databases", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Databases", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] databases_icon {
-            get {
+        internal static byte[] databases_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("databases_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DatabasesBackupRestoreView16x16 {
-            get {
+        internal static System.Drawing.Bitmap DatabasesBackupRestoreView16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("DatabasesBackupRestoreView16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DatabasesCritical16x16 {
-            get {
-                object obj = ResourceManager.GetObject("DatabasesCritical16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap DatabasesCritical16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "DatabasesCritical16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("DatabasesCritical16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DatabasesCriticalThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("DatabasesCriticalThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap DatabasesCriticalThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "DatabasesCriticalThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("DatabasesCriticalThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DatabasesFilesView16x16 {
-            get {
+        internal static System.Drawing.Bitmap DatabasesFilesView16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("DatabasesFilesView16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DatabasesInfoThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("DatabasesInfoThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap DatabasesInfoThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "DatabasesInfoThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("DatabasesInfoThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DatabasesThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("DatabasesThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap DatabasesThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "DatabasesThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("DatabasesThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DatabasesWarning16x16 {
-            get {
-                object obj = ResourceManager.GetObject("DatabasesWarning16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap DatabasesWarning16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "DatabasesWarning16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("DatabasesWarning16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DatabasesWarningThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("DatabasesWarningThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap DatabasesWarningThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "DatabasesWarningThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("DatabasesWarningThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DataCollectionInterval {
-            get {
+        internal static System.Drawing.Bitmap DataCollectionInterval
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("DataCollectionInterval", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to The &apos;From&apos; date must not be greater than the &apos;To&apos; date..
         /// </summary>
-        internal static string DateRangeInverted {
-            get {
+        internal static string DateRangeInverted
+        {
+            get
+            {
                 return ResourceManager.GetString("DateRangeInverted", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DBmirroring_16 {
-            get {
+        internal static System.Drawing.Bitmap DBmirroring_16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("DBmirroring_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Delete {
-            get {
-                object obj = ResourceManager.GetObject("Delete", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Delete
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Delete", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Delete", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] delete_disabled_icon {
-            get {
+        internal static byte[] delete_disabled_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("delete_disabled_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] delete_hover_icon {
-            get {
+        internal static byte[] delete_hover_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("delete_hover_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] delete_icon {
-            get {
+        internal static byte[] delete_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("delete_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DeleteCounter {
-            get {
+        internal static System.Drawing.Bitmap DeleteCounter
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("DeleteCounter", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DeletePermission32x32 {
-            get {
+        internal static System.Drawing.Bitmap DeletePermission32x32
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("DeletePermission32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DeleteSmall {
-            get {
-                object obj = ResourceManager.GetObject("DeleteSmall", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap DeleteSmall
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "DeleteSmall", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("DeleteSmall", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DeployReport_16x16 {
-            get {
+        internal static System.Drawing.Bitmap DeployReport_16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("DeployReport_16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DeployReportsWizardMargin {
-            get {
+        internal static System.Drawing.Bitmap DeployReportsWizardMargin
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("DeployReportsWizardMargin", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DisableAppSecurity32x32 {
-            get {
+        internal static System.Drawing.Bitmap DisableAppSecurity32x32
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("DisableAppSecurity32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DiskDriveNoActivity_16x16 {
-            get {
+        internal static System.Drawing.Bitmap DiskDriveNoActivity_16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("DiskDriveNoActivity_16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DiskDriveReadActivity_12x12_pulsing {
-            get {
+        internal static System.Drawing.Bitmap DiskDriveReadActivity_12x12_pulsing
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("DiskDriveReadActivity_12x12_pulsing", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DiskDriveWriteActivity_12x12_pulsing {
-            get {
+        internal static System.Drawing.Bitmap DiskDriveWriteActivity_12x12_pulsing
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("DiskDriveWriteActivity_12x12_pulsing", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] dm_icon {
-            get {
+        internal static byte[] dm_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("dm_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Documents_32 {
-            get {
-                object obj = ResourceManager.GetObject("Documents_32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Documents_32
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Documents_32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Documents_32", resourceCulture);
+                    //return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                    return (System.Drawing.Bitmap)(obj);
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] down_arrow_disabled_icon {
-            get {
+        internal static byte[] down_arrow_disabled_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("down_arrow_disabled_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] down_arrow_hover_icon {
-            get {
+        internal static byte[] down_arrow_hover_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("down_arrow_hover_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] down_arrow_icon {
-            get {
+        internal static byte[] down_arrow_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("down_arrow_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] down_arrow_icon_2 {
-            get {
+        internal static byte[] down_arrow_icon_2
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("down_arrow_icon_2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] down_arrow_icon1 {
-            get {
+        internal static byte[] down_arrow_icon1
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("down_arrow_icon1", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] down_arrow_wht_icon {
-            get {
+        internal static byte[] down_arrow_wht_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("down_arrow_wht_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] down_arrow_wht_icon_2 {
-            get {
+        internal static byte[] down_arrow_wht_icon_2
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("down_arrow_wht_icon_2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] DownArrow_Dark {
-            get {
+        internal static byte[] DownArrow_Dark
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("DownArrow_Dark", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DownArrow_Gray_6h_11w {
-            get {
+        internal static System.Drawing.Bitmap DownArrow_Gray_6h_11w
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("DownArrow_Gray_6h_11w", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DownArrow_Gray_7w_4h {
-            get {
+        internal static System.Drawing.Bitmap DownArrow_Gray_7w_4h
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("DownArrow_Gray_7w_4h", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] DownArrow_Light {
-            get {
+        internal static byte[] DownArrow_Light
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("DownArrow_Light", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DownArrows {
-            get {
+        internal static System.Drawing.Bitmap DownArrows
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("DownArrows", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Download32x32 {
-            get {
+        internal static System.Drawing.Bitmap DownArrowsDark
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("DownArrowsDark", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Download32x32
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("Download32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap EditCounter {
-            get {
+        internal static System.Drawing.Bitmap EditCounter
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("EditCounter", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap EditPermission32x32 {
-            get {
+        internal static System.Drawing.Bitmap EditPermission32x32
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("EditPermission32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap EnableAppSecurity32x32 {
-            get {
+        internal static System.Drawing.Bitmap EnableAppSecurity32x32
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("EnableAppSecurity32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Error16 {
-            get {
-                object obj = ResourceManager.GetObject("Error16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Error16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Error16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Error16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ErrorStop {
-            get {
-                object obj = ResourceManager.GetObject("ErrorStop", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap ErrorStop
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ErrorStop", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ErrorStop", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to The SQL Diagnostic Manager license is invalid..
         /// </summary>
-        internal static string ExceptionInvalidLicense {
-            get {
+        internal static string ExceptionInvalidLicense
+        {
+            get
+            {
                 return ResourceManager.GetString("ExceptionInvalidLicense", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to The SQL Diagnostic Manager license string is invalid..
         /// </summary>
-        internal static string ExceptionInvalidLicenseString {
-            get {
+        internal static string ExceptionInvalidLicenseString
+        {
+            get
+            {
                 return ResourceManager.GetString("ExceptionInvalidLicenseString", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to A connection could not be established to the SQLdm Management Service. Make sure the service is running and a network connection can be established to the host machine..
         /// </summary>
-        internal static string ExceptionManagementServiceUnavailable {
-            get {
+        internal static string ExceptionManagementServiceUnavailable
+        {
+            get
+            {
                 return ResourceManager.GetString("ExceptionManagementServiceUnavailable", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Unable to load the SQL Diagnostic Manager license..
         /// </summary>
-        internal static string ExceptionUnableToGetLicense {
-            get {
+        internal static string ExceptionUnableToGetLicense
+        {
+            get
+            {
                 return ResourceManager.GetString("ExceptionUnableToGetLicense", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Unable to set the new SQL Diagnostic Manager license..
         /// </summary>
-        internal static string ExceptionUnableToSetLicense {
-            get {
+        internal static string ExceptionUnableToSetLicense
+        {
+            get
+            {
                 return ResourceManager.GetString("ExceptionUnableToSetLicense", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to An unhandled exception occurred while running the SQL Diagnostic Manager Desktop Client..
         /// </summary>
-        internal static string ExceptionUnhandled {
-            get {
+        internal static string ExceptionUnhandled
+        {
+            get
+            {
                 return ResourceManager.GetString("ExceptionUnhandled", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] expand_icon {
-            get {
+        internal static byte[] expand_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("expand_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] expand_icon_2 {
-            get {
+        internal static byte[] expand_icon_2
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("expand_icon_2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] expand_icon_3 {
-            get {
+        internal static byte[] expand_icon_3
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("expand_icon_3", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] expand_icon_4 {
-            get {
+        internal static byte[] expand_icon_4
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("expand_icon_4", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] expand_icon_5 {
-            get {
+        internal static byte[] expand_icon_5
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("expand_icon_5", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] expand_icon_6 {
-            get {
+        internal static byte[] expand_icon_6
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("expand_icon_6", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] expand_list_view_disabled_icon {
-            get {
+        internal static byte[] expand_list_view_disabled_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("expand_list_view_disabled_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] expand_list_view_hover_icon {
-            get {
+        internal static byte[] expand_list_view_hover_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("expand_list_view_hover_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] expand_list_view_icon {
-            get {
+        internal static byte[] expand_list_view_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("expand_list_view_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] expand_tree_icon {
-            get {
+        internal static byte[] expand_tree_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("expand_tree_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap expandribbon {
-            get {
+        internal static System.Drawing.Bitmap expandribbon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("expandribbon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap expandtree {
-            get {
+        internal static System.Drawing.Bitmap expandtree
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("expandtree", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Export16x16 {
-            get {
+        internal static System.Drawing.Bitmap Export16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("Export16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ExportChartImage16x16 {
-            get {
+        internal static System.Drawing.Bitmap ExportChartImage16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("ExportChartImage16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ExportCounter {
-            get {
+        internal static System.Drawing.Bitmap ExportCounter
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("ExportCounter", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] ext_link {
-            get {
+        internal static byte[] ext_link
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("ext_link", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap facebook_16 {
-            get {
+        internal static System.Drawing.Bitmap facebook_16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("facebook_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FilesMenu {
-            get {
-                object obj = ResourceManager.GetObject("FilesMenu", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Filter {
-            get {
+        internal static System.Drawing.Bitmap Filter
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("Filter", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] filter_add_icon {
-            get {
+        internal static byte[] filter_add_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("filter_add_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] filter_off_icon {
-            get {
+        internal static byte[] filter_off_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("filter_off_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon FilterIcon {
-            get {
+        internal static System.Drawing.Icon FilterIcon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("FilterIcon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FilterLarge {
-            get {
-                object obj = ResourceManager.GetObject("FilterLarge", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap FilterLarge
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "FilterLarge", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("FilterLarge", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FlagClear16 {
-            get {
-                object obj = ResourceManager.GetObject("FlagClear16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap FlagClear16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "FlagClear16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("FlagClear16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FlagEnabled16 {
-            get {
-                object obj = ResourceManager.GetObject("FlagEnabled16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap FlagEnabled16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "FlagEnabled16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("FlagEnabled16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon folder {
-            get {
+        internal static System.Drawing.Icon folder
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("folder", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] folder_disabled_icon {
-            get {
+        internal static byte[] folder_disabled_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("folder_disabled_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] folder_hover_icon {
-            get {
+        internal static byte[] folder_hover_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("folder_hover_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] folder_icon {
-            get {
+        internal static byte[] folder_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("folder_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FolderClosed16x16 {
-            get {
-                object obj = ResourceManager.GetObject("FolderClosed16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap FolderClosed16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "FolderClosed16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("FolderClosed16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FolderClosed16x161 {
-            get {
-                object obj = ResourceManager.GetObject("FolderClosed16x161", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap FolderClosedCritical16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "FolderClosedCritical16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("FolderClosedCritical16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FolderClosedCritical16x16 {
-            get {
-                object obj = ResourceManager.GetObject("FolderClosedCritical16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap FolderClosedWarning16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "FolderClosedWarning16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("FolderClosedWarning16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FolderClosedWarning16x16 {
-            get {
-                object obj = ResourceManager.GetObject("FolderClosedWarning16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Follow32 {
-            get {
+        internal static System.Drawing.Bitmap Follow32
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("Follow32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap forward16x16 {
-            get {
+        internal static System.Drawing.Bitmap forward16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("forward16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Forward24x24 {
-            get {
+        internal static System.Drawing.Bitmap Forward24x24
+        {
+            get
+            {
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj1 = ResourceManager.GetObject("ForwardDark", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj1));
+                }
                 object obj = ResourceManager.GetObject("Forward24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap funnel_delete {
-            get {
-                object obj = ResourceManager.GetObject("funnel_delete", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap funnel_delete
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj;
+                    if (AutoScaleSizeHelper.isScalingRequired)
+                        obj = ResourceManager.GetObject("larger_funnel_delete", resourceCulture);
+                    else
+                        obj = ResourceManager.GetObject("darkTheme_" + "funnel_delete", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj;
+                    if (AutoScaleSizeHelper.isScalingRequired)
+                        obj = ResourceManager.GetObject("larger_funnel_delete", resourceCulture);
+                    else
+                        obj = ResourceManager.GetObject("funnel_delete", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap GeneralProperties {
-            get {
+        internal static System.Drawing.Bitmap GeneralProperties
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("GeneralProperties", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap GenericView16x16 {
-            get {
+        internal static System.Drawing.Bitmap GenericView16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("GenericView16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap GettingStartedWizardFooter {
-            get {
+        internal static System.Drawing.Bitmap GettingStartedWizardFooter
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("GettingStartedWizardFooter", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap GettingStartedWizardHeader {
-            get {
+        internal static System.Drawing.Bitmap GettingStartedWizardHeader
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("GettingStartedWizardHeader", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap GotoNextError {
-            get {
-                object obj = ResourceManager.GetObject("GotoNextError", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap GotoNextError
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "GotoNextError", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("GotoNextError", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap GotoPreviousError {
-            get {
-                object obj = ResourceManager.GetObject("GotoPreviousError", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap GotoPreviousError
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "GotoPreviousError", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("GotoPreviousError", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Grid_2x2 {
-            get {
-                object obj = ResourceManager.GetObject("Grid_2x2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Grid_2x2
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Grid_2x2", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Grid_2x2", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Grid_2x3 {
-            get {
-                object obj = ResourceManager.GetObject("Grid_2x3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Grid_2x3
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Grid_2x3", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Grid_2x3", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Grid_2x4 {
-            get {
-                object obj = ResourceManager.GetObject("Grid_2x4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Grid_2x4
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Grid_2x4", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Grid_2x4", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Grid_2x5 {
-            get {
-                object obj = ResourceManager.GetObject("Grid_2x5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Grid_2x5
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Grid_2x5", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Grid_2x5", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Grid_3x2 {
-            get {
-                object obj = ResourceManager.GetObject("Grid_3x2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Grid_3x2
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Grid_3x2", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Grid_3x2", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Grid_3x3 {
-            get {
-                object obj = ResourceManager.GetObject("Grid_3x3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Grid_3x3
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Grid_3x3", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Grid_3x3", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Grid_3x4 {
-            get {
-                object obj = ResourceManager.GetObject("Grid_3x4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Grid_3x4
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Grid_3x4", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Grid_3x4", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Grid_4x2 {
-            get {
-                object obj = ResourceManager.GetObject("Grid_4x2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Grid_4x2
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Grid_4x2", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Grid_4x2", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Grid_4x3 {
-            get {
-                object obj = ResourceManager.GetObject("Grid_4x3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Grid_4x3
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Grid_4x3", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Grid_4x3", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] grid_view_disabled_icon {
-            get {
+        internal static byte[] grid_view_disabled_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("grid_view_disabled_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] grid_view_hover_icon {
-            get {
+        internal static byte[] grid_view_hover_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("grid_view_hover_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] grid_view_icon {
-            get {
+        internal static byte[] grid_view_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("grid_view_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap GroomingOptions {
-            get {
+        internal static System.Drawing.Bitmap GroomingOptions
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("GroomingOptions", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap GroupByBox {
-            get {
+        internal static System.Drawing.Bitmap GroupByBox
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("GroupByBox", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap GroupByThisColumn {
-            get {
+        internal static System.Drawing.Bitmap GroupByThisColumn
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("GroupByThisColumn", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap HeaderStripSmallCollapse {
-            get {
-                object obj = ResourceManager.GetObject("HeaderStripSmallCollapse", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap HeaderStripSmallCollapse
+        {
+            get
+            {
+			//Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "HeaderStripSmallCollapse", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                   object obj = ResourceManager.GetObject("HeaderStripSmallCollapse", resourceCulture);
+                   return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }                
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap HeaderStripSmallExpand {
-            get {
-                object obj = ResourceManager.GetObject("HeaderStripSmallExpand", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap HeaderStripSmallExpand
+        {
+            get
+            {
+			//Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "HeaderStripSmallExpand", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                   object obj = ResourceManager.GetObject("HeaderStripSmallExpand", resourceCulture);
+                   return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }                
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] health_icon {
-            get {
+        internal static byte[] health_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("health_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap heat_map {
-            get {
-                object obj = ResourceManager.GetObject("heat_map", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap heat_map
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "heat_map", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("heat_map", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] heat_map_disabled {
-            get {
+        internal static byte[] heat_map_disabled
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("heat_map_disabled", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] heat_map_hover {
-            get {
+        internal static byte[] heat_map_hover
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("heat_map_hover", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] heat_map1 {
-            get {
+        internal static byte[] heat_map1
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("heat_map1", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Help_16x16 {
-            get {
-                object obj = ResourceManager.GetObject("Help_16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Help_16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Help_16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Help_16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] help_disabled_icon {
-            get {
+        internal static byte[] help_disabled_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("help_disabled_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] help_disabled_icon_2 {
-            get {
+        internal static byte[] help_disabled_icon_2
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("help_disabled_icon_2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] help_hover_icon {
-            get {
+        internal static byte[] help_hover_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("help_hover_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] help_hover_icon_2 {
-            get {
+        internal static byte[] help_hover_icon_2
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("help_hover_icon_2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] help_icon {
-            get {
+        internal static byte[] help_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("help_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] help_icon_2 {
-            get {
+        internal static byte[] help_icon_2
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("help_icon_2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap HelpMenu {
-            get {
-                object obj = ResourceManager.GetObject("HelpMenu", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Hide
+        {
+            get
+            {
+			    //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Hide", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Hide", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }                
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Hide {
-            get {
-                object obj = ResourceManager.GetObject("Hide", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap History16 {
-            get {
+        internal static System.Drawing.Bitmap History16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("History16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to You are currently viewing a historical snapshot. Click here to switch to Real Time Mode..
         /// </summary>
-        internal static string HistoryModeOperationalStatusLabel {
-            get {
+        internal static string HistoryModeOperationalStatusLabel
+        {
+            get
+            {
                 return ResourceManager.GetString("HistoryModeOperationalStatusLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Data for the selected historical snapshot does not exist for this view. Select another historical snapshot or click on run analysis to switch to real-time mode..
         /// </summary>
-        internal static string HistoryModeSnapshotDoesNotExistAnalyzeView {
-            get {
+        internal static string HistoryModeSnapshotDoesNotExistAnalyzeView
+        {
+            get
+            {
                 return ResourceManager.GetString("HistoryModeSnapshotDoesNotExistAnalyzeView", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Data for the selected historical snapshot does not exist for this view. Select another historical snapshot or click here to switch to Real Time Mode..
         /// </summary>
-        internal static string HistoryModeSnapshotDoesNotExistViewLabel {
-            get {
+        internal static string HistoryModeSnapshotDoesNotExistViewLabel
+        {
+            get
+            {
                 return ResourceManager.GetString("HistoryModeSnapshotDoesNotExistViewLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to An error occurred while loading the historical snapshot. Click here for details..
         /// </summary>
-        internal static string HistoryModeSnapshotLoadErrorViewLabel {
-            get {
+        internal static string HistoryModeSnapshotLoadErrorViewLabel
+        {
+            get
+            {
                 return ResourceManager.GetString("HistoryModeSnapshotLoadErrorViewLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to History Mode.
         /// </summary>
-        internal static string HistoryModeStatusBarLabel {
-            get {
+        internal static string HistoryModeStatusBarLabel
+        {
+            get
+            {
                 return ResourceManager.GetString("HistoryModeStatusBarLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to This view does not support History Mode. Click here to switch to Real Time Mode..
         /// </summary>
-        internal static string HistoryModeUnsupportedViewLabel {
-            get {
+        internal static string HistoryModeUnsupportedViewLabel
+        {
+            get
+            {
                 return ResourceManager.GetString("HistoryModeUnsupportedViewLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] home_disabled_icon {
-            get {
+        internal static byte[] home_disabled_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("home_disabled_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] home_hover_icon {
-            get {
+        internal static byte[] home_hover_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("home_hover_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] home_icon {
-            get {
+        internal static byte[] home_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("home_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Home24x24 {
-            get {
+        internal static System.Drawing.Bitmap Home24x24
+        {
+            get
+            {
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj1 = ResourceManager.GetObject("HomeDark", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj1));
+                }
                 object obj = ResourceManager.GetObject("Home24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap HomeTabMonitorView {
-            get {
+        internal static System.Drawing.Bitmap HomeTabMonitorView
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("HomeTabMonitorView", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap HotTrackTabBackground {
-            get {
-                object obj = ResourceManager.GetObject("HotTrackTabBackground", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap HotTrackTabBackground
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "HotTrackTabBackground", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("HotTrackTabBackground", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Import16x16 {
-            get {
+        internal static System.Drawing.Bitmap Import16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("Import16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ImportCounter {
-            get {
+        internal static System.Drawing.Bitmap ImportCounter
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("ImportCounter", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ImportExport16x16 {
-            get {
+        internal static System.Drawing.Bitmap ImportExport16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("ImportExport16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ImportExport32x32 {
-            get {
+        internal static System.Drawing.Bitmap ImportExport32x32
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("ImportExport32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] info_icon {
-            get {
+        internal static byte[] info_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("info_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] info_icon_hover {
-            get {
+        internal static byte[] info_icon_hover
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("info_icon_hover", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] info_wht_icon {
-            get {
+        internal static byte[] info_wht_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("info_wht_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Information16x16 {
-            get {
-                object obj = ResourceManager.GetObject("Information16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Information16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Information16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Information16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Information32x32 {
-            get {
-                object obj = ResourceManager.GetObject("Information32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Information32x32
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Information32x32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Information32x32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap InformationSmall {
-            get {
-                object obj = ResourceManager.GetObject("InformationSmall", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap InformationSmall
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "InformationSmall", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("InformationSmall", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap InstanceThumbnailMarginImage {
-            get {
+        internal static System.Drawing.Bitmap InstanceThumbnailMarginImage
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("InstanceThumbnailMarginImage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to The specified repository is not a valid version. Please specify a valid repository in order to continue..
         /// </summary>
-        internal static string InvalidRepositoryVersionMessage {
-            get {
+        internal static string InvalidRepositoryVersionMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("InvalidRepositoryVersionMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to The specified repository (version {0}) is not valid for this version of the SQLdm Desktop Client. Please specify a valid repository (version {1}) or upgrade the appropriate SQLdm component in order to continue..
         /// </summary>
-        internal static string InvalidRepositoryVersionMessageWithMetadata {
-            get {
+        internal static string InvalidRepositoryVersionMessageWithMetadata
+        {
+            get
+            {
                 return ResourceManager.GetString("InvalidRepositoryVersionMessageWithMetadata", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Never.
         /// </summary>
-        internal static string KeyExpires_Never {
-            get {
+        internal static string KeyExpires_Never
+        {
+            get
+            {
                 return ResourceManager.GetString("KeyExpires_Never", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Unlimited.
         /// </summary>
-        internal static string KeyLimit_Unlimited {
-            get {
+        internal static string KeyLimit_Unlimited
+        {
+            get
+            {
                 return ResourceManager.GetString("KeyLimit_Unlimited", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Production.
         /// </summary>
-        internal static string KeyType_Production {
-            get {
+        internal static string KeyType_Production
+        {
+            get
+            {
                 return ResourceManager.GetString("KeyType_Production", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Trial.
         /// </summary>
-        internal static string KeyType_Trial {
-            get {
+        internal static string KeyType_Trial
+        {
+            get
+            {
                 return ResourceManager.GetString("KeyType_Trial", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap KillProcess {
-            get {
-                object obj = ResourceManager.GetObject("KillProcess", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap KillProcess
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "KillProcess", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("KillProcess", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Last 365 days.
         /// </summary>
-        internal static string Last365Days {
-            get {
+        internal static string Last365Days
+        {
+            get
+            {
                 return ResourceManager.GetString("Last365Days", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] left_arrow_disabled_icon {
-            get {
+        internal static byte[] left_arrow_disabled_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("left_arrow_disabled_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] left_arrow_hover_icon {
-            get {
+        internal static byte[] left_arrow_hover_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("left_arrow_hover_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] left_arrow_wht_icon {
-            get {
+        internal static byte[] left_arrow_wht_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("left_arrow_wht_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] LeftArrow_Dark {
-            get {
+        internal static byte[] LeftArrow_Dark
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("LeftArrow_Dark", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] LeftArrow_Light {
-            get {
+        internal static byte[] LeftArrow_Light
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("LeftArrow_Light", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LeftArrows {
-            get {
+        internal static System.Drawing.Bitmap LeftArrows
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("LeftArrows", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LeftLink16x16 {
-            get {
-                object obj = ResourceManager.GetObject("LeftLink16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap LeftLink16x16
+        {
+            get
+            {
+			 //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "LeftLink16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("LeftLink16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }                
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] lightbulb_icon {
-            get {
+        internal static byte[] lightbulb_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("lightbulb_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] list_view_disabled_icon {
-            get {
+        internal static byte[] list_view_disabled_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("list_view_disabled_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] list_view_hover_icon {
-            get {
+        internal static byte[] list_view_hover_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("list_view_hover_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] list_view_icon {
-            get {
+        internal static byte[] list_view_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("list_view_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] lock_icon {
-            get {
+        internal static byte[] lock_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("lock_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Logs {
-            get {
-                object obj = ResourceManager.GetObject("Logs", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Logs
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Logs", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Logs", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] logs_icon {
-            get {
+        internal static byte[] logs_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("logs_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LogsCritical16x16 {
-            get {
-                object obj = ResourceManager.GetObject("LogsCritical16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap LogsCritical16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "LogsCritical16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("LogsCritical16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LogsCriticalThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("LogsCriticalThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap LogsCriticalThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "LogsCriticalThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("LogsCriticalThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LogsInfoThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("LogsInfoThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap LogsInfoThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "LogsInfoThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("LogsInfoThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LogsSqlAgentFilter16x16 {
-            get {
+        internal static System.Drawing.Bitmap LogsSqlAgentFilter16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("LogsSqlAgentFilter16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LogsSqlServerFilter16x16 {
-            get {
+        internal static System.Drawing.Bitmap LogsSqlServerFilter16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("LogsSqlServerFilter16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LogsThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("LogsThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap LogsThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "LogsThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("LogsThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LogsWarning16x16 {
-            get {
-                object obj = ResourceManager.GetObject("LogsWarning16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap LogsWarning16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "LogsWarning16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("LogsWarning16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LogsWarningThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("LogsWarningThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap LogsWarningThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "LogsWarningThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("LogsWarningThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] lowered_to_info_icon {
-            get {
+        internal static byte[] lowered_to_info_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("lowered_to_info_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] lowered_to_okay_icon {
-            get {
+        internal static byte[] lowered_to_okay_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("lowered_to_okay_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] lowered_to_warning_icon {
-            get {
+        internal static byte[] lowered_to_warning_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("lowered_to_warning_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LoweredToInfo {
-            get {
-                object obj = ResourceManager.GetObject("LoweredToInfo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap LoweredToInfo
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "LoweredToInfo", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("LoweredToInfo", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LoweredToOK {
-            get {
+        internal static System.Drawing.Bitmap LoweredToOK
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("LoweredToOK", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LoweredToWarning {
-            get {
+        internal static System.Drawing.Bitmap LoweredToWarning
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("LoweredToWarning", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Mail_16x16 {
-            get {
+        internal static System.Drawing.Bitmap Mail_16x16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("Mail_16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] maint_icon {
-            get {
+        internal static byte[] maint_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("maint_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] MaintenanceMode_Dark {
-            get {
+        internal static byte[] MaintenanceMode_Dark
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("MaintenanceMode_Dark", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MaintenanceMode16x16 {
-            get {
-                object obj = ResourceManager.GetObject("MaintenanceMode16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap MaintenanceMode16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "MaintenanceMode16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("MaintenanceMode16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MaintenanceMode32x32 {
-            get {
-                object obj = ResourceManager.GetObject("MaintenanceMode32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap MaintenanceMode32x32
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "MaintenanceMode32x32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("MaintenanceMode32x32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MaintenanceModeLarge {
-            get {
-                object obj = ResourceManager.GetObject("MaintenanceModeLarge", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap MaintenanceModeLarge
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "MaintenanceModeLarge", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("MaintenanceModeLarge", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Maximize {
-            get {
-                object obj = ResourceManager.GetObject("Maximize", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Maximize
+        {
+            get
+            {
+                object obj;
+                if (AutoScaleSizeHelper.isScalingRequired)
+                    obj = ResourceManager.GetObject("larger_Maximize", resourceCulture);
+                else
+                    obj = ResourceManager.GetObject("Maximize", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] minimize_disabled_icon {
-            get {
+        internal static byte[] minimize_disabled_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("minimize_disabled_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] minimize_hover_icon {
-            get {
+        internal static byte[] minimize_hover_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("minimize_hover_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] minimize_icon {
-            get {
+        internal static byte[] minimize_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("minimize_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MinimizeSmallHeaderStrip {
-            get {
-                object obj = ResourceManager.GetObject("MinimizeSmallHeaderStrip", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap MoveDown {
-            get {
+        internal static System.Drawing.Bitmap MoveDown
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("MoveDown", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MoveUp {
-            get {
+        internal static System.Drawing.Bitmap MoveUp
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("MoveUp", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] my_views_icon {
-            get {
+        internal static byte[] my_views_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("my_views_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] MyViews_Dark {
-            get {
+        internal static byte[] MyViews_Dark
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("MyViews_Dark", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap navigate_close {
-            get {
+        internal static System.Drawing.Bitmap navigate_close
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("navigate_close", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap navigate_open {
-            get {
+        internal static System.Drawing.Bitmap navigate_open
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("navigate_open", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap NavigationPaneAlertsLarge {
-            get {
+        internal static System.Drawing.Bitmap NavigationPaneAlertsLarge
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("NavigationPaneAlertsLarge", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap NavigationPaneAlertsSmall {
-            get {
-                object obj = ResourceManager.GetObject("NavigationPaneAlertsSmall", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap NavigationPaneAlertsSmall
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "NavigationPaneAlertsSmall", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("NavigationPaneAlertsSmall", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap NavigationPaneReportsSmall {
-            get {
+        internal static System.Drawing.Bitmap NavigationPaneReportsSmall
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("NavigationPaneReportsSmall", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap NavigationPaneServersLarge {
-            get {
+        internal static System.Drawing.Bitmap NavigationPaneServersLarge
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("NavigationPaneServersLarge", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap NavigationPaneServersSmall {
-            get {
-                object obj = ResourceManager.GetObject("NavigationPaneServersSmall", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap NavigationPaneServersSmall
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "NavigationPaneServersSmall", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("NavigationPaneServersSmall", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap NavigationPaneTasksSmall {
-            get {
+        internal static System.Drawing.Bitmap NavigationPaneTasksSmall
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("NavigationPaneTasksSmall", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap NewCounter {
-            get {
+        internal static System.Drawing.Bitmap NewCounter
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("NewCounter", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap NewFilter16x16 {
-            get {
-                object obj = ResourceManager.GetObject("NewFilter16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap NewFilter16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "NewFilter16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("NewFilter16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] next_disabled_icon {
-            get {
+        internal static byte[] next_disabled_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("next_disabled_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] next_hover_icon {
-            get {
+        internal static byte[] next_hover_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("next_hover_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] next_icon {
-            get {
+        internal static byte[] next_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("next_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap NotificationCaptionBar {
-            get {
+        internal static System.Drawing.Bitmap NotificationCaptionBar
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("NotificationCaptionBar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap NotificationCaptionBarGrip {
-            get {
+        internal static System.Drawing.Bitmap NotificationCaptionBarGrip
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("NotificationCaptionBarGrip", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Office2007Close {
-            get {
-                object obj = ResourceManager.GetObject("Office2007Close", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap Office2007Close
+        {
+            get
+            {
+                object obj;
+                if (AutoScaleSizeHelper.isScalingRequired)
+                    obj = ResourceManager.GetObject("larger_Office2007Close", resourceCulture);
+                else
+                    obj = ResourceManager.GetObject("Office2007Close", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] Ok_Dark {
-            get {
+        internal static byte[] Ok_Dark
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("Ok_Dark", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] ok_icon {
-            get {
+        internal static byte[] ok_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("ok_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] ok_icon_2 {
-            get {
+        internal static byte[] ok_icon_2
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("ok_icon_2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] ok_icon_3 {
-            get {
+        internal static byte[] ok_icon_3
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("ok_icon_3", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] ok_wht_icon {
-            get {
+        internal static byte[] ok_wht_icon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("ok_wht_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] ok_wht_icon_2 {
-            get {
+        internal static byte[] ok_wht_icon_2
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("ok_wht_icon_2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] ok_wht_icon_3 {
-            get {
+        internal static byte[] ok_wht_icon_3
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("ok_wht_icon_3", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap OK16 {
-            get {
+        internal static System.Drawing.Bitmap OK16
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("OK16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap OK32x32 {
-            get {
-                object obj = ResourceManager.GetObject("OK32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap OptionsGlyph {
-            get {
-                object obj = ResourceManager.GetObject("OptionsGlyph", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap OptionsGlyphUp16x16 {
-            get {
-                object obj = ResourceManager.GetObject("OptionsGlyphUp16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-       
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PanelCache {
-            get {
-                object obj = ResourceManager.GetObject("PanelCache", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PanelCPU {
-            get {
-                object obj = ResourceManager.GetObject("PanelCPU", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PanelCustom {
-            get {
-                object obj = ResourceManager.GetObject("PanelCustom", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PanelDatabases {
-            get {
-                object obj = ResourceManager.GetObject("PanelDatabases", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PanelDisk {
-            get {
-                object obj = ResourceManager.GetObject("PanelDisk", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
 
-        //6.2.4
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OK32x32
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("OK32x32", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OptionsGlyph
+        {
+            get
+            {
+			    //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "OptionsGlyph", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("OptionsGlyph", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }                
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OptionsGlyphUp16x16
+        {
+            get
+            {
+			    //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "OptionsGlyphUp16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("OptionsGlyphUp16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }                
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
@@ -3839,7 +5305,4147 @@ namespace Idera.SQLdm.DesktopClient.Properties {
         {
             get
             {
+                object obj = ResourceManager.GetObject("PanelAzureDisk", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PanelCache
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("PanelCache", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PanelCPU
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("PanelCPU", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PanelCustom
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("PanelCustom", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PanelDatabases
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("PanelDatabases", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PanelDisk
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("PanelDisk", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        //6.2.4
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PanelFileActivity
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("PanelFileActivity", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PanelLockWaits
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("PanelLockWaits", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PanelMemory
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("PanelMemory", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PanelNetwork
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("PanelNetwork", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PanelServerWaits
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("PanelServerWaits", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PanelSessions
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("PanelSessions", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PanelTempDB
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("PanelTempDB", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PanelVirtual
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("PanelVirtual", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] pause_disabled_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("pause_disabled_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] pause_hover_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("pause_hover_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] pause_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("pause_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pause32x32
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Pause32x32", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Days:.
+        /// </summary>
+        internal static string PeriodTypeDays
+        {
+            get
+            {
+                return ResourceManager.GetString("PeriodTypeDays", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Months:.
+        /// </summary>
+        internal static string PeriodTypeMonths
+        {
+            get
+            {
+                return ResourceManager.GetString("PeriodTypeMonths", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Range:.
+        /// </summary>
+        internal static string PeriodTypeRange
+        {
+            get
+            {
+                return ResourceManager.GetString("PeriodTypeRange", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Years:.
+        /// </summary>
+        internal static string PeriodTypeYears
+        {
+            get
+            {
+                return ResourceManager.GetString("PeriodTypeYears", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] pin_wht_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("pin_wht_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] pin_wht_icon_copy_3
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("pin_wht_icon_copy_3", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PopularProperties
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("PopularProperties", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] power_off_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("power_off_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] power_on_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("power_on_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] prev_disabled_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("prev_disabled_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] prev_hover_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("prev_hover_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] prev_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("prev_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Print16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Print16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Properties
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Properties", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Properties", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Provider_icon_49x49
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Provider_icon_49x49", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Provider_Wizard_164x477
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Provider_Wizard_164x477", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pulse16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Pulse16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QATPause
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("QATPause", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QMWebUI16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("QMWebUI16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QMWebUI16x16gray
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("QMWebUI16x16gray", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Queries
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Queries", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Queries", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] queries_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("queries_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QueriesCritical16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "QueriesCritical16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("QueriesCritical16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QueriesCriticalThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "QueriesCriticalThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("QueriesCriticalThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QueriesInfoThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "QueriesInfoThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("QueriesInfoThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QueriesSignature
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("QueriesSignature", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QueriesThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "QueriesThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("QueriesThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QueriesWarning16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "QueriesWarning16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("QueriesWarning16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QueriesWarningThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "QueriesWarningThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("QueriesWarningThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QueryHistory16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("QueryHistory16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] raised_info_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("raised_info_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] raised_to_critical_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("raised_to_critical_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] raised_warning_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("raised_warning_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RaisedToCritical
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("RaisedToCritical", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RaisedToInfo
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "RaisedToInfo", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("RaisedToInfo", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RaisedToWarning
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("RaisedToWarning", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] reamined_critical_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("reamined_critical_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] reamined_info_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("reamined_info_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] reamined_ok_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("reamined_ok_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] reamined_warning_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("reamined_warning_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Recommendations_32
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Recommendations_32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Recommendations_32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Refresh
+        {
+            get
+            {
+			  //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Refresh", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Refresh", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }                
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] refresh_disabled_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("refresh_disabled_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] refresh_hover_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("refresh_hover_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] refresh_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("refresh_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Refresh24x24
+        {
+            get
+            {
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj1 = ResourceManager.GetObject("RefreshDark", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj1));
+                }
+                object obj = ResourceManager.GetObject("Refresh24x24", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RefreshError
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "RefreshError", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("RefreshError", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RemainedCritical
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("RemainedCritical", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RemainedInfo
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "RemainedInfo", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("RemainedInfo", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RemainedWarning
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("RemainedWarning", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Remove
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Remove", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Remove", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] remove_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("remove_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ReportEmail32x32
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ReportEmail32x32", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ReportsDeploymentWizardBanner48x48
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ReportsDeploymentWizardBanner48x48", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ReportsFeature
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ReportsFeature", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RepositoryConnectionDialogHeader
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("RepositoryConnectionDialogHeader", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] resources_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("resources_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Resources_query_waits_32x32
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Resources_query_waits_32x32", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Resources_server_waits_32x32
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Resources_server_waits_32x32", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ResourcesCpuView16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ResourcesCpuView16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ResourcesCritical16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ResourcesCritical16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ResourcesCritical16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ResourcesCriticalThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ResourcesCriticalThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ResourcesCriticalThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ResourcesDiskSizeView16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ResourcesDiskSizeView16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ResourcesDiskView16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ResourcesDiskView16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ResourcesFileActivity32x32
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ResourcesFileActivity32x32", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ResourcesInfoThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ResourcesInfoThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ResourcesInfoThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ResourcesMemoryView16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ResourcesMemoryView16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ResourcesProcedureCacheView16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ResourcesProcedureCacheView16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ResourcesSmall
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ResourcesSmall", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ResourcesSmall", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ResourcesThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ResourcesThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ResourcesThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ResourcesWarning16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ResourcesWarning16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ResourcesWarning16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ResourcesWarningThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ResourcesWarningThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ResourcesWarningThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RestoreDown
+        {
+            get
+            {
+                object obj;
+                if (AutoScaleSizeHelper.isScalingRequired)
+                    obj = ResourceManager.GetObject("larger_RestoreDown", resourceCulture);
+                else
+                    obj = ResourceManager.GetObject("RestoreDown", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reverted_16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("reverted_16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RibbonCheckboxChecked
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("RibbonCheckboxChecked", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RibbonCheckboxUnchecked
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("RibbonCheckboxUnchecked", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RibbonRadioButtonChecked
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("RibbonRadioButtonChecked", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RibbonRadioButtonUnchecked
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("RibbonRadioButtonUnchecked", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] right_arrow_disabled_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("right_arrow_disabled_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] right_arrow_hover_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("right_arrow_hover_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] right_arrow_wht_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("right_arrow_wht_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RightArrow_Gray_4w_7h
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("RightArrow_Gray_4w_7h", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RightArrow_White_9h_5w
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("RightArrow_White_9h_5w", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RightArrows
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("RightArrows", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] run_time
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("run_time", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] screen_disabled_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("screen_disabled_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] screen_hover_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("screen_hover_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] screen_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("screen_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap scrollbar_arrowdown
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("scrollbar_arrowdown", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap scrollbar_arrowup
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("scrollbar_arrowup", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap scrollbar_thumb_background
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("scrollbar_thumb_background", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap scrollbar_thumb_box
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("scrollbar_thumb_box", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap scrollbar_thumb_box_endcap_bottom
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("scrollbar_thumb_box_endcap_bottom", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap scrollbar_thumb_box_endcap_top
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("scrollbar_thumb_box_endcap_top", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap scrollbar_thumb_grip
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("scrollbar_thumb_grip", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("search", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] search_disabled_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("search_disabled_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] search_hover_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("search_hover_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] search_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("search_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectedItem16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SelectedItem16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectedRowBackground
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SelectedRowBackground", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectedTabBackground
+        {
+            get
+            {               
+                    object obj = ResourceManager.GetObject("SelectedTabBackground", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Server
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Server", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Server", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] server_properties_disabled_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("server_properties_disabled_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] server_properties_hover_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("server_properties_hover_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] server_properties_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("server_properties_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServerCritical
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ServerCritical", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ServerCritical", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServerGroupCritical16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ServerGroupCritical16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ServerGroupCritical16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServerGroupDetailsView
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ServerGroupDetailsView", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ServerGroupDetailsView", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary> Saurabh UX-DM
+        internal static System.Drawing.Bitmap ServerGroupHeatMapView
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ServerGroupHeatMapView", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ServerGroupHeatMapView", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServerGroupOK16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ServerGroupOK16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ServerGroupOK16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServerGroupThumbnailView
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ServerGroupThumbnailView", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ServerGroupThumbnailView", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServerGroupWarning16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ServerGroupWarning16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ServerGroupWarning16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServerInformation
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ServerInformation", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ServerInformation", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServerMaintenanceMode
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ServerMaintenanceMode", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ServerMaintenanceMode", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServerOK16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ServerOK16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ServerOK16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Servers
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Servers", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Servers", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon ServersIcon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ServersIcon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServersMaintenanceMode
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ServersMaintenanceMode", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ServersMaintenanceMode", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServersUsingCounter
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ServersUsingCounter", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServerWarning
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ServerWarning", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ServerWarning", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServerWarning16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ServerWarning16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ServerWarning16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Services
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Services", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Services", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] services_critical_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("services_critical_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] services_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("services_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] services_warning_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("services_warning_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServicesCritical16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ServicesCritical16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ServicesCritical16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServicesCriticalThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ServicesCriticalThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ServicesCriticalThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServicesFullTextSearchView16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ServicesFullTextSearchView16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServicesInfoThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ServicesInfoThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ServicesInfoThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServicesReplicationView16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ServicesReplicationView16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServicesSqlAgentJobsView16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ServicesSqlAgentJobsView16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServicesThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ServicesThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ServicesThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServicesWarning16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ServicesWarning16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ServicesWarning16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServicesWarningThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ServicesWarningThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ServicesWarningThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] session_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("session_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sessions
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Sessions", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Sessions", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SessionsBlockingView16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SessionsBlockingView16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SessionsCritical16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "SessionsCritical16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("SessionsCritical16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SessionsCriticalThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "SessionsCriticalThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("SessionsCriticalThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SessionsDetailsViewSmall
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SessionsDetailsViewSmall", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SessionsInfoThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "SessionsInfoThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("SessionsInfoThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SessionsLocksView16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SessionsLocksView16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SessionsLocksViewSmall
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SessionsLocksViewSmall", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SessionStatusBackground
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SessionStatusBackground", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SessionStatusOther
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SessionStatusOther", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SessionStatusRunnable
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SessionStatusRunnable", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SessionStatusRunning
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SessionStatusRunning", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SessionStatusSleeping
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SessionStatusSleeping", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SessionStatusSuspended
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SessionStatusSuspended", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SessionsThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "SessionsThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("SessionsThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SessionsWarning16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "SessionsWarning16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("SessionsWarning16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SessionsWarningThumbnail
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "SessionsWarningThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("SessionsWarningThumbnail", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon SessionTraceIcon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SessionTraceIcon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] sort_alpha_az_disabled_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("sort_alpha_az_disabled_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] sort_alpha_az_hover_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("sort_alpha_az_hover_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] sort_alpha_az_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("sort_alpha_az_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] sort_alpha_za_disabled_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("sort_alpha_za_disabled_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] sort_alpha_za_hover_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("sort_alpha_za_hover_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] sort_alpha_za_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("sort_alpha_za_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SortAscending
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SortAscending", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SortDescending
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SortDescending", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Splash
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Splash", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SQLdm_Default
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SQLdm_Default", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SQLdm_Default_2
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SQLdm_Default_2", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SQLdm_Default_3
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SQLdm_Default_3", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SQLdmLogoHeader
+        {
+            get
+            {
+			//Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "SQLdmLogoHeader", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("SQLdmLogoHeader", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }                
+            }
+        }
+		/// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap darkTheme_SQLdmLogoHeader
+        {
+            get
+            {			
+                    object obj = ResourceManager.GetObject("darkTheme_SQLdmLogoHeader", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                               
+            }
+        }
+		
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SQLdmToday_6Things
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SQLdmToday_6Things", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SQLdmToday_6Things_Dark
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SQLdmToday_6Things_Dark", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SQLdmToday_buttonbackgrnd
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SQLdmToday_buttonbackgrnd", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SQLdmToday_ProductName
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SQLdmToday_ProductName", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SQLdmTodayWebConsole
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SQLdmTodayWebConsole", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon SQLRecommendationScript
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SQLRecommendationScript", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SQLServerPhysicalIO
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SQLServerPhysicalIO", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StartTrace
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("StartTrace", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StatusCriticalSmall
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "StatusCriticalSmall", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("StatusCriticalSmall", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StatusInfoSmall
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "StatusInfoSmall", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("StatusInfoSmall", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StatusMainentanceModeSmall
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "StatusMainentanceModeSmall", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("StatusMainentanceModeSmall", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StatusOKSmall
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("StatusOKSmall", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StatusSummaryCriticalLarge
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "StatusSummaryCriticalLarge", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("StatusSummaryCriticalLarge", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StatusSummaryInformationLarge
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "StatusSummaryInformationLarge", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("StatusSummaryInformationLarge", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StatusSummaryOKLarge
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("StatusSummaryOKLarge", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StatusSummaryWarningLarge
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("StatusSummaryWarningLarge", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StatusUnknown16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "StatusUnknown16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("StatusUnknown16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StatusWarningSmall
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("StatusWarningSmall", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Stop24x24
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Stop24x24", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Stop24x24", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+        internal static System.Drawing.Bitmap Cancel24x24
+        {
+            get
+            {
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj1 = ResourceManager.GetObject("StopReportDark", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj1));
+                }
+                object obj = ResourceManager.GetObject("Cancel24x24", resourceCulture);
+
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)obj);
+                //return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap Clear24x24
+        {
+            get
+            {
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj1 = ResourceManager.GetObject("FilterClearDark", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj1));
+                }
+                object obj = ResourceManager.GetObject("Clear24x24", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap Schedule24x24
+        {
+            get
+            {
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj1 = ResourceManager.GetObject("ScheduleEmailDark", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj1));
+                }
+                object obj = ResourceManager.GetObject("Schedule24x24", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap Deploy24x24
+        {
+            get
+            {
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj1 = ResourceManager.GetObject("DeployActionsDark", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj1));
+                }
+                object obj = ResourceManager.GetObject("Deploy24x24", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                //return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap Edit24x24
+        {
+            get
+            {
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj1 = ResourceManager.GetObject("EditReportDark", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj1));
+                }
+                object obj = ResourceManager.GetObject("Edit24x24", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap Delete24x24
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj1 = ResourceManager.GetObject("DeleteReportDark", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj1));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Delete24x24", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+
+            }
+        }
+        internal static System.Drawing.Bitmap Export24x24
+        {
+            get
+            {
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj1 = ResourceManager.GetObject("ExportReportDark", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj1));
+                }
+                object obj = ResourceManager.GetObject("Export24x24", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap Import24x24
+        {
+            get
+            {
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj1 = ResourceManager.GetObject("ImportReportDark", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj1));
+                }
+                object obj = ResourceManager.GetObject("Import24x24", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap New24x24
+        {
+            get
+            {
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj1 = ResourceManager.GetObject("NewReportDark", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj1));
+                }
+                object obj = ResourceManager.GetObject("New24x24", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StopTrace
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "StopTrace", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("StopTrace", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Summation9x9
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Summation9x9", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SWA_Icon24
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SWA_Icon24", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SystemDefinedPermission16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "SystemDefinedPermission16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("SystemDefinedPermission16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SystemDiagnosticsView16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("SystemDiagnosticsView16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SystemSession
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "SystemSession", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("SystemSession", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Table
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Table", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TableCritical16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("TableCritical16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TablesViewCritical16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("TablesViewCritical16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TablesViewWarning16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("TablesViewWarning16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TableWarning16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("TableWarning16x16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Tag_Dark
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Tag_Dark", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] tag_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("tag_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] tag_icon_2
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("tag_icon_2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] tag_icon_3
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("tag_icon_3", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tag16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Tag16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Tag16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tag32x32
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Tag32x32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Tag32x32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+		///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ServerTree_Tag_Icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ServerTree_Tag_Icon", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));                               
+            }
+        }
+		
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Tags_Dark
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Tags_Dark", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] tags_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("tags_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TaskCompleted
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("TaskCompleted", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TaskInProgress
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("TaskInProgress", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TaskNotStarted2
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "TaskNotStarted2", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("TaskNotStarted2", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TaskOnHold2
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("TaskOnHold2", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TasksFeature
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("TasksFeature", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tempdb_32
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("tempdb_32", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TestConnectionFailed
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("TestConnectionFailed", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TestConnectionSuccess
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("TestConnectionSuccess", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TestConnectionUnknown
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "TestConnectionUnknown", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("TestConnectionUnknown", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TestCustomCounter
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("TestCustomCounter", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] time_disabled_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("time_disabled_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] time_hover_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("time_hover_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] time_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("time_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] time_icon_2
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("time_icon_2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   DarkTheme 4.12 Babita Manral icon changes
+        /// </summary>
+        internal static System.Drawing.Bitmap TodayPageHeader
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "TodayPageHeader", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("TodayPageHeader", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }                
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ToolbarHelp
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "ToolbarHelp", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("ToolbarHelp", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ToolbarHome
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ToolbarHome", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ToolbarPause
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ToolbarPause", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ToolbarRefresh
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ToolbarRefresh", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trialcentergraphic
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("trialcentergraphic", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trialcentergraphic_dark
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("trialcentergraphic_dark", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to The trial license for SQL Diagnostic Manager has expired.  Please contact Idera for a valid license..
+        /// </summary>
+        internal static string TrialLicenseHasExpired
+        {
+            get
+            {
+                return ResourceManager.GetString("TrialLicenseHasExpired", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to SQL Diagnostic Manager has a trial license that will expire in {0} day(s) on {1}..
+        /// </summary>
+        internal static string TrialLicenseWillExpire
+        {
+            get
+            {
+                return ResourceManager.GetString("TrialLicenseWillExpire", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to SQL Diagnostic Manager has a trial license that will expire today..
+        /// </summary>
+        internal static string TrialLicenseWillExpireToday
+        {
+            get
+            {
+                return ResourceManager.GetString("TrialLicenseWillExpireToday", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TriangleRight
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("TriangleRight", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap twitter_16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("twitter_16", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Unfollow32
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Unfollow32", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] unlock_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("unlock_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] up_arrow_disabled_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("up_arrow_disabled_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] up_arrow_hover_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("up_arrow_hover_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] up_arrow_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("up_arrow_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] up_arrow_wht_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("up_arrow_wht_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UpArrow_Gray_6h_11w
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("UpArrow_Gray_6h_11w", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UpArrow_Gray_7w_4h
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("UpArrow_Gray_7w_4h", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UpArrows
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("UpArrows", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UpArrowsDark
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("UpArrowsDark", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] user_disabled_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("user_disabled_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] user_hover_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("user_hover_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] user_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("user_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UserDefinedPermission16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "UserDefinedPermission16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("UserDefinedPermission16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UserPermission32x32
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "UserPermission32x32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("UserPermission32x32", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UserSession
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "UserSession", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("UserSession", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Views16x16
+        {
+            get
+            {
+                //Babita
+                if (Settings.Default.ColorScheme == "Dark")
+                {
+                    object obj = ResourceManager.GetObject("darkTheme_" + "Views16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+                else
+                {
+                    object obj = ResourceManager.GetObject("Views16x16", resourceCulture);
+                    return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Warning
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Warning", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Warning_Dark
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Warning_Dark", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] warning_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("warning_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] warning_icon_2
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("warning_icon_2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] warning_icon_3
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("warning_icon_3", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] warning_icon_4
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("warning_icon_4", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] warning_icon_5
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("warning_icon_5", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] warning_wht_icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("warning_wht_icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] warning_wht_icon_2
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("warning_wht_icon_2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Warning32x32
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Warning32x32", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkTheme_AlertInfoIcon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("darkTheme_AlertInfoIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3847,2704 +9453,454 @@ namespace Idera.SQLdm.DesktopClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PanelFileActivity {
-            get {
-                object obj = ResourceManager.GetObject("PanelFileActivity", resourceCulture);
+        internal static System.Drawing.Bitmap DarkTheme_AlertOKIcon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("darkTheme_AlertOKIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PanelLockWaits {
-            get {
-                object obj = ResourceManager.GetObject("PanelLockWaits", resourceCulture);
+        internal static System.Drawing.Bitmap DarkTheme_AlertWarningIcon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("darkTheme_AlertWarningIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PanelMemory {
-            get {
-                object obj = ResourceManager.GetObject("PanelMemory", resourceCulture);
+        internal static System.Drawing.Bitmap DarkTheme_AlertCriticalIcon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("darkTheme_AlertCriticalIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PanelNetwork {
-            get {
-                object obj = ResourceManager.GetObject("PanelNetwork", resourceCulture);
+        internal static System.Drawing.Bitmap ToolbarRefreshHover
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ToolbarRefreshHover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PanelServerWaits {
-            get {
-                object obj = ResourceManager.GetObject("PanelServerWaits", resourceCulture);
+        internal static System.Drawing.Bitmap hoverbackward16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("hoverbackward16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PanelSessions {
-            get {
-                object obj = ResourceManager.GetObject("PanelSessions", resourceCulture);
+        internal static System.Drawing.Bitmap hoverforward16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("hoverforward16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PanelTempDB {
-            get {
-                object obj = ResourceManager.GetObject("PanelTempDB", resourceCulture);
+        internal static System.Drawing.Bitmap whtback16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("whtback16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PanelVirtual {
-            get {
-                object obj = ResourceManager.GetObject("PanelVirtual", resourceCulture);
+        internal static System.Drawing.Bitmap whtfwd16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("whtfwd16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] pause_disabled_icon {
-            get {
-                object obj = ResourceManager.GetObject("pause_disabled_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] pause_hover_icon {
-            get {
-                object obj = ResourceManager.GetObject("pause_hover_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] pause_icon {
-            get {
-                object obj = ResourceManager.GetObject("pause_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Pause32x32 {
-            get {
-                object obj = ResourceManager.GetObject("Pause32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Days:.
-        /// </summary>
-        internal static string PeriodTypeDays {
-            get {
-                return ResourceManager.GetString("PeriodTypeDays", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Months:.
-        /// </summary>
-        internal static string PeriodTypeMonths {
-            get {
-                return ResourceManager.GetString("PeriodTypeMonths", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Range:.
-        /// </summary>
-        internal static string PeriodTypeRange {
-            get {
-                return ResourceManager.GetString("PeriodTypeRange", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Years:.
-        /// </summary>
-        internal static string PeriodTypeYears {
-            get {
-                return ResourceManager.GetString("PeriodTypeYears", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] pin_wht_icon {
-            get {
-                object obj = ResourceManager.GetObject("pin_wht_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] pin_wht_icon_copy_3 {
-            get {
-                object obj = ResourceManager.GetObject("pin_wht_icon_copy_3", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PopularProperties {
-            get {
-                object obj = ResourceManager.GetObject("PopularProperties", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] power_off_icon {
-            get {
-                object obj = ResourceManager.GetObject("power_off_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] power_on_icon {
-            get {
-                object obj = ResourceManager.GetObject("power_on_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] prev_disabled_icon {
-            get {
-                object obj = ResourceManager.GetObject("prev_disabled_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] prev_hover_icon {
-            get {
-                object obj = ResourceManager.GetObject("prev_hover_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] prev_icon {
-            get {
-                object obj = ResourceManager.GetObject("prev_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Print16x16 {
-            get {
-                object obj = ResourceManager.GetObject("Print16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Properties {
-            get {
-                object obj = ResourceManager.GetObject("Properties", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Provider_icon_49x49 {
-            get {
-                object obj = ResourceManager.GetObject("Provider_icon_49x49", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Provider_Wizard_164x477 {
-            get {
-                object obj = ResourceManager.GetObject("Provider_Wizard_164x477", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Pulse16 {
-            get {
-                object obj = ResourceManager.GetObject("Pulse16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap QATPause {
-            get {
-                object obj = ResourceManager.GetObject("QATPause", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap QMWebUI16x16 {
-            get {
-                object obj = ResourceManager.GetObject("QMWebUI16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap QMWebUI16x16gray {
-            get {
-                object obj = ResourceManager.GetObject("QMWebUI16x16gray", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Queries {
-            get {
-                object obj = ResourceManager.GetObject("Queries", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] queries_icon {
-            get {
-                object obj = ResourceManager.GetObject("queries_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap QueriesCritical16x16 {
-            get {
-                object obj = ResourceManager.GetObject("QueriesCritical16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap QueriesCriticalThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("QueriesCriticalThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap QueriesInfoThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("QueriesInfoThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap QueriesSignature {
-            get {
-                object obj = ResourceManager.GetObject("QueriesSignature", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap QueriesThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("QueriesThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap QueriesWarning16x16 {
-            get {
-                object obj = ResourceManager.GetObject("QueriesWarning16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap QueriesWarningThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("QueriesWarningThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap QueryHistory16 {
-            get {
-                object obj = ResourceManager.GetObject("QueryHistory16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] raised_info_icon {
-            get {
-                object obj = ResourceManager.GetObject("raised_info_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] raised_to_critical_icon {
-            get {
-                object obj = ResourceManager.GetObject("raised_to_critical_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] raised_warning_icon {
-            get {
-                object obj = ResourceManager.GetObject("raised_warning_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap RaisedToCritical {
-            get {
-                object obj = ResourceManager.GetObject("RaisedToCritical", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap RaisedToInfo {
-            get {
-                object obj = ResourceManager.GetObject("RaisedToInfo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap RaisedToWarning {
-            get {
-                object obj = ResourceManager.GetObject("RaisedToWarning", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] reamined_critical_icon {
-            get {
-                object obj = ResourceManager.GetObject("reamined_critical_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] reamined_info_icon {
-            get {
-                object obj = ResourceManager.GetObject("reamined_info_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] reamined_ok_icon {
-            get {
-                object obj = ResourceManager.GetObject("reamined_ok_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] reamined_warning_icon {
-            get {
-                object obj = ResourceManager.GetObject("reamined_warning_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Recommendations_32 {
-            get {
-                object obj = ResourceManager.GetObject("Recommendations_32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Refresh {
-            get {
-                object obj = ResourceManager.GetObject("Refresh", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] refresh_disabled_icon {
-            get {
-                object obj = ResourceManager.GetObject("refresh_disabled_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] refresh_hover_icon {
-            get {
-                object obj = ResourceManager.GetObject("refresh_hover_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] refresh_icon {
-            get {
-                object obj = ResourceManager.GetObject("refresh_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Refresh24x24 {
-            get {
-                object obj = ResourceManager.GetObject("Refresh24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap RefreshError {
-            get {
-                object obj = ResourceManager.GetObject("RefreshError", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap RemainedCritical {
-            get {
-                object obj = ResourceManager.GetObject("RemainedCritical", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap RemainedInfo {
-            get {
-                object obj = ResourceManager.GetObject("RemainedInfo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap RemainedWarning {
-            get {
-                object obj = ResourceManager.GetObject("RemainedWarning", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Remove {
-            get {
-                object obj = ResourceManager.GetObject("Remove", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] remove_icon {
-            get {
-                object obj = ResourceManager.GetObject("remove_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ReportEmail32x32 {
-            get {
-                object obj = ResourceManager.GetObject("ReportEmail32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ReportsDeploymentWizardBanner48x48 {
-            get {
-                object obj = ResourceManager.GetObject("ReportsDeploymentWizardBanner48x48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ReportsFeature {
-            get {
-                object obj = ResourceManager.GetObject("ReportsFeature", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap RepositoryConnectionDialogHeader {
-            get {
-                object obj = ResourceManager.GetObject("RepositoryConnectionDialogHeader", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] resources_icon {
-            get {
-                object obj = ResourceManager.GetObject("resources_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Resources_query_waits_32x32 {
-            get {
-                object obj = ResourceManager.GetObject("Resources_query_waits_32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Resources_server_waits_32x32 {
-            get {
-                object obj = ResourceManager.GetObject("Resources_server_waits_32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ResourcesCpuView16x16 {
-            get {
-                object obj = ResourceManager.GetObject("ResourcesCpuView16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ResourcesCritical16x16 {
-            get {
-                object obj = ResourceManager.GetObject("ResourcesCritical16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ResourcesCriticalThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("ResourcesCriticalThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ResourcesDiskSizeView16x16 {
-            get {
-                object obj = ResourceManager.GetObject("ResourcesDiskSizeView16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ResourcesDiskView16x16 {
-            get {
-                object obj = ResourceManager.GetObject("ResourcesDiskView16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ResourcesFileActivity32x32 {
-            get {
-                object obj = ResourceManager.GetObject("ResourcesFileActivity32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ResourcesInfoThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("ResourcesInfoThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ResourcesMemoryView16x16 {
-            get {
-                object obj = ResourceManager.GetObject("ResourcesMemoryView16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ResourcesProcedureCacheView16x16 {
-            get {
-                object obj = ResourceManager.GetObject("ResourcesProcedureCacheView16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ResourcesSmall {
-            get {
-                object obj = ResourceManager.GetObject("ResourcesSmall", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ResourcesThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("ResourcesThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ResourcesWarning16x16 {
-            get {
-                object obj = ResourceManager.GetObject("ResourcesWarning16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ResourcesWarningThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("ResourcesWarningThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap RestoreDown {
-            get {
-                object obj = ResourceManager.GetObject("RestoreDown", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap reverted_16 {
-            get {
-                object obj = ResourceManager.GetObject("reverted_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap RibbonCheckboxChecked {
-            get {
-                object obj = ResourceManager.GetObject("RibbonCheckboxChecked", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap RibbonCheckboxUnchecked {
-            get {
-                object obj = ResourceManager.GetObject("RibbonCheckboxUnchecked", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap RibbonRadioButtonChecked {
-            get {
-                object obj = ResourceManager.GetObject("RibbonRadioButtonChecked", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap RibbonRadioButtonUnchecked {
-            get {
-                object obj = ResourceManager.GetObject("RibbonRadioButtonUnchecked", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] right_arrow_disabled_icon {
-            get {
-                object obj = ResourceManager.GetObject("right_arrow_disabled_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] right_arrow_hover_icon {
-            get {
-                object obj = ResourceManager.GetObject("right_arrow_hover_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] right_arrow_wht_icon {
-            get {
-                object obj = ResourceManager.GetObject("right_arrow_wht_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap RightArrow_Gray_4w_7h {
-            get {
-                object obj = ResourceManager.GetObject("RightArrow_Gray_4w_7h", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap RightArrow_White_9h_5w {
-            get {
-                object obj = ResourceManager.GetObject("RightArrow_White_9h_5w", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap RightArrows {
-            get {
-                object obj = ResourceManager.GetObject("RightArrows", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] run_time {
-            get {
-                object obj = ResourceManager.GetObject("run_time", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] screen_disabled_icon {
-            get {
-                object obj = ResourceManager.GetObject("screen_disabled_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] screen_hover_icon {
-            get {
-                object obj = ResourceManager.GetObject("screen_hover_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] screen_icon {
-            get {
-                object obj = ResourceManager.GetObject("screen_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap scrollbar_arrowdown {
-            get {
-                object obj = ResourceManager.GetObject("scrollbar_arrowdown", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap scrollbar_arrowup {
-            get {
-                object obj = ResourceManager.GetObject("scrollbar_arrowup", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap scrollbar_thumb_background {
-            get {
-                object obj = ResourceManager.GetObject("scrollbar_thumb_background", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap scrollbar_thumb_box {
-            get {
-                object obj = ResourceManager.GetObject("scrollbar_thumb_box", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap scrollbar_thumb_box_endcap_bottom {
-            get {
-                object obj = ResourceManager.GetObject("scrollbar_thumb_box_endcap_bottom", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap scrollbar_thumb_box_endcap_top {
-            get {
-                object obj = ResourceManager.GetObject("scrollbar_thumb_box_endcap_top", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap scrollbar_thumb_grip {
-            get {
-                object obj = ResourceManager.GetObject("scrollbar_thumb_grip", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap search {
-            get {
-                object obj = ResourceManager.GetObject("search", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] search_disabled_icon {
-            get {
-                object obj = ResourceManager.GetObject("search_disabled_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] search_hover_icon {
-            get {
-                object obj = ResourceManager.GetObject("search_hover_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] search_icon {
-            get {
-                object obj = ResourceManager.GetObject("search_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SelectedItem16x16 {
-            get {
-                object obj = ResourceManager.GetObject("SelectedItem16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SelectedRowBackground {
-            get {
-                object obj = ResourceManager.GetObject("SelectedRowBackground", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SelectedTabBackground {
-            get {
-                object obj = ResourceManager.GetObject("SelectedTabBackground", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Server {
-            get {
-                object obj = ResourceManager.GetObject("Server", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] server_properties_disabled_icon {
-            get {
-                object obj = ResourceManager.GetObject("server_properties_disabled_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] server_properties_hover_icon {
-            get {
-                object obj = ResourceManager.GetObject("server_properties_hover_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] server_properties_icon {
-            get {
-                object obj = ResourceManager.GetObject("server_properties_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServerCritical {
-            get {
-                object obj = ResourceManager.GetObject("ServerCritical", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServerGroupCritical16x16 {
-            get {
-                object obj = ResourceManager.GetObject("ServerGroupCritical16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServerGroupDetailsView {
-            get {
-                object obj = ResourceManager.GetObject("ServerGroupDetailsView", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServerGroupOK16x16 {
-            get {
-                object obj = ResourceManager.GetObject("ServerGroupOK16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServerGroupThumbnailView {
-            get {
-                object obj = ResourceManager.GetObject("ServerGroupThumbnailView", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServerGroupWarning16x16 {
-            get {
-                object obj = ResourceManager.GetObject("ServerGroupWarning16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServerInformation {
-            get {
-                object obj = ResourceManager.GetObject("ServerInformation", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServerMaintenanceMode {
-            get {
-                object obj = ResourceManager.GetObject("ServerMaintenanceMode", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServerOK16x16 {
-            get {
-                object obj = ResourceManager.GetObject("ServerOK16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Servers {
-            get {
-                object obj = ResourceManager.GetObject("Servers", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon ServersIcon {
-            get {
-                object obj = ResourceManager.GetObject("ServersIcon", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServersMaintenanceMode {
-            get {
-                object obj = ResourceManager.GetObject("ServersMaintenanceMode", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServersUsingCounter {
-            get {
-                object obj = ResourceManager.GetObject("ServersUsingCounter", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServerWarning {
-            get {
-                object obj = ResourceManager.GetObject("ServerWarning", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServerWarning16x16 {
-            get {
-                object obj = ResourceManager.GetObject("ServerWarning16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Services {
-            get {
-                object obj = ResourceManager.GetObject("Services", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] services_critical_icon {
-            get {
-                object obj = ResourceManager.GetObject("services_critical_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] services_icon {
-            get {
-                object obj = ResourceManager.GetObject("services_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] services_warning_icon {
-            get {
-                object obj = ResourceManager.GetObject("services_warning_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServicesCritical16x16 {
-            get {
-                object obj = ResourceManager.GetObject("ServicesCritical16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServicesCriticalThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("ServicesCriticalThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServicesFullTextSearchView16x16 {
-            get {
-                object obj = ResourceManager.GetObject("ServicesFullTextSearchView16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServicesInfoThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("ServicesInfoThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServicesReplicationView16x16 {
-            get {
-                object obj = ResourceManager.GetObject("ServicesReplicationView16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServicesSqlAgentJobsView16x16 {
-            get {
-                object obj = ResourceManager.GetObject("ServicesSqlAgentJobsView16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServicesThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("ServicesThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServicesWarning16x16 {
-            get {
-                object obj = ResourceManager.GetObject("ServicesWarning16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServicesWarningThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("ServicesWarningThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] session_icon {
-            get {
-                object obj = ResourceManager.GetObject("session_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Sessions {
-            get {
-                object obj = ResourceManager.GetObject("Sessions", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SessionsBlockingView16x16 {
-            get {
-                object obj = ResourceManager.GetObject("SessionsBlockingView16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SessionsCritical16x16 {
-            get {
-                object obj = ResourceManager.GetObject("SessionsCritical16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SessionsCriticalThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("SessionsCriticalThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SessionsDetailsViewSmall {
-            get {
-                object obj = ResourceManager.GetObject("SessionsDetailsViewSmall", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SessionsInfoThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("SessionsInfoThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SessionsLocksView16x16 {
-            get {
-                object obj = ResourceManager.GetObject("SessionsLocksView16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SessionsLocksViewSmall {
-            get {
-                object obj = ResourceManager.GetObject("SessionsLocksViewSmall", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SessionStatusBackground {
-            get {
-                object obj = ResourceManager.GetObject("SessionStatusBackground", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SessionStatusOther {
-            get {
-                object obj = ResourceManager.GetObject("SessionStatusOther", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SessionStatusRunnable {
-            get {
-                object obj = ResourceManager.GetObject("SessionStatusRunnable", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SessionStatusRunning {
-            get {
-                object obj = ResourceManager.GetObject("SessionStatusRunning", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SessionStatusSleeping {
-            get {
-                object obj = ResourceManager.GetObject("SessionStatusSleeping", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SessionStatusSuspended {
-            get {
-                object obj = ResourceManager.GetObject("SessionStatusSuspended", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SessionsThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("SessionsThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SessionsWarning16x16 {
-            get {
-                object obj = ResourceManager.GetObject("SessionsWarning16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SessionsWarningThumbnail {
-            get {
-                object obj = ResourceManager.GetObject("SessionsWarningThumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon SessionTraceIcon {
-            get {
-                object obj = ResourceManager.GetObject("SessionTraceIcon", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap small_close {
-            get {
-                object obj = ResourceManager.GetObject("small_close", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] sort_alpha_az_disabled_icon {
-            get {
-                object obj = ResourceManager.GetObject("sort_alpha_az_disabled_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] sort_alpha_az_hover_icon {
-            get {
-                object obj = ResourceManager.GetObject("sort_alpha_az_hover_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] sort_alpha_az_icon {
-            get {
-                object obj = ResourceManager.GetObject("sort_alpha_az_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] sort_alpha_za_disabled_icon {
-            get {
-                object obj = ResourceManager.GetObject("sort_alpha_za_disabled_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] sort_alpha_za_hover_icon {
-            get {
-                object obj = ResourceManager.GetObject("sort_alpha_za_hover_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] sort_alpha_za_icon {
-            get {
-                object obj = ResourceManager.GetObject("sort_alpha_za_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SortAscending {
-            get {
-                object obj = ResourceManager.GetObject("SortAscending", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SortDescending {
-            get {
-                object obj = ResourceManager.GetObject("SortDescending", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Splash {
-            get {
-                object obj = ResourceManager.GetObject("Splash", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SQLdm_Default {
-            get {
-                object obj = ResourceManager.GetObject("SQLdm_Default", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SQLdm_Default_2 {
-            get {
-                object obj = ResourceManager.GetObject("SQLdm_Default_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SQLdm_Default_3 {
-            get {
-                object obj = ResourceManager.GetObject("SQLdm_Default_3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SQLdmLogoHeader {
-            get {
-                object obj = ResourceManager.GetObject("SQLdmLogoHeader", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SQLdmToday_6Things {
-            get {
-                object obj = ResourceManager.GetObject("SQLdmToday_6Things", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SQLdmToday_6Things_Dark {
-            get {
-                object obj = ResourceManager.GetObject("SQLdmToday_6Things_Dark", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SQLdmToday_buttonbackgrnd {
-            get {
-                object obj = ResourceManager.GetObject("SQLdmToday_buttonbackgrnd", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SQLdmToday_ProductName {
-            get {
-                object obj = ResourceManager.GetObject("SQLdmToday_ProductName", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SQLdmTodayWebConsole {
-            get {
-                object obj = ResourceManager.GetObject("SQLdmTodayWebConsole", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon SQLRecommendationScript {
-            get {
-                object obj = ResourceManager.GetObject("SQLRecommendationScript", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SQLServerPhysicalIO {
-            get {
-                object obj = ResourceManager.GetObject("SQLServerPhysicalIO", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap StartTrace {
-            get {
-                object obj = ResourceManager.GetObject("StartTrace", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap StatusCriticalSmall {
-            get {
-                object obj = ResourceManager.GetObject("StatusCriticalSmall", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap StatusInfoSmall {
-            get {
-                object obj = ResourceManager.GetObject("StatusInfoSmall", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap StatusMainentanceModeSmall {
-            get {
-                object obj = ResourceManager.GetObject("StatusMainentanceModeSmall", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap StatusOKSmall {
-            get {
-                object obj = ResourceManager.GetObject("StatusOKSmall", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap StatusSummaryCriticalLarge {
-            get {
-                object obj = ResourceManager.GetObject("StatusSummaryCriticalLarge", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap StatusSummaryInformationLarge {
-            get {
-                object obj = ResourceManager.GetObject("StatusSummaryInformationLarge", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap StatusSummaryOKLarge {
-            get {
-                object obj = ResourceManager.GetObject("StatusSummaryOKLarge", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap StatusSummaryWarningLarge {
-            get {
-                object obj = ResourceManager.GetObject("StatusSummaryWarningLarge", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap StatusUnknown16x16 {
-            get {
-                object obj = ResourceManager.GetObject("StatusUnknown16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap StatusWarningSmall {
-            get {
-                object obj = ResourceManager.GetObject("StatusWarningSmall", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Stop24x24 {
-            get {
-                object obj = ResourceManager.GetObject("Stop24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap StopTrace {
-            get {
-                object obj = ResourceManager.GetObject("StopTrace", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Summation9x9 {
-            get {
-                object obj = ResourceManager.GetObject("Summation9x9", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SWA_Icon24 {
-            get {
-                object obj = ResourceManager.GetObject("SWA_Icon24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SystemDefinedPermission16x16 {
-            get {
-                object obj = ResourceManager.GetObject("SystemDefinedPermission16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SystemDiagnosticsView16x16 {
-            get {
-                object obj = ResourceManager.GetObject("SystemDiagnosticsView16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SystemSession {
-            get {
-                object obj = ResourceManager.GetObject("SystemSession", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Table {
-            get {
-                object obj = ResourceManager.GetObject("Table", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap TableCritical16x16 {
-            get {
-                object obj = ResourceManager.GetObject("TableCritical16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap TablesViewCritical16x16 {
-            get {
-                object obj = ResourceManager.GetObject("TablesViewCritical16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap TablesViewWarning16x16 {
-            get {
-                object obj = ResourceManager.GetObject("TablesViewWarning16x16", resourceCulture);
+        internal static System.Drawing.Bitmap bluecustomize
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("bluecustomize", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap TableWarning16x16 {
-            get {
-                object obj = ResourceManager.GetObject("TableWarning16x16", resourceCulture);
+        internal static System.Drawing.Bitmap darkcustomize
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("darkcustomize", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] Tag_Dark {
-            get {
-                object obj = ResourceManager.GetObject("Tag_Dark", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] tag_icon {
-            get {
-                object obj = ResourceManager.GetObject("tag_icon", resourceCulture);
-                return ((byte[])(obj));
             }
         }
-        
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Babita Manral : 4.12 DarkTheme Added Images 
         /// </summary>
-        internal static byte[] tag_icon_2 {
-            get {
-                object obj = ResourceManager.GetObject("tag_icon_2", resourceCulture);
+        internal static byte[] darkTheme_LeftArrowWhite
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("darkTheme_LeftArrowWhite", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Babita Manral : 4.12 DarkTheme Added Images 
         /// </summary>
-        internal static byte[] tag_icon_3 {
-            get {
-                object obj = ResourceManager.GetObject("tag_icon_3", resourceCulture);
+        internal static byte[] darkTheme_RefreshWhite
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("darkTheme_RefreshWhite", resourceCulture);
                 return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Tag16x16 {
-            get {
-                object obj = ResourceManager.GetObject("Tag16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Tag32x32 {
-            get {
-                object obj = ResourceManager.GetObject("Tag32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Babita Manral : 4.12 DarkTheme Added Images 
         /// </summary>
-        internal static byte[] Tags_Dark {
-            get {
-                object obj = ResourceManager.GetObject("Tags_Dark", resourceCulture);
+        internal static byte[] darkTheme_Contract
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("darkTheme_Contract", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-        
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Babita Manral : 4.12 DarkTheme Added Images 
         /// </summary>
-        internal static byte[] tags_icon {
-            get {
-                object obj = ResourceManager.GetObject("tags_icon", resourceCulture);
+        internal static byte[] darkTheme_Expand
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("darkTheme_Expand", resourceCulture);
                 return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap TaskCompleted {
-            get {
-                object obj = ResourceManager.GetObject("TaskCompleted", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Babita Manral : 4.12 DarkTheme Added Images 
         /// </summary>
-        internal static System.Drawing.Bitmap TaskInProgress {
-            get {
-                object obj = ResourceManager.GetObject("TaskInProgress", resourceCulture);
+        internal static System.Drawing.Bitmap darkTheme_StatusUnknown16x16
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("darkTheme_StatusUnknown16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Babita Manral : 4.12 DarkTheme Added Images 
         /// </summary>
-        internal static System.Drawing.Bitmap TaskNotStarted2 {
-            get {
-                object obj = ResourceManager.GetObject("TaskNotStarted2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap darkTheme_TagCritical
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("darkTheme_TagCritical", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Babita Manral : 4.12 DarkTheme Added Images 
         /// </summary>
-        internal static System.Drawing.Bitmap TaskOnHold2 {
-            get {
-                object obj = ResourceManager.GetObject("TaskOnHold2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+        internal static System.Drawing.Bitmap darkTheme_TagWarning
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("darkTheme_TagWarning", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap TasksFeature {
-            get {
-                object obj = ResourceManager.GetObject("TasksFeature", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+
+        internal static System.Drawing.Bitmap darkTheme_UltraTabStripTabBackground
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("darkTheme_SelectedTabBackground", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));
             }
         }
-        
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tempdb_32 {
-            get {
-                object obj = ResourceManager.GetObject("tempdb_32", resourceCulture);
+        internal static System.Drawing.Bitmap ServerGroupHeatMapView32x32
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ServerGroupHeatMapView32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap TestConnectionFailed {
-            get {
-                object obj = ResourceManager.GetObject("TestConnectionFailed", resourceCulture);
+        internal static System.Drawing.Bitmap ServerGroupThumbnailView32x32
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ServerGroupThumbnailView32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap TestConnectionSuccess {
-            get {
-                object obj = ResourceManager.GetObject("TestConnectionSuccess", resourceCulture);
+        internal static System.Drawing.Bitmap ServerGroupDetailsView32x32
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ServerGroupDetailsView32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap TestConnectionUnknown {
-            get {
-                object obj = ResourceManager.GetObject("TestConnectionUnknown", resourceCulture);
+        internal static System.Drawing.Bitmap Properties32x32
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Properties32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap TestCustomCounter {
-            get {
-                object obj = ResourceManager.GetObject("TestCustomCounter", resourceCulture);
+
+
+        internal static System.Drawing.Bitmap critical_wht_icon1
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("critical_wht_icon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] time_disabled_icon {
-            get {
-                object obj = ResourceManager.GetObject("time_disabled_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] time_hover_icon {
-            get {
-                object obj = ResourceManager.GetObject("time_hover_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] time_icon {
-            get {
-                object obj = ResourceManager.GetObject("time_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] time_icon_2 {
-            get {
-                object obj = ResourceManager.GetObject("time_icon_2", resourceCulture);
-                return ((byte[])(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap TodayPageHeader {
-            get {
-                object obj = ResourceManager.GetObject("TodayPageHeader", resourceCulture);
+
+        internal static System.Drawing.Bitmap info_wht_icon1
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("info_wht_icon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Toolbar24x24 {
-            get {
-                object obj = ResourceManager.GetObject("Toolbar24x24", resourceCulture);
+        internal static System.Drawing.Bitmap ok_wht_icon1
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ok_wht_icon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ToolbarHelp {
-            get {
-                object obj = ResourceManager.GetObject("ToolbarHelp", resourceCulture);
+
+        internal static System.Drawing.Bitmap warning_wht_icon1
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("warning_wht_icon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ToolbarHome {
-            get {
-                object obj = ResourceManager.GetObject("ToolbarHome", resourceCulture);
+		
+		internal static System.Drawing.Bitmap larger_tag
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("larger_tag", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ToolbarPause {
-            get {
-                object obj = ResourceManager.GetObject("ToolbarPause", resourceCulture);
+		
+		internal static System.Drawing.Bitmap larger_server
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("larger_server", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ToolbarRefresh {
-            get {
-                object obj = ResourceManager.GetObject("ToolbarRefresh", resourceCulture);
+		
+		internal static System.Drawing.Bitmap larger_properties
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("larger_properties", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ToolsMenu {
-            get {
-                object obj = ResourceManager.GetObject("ToolsMenu", resourceCulture);
+		
+		internal static System.Drawing.Bitmap larger_my_views
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("larger_my-views", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap trialcentergraphic {
-            get {
-                object obj = ResourceManager.GetObject("trialcentergraphic", resourceCulture);
+		
+		internal static System.Drawing.Bitmap larger_Grid_4x3
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("larger_Grid_4x3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap trialcentergraphic_dark {
-            get {
-                object obj = ResourceManager.GetObject("trialcentergraphic_dark", resourceCulture);
+		
+		internal static System.Drawing.Bitmap larger_Grid_4x2
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("larger_Grid_4x2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The trial license for SQL Diagnostic Manager has expired.  Please contact Idera for a valid license..
-        /// </summary>
-        internal static string TrialLicenseHasExpired {
-            get {
-                return ResourceManager.GetString("TrialLicenseHasExpired", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to SQL Diagnostic Manager has a trial license that will expire in {0} day(s) on {1}..
-        /// </summary>
-        internal static string TrialLicenseWillExpire {
-            get {
-                return ResourceManager.GetString("TrialLicenseWillExpire", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to SQL Diagnostic Manager has a trial license that will expire today..
-        /// </summary>
-        internal static string TrialLicenseWillExpireToday {
-            get {
-                return ResourceManager.GetString("TrialLicenseWillExpireToday", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap TriangleRight {
-            get {
-                object obj = ResourceManager.GetObject("TriangleRight", resourceCulture);
+		
+		internal static System.Drawing.Bitmap larger_Grid_3x4
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("larger_Grid_3x4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap twitter_16 {
-            get {
-                object obj = ResourceManager.GetObject("twitter_16", resourceCulture);
+		
+		internal static System.Drawing.Bitmap larger_Grid_3x3
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("larger_Grid_3x3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Unfollow32 {
-            get {
-                object obj = ResourceManager.GetObject("Unfollow32", resourceCulture);
+		
+		internal static System.Drawing.Bitmap larger_Grid_3x2
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("larger_Grid_3x2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] unlock_icon {
-            get {
-                object obj = ResourceManager.GetObject("unlock_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] up_arrow_disabled_icon {
-            get {
-                object obj = ResourceManager.GetObject("up_arrow_disabled_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] up_arrow_hover_icon {
-            get {
-                object obj = ResourceManager.GetObject("up_arrow_hover_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] up_arrow_icon {
-            get {
-                object obj = ResourceManager.GetObject("up_arrow_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] up_arrow_wht_icon {
-            get {
-                object obj = ResourceManager.GetObject("up_arrow_wht_icon", resourceCulture);
-                return ((byte[])(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap UpArrow_Gray_6h_11w {
-            get {
-                object obj = ResourceManager.GetObject("UpArrow_Gray_6h_11w", resourceCulture);
+		
+		internal static System.Drawing.Bitmap larger_Grid_2x5
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("larger_Grid_2x5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap UpArrow_Gray_7w_4h {
-            get {
-                object obj = ResourceManager.GetObject("UpArrow_Gray_7w_4h", resourceCulture);
+		
+		internal static System.Drawing.Bitmap larger_Grid_2x4
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("larger_Grid_2x4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap UpArrows {
-            get {
-                object obj = ResourceManager.GetObject("UpArrows", resourceCulture);
+		
+		internal static System.Drawing.Bitmap larger_Grid_2x3
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("larger_Grid_2x3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] user_disabled_icon {
-            get {
-                object obj = ResourceManager.GetObject("user_disabled_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] user_hover_icon {
-            get {
-                object obj = ResourceManager.GetObject("user_hover_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] user_icon {
-            get {
-                object obj = ResourceManager.GetObject("user_icon", resourceCulture);
-                return ((byte[])(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap UserDefinedPermission16x16 {
-            get {
-                object obj = ResourceManager.GetObject("UserDefinedPermission16x16", resourceCulture);
+		
+		internal static System.Drawing.Bitmap larger_Grid_2x2
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("larger_Grid_2x2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap UserPermission32x32 {
-            get {
-                object obj = ResourceManager.GetObject("UserPermission32x32", resourceCulture);
+		
+		internal static System.Drawing.Bitmap larger_wht_server_group_thumbnail_view
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("larger_wht-server-group-thumbnail-view", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap UserSession {
-            get {
-                object obj = ResourceManager.GetObject("UserSession", resourceCulture);
+		
+		internal static System.Drawing.Bitmap larger_wht_properties
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("larger_wht-properties", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Views16x16 {
-            get {
-                object obj = ResourceManager.GetObject("Views16x16", resourceCulture);
+		
+		internal static System.Drawing.Bitmap larger_wht_list_view
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("larger_wht-list-view", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Warning {
-            get {
-                object obj = ResourceManager.GetObject("Warning", resourceCulture);
+		
+		internal static System.Drawing.Bitmap larger_navigation_pane_servers
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("larger_navigation-pane-servers", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] Warning_Dark {
-            get {
-                object obj = ResourceManager.GetObject("Warning_Dark", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] warning_icon {
-            get {
-                object obj = ResourceManager.GetObject("warning_icon", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] warning_icon_2 {
-            get {
-                object obj = ResourceManager.GetObject("warning_icon_2", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] warning_icon_3 {
-            get {
-                object obj = ResourceManager.GetObject("warning_icon_3", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] warning_icon_4 {
-            get {
-                object obj = ResourceManager.GetObject("warning_icon_4", resourceCulture);
-                return ((byte[])(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] warning_icon_5 {
-            get {
-                object obj = ResourceManager.GetObject("warning_icon_5", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] warning_wht_icon {
-            get {
-                object obj = ResourceManager.GetObject("warning_wht_icon", resourceCulture);
-                return ((byte[])(obj));
+		//4.12 DarkTheme :Side Tree Servers Icon Babita Manral 
+		internal static System.Drawing.Bitmap ServerTree_Servers_Icon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ServerTree_Servers_Icon", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));                               
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] warning_wht_icon_2 {
-            get {
-                object obj = ResourceManager.GetObject("warning_wht_icon_2", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Warning32x32 {
-            get {
-                object obj = ResourceManager.GetObject("Warning32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+		
+		internal static System.Drawing.Bitmap NavigationPaneServer32x32
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("NavigationPaneServer32x32", resourceCulture);
+                return AutoScaleImageSizeHelper.ScaleImage((System.Drawing.Bitmap)(obj));                               
             }
         }
+		
+
     }
 }

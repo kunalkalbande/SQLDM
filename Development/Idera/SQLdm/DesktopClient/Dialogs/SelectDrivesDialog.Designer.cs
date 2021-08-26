@@ -28,12 +28,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.driveListBox = new System.Windows.Forms.CheckedListBox();
-            this.informationBox1 = new Divelements.WizardFramework.InformationBox();
-            this.clearButton = new System.Windows.Forms.Button();
-            this.selectAllDrivesCheckBox = new System.Windows.Forms.CheckBox();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.driveListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckedListBox1();
+            this.informationBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
+            this.clearButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.selectAllDrivesCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             this.SuspendLayout();
             // 
             // okButton
@@ -134,11 +134,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
         private System.Windows.Forms.CheckedListBox driveListBox;
-        private Divelements.WizardFramework.InformationBox informationBox1;
-        private System.Windows.Forms.Button clearButton;
-        private System.Windows.Forms.CheckBox selectAllDrivesCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox informationBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton clearButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox selectAllDrivesCheckBox;
     }
 }

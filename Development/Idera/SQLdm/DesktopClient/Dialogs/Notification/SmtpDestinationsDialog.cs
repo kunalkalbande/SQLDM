@@ -18,7 +18,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using Infragistics.Win.UltraWinEditors;
     using System.ComponentModel;
 
-    public partial class SmtpDestinationsDialog : Form
+    public partial class SmtpDestinationsDialog : BaseDialog
     {
         private SmtpDestination destination;
         private SmtpNotificationProviderInfo currentProvider;
@@ -29,6 +29,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public SmtpDestinationsDialog()
         {
+            this.DialogHeader = "Smtp Action";
             InitializeComponent();
             bodyCaret = new CaretData();
             bodyCaret.editor = bodyTextBox;

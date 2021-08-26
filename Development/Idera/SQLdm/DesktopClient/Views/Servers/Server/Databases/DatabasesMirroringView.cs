@@ -29,7 +29,7 @@ using System.Diagnostics;
 using System.ComponentModel;
 using Idera.SQLdm.Common.Configuration.ServerActions;
 using Idera.SQLdm.Common.Objects.ApplicationSecurity;
-
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
 {
@@ -209,6 +209,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             InitializeMirroredDatabasesTable();
             InitializeHistoryDataTable();
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
         #endregion
         #region IDatabasesView Members
@@ -475,6 +477,16 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
             blnMirroredDatabasesComboInitialized = false;
             ApplicationController.Default.ActiveView.CancelRefresh();
             ApplicationController.Default.ActiveView.RefreshView();
+        }
+        void mouseEnter_refreshDatabasesButton(Object Sender, EventArgs e)
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+                this.appearance1.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefreshHover;
+        }
+        void mouseLeave_refreshDatabasesButton(Object Sender, EventArgs e)
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+                appearance1.Image = global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh;
         }
 
         private void mirroredDatabasesGrid_InitializeLayout(object sender, InitializeLayoutEventArgs e)
@@ -2794,6 +2806,32 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Databases
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                if (!refreshDatabasesButton.Enabled)
+                    appearance1.Image = Helpers.ImageUtils.ChangeOpacity(global::Idera.SQLdm.DesktopClient.Properties.Resources.ToolbarRefresh, 0.50F);
+                this.refreshDatabasesButton.UseOsThemes = DefaultableBoolean.False;
+                this.refreshDatabasesButton.UseAppStyling = false;
+                this.refreshDatabasesButton.ButtonStyle = UIElementButtonStyle.FlatBorderless;
+            }
+            else
+            {
+                this.refreshDatabasesButton.UseAppStyling = true;
+            }
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.historyGrid);
+            themeManager.updateGridTheme(this.transactionLogsGrid);
+            themeManager.updateGridTheme(this.mirroredDatabasesGrid);
         }
     }
 }

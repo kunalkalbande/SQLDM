@@ -13,7 +13,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 {
     using Idera.SQLdm.Common.UI.Dialogs;
 
-    internal partial class HelpPopupDialog : Form
+    internal partial class HelpPopupDialog : BaseDialog
     {
         private const string HelpFileLinkPrefix = @"mk:@MSITStore:";
         private const string HelpFileNameReference = @"SQLdm Metrics Help.chm::";
@@ -29,6 +29,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public HelpPopupDialog(int instanceId)
         {
+            this.DialogHeader = "HelpPopupDialog";
             InitializeComponent();
 
             this.instanceId = instanceId;

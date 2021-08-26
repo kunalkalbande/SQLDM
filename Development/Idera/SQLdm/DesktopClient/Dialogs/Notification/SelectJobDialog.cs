@@ -17,7 +17,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using Infragistics.Win;
     using Properties;
 
-    public partial class SelectJobDialog : Form
+    public partial class SelectJobDialog : BaseDialog
     {
         private static Logger LOG = Logger.GetLogger("SelectJobDialog");
         private enum SelectJobMode { Job, JobStep }
@@ -32,6 +32,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         private SelectJobDialog(SelectJobMode mode)
         {
+            this.DialogHeader = "Select Job";
             this.mode = mode;
             InitializeComponent();
 

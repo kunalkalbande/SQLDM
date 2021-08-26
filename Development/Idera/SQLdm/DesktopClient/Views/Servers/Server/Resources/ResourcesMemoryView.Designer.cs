@@ -1,3 +1,10 @@
+using Idera.SQLdm.DesktopClient.Helpers;
+using Idera.SQLdm.DesktopClient.Helpers;
+using Idera.SQLdm.DesktopClient.Properties;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
 {
     partial class ResourcesMemoryView
@@ -11,6 +18,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// 
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -112,32 +121,32 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
             ChartFX.WinForms.SeriesAttributes seriesAttributes45 = new ChartFX.WinForms.SeriesAttributes();
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool1 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("chartContextMenu");
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool1 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("toggleChartToolbarButton", "");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printChartButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportChartImageButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportChartDataButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printChartButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Controls.CustomControls.CustomButtonTool("printChartButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Controls.CustomControls.CustomButtonTool("exportChartImageButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Controls.CustomControls.CustomButtonTool("exportChartDataButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Controls.CustomControls.CustomButtonTool("printChartButton");
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportChartDataButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Controls.CustomControls.CustomButtonTool("exportChartDataButton");
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportChartImageButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Controls.CustomControls.CustomButtonTool("exportChartImageButton");
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool2 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("toggleChartToolbarButton", "");
-            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.dbAvgMemUsagePanel = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.chartPanel = new System.Windows.Forms.Panel();
-            this.dbAvgMemUsageChart = new ChartFX.WinForms.Chart();
-            this.label1 = new System.Windows.Forms.Label();
-            this.gridPanel = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.dbAvgMemUsagePanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.tableLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.chartPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel();
+            this.dbAvgMemUsageChart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.gridPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.topDatabasesGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.dbAvgMemUsageHeaderStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
             this.maximizeDbAvgMemUsageChartButton = new System.Windows.Forms.ToolStripButton();
             this.restoreDbAvgMemUsageChartButton = new System.Windows.Forms.ToolStripButton();
             this.dbAvgMemUsageToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.pageLifeExpectancyPanel = new System.Windows.Forms.Panel();
-            this.pageLifeExpectancyChartContainerPanel = new System.Windows.Forms.Panel();
-            this.pageLifeExpectancyChart = new ChartFX.WinForms.Chart();
-            this.pageLifeExpectancyChartStatusLabel = new System.Windows.Forms.Label();
+            this.pageLifeExpectancyPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.pageLifeExpectancyChartContainerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel();
+            this.pageLifeExpectancyChart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+            this.pageLifeExpectancyChartStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.pageLifeExpectancyHeaderStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
             this.maximizeProcedureCacheChartButton = new System.Windows.Forms.ToolStripButton();
             this.restoreProcedureCacheChartButton = new System.Windows.Forms.ToolStripButton();
@@ -145,68 +154,69 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
             this.pageLifeExpectancyDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.pageLifeExpectancyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SwapUsageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cachePanel = new System.Windows.Forms.Panel();
-            this.cacheChartContainerPanel = new System.Windows.Forms.Panel();
-            this.cacheChart = new ChartFX.WinForms.Chart();
-            this.cacheChartStatusLabel = new System.Windows.Forms.Label();
+           
+            this.cachePanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.cacheChartContainerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel();
+            this.cacheChart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+            this.cacheChartStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.cacheHeaderStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
             this.cacheToolStripDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
-            this.bufferToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.procedureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bufferToolStripMenuItem = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomToolStripMenuItem();
+            this.procedureToolStripMenuItem = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomToolStripMenuItem();
             this.maximizeBufferCacheChartButton = new System.Windows.Forms.ToolStripButton();
             this.restoreBufferCacheChartButton = new System.Windows.Forms.ToolStripButton();
-            this.cacheHitRatesPanel = new System.Windows.Forms.Panel();
-            this.cacheHitRatesChartContainerPanel = new System.Windows.Forms.Panel();
-            this.cacheHitRatesChart = new ChartFX.WinForms.Chart();
-            this.cacheHitRatesChartStatusLabel = new System.Windows.Forms.Label();
+            this.cacheHitRatesPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.cacheHitRatesChartContainerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel();
+            this.cacheHitRatesChart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+            this.cacheHitRatesChartStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.cacheHitRatesHeaderStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
             this.cacheHitRatesHeaderStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.maximizeCacheHitRatesChartButton = new System.Windows.Forms.ToolStripButton();
             this.restoreCacheHitRatesChartButton = new System.Windows.Forms.ToolStripButton();
-            this.memoryAreasPanel = new System.Windows.Forms.Panel();
-            this.memoryAreasChartContainerPanel = new System.Windows.Forms.Panel();
-            this.hostMemAreaChart = new ChartFX.WinForms.Chart();
-            this.vmMemAreaChart = new ChartFX.WinForms.Chart();
-            this.memoryAreasChart = new ChartFX.WinForms.Chart();
-            this.VmAvaiableByteHyperVChart = new ChartFX.WinForms.Chart();
-            this.HostAvaialbleByteHyperVChart = new ChartFX.WinForms.Chart();
-            this.memoryAreasChartStatusLabel = new System.Windows.Forms.Label();
+            this.memoryAreasPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.memoryAreasChartContainerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel();
+            this.hostMemAreaChart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+            this.vmMemAreaChart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+            this.memoryAreasChart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+            this.VmAvaiableByteHyperVChart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+            this.HostAvaialbleByteHyperVChart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+            this.memoryAreasChartStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.memoryAreasHeaderStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
             this.memoryAreasHeaderStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.memToolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.memToolStripDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
-            this.sqlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hostToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sqlToolStripMenuItem = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomToolStripMenuItem();
+            this.vmToolStripMenuItem = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomToolStripMenuItem();
+            this.hostToolStripMenuItem = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomToolStripMenuItem();
             this.maximizeMemoryAreasChartButton = new System.Windows.Forms.ToolStripButton();
             this.restoreMemoryAreasChartButton = new System.Windows.Forms.ToolStripButton();
-            this.pagingPanel = new System.Windows.Forms.Panel();
-            this.pagingChartContainerPanel = new System.Windows.Forms.Panel();
-            this.pagingChart = new ChartFX.WinForms.Chart();
-            this.pagingChartStatusLabel = new System.Windows.Forms.Label();
+            this.pagingPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.pagingChartContainerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel();
+            this.pagingChart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+            this.pagingChartStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.pagingHeaderStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
             this.pagingHeaderStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.maximizePagingChartButton = new System.Windows.Forms.ToolStripButton();
             this.restorePagingChartButton = new System.Windows.Forms.ToolStripButton();
-            this.memoryUsagePanel = new System.Windows.Forms.Panel();
-            this.memoryUsageChartContainerPanel = new System.Windows.Forms.Panel();
-            this.vmMemUsageChart = new ChartFX.WinForms.Chart();
-            this.memoryUsageChart = new ChartFX.WinForms.Chart();
-            this.memoryUsageChartStatusLabel = new System.Windows.Forms.Label();
+            this.memoryUsagePanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.memoryUsageChartContainerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel();
+            this.vmMemUsageChart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+            this.memoryUsageChart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+            this.memoryUsageChartStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.memoryUsageHeaderStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
             this.maximizeMemoryUsageChartButton = new System.Windows.Forms.ToolStripButton();
             this.restoreMemoryUsageChartButton = new System.Windows.Forms.ToolStripButton();
             this.memUsageDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
-            this.sqlMemUsageMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vmMemUsageMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sqlMemUsageMenuItem = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomToolStripMenuItem();
+            this.vmMemUsageMenuItem = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomToolStripMenuItem();
             this.toolbarsManager = new Idera.SQLdm.DesktopClient.Controls.ContextMenuManager(this.components);
             this.ultraPrintPreviewDialog = new Infragistics.Win.Printing.UltraPrintPreviewDialog(this.components);
-            this.fillPanel = new System.Windows.Forms.Panel();
-            this.chartContainerPanel = new System.Windows.Forms.Panel();
-            this.operationalStatusPanel = new System.Windows.Forms.Panel();
+            this.fillPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.chartContainerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.operationalStatusPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.operationalStatusImage = new System.Windows.Forms.PictureBox();
-            this.operationalStatusLabel = new System.Windows.Forms.Label();
-            this.historicalSnapshotStatusLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.operationalStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.historicalSnapshotStatusLinkLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
             this.tableLayoutPanel.SuspendLayout();
             this.dbAvgMemUsagePanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -1706,49 +1716,49 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
             this.operationalStatusPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.operationalStatusImage)).EndInit();
             this.ResumeLayout(false);
-
+            
         }
-
+        
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
-        private System.Windows.Forms.Panel pageLifeExpectancyPanel;
-        private System.Windows.Forms.Panel pageLifeExpectancyChartContainerPanel;
-        private System.Windows.Forms.Label pageLifeExpectancyChartStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  pageLifeExpectancyPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  pageLifeExpectancyChartContainerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel pageLifeExpectancyChartStatusLabel;
         private Idera.SQLdm.DesktopClient.Controls.HeaderStrip pageLifeExpectancyHeaderStrip;
         private System.Windows.Forms.ToolStripButton maximizeProcedureCacheChartButton;
         private System.Windows.Forms.ToolStripButton restoreProcedureCacheChartButton;
-        private System.Windows.Forms.Panel cachePanel;
-        private System.Windows.Forms.Panel cacheChartContainerPanel;
-        private System.Windows.Forms.Label cacheChartStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  cachePanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  cacheChartContainerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel cacheChartStatusLabel;
         private Idera.SQLdm.DesktopClient.Controls.HeaderStrip cacheHeaderStrip;
         private System.Windows.Forms.ToolStripButton maximizeBufferCacheChartButton;
         private System.Windows.Forms.ToolStripButton restoreBufferCacheChartButton;
-        private System.Windows.Forms.Panel cacheHitRatesPanel;
-        private System.Windows.Forms.Panel cacheHitRatesChartContainerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  cacheHitRatesPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  cacheHitRatesChartContainerPanel;
         private ChartFX.WinForms.Chart cacheHitRatesChart;
-        private System.Windows.Forms.Label cacheHitRatesChartStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel cacheHitRatesChartStatusLabel;
         private Idera.SQLdm.DesktopClient.Controls.HeaderStrip cacheHitRatesHeaderStrip;
         private System.Windows.Forms.ToolStripLabel cacheHitRatesHeaderStripLabel;
         private System.Windows.Forms.ToolStripButton maximizeCacheHitRatesChartButton;
         private System.Windows.Forms.ToolStripButton restoreCacheHitRatesChartButton;
-        private System.Windows.Forms.Panel memoryAreasPanel;
-        private System.Windows.Forms.Panel memoryAreasChartContainerPanel;
-        private System.Windows.Forms.Label memoryAreasChartStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  memoryAreasPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  memoryAreasChartContainerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel memoryAreasChartStatusLabel;
         private Idera.SQLdm.DesktopClient.Controls.HeaderStrip memoryAreasHeaderStrip;
         private System.Windows.Forms.ToolStripLabel memoryAreasHeaderStripLabel;
         private System.Windows.Forms.ToolStripButton maximizeMemoryAreasChartButton;
         private System.Windows.Forms.ToolStripButton restoreMemoryAreasChartButton;
-        private System.Windows.Forms.Panel pagingPanel;
-        private System.Windows.Forms.Panel pagingChartContainerPanel;
-        private System.Windows.Forms.Label pagingChartStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  pagingPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  pagingChartContainerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel pagingChartStatusLabel;
         private Idera.SQLdm.DesktopClient.Controls.HeaderStrip pagingHeaderStrip;
         private System.Windows.Forms.ToolStripLabel pagingHeaderStripLabel;
         private System.Windows.Forms.ToolStripButton maximizePagingChartButton;
         private System.Windows.Forms.ToolStripButton restorePagingChartButton;
-        private System.Windows.Forms.Panel memoryUsagePanel;
-        private System.Windows.Forms.Panel memoryUsageChartContainerPanel;
-        private System.Windows.Forms.Label memoryUsageChartStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  memoryUsagePanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  memoryUsageChartContainerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel memoryUsageChartStatusLabel;
         private Idera.SQLdm.DesktopClient.Controls.HeaderStrip memoryUsageHeaderStrip;
         private System.Windows.Forms.ToolStripButton maximizeMemoryUsageChartButton;
         private System.Windows.Forms.ToolStripButton restoreMemoryUsageChartButton;
@@ -1763,12 +1773,12 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
         private ChartFX.WinForms.Chart pageLifeExpectancyChart;
         private Idera.SQLdm.DesktopClient.Controls.ContextMenuManager toolbarsManager;
         private Infragistics.Win.Printing.UltraPrintPreviewDialog ultraPrintPreviewDialog;
-        private System.Windows.Forms.Panel fillPanel;
-        private System.Windows.Forms.LinkLabel historicalSnapshotStatusLinkLabel;
-        private System.Windows.Forms.Panel chartContainerPanel;
-        private System.Windows.Forms.Panel operationalStatusPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  fillPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel historicalSnapshotStatusLinkLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  chartContainerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  operationalStatusPanel;
         private System.Windows.Forms.PictureBox operationalStatusImage;
-        private System.Windows.Forms.Label operationalStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel operationalStatusLabel;
         private System.Windows.Forms.ToolStripDropDownButton cacheToolStripDropDownButton;
         private System.Windows.Forms.ToolStripMenuItem bufferToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem procedureToolStripMenuItem;
@@ -1802,17 +1812,17 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
         ChartFX.WinForms.SeriesAttributes baselinePlotForMemoryUsage_used = new ChartFX.WinForms.SeriesAttributes();
         ChartFX.WinForms.SeriesAttributes baselinePlotForHostMemoryUsage = new ChartFX.WinForms.SeriesAttributes();
         ChartFX.WinForms.SeriesAttributes baselinePlotForVmMemoryUsage = new ChartFX.WinForms.SeriesAttributes();
-        private System.Windows.Forms.Panel dbAvgMemUsagePanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  dbAvgMemUsagePanel;
         private Controls.HeaderStrip dbAvgMemUsageHeaderStrip;
         private System.Windows.Forms.ToolStripButton maximizeDbAvgMemUsageChartButton;
         private System.Windows.Forms.ToolStripButton restoreDbAvgMemUsageChartButton;
         private System.Windows.Forms.ToolStripLabel dbAvgMemUsageToolStripLabel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel gridPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  gridPanel;
         private Infragistics.Win.UltraWinGrid.UltraGrid topDatabasesGrid;
-        private System.Windows.Forms.Panel chartPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  chartPanel;
         private ChartFX.WinForms.Chart dbAvgMemUsageChart;
-        private System.Windows.Forms.Label label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
         //END: SQLdm 10.0 - Baseline plots series attribute
     }
 }

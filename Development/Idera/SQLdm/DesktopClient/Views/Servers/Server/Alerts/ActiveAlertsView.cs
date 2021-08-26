@@ -24,6 +24,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Alerts
     using Properties;
     using Infragistics.Win.UltraWinToolbars;
     using Common.Objects.ApplicationSecurity;
+    using Infragistics.Windows.Themes;
 
     internal partial class ActiveAlertsView : ServerBaseView
     {
@@ -60,6 +61,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Alerts
         {
             InitializeComponent();
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
 
             alertsGrid.CreationFilter = new NoTooltip();
 
@@ -73,6 +76,14 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Alerts
 
             historicalAlertsFilter.ActiveOnly = false;
             historicalAlertsFilter.Instance = instance.InstanceName;
+            if (!AutoScaleSizeHelper.isScalingRequired)
+            {
+                this.alertForecastPanel.Dock = System.Windows.Forms.DockStyle.None;
+                this.alertForecastPanel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right | System.Windows.Forms.AnchorStyles.Bottom;
+                this.alertForecastPanel.Location = new System.Drawing.Point(0, 4);
+                this.alertForecastPanel.Size = new System.Drawing.Size(678, 122);
+                this.forecastPanel.Size = new System.Drawing.Size(678, 123);
+            }
         }
 
 
@@ -1434,6 +1445,18 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Alerts
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this,AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.alertsGrid);
         }
 
         private void showDetailsLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

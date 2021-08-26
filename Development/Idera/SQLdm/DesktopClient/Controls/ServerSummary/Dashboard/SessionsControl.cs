@@ -18,6 +18,8 @@ using Infragistics.Win.UltraWinToolbars;
 using System.Windows.Forms;
 using Idera.SQLdm.DesktopClient.Dialogs;
 using Idera.SQLdm.Common.UI.Dialogs;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Properties;
 
 namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
 {
@@ -31,8 +33,22 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
             InitializeComponent();
             ChartFxExtensions.SetContextMenu(sessionsChart, toolbarsManager);
             helpTopic = HelpTopics.ServerDashboardViewSessionsPanel;
-        }
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+            else
+            {
+                this.sessionsPanel.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+                this.queueLengthPanel.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            }
+            updateLinearScaleFontAsPerTheme(this.linearScale1);
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
 
+        }
+        private void ScaleControlsAsPerResolution()
+        {
+            this.sessionsPanel.Padding = new System.Windows.Forms.Padding(0,10,0,10);
+            this.queueLengthPanel.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+        }
         internal override void Initialize(ServerBaseView baseView, ServerSummaryHistoryData history)
         {
             base.Initialize(baseView, history);
@@ -309,5 +325,17 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
         }
 
         #endregion
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            updateLinearScaleFontAsPerTheme(this.linearScale1);
+        }
+        public void updateLinearScaleFontAsPerTheme(LinearScale linearscale)
+        {
+            ThemeSetter ts = new ThemeSetter();
+            ts.SetLinearScale(linearscale);
+        }
+
+
     }
 }

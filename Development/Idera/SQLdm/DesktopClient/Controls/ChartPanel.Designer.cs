@@ -1,3 +1,10 @@
+using Idera.SQLdm.DesktopClient.Helpers;
+using Idera.SQLdm.DesktopClient.Properties;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Windows.Forms;
+
 namespace Idera.SQLdm.DesktopClient.Controls
 {
     partial class ChartPanel
@@ -6,7 +13,7 @@ namespace Idera.SQLdm.DesktopClient.Controls
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
+        
         /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
@@ -32,26 +39,26 @@ namespace Idera.SQLdm.DesktopClient.Controls
             ChartFX.WinForms.Adornments.GradientBackground gradientBackground1 = new ChartFX.WinForms.Adornments.GradientBackground();
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool1 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("chartContextMenu");
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool1 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("toggleChartToolbarButton", "");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printChartButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportChartImageButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportChartDataButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Infragistics.Win.UltraWinToolbars.ButtonTool("selectDataColumnsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool11 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showFileActivity");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printChartButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Controls.CustomControls.CustomButtonTool("printChartButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Controls.CustomControls.CustomButtonTool("exportChartImageButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Controls.CustomControls.CustomButtonTool("exportChartDataButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Controls.CustomControls.CustomButtonTool("selectDataColumnsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool11 = new Controls.CustomControls.CustomButtonTool("showFileActivity");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Controls.CustomControls.CustomButtonTool("printChartButton");
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportChartDataButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Controls.CustomControls.CustomButtonTool("exportChartDataButton");
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportChartImageButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Controls.CustomControls.CustomButtonTool("exportChartImageButton");
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool2 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("toggleChartToolbarButton", "");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Infragistics.Win.UltraWinToolbars.ButtonTool("selectDataColumnsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Controls.CustomControls.CustomButtonTool("selectDataColumnsButton");
             Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showFileActivity");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Controls.CustomControls.CustomButtonTool("showFileActivity");
             Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
-            this.mainPanel = new System.Windows.Forms.Panel();
-            this.chartContainerPanel = new System.Windows.Forms.Panel();
-            this.chart = new ChartFX.WinForms.Chart();
-            this.statusLabel = new System.Windows.Forms.Label();
+            this.mainPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel();
+            this.chartContainerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel();
+            this.chart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
+            this.statusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.headerStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
             this.selectTypeDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.maximizeChartButton = new System.Windows.Forms.ToolStripButton();
@@ -295,9 +302,9 @@ namespace Idera.SQLdm.DesktopClient.Controls
 
         #endregion
 
-        private System.Windows.Forms.Panel mainPanel;
-        private System.Windows.Forms.Panel chartContainerPanel;
-        private System.Windows.Forms.Label statusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  mainPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  chartContainerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel statusLabel;
         private HeaderStrip headerStrip;
         private System.Windows.Forms.ToolStripDropDownButton selectTypeDropDownButton;
         private System.Windows.Forms.ToolStripButton maximizeChartButton;

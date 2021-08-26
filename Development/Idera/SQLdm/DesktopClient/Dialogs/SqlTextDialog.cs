@@ -11,7 +11,7 @@ using Idera.PrescriptiveAnalytics.PrescriptiveAnalyzer.Common.Recommendations;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class SqlTextDialog : Form
+    public partial class SqlTextDialog : BaseDialog
     {
         #region fields
 
@@ -36,6 +36,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public SqlTextDialog(string text, int instaceID, bool isDiagnoseRequired)
         {
+            this.DialogHeader = "SQL Text";
             InitializeComponent();
             //Passing instance ID which is required to diagnose query
             this.instanceId = instaceID;
@@ -50,6 +51,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public SqlTextDialog(string text,string DB, int instaceID, bool isDiagnoseRequired)
         {
+            this.DialogHeader = "SQL Text";
             InitializeComponent();
             //Passing instance ID which is required to diagnose query
             this.instanceId = instaceID;
@@ -70,6 +72,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// <param name="title"></param>
         public SqlTextDialog(string text, string title, bool isDiagnoseRequired)
         {
+            this.DialogHeader = "SQL Text";
             InitializeComponent();
             this.Text = title;
             sqlTextTextBox.Text = text;

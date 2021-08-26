@@ -33,7 +33,7 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server
             this.headerStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
             this.titleLabel = new System.Windows.Forms.ToolStripLabel();
             this.historyTimestampLabel = new System.Windows.Forms.ToolStripLabel();
-            this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.splitContainer = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomSplitContainer();
             this.historyBrowserControl = new Idera.SQLdm.DesktopClient.Controls.HistoryBrowserControl();
             this.historyBrowserBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.borderPanel.ClientArea.SuspendLayout();

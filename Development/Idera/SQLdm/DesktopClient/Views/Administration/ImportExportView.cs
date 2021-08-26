@@ -31,6 +31,30 @@ namespace Idera.SQLdm.DesktopClient.Views.Administration
         public ImportExportView()
         {
             InitializeComponent();
+            ScaleControlsAsPerResolution();
+        }
+
+        private void ScaleControlsAsPerResolution()
+        {
+            if (AutoScaleSizeHelper.isScalingRequired)
+            {
+                this.splitContainer5.Size = new System.Drawing.Size(1600, 503);
+                this.splitContainer5.SplitterDistance = this.splitContainer5.Size.Width/2;
+
+                this.splitContainer4.Size = new System.Drawing.Size(1600, 303);
+                this.splitContainer4.SplitterDistance = this.splitContainer1.Size.Width / 4;
+
+                //this.splitContainer1.Size = new System.Drawing.Size(1600, 538);
+                //this.splitContainer1.SplitterDistance = this.splitContainer1.Size.Width / 2;
+
+                //this.splitContainer2.Size = new System.Drawing.Size(1600, 402);
+                //this.splitContainer2.SplitterDistance = this.splitContainer1.Size.Width / 2;
+
+                //this.splitContainer3.Size = new System.Drawing.Size(1600, 303);
+                this.splitContainer3.SplitterDistance = 1300;
+
+
+            }
         }
 
 

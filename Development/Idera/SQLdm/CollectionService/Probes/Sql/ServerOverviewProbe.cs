@@ -1063,11 +1063,11 @@ namespace Idera.SQLdm.CollectionService.Probes.Sql
                 else
                 refresh.OSMetricsStatistics =
                     ProbeHelpers.ReadOSMetrics(rd, previousOSMetrics, refresh, LOG, cloudProviderId);
-
-                rd.NextResult();
-                ProbeHelpers.ReadAzureManagedInstancePages(rd, refresh, LOG, refresh, GenericFailureDelegate);
+                                
                 if (cloudProviderId == Constants.MicrosoftAzureManagedInstanceId)
                 {
+                    rd.NextResult();
+                    ProbeHelpers.ReadAzureManagedInstancePages(rd, refresh, LOG, refresh, GenericFailureDelegate);
                     rd.NextResult();
                     ProbeHelpers.ReadAvgCpuPercent(rd, refresh, LOG, refresh, GenericFailureDelegate);
                 }

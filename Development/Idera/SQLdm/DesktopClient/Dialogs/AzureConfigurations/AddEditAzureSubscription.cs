@@ -8,7 +8,7 @@ using Idera.SQLdm.DesktopClient.Properties;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs.AzureConfigurations
 {
-    public partial class AddEditAzureSubscription : Form
+    public partial class AddEditAzureSubscription : BaseDialog
     {
         private readonly IAzureSubscription azureSubscription;
         private readonly List<IAzureSubscription> subscriptions;

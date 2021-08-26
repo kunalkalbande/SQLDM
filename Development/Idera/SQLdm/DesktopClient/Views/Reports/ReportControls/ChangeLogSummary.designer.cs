@@ -31,21 +31,21 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeLogSummary));
-            Infragistics.Win.UltraWinEditors.DropDownEditorButton dropDownEditorButton2 = new Infragistics.Win.UltraWinEditors.DropDownEditorButton("DropDownList");
-            Infragistics.Win.UltraWinEditors.DropDownEditorButton dropDownEditorButton1 = new Infragistics.Win.UltraWinEditors.DropDownEditorButton("DropDownList");
+            Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton dropDownEditorButton2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton("DropDownList");
+            Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton dropDownEditorButton1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton("DropDownList");
             this.runReportButton = new Infragistics.Win.Misc.UltraButton();
-            this.actionTypeLabel = new System.Windows.Forms.Label();
-            this.actionTypeCombo = new System.Windows.Forms.ComboBox();
-            this.repositoryUserLabel = new System.Windows.Forms.Label();
-            this.repositoryUserCombo = new System.Windows.Forms.ComboBox();
-            this.workstationLabel = new System.Windows.Forms.Label();
-            this.workstationCombo = new System.Windows.Forms.ComboBox();
-            this.workstationUserLabel = new System.Windows.Forms.Label();
-            this.workstationUserCombo = new System.Windows.Forms.ComboBox();
-            this.startHoursLbl = new System.Windows.Forms.Label();
-            this.startHoursTimeEditor = new Idera.SQLdm.Common.UI.Controls.TimeComboEditor();
-            this.endHoursLbl = new System.Windows.Forms.Label();
-            this.endHoursTimeEditor = new Idera.SQLdm.Common.UI.Controls.TimeComboEditor();
+            this.actionTypeLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.actionTypeCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.repositoryUserLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.repositoryUserCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.workstationLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.workstationCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.workstationUserLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.workstationUserCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.startHoursLbl = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.startHoursTimeEditor = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor();
+            this.endHoursLbl = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.endHoursTimeEditor = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor();
             this.panel1.SuspendLayout();
             this.filterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.startHoursTimeEditor)).BeginInit();
@@ -311,18 +311,18 @@ namespace Idera.SQLdm.DesktopClient.Views.Reports.ReportControls
 
         #endregion
 
-        private System.Windows.Forms.Label actionTypeLabel;
-        private System.Windows.Forms.ComboBox actionTypeCombo;
-        private System.Windows.Forms.Label repositoryUserLabel;
-        private System.Windows.Forms.ComboBox repositoryUserCombo;
-        private System.Windows.Forms.Label workstationLabel;
-        private System.Windows.Forms.ComboBox workstationCombo;
-        private System.Windows.Forms.Label workstationUserLabel;
-        private System.Windows.Forms.ComboBox workstationUserCombo;
-        private System.Windows.Forms.Label startHoursLbl;
-        private Idera.SQLdm.Common.UI.Controls.TimeComboEditor startHoursTimeEditor;
-        private System.Windows.Forms.Label endHoursLbl;
-        private Idera.SQLdm.Common.UI.Controls.TimeComboEditor endHoursTimeEditor;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel actionTypeLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox actionTypeCombo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel repositoryUserLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox repositoryUserCombo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel workstationLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox workstationCombo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel workstationUserLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox workstationUserCombo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel startHoursLbl;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor startHoursTimeEditor;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel endHoursLbl;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor endHoursTimeEditor;
         private Infragistics.Win.Misc.UltraButton runReportButton;
         //private Infragistics.Win.Misc.UltraButton runReportButton;
     }

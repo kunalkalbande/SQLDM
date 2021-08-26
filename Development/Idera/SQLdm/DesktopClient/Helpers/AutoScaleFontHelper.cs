@@ -23,16 +23,20 @@ namespace Idera.SQLdm.DesktopClient.Helpers
         private static AutoScaleFontHelper _default = null;
         private static object _locker = new object();
         private static short _osCurrentDpi = 0;
+        private static short _osCurDpi = 0;
 
         protected const short NormalDPI = 96;
         protected const short MediumDPI = 120;
         protected const short LargeDPI = 144;
-        protected const short VeryLargeDPI = 192;
+        protected const short xLargeDPI = 168;
+        protected const short xxLargeDPI = 192;
 
         protected const float DefaultNormalFontSize = 8.25f;
         protected const float DefaultMediumFontSize = 7.0f;
         protected const float DefaultLargeFontSize = 6.75f;
         protected const float DefaultVeryLargeFontSize = 5.5f;
+
+
 
         /// <summary>
         /// Gets the current OS Dpi setting.
@@ -47,6 +51,19 @@ namespace Idera.SQLdm.DesktopClient.Helpers
                 }
 
                 return _osCurrentDpi;
+            }
+        }
+
+        public static short OSCurDpi
+        {
+            get
+            {
+                if (_osCurDpi == 0)
+                {
+                    _osCurDpi = (short)Graphics.FromHwnd(IntPtr.Zero).DpiX;
+                }
+
+                return _osCurDpi;
             }
         }
 
@@ -151,7 +168,8 @@ namespace Idera.SQLdm.DesktopClient.Helpers
             Control,
             Container,
             ToolStrip,
-            SqlServerInstanceThumbnail
+            SqlServerInstanceThumbnail,
+            TreeViewFontAdaptor
         }
 
         #endregion Enums
@@ -177,7 +195,6 @@ namespace Idera.SQLdm.DesktopClient.Helpers
         public void AutoScaleControl(Control control, ControlType controlType)
         {
             if (OSCurrentDPI == NormalDPI) return;
-            
             ControlHelperFactory(controlType).AutoScale(control);
         }
 
@@ -206,6 +223,8 @@ namespace Idera.SQLdm.DesktopClient.Helpers
                     return new ChartFXFontSizeHelper();
                 case ControlType.SqlServerInstanceThumbnail:
                     return new SqlServerInstanceThumbnailFontSizeHelper();
+                case ControlType.TreeViewFontAdaptor: //SQLDM-30848 - Saurabh
+                    return new TreeViewFontAdaptor();
                 default:
                     return new GenericControlHelper();
             }
@@ -224,6 +243,13 @@ namespace Idera.SQLdm.DesktopClient.Helpers
             protected float mediumFontSize = DefaultMediumFontSize;
             protected float largeFontSize = DefaultLargeFontSize;
             protected float veryLargeFontSize = DefaultVeryLargeFontSize;
+            //SQLDM-30848 - Saurabh
+            protected float FontSizeTree96 = 6.00f;
+            protected float FontSizeTree120 = 6.50f;
+            protected float FontSizeTree144 = 7.75f;
+            protected float FontSizeTree168 = 8.00f;
+            protected float FontSizeTree192 = 8.25f;
+            //SQLDM-30848 - Saurabh
 
             /// <summary>
             /// Primary method of any ABstracControlHelper derived class
@@ -255,12 +281,33 @@ namespace Idera.SQLdm.DesktopClient.Helpers
                         return controlHelper.mediumFontSize;
                     case LargeDPI:
                         return controlHelper.largeFontSize;
-                    case VeryLargeDPI:
+                    case xxLargeDPI:
                         return controlHelper.veryLargeFontSize;
                     default:
                         return controlHelper.normalFontSize;
                 }
             }
+
+            //SQLDM-30848 - Saurabh
+            protected static float GetFontSizeNavigation(AbstractControlHelper controlHelper)
+            {
+                switch (OSCurDpi)
+                {
+                    case NormalDPI:
+                        return controlHelper.FontSizeTree96;
+                    case MediumDPI:
+                        return controlHelper.FontSizeTree120;
+                    case LargeDPI:
+                        return controlHelper.FontSizeTree144;
+                    case xLargeDPI:
+                        return controlHelper.FontSizeTree168;
+                    case xxLargeDPI:
+                        return controlHelper.FontSizeTree192;
+                    default:
+                        return controlHelper.FontSizeTree96;
+                }
+            }
+            //SQLDM-30848 - Saurabh
         }
 
         /// <summary>
@@ -290,6 +337,33 @@ namespace Idera.SQLdm.DesktopClient.Helpers
                 control.Font = new Font(control.Font.FontFamily, GetFontSize(this), control.Font.Style);
             }
         }
+
+        //SQLDM-30848 - Saurabh
+        private class TreeViewFontAdaptor : AbstractControlHelper
+        {
+            public override void AutoScale(Control control)
+            {
+                if (control is TreeView)
+                {
+                    foreach (TreeNode node in ((TreeView)control).Nodes)
+                    {
+                        node.NodeFont = new Font(node.NodeFont.FontFamily, GetFontSizeNavigation(this), node.NodeFont.Style);
+                        if (node.Nodes.Count > 0)
+                        {
+                            foreach (TreeNode childNode in node.Nodes)
+                            {
+                                childNode.NodeFont = new Font(childNode.NodeFont.FontFamily, GetFontSizeNavigation(this), childNode.NodeFont.Style);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    control.Font = new Font(control.Font.FontFamily, GetFontSizeNavigation(this), control.Font.Style); // done for manage tags button click.
+                }
+            }
+        }
+        //SQLDM-30848 - Saurabh
 
         /// <summary>
         /// GenericControlHelper is generic Helper which is in charge of autoscaling the font of a Control inherited type
@@ -491,7 +565,7 @@ namespace Idera.SQLdm.DesktopClient.Helpers
                         return InstanceNameMediumFontSize;
                     case LargeDPI:
                         return InstanceNameLargeFontSize;
-                    case VeryLargeDPI:
+                    case xxLargeDPI:
                         return InstanceNameVeryLargeFontSize;
                     default:
                         return InstanceNameNormalFontSize;

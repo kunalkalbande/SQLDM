@@ -459,6 +459,149 @@
     <Compile Include="Controls\ContextMenuManager.Designer.cs">
       <DependentUpon>ContextMenuManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\CustomControls\CusotmWizard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CusotmWizard.Designer.cs">
+      <DependentUpon>CusotmWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomButtonTool.cs" />
+    <Compile Include="Controls\CustomControls\CustomCheckedListBox1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomComboBoxTool.cs" />
+    <Compile Include="Controls\CustomControls\CustomFilledWebBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomGradientPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomInformationBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomReportHeaderStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomReportLinkLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomReportsLabelHeader.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomRibbonGroup.cs" />
+    <Compile Include="Controls\CustomControls\CustomRibbonTab.cs" />
+    <Compile Include="Controls\CustomControls\CustomRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomToolStripProfessionalRenderer.cs" />
+    <Compile Include="Controls\CustomControls\CustomUltraButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomUltraCalendarCombo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomUltraDropDownButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomUltraGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomUltraNumericEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomUltraTab.cs" />
+    <Compile Include="Controls\CustomControls\CustomUltraTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomDropDownEditorButton.cs" />
+    <Compile Include="Controls\CustomControls\CustomFlowLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomLinkLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomNumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomPane.cs" />
+    <Compile Include="Controls\CustomControls\CustomChart.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomPropertyGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomTimeComboEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomUltraCalendarLook.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomSplitContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomTableLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomToolstripColorTableDarkTheme.cs" />
+    <Compile Include="Controls\CustomControls\CustomToolStripMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomUltraComboEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomTitleDockable.cs" />
+    <Compile Include="Controls\CustomControls\CustomTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomUltraTabStripControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomUltraTimeSpanEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomUltraTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomValueList.cs" />
+    <Compile Include="Controls\CustomControls\CustomWebBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\CustomWidgetUltraButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\CustomToolbarsManager.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -482,6 +625,7 @@
       <DependentUpon>FileActivityPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\GridSplitterPreview.cs" />
+    <Compile Include="Controls\GridThemeManager.cs" />
     <Compile Include="Controls\GroupPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -590,6 +734,7 @@
     <Compile Include="Controls\PropertiesHeaderStrip.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Controls\PropertiesThemeManager.cs" />
     <Compile Include="Controls\PulseHeaderPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -870,10 +1015,10 @@
     <Compile Include="Controls\ServerSummary\Dashboard\TempDBControl.Designer.cs">
       <DependentUpon>TempDBControl.cs</DependentUpon>
     </Compile>
-	  <Compile Include="Controls\ServerSummary\Dashboard\AzureDiskControl.cs">
+    <Compile Include="Controls\ServerSummary\Dashboard\AzureDiskControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-	<Compile Include="Controls\ServerSummary\Dashboard\AzureDiskControl.Designer.cs">
+    <Compile Include="Controls\ServerSummary\Dashboard\AzureDiskControl.Designer.cs">
       <DependentUpon>AzureDiskControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ServerSummary\Dashboard\VirtualizationControl.cs">
@@ -915,12 +1060,20 @@
     </Compile>
     <Compile Include="Converters\BoolToImageConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\BoolToImageConverterBasedOnResolution.cs" />
     <Compile Include="Converters\CompositeConverter.cs" />
+    <Compile Include="Converters\DpiBasisFontSize10Converter.cs" />
+    <Compile Include="Converters\DpiBasisFontSize11Converter.cs" />
+    <Compile Include="Converters\DpiBasisFontSize12Converter.cs" />
+    <Compile Include="Converters\DpiBasisHeightConverter.cs" />
     <Compile Include="Converters\ImageSelectorConverter.cs" />
     <Compile Include="Converters\NotConverter.cs" />
     <Compile Include="Converters\PathToImageConverter.cs" />
     <Compile Include="Converters\StyleConverter.cs" />
     <Compile Include="Converters\ToggleVisibilityConverter.cs" />
+    <Compile Include="Helpers\AutoScaleFontResolutionHelper.cs" />
+    <Compile Include="Helpers\ImageUtils.cs" />
+    <Compile Include="Properties\DarkThemeColorConstants.cs" />
     <Compile Include="DesktopClientException.cs" />
     <Compile Include="Dialogs\AddBaselineDialog.cs">
       <SubType>Form</SubType>
@@ -1762,12 +1915,24 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helpers\AutoScaleFontHelper.cs" />
+    <Compile Include="Helpers\AutoScaleImageSizeHelper.cs" />
+    <Compile Include="Helpers\AutoScaleSizeHelper.cs" />
     <Compile Include="Helpers\ChartHelper.cs" />
     <Compile Include="Helpers\CollapsedLeftNavFlyoutHelper.cs" />
     <Compile Include="Helpers\CrossThreadHelper.cs" />
     <Compile Include="Helpers\CustomReportHelper.cs" />
     <Compile Include="Helpers\DashboardHelper.cs" />
     <Compile Include="Helpers\DateTimeHelper.cs" />
+    <Compile Include="Helpers\HealthIndicesHelper.cs" />
+    <Compile Include="Helpers\HealthIndicesModel\AlertWiseMaxSeverity.cs" />
+    <Compile Include="Helpers\HealthIndicesModel\AlertWiseSeverity.cs" />
+    <Compile Include="Helpers\HealthIndicesModel\Categories.cs" />
+    <Compile Include="Helpers\HealthIndicesModel\CommonData.cs" />
+    <Compile Include="Helpers\HealthIndicesModel\MonitoredSqlServer.cs" />
+    <Compile Include="Helpers\HealthIndicesModel\OSMetrics.cs" />
+    <Compile Include="Helpers\HealthIndicesModel\ServerOverview.cs" />
+    <Compile Include="Helpers\HealthIndicesModel\ServerStatistics.cs" />
+    <Compile Include="Helpers\HealthIndicesModel\ServerSummaryContainer.cs" />
     <Compile Include="Helpers\HideTabHeaders.cs" />
     <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Helpers\NotificationRuleHelper.cs" />
@@ -2358,6 +2523,9 @@
       <DependentUpon>VirtualizationSummary.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Servers\ServerGroup\HeatMapOverlayPanel.resx">
+      <DependentUpon>HeatMapOverlayPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Servers\ServerGroup\ServerGroupHeatmapView.resx">
       <DependentUpon>ServerGroupHeatmapView.cs</DependentUpon>
     </EmbeddedResource>
@@ -2380,7 +2548,7 @@
     <None Include="Properties\DataSources\Idera.SQLdm.Common.Events.AzureMonitor.Interfaces.IAzureResource.datasource" />
     <None Include="Properties\DataSources\Idera.SQLdm.Common.Objects.MonitoredSqlServer.datasource" />
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Compile Include="Properties\Settings.Designer.cs">
@@ -2407,6 +2575,28 @@
       <DependentUpon>TestInstanceCustomCountersDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\TextConstanst.cs" />
+    <Compile Include="ThemeSetter.cs" />
+    <Compile Include="Views\Reports\UtilityClassForCustomTabControl.cs" />
+    <Compile Include="Views\Reports\CustomLabelHeader.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\CustomLabelHeader.Designer.cs">
+      <DependentUpon>CustomLabelHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\CustomTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\CustomTabControl.Designer.cs">
+      <DependentUpon>CustomTabControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Servers\ServerGroup\HeatMapOverlayPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Servers\ServerGroup\HeatMapUtil\ColorGradient.cs" />
+    <Compile Include="Views\Servers\ServerGroup\HeatMapUtil\ColorScale.cs" />
+    <Compile Include="Views\Servers\ServerGroup\SqlServerInstanceHeatmap.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Views\Servers\Server\IShowFilterDialog.cs" />
     <Compile Include="WpfCommands\RelayCommand.cs" />
     <Compile Include="ViewContainer.xaml.cs">
@@ -3352,6 +3542,311 @@
     <None Include="Resources\appearance6.Image.bmp" />
     <None Include="Resources\apperance8.Image.bmp" />
     <None Include="Resources\ErrorStop.png" />
+    <Content Include="Resources\cancel-24-x-24%402x.png" />
+    <Content Include="Resources\cancel-24-x-24%403x.png" />
+    <Content Include="Resources\Cancel24x24.png" />
+    <None Include="Resources\critical-wht-icon.png" />
+    <Resource Include="Resources\Customize24Hover.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\DarkTheme\add.png" />
+    <Content Include="Resources\DarkTheme\administration-area-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\analyze-16.png" />
+    <Content Include="Resources\DarkTheme\analyze-32.png" />
+    <Content Include="Resources\DarkTheme\arrow-down-blue-16-x-16-plain.png" />
+    <Content Include="Resources\DarkTheme\arrow-up-blue-16-x-16-plain.png" />
+    <Content Include="Resources\DarkTheme\block-16.png" />
+    <Content Include="Resources\DarkTheme\block-32.png" />
+    <Resource Include="Resources\DarkTheme\blue-customize-16-x-16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\DarkTheme\calendar-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\chart-grid-header.png" />
+    <Content Include="Resources\DarkTheme\cloud-database-icon-critical-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\cloud-database-icon-critical-32-x-32.png" />
+    <Content Include="Resources\DarkTheme\cloud-database-icon-disabled-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\cloud-database-icon-disabled-32-x-32.png" />
+    <Content Include="Resources\DarkTheme\cloud-database-icon-normal-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\cloud-database-icon-normal-32-x-32.png" />
+    <Content Include="Resources\DarkTheme\cloud-database-icon-warning-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\cloud-database-icon-warning-32-x-32.png" />
+    <Content Include="Resources\DarkTheme\connected.png" />
+    <Content Include="Resources\DarkTheme\copy.png" />
+    <Content Include="Resources\DarkTheme\critical-32-x-32.png" />
+    <Content Include="Resources\DarkTheme\critical-wht-icon.png" />
+    <Content Include="Resources\DarkTheme\database-32.png" />
+    <Content Include="Resources\DarkTheme\database-index-32.png" />
+    <Content Include="Resources\DarkTheme\database.png" />
+    <Content Include="Resources\DarkTheme\databases-critical-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\databases-critical-thumbnail-copy.png" />
+    <Content Include="Resources\DarkTheme\databases-info-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\databases-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\databases-warning-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\databases-warning-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\databases.png" />
+    <Content Include="Resources\DarkTheme\delete-24.png" />
+    <Content Include="Resources\DarkTheme\delete-small.png" />
+    <Content Include="Resources\DarkTheme\delete.png" />
+    <Content Include="Resources\DarkTheme\documents-32.png" />
+    <Content Include="Resources\DarkTheme\error-16.png" />
+    <Content Include="Resources\DarkTheme\error-stop.png" />
+    <Content Include="Resources\DarkTheme\filter-large.png" />
+    <Content Include="Resources\DarkTheme\flag-clear-16.png" />
+    <Content Include="Resources\DarkTheme\flag-enabled-16.png" />
+    <Content Include="Resources\DarkTheme\folder-closed-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\folder-closed-critical-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\folder-closed-warning-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\funnel-delete.png" />
+    <Content Include="Resources\DarkTheme\goto-next-error.png" />
+    <Content Include="Resources\DarkTheme\goto-previous-error.png" />
+    <Resource Include="Resources\DarkTheme\grid-2-x-2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DarkTheme\grid-2-x-3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DarkTheme\grid-2-x-4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DarkTheme\grid-2-x-5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DarkTheme\grid-3-x-2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DarkTheme\grid-3-x-3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DarkTheme\grid-3-x-4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DarkTheme\grid-4-x-2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DarkTheme\grid-4-x-3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DarkTheme\HeaderStripSmallCollapse.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DarkTheme\HeaderStripSmallExpand.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\DarkTheme\heat-map.png" />
+    <Content Include="Resources\DarkTheme\help-16-x-16.png" />
+    <Resource Include="Resources\DarkTheme\hover-back-16-x-16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DarkTheme\hover-forward-16-x-16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DarkTheme\Hide.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\DarkTheme\HotTrackTabBackgroundDarkTheme.png" />
+    <Resource Include="Resources\DarkTheme\HotTrackTabBackgroundHover.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\DarkTheme\info-wht-icon.png" />
+    <Content Include="Resources\DarkTheme\information-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\information-32-x-32.png" />
+    <Content Include="Resources\DarkTheme\information-small.png" />
+    <Content Include="Resources\DarkTheme\kill-process.png" />
+    <Resource Include="Resources\DarkTheme\LeftLink16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\DarkTheme\logs-critical-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\logs-critical-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\logs-info-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\logs-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\logs-warning-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\logs-warning-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\logs.png" />
+    <Content Include="Resources\DarkTheme\lowered-to-info.png" />
+    <Content Include="Resources\DarkTheme\maintenance-mode-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\maintenance-mode-32-x-32.png" />
+    <Content Include="Resources\DarkTheme\maintenance-mode-large.png" />
+    <Content Include="Resources\DarkTheme\my-views-icon.png" />
+    <Content Include="Resources\DarkTheme\navigation-pane-alerts-small.png" />
+    <Resource Include="Resources\DarkTheme\navigation-pane-servers-small.png" />
+    <Content Include="Resources\DarkTheme\navigation-pane-servers-small%402x.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\DarkTheme\new-filter-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\ok-wht-icon.png" />
+    <Resource Include="Resources\DarkTheme\OptionsGlyph.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DarkTheme\OptionsGlyphUp16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\DarkTheme\queries-critical-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\queries-critical-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\queries-info-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\queries-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\queries-warning-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\queries-warning-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\queries.png" />
+    <Content Include="Resources\DarkTheme\question-bubble.png" />
+    <Content Include="Resources\DarkTheme\raised-to-info.png" />
+    <Content Include="Resources\DarkTheme\recommendations-32.png" />
+    <Content Include="Resources\DarkTheme\refresh-error.png" />
+    <Resource Include="Resources\DarkTheme\Refresh.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\DarkTheme\remained-info.png" />
+    <Content Include="Resources\DarkTheme\remove.png" />
+    <Content Include="Resources\DarkTheme\resou-resources-critical-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\resources-critical-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\resources-info-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\resources-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\resources-warning-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\resources-warning-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\resources.png" />
+    <Resource Include="Resources\DarkTheme\SelectedTabBackgroundDarkTheme.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\DarkTheme\server-critical.png" />
+    <Content Include="Resources\DarkTheme\server-group-critical-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\server-group-details-view.png" />
+    <Content Include="Resources\DarkTheme\server-group-ok-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\server-group-warning-16-x-16.png" />
+    <Resource Include="Resources\DarkTheme\server-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\DarkTheme\server-information.png" />
+    <Content Include="Resources\DarkTheme\server-maintenance-mode.png" />
+    <Content Include="Resources\DarkTheme\server-ok-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\server-warning-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\server-warning.png" />
+    <Resource Include="Resources\DarkTheme\server.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\DarkTheme\servers-maintenance-mode.png" />
+    <Content Include="Resources\DarkTheme\servers.png" />
+    <Content Include="Resources\DarkTheme\services-critical-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\services-critical-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\services-info-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\services-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\services-warning-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\services-warning-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\services.png" />
+    <Content Include="Resources\DarkTheme\sessions-critical-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\sessions-critical-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\sessions-info-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\sessions-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\sessions-warning-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\sessions-warning-thumbnail.png" />
+    <Content Include="Resources\DarkTheme\sessions.png" />
+    <Resource Include="Resources\DarkTheme\SQLdmLogoHeader.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\DarkTheme\status-critical-small.png" />
+    <Content Include="Resources\DarkTheme\status-info-small.png" />
+    <Content Include="Resources\DarkTheme\status-mainentance-mode-small.png" />
+    <Content Include="Resources\DarkTheme\status-summary-critical-large.png" />
+    <Content Include="Resources\DarkTheme\status-summary-information-large.png" />
+    <Content Include="Resources\DarkTheme\status-unknown-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\stop-24-x-24.png" />
+    <Content Include="Resources\DarkTheme\stop-trace.png" />
+    <Content Include="Resources\DarkTheme\system-defined-permission-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\system-session.png" />
+    <Content Include="Resources\DarkTheme\tag-32-x-32.png" />
+    <Resource Include="Resources\DarkTheme\tag-critical-16-x-16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DarkTheme\tag-warning-16-x-16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\DarkTheme\tags-icon.png" />
+    <Content Include="Resources\DarkTheme\task-not-started-2.png" />
+    <Resource Include="Resources\DarkTheme\TodayPageHeader.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\DarkTheme\toolbar-help.png" />
+    <Content Include="Resources\DarkTheme\user-defined-permission-16-x-16.png" />
+    <Content Include="Resources\DarkTheme\user-permission-32-x-32.png" />
+    <Content Include="Resources\DarkTheme\user-session.png" />
+    <Content Include="Resources\DarkTheme\warning-wht-icon.png" />
+    <Resource Include="Resources\DarkTheme\wht-back-16-x-16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DarkTheme\wht-forward-16-x-16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DarkTheme\wht-list-view.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DarkTheme\wht-properties.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DarkTheme\wht-server-group-thumbnail-view.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\dark_customize16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\delete-24-x-24%402x.png" />
+    <Content Include="Resources\delete-24-x-24%403x.png" />
+    <Content Include="Resources\delete-24-x-24.png" />
+    <Content Include="Resources\deploy-24-x-24%402x.png" />
+    <Content Include="Resources\deploy-24-x-24%403x.png" />
+    <Content Include="Resources\deploy-24-x-24.png" />
+    <None Include="Resources\DownArrowsDark.png" />
+    <Resource Include="Resources\DKCustomize24Hover.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\edit-24-x-24%402x.png" />
+    <Content Include="Resources\edit-24-x-24%403x.png" />
+    <Content Include="Resources\edit-24-x-24.png" />
+    <None Include="Resources\info-wht-icon.png" />
+    <Content Include="Resources\export-24-x-24%402x.png" />
+    <Content Include="Resources\export-24-x-24%403x.png" />
+    <Content Include="Resources\export-24-x-24.png" />
+    <Content Include="Resources\filter-clear%402x.png" />
+    <Content Include="Resources\filter-clear%403x.png" />
+    <Content Include="Resources\filter-clear.png" />
+    <Content Include="Resources\import-24-x-24%402x.png" />
+    <Content Include="Resources\import-24-x-24%403x.png" />
+    <Content Include="Resources\import-24-x-24.png" />
+    <Content Include="Resources\InstallationKit.ico" />
+    <Resource Include="Resources\larger_Customize16x16 _dark.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\larger_Customize16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\larger_funnel_delete.png" />
+    <Resource Include="Resources\larger_Grid_2x2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\larger_Grid_2x3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\larger_Grid_2x4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\larger_Grid_2x5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\larger_Grid_3x2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\larger_Grid_3x3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\larger_Grid_3x4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\larger_Grid_4x2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\larger_Grid_4x3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\larger_Maximize.png" />
+    <Content Include="Resources\larger_Office2007Close.png" />
+    <Content Include="Resources\larger_RestoreDown.png" />
     <Content Include="Resources\left-arrow-icon.svg" />
     <Resource Include="Resources\LoweredToWarning.png" />
     <Resource Include="Resources\LoweredToOK.png" />
@@ -3368,12 +3863,58 @@
     <None Include="Resources\NavigationPaneAlertsSmall.png" />
     <None Include="Resources\NavigationPaneServersSmall.png" />
     <None Include="Resources\Refresh.png" />
+    <Resource Include="Resources\properties32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Include="Resources\ok-wht-icon.png" />
+    <Content Include="Resources\my-views-icon%402x.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Resources\NavigationPaneServer32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\new-24-x-24%402x.png" />
+    <Content Include="Resources\new-24-x-24%403x.png" />
+    <Content Include="Resources\new-24-x-24.png" />
+    <Content Include="Resources\properties%402x.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\schedule-24-x-24%402x.png" />
+    <Content Include="Resources\schedule-24-x-24%403x.png" />
+    <Content Include="Resources\schedule-24-x-24.png" />
+    <Content Include="Resources\server%402x.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Resources\server-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Resources\ServerGroupCritical16x16.png" />
     <None Include="Resources\StatusCriticalSmall.png" />
     <None Include="Resources\StatusWarningSmall.png" />
     <None Include="Resources\StatusOKSmall.png" />
     <None Include="Resources\StatusMainentanceModeSmall.png" />
     <None Include="Resources\Warning.png" />
+    <Resource Include="Resources\ServerGroupDetailsView32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\ServerGroupHeatmapView.png" />
+    <Resource Include="Resources\ToolbarRefreshHover.png" />
+    <Resource Include="Resources\DarkTheme\pause-dk-hover.png" />
+    <None Include="Resources\UpArrowsDark.png" />
+    <Resource Include="Resources\ServerGroupHeatmapView32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\ServerGroupThumbnailView32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Include="Resources\warning-wht-icon.png" />
+    <Resource Include="Resources\tags-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\tag-32-x-32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Toolbar24x24.png" />
     <Content Include="Views\Servers\ServerGroup\HeatmapSupportFiles\d3-scale-chromatic.v1.min.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -3954,7 +4495,9 @@
     <Resource Include="Resources\Delete.png" />
     <None Include="Resources\DownArrows.png" />
     <None Include="Resources\Filter.png" />
-    <None Include="Resources\InstanceThumbnailMarginImage.png" />
+    <Resource Include="Resources\InstanceThumbnailMarginImage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <None Include="Resources\components.png" />
     <None Include="Resources\ResourcesThumbnail.png" />
     <Resource Include="Resources\QueriesThumbnail.png" />
@@ -4197,11 +4740,15 @@
     <None Include="Resources\ResourcesCpuView16x16.png" />
     <None Include="Resources\ResourcesDiskView16x16.png" />
     <None Include="Resources\ResourcesMemoryView16x16.png" />
-    <None Include="Resources\SelectedRowBackground.PNG" />
+    <Resource Include="Resources\SelectedRowBackground.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <None Include="Resources\ServerGroupWarning16x16.png" />
     <None Include="Resources\ServerGroupOK16x16.png" />
     <Resource Include="Resources\RightArrows.png" />
-    <None Include="Resources\SelectedTabBackground.PNG" />
+    <Resource Include="Resources\SelectedTabBackground.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\RightArrow_Gray_4w_7h.png" />
     <None Include="Resources\RightArrow_White_9h_5w.png" />
     <None Include="Resources\SelectedItem16x16.png" />
@@ -4307,15 +4854,33 @@
     <Resource Include="Resources\Views16x16.png" />
     <Resource Include="Resources\Tag16x16.png" />
     <Resource Include="Resources\Server.png" />
-    <Resource Include="Resources\Grid_2x2.png" />
-    <Resource Include="Resources\Grid_2x3.png" />
-    <Resource Include="Resources\Grid_2x4.png" />
-    <Resource Include="Resources\Grid_2x5.png" />
-    <Resource Include="Resources\Grid_3x2.png" />
-    <Resource Include="Resources\Grid_3x3.png" />
-    <Resource Include="Resources\Grid_3x4.png" />
-    <Resource Include="Resources\Grid_4x2.png" />
-    <Resource Include="Resources\Grid_4x3.png" />
+    <Resource Include="Resources\Grid_2x2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Grid_2x3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Grid_2x4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Grid_2x5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Grid_3x2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Grid_3x3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Grid_3x4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Grid_4x2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Grid_4x3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>

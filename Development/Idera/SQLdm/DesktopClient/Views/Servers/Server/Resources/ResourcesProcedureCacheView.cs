@@ -22,6 +22,7 @@ using Infragistics.Win.UltraWinToolbars;
 using ColumnHeader=Infragistics.Win.UltraWinGrid.ColumnHeader;
 using Constants=Idera.SQLdm.Common.Constants;
 using System.Globalization;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
 {
@@ -62,10 +63,19 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
 
             // Autoscale font size.
             AdaptFontSize();
+            SetGridTheme();
+            SetRichTextBoxColor();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
 
             Settings.Default.PropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(Settings_PropertyChanged);
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
         }
-
+        private void ScaleControlsAsPerResolution()
+        {
+            this.cacheSizeChart.LegendBox.AutoSize = true;
+            this.objectTypesChart.LegendBox.AutoSize = true;
+        }
 
         public override DateTime? HistoricalSnapshotDateTime
         {
@@ -1320,6 +1330,33 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
         private void AdaptFontSize()
         {            
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+            SetRichTextBoxColor();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.cacheObjectsGrid);
+        }
+
+        private void SetRichTextBoxColor()
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                this.sqlTextBox.BackColor = ColorTranslator.FromHtml(DarkThemeColorConstants.TreeViewBackColor);
+                this.sqlTextBox.ForeColor = ColorTranslator.FromHtml(DarkThemeColorConstants.ForeColor);
+            }
+            else
+            {
+                this.sqlTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+                this.sqlTextBox.ForeColor = Color.Black;
+            }
         }
 
         #endregion

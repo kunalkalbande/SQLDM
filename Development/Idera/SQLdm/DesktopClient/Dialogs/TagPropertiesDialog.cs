@@ -20,7 +20,7 @@ using Microsoft.ApplicationBlocks.Data;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    internal partial class TagPropertiesDialog : Form
+    internal partial class TagPropertiesDialog : BaseDialog
     {
         private const string TagNameInstructionText = "< Type a tag name >";
 
@@ -38,10 +38,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         public TagPropertiesDialog()
             : this(null)
         {
+            this.DialogHeader = "Tag Properties";
         }
 
         public TagPropertiesDialog(Tag tag)
         {
+            this.DialogHeader = "Tag Properties";
             InitializeComponent();
 
             existingTag = tag;
@@ -626,6 +628,42 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+            if(AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlAsPerResolution();
+        }
+
+        private void ScaleControlAsPerResolution()
+        {
+            if (AutoScaleSizeHelper.isLargeSize)
+            {
+                this.Width += 100;
+                this.Height += 100;
+                this.tabControl1.SizeMode = TabSizeMode.Fixed;
+                this.tabControl1.ItemSize = new Size(220, 50);
+                this.availableServersListBox.Size = new Size(this.availableServersListBox.Width - 100, this.availableServersListBox.Height - 50);
+                this.serversStatusLabel.Size = this.availableServersListBox.Size;
+                return;
+            }
+            if (AutoScaleSizeHelper.isXLargeSize)
+            {
+                this.Width += 100;
+                this.Height += 100;
+                this.tabControl1.SizeMode = TabSizeMode.Fixed;
+                this.tabControl1.ItemSize = new Size(220, 50);
+                this.availableServersListBox.Size = new Size(this.availableServersListBox.Width - 100, this.availableServersListBox.Height - 50);
+                this.serversStatusLabel.Size = this.availableServersListBox.Size;
+                return;
+            }
+            if (AutoScaleSizeHelper.isXXLargeSize)
+            {
+                this.Width += 100;
+                this.Height += 100;
+                this.tabControl1.SizeMode = TabSizeMode.Fixed;
+                this.tabControl1.ItemSize = new Size(220, 50);
+                this.availableServersListBox.Size = new Size(this.availableServersListBox.Width - 100, this.availableServersListBox.Height - 50);
+                this.serversStatusLabel.Size = this.availableServersListBox.Size;
+                return;
+            }
         }
     }
 

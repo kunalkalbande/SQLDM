@@ -33,16 +33,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ChartFX.WinForms.Adornments.GradientBackground gradientBackground1 = new ChartFX.WinForms.Adornments.GradientBackground();
             this.toolbarsManager = new Idera.SQLdm.DesktopClient.Controls.ContextMenuManager(this.components);
-            this.sqlServerReadsWritesChartStatusLabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.sqlServerReadsWritesChartStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.tableLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
             this.ultraGridBagLayoutPanel1 = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
             this.sqlServerReadsWritesChartTypeButton = new System.Windows.Forms.ToolStripLabel();
             this.maximizeSqlServerReadsWritesChartButton = new System.Windows.Forms.ToolStripButton();
             this.restoreSqlServerReadsWritesChartButton = new System.Windows.Forms.ToolStripButton();
-            this.sqlServerReadsWritesPanel = new System.Windows.Forms.Panel();
+            this.sqlServerReadsWritesPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.sqlServerReadsWritesHeaderStrip = new Idera.SQLdm.DesktopClient.Controls.HeaderStrip();
-            this.sqlServerReadsWritesChartContainerPanel = new System.Windows.Forms.Panel();
-            this.sqlServerReadsWritesChart = new ChartFX.WinForms.Chart();
+            this.sqlServerReadsWritesChartContainerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.sqlServerReadsWritesChart = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomChart();
             this.sqlServerReadsWritesPanel.SuspendLayout();
             this.sqlServerReadsWritesChartContainerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sqlServerReadsWritesChart)).BeginInit();
@@ -198,22 +198,22 @@
             // toolbarsManager
             // 
             Infragistics.Win.UltraWinToolbars.PopupMenuTool popupMenuTool1 = new Infragistics.Win.UltraWinToolbars.PopupMenuTool("chartContextMenu");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool13 = new Infragistics.Win.UltraWinToolbars.ButtonTool("configureAlertsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool10 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showHelpButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool11 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showDetailsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool13 = new Controls.CustomControls.CustomButtonTool("configureAlertsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool10 = new Controls.CustomControls.CustomButtonTool("showHelpButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool11 = new Controls.CustomControls.CustomButtonTool("showDetailsButton");
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool1 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("toggleChartToolbarButton", "");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printChartButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportChartImageButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportChartDataButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Infragistics.Win.UltraWinToolbars.ButtonTool("printChartButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Controls.CustomControls.CustomButtonTool("printChartButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Controls.CustomControls.CustomButtonTool("exportChartImageButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Controls.CustomControls.CustomButtonTool("exportChartDataButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Controls.CustomControls.CustomButtonTool("printChartButton");
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportChartDataButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Controls.CustomControls.CustomButtonTool("exportChartDataButton");
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Infragistics.Win.UltraWinToolbars.ButtonTool("exportChartImageButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Controls.CustomControls.CustomButtonTool("exportChartImageButton");
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showHelpButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Infragistics.Win.UltraWinToolbars.ButtonTool("showDetailsButton");
-            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Infragistics.Win.UltraWinToolbars.ButtonTool("configureAlertsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Controls.CustomControls.CustomButtonTool("showHelpButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Controls.CustomControls.CustomButtonTool("showDetailsButton");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool9 = new Controls.CustomControls.CustomButtonTool("configureAlertsButton");
             Infragistics.Win.UltraWinToolbars.StateButtonTool stateButtonTool2 = new Infragistics.Win.UltraWinToolbars.StateButtonTool("toggleChartToolbarButton", "");
             //  ((System.ComponentModel.ISupportInitialize)(this.toolbarsManager)).BeginInit();
             this.toolbarsManager.DesignerFlags = 0;
@@ -266,16 +266,16 @@
 
         }
         #endregion
-        private System.Windows.Forms.Panel sqlServerReadsWritesPanel;
-        private System.Windows.Forms.Panel sqlServerReadsWritesChartContainerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  sqlServerReadsWritesPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  sqlServerReadsWritesChartContainerPanel;
         private Idera.SQLdm.DesktopClient.Controls.HeaderStrip sqlServerReadsWritesHeaderStrip;
         private ChartFX.WinForms.Chart sqlServerReadsWritesChart;
-        private System.Windows.Forms.Label sqlServerReadsWritesChartStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel sqlServerReadsWritesChartStatusLabel;
         private Idera.SQLdm.DesktopClient.Controls.ContextMenuManager toolbarsManager;
         private System.Windows.Forms.ToolStripLabel sqlServerReadsWritesChartTypeButton;
         private System.Windows.Forms.ToolStripButton maximizeSqlServerReadsWritesChartButton;
         private System.Windows.Forms.ToolStripButton restoreSqlServerReadsWritesChartButton;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel1;
         private Infragistics.Win.Misc.UltraGridBagLayoutPanel ultraGridBagLayoutPanel1;
         private Infragistics.Win.Printing.UltraPrintPreviewDialog ultraPrintPreviewDialog;
 

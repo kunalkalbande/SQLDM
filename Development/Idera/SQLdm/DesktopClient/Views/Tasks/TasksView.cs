@@ -25,6 +25,7 @@ using Infragistics.Win.UltraWinToolbars;
 using Resources=Idera.SQLdm.DesktopClient.Properties.Resources;
 using BBS.TracerX;
 using Idera.SQLdm.Common.Objects.ApplicationSecurity;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Tasks
 {
@@ -108,6 +109,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Tasks
 
             using (Log.InfoCall("TasksView.ctor")) {
                 InitializeComponent();
+                SetGridTheme();
+                ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
 
                 tasksGrid.DrawFilter = new HideFocusRectangleDrawFilter();
             }
@@ -749,12 +752,14 @@ namespace Idera.SQLdm.DesktopClient.Views.Tasks
         }
 
         private void ConfigureFilterOptionsPanelVisible(bool filterOptionsVisible) {
-            if (filterOptionsVisible) {
-                toggleFilterOptionsPanelButton.Image = Resources.UpArrows;
-                filterOptionsPanel.Visible = true;
-            } else {
-                toggleFilterOptionsPanelButton.Image = Resources.DownArrows;
-                filterOptionsPanel.Visible = false;
+            filterOptionsPanel.Visible = filterOptionsVisible;
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                toggleFilterOptionsPanelButton.Image = filterOptionsVisible ? Resources.UpArrowsDark : Resources.DownArrowsDark;
+            }
+            else
+            {
+                toggleFilterOptionsPanelButton.Image = filterOptionsVisible ? Resources.UpArrows : Resources.DownArrows;
             }
         }
 
@@ -1375,6 +1380,31 @@ namespace Idera.SQLdm.DesktopClient.Views.Tasks
             }
             bindingList.ResumeBinding();
             tagCombo.SelectedIndex = newTagIndex != -1 ? newTagIndex : 0;
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+            UpdateFilter();
+        }
+
+        private void UpdateFilter()
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                toggleFilterOptionsPanelButton.Image = filterOptionsPanel.Visible ? Resources.UpArrowsDark : Resources.DownArrowsDark;
+            }
+            else
+            {
+                toggleFilterOptionsPanelButton.Image = filterOptionsPanel.Visible ? Resources.UpArrows : Resources.DownArrows;
+            }
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.tasksGrid);
         }
     }
 

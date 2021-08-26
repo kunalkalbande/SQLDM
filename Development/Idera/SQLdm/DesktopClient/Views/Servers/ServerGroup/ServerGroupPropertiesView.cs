@@ -21,6 +21,7 @@ using Infragistics.Win.UltraWinEditors;
 using Infragistics.Win.UltraWinGrid;
 using Infragistics.Win.UltraWinMaskedEdit;
 using Infragistics.Win.UltraWinToolbars;
+using Infragistics.Windows.Themes;
 using Microsoft.SqlServer.MessageBox;
 using ButtonDisplayStyle = Infragistics.Win.UltraWinGrid.ButtonDisplayStyle;
 using ColumnHeader = Infragistics.Win.UltraWinGrid.ColumnHeader;
@@ -65,6 +66,37 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             ApplicationModel.Default.ActiveInstances.Changed += ActiveInstances_Changed;
 
             lblNoSqlservers.Text = "There are no items to show in this view.";
+            SetGridTheme();
+            UpdateCellColors();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+        }
+        private void ScaleControlsAsPerResolution()
+        {
+            //this.saveButton.Anchor = AnchorStyles.None;
+            this.undoButton.Size = new System.Drawing.Size(94, 25);
+            this.saveButton.Size = new System.Drawing.Size(94, 25);
+            this.columnHelp.Location = new System.Drawing.Point(10, 48);
+
+            if (AutoScaleSizeHelper.isLargeSize)
+            {
+                this.saveButton.Location = new System.Drawing.Point(850, 15);
+                this.undoButton.Location = new System.Drawing.Point(850, 70);
+                this.columnHelp.Size = new System.Drawing.Size(700, 98);
+            }
+            else if (AutoScaleSizeHelper.isXLargeSize)
+            {
+                this.saveButton.Location = new System.Drawing.Point(1350, 15);
+                this.undoButton.Location = new System.Drawing.Point(1350, 70);
+                this.columnHelp.Size = new System.Drawing.Size(1200, 98);
+            }
+            else if (AutoScaleSizeHelper.isXXLargeSize)
+            {
+                this.saveButton.Location = new System.Drawing.Point(1550, 15);
+                this.undoButton.Location = new System.Drawing.Point(1550, 70);
+                this.columnHelp.Size = new System.Drawing.Size(1450, 98);
+            }
         }
 
         private void ActiveInstances_Changed(object sender, MonitoredSqlServerCollectionChangedEventArgs e)
@@ -214,31 +246,21 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                     // in case someone has made a change on another desktop client
 
                     //I have commented out the call to the repository.   The stored procedure it calls is messed up!  (And needs to be fixed.)
-                    //foreach (MonitoredSqlServer server in ApplicationModel.Default.ActiveInstances)
-                    //{
-                    //    monitoredServers.Add(server);
-                    //}
-                    foreach (var repoinstance in ApplicationModel.Default.RepoActiveInstances)
+                    foreach (MonitoredSqlServer server in ApplicationModel.Default.ActiveInstances)
                     {
-                        foreach (MonitoredSqlServer server in repoinstance.Value)
-                        {
-                            monitoredServers.Add(server);
-                        }
+                        monitoredServers.Add(server);
                     }
-                //monitoredServers = RepositoryHelper.GetMonitoredSqlServers(Settings.Default.ActiveRepositoryConnection.ConnectionInfo, true);
-
-
+                    //monitoredServers = RepositoryHelper.GetMonitoredSqlServers(Settings.Default.ActiveRepositoryConnection.ConnectionInfo, true);
+                
+                
                 // Create a list of instance IDs allowed to show based on the view (user view, tags, etc)
                 var instances = new List<int>();
                 
                 if (view == null)
                 {
-                    foreach (var repoinstance in ApplicationModel.Default.RepoActiveInstances)
+                    foreach (MonitoredSqlServerWrapper instance in ApplicationModel.Default.ActiveInstances)
                     {
-                        foreach (MonitoredSqlServerWrapper instance in repoinstance.Value)
-                        {
-                            instances.Add(instance.InstanceId);
-                        }
+                        instances.Add(instance.Id);
                     }
                 }
                 else if (view is UserView)
@@ -261,23 +283,19 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                 {
                     foreach (MonitoredSqlServer mss in monitoredServers)
                     {
-                        if (instances.Contains(mss.ClusterRepoId))
+                        if (instances.Contains(mss.Id))
                         {
-                          
-                            if(mss.RepoId>0)
-                                ApplicationModel.Default.UserToken.Refresh(Settings.Default.RepositoryConnections.Where(c=>c.RepositiryId==mss.RepoId).First().ConnectionInfo.GetConnection().ConnectionString);
-                           
                             PermissionType serverPerms = ApplicationModel.Default.UserToken.GetServerPermission(mss.Id);
                             if (serverPerms != PermissionType.None)
                             {
                                 currentServerIds.Add(mss.Id);
                                 MonitoredSqlServerConfiguration mssc = mss.GetConfiguration();
-                                mssc.RepoId = mss.RepoId;
+
                                 var match =
                                     (monitoredSqlServerConfigurationBindingSource.List.OfType
                                         <MonitoredSQLServerConfigurationDisplayWrapper>()).
                                         Select((item, index) => new {Item = item, Position = index}).Where(
-                                            x => x.Item.InstanceName == mssc.InstanceName && x.Item.RepoID==mssc.RepoId);
+                                            x => x.Item.InstanceName == mssc.InstanceName);
 
                                 if (match.Count() == 1)
                                 {
@@ -285,13 +303,13 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                                     if (!match.Single().Item.HasChanges)
                                     {
                                         monitoredSqlServerConfigurationBindingSource.List[match.Single().Position] =
-                                            new MonitoredSQLServerConfigurationDisplayWrapper(mssc, mss.Id,mss.RepoId);
+                                            new MonitoredSQLServerConfigurationDisplayWrapper(mssc, mss.Id);
                                     }
                                 }
                                 else
                                 {
                                     monitoredSqlServerConfigurationBindingSource.Add(
-                                        new MonitoredSQLServerConfigurationDisplayWrapper(mssc, mss.Id,mss.RepoId));
+                                        new MonitoredSQLServerConfigurationDisplayWrapper(mssc, mss.Id));
                                 }
 
                                 if (serverPerms == PermissionType.View)
@@ -304,13 +322,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
                                         lockRow.Appearance.BackColor = Color.FromArgb(240, 240, 240);
                                 }
                             }
-                            else
-                            {
-
-                            }
                         }
                     }
-                    ApplicationModel.Default.RefreshUserToken();
 
                     RemoveDeletedServers(currentServerIds);
                 }
@@ -485,7 +498,6 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             if (e is DoubleClickRowEventArgs)
             {
                 var args = (DoubleClickRowEventArgs) e;
-                Settings.Default.CurrentRepoId= (int)args.Row.Cells["RepoId"].Value;
                 return (int)args.Row.Cells["SQLServerID"].Value;
                 //if (propertiesGrid.Selected.Rows.Count == 1 && propertiesGrid.Selected.Rows[0].Cells != null)
                 //{
@@ -495,7 +507,6 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
             if(e is DoubleClickCellEventArgs)
             {
                 var args = (DoubleClickCellEventArgs)e;
-                Settings.Default.CurrentRepoId = (int)args.Cell.Row.Cells["RepoId"].Value;
                 return (int)args.Cell.Row.Cells["SQLServerID"].Value;
             }
 
@@ -683,6 +694,9 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.ServerGroup
 
         private void propertiesGrid_InitializeLayout(object sender, InitializeLayoutEventArgs e)
         {
+            //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+            if (AutoScaleSizeHelper.isScalingRequired)
+                AutoScaleSizeHelper.Default.AutoScaleControl(this.propertiesGrid, AutoScaleSizeHelper.ControlType.UltraGridCheckbox);
             try
             {
                 e.Layout.UseFixedHeaders = true;
@@ -1324,6 +1338,8 @@ If none of these alerts are enabled, the job alerting collector is not executed.
 
             serverValidRange.Visible = false;
             columnHelp.Top = 31;
+            if (AutoScaleSizeHelper.isScalingRequired)
+                columnHelp.Top = 48 ;
             columnHelp.Height = 98;
 
             if (property.CanWrite)
@@ -1335,6 +1351,8 @@ If none of these alerts are enabled, the job alerting collector is not executed.
                 {
                     serverValidRange.Visible = true;
                     columnHelp.Top = 59;
+                    if (AutoScaleSizeHelper.isScalingRequired)
+                        columnHelp.Top = 48;
                     columnHelp.Height = 70;
 
                     int minValue = ((MonitoredSQLServerConfigurationDisplayWrapper.MinAndMaxValue) attr).MinValue;
@@ -1514,7 +1532,62 @@ If none of these alerts are enabled, the job alerting collector is not executed.
 
         #endregion
 
-       
-        
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            UpdateCellColors();
+            SetGridTheme();
+        }
+
+        void UpdateCellColors()
+        {
+            try
+            {
+                UltraGridLayout layout = this.propertiesGrid.DisplayLayout;
+                foreach (UltraGridBand band in layout.Bands)
+                {
+                    foreach (UltraGridColumn column in band.Columns)
+                    {
+                        if (!column.DataType.IsAssignableFrom(typeof(TimeSpan)))
+                        {
+                            try
+                            {
+                                PropertyInfo property =
+                                    (typeof(MonitoredSQLServerConfigurationDisplayWrapper)).GetProperty(column.Key);
+
+                                if (!property.CanWrite)
+                                {
+
+                                    column.CellAppearance.BackColorDisabled =
+                                        column.CellAppearance.BackColor =
+                                        Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor) : Color.FromArgb(240, 240, 240);
+                                    column.CellActivation = Activation.NoEdit;
+
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex);
+                                column.CellAppearance.BackColorDisabled =
+                                        column.CellAppearance.BackColor =
+                                        Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor) : Color.FromArgb(240, 240, 240);
+                                column.CellActivation = Activation.NoEdit;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.propertiesGrid);
+        }
+
     }
 }

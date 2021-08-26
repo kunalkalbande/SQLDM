@@ -27,6 +27,7 @@ using ColumnHeader=Infragistics.Win.UltraWinGrid.ColumnHeader;
 namespace Idera.SQLdm.DesktopClient.Views
 {
     using Idera.SQLdm.Common.Configuration;
+    using Infragistics.Windows.Themes;
     using System.Data;
 
     internal partial class SQLdmTodayView : View
@@ -74,6 +75,22 @@ namespace Idera.SQLdm.DesktopClient.Views
 
             ApplicationController.Default.BackgroundRefreshCompleted +=
                 new EventHandler<BackgroundRefreshCompleteEventArgs>(BackgroundRefreshCompleted);
+
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.tasksGrid);
+            themeManager.updateGridTheme(this.alertsGrid);
         }
 
         public override void ShowHelp()

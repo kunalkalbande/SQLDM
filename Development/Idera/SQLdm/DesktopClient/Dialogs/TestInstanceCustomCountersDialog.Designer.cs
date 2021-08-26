@@ -56,20 +56,20 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList1 = new Infragistics.Win.ValueList(84474157);
+            Infragistics.Win.ValueList valueList1 = new Controls.CustomControls.CustomValueList(84474157);
             Infragistics.Win.ValueListItem valueListItem1 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem2 = new Infragistics.Win.ValueListItem();
-            this.headerPanel = new System.Windows.Forms.Panel();
-            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.headerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.descriptionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.counterGridDataSource = new Infragistics.Win.UltraWinDataSource.UltraDataSource(this.components);
-            this.doneButton = new System.Windows.Forms.Button();
-            this.testButton = new System.Windows.Forms.Button();
+            this.doneButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.testButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
             this.ultraGrid1 = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.selectAllCheckBox = new System.Windows.Forms.CheckBox();
+            this.selectAllCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             this.connectionProgressBar = new Idera.SQLdm.DesktopClient.Controls.InfiniteProgressBar();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.counterGridDataSource)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -352,16 +352,16 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Panel headerPanel;
-        private System.Windows.Forms.Label descriptionLabel;
-        private System.Windows.Forms.Button doneButton;
-        private System.Windows.Forms.Button testButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  headerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel descriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton doneButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton testButton;
         private Infragistics.Win.UltraWinDataSource.UltraDataSource counterGridDataSource;
         private System.ComponentModel.BackgroundWorker backgroundWorker;
         private Idera.SQLdm.DesktopClient.Controls.InfiniteProgressBar connectionProgressBar;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox selectAllCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox selectAllCheckBox;
         private Infragistics.Win.UltraWinGrid.UltraGrid ultraGrid1;
-        private System.Windows.Forms.Button cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
     }
 }

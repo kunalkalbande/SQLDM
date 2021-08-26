@@ -46,6 +46,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public SelectMonitoredServersDialog()
         {
+            this.DialogHeader = "Select Monitored SQL Server Instances";
             InitializeComponent();
 
             addedServersFormat = addedInstancesLabel.Text;

@@ -19,7 +19,7 @@ using Idera.SQLdm.DesktopClient.Properties;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class ToDoPropertiesDialog : Form
+    public partial class ToDoPropertiesDialog : BaseDialog
     {
         #region constants
 
@@ -53,6 +53,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public ToDoPropertiesDialog(UltraGridRow row)
         {
+            this.DialogHeader = "To Do Properties";
             InitializeComponent();
 
             m_ToDoItemRow = row;
@@ -60,6 +61,19 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
             MinimumSize = Size; // set minimum size
             AdaptFontSize();
+            SetPropertiesTheme();
+            Infragistics.Windows.Themes.ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, System.EventArgs e)
+        {
+            SetPropertiesTheme();
+        }
+
+        void SetPropertiesTheme()
+        {
+            var propertiesThemeManager = new Controls.PropertiesThemeManager();
+            propertiesThemeManager.UpdatePropertyTheme(_propertyPage);
         }
 
         #endregion

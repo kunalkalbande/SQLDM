@@ -25,10 +25,12 @@ using System.Windows.Forms;
 using Appearance = Infragistics.Win.Appearance;
 using ButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle;
 using ColumnStyle = Infragistics.Win.UltraWinGrid.ColumnStyle;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Controls;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class instanceThresholdDialog : Form
+    public partial class instanceThresholdDialog : BaseDialog
     {
         private AlertConfigurationItem item = null;
         private InstanceAction action;
@@ -105,6 +107,35 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
                 oldAdvancedSettings = item.ThresholdEntry.Data == null ? null : DeepClone(item.ThresholdEntry.Data);
             }
             AdaptFontSize();
+            SetGridTheme();
+            SetPropertiesTheme();
+            updateLinearScaleFontAsPerTheme(this.linearScale1);
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+            SetPropertiesTheme();
+            updateLinearScaleFontAsPerTheme(this.linearScale1);
+        }
+        public void updateLinearScaleFontAsPerTheme(LinearScale linearscale)
+        {
+            ThemeSetter ts = new ThemeSetter();
+            ts.SetLinearScale(linearscale);
+        }
+
+        void SetPropertiesTheme()
+        {
+            var propertiesThemeManager = new Controls.PropertiesThemeManager();
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage1);
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.instanceConfigurationGrid);
         }
 
         private void instanceThresholdDialog_Load(object sender, EventArgs e)

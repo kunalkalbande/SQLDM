@@ -11,7 +11,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Query
 
     //using QueryPlanParser.Utilities;
 
-    public partial class QueryPlanViewerDialog : Form
+    public partial class QueryPlanViewerDialog : BaseDialog
     {
         private string PlanHandle { get; set; }
         public QueryPlanViewerDialog(string planHandle)

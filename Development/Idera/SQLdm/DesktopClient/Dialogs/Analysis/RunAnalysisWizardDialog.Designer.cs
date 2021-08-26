@@ -1,4 +1,6 @@
 ﻿using Idera.SQLdm.DesktopClient.Controls.Analysis;
+using Idera.SQLdm.DesktopClient.Properties;
+using System.Drawing;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs.Analysis
 {
@@ -30,6 +32,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Analysis
         /// </summary>
         private void InitializeComponent()
         {
+            bool isDarkThemeSelected = Properties.Settings.Default.ColorScheme == "Dark";
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Category Four.One");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Category Four.Two");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Category Four");
@@ -44,48 +47,48 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Analysis
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTab();
             this.ultraTabPageControl3 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.PanelAnalysisCategories = new System.Windows.Forms.Panel();
-            this.labelCategoryTree = new System.Windows.Forms.Label();
-            this.TreeViewCategories = new System.Windows.Forms.TreeView();
-            this.smoothingContentPropertyPage = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
+            this.PanelAnalysisCategories = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.labelCategoryTree = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.TreeViewCategories = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTreeView();
+            this.smoothingContentPropertyPage = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage(isDarkThemeSelected);
             this.ultraTabPageControl8 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.panelFilterQuestion1 = new System.Windows.Forms.Panel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblFilterQuestion1 = new System.Windows.Forms.Label();
-            this.panelFilterQuestion2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtQueryFromDiagnose = new System.Windows.Forms.TextBox();
-            this._databaseFilterTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.office2007PropertyPage7 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
+            this.numericUpDown1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.panelFilterQuestion1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.label5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.panel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblFilterQuestion1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.panelFilterQuestion2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.txtQueryFromDiagnose = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this._databaseFilterTypeComboBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.office2007PropertyPage7 = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage(isDarkThemeSelected);
             this.ultraTabPageControl1 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtTitle = new System.Windows.Forms.TextBox();
-            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.treeView1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTreeView();
+            this.textBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnNext = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnBack = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.txtTitle = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.txtDescription = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
             this.ultraTabPageControl2 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
             this.ultraTabSharedControlsPage1 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnAnalysisWizardNext = new System.Windows.Forms.Button();
-            this.btnAnalysisCategoryWizardCancel = new System.Windows.Forms.Button();
-            this.btnAnalysisCategoryWizardFinish = new System.Windows.Forms.Button();
-            this.btnAnalysisCategoryWizardHelp = new System.Windows.Forms.Button();
-            this.tabControl = new Infragistics.Win.UltraWinTabControl.UltraTabControl();
+            this.panel4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.btnAnalysisWizardNext = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnAnalysisCategoryWizardCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnAnalysisCategoryWizardFinish = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnAnalysisCategoryWizardHelp = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.tabControl = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraTabControl(true);
             this.ultraTabSharedControlsPage2 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.button2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.label6 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.ultraTabPageControl3.SuspendLayout();
             this.PanelAnalysisCategories.SuspendLayout();
             this.ultraTabPageControl8.SuspendLayout();
@@ -515,7 +518,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Analysis
             this.tabControl.Size = new System.Drawing.Size(669, 372);
             this.tabControl.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.StateButtons;
             this.tabControl.TabButtonStyle = Infragistics.Win.UIElementButtonStyle.Flat;
-            appearance5.BackColor = System.Drawing.Color.White;
+            appearance5.BackColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.BackColor) : System.Drawing.Color.White;
             appearance5.BorderColor = System.Drawing.Color.Black;
             this.tabControl.TabHeaderAreaAppearance = appearance5;
             this.tabControl.TabIndex = 5;
@@ -622,49 +625,61 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Analysis
 
         }
 
+        void OnCurrentThemeChanged(object sender, System.EventArgs e)
+        {
+            SetPropertiesTheme();
+        }
+
+        void SetPropertiesTheme()
+        {
+            var propertiesThemeManager = new Controls.PropertiesThemeManager();
+            propertiesThemeManager.UpdatePropertyTheme(smoothingContentPropertyPage);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage7);
+        }
+
         #endregion
 
         private Infragistics.Win.UltraWinTabControl.UltraTabControl ultraTabControl;
         private Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage ultraTabSharedControlsPage1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtTitle;
-        private System.Windows.Forms.TextBox txtDescription;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox txtTitle;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox txtDescription;
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl1;
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl2;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.TextBox textBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnNext;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnBack;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox textBox1;
         private System.Windows.Forms.TreeView treeView1;
         public FiltersSettingsTab filtersSettings;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btnAnalysisCategoryWizardCancel;
-        private System.Windows.Forms.Button btnAnalysisCategoryWizardFinish;
-        private System.Windows.Forms.Button btnAnalysisCategoryWizardHelp;
-        private System.Windows.Forms.Button btnAnalysisWizardNext;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnAnalysisCategoryWizardCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnAnalysisCategoryWizardFinish;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnAnalysisCategoryWizardHelp;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnAnalysisWizardNext;
         private Infragistics.Win.UltraWinTabControl.UltraTabControl tabControl;
         private Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage ultraTabSharedControlsPage2;
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl8;
         private Controls.Office2007PropertyPage office2007PropertyPage7;
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl3;
         private Controls.Office2007PropertyPage smoothingContentPropertyPage;
-        private System.Windows.Forms.Panel panelFilterQuestion1;
-        private System.Windows.Forms.Label lblFilterQuestion1;
-        private System.Windows.Forms.Panel panelFilterQuestion2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtQueryFromDiagnose;
-        private System.Windows.Forms.ComboBox _databaseFilterTypeComboBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel PanelAnalysisCategories;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panelFilterQuestion1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblFilterQuestion1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panelFilterQuestion2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox txtQueryFromDiagnose;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox _databaseFilterTypeComboBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton button1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton button2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  PanelAnalysisCategories;
         private System.Windows.Forms.TreeView TreeViewCategories;
-        private System.Windows.Forms.Label labelCategoryTree;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label6;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel labelCategoryTree;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown numericUpDown1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label6;
     }
 }

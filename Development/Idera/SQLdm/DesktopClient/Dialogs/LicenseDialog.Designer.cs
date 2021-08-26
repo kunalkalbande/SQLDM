@@ -27,29 +27,29 @@ namespace Idera.SQLdm.DesktopClient.Dialogs {
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LicenseDialog));
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listView1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListView();
             this.columnType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnServers = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnExpires = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnError = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnKey = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.buttonClose = new System.Windows.Forms.Button();
-            this.buttonRemove = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.labelRepository = new System.Windows.Forms.Label();
-            this.labelLicensed = new System.Windows.Forms.Label();
-            this.labelMonitored = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonRefresh = new System.Windows.Forms.Button();
-            this.labelRtvLicInfo = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonClose = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.buttonRemove = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.textBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.buttonAdd = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.labelRepository = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.labelLicensed = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.labelMonitored = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.groupBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.buttonRefresh = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.labelRtvLicInfo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.groupBox2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
             this.progressControl = new MRG.Controls.UI.LoadingCircle();
             this.bgWorker = new System.ComponentModel.BackgroundWorker();
-            this.linkLabelManageServers = new System.Windows.Forms.LinkLabel();
-            this.linkLabelCustomerPortal = new System.Windows.Forms.LinkLabel();
-            this.buyNow = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabelManageServers = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.linkLabelCustomerPortal = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
+            this.buyNow = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.linkLabel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLinkLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -97,7 +97,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs {
             // columnKey
             // 
             this.columnKey.Text = "Key";
-            this.columnKey.Width = 220;
+            this.columnKey.Width = -2;
             // 
             // buttonClose
             // 
@@ -128,7 +128,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs {
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(9, 48);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(440, 20);
+            this.textBox1.Size = new System.Drawing.Size(420, 20);
             this.textBox1.TabIndex = 4;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -356,24 +356,24 @@ namespace Idera.SQLdm.DesktopClient.Dialogs {
         private System.Windows.Forms.ColumnHeader columnType;
         private System.Windows.Forms.ColumnHeader columnServers;
         private System.Windows.Forms.ColumnHeader columnExpires;
-        private System.Windows.Forms.Button buttonClose;
-        private System.Windows.Forms.Button buttonRemove;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Label labelRepository;
-        private System.Windows.Forms.Label labelLicensed;
-        private System.Windows.Forms.Label labelMonitored;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton buttonClose;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton buttonRemove;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox textBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton buttonAdd;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel labelRepository;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel labelLicensed;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel labelMonitored;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox2;
         private System.Windows.Forms.ColumnHeader columnError;
         private System.Windows.Forms.ColumnHeader columnKey;
         private MRG.Controls.UI.LoadingCircle progressControl;
         private System.ComponentModel.BackgroundWorker bgWorker;
         private System.Windows.Forms.LinkLabel linkLabelManageServers;
         private System.Windows.Forms.LinkLabel linkLabelCustomerPortal; //SQL DM 9.0 (Vineet Kumar) (License Changes) -- Adding new link for customer portal
-        private System.Windows.Forms.Label labelRtvLicInfo;
-        private System.Windows.Forms.Button buyNow;
-        private System.Windows.Forms.Button buttonRefresh;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel labelRtvLicInfo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton buyNow;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton buttonRefresh;
         private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

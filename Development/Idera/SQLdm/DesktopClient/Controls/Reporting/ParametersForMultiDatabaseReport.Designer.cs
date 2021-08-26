@@ -23,10 +23,10 @@ namespace Idera.SQLdm.DesktopClient.Controls.Reporting {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.databasesBox = new System.Windows.Forms.ComboBox();
-            this.databaseLabel = new System.Windows.Forms.Label();
-            this.serverBox = new System.Windows.Forms.ComboBox();
-            this.serverLabel = new System.Windows.Forms.Label();
+            this.databasesBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.databaseLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.serverBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.serverLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.SuspendLayout();
             // 
             // databasesBox
@@ -90,9 +90,9 @@ namespace Idera.SQLdm.DesktopClient.Controls.Reporting {
 
         #endregion
 
-        private System.Windows.Forms.ComboBox databasesBox;
-        private System.Windows.Forms.Label databaseLabel;
-        private System.Windows.Forms.ComboBox serverBox;
-        private System.Windows.Forms.Label serverLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox databasesBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel databaseLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox serverBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel serverLabel;
     }
 }

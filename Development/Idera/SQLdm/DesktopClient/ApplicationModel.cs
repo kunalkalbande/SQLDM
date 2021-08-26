@@ -31,6 +31,7 @@ namespace Idera.SQLdm.DesktopClient
     using System.Threading.Tasks;
     using System.Linq;
     using Idera.SQLdm.Common.Events.AzureMonitor;
+    using Views.Servers.ServerGroup;
 
     internal sealed class ApplicationModel
     {
@@ -56,10 +57,11 @@ namespace Idera.SQLdm.DesktopClient
         private delegate void PulseLogInDelegate(string username);
 
         private static ApplicationModel defaultApplicationModel = new ApplicationModel();
-        private readonly Dictionary<int, MonitoredSqlServerCollection> activeInstances = new Dictionary<int, MonitoredSqlServerCollection>(); 
-        private readonly Dictionary<int, Dictionary<int, MonitoredSqlServer>> allInstances = new Dictionary<int, Dictionary<int, MonitoredSqlServer>>();
-        private readonly Dictionary<int, Dictionary<int, MonitoredSqlServer>> allRegisteredInstances = new Dictionary<int, Dictionary<int, MonitoredSqlServer>>();
-        private readonly Dictionary<int,Dictionary<int, MonitoredSqlServerStatus>> activeInstanceStatus =new Dictionary<int, Dictionary<int, MonitoredSqlServerStatus>>();
+        private readonly MonitoredSqlServerCollection activeInstances = new MonitoredSqlServerCollection();
+        public List<HeatMapOverlayPanel> heatMapOverlayPanels = new List<HeatMapOverlayPanel>();
+        private readonly Dictionary<int, MonitoredSqlServer> allInstances = new Dictionary<int, MonitoredSqlServer>();
+        private readonly Dictionary<int, MonitoredSqlServer> allRegisteredInstances = new Dictionary<int, MonitoredSqlServer>();
+        private readonly Dictionary<int, MonitoredSqlServerStatus> activeInstanceStatus = new Dictionary<int, MonitoredSqlServerStatus>();
         private readonly MetricDefinitions metricDefinitions = new MetricDefinitions(true, false, true);
         private Dictionary<string, WaitTypeInfo> waitTypes; // key-> wait_type, values: [category id, category name, wait defintion]
         private List<string> waitCategories; // sorted list of wait type categories
@@ -117,16 +119,10 @@ namespace Idera.SQLdm.DesktopClient
         {
             get { return userToken; }
         }
-        public Dictionary<int, MonitoredSqlServerCollection> RepoActiveInstances
-        {
-            get
-            {
-                return activeInstances;
-            }
-        }
+
         public MonitoredSqlServerCollection ActiveInstances
         {
-            get { return activeInstances.Keys.Contains(Settings.Default.CurrentRepoId) ? activeInstances[Settings.Default.CurrentRepoId]:new MonitoredSqlServerCollection(); }
+            get { return activeInstances; }
         }
 
         public int SelectedInstanceId
@@ -173,20 +169,14 @@ namespace Idera.SQLdm.DesktopClient
 
         public Dictionary<int, MonitoredSqlServer> AllInstances
         {
-            get { return allInstances[Settings.Default.CurrentRepoId]; }
+            get { return allInstances; }
         }
-        public Dictionary<int, MonitoredSqlServer> AllRepoInstances
-        {
-            get { return allInstances[Settings.Default.RepoId]; }
-        }
+
         public Dictionary<int, MonitoredSqlServer> AllRegisteredInstances
         {
-            get { return allRegisteredInstances[Settings.Default.CurrentRepoId]; }
+            get { return allRegisteredInstances; }
         }
-        public Dictionary<int, MonitoredSqlServer> AllRepoRegisteredInstances
-        {
-            get { return allRegisteredInstances[Settings.Default.RepoId]; }
-        }
+
         public TagCollection Tags
         {
             get { return tags; }
@@ -259,21 +249,12 @@ namespace Idera.SQLdm.DesktopClient
             set { analysisHistoryMode = value; }
         }
 
-        public MonitoredSqlServerStatus GetInstanceStatus(int instanceID,int repoId=0)
+        public MonitoredSqlServerStatus GetInstanceStatus(int instanceID)
         {
             MonitoredSqlServerStatus status = null;
             lock (activeInstanceStatus)
             {
-                if (repoId == 0)
-                {
-                    if (activeInstanceStatus.Keys.Contains(Settings.Default.RepoId))
-                        activeInstanceStatus[Settings.Default.RepoId].TryGetValue(instanceID, out status);
-                }
-                else
-                {
-                    if (activeInstanceStatus.Keys.Contains(repoId))
-                        activeInstanceStatus[repoId].TryGetValue(instanceID, out status);
-                }
+                activeInstanceStatus.TryGetValue(instanceID, out status);
             }
             return status;
         }
@@ -283,7 +264,7 @@ namespace Idera.SQLdm.DesktopClient
             MonitoredSqlServer instance = null;
             lock (allInstances)
             {
-                allInstances[Settings.Default.RepoId].TryGetValue(instanceID, out instance);
+                allInstances.TryGetValue(instanceID, out instance);
             }
             if (instance != null)
             {
@@ -297,7 +278,7 @@ namespace Idera.SQLdm.DesktopClient
             MonitoredSqlServerStatus status = null;
             lock (activeInstanceStatus)
             {
-                if (activeInstanceStatus[Settings.Default.CurrentRepoId].TryGetValue(instanceID, out status))
+                if (activeInstanceStatus.TryGetValue(instanceID, out status))
                 {
                     status.SetAlertsSnoozed(countSnoozed);
                 }
@@ -423,16 +404,12 @@ namespace Idera.SQLdm.DesktopClient
             FocusObject = null;
             if (System.Threading.Thread.CurrentThread.IsBackground)
             {
-                foreach (var key in RepoActiveInstances.Keys)
-                {
-                    ClearActiveInstancesDelegate clearDelegate = RepoActiveInstances[key].Clear;
-                    Program.MainWindow.Dispatcher.BeginInvoke(clearDelegate);
-                }
+                ClearActiveInstancesDelegate clearDelegate = activeInstances.Clear;
+                Program.MainWindow.Dispatcher.BeginInvoke(clearDelegate);
             }
             else
             {
-                foreach (var key in RepoActiveInstances.Keys) 
-                    RepoActiveInstances[key].Clear();
+                activeInstances.Clear();
             }
             activeInstanceStatus.Clear();
             metricDefinitions.Clear();
@@ -494,45 +471,45 @@ namespace Idera.SQLdm.DesktopClient
         /// <param name="e"></param>
         private void permissionsBacgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            foreach (var conn in Settings.Default.RepositoryConnections)
-            {
-                //wait until the active instances is updated or until an instance is added.
-                while (activeInstances[conn.RepositiryId] != null && activeInstances[conn.RepositiryId].Count == 0)
-                {
-                    Thread.Sleep(5000);
-                }
 
-                Stopwatch stopWatch = new Stopwatch();
-                stopWatch.Start();
-                List<Pair<int, bool>> serversPermissionList = new List<Pair<int, bool>>();
-                Stopwatch stopWatch1 = new Stopwatch();
-                stopWatch1.Start();
-                Parallel.ForEach(activeInstances[conn.RepositiryId].Keys, (instanceId) =>
+            //wait until the active instances is updated or until an instance is added.
+            while(ActiveInstances != null && ActiveInstances.Count == 0)
+            {
+                Thread.Sleep(1000);
+            }
+
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+            List<Pair<int, bool>> serversPermissionList = new List<Pair<int, bool>>();
+            Stopwatch stopWatch1 = new Stopwatch();
+            stopWatch1.Start();
+            Parallel.ForEach(ActiveInstances.Keys, (instanceId) =>
+             {
+                 MonitoredSqlServerWrapper instanceWrapper = ActiveInstances[instanceId];
+                 MonitoredSqlServerMixin serverVersionAndPermission = RepositoryHelper.GetServerVersionAndPermission(instanceWrapper.Instance.ConnectionInfo);
+                 if (serverVersionAndPermission != null)
                  {
-                     MonitoredSqlServerWrapper instanceWrapper = activeInstances[conn.RepositiryId][instanceId];
-                     MonitoredSqlServerMixin serverVersionAndPermission = RepositoryHelper.GetServerVersionAndPermission(instanceWrapper.Instance.ConnectionInfo);
-                     if (serverVersionAndPermission != null)
-                     {
                      //SQLDM 10.1 Barkha Khatri Updating server permissions here instead of waiting for the background refresh
-                     //SQLDM-31053
-                     ApplicationModel.Default.AllRegisteredInstances[instanceWrapper.Id].IsUserSysAdmin = serverVersionAndPermission.IsUserSysAdmin;
+                     if (ApplicationModel.Default.AllInstances.ContainsKey(instanceWrapper.Id)) // Saurabh for SQLDM 31143.
+                     {
+                         ApplicationModel.Default.AllInstances[instanceWrapper.Id].IsUserSysAdmin = serverVersionAndPermission.IsUserSysAdmin;
                          serversPermissionList.Add(new Pair<int, bool>(instanceWrapper.Id, serverVersionAndPermission.IsUserSysAdmin));
                      }
-                 });
-                stopWatch1.Stop();
-                StartUpTimeLog.DebugFormat("Time taken for getting permissions from DB : {0}", stopWatch1.ElapsedMilliseconds);
+                 }
+             });
+            stopWatch1.Stop();
+            StartUpTimeLog.DebugFormat("Time taken for getting permissions from DB : {0}", stopWatch1.ElapsedMilliseconds);
 
-                stopWatch1.Reset();
-                stopWatch1.Start();
-                if (serversPermissionList.Count > 0)
-                {
-                    RepositoryHelper.UpdateSysAdminPermissionsInRepo(Settings.Default.ActiveRepositoryConnection.ConnectionInfo, serversPermissionList);
-                }
-                stopWatch1.Stop();
-                StartUpTimeLog.DebugFormat("Time taken by RepositoryHelper.UpdateSysAdminPermissionsInRepo() : {0}", stopWatch1.ElapsedMilliseconds);
-                stopWatch.Stop();
-                StartUpTimeLog.DebugFormat("Time taken by permissionsBacgroundWorker_DoWork() : {0}", stopWatch.ElapsedMilliseconds);
+            stopWatch1.Reset();
+            stopWatch1.Start();
+            if (serversPermissionList.Count > 0)
+            {
+                RepositoryHelper.UpdateSysAdminPermissionsInRepo(Settings.Default.ActiveRepositoryConnection.ConnectionInfo, serversPermissionList);
             }
+            stopWatch1.Stop();
+            StartUpTimeLog.DebugFormat("Time taken by RepositoryHelper.UpdateSysAdminPermissionsInRepo() : {0}", stopWatch1.ElapsedMilliseconds);
+            stopWatch.Stop();
+            StartUpTimeLog.DebugFormat("Time taken by permissionsBacgroundWorker_DoWork() : {0}", stopWatch.ElapsedMilliseconds);
         }
         /// <summary>
         /// SQLdm 10.1(Barkha Khatri) sysAdmin feature--updating sys admin permissions at launch time
@@ -603,68 +580,38 @@ namespace Idera.SQLdm.DesktopClient
                 throw new DesktopClientException(
                     "Unable to refresh active instances because the active connection is null.");
             }
-
             if (refreshInstanceStatus)
             {
                 RefreshMonitoredSqlServerStatus(false);
             }
 
+            // Get the list of monitored SQL Servers from the repository.
+            IList<MonitoredSqlServer> serverList =
+                RepositoryHelper.GetMonitoredSqlServers(Settings.Default.ActiveRepositoryConnection.ConnectionInfo,
+                                                        false);
             // Process the list of monitored SQL Servers from the repository.
             //   Create and update filtered list with servers for which user has permission.
             //   Update the all active instances list of servers (contain servers with and without permissions)
-            // activeInstances.Clear();
-            foreach (var key in RepoActiveInstances.Keys)
-            {
-                RepoActiveInstances[key].Clear();
-            }
             List<MonitoredSqlServer> filteredServerList = new List<MonitoredSqlServer>();
             allInstances.Clear();
             allRegisteredInstances.Clear();
-            foreach (var connection in Settings.Default.RepositoryConnections)
+
+            foreach (MonitoredSqlServer s in serverList)
             {
-
-                Settings.Default.CurrentRepoId = connection.RepositiryId;
-             if(!activeInstances.ContainsKey(Settings.Default.CurrentRepoId))
-                activeInstances.Add(Settings.Default.CurrentRepoId, new MonitoredSqlServerCollection());
-                allInstances.Add(Settings.Default.CurrentRepoId, new Dictionary<int, MonitoredSqlServer>());
-                allRegisteredInstances.Add(Settings.Default.CurrentRepoId, new Dictionary<int, MonitoredSqlServer>());
-
-                connection.RefreshRepositoryInfo();
-                userToken.Refresh(connection.ConnectionInfo.ConnectionString);
-               
-                // Get the list of monitored SQL Servers from the repository.
-                IList<MonitoredSqlServer> serverList =
-                    RepositoryHelper.GetMonitoredSqlServers(connection.ConnectionInfo,
-                                                            false);
-                foreach (MonitoredSqlServer s in serverList)
+                // If user has permission add to filtered list.
+                if (userToken.GetServerPermission(s.Id) != PermissionType.None)
                 {
-                    var Id = RepositoryHelper.GetClusterRepoServerID(s.Id, connection.RepositiryId);
-                            s.ClusterRepoId = Id;
-                    s.RepoId= connection.RepositiryId;
-
-                    // If user has permission add to filtered list.
-                    if (userToken.GetServerPermission(s.Id) != PermissionType.None)
+                    if (s.IsActive)
                     {
-                        if (s.IsActive)
-                        {
-                            filteredServerList.Add(s);
-                        }
-                            AllInstances.Add(s.Id, s);
+                        filteredServerList.Add(s);
                     }
-                    else
-                    {
-
-                    }
-
-                   
-                    // Add the server to all instances collection.
-                    AllRegisteredInstances.Add(s.Id, s);
-                   //else
-                   // allRegisteredInstances.Add(s.Id, s);
+                    allInstances.Add(s.Id, s);
                 }
-                //SyncActiveInstances(filteredServerList);
+
+                // Add the server to all instances collection.
+                allRegisteredInstances.Add(s.Id, s);
             }
-           InvokeSyncActiveInstances(filteredServerList);
+            InvokeSyncActiveInstances(filteredServerList);
             stopWatchMain.Stop();
             StartUpTimeLog.DebugFormat("Time taken by RefreshActiveInstances : {0}", stopWatchMain.ElapsedMilliseconds);
         }
@@ -674,66 +621,55 @@ namespace Idera.SQLdm.DesktopClient
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
             // this method must be called on the UI thread.
-            foreach (var con in Settings.Default.RepositoryConnections)
+            if (serverList != null)
             {
-                int id = con.RepositiryId;
-                Settings.Default.RepoId = id;
-                if (serverList != null)
+                // If no servers in the list, clear the active instances list.
+                if (serverList.Count == 0)
                 {
-                    // If no servers in the list, clear the active instances list.
-                    if (serverList.Where(s=>s.RepoId==id).Count() == 0)
+                    activeInstances.Clear();
+                }
+                else // process the server list.
+                {
+                    IDictionary<int, MonitoredSqlServerWrapper> diffInstances = activeInstances.GetDictionary();
+
+                    if (diffInstances != null)
                     {
-                        activeInstances[id].Clear();
+                        List<MonitoredSqlServerWrapper> newInstances = new List<MonitoredSqlServerWrapper>();
+                        List<MonitoredSqlServer> updateInstances = new List<MonitoredSqlServer>();
+
+                        foreach (MonitoredSqlServer instance in serverList)
+                        {
+                            if (activeInstances.Contains(instance.Id))
+                            {
+                                updateInstances.Add(instance);
+                                diffInstances.Remove(instance.Id);
+                            }
+                            else
+                            {
+                                newInstances.Add(InitializeInstanceWrapper(instance));
+                            }
+                        }
+
+                        LOG.Info(string.Format("Synchronizing - Removing {0} instances.", diffInstances.Count));
+                        activeInstances.RemoveRange(diffInstances.Values);
+
+                        LOG.Info(string.Format("Synchronizing - Updating {0} instances.", updateInstances.Count));
+                        activeInstances.UpdateRange(updateInstances);
+
+                        LOG.Info(string.Format("Synchronizing - Adding {0} instances.", newInstances.Count));
+                        activeInstances.AddRange(newInstances);
                     }
-                    else // process the server list.
+                    else
                     {
-                        IDictionary<int, MonitoredSqlServerWrapper> diffInstances = activeInstances[id].GetDictionary();
+                        List<MonitoredSqlServerWrapper> newInstances = new List<MonitoredSqlServerWrapper>();
 
-                        if (diffInstances != null)
+                        foreach (MonitoredSqlServer instance in serverList)
                         {
-                            List<MonitoredSqlServerWrapper> newInstances = new List<MonitoredSqlServerWrapper>();
-                            List<MonitoredSqlServer> updateInstances = new List<MonitoredSqlServer>();
-
-                            foreach (MonitoredSqlServer instance in serverList)
-                            {
-                                if (instance.RepoId == id)
-                                {
-                                    if (activeInstances[id].Contains(instance.Id))
-                                    {
-                                        updateInstances.Add(instance);
-                                        diffInstances.Remove(instance.Id);
-                                    }
-                                    else
-                                    {
-                                        newInstances.Add(InitializeInstanceWrapper(instance));
-                                    }
-                                }
-                            }
-
-                            LOG.Info(string.Format("Synchronizing - Removing {0} instances.", diffInstances.Count));
-                            activeInstances[id].RemoveRange(diffInstances.Values);
-
-                            LOG.Info(string.Format("Synchronizing - Updating {0} instances.", updateInstances.Count));
-                            activeInstances[id].UpdateRange(updateInstances);
-
-                            LOG.Info(string.Format("Synchronizing - Adding {0} instances.", newInstances.Count));
-                            activeInstances[id].AddRange(newInstances);
+                            newInstances.Add(InitializeInstanceWrapper(instance));
                         }
-                        else
-                        {
-                            List<MonitoredSqlServerWrapper> newInstances = new List<MonitoredSqlServerWrapper>();
 
-                            foreach (MonitoredSqlServer instance in serverList)
-                            {
-                                if (instance.RepoId == id && instance.ClusterRepoId>0)
-                                {
-                                    newInstances.Add(InitializeInstanceWrapper(instance));
-                                }
-                            }
-
-                            LOG.Info(string.Format("Synchronizing - Adding {0} instances.", newInstances.Count));
-                            activeInstances[id].AddRange(newInstances);
-                        }
+                        LOG.Info(string.Format("Synchronizing - Adding {0} instances.", newInstances.Count));
+                        activeInstances.AddRange(newInstances);
                     }
                 }
             }
@@ -931,7 +867,7 @@ namespace Idera.SQLdm.DesktopClient
         private MonitoredSqlServerWrapper InitializeInstanceWrapper(MonitoredSqlServer instance)
         {
             MonitoredSqlServerWrapper wrapper = new MonitoredSqlServerWrapper(instance);
-            MonitoredSqlServerStatus status = GetInstanceStatus(instance.Id,instance.RepoId);
+            MonitoredSqlServerStatus status = GetInstanceStatus(instance.Id);
             if (status != null)
             {
                 status.Instance = wrapper;
@@ -1538,7 +1474,7 @@ namespace Idera.SQLdm.DesktopClient
             IManagementService defaultManagementService =
                          ManagementServiceHelper.GetDefaultService(
                              Settings.Default.ActiveRepositoryConnection.ConnectionInfo);
-            globalTags = null;//defaultManagementService.GetGlobalTags();
+            globalTags = defaultManagementService.GetGlobalTags();
             stopWatch.Stop();
             StartUpTimeLog.DebugFormat("Time taken by ManagementService.GetGlobalTags : {0} ", stopWatch.ElapsedMilliseconds);
 
@@ -1582,7 +1518,7 @@ namespace Idera.SQLdm.DesktopClient
         /// <returns></returns>
         private int GetInstanceIDFromName(string name)
         {
-            foreach (MonitoredSqlServer i in ActiveInstances)
+            foreach (MonitoredSqlServer i in activeInstances)
             {
                 if (string.Compare(i.InstanceName, name, true) == 0)
                 {
@@ -1688,184 +1624,170 @@ namespace Idera.SQLdm.DesktopClient
         /// <param name="refreshActiveInstances"></param>
         public void RefreshMonitoredSqlServerStatus(bool refreshActiveInstances)
         {
-            foreach (var conn in Settings.Default.RepositoryConnections)
+            bool performActiveInstanceRefresh = false;
+
+            Stopwatch stopWatchMain = new Stopwatch();
+            stopWatchMain.Start();
+
+            try
             {
-                bool performActiveInstanceRefresh = false;
-
-                Stopwatch stopWatchMain = new Stopwatch();
-                stopWatchMain.Start();
-
+                XmlDocument document = null;
+                Stopwatch stopWatch = new Stopwatch();
+                stopWatch.Start();
                 try
                 {
-                    XmlDocument document = null;
-                    Stopwatch stopWatch = new Stopwatch();
+                    LOG.Verbose("Getting status document from the management service");
+                    IManagementService managementService =
+                        ManagementServiceHelper.GetDefaultService(
+                            Settings.Default.ActiveRepositoryConnection.ConnectionInfo);
+                    if (managementService != null)
+                    {
+                        string xml;
+                        Stopwatch stopWatch1 = new Stopwatch();
+                        stopWatch1.Start();
+                        xml = managementService.GetMonitoredSQLServerStatusDocument();
+                        stopWatch1.Stop();
+                        StartUpTimeLog.DebugFormat("Time taken by managementService.GetMonitoredSQLServerStatusDocument() : {0}", stopWatch1.ElapsedMilliseconds);
+                        if (xml != null)
+                        {
+                            XmlDocument doc = new XmlDocument();
+                            doc.LoadXml(xml);
+                            document = doc;
+                        }
+                        LOG.Verbose("Got cached status document from the management service");
+                    }
+                }
+                catch (Exception e)
+                {
+                    LOG.Error("Error getting status document from the management service.  ", e);
+                }
+                stopWatch.Stop();
+                StartUpTimeLog.DebugFormat("Time taken for getting status document from management service took : {0}", stopWatch.ElapsedMilliseconds);
+
+
+
+                // if we failed to get a valid xml document from the management service get it from the database
+                if (document == null)
+                {
+                    stopWatch.Reset();
                     stopWatch.Start();
-                    try
-                    {
-
-                        LOG.Verbose("Getting status document from the management service");
-                        IManagementService managementService =
-                            ManagementServiceHelper.GetDefaultService(
-                               conn.ConnectionInfo);
-                        if (managementService != null)
-                        {
-                            string xml;
-                            Stopwatch stopWatch1 = new Stopwatch();
-                            stopWatch1.Start();
-                            xml = managementService.GetMonitoredSQLServerStatusDocument();
-                            stopWatch1.Stop();
-                            StartUpTimeLog.DebugFormat("Time taken by managementService.GetMonitoredSQLServerStatusDocument() : {0}", stopWatch1.ElapsedMilliseconds);
-                            if (xml != null)
-                            {
-                                XmlDocument doc = new XmlDocument();
-                                doc.LoadXml(xml);
-                                document = doc;
-                            }
-                            LOG.Verbose("Got cached status document from the management service");
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        LOG.Error("Error getting status document from the management service.  ", e);
-                    }
+                    SqlConnectionInfo connectionInfo = Settings.Default.ActiveRepositoryConnection.ConnectionInfo;
+                    LOG.VerboseFormat("Getting status document from the repository (connection info: {0})", connectionInfo);
+                    document = RepositoryHelper.GetMonitoredSqlServerStatus(connectionInfo, null);
                     stopWatch.Stop();
-                    StartUpTimeLog.DebugFormat("Time taken for getting status document from management service took : {0}", stopWatch.ElapsedMilliseconds);
-
-
-
-                    // if we failed to get a valid xml document from the management service get it from the database
-                    if (document == null)
+                    StartUpTimeLog.DebugFormat("Time taken for getting status document from repository : {0}", stopWatch.ElapsedMilliseconds);
+                }
+                lock (activeInstanceStatus)
+                {
+                    stopWatch.Reset();
+                    stopWatch.Start();
+                    IDictionary<int, MonitoredSqlServerWrapper> diffInstances = activeInstances.GetDictionary();
+                    IDictionary<int, MonitoredSqlServerStatus> diffStatus = new Dictionary<int, MonitoredSqlServerStatus>(activeInstanceStatus);
+                    MonitoredSqlServerStatus status = null;
+                    if (document != null && document.DocumentElement != null)
                     {
-                        stopWatch.Reset();
-                        stopWatch.Start();
-                        SqlConnectionInfo connectionInfo = conn.ConnectionInfo;
-                        LOG.VerboseFormat("Getting status document from the repository (connection info: {0})", connectionInfo);
-                        document = RepositoryHelper.GetMonitoredSqlServerStatus(connectionInfo, null);
-                        stopWatch.Stop();
-                        StartUpTimeLog.DebugFormat("Time taken for getting status document from repository : {0}", stopWatch.ElapsedMilliseconds);
-                    }
-                    lock (activeInstanceStatus)
-                    {
-                        stopWatch.Reset();
-                        stopWatch.Start();
-                        IDictionary<int, MonitoredSqlServerWrapper> diffInstances = RepoActiveInstances.ContainsKey(conn.RepositiryId)? RepoActiveInstances[conn.RepositiryId].GetDictionary():null;
-                        IDictionary<int, MonitoredSqlServerStatus> diffStatus = activeInstanceStatus.ContainsKey(conn.RepositiryId) ? new Dictionary<int, MonitoredSqlServerStatus>(activeInstanceStatus[conn.RepositiryId]):new Dictionary<int, MonitoredSqlServerStatus>();
-                        Dictionary<int, MonitoredSqlServerStatus> currentactiveInstantStatus = new Dictionary<int, MonitoredSqlServerStatus>();
-                         MonitoredSqlServerStatus status = null;
-                        if(!activeInstanceStatus.Keys.Contains(conn.RepositiryId))
+                        foreach (XmlNode node in document.DocumentElement.ChildNodes)
                         {
-                            activeInstanceStatus.Add(conn.RepositiryId, currentactiveInstantStatus);
-                        }
-                        if (document != null && document.DocumentElement != null)
-                        {
-                            foreach (XmlNode node in document.DocumentElement.ChildNodes)
+                            XmlAttribute attribute = node.Attributes["SQLServerID"];
+
+                            if (attribute != null)
                             {
-                                XmlAttribute attribute = node.Attributes["SQLServerID"];
+                                int id;
 
-                                if (attribute != null)
+                                if (Int32.TryParse(attribute.Value, out id))
                                 {
-                                    int id;
-
-                                    if (Int32.TryParse(attribute.Value, out id))
+                                    // Continue processing only if we have permission on this server.
+                                    if (userToken.GetServerPermission(id) != PermissionType.None)
                                     {
-                                        // Continue processing only if we have permission on this server.
-                                        if (userToken.GetServerPermission(id) != PermissionType.None)
-                                        {
-                                            if (activeInstanceStatus[conn.RepositiryId].TryGetValue(id, out status))
-                                            {   // existing node - update it
-                                                bool beforeHasCustomCounters = status.CustomCounterCount > 0;
-                                                ServerVersion beforeServerVersion = status.InstanceVersion;
+                                        if (activeInstanceStatus.TryGetValue(id, out status))
+                                        {   // existing node - update it
+                                            bool beforeHasCustomCounters = status.CustomCounterCount > 0;
+                                            ServerVersion beforeServerVersion = status.InstanceVersion;
 
-                                                status.Update(node);
-                                                diffStatus.Remove(id);
+                                            status.Update(node);
+                                            diffStatus.Remove(id);
 
-                                                if (RepoActiveInstances.ContainsKey(conn.RepositiryId) && RepoActiveInstances[conn.RepositiryId].Contains(id))
+                                            if (activeInstances.Contains(id))
+                                            {
+                                                // see if maintenance mode changed and update monitored server object
+                                                MonitoredSqlServerWrapper wrapper = activeInstances[id];
+
+                                                if (wrapper.MaintenanceModeEnabled != status.IsInMaintenanceMode)
                                                 {
-                                                    // see if maintenance mode changed and update monitored server object
-                                                    MonitoredSqlServerWrapper wrapper = RepoActiveInstances[conn.RepositiryId][id];
-
-                                                    if (wrapper.MaintenanceModeEnabled != status.IsInMaintenanceMode)
-                                                    {
-                                                        wrapper.MaintenanceModeEnabled = status.IsInMaintenanceMode;
-                                                    }
-                                                    else
-                                                    if (beforeHasCustomCounters != (status.CustomCounterCount > 0))
-                                                    {
-                                                        wrapper.FireChanged();
-                                                    }
-                                                    else
-                                                    if (status.InstanceVersion != null)
-                                                    {
-                                                        if (beforeServerVersion == null || beforeServerVersion.Major != status.InstanceVersion.Major)
-                                                            wrapper.FireChanged();
-                                                    }
+                                                    wrapper.MaintenanceModeEnabled = status.IsInMaintenanceMode;
                                                 }
                                                 else
+                                                if (beforeHasCustomCounters != (status.CustomCounterCount > 0))
                                                 {
-                                                    status = new MonitoredSqlServerStatus(node);
-                                                    currentactiveInstantStatus.Add(id, status);
+                                                    wrapper.FireChanged();
                                                 }
+                                                else
+                                                if (status.InstanceVersion != null)
+                                                {
+                                                    if (beforeServerVersion == null || beforeServerVersion.Major != status.InstanceVersion.Major)
+                                                        wrapper.FireChanged();
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            status = new MonitoredSqlServerStatus(node);
+                                            activeInstanceStatus.Add(id, status);
+                                        }
+
+                                        // if able to refresh active instances determine if we need to
+                                        if (refreshActiveInstances && !performActiveInstanceRefresh)
+                                        {
+                                            if (diffInstances != null && diffInstances.ContainsKey(id))
+                                            {
+                                                diffInstances.Remove(id);
                                             }
                                             else
                                             {
-                                                status = new MonitoredSqlServerStatus(node);
-                                                currentactiveInstantStatus.Add(id, status);
-                                            }
-
-                                            // if able to refresh active instances determine if we need to
-                                            if (refreshActiveInstances && !performActiveInstanceRefresh)
-                                            {
-                                                if (diffInstances != null && diffInstances.ContainsKey(id))
-                                                {
-                                                    diffInstances.Remove(id);
-                                                }
-                                                else
-                                                {
-                                                    performActiveInstanceRefresh = true;
-                                                }
+                                                performActiveInstanceRefresh = true;
                                             }
                                         }
                                     }
                                 }
                             }
                         }
-                        // get rid of instances that are no longer needed
-                        foreach (KeyValuePair<int, MonitoredSqlServerStatus> pair in diffStatus)
-                        {
-                            activeInstanceStatus[Settings.Default.RepoId].Remove(pair.Key);
-                        }
-
-                        // if able to refresh active instances see if instanced were deleted
-                        if (refreshActiveInstances && !performActiveInstanceRefresh)
-                        {
-                            performActiveInstanceRefresh = diffInstances != null ? diffInstances.Count > 0 : false;
-                        }
-                        stopWatch.Stop();
-                        StartUpTimeLog.DebugFormat("Time taken for Parsing status document : {0}", stopWatch.ElapsedMilliseconds);
                     }
-
-                    performActiveInstanceRefresh = false;
-                    // RefreshActiveInstanceStatus must be called without a lock on activeInstanceStatus or a deadlock will occur
-                    performActiveInstanceRefresh = false;  // SQLDM-29715 - this solved the problem for USAA.
-                    if (performActiveInstanceRefresh)
+                    // get rid of instances that are no longer needed
+                    foreach (KeyValuePair<int, MonitoredSqlServerStatus> pair in diffStatus)
                     {
-                        stopWatch.Reset();
-                        stopWatch.Start();
-                        RefreshActiveInstances(false);
-                        stopWatch.Stop();
-                        StartUpTimeLog.DebugFormat("Time taken by RefreshActiveInstances(false) : {0}", stopWatch.ElapsedMilliseconds);
+                        activeInstanceStatus.Remove(pair.Key);
                     }
+
+                    // if able to refresh active instances see if instanced were deleted
+                    if (refreshActiveInstances && !performActiveInstanceRefresh)
+                    {
+                        performActiveInstanceRefresh = diffInstances != null ? diffInstances.Count > 0 : false;
+                    }
+                    stopWatch.Stop();
+                    StartUpTimeLog.DebugFormat("Time taken for Parsing status document : {0}", stopWatch.ElapsedMilliseconds);
                 }
-                catch (Exception e)
+
+                performActiveInstanceRefresh = false;
+                // RefreshActiveInstanceStatus must be called without a lock on activeInstanceStatus or a deadlock will occur
+				performActiveInstanceRefresh = false;  // SQLDM-29715 - this solved the problem for USAA.
+                if (performActiveInstanceRefresh)
                 {
-                    LOG.Error("An error occurred while refreshing monitored sql server status list.", e);
+                    stopWatch.Reset();
+                    stopWatch.Start();
+                    RefreshActiveInstances(false);
+                    stopWatch.Stop();
+                    StartUpTimeLog.DebugFormat("Time taken by RefreshActiveInstances(false) : {0}", stopWatch.ElapsedMilliseconds);
                 }
-                finally
-                {
-                    stopWatchMain.Stop();
-                    StartUpTimeLog.DebugFormat("RefreshMonitoredSqlServerStatus took : {0} ",
-                                   stopWatchMain.ElapsedMilliseconds);
-                }
+            }
+            catch (Exception e)
+            {
+                LOG.Error("An error occurred while refreshing monitored sql server status list.", e);
+            }
+            finally
+            {
+                stopWatchMain.Stop();
+                StartUpTimeLog.DebugFormat("RefreshMonitoredSqlServerStatus took : {0} ",
+                               stopWatchMain.ElapsedMilliseconds);
             }
         }
 
@@ -1893,8 +1815,6 @@ namespace Idera.SQLdm.DesktopClient
 
                         foreach (MonitoredSqlServer addedServer in addedServers)
                         {
-                            addedServer.RepoId = Settings.Default.CurrentRepoId;
-                            addedServer.ClusterRepoId= RepositoryHelper.AddUpdateClusterMonitorServer(addedServer.Id,addedServer.InstanceName);
                             addedServerWrappers.Add(InitializeInstanceWrapper(addedServer));
                         }
 
@@ -1906,10 +1826,10 @@ namespace Idera.SQLdm.DesktopClient
                         {
                             userToken.AddServer(instance.Id, instance.InstanceName);
 
-                            AllInstances.Remove(instance.Id);
-                            AllInstances.Add(instance.Id, instance.Instance);
-                            AllRegisteredInstances.Remove(instance.Id);
-                            AllRegisteredInstances.Add(instance.Id, instance.Instance);
+                            allInstances.Remove(instance.Id);
+                            allInstances.Add(instance.Id, instance.Instance);
+                            allRegisteredInstances.Remove(instance.Id);
+                            allRegisteredInstances.Add(instance.Id, instance.Instance);
 							RepositoryHelper.AddCustomCounters(instance.Id);	
                         }
 
@@ -1948,7 +1868,7 @@ namespace Idera.SQLdm.DesktopClient
 
         private void AddActiveInstances(IList<MonitoredSqlServerWrapper> instances)
         {
-            ActiveInstances.AddRange(instances);
+            activeInstances.AddRange(instances);
         }
 
         public void DeactivateMonitoredSqlServers(IList<MonitoredSqlServerWrapper> instances)
@@ -2005,7 +1925,7 @@ namespace Idera.SQLdm.DesktopClient
 
         private void DeleteActiveInstances(IList<MonitoredSqlServerWrapper> instances)
         {
-            ActiveInstances.RemoveRange(instances);
+            activeInstances.RemoveRange(instances);
         }
 
         public void DeleteMonitoredSqlServers(IList<MonitoredSqlServerWrapper> instances)
@@ -2035,8 +1955,8 @@ namespace Idera.SQLdm.DesktopClient
                     foreach (MonitoredSqlServerWrapper instance in instances)
                     {
                         userToken.DeleteServer(instance.Id);
-                        AllInstances.Remove(instance.Id);
-                        AllRegisteredInstances.Remove(instance.Id);
+                        allInstances.Remove(instance.Id);
+                        allRegisteredInstances.Remove(instance.Id);
                     }
 
                     RefreshTags();
@@ -2060,7 +1980,7 @@ namespace Idera.SQLdm.DesktopClient
             IEnumerable<MonitoredSqlServer> servers = defaultManagementService.UpdateMonitoredSqlServers(configurationList);
             foreach (MonitoredSqlServer server in servers)
             {
-                ActiveInstances.AddOrUpdate(server);
+                activeInstances.AddOrUpdate(server);
             }
             RefreshTags();
 
@@ -2078,9 +1998,7 @@ namespace Idera.SQLdm.DesktopClient
                 ManagementServiceHelper.GetDefaultService(Settings.Default.ActiveRepositoryConnection.ConnectionInfo);
 
             MonitoredSqlServer server = defaultManagementService.UpdateMonitoredSqlServer(id, configuration);
-            server.RepoId = Settings.Default.CurrentRepoId;
-            server.ClusterRepoId= RepositoryHelper.GetClusterRepoServerID(server.Id, server.RepoId);
-            ActiveInstances.AddOrUpdate(server);
+            activeInstances.AddOrUpdate(server);
             RefreshTags();
             return server;
         }
@@ -2108,7 +2026,7 @@ namespace Idera.SQLdm.DesktopClient
                 }
             }
 
-            foreach (MonitoredSqlServerWrapper wrapper in ActiveInstances)
+            foreach (MonitoredSqlServerWrapper wrapper in activeInstances)
             {
                 MonitoredSqlServer server = wrapper;
                 if (selectedInstances.Contains(wrapper.Id))
@@ -2131,7 +2049,7 @@ namespace Idera.SQLdm.DesktopClient
 
             foreach (int id in affectedServers)
             {
-                MonitoredSqlServerWrapper wrapper = ActiveInstances[id];
+                MonitoredSqlServerWrapper wrapper = activeInstances[id];
                 if (wrapper != null)
                     wrapper.FireChanged();
             }
@@ -2141,7 +2059,7 @@ namespace Idera.SQLdm.DesktopClient
         {
             foreach (MonitoredSqlServer server in changedServers)
             {
-                ActiveInstances.AddOrUpdate(server);
+                activeInstances.AddOrUpdate(server);
             }
         }
 

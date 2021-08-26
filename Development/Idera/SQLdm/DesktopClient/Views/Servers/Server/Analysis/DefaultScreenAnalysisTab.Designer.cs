@@ -30,10 +30,10 @@
         {
             components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.welcomeMessageLabel = new System.Windows.Forms.Label();
+            this.welcomeMessageLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.lblHeading = new System.Windows.Forms.Label();
-            this.horzSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.lblHeading = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.horzSplitContainer = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomSplitContainer();
             this._historyGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.worker = new System.ComponentModel.BackgroundWorker();
 
@@ -67,7 +67,7 @@
             Infragistics.Win.Appearance appearance27 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance28 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance30 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList1 = new Infragistics.Win.ValueList(805615918);
+            Infragistics.Win.ValueList valueList1 = new Controls.CustomControls.CustomValueList(805615918);
             Infragistics.Win.ValueListItem valueListItem14 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.Appearance appearance31 = new Infragistics.Win.Appearance();
             Infragistics.Win.ValueListItem valueListItem15 = new Infragistics.Win.ValueListItem();
@@ -80,17 +80,17 @@
             Infragistics.Win.Appearance appearance35 = new Infragistics.Win.Appearance();
             Infragistics.Win.ValueListItem valueListItem19 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.Appearance appearance36 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList2 = new Infragistics.Win.ValueList(276968329);
+            Infragistics.Win.ValueList valueList2 = new Controls.CustomControls.CustomValueList(276968329);
             Infragistics.Win.ValueListItem valueListItem20 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.Appearance appearance37 = new Infragistics.Win.Appearance();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnalysisResultsList));
             Infragistics.Win.ValueListItem valueListItem21 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.Appearance appearance38 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList3 = new Infragistics.Win.ValueList(1560433853);
+            Infragistics.Win.ValueList valueList3 = new Controls.CustomControls.CustomValueList(1560433853);
             Infragistics.Win.ValueListItem valueListItem22 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem23 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem24 = new Infragistics.Win.ValueListItem();
-            Infragistics.Win.ValueList valueList4 = new Infragistics.Win.ValueList(1560566189);
+            Infragistics.Win.ValueList valueList4 = new Controls.CustomControls.CustomValueList(1560566189);
             Infragistics.Win.ValueListItem valueListItem25 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem26 = new Infragistics.Win.ValueListItem();
             // 
@@ -373,9 +373,9 @@
         #endregion
 
         #region controls
-        private System.Windows.Forms.Label welcomeMessageLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel welcomeMessageLabel;
         private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.Label lblHeading;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblHeading;
         private System.Windows.Forms.SplitContainer horzSplitContainer;
         private Infragistics.Win.UltraWinGrid.UltraGrid _historyGrid;
         private System.ComponentModel.BackgroundWorker worker;

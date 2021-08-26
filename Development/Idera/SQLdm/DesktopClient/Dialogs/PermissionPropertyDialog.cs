@@ -19,7 +19,7 @@ using Wintellect.PowerCollections;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class PermissionPropertyDialog : Form
+    public partial class PermissionPropertyDialog : BaseDialog
     {
         #region members
 
@@ -77,6 +77,23 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             _btnOK.Enabled = false;
             initializationWorker.RunWorkerAsync();
             this.AdaptFontSize();
+            SetPropertiesTheme();
+            Infragistics.Windows.Themes.ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, System.EventArgs e)
+        {
+            SetPropertiesTheme();
+        }
+
+        void SetPropertiesTheme()
+        {
+            var propertiesThemeManager = new Controls.PropertiesThemeManager();
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage7);
+            propertiesThemeManager.UpdatePropertyTheme(office2007PropertyPage5);
+            propertiesThemeManager.UpdatePropertyTheme(smoothingContentPropertyPage);
+            propertiesThemeManager.UpdatePropertyTheme(_generalPropertyPage);
+            propertiesThemeManager.UpdatePropertyTheme(_serversPropertyPage);
         }
 
         #endregion

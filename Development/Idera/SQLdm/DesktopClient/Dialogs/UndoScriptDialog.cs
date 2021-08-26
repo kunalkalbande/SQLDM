@@ -17,7 +17,7 @@ using Idera.SQLdm.Common.Snapshots;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class UndoScriptDialog : Form
+    public partial class UndoScriptDialog : BaseDialog
     {
         private static Logger LOG = Logger.GetLogger("UndoScriptDialog");
         public List<IRecommendation> _recommendations = new List<IRecommendation>();
@@ -38,12 +38,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         private UndoScriptDialog()
         {
+            this.DialogHeader = "Undo Optimization";
             InitializeComponent();
         }
 
         internal UndoScriptDialog(Result results)
             : this()
         {
+            this.DialogHeader = "Undo Optimization";
             //_instance = instance;
             //Idera.SQLdm.Common.Configuration.ServerConfiguration currentServer = CommonSettings.Default.FindServer(_instance);
             //if (null != currentServer)
@@ -56,6 +58,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         internal UndoScriptDialog(Result results, IRecommendation recommendation)
             : this(results)
         {
+            this.DialogHeader = "Undo Optimization";
             _recommendations.Clear();
             _recommendations.Add(recommendation);
         }
@@ -63,6 +66,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         internal UndoScriptDialog(Result results, IEnumerable<IRecommendation> recommendations, bool allowRun, int instanceId)
             : this(results)
         {
+            this.DialogHeader = "Undo Optimization";
             _allowRun = allowRun;
             _recommendations.Clear();
             _recommendations.AddRange(recommendations);

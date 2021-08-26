@@ -1,5 +1,9 @@
+
+using Idera.SQLdm.DesktopClient.Controls.CustomControls;
+using Idera.SQLdm.DesktopClient.Helpers;
 using Infragistics.Win.UltraWinGrid;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
@@ -41,109 +45,109 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddServersWizard));
-            this.wizardFramework = new Divelements.WizardFramework.Wizard();
-            this.welcomePage = new Divelements.WizardFramework.IntroductionPage();
-            this.introductoryTextLabel1 = new System.Windows.Forms.Label();
-            this.introductoryTextLabel2 = new System.Windows.Forms.Label();
-            this.hideWelcomePageCheckBox = new System.Windows.Forms.CheckBox();
+            this.wizardFramework = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CusotmWizard(); //new Divelements.WizardFramework.Wizard();
+            this.welcomePage = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomIntroductionPage();
+            this.introductoryTextLabel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.introductoryTextLabel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.hideWelcomePageCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             this.configureAuthenticationPage = new Divelements.WizardFramework.WizardPage();
-            this.addAzureServerButton = new System.Windows.Forms.Button();
-            this.selectedAzureProfileLbl = new System.Windows.Forms.Label();
-            this.selectedAzureProfileNameTextBox = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.encryptDataCheckbox = new System.Windows.Forms.CheckBox();
-            this.trustServerCertificateCheckbox = new System.Windows.Forms.CheckBox();
-            this.passwordTextbox = new System.Windows.Forms.TextBox();
-            this.passwordLabel = new System.Windows.Forms.Label();
-            this.loginNameLabel = new System.Windows.Forms.Label();
-            this.loginNameTextbox = new System.Windows.Forms.TextBox();
-            this.useSqlServerAuthenticationRadioButton = new System.Windows.Forms.RadioButton();
-            this.configureAuthenticationDescriptionLabel = new System.Windows.Forms.Label();
-            this.useWindowsAuthenticationRadioButton = new System.Windows.Forms.RadioButton();
-            this.informationBox1 = new Divelements.WizardFramework.InformationBox();
+            this.addAzureServerButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.selectedAzureProfileLbl = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.selectedAzureProfileNameTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.groupBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.encryptDataCheckbox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.trustServerCertificateCheckbox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.passwordTextbox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.passwordLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();//new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.loginNameLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.loginNameTextbox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.useSqlServerAuthenticationRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.configureAuthenticationDescriptionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.useWindowsAuthenticationRadioButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.informationBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
             this.selectInstancesPage = new Divelements.WizardFramework.WizardPage();
-            this.availableLicensesLabel = new System.Windows.Forms.Label();
-            this.availableInstancesStatusLabel = new System.Windows.Forms.Label();
+            this.availableLicensesLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.availableInstancesStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.loadingServersProgressControl = new MRG.Controls.UI.LoadingCircle();
-            this.addedInstancesListBox = new System.Windows.Forms.ListBox();
-            this.removeInstancesButton = new System.Windows.Forms.Button();
-            this.addInstancesButton = new System.Windows.Forms.Button();
-            this.adhocInstancesTextBox = new System.Windows.Forms.TextBox();
-            this.availableInstancesLabel = new System.Windows.Forms.Label();
-            this.addedInstancesLabel = new System.Windows.Forms.Label();
-            this.availableInstancesListBox = new System.Windows.Forms.ListBox();
+            this.addedInstancesListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListBox();
+            this.removeInstancesButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.addInstancesButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.adhocInstancesTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.availableInstancesLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.addedInstancesLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.availableInstancesListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomListBox();
             this.configureCollectionPage = new Divelements.WizardFramework.WizardPage();
-            this.featuresGroupBox = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.chkEnableActivityMonitor = new System.Windows.Forms.CheckBox();
-            this.lblConfigureBlockedProcessThreshold = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.spnBlockedProcessThreshold = new System.Windows.Forms.NumericUpDown();
-            this.lblBlockedProcessesSpinner = new System.Windows.Forms.Label();
-            this.chkCaptureAutoGrow = new System.Windows.Forms.CheckBox();
-            this.captureDeadlocksCheckBox = new System.Windows.Forms.CheckBox();
-            this.chkCaptureBlocking = new System.Windows.Forms.CheckBox();
-            this.enableQueryMonitorTraceCheckBox = new System.Windows.Forms.CheckBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.featuresGroupBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.groupBox6 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.chkEnableActivityMonitor = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.lblConfigureBlockedProcessThreshold = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.tableLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.spnBlockedProcessThreshold = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.lblBlockedProcessesSpinner = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.chkCaptureAutoGrow = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.captureDeadlocksCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.chkCaptureBlocking = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.enableQueryMonitorTraceCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.groupBox5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
             //SQLdm 9.0 (Ankit Srivastava) -- Query Monitoring Improvement -- Add server wizard - instantiating new checkboxes -start
-            this.belowAnd2005CheckBox = new System.Windows.Forms.CheckBox();
-            this.aboveAnd2008CheckBox = new System.Windows.Forms.CheckBox();
+            this.belowAnd2005CheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.aboveAnd2008CheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             //SQLdm 9.0 (Ankit Srivastava) -- Query Monitoring Improvement -- Add server wizard - instantiating new checkboxes -end            
-            this.poorlyQueriesLabel = new System.Windows.Forms.Label();
-            this.captureSqlBatchesCheckBox = new System.Windows.Forms.CheckBox();
-            this.captureSqlStatementsCheckBox = new System.Windows.Forms.CheckBox();
-            this.captureStoredProceduresCheckBox = new System.Windows.Forms.CheckBox();
-            this.thresholdWarningLabel = new System.Windows.Forms.Label();
+            this.poorlyQueriesLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.captureSqlBatchesCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.captureSqlStatementsCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.captureStoredProceduresCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.thresholdWarningLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             //SQLdm 10.4 (Ruchika Salwan) -- Add Top Plan 
-            this.topPlanTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.topPlanSpinner = new System.Windows.Forms.NumericUpDown();
-            this.topPlanLabel = new System.Windows.Forms.Label();
-            this.topPlanSuffixLabel = new System.Windows.Forms.Label();
-            this.topPlanComboBox = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
+            this.topPlanTableLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.topPlanSpinner = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.topPlanLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.topPlanSuffixLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.topPlanComboBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraComboEditor();
             //SQLdm 10.4 (Ruchika Salwan) -- Add Top Plan 
-            this.traceThresholdsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.durationThresholdSpinner = new System.Windows.Forms.NumericUpDown();
-            this.physicalWritesThresholdLabel = new System.Windows.Forms.Label();
-            this.physicalWritesThresholdSpinner = new System.Windows.Forms.NumericUpDown();
-            this.logicalReadsThresholdLabel = new System.Windows.Forms.Label();
-            this.cpuThresholdSpinner = new System.Windows.Forms.NumericUpDown();
-            this.cpuThresholdLabel = new System.Windows.Forms.Label();
-            this.logicalReadsThresholdSpinner = new System.Windows.Forms.NumericUpDown();
-            this.durationThresholdLabel = new System.Windows.Forms.Label();
-            this.queryMonitorAdvancedOptionsButton = new System.Windows.Forms.Button();
-            this.featuresDescriptionLabel = new System.Windows.Forms.Label();
+            this.traceThresholdsTableLayoutPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.durationThresholdSpinner = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.physicalWritesThresholdLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.physicalWritesThresholdSpinner = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.logicalReadsThresholdLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.cpuThresholdSpinner = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.cpuThresholdLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.logicalReadsThresholdSpinner = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.durationThresholdLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.queryMonitorAdvancedOptionsButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.featuresDescriptionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.featuresIcon = new System.Windows.Forms.PictureBox();
-            this.dataCollectionGroupBox = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelDataCollection = new System.Windows.Forms.TableLayoutPanel();
-            this.dataCollectionDescriptionLabel = new System.Windows.Forms.Label();
-            this.dataCollectionDescriptionLabel2 = new System.Windows.Forms.Label();
+            this.dataCollectionGroupBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.tableLayoutPanelDataCollection = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.dataCollectionDescriptionLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.dataCollectionDescriptionLabel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.dataCollectionIcon = new System.Windows.Forms.PictureBox();
-            this.collectionIntervalSpinner = new System.Windows.Forms.NumericUpDown();
+            this.collectionIntervalSpinner = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
             this.wmiConfigPage = new Divelements.WizardFramework.WizardPage();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.directWmiPassword = new System.Windows.Forms.TextBox();
-            this.directWmiUserName = new System.Windows.Forms.TextBox();
-            this.optionWmiDirect = new System.Windows.Forms.RadioButton();
-            this.optionWmiOleAutomation = new System.Windows.Forms.RadioButton();
-            this.optionWmiNone = new System.Windows.Forms.RadioButton();
-            this.optionWmiCSCreds = new System.Windows.Forms.CheckBox();
-            this.informationBox2 = new Divelements.WizardFramework.InformationBox();
+            this.groupBox4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.label24 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label28 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.directWmiPassword = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.directWmiUserName = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.optionWmiDirect = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.optionWmiOleAutomation = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.optionWmiNone = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.optionWmiCSCreds = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
+            this.informationBox2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
             this.selectTagsPage = new Divelements.WizardFramework.WizardPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cboAlertTemplates = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.availableTagsStatusLabel = new System.Windows.Forms.Label();
-            this.addTagButton = new System.Windows.Forms.Button();
-            this.availableTagsListBox = new System.Windows.Forms.CheckedListBox();
+            this.groupBox3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.cboAlertTemplates = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraComboEditor();
+            this.groupBox2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel();
+            this.availableTagsStatusLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.addTagButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.availableTagsListBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckedListBox1();
             this.baselineConfiguration = new Divelements.WizardFramework.WizardPage();
             this.baselineConfiguration1 = new Idera.SQLdm.DesktopClient.Controls.BaselineConfigurationPage();
             this.loadAvailableServersWorker = new System.ComponentModel.BackgroundWorker();
-            this.useSqlAunthenticationForAzureCheckBox = new System.Windows.Forms.CheckBox();
+            this.useSqlAunthenticationForAzureCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             this.wizardFramework.SuspendLayout();
             this.welcomePage.SuspendLayout();
             this.configureAuthenticationPage.SuspendLayout();
@@ -212,9 +216,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.wizardFramework.OwnerForm = this;
             this.wizardFramework.Size = new System.Drawing.Size(584, 552);
             this.wizardFramework.TabIndex = 0;
+            this.wizardFramework.Margin = new Padding(2, 2, 2, 2);
             this.wizardFramework.UserExperienceType = Divelements.WizardFramework.WizardUserExperienceType.Wizard97;
             this.wizardFramework.Cancel += new System.EventHandler(this.wizardFramework_Cancel);
             this.wizardFramework.Finish += new System.EventHandler(this.wizardFramework_Finish);
+
             // 
             // welcomePage
             // 
@@ -228,7 +234,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.welcomePage.ProceedText = "";
             this.welcomePage.Size = new System.Drawing.Size(387, 423);
             this.welcomePage.TabIndex = 1004;
-            this.welcomePage.Text = "Welcome to the Add Servers Wizard";
+            // this.welcomePage.Text = "Welcome to the Add Servers Wizard";
             this.welcomePage.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.welcomePage_HelpRequested);
             // 
             // introductoryTextLabel1
@@ -244,8 +250,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // introductoryTextLabel2
             // 
             this.introductoryTextLabel2.Location = new System.Drawing.Point(20, 55);
+            this.introductoryTextLabel2.AutoSize = true;
+            this.introductoryTextLabel2.MaximumSize = new System.Drawing.Size(400, 204);
             this.introductoryTextLabel2.Name = "introductoryTextLabel2";
-            this.introductoryTextLabel2.Size = new System.Drawing.Size(317, 204);
+            this.introductoryTextLabel2.Size = new System.Drawing.Size(400, 204);
+            //this.introductoryTextLabel2.Size = new System.Drawing.Size(357, 254);
             this.introductoryTextLabel2.TabIndex = 1;
             this.introductoryTextLabel2.Text = resources.GetString("introductoryTextLabel2.Text");
             // 
@@ -504,7 +513,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             appearance26.BorderColor = System.Drawing.Color.Silver;
             appearance26.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter;
             this.grdCloudProviders.DisplayLayout.Override.CellAppearance = appearance26;
-            this.grdCloudProviders.DisplayLayout.Override.CellPadding = 0;
+            this.grdCloudProviders.DisplayLayout.Override.CellPadding = 6;
             this.grdCloudProviders.DisplayLayout.Override.FixedHeaderIndicator = Infragistics.Win.UltraWinGrid.FixedHeaderIndicator.None;
             this.grdCloudProviders.DisplayLayout.Override.GroupByColumnsHidden = Infragistics.Win.DefaultableBoolean.False;
             appearance27.BackColor = System.Drawing.SystemColors.Control;
@@ -548,7 +557,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // selectInstancesPage
             // 
             this.selectInstancesPage.Controls.Add(this.availableLicensesLabel);
-            this.selectInstancesPage.Controls.Add(this.availableInstancesStatusLabel);
+            this.availableInstancesListBox.Controls.Add(this.availableInstancesStatusLabel);
             this.selectInstancesPage.Controls.Add(this.loadingServersProgressControl);
             this.selectInstancesPage.Controls.Add(this.addedInstancesListBox);
             this.selectInstancesPage.Controls.Add(this.removeInstancesButton);
@@ -578,8 +587,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.availableLicensesLabel.Size = new System.Drawing.Size(115, 13);
             this.availableLicensesLabel.TabIndex = 12;
             this.availableLicensesLabel.Text = "Available Licenses: {0}";
-            
-            
+
+
             // 
             // availableInstancesStatusLabel
             // 
@@ -588,12 +597,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.availableInstancesStatusLabel.BackColor = System.Drawing.Color.White;
             this.availableInstancesStatusLabel.Enabled = false;
             this.availableInstancesStatusLabel.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.availableInstancesStatusLabel.Location = new System.Drawing.Point(37, 106);
             this.availableInstancesStatusLabel.Name = "availableInstancesStatusLabel";
             this.availableInstancesStatusLabel.Size = new System.Drawing.Size(200, 288);
             this.availableInstancesStatusLabel.TabIndex = 5;
             this.availableInstancesStatusLabel.Text = "< Unavailable >";
-            this.availableInstancesStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.availableInstancesStatusLabel.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.availableInstancesStatusLabel.Visible = false;
             // 
             // loadingServersProgressControl
@@ -637,7 +645,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.removeInstancesButton.Name = "removeInstancesButton";
             this.removeInstancesButton.Size = new System.Drawing.Size(75, 23);
             this.removeInstancesButton.TabIndex = 2;
-            this.removeInstancesButton.Text = "< &Remove";
+            this.removeInstancesButton.Text = "Remove";
             this.removeInstancesButton.UseVisualStyleBackColor = true;
             this.removeInstancesButton.Click += new System.EventHandler(this.removeInstancesButton_Click);
             // 
@@ -649,7 +657,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.addInstancesButton.Name = "addInstancesButton";
             this.addInstancesButton.Size = new System.Drawing.Size(75, 23);
             this.addInstancesButton.TabIndex = 1;
-            this.addInstancesButton.Text = "&Add >";
+            this.addInstancesButton.Text = "Add";
             this.addInstancesButton.UseVisualStyleBackColor = true;
             this.addInstancesButton.Click += new System.EventHandler(this.addInstancesButton_Click);
             // 
@@ -1556,6 +1564,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.availableTagsListBox.Size = new System.Drawing.Size(495, 94);
             this.availableTagsListBox.Sorted = true;
             this.availableTagsListBox.TabIndex = 10;
+            this.availableTagsListBox.Hide();
             // 
             // baselineConfiguration1
             // 
@@ -1577,7 +1586,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.baselineConfiguration.Name = "baselineConfiguration";
             this.baselineConfiguration.NextPage = this.selectTagsPage;
             this.baselineConfiguration.PreviousPage = this.wmiConfigPage;
-            this.baselineConfiguration.Size = new System.Drawing.Size(562, 422);
+            this.baselineConfiguration.Size = new System.Drawing.Size(592, 422);
             this.baselineConfiguration.TabIndex = 1009;
             this.baselineConfiguration.Text = "Baseline Configuration";
             this.baselineConfiguration.BeforeMoveNext += new Divelements.WizardFramework.WizardPageEventHandler(this.baselineConfiguration_BeforeMoveNext);
@@ -1593,7 +1602,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // AddServersWizard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(584, 552);
+            if (AutoScaleSizeHelper.scalingFactor > 1)
+                this.ClientSize = new System.Drawing.Size(700, 552);
+            else
+                this.ClientSize = new System.Drawing.Size(614, 552);
             this.Controls.Add(this.wizardFramework);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.HelpButton = true;
@@ -1706,104 +1718,104 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private Divelements.WizardFramework.Wizard wizardFramework;
         private Divelements.WizardFramework.IntroductionPage welcomePage;
         private Divelements.WizardFramework.WizardPage selectInstancesPage;
-        private System.Windows.Forms.CheckBox hideWelcomePageCheckBox;
-        private System.Windows.Forms.Label introductoryTextLabel2;
-        private System.Windows.Forms.Label introductoryTextLabel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox hideWelcomePageCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel introductoryTextLabel2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel introductoryTextLabel1;
         private Divelements.WizardFramework.WizardPage configureAuthenticationPage;
         private Divelements.WizardFramework.WizardPage configureCollectionPage;
-        private System.Windows.Forms.Button removeInstancesButton;
-        private System.Windows.Forms.Button addInstancesButton;
-        private System.Windows.Forms.TextBox adhocInstancesTextBox;
-        private System.Windows.Forms.Label availableInstancesLabel;
-        private System.Windows.Forms.Label addedInstancesLabel;
-        private System.Windows.Forms.RadioButton useWindowsAuthenticationRadioButton;
-        private System.Windows.Forms.Label configureAuthenticationDescriptionLabel;
-        private System.Windows.Forms.RadioButton useSqlServerAuthenticationRadioButton;
-        private System.Windows.Forms.TextBox passwordTextbox;
-        private System.Windows.Forms.Label passwordLabel;
-        private System.Windows.Forms.Label loginNameLabel;
-        private System.Windows.Forms.TextBox loginNameTextbox;
-        private System.Windows.Forms.NumericUpDown collectionIntervalSpinner;
-        private System.Windows.Forms.GroupBox dataCollectionGroupBox;
-        private System.Windows.Forms.Label dataCollectionDescriptionLabel;
-        private System.Windows.Forms.GroupBox featuresGroupBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton removeInstancesButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton addInstancesButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox adhocInstancesTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel availableInstancesLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel addedInstancesLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton useWindowsAuthenticationRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel configureAuthenticationDescriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton useSqlServerAuthenticationRadioButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox passwordTextbox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel passwordLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel loginNameLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox loginNameTextbox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown collectionIntervalSpinner;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox dataCollectionGroupBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel dataCollectionDescriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox featuresGroupBox;
         private System.Windows.Forms.PictureBox featuresIcon;
         private System.Windows.Forms.PictureBox dataCollectionIcon;
-        private System.Windows.Forms.CheckBox enableQueryMonitorTraceCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox enableQueryMonitorTraceCheckBox;
         //SQLdm 9.0 (Ankit Srivastava) -- Query Monitoring Improvement -- Add server wizard - declaring new checkboxes -start
-        private System.Windows.Forms.CheckBox belowAnd2005CheckBox;
-        private System.Windows.Forms.CheckBox aboveAnd2008CheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox belowAnd2005CheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox aboveAnd2008CheckBox;
         //SQLdm 9.0 (Ankit Srivastava) -- Query Monitoring Improvement -- Add server wizard - declaring new checkboxes - end
-        private System.Windows.Forms.Label featuresDescriptionLabel;
-        private System.Windows.Forms.Label poorlyQueriesLabel;
-        private System.Windows.Forms.CheckBox captureStoredProceduresCheckBox;
-        private System.Windows.Forms.CheckBox captureSqlStatementsCheckBox;
-        private System.Windows.Forms.CheckBox captureSqlBatchesCheckBox;
-        private System.Windows.Forms.Label thresholdWarningLabel;
-        private System.Windows.Forms.Label cpuThresholdLabel;
-        private System.Windows.Forms.Label durationThresholdLabel;
-        private System.Windows.Forms.Label physicalWritesThresholdLabel;
-        private System.Windows.Forms.Label logicalReadsThresholdLabel;
-        private System.Windows.Forms.TableLayoutPanel traceThresholdsTableLayoutPanel;
-        private System.Windows.Forms.TableLayoutPanel topPlanTableLayoutPanel;
-        private System.Windows.Forms.Label topPlanLabel;
-        private System.Windows.Forms.Label topPlanSuffixLabel;
-        private System.Windows.Forms.NumericUpDown topPlanSpinner;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel featuresDescriptionLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel poorlyQueriesLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox captureStoredProceduresCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox captureSqlStatementsCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox captureSqlBatchesCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel thresholdWarningLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel cpuThresholdLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel durationThresholdLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel physicalWritesThresholdLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel logicalReadsThresholdLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel traceThresholdsTableLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel topPlanTableLayoutPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel topPlanLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel topPlanSuffixLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown topPlanSpinner;
         private Infragistics.Win.UltraWinEditors.UltraComboEditor topPlanComboBox;
-        private System.Windows.Forms.NumericUpDown durationThresholdSpinner;
-        private System.Windows.Forms.NumericUpDown physicalWritesThresholdSpinner;
-        private System.Windows.Forms.NumericUpDown cpuThresholdSpinner;
-        private System.Windows.Forms.NumericUpDown logicalReadsThresholdSpinner;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown durationThresholdSpinner;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown physicalWritesThresholdSpinner;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown cpuThresholdSpinner;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown logicalReadsThresholdSpinner;
         private System.Windows.Forms.ListBox addedInstancesListBox;
         private MRG.Controls.UI.LoadingCircle loadingServersProgressControl;
         private System.ComponentModel.BackgroundWorker loadAvailableServersWorker;
-        private System.Windows.Forms.Label availableInstancesStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel availableInstancesStatusLabel;
         private System.Windows.Forms.ListBox availableInstancesListBox;
-        private Divelements.WizardFramework.InformationBox informationBox1;
-        private System.Windows.Forms.Label availableLicensesLabel;
-        private System.Windows.Forms.CheckBox trustServerCertificateCheckbox;
-        private System.Windows.Forms.CheckBox encryptDataCheckbox;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button queryMonitorAdvancedOptionsButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox informationBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel availableLicensesLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox trustServerCertificateCheckbox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox encryptDataCheckbox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton queryMonitorAdvancedOptionsButton;
         private Divelements.WizardFramework.WizardPage selectTagsPage;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button addTagButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton addTagButton;
         private System.Windows.Forms.CheckedListBox availableTagsListBox;
-        private System.Windows.Forms.Label availableTagsStatusLabel;
-        private System.Windows.Forms.CheckBox captureDeadlocksCheckBox;
-        private System.Windows.Forms.Label label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel availableTagsStatusLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox captureDeadlocksCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
         private Infragistics.Win.UltraWinEditors.UltraComboEditor cboAlertTemplates;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox3;
         private Divelements.WizardFramework.WizardPage baselineConfiguration;
         private Controls.BaselineConfigurationPage baselineConfiguration1;
         private Divelements.WizardFramework.WizardPage wmiConfigPage;
-        private Divelements.WizardFramework.InformationBox informationBox2;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox directWmiPassword;
-        private System.Windows.Forms.TextBox directWmiUserName;
-        private System.Windows.Forms.RadioButton optionWmiDirect;
-        private System.Windows.Forms.RadioButton optionWmiOleAutomation;
-        private System.Windows.Forms.RadioButton optionWmiNone;
-        private System.Windows.Forms.CheckBox optionWmiCSCreds;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.CheckBox chkCaptureAutoGrow;
-        private System.Windows.Forms.CheckBox chkCaptureBlocking;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label lblBlockedProcessesSpinner;
-        private System.Windows.Forms.NumericUpDown spnBlockedProcessThreshold;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.CheckBox chkEnableActivityMonitor;
-        private System.Windows.Forms.Label lblConfigureBlockedProcessThreshold;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox informationBox2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox directWmiPassword;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox directWmiUserName;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton optionWmiDirect;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton optionWmiOleAutomation;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton optionWmiNone;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox optionWmiCSCreds;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label24;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label28;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkCaptureAutoGrow;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkCaptureBlocking;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox6;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblBlockedProcessesSpinner;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown spnBlockedProcessThreshold;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel tableLayoutPanel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox chkEnableActivityMonitor;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel lblConfigureBlockedProcessThreshold;
         private Label dataCollectionDescriptionLabel2;
         private TableLayoutPanel tableLayoutPanelDataCollection;
         private Button addAzureServerButton;
         private CheckBox useSqlAunthenticationForAzureCheckBox;
-        private System.Windows.Forms.TextBox selectedAzureProfileNameTextBox;
-        private System.Windows.Forms.Label selectedAzureProfileLbl;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox selectedAzureProfileNameTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel selectedAzureProfileLbl;
 
     }
 }

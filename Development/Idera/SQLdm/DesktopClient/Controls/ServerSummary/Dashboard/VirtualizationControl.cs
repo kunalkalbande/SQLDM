@@ -22,6 +22,7 @@ using Idera.SQLdm.DesktopClient.Objects;
 using Idera.SQLdm.DesktopClient.Properties;
 using Idera.SQLdm.DesktopClient.Views.Servers.Server;
 using Idera.SQLdm.Common.Snapshots;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
 {
@@ -46,6 +47,11 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
             InitializeComponent();
 
             helpTopic = HelpTopics.ServerDashboardViewVMPanel;
+
+
+            updateLinearScaleFontAsPerTheme(this.linearScale1);
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+
         }
 
         internal override void Initialize(ServerBaseView baseView, ServerSummaryHistoryData history)
@@ -778,5 +784,18 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
                 CheckVmConfig();
             }
         }
+
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            updateLinearScaleFontAsPerTheme(this.linearScale1);
+        }
+        public void updateLinearScaleFontAsPerTheme(LinearScale linearscale)
+        {
+            ThemeSetter ts = new ThemeSetter();
+            ts.SetLinearScale(linearscale);
+        }
+
+
     }
 }

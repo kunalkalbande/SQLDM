@@ -11,13 +11,14 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
     using System.ComponentModel;
     using Idera.SQLdm.DesktopClient.Helpers;
 
-    public partial class EventLogDestinationDialog : Form
+    public partial class EventLogDestinationDialog : BaseDialog
     {
         private EventLogDestination[] destinations;
         private IManagementService managementService;
 
         public EventLogDestinationDialog(IManagementService managementService)
         {
+            this.DialogHeader = "Event Log Destination";
             InitializeComponent();
             this.managementService = managementService;
             AdaptFontSize();

@@ -14,12 +14,13 @@ using BBS.TracerX;
 using Idera.SQLdm.Common.UI.Dialogs;
 using Idera.SQLdm.DesktopClient.Controls;
 using Idera.SQLdm.DesktopClient.Helpers;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
 
 
-    public partial class QueryPlanDiagramDialog : Form
+    public partial class QueryPlanDiagramDialog : BaseDialog
     {
 
         #region Html and SQL words and References
@@ -72,6 +73,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         
         public QueryPlanDiagramDialog(string planXML, bool isSupported, bool isActualPlan, string sqlStatement, int instanceId, bool canAnalyze)
         {
+            this.DialogHeader = "Query Details";
             InitializeComponent();
 
             this.planXML = planXML;
@@ -83,6 +85,21 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
             this.Load += QueryPlanDiagramDialog_Load;
             this.Shown += QueryPlanDiagramDialog_Shown;
+
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.querySchema);
         }
 
         private void QueryPlanDiagramDialog_Load(object sender, EventArgs e)

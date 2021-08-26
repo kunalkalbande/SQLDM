@@ -31,12 +31,12 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             Infragistics.Win.UltraWinListView.UltraListViewItem ultraListViewItem1 = new Infragistics.Win.UltraWinListView.UltraListViewItem("Item 1", null, null);
             Infragistics.Win.UltraWinListView.UltraListViewItem ultraListViewItem2 = new Infragistics.Win.UltraWinListView.UltraListViewItem("Item 2", null, null);
             Infragistics.Win.UltraWinListView.UltraListViewItem ultraListViewItem3 = new Infragistics.Win.UltraWinListView.UltraListViewItem("Item 3", null, null);
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.noneButton = new System.Windows.Forms.Button();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.noneButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.databaseListBox = new Infragistics.Win.UltraWinListView.UltraListView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.commentsInformationBox = new Divelements.WizardFramework.InformationBox();
+            this.panel3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.commentsInformationBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
             ((System.ComponentModel.ISupportInitialize)(this.databaseListBox)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -145,11 +145,11 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button noneButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton noneButton;
         private Infragistics.Win.UltraWinListView.UltraListView databaseListBox;
-        private System.Windows.Forms.Panel panel3;
-        private Divelements.WizardFramework.InformationBox commentsInformationBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox commentsInformationBox;
     }
 }

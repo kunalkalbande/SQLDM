@@ -19,7 +19,7 @@ using Microsoft.Win32;
 namespace Idera.SQLdm.DesktopClient.Dialogs {
     using System.Data.SqlClient;
 
-    internal partial class LicenseDialog : Form, IAuditable 
+    internal partial class LicenseDialog : BaseDialog, IAuditable 
     {
 
         /// <summary>
@@ -65,7 +65,10 @@ namespace Idera.SQLdm.DesktopClient.Dialogs {
         private static readonly BBS.TracerX.Logger Log = BBS.TracerX.Logger.GetLogger(typeof(LicenseDialog));
 
         private LicenseDialog(SqlConnectionInfo repositoryConnectionInfo) {
+            this.DialogHeader = "License Keys";
             InitializeComponent();
+            if(AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
 
             if (repositoryConnectionInfo == null) {
                 // Use the repository connection and management service currenly used by
@@ -86,6 +89,38 @@ namespace Idera.SQLdm.DesktopClient.Dialogs {
             _monitoredServersFormatString = labelMonitored.Text;
             GetCurrentLicensesAsync();
             AdaptFontSize();
+        }
+
+        //Saurabh - SQLDM-30848 - UX-Modernization, PRD 4.2
+        private void ScaleControlsAsPerResolution()
+        {
+            if (AutoScaleSizeHelper.isLargeSize)
+            {
+                this.columnType.Width = 136;
+                this.columnServers.Width = 136;
+                this.columnExpires.Width = 196;
+                this.columnError.Width = 86;
+                this.columnKey.Width = 376;
+                this.Width += 100;
+            }
+            if (AutoScaleSizeHelper.isXLargeSize)
+            {
+                this.columnType.Width = 150;
+                this.columnServers.Width = 150;
+                this.columnExpires.Width = 210;
+                this.columnError.Width = 100;
+                this.columnKey.Width = 390;
+                this.Width += 100;
+            }
+            if (AutoScaleSizeHelper.isXXLargeSize)
+            {
+                this.columnType.Width = 180;
+                this.columnServers.Width = 180;
+                this.columnExpires.Width = 240;
+                this.columnError.Width = 130;
+                this.columnKey.Width = 440;
+                this.Width += 100;
+            }
         }
 
         // Get the current licenses from the Management Service and 
@@ -429,6 +464,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs {
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
         }
+
 
         /// <summary>
         /// Sets an auditable entity to put it on the context

@@ -7,17 +7,20 @@ using Idera.SQLdm.DesktopClient.Properties;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class AlertRecommendationOptionsDialog : Form
+    public partial class AlertRecommendationOptionsDialog : BaseDialog
     {
         private const int DefaultWarningPercentage = 20;
         private const int DefaultCriticalPercentage = 30;
 
         public AlertRecommendationOptionsDialog()
         {
+            this.DialogHeader = "Alert Recommendation Options";
             InitializeComponent();
             warningPercentageOptionControl.Value = Settings.Default.AlertRecommendationWarningThesholdPercentage;
             criticalPercentageOptionControl.Value = Settings.Default.AlertRecommendationCriticalThesholdPercentage;
             AdaptFontSize();
+            SetPropertiesTheme();
+            Infragistics.Windows.Themes.ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
         private void restoreDefaultOptionsButton_Click(object sender, EventArgs e)

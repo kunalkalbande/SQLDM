@@ -29,18 +29,18 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.testButton = new System.Windows.Forms.Button();
-            this.informationBox1 = new Divelements.WizardFramework.InformationBox();
-            this.jobStepTextBox = new System.Windows.Forms.TextBox();
-            this.jobNameTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.browseJobButton = new System.Windows.Forms.Button();
-            this.browseJobStepButton = new System.Windows.Forms.Button();
-            this.serverComboBox = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
+            this.testButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.informationBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
+            this.jobStepTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.jobNameTextBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.browseJobButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.browseJobStepButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.serverComboBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomUltraComboEditor();
             this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.serverComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
@@ -225,17 +225,17 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         #endregion
 
-        private System.Windows.Forms.Button testButton;
-        private Divelements.WizardFramework.InformationBox informationBox1;
-        private System.Windows.Forms.TextBox jobStepTextBox;
-        private System.Windows.Forms.TextBox jobNameTextBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button browseJobButton;
-        private System.Windows.Forms.Button browseJobStepButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton testButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox informationBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox jobStepTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox jobNameTextBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton browseJobButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton browseJobStepButton;
         private Infragistics.Win.UltraWinEditors.UltraComboEditor serverComboBox;
         private System.Windows.Forms.BindingSource bindingSource;
     }

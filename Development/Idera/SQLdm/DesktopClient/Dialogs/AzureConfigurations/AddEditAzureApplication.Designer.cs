@@ -31,19 +31,19 @@
             this.components = new System.ComponentModel.Container();
             Infragistics.Win.Misc.ValidationGroup validationGroup1 = new Infragistics.Win.Misc.ValidationGroup("applicationNameValidationGroup");
             Infragistics.Win.Misc.ValidationGroup validationGroup2 = new Infragistics.Win.Misc.ValidationGroup("applicationDetailsValidationGroup");
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBoxDescription = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBoxSecret = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxClientId = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxTenantId = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnCancel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnOK = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.groupBox2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.textBoxDescription = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label7 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.textBoxSecret = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label6 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.textBoxClientId = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.textBoxTenantId = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.textBoxName = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.azureApplicationValidator = new Infragistics.Win.Misc.UltraValidator(this.components);
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.azureApplicationValidator)).BeginInit();
@@ -225,19 +225,19 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBoxDescription;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxSecret;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxClientId;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxTenantId;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxName;
-        private System.Windows.Forms.Label label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnOK;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox textBoxDescription;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label7;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox textBoxSecret;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label6;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox textBoxClientId;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox textBoxTenantId;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox textBoxName;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
         private Infragistics.Win.Misc.UltraValidator azureApplicationValidator;
     }
 }

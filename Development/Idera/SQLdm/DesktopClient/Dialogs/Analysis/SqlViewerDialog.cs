@@ -15,7 +15,7 @@ using Idera.SQLdm.Common.UI.Dialogs;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class SqlViewerDialog : Form//, IRecommendationViewer
+    public partial class SqlViewerDialog : BaseDialog//, IRecommendationViewer
     {
         private static Logger LOG = Logger.GetLogger("SqlViewerDialog");
         private int spanIndicatorIndex = -1;
@@ -28,6 +28,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public SqlViewerDialog(int instanceID)
         {
+            this.DialogHeader = "Sql Viewer";
             InitializeComponent();
             cursorPosPanel = statusBar.Panels["CursorPos"];
             Icon = Idera.SQLdm.DesktopClient.Properties.Resources.SQLRecommendationScript;

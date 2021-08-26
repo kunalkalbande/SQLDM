@@ -18,7 +18,7 @@ using Idera.SQLdm.Common.Baseline;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class AddBaselineDialog : Form
+    public partial class AddBaselineDialog : BaseDialog
     {
         //To log errors
         Logger Log = Logger.GetLogger("AddBaselineDialog");
@@ -31,6 +31,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private bool isNew;
         public AddBaselineDialog(Dictionary<int, BaselineConfiguration> baselineConfigList)
         {
+            this.DialogHeader = "Manage Baseline";
             this.baselineConfigList = baselineConfigList;
             InitializeComponent();
             InIt();

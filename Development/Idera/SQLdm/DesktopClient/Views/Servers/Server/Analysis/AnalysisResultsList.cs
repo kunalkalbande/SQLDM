@@ -11,6 +11,8 @@ using Idera.SQLdm.DesktopClient.Properties;
 using Idera.SQLdm.Common.Services;
 using BBS.TracerX;
 using Idera.SQLdm.Common.Recommendations;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Controls;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
 {
@@ -32,6 +34,9 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
             InstanceId = instanceId;
             InitializeComponent();
             _historyGrid.DrawFilter = new HideFocusRectangleDrawFilter();
+
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
 
             try
             {
@@ -134,12 +139,13 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
                         priority.Anchor = System.Windows.Forms.AnchorStyles.Right;
                         priority.Location = new System.Drawing.Point(6, 7);
                         priority.Name = "priority";
-                        priority.Size = new System.Drawing.Size(80, 8);
+                        priority.Size = AutoScaleSizeHelper.isScalingRequired ? new System.Drawing.Size(120, 12) : new Size(80, 8);
                         priority.TabIndex = 3;
                         priority.Value = 20F;
                         priority.Value = listAnalysis.ComputedRankFactor;
-                        Bitmap IMG = new Bitmap(80, 8);
-                        priority.DrawToBitmap(IMG, new Rectangle(0, 0, 80, 8));
+                        Bitmap IMG = AutoScaleSizeHelper.isScalingRequired ? new Bitmap(120, 12) : new Bitmap(80, 8);
+                        Rectangle rectDraw = AutoScaleSizeHelper.isScalingRequired ? new Rectangle(0, 0, 120, 12) : new Rectangle(0, 0, 80, 8);
+                        priority.DrawToBitmap(IMG, rectDraw);
                         row["Priority"] = IMG;
                         row["ComputedRankFactor"] = listAnalysis.ComputedRankFactor;
                         _AnalysisListTable.Rows.Add(row);
@@ -201,7 +207,10 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
                             int hinset = (area.Width - width) / 2;
                             int vinset = (area.Height - 8) / 2 + 1;
                             Rectangle rect = new Rectangle(area.X + hinset, area.Y + vinset, width, 8);
-                            PriorityBar.Draw(drawParams.Graphics, rect, (float)value);
+                            Rectangle rectNew = rect;
+                            if (AutoScaleSizeHelper.isScalingRequired)
+                                rectNew = new Rectangle(rect.X, rect.Y, rect.Width + 40, rect.Height + 4);
+                            PriorityBar.Draw(drawParams.Graphics, rectNew, (float)value);
                         }
                     }
                 }
@@ -254,6 +263,17 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
             return ((DateTime)((System.Data.DataRowView)_historyGrid.Selected.Rows[0].ListObject).Row.ItemArray[2]);
         }
         #endregion
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this._historyGrid);
+        }
     }
 
     public sealed class AnalysisResultSelectedEventArgs : EventArgs

@@ -132,8 +132,7 @@ namespace Idera.SQLdm.DesktopClient.Controls.ServerSummary.Dashboard
                     }
                     else
                     {
-                        int Id = RepositoryHelper.GetSelectedInstanceId(instanceId);
-                        MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(Id, Settings.Default.RepoId);
+                        MonitoredSqlServerStatus status = ApplicationModel.Default.GetInstanceStatus(instanceId);
                         if (status != null)
                         {
                             serverVersion = status.InstanceVersion;

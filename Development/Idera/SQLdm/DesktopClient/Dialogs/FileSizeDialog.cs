@@ -11,12 +11,13 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 {
     using Idera.SQLdm.Common.Snapshots;
 
-    public partial class FileSizeDialog : Form
+    public partial class FileSizeDialog : BaseDialog
     {
         private FileSize fileSize;
 
         public FileSizeDialog()
         {
+            this.DialogHeader = "Table Size";
             FileSize = new FileSize();
             InitializeComponent();
             AdaptFontSize();

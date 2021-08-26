@@ -27,6 +27,7 @@ using Infragistics.Win.UltraWinToolbars;
 using Wintellect.PowerCollections;
 using ColumnHeader = Infragistics.Win.UltraWinGrid.ColumnHeader;
 using System.Globalization;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Sessions
 {
@@ -107,6 +108,8 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Sessions
             configurationSummary = new SessionSummaryConfiguration(instanceId);
 
             Settings.Default.PropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(Settings_PropertyChanged);
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
         }
 
         #endregion
@@ -1853,7 +1856,9 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Sessions
             lockStatisticsChart.Printer.Document.DocumentName = "Sessions Locks Chart";
             lockStatisticsChart.ToolBar.RemoveAt(0);
             lockStatisticsChart.DataSource = realTimeChartDataTable;
-
+            //SQLDM-30848, adapting resolutions, Kartik
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
             ConfigureLockStatisticsChart("Requests");
             InitalizeDrilldown(lockStatisticsChart);  //SQLdm 10.2 (Anshul Aggarwal) : Chart Drilldown functionality
         }
@@ -2345,6 +2350,24 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Sessions
         private void AdaptFontSize()
         {            
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.locksGrid);
+        }
+
+        //SQLDM-30848, adapting resolutions, Kartik
+        private void ScaleControlsAsPerResolution()
+        {
+            lockStatisticsChart.LegendBox.AutoSize = true;
         }
 
         #endregion

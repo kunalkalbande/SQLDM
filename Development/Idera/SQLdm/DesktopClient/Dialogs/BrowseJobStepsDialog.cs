@@ -10,7 +10,7 @@ using Idera.SQLdm.DesktopClient.Properties;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class BrowseJobStepsDialog : Form
+    public partial class BrowseJobStepsDialog : BaseDialog
     {
         private const string WILDCARD = "%";
 

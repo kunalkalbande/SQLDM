@@ -7,10 +7,11 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Idera.SQLdm.DesktopClient.Controls.CustomControls;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Analysis
 {
-	internal class RichTextBoxWithLinks : RichTextBox
+	internal class RichTextBoxWithLinks : CustomRichTextBox
 	{
         private Dictionary<int, object> _mapLinkToObject = new Dictionary<int, object>();
         private const string _linkPrefix = "http://";

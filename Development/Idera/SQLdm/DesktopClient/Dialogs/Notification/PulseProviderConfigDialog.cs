@@ -15,7 +15,7 @@ using Idera.SQLdm.Common;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 {
-    public partial class PulseProviderConfigDialog : Form, INotificationProviderConfigDialog
+    public partial class PulseProviderConfigDialog : BaseDialog, INotificationProviderConfigDialog
     {
         private PulseNotificationProviderInfo providerInfo;
         private IManagementService managementService;
@@ -25,6 +25,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public PulseProviderConfigDialog()
         {
+            this.DialogHeader = "Newsfeed Action Provider";
             InitializeComponent();
 
             //editing the pulse provider from dm is currently not allowed, so disable these features
@@ -39,6 +40,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs.Notification
 
         public PulseProviderConfigDialog(IManagementService managementService) : this()
         {
+            this.DialogHeader = "Newsfeed Action Provider";
             this.managementService = managementService;
         }
 

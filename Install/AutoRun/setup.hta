@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<meta http-equiv="Content-Language" content="en-us">
+        <meta http-equiv="Content-Language" content="en-us">
 		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">		
 		<title>IDERA SQL Diagnostic Manager Quick Start</title>
 
@@ -81,25 +81,25 @@
         var INSTALL_MOBILE    = ".\\" + platform + "\\SQLdmMobileNewsfeed.exe";
         var VIEW_LICENSE      = '".\\Documentation\\Idera - Software License Agreement.rtf"';
 
-		// Set the fixed window size.
-		var startWindowWidth  = 646;
-		var startWindowHeight = 550;
+		// Set the fixed window size. (Saurabh for Adapting Screen Resolutions)
+		//var startWindowWidth  = window.screen.width > 2000 ? 646: 646;
+		//var startWindowHeight = window.screen.height > 1100 ? 550 : 550;
 
-        // Set the default start window location.
-        var startWindowLeft = 200;
-        var startWindowTop  = 100;
+        // Set the default start window location. (Saurabh for Adapting Screen Resolutions)
+        //var startWindowLeft = window.screen.width > 2000 ? window.screen.width/3 : 200;
+        //var startWindowTop  = window.screen.height > 1100 ? window.screen.width/3 : 100;
 
-        // Check if the screen size info is available.
-        if (window.screen) 
-        {
+        //Check if the screen size info is available.
+        //if (window.screen) 
+        //{
 		    // Calculate the real default window location.
-		    startWindowLeft = (window.screen.availWidth  - startWindowWidth)  / 2;
-		    startWindowTop  = (window.screen.availHeight - startWindowHeight) / 2;
-		}
+		    //startWindowLeft = (window.screen.availWidth  - startWindowWidth)  / 2;
+		    //startWindowTop  = (window.screen.availHeight - startWindowHeight) / 2;
+		//}
 
 		// Center the window on the screen.
-		window.moveTo(startWindowLeft, startWindowTop);
-		window.resizeTo(startWindowWidth, startWindowHeight);
+		//window.moveTo(startWindowLeft, startWindowTop);
+		//window.resizeTo(startWindowWidth, startWindowHeight);
 
 		//Check if running from CD or DVD
 		var commandLine = oHTA.commandLine;
@@ -199,6 +199,7 @@
                 }
             }
         }
+		
 	    </script>
 
 	    <style>
@@ -213,7 +214,7 @@
 			    background-position: center top; 
 			    background-repeat: no-repeat;
 			    padding-top: 80px;
-			    padding-left: 12px;				
+			    padding-left: 12px;
 		    }
 			
 		    #mainTable	 	
@@ -226,7 +227,7 @@
 		    #pageTitle		
 		    { 
 			    font-family: Arial; 
-			    font-size: 13.5pt; 
+			    /*font-size: 13.5pt;*/ 
 			    font-weight: bold;
 			    color: #000000; 
 			    vertical-align: text-middle; 
@@ -237,17 +238,17 @@
 		    { 
 			    padding-top: 3px; 
 			    font-family: Arial; 
-			    font-size: 15pt; 
+			    /*font-size: 15pt;*/ 
 			    font-weight: bold;
 			    color: #95C943; 
 			    vertical-align: text-top; 
 		    }
-			
+	      
 		    .subLinkHeader		
 		    { 
 			    padding-top: 3px; 
 			    font-family: Arial; 
-			    font-size: 11pt; 
+			    /*font-size: 11pt;*/ 
 			    font-weight: bold;
 			    vertical-align: text-top; 
 		    }
@@ -266,7 +267,7 @@
 		    .linkText
 		    { 
 			    font-family: Arial; 
-			    font-size: 10pt; 
+			    /*font-size: 10pt;*/
 			    color: black; 
 			    vertical-align: text-top; 
 			    height: 24px; 
@@ -277,7 +278,7 @@
 		    .footer
 		    {
 			    font-family: Arial; 
-			    font-size: 8pt; 
+			    /*font-size: 8pt;*/ 
 			    color: #5A5956; 
 			    vertical-align: text-bottom; 
 			    padding-right: 5px;
@@ -288,7 +289,7 @@
 		    .trademark
 		    {
 			    font-family: Arial;
-			    font-size: 8pt;
+			    /*font-size: 8pt;*/
 			    font-weight: bold;
 			    vertical-align: top;
 		    }
@@ -296,7 +297,7 @@
 		    .trademarkSmall
 		    {
 			    font-family: Arial;
-			    font-size: 7pt;
+			    /*font-size: 7pt;*/
 			    font-weight: bold;
 			    vertical-align: top;
 		    }
@@ -434,32 +435,32 @@
 						    <td align="left" style="padding: 0px;">
 
 							    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-								    <tr class="linkHeader">
-									    <td class="subLinkHeader">SQL Diagnostic Manager</td>
-									    <td class="subLinkHeader">Product Documentation</td>
+								    <tr id="linkHeader1" class="linkHeader" style="font-size: 20px;">
+									    <td id="subLinkHeader1" class="subLinkHeader" style="font-size: 15px;">SQL Diagnostic Manager</td>
+									    <td id="subLinkHeader2" class="subLinkHeader" style="font-size: 15px;">Product Documentation</td>
 								    </tr>
 
 								    <tr class="linkBody"> 
 									    <td>										
 										    <table border="0">
-											    <tr><td class="linkText"><img style="vertical-align:middle;" src="images/Notes.png"><a href="#" title="Click here to view instructions for installing SQL Diagnostic Manager&reg; for the first time." onclick="onClickHelp(HELP_INSTALL);">Installation Instructions</a></td></tr>
-											    <tr><td class="linkText"><img style="vertical-align:middle;" src="images/Notes.png"><a href="#" title="Click here to view system requirements for installing SQL Diagnostic Manager&reg;." onclick="onClickHelp(HELP_REQUIREMENTS);">Requirements</a></td></tr>
-											    <tr><td class="linkText"><img src="images/Play.png">&nbsp;<a href="#" title="Click here to install SQL Diagnostic Manager&reg; with the full installer. See installation instructions for only installing the console." onclick="onClickLinkApp(PRODUCT_SQLDM);">Install SQL Diagnostic Manager</a></td></tr>
+											    <tr><td id="linkText1" class="linkText" style="font-size: 13.5px;"><img style="vertical-align:middle;" src="images/Notes.png"><a href="#" title="Click here to view instructions for installing SQL Diagnostic Manager&reg; for the first time." onclick="onClickHelp(HELP_INSTALL);">Installation Instructions</a></td></tr>
+											    <tr><td id="linkText2" class="linkText" style="font-size: 13.5px;"><img style="vertical-align:middle;" src="images/Notes.png"><a href="#" title="Click here to view system requirements for installing SQL Diagnostic Manager&reg;." onclick="onClickHelp(HELP_REQUIREMENTS);">Requirements</a></td></tr>
+											    <tr><td id="linkText3" class="linkText" style="font-size: 13.5px;"><img src="images/Play.png">&nbsp;<a href="#" title="Click here to install SQL Diagnostic Manager&reg; with the full installer. See installation instructions for only installing the console." onclick="onClickLinkApp(PRODUCT_SQLDM);">Install SQL Diagnostic Manager</a></td></tr>
 {OpenComment}												
-											    <tr><td class="linkText"><img src="images/Play.png">&nbsp;<a href="#" title="Click here to install SQL Diagnostic Manager&reg; console only installer." onclick="onClickLinkApp(PRODUCT_SQLDM_C);">Install SQL Diagnostic Manager (Console Only)</a></td></tr>												
+											    <tr><td id="linkText4" class="linkText" style="font-size: 13.5px;"><img src="images/Play.png">&nbsp;<a href="#" title="Click here to install SQL Diagnostic Manager&reg; console only installer." onclick="onClickLinkApp(PRODUCT_SQLDM_C);">Install SQL Diagnostic Manager (Console Only)</a></td></tr>												
 {CloseComment}										
 												<tr><td>&nbsp;</td></tr>
 										    </table>
 									    </td>
 									    <td>
 										    <table border="0">
-											    <tr><td class="linkText"><a href="#" title="Click here to view general help for SQL Diagnostic Manager&reg; that provides comprehensive information about the product and its features." onclick="onClickHelp(HELP_MAIN);">SQLDM User's Guide</a></td></tr>
-												<tr><td class="linkText"><a href="#" title="Click here to view important information about this release of SQL Diagnostic Manager&reg;." onclick="onClickRN();">SQLDM Release Notes</a></td></tr>
+											    <tr><td id="linkText5" class="linkText" style="font-size: 13.5px;"><a href="#" title="Click here to view general help for SQL Diagnostic Manager&reg; that provides comprehensive information about the product and its features." onclick="onClickHelp(HELP_MAIN);">SQLDM User's Guide</a></td></tr>
+												<tr><td id="linkText6" class="linkText" style="font-size: 13.5px;"><a href="#" title="Click here to view important information about this release of SQL Diagnostic Manager&reg;." onclick="onClickRN();">SQLDM Release Notes</a></td></tr>
 {OpenComment}					
-												<tr><td class="linkText"><a href="#" title="Click here to view general help for SQLDM Mobile & Newsfeed that provides comprehensive information about the product and its features." onclick="onClickHelpMobile(HELP_MAIN_MOBILE);">SQLDM Mobile User's Guide</a></td></tr>
+												<tr><td id="linkText7" class="linkText" style="font-size: 13.5px;"><a href="#" title="Click here to view general help for SQLDM Mobile & Newsfeed that provides comprehensive information about the product and its features." onclick="onClickHelpMobile(HELP_MAIN_MOBILE);">SQLDM Mobile User's Guide</a></td></tr>
 {CloseComment}
 												
-												<tr><td class="linkText"></td></tr>
+												<tr><td id="linkText8" class="linkText" style="font-size: 13.5px;"></td></tr>
 											</table>
 									    </td>
 								    </tr>
@@ -468,43 +469,43 @@
 									   <td colspan="2"></td>
 								    </tr>
 
-									<tr class="linkHeader">
+									<tr id="linkHeader2" class="linkHeader" style="font-size: 20px;">
 {OpenComment}									
-									    <td class="subLinkHeader">SQLDM Mobile &amp; Newsfeed</td>
+									    <td id="subLinkHeader3" class="subLinkHeader" style="font-size: 15px;">SQLDM Mobile &amp; Newsfeed</td>
 {CloseComment}									
-									    <td class="subLinkHeader">More Information</td>
+									    <td id="subLinkHeader4" class="subLinkHeader" style="font-size: 15px;">More Information</td>
 								    </tr>
 									
 									<tr class="linkBody"> 
 {OpenComment}									
 									    <td>										
 										    <table border="0">
-											    <tr><td class="linkText"><img style="vertical-align:middle;" src="images/Notes.png"><a href="#" title="Click here to view instructions for installing SQLDM Mobile & Newsfeed for the first time." onclick="onClickHelp(HELP_INSTALL_MOBILE);">Installation Instructions</a></td></tr>
-											    <tr><td class="linkText"><img style="vertical-align:middle;" src="images/Notes.png"><a href="#" title="Click here to view system requirements for installing SQLDM Mobile & Newsfeed." onclick="onClickHelp(HELP_REQUIREMENTS_MOBILE);">Requirements</a></td></tr>
-											    <tr><td class="linkText"><img src="images/Play.png">&nbsp;<a href="#" title="Click here to install SQLDM Mobile & Newsfeed with the full installer." onclick="onClickLinkApp(PRODUCT_MOBILE);">Install SQLDM Mobile &amp; Newsfeed</a></td></tr>											    
+											    <tr><td id="linkText9" class="linkText" style="font-size: 13.5px;"><img style="vertical-align:middle;" src="images/Notes.png"><a href="#" title="Click here to view instructions for installing SQLDM Mobile & Newsfeed for the first time." onclick="onClickHelp(HELP_INSTALL_MOBILE);">Installation Instructions</a></td></tr>
+											    <tr><td id="linkText10" class="linkText" style="font-size: 13.5px;"><img style="vertical-align:middle;" src="images/Notes.png"><a href="#" title="Click here to view system requirements for installing SQLDM Mobile & Newsfeed." onclick="onClickHelp(HELP_REQUIREMENTS_MOBILE);">Requirements</a></td></tr>
+											    <tr><td id="linkText11" class="linkText" style="font-size: 13.5px;"><img src="images/Play.png">&nbsp;<a href="#" title="Click here to install SQLDM Mobile & Newsfeed with the full installer." onclick="onClickLinkApp(PRODUCT_MOBILE);">Install SQLDM Mobile &amp; Newsfeed</a></td></tr>											    
 											</table>
 									    </td>
 {CloseComment}										
 									    <td>
 										    <table border="0">
-											    <tr><td class="linkText"><a target="_blank" href="http://www.idera.com" title="Click here to visit the Idera home page.">Idera Home Page</a></td></tr>
-											    <tr><td class="linkText"><a target="_blank" href="https://idera.secure.force.com/" title="Click here to visit the Idera Technical Support site.">Technical Support Site</a></td></tr>
-											    <tr><td class="linkText"><a target="_blank" href="http://community.idera.com" title="Click here to visit the Idera Community site.">Community Forum</a></td></tr>
-												<tr><td class="linkText"><a href="#" title="Click here to view the Idera software license agreement." onclick="onClickLinkApp(PRODUCT_LICENSE);">License Agreement</a></td></tr>
+											    <tr><td id="linkText12" class="linkText" style="font-size: 13.5px;"><a target="_blank" href="http://www.idera.com" title="Click here to visit the Idera home page.">Idera Home Page</a></td></tr>
+											    <tr><td id="linkText13" class="linkText" style="font-size: 13.5px;"><a target="_blank" href="https://idera.secure.force.com/" title="Click here to visit the Idera Technical Support site.">Technical Support Site</a></td></tr>
+											    <tr><td id="linkText14" class="linkText" style="font-size: 13.5px;"><a target="_blank" href="http://community.idera.com" title="Click here to visit the Idera Community site.">Community Forum</a></td></tr>
+												<tr><td id="linkText15" class="linkText" style="font-size: 13.5px;"><a href="#" title="Click here to view the Idera software license agreement." onclick="onClickLinkApp(PRODUCT_LICENSE);">License Agreement</a></td></tr>
 										    </table>
 									    </td>
 								    </tr>
 {OpenComment}								
 
-                                    <tr class="linkHeader">
-									    <td class="subLinkHeader">Microsoft System Center Integration</td>
+                                    <tr id="linkHeader3" class="linkHeader" style="font-size: 20px;">
+									    <td id="subLinkHeader5" class="subLinkHeader" style="font-size: 15px;">Microsoft System Center Integration</td>
 									</tr>
 									
 									<tr class="linkBody"> 
 									    <td>										
 										    <table border="0">
-											    <tr><td class="linkText"><img style="vertical-align:middle;" src="images/Notes.png"><a href="#" title="Click here to view instructions for installing the System Center integration pack." onclick="launchApp(HELP_SCOM);">Installation Instructions</a></td></tr>
-											    <tr><td nowrap class="linkText"><img src="images/Play.png">&nbsp;<a href="#" title="Click here to get the System Center integration pack." onclick="launchApp(PRODUCT_SCOM);">Install System Center Integration Pack</a></td></tr>
+											    <tr><td id="linkText16" class="linkText" style="font-size: 13.5px;"><img style="vertical-align:middle;" src="images/Notes.png"><a href="#" title="Click here to view instructions for installing the System Center integration pack." onclick="launchApp(HELP_SCOM);">Installation Instructions</a></td></tr>
+											    <tr><td nowrap id="linkText17" class="linkText" style="font-size: 13.5px;"><img src="images/Play.png">&nbsp;<a href="#" title="Click here to get the System Center integration pack." onclick="launchApp(PRODUCT_SCOM);">Install System Center Integration Pack</a></td></tr>
 											</table>
 									    </td>
 								    </tr>	
@@ -520,8 +521,8 @@
 				<td>
 					<table border="0" width="100%">
 						<tr>
-							<td align="left" class="footer">{copyright}</td>
-							<td align="right" class="footer">{appversion} ({platform})</td>
+							<td align="left" id="footer1" class="footer" style="font-size: 11px;">{copyright}</td>
+							<td align="right" id="footer2" class="footer" style="font-size:11px;">{appversion} ({platform})</td>
 						<tr>
 					</table>					
 				</td>
@@ -530,4 +531,94 @@
         </center>
 
 	</body>
+	<script language="javascript">
+	//Saurabh for Adapting Screen Resolutions
+       // window.onload = function () {
+        //var vc = window.document.getElementsByClassName("tr.linkHeader");
+		var startWindowWidth = window.screen.width > 2000 ? 700 : 690;
+        var startWindowHeight =window.screen.height > 1100 ? 710 : 550;
+		var startWindowLeft = window.screen.width > 2000 ? window.screen.width/3 : 200;
+        var startWindowTop  = window.screen.height > 1100 ? window.screen.height/3 : 100;
+            var screenWidth = window.screen.width;
+            var screenHeight = window.screen.height;
+            var linkHeader1FontSize = parseFloat(document.getElementById("linkHeader1").style.fontSize);
+            var linkHeader2FontSize = parseFloat(document.getElementById("linkHeader2").style.fontSize);
+{OpenComment}            var linkHeader3FontSize = parseFloat(document.getElementById("linkHeader3").style.fontSize); {CloseComment}
+            
+            var subLinkHeader1FontSize = parseFloat(document.getElementById("subLinkHeader1").style.fontSize);
+            var subLinkHeader2FontSize = parseFloat(document.getElementById("subLinkHeader2").style.fontSize);
+{OpenComment}            var subLinkHeader3FontSize = parseFloat(document.getElementById("subLinkHeader3").style.fontSize); {CloseComment}
+            var subLinkHeader4FontSize = parseFloat(document.getElementById("subLinkHeader4").style.fontSize);
+{OpenComment}            var subLinkHeader5FontSize = parseFloat(document.getElementById("subLinkHeader5").style.fontSize); {CloseComment}
+
+            var linkText1FontSize = parseFloat(document.getElementById("linkText1").style.fontSize);
+            var linkText2FontSize = parseFloat(document.getElementById("linkText2").style.fontSize);
+{OpenComment}            var linkText3FontSize = parseFloat(document.getElementById("linkText3").style.fontSize); {CloseComment}
+{OpenComment}            var linkText4FontSize = parseFloat(document.getElementById("linkText4").style.fontSize); {CloseComment}
+            var linkText5FontSize = parseFloat(document.getElementById("linkText5").style.fontSize);
+            var linkText6FontSize = parseFloat(document.getElementById("linkText6").style.fontSize);
+{OpenComment}            var linkText7FontSize = parseFloat(document.getElementById("linkText7").style.fontSize); {CloseComment}
+            var linkText8FontSize = parseFloat(document.getElementById("linkText8").style.fontSize);
+{OpenComment}            var linkText9FontSize = parseFloat(document.getElementById("linkText9").style.fontSize); {CloseComment}
+{OpenComment}            var linkText10FontSize = parseFloat(document.getElementById("linkText10").style.fontSize); {CloseComment}
+{OpenComment}            var linkText11FontSize = parseFloat(document.getElementById("linkText11").style.fontSize); {CloseComment}
+            var linkText12FontSize = parseFloat(document.getElementById("linkText12").style.fontSize);
+            var linkText13FontSize = parseFloat(document.getElementById("linkText13").style.fontSize);
+            var linkText14FontSize = parseFloat(document.getElementById("linkText14").style.fontSize);
+            var linkText15FontSize = parseFloat(document.getElementById("linkText15").style.fontSize);
+{OpenComment}            var linkText16FontSize = parseFloat(document.getElementById("linkText16").style.fontSize); {CloseComment}
+{OpenComment}            var linkText17FontSize = parseFloat(document.getElementById("linkText17").style.fontSize); {CloseComment}
+            
+            var footer1FontSize = parseFloat(document.getElementById("footer1").style.fontSize);
+            var footer2FontSize = parseFloat(document.getElementById("footer2").style.fontSize);
+            
+            if (screenWidth >= 2000 && screenHeight >= 1100) {
+					var offset = 6;
+					var measurementUnit ="px";
+                    document.getElementById("linkHeader1").style.fontSize = linkHeader1FontSize + offset + measurementUnit;
+                    document.getElementById("linkHeader2").style.fontSize = linkHeader2FontSize + offset + measurementUnit;
+{OpenComment}                    document.getElementById("linkHeader3").style.fontSize = linkHeader3FontSize + offset + measurementUnit; {CloseComment}
+                
+                    document.getElementById("subLinkHeader1").style.fontSize = subLinkHeader1FontSize + offset + measurementUnit;
+                    document.getElementById("subLinkHeader2").style.fontSize = subLinkHeader2FontSize + offset + measurementUnit;
+{OpenComment}                    document.getElementById("subLinkHeader3").style.fontSize = subLinkHeader3FontSize + offset + measurementUnit; {CloseComment}
+                    document.getElementById("subLinkHeader4").style.fontSize = subLinkHeader4FontSize + offset + measurementUnit;
+{OpenComment}                    document.getElementById("subLinkHeader5").style.fontSize = subLinkHeader5FontSize + offset + measurementUnit; {CloseComment}
+                
+                    document.getElementById("linkText1").style.fontSize = linkText1FontSize + offset + measurementUnit;
+                    document.getElementById("linkText2").style.fontSize = linkText2FontSize + offset + measurementUnit;
+{OpenComment}                    document.getElementById("linkText3").style.fontSize = linkText3FontSize + offset + measurementUnit; {CloseComment}
+{OpenComment}                    document.getElementById("linkText4").style.fontSize = linkText4FontSize + offset + measurementUnit; {CloseComment}
+                    document.getElementById("linkText5").style.fontSize = linkText5FontSize + offset + measurementUnit;
+                    document.getElementById("linkText6").style.fontSize = linkText6FontSize + offset + measurementUnit;
+{OpenComment}                    document.getElementById("linkText7").style.fontSize = linkText7FontSize + offset + measurementUnit; {CloseComment}
+                    document.getElementById("linkText8").style.fontSize = linkText8FontSize + offset + measurementUnit;
+{OpenComment}                    document.getElementById("linkText9").style.fontSize = linkText9FontSize + offset + measurementUnit; {CloseComment}
+{OpenComment}                    document.getElementById("linkText10").style.fontSize = linkText10FontSize + offset + measurementUnit; {CloseComment}
+{OpenComment}                    document.getElementById("linkText11").style.fontSize = linkText11FontSize + offset + measurementUnit; {CloseComment}
+                    document.getElementById("linkText12").style.fontSize = linkText12FontSize  + offset + measurementUnit;
+                    document.getElementById("linkText13").style.fontSize = linkText13FontSize  + offset + measurementUnit;
+                    document.getElementById("linkText14").style.fontSize = linkText14FontSize  + offset + measurementUnit;
+                    document.getElementById("linkText15").style.fontSize = linkText15FontSize  + offset + measurementUnit;
+{OpenComment}                    document.getElementById("linkText16").style.fontSize = linkText16FontSize + offset + measurementUnit; {CloseComment}
+{OpenComment}                    document.getElementById("linkText17").style.fontSize = linkText17FontSize + offset + measurementUnit; {CloseComment}
+
+                    document.getElementById("footer1").style.fontSize = footer1FontSize + offset + "px";
+                    document.getElementById("footer2").style.fontSize = footer2FontSize + offset + "px";
+					
+            }
+            
+            //alert(linkHeader1FontSize);
+       // }
+        // Set the fixed window size.
+        if (window.screen) {
+            // Calculate the real default window location.
+            startWindowLeft = (window.screen.availWidth - startWindowWidth) / 2;
+            startWindowTop = (window.screen.availHeight - startWindowHeight) / 2;
+        }
+		// Center the window on the screen.
+		window.moveTo(startWindowLeft, startWindowTop);
+		startWindowWidth = 646;
+        window.resizeTo(startWindowWidth, startWindowHeight);
+	</script>
 </html>

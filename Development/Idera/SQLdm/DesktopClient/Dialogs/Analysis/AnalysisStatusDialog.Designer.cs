@@ -30,19 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnalysisStatusDialog));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.btnCancelAnalysis = new System.Windows.Forms.Button();
-            this.btnHide = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this._startTimeLabel = new System.Windows.Forms.Label();
-            this._timeElapsedLabel = new System.Windows.Forms.Label();
+            this.btnCancelAnalysis = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.btnHide = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.label5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label6 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._startTimeLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this._timeElapsedLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.startTimeTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -208,8 +208,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
-            this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(417, 263);
+            this.MaximizeBox = true;
+            this.MinimizeBox = true;
+            //this.MinimumSize = new System.Drawing.Size(417, 263);
             this.Name = "AnalysisStatusDialog";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -226,19 +227,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Button btnCancelAnalysis;
-        private System.Windows.Forms.Button btnHide;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnCancelAnalysis;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton btnHide;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label _startTimeLabel;
-        private System.Windows.Forms.Label _timeElapsedLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label5;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label6;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _startTimeLabel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel _timeElapsedLabel;
         private System.Windows.Forms.Timer startTimeTimer;
     }
 }

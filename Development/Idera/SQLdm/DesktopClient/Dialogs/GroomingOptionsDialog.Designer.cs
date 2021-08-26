@@ -1,3 +1,7 @@
+using Idera.SQLdm.DesktopClient.Controls.CustomControls;
+using Idera.SQLdm.DesktopClient.Properties;
+using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
@@ -30,86 +34,87 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
+            bool isDarkThemeSelected = Properties.Settings.Default.ColorScheme == "Dark";
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GroomingOptionsDialog));
-            Infragistics.Win.UltraWinEditors.DropDownEditorButton dropDownEditorButton1 = new Infragistics.Win.UltraWinEditors.DropDownEditorButton("DropDownList");
-            Infragistics.Win.UltraWinEditors.DropDownEditorButton dropDownEditorButton2 = new Infragistics.Win.UltraWinEditors.DropDownEditorButton("DropDownList");
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
-            this.apply = new System.Windows.Forms.Button();
+            Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton dropDownEditorButton1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton("DropDownList");
+            Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton dropDownEditorButton2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomDropDownEditorButton("DropDownList");
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.apply = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.groomNow = new System.Windows.Forms.Button();
-            this.aggregateNow = new System.Windows.Forms.Button();
+            this.groomNow = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.aggregateNow = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.groomingPropertiesContentPage = new Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage();
-            this.containerPanel = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.aggregationThresholdNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.alertsGroomingThresholdNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.activityGroomingThresholdNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.metricsGroomingThresholdNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblAudit = new System.Windows.Forms.Label();
-            this.auditGroomingThresholdNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblPrescriptiveAnalysisGroom = new System.Windows.Forms.Label();
-            this.PAGroomingThresholdNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.lblPADays = new System.Windows.Forms.Label();
-            this.refresh = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.aggregationCurrentlyRunning = new System.Windows.Forms.TextBox();
-            this.aggregationLastRun = new System.Windows.Forms.TextBox();
-            this.aggregationCompletionStatus = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.currentlyRunning = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lastRun = new System.Windows.Forms.TextBox();
-            this.completionStatus = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.containerPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.tableLayoutPanel3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.tableLayoutPanel4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.aggregationThresholdNumericUpDown = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.alertsGroomingThresholdNumericUpDown = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.activityGroomingThresholdNumericUpDown = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.label17 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label16 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label6 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label11 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.metricsGroomingThresholdNumericUpDown = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.label12 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblAudit = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.auditGroomingThresholdNumericUpDown = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblPrescriptiveAnalysisGroom = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.PAGroomingThresholdNumericUpDown = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.lblPADays = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.refresh = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.groupBox4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.tableLayoutPanel5 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.label19 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label20 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label18 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.aggregationCurrentlyRunning = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.aggregationLastRun = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.aggregationCompletionStatus = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.groupBox3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.tableLayoutPanel2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.label8 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.currentlyRunning = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label10 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lastRun = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.completionStatus = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTextBox();
+            this.label9 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.propertiesHeaderStrip2 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.informationBox2 = new Divelements.WizardFramework.InformationBox();
+            this.informationBox2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
             this.propertiesHeaderStrip1 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.aggregationTimeIntervalCombo = new System.Windows.Forms.ComboBox();
-            this.aggregationHourlyButton = new System.Windows.Forms.RadioButton();
-            this.aggregationOnceDailyButton = new System.Windows.Forms.RadioButton();
-            this.aggregationTimeEditor = new Idera.SQLdm.Common.UI.Controls.TimeComboEditor();
-            this.label15 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.hourlyButton = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.onceDailyButton = new System.Windows.Forms.RadioButton();
-            this.groomTimeIntervalCombo = new System.Windows.Forms.ComboBox();
-            this.groomingTimeEditor = new Idera.SQLdm.Common.UI.Controls.TimeComboEditor();
-            this.label14 = new System.Windows.Forms.Label();
-            this.informationBox1 = new Divelements.WizardFramework.InformationBox();
+            this.groupBox2 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.tableLayoutPanel6 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.label13 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.aggregationTimeIntervalCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.aggregationHourlyButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.aggregationOnceDailyButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.aggregationTimeEditor = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor();
+            this.label15 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.groupBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox();
+            this.tableLayoutPanel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTableLayoutPanel();
+            this.hourlyButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.onceDailyButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomRadioButton();
+            this.groomTimeIntervalCombo = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox();
+            this.groomingTimeEditor = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor();
+            this.label14 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.informationBox1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox();
             this.propertiesHeaderStrip3 = new Idera.SQLdm.DesktopClient.Controls.PropertiesHeaderStrip();
-            this.currentTimeLabel = new System.Windows.Forms.Label();
+            this.currentTimeLabel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.containerPanel.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.lblForecastingDataAggregation = new System.Windows.Forms.Label();
-            this.ForecastingAggregationThresholdNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.lblFADays = new System.Windows.Forms.Label();
-            this.lblGroomForecast = new System.Windows.Forms.Label();
-            this.lblGroomForecastDays = new System.Windows.Forms.Label();
-            this.GroomForecastNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.lblForecastingDataAggregation = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.ForecastingAggregationThresholdNumericUpDown = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.lblFADays = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblGroomForecast = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.lblGroomForecastDays = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.GroomForecastNumericUpDown = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.aggregationThresholdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alertsGroomingThresholdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activityGroomingThresholdNumericUpDown)).BeginInit();
@@ -133,7 +138,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(478, 680);
+            this.cancelButton.Location = new System.Drawing.Point(478, 685);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 2;
@@ -144,7 +149,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.okButton.Location = new System.Drawing.Point(316, 680);
+            this.okButton.Location = new System.Drawing.Point(316, 685);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 0;
@@ -156,7 +161,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // 
             this.apply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.apply.Enabled = false;
-            this.apply.Location = new System.Drawing.Point(397, 680);
+            this.apply.Location = new System.Drawing.Point(397, 685);
             this.apply.Name = "apply";
             this.apply.Size = new System.Drawing.Size(75, 23);
             this.apply.TabIndex = 1;
@@ -174,8 +179,9 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.groomNow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groomNow.BackColor = System.Drawing.Color.White;
             this.groomNow.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groomNow.Location = new System.Drawing.Point(12, 680);
+            this.groomNow.Location = new System.Drawing.Point(12, 685);
             this.groomNow.Name = "groomNow";
+            
             this.groomNow.Size = new System.Drawing.Size(75, 23);
             this.groomNow.TabIndex = 4;
             this.groomNow.Text = "Groom Now";
@@ -187,7 +193,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.aggregateNow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.aggregateNow.BackColor = System.Drawing.Color.White;
             this.aggregateNow.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.aggregateNow.Location = new System.Drawing.Point(93, 680);
+            this.aggregateNow.Location = new System.Drawing.Point(108, 685);
             this.aggregateNow.Name = "aggregateNow";
             this.aggregateNow.Size = new System.Drawing.Size(91, 23);
             this.aggregateNow.TabIndex = 5;
@@ -1241,6 +1247,8 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            //this.AutoScrollMinSize = new Size(565, 810);
             this.ClientSize = new System.Drawing.Size(565, 710);
             this.Controls.Add(this.aggregateNow);
             this.Controls.Add(this.apply);
@@ -1248,7 +1256,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.groomNow);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -1287,22 +1295,56 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groomingTimeEditor)).EndInit();
+            updateButtonStyle();
             this.ResumeLayout(false);
+        }
 
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetPropertiesTheme();
+            updateButtonStyle();
+        }
+
+        void SetPropertiesTheme()
+        {
+            var propertiesThemeManager = new Controls.PropertiesThemeManager();
+            propertiesThemeManager.UpdatePropertyTheme(groomingPropertiesContentPage);
+        }
+
+        void updateButtonStyle()
+        {
+            if (Settings.Default.ColorScheme == "Dark")
+            {
+                this.groomNow.FlatStyle = FlatStyle.Standard;
+                this.groomNow.UseVisualStyleBackColor = true;
+                this.aggregateNow.FlatStyle = FlatStyle.Standard;
+                this.aggregateNow.UseVisualStyleBackColor = true;
+                this.refresh.FlatStyle = FlatStyle.Standard;
+                this.refresh.UseVisualStyleBackColor = true;
+            }
+            else
+            {
+                this.groomNow.FlatStyle = FlatStyle.System;
+                this.groomNow.UseVisualStyleBackColor = false;
+                this.refresh.FlatStyle = FlatStyle.System;
+                this.refresh.UseVisualStyleBackColor = false;
+                this.aggregateNow.FlatStyle = FlatStyle.System;
+                this.aggregateNow.UseVisualStyleBackColor = false;
+            }
         }
 
         #endregion
 
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
         private Idera.SQLdm.DesktopClient.Controls.Office2007PropertyPage groomingPropertiesContentPage;
-        private System.Windows.Forms.Button groomNow;
-        private System.Windows.Forms.Button apply;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton groomNow;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton apply;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button aggregateNow;
-        private System.Windows.Forms.Panel containerPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton aggregateNow;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  containerPanel;
         private TableLayoutPanel tableLayoutPanel3;
-        private Divelements.WizardFramework.InformationBox informationBox1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox informationBox1;
         private Controls.PropertiesHeaderStrip propertiesHeaderStrip3;
         private Controls.PropertiesHeaderStrip propertiesHeaderStrip1;
         private GroupBox groupBox2;
@@ -1310,17 +1352,17 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private Label label13;
         private RadioButton aggregationHourlyButton;
         private RadioButton aggregationOnceDailyButton;
-        private Common.UI.Controls.TimeComboEditor aggregationTimeEditor;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor aggregationTimeEditor;
         private GroupBox groupBox1;
         private TableLayoutPanel tableLayoutPanel1;
         private RadioButton hourlyButton;
         private Label label1;
         private RadioButton onceDailyButton;
-        private ComboBox groomTimeIntervalCombo;
-        private Common.UI.Controls.TimeComboEditor groomingTimeEditor;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox groomTimeIntervalCombo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomTimeComboEditor groomingTimeEditor;
         private Label label14;
         private Label currentTimeLabel;
-        private Divelements.WizardFramework.InformationBox informationBox2;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomInformationBox informationBox2;
         private Controls.PropertiesHeaderStrip propertiesHeaderStrip2;
         private GroupBox groupBox4;
         private TableLayoutPanel tableLayoutPanel5;
@@ -1330,7 +1372,7 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private TextBox aggregationCurrentlyRunning;
         private TextBox aggregationLastRun;
         private TextBox aggregationCompletionStatus;
-        private GroupBox groupBox3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomGroupBox groupBox3;
         private TableLayoutPanel tableLayoutPanel2;
         private Label label8;
         private TextBox currentlyRunning;
@@ -1340,38 +1382,38 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
         private Label label9;
         private Button refresh;
         private TableLayoutPanel tableLayoutPanel4;
-        private NumericUpDown aggregationThresholdNumericUpDown;
-        private NumericUpDown alertsGroomingThresholdNumericUpDown;
-        private NumericUpDown activityGroomingThresholdNumericUpDown;
+        private CustomNumericUpDown aggregationThresholdNumericUpDown;
+        private CustomNumericUpDown alertsGroomingThresholdNumericUpDown;
+        private CustomNumericUpDown activityGroomingThresholdNumericUpDown;
         private Label label17;
         private Label label16;
         private Label label6;
         private Label label11;
         private Label label3;
         private Label label5;
-        private NumericUpDown metricsGroomingThresholdNumericUpDown;
+        private CustomNumericUpDown metricsGroomingThresholdNumericUpDown;
         private Label label12;
         private Label label2;
         private TableLayoutPanel tableLayoutPanel6;
-        private ComboBox aggregationTimeIntervalCombo;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomComboBox aggregationTimeIntervalCombo;
         private Label lblAudit;
-        private NumericUpDown auditGroomingThresholdNumericUpDown;
+        private CustomNumericUpDown auditGroomingThresholdNumericUpDown;
         private Label label4;
         //10.0 SQLdm srishti purohit
         //START - Prescriptive analysis old data grooming implementation
         private Label lblPrescriptiveAnalysisGroom;
-        private NumericUpDown PAGroomingThresholdNumericUpDown;
+        private CustomNumericUpDown PAGroomingThresholdNumericUpDown;
         private Label lblPADays;
         //END - Prescriptive analysis old data grooming implementation
         //START - Forecasting Aggregation old data implementation
 
         private Label lblForecastingDataAggregation;
-        private NumericUpDown ForecastingAggregationThresholdNumericUpDown;
+        private CustomNumericUpDown ForecastingAggregationThresholdNumericUpDown;
 
         private Label lblFADays;
         //END - Forecasting Aggregation old data implementation
         private Label lblGroomForecast;
-        private NumericUpDown GroomForecastNumericUpDown;
+        private CustomNumericUpDown GroomForecastNumericUpDown;
 
         private Label lblGroomForecastDays;
     }

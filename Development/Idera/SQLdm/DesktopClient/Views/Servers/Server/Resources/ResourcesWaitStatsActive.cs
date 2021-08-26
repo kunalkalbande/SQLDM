@@ -26,6 +26,7 @@ using System.Text.RegularExpressions;
 using Idera.SQLdm.DesktopClient.Properties;
 using Idera.SQLdm.Common.Helpers;
 using System.Globalization;
+using Infragistics.Windows.Themes;
 
 namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
 {
@@ -171,8 +172,15 @@ namespace Idera.SQLdm.DesktopClient.Views.Servers.Server.Resources
             chart.AxisX.Notify = true;
             Interlocked.Increment( ref ctorInitialized );
             AdaptFontSize();
-        }        
-
+            if (AutoScaleSizeHelper.isScalingRequired)
+                ScaleControlsAsPerResolution();
+            updateColor();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+        private void ScaleControlsAsPerResolution()
+        {
+            this.chart.LegendBox.AutoSize = true;
+        }      
         #region Initialization
 
         private void InitializeChart()
@@ -2114,6 +2122,17 @@ from table", "select top 2 from table2", "insert into table values (v1, v2)", "u
         private void AdaptFontSize()
         {
             AutoScaleFontHelper.Default.AutoScaleControl(this, AutoScaleFontHelper.ControlType.Container);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            updateColor();
+        }
+
+        void updateColor()
+        {
+            if(chart != null)
+                chart.ForeColor = Settings.Default.ColorScheme == "Dark" ? ColorTranslator.FromHtml(DarkThemeColorConstants.ChartForeColor) : Color.Black;
         }
 
         // START : SQLdm 9.0 (Abhishek Joshi) -Advertise Web Console Query Views in the SQLdm Desktop Client

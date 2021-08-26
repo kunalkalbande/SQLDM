@@ -43,27 +43,27 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
             Infragistics.Win.Appearance appearance21 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance22 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
-            Infragistics.Win.ValueList valueList1 = new Infragistics.Win.ValueList(426658501);
+            Infragistics.Win.ValueList valueList1 = new Controls.CustomControls.CustomValueList(426658501);
             Infragistics.Win.ValueListItem valueListItem1 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem2 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem3 = new Infragistics.Win.ValueListItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SnoozeAlertsDialog));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.panel1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.okButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
+            this.cancelButton = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton();
             this.contentStackPanel = new Idera.SQLdm.Common.UI.Controls.StackLayoutPanel();
-            this.unsnoozeAlertContentPanel = new System.Windows.Forms.Panel();
-            this.unsnoozeInfoBox = new System.Windows.Forms.Label();
+            this.unsnoozeAlertContentPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.unsnoozeInfoBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.unsnoozeImage = new System.Windows.Forms.PictureBox();
-            this.resumeToggleCheckBox = new System.Windows.Forms.CheckBox();
+            this.resumeToggleCheckBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox();
             this.snoozedAlertsGrid = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.snoozeAlertContentPanel = new System.Windows.Forms.Panel();
-            this.configureAlertSnoozePanel = new System.Windows.Forms.Panel();
-            this.snoozeMinutesSpinner = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.snoozeInfoBox = new System.Windows.Forms.Label();
+            this.snoozeMinutesSpinner = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown();
+            this.snoozeAlertContentPanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.configureAlertSnoozePanel = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel ();
+            this.label3 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label1 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.label4 = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
+            this.snoozeInfoBox = new Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel();
             this.snoozeImage = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.contentStackPanel.SuspendLayout();
@@ -403,22 +403,22 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  panel1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton okButton;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomButton cancelButton;
         private Idera.SQLdm.Common.UI.Controls.StackLayoutPanel contentStackPanel;
-        private System.Windows.Forms.Panel unsnoozeAlertContentPanel;
-        private System.Windows.Forms.Panel snoozeAlertContentPanel;
-        private System.Windows.Forms.NumericUpDown snoozeMinutesSpinner;
-        private System.Windows.Forms.Label label1;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomNumericUpDown snoozeMinutesSpinner;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  unsnoozeAlertContentPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  snoozeAlertContentPanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label1;
         private System.Windows.Forms.PictureBox snoozeImage;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label snoozeInfoBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel configureAlertSnoozePanel;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label3;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel snoozeInfoBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel label4;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomPanel  configureAlertSnoozePanel;
         private Infragistics.Win.UltraWinGrid.UltraGrid snoozedAlertsGrid;
-        private System.Windows.Forms.CheckBox resumeToggleCheckBox;
-        private System.Windows.Forms.Label unsnoozeInfoBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomCheckBox resumeToggleCheckBox;
+        private Idera.SQLdm.DesktopClient.Controls.CustomControls.CustomLabel unsnoozeInfoBox;
         private System.Windows.Forms.PictureBox unsnoozeImage;
     }
 }

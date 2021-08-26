@@ -8,10 +8,12 @@ using System.Windows.Forms;
 using Idera.SQLdm.DesktopClient.Helpers;
 using Idera.SQLdm.Common;
 using Wintellect.PowerCollections;
+using Infragistics.Windows.Themes;
+using Idera.SQLdm.DesktopClient.Controls;
 
 namespace Idera.SQLdm.DesktopClient.Dialogs
 {
-    public partial class AlertForecastDialog : Form
+    public partial class AlertForecastDialog : BaseDialog
     {
         private DataTable data;
         private DateTime  starttime;
@@ -20,8 +22,23 @@ namespace Idera.SQLdm.DesktopClient.Dialogs
 
         public AlertForecastDialog()
         {
+            this.DialogHeader = "Alert Forecast Details";
             InitializeComponent();
             AdaptFontSize();
+            SetGridTheme();
+            ThemeManager.CurrentThemeChanged += new EventHandler(OnCurrentThemeChanged);
+        }
+
+        void OnCurrentThemeChanged(object sender, EventArgs e)
+        {
+            SetGridTheme();
+        }
+
+        private void SetGridTheme()
+        {
+            // Update UltraGrid Theme
+            var themeManager = new GridThemeManager();
+            themeManager.updateGridTheme(this.grid);
         }
 
         public DataTable Data
