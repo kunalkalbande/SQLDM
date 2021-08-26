@@ -1,0 +1,22 @@
+<zk>
+
+	<hlayout spacing="0" sclass="side-bar-item shadow">
+
+		<div
+			sclass="lighter-gray-background side-bar-item-count shadow">
+			<label id="countLabel" sclass="H4" value="${arg.count}" />
+		</div>
+
+		<div sclass="side-bar-item-icon padding-l-12 padding-t-12">
+			<image id="iconImage" src="${arg.iconUrl}" />
+		</div>
+
+		<div sclass="side-bar-item-text padding-t-16">
+			<label id="titleLabel"
+				sclass="side-bar-item-text H4 darker-gray-text italic"
+				value="${arg.title}" />
+		</div>
+
+	</hlayout>
+
+</zk>

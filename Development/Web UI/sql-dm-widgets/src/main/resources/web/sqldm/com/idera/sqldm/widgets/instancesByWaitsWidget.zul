@@ -1,0 +1,132 @@
+<?xel-method prefix="c" name="formatNumber" class="com.idera.sqldm_10_3.ui.converter.CommaSeparatedNumberLabelForMVVMConverter"
+   signature="java.lang.String formatNumber(java.lang.Object)"?>
+<zk>
+	<!--Each panel should be extended by DashboardWidget -->
+	<panel use="com.idera.dashboard.ui.widget.DashboardWidget"
+		apply="com.idera.sqldm_10_3.ui.widgetComposers.InstancesByWaitsComposer"
+		sclass="top-x-resource-by-count-panel">
+		<caption sclass="main-caption" hflex="1" vflex="1">
+			<hlayout sclass="z-toolbar" style="padding:3px; margin-left:0px" hflex="1" vflex="1">
+				<idera-cwf-dropdownlist id="productListCombobox" readonly="true" width="90px">
+					<template name="model">
+						<comboitem label="${each.name}">
+						</comboitem>
+					</template>
+				</idera-cwf-dropdownlist>
+				<idera-cwf-button id="settingsActionButton" style="margin-right:3px"
+					sclass="settings-button" image="/images/gray-gear-16x16.png" />
+				<popup id="widgetSettings">
+					<hlayout>
+						<div sclass="padding-t-8">
+							<label value="Limit" width="150px" />
+						</div>
+						<div sclass="padding-t-4">
+							<intbox id="limit" width="50px"
+								value="@{setting.Limit}"
+								constraint="no negative,no zero,no empty" />
+						</div>
+						<idera-cwf-button id="save"
+							sclass="white-text-orange-button" label="Save" />
+					</hlayout>
+				</popup>
+			</hlayout>
+		</caption>
+		<panelchildren sclass="panel-main-content">
+			<style>
+				  div.critical-progress div.z-progressmeter {
+				  height: 9px;
+				  border: 1;
+				  background-image: none;
+				  border-color: #DADADA;
+				  background-color: #FFFFFF; 
+				}
+				
+				div.critical-progress span.z-progressmeter-img {
+					background: none repeat scroll 0 0 #FE4210;
+				}
+				
+				div.ok-progress div.z-progressmeter {
+				  height: 9px;
+				  border: 1;
+				  background-image: none;
+				  border-color: #DADADA;
+				  background-color: #FFFFFF; 
+				}
+				
+				div.ok-progress span.z-progressmeter-img {
+					background: none repeat scroll 0 0 #41A317;
+				}
+				
+				div.warning-progress div.z-progressmeter {
+				  height: 9px;
+				  border: 1;
+				  background-image: none;
+				  border-color: #DADADA;
+				  background-color: #FFFFFF; 
+				}
+				
+				div.warning-progress span.z-progressmeter-img {
+					background: none repeat scroll 0 0 #FFD700;
+				}
+			
+			</style>
+			<hbox hflex="1" vflex="1" id="errorContainer" align="center"
+				pack="center">
+				<label sclass="error-message" value="@{message}" />
+			</hbox>
+			<listbox id="topxInstancesListBox" sclass="top-x-instances-by-alerts-count"
+				emptyMessage="No data available">
+				<listhead>
+					<!-- <listheader label="${idera:getLabel('SQLdm.Labels.topten.instance')}" width="40%"
+						sort="auto(LOWER(instanceName))" /> @author Saumyadeep -->
+					<listheader label="${idera:getLabel('SQLdm.Labels.topten.instance')}" width="40%"
+						sort="auto(LOWER(displayName))" />
+					<listheader label="${idera:getLabel('SQLdm.Labels.wait-time')}" width="30%"
+						sort="auto(waitTime)" />
+					<listheader sort="auto(waitTime)" />
+				</listhead>
+				<template name="model">
+					<listitem style="background: white;">
+						<listcell>
+							<!-- <label value="${each.instanceName}" tooltiptext="${each.instanceName}" /> @author Saumyadeep -->
+							<label value="${each.displayName}" tooltiptext="${each.instanceName}" />
+						</listcell>
+						<listcell label="${c:formatNumber(each.waitTime)}"></listcell>
+						<listcell>
+							<div>
+								<zk choose="">
+									<zk when="${each.severity == 8}">
+										<div
+											class="critical-progress">
+											<progressmeter value="${each.relativeSeverityValue}" width="70px" />
+										</div>
+									</zk>
+									<zk when="${each.severity == 4}">
+										<div class="warning-progress">
+											<progressmeter value="${each.relativeSeverityValue}" width="70px" />
+										</div>
+									</zk>
+									<zk when="${each.severity == 2}">
+										<div class="ok-progress">
+											<progressmeter value="${each.relativeSeverityValue}" width="70px" />
+										</div>
+									</zk>
+									<zk when="${each.severity == 1}">
+										<div class="ok-progress">
+											<progressmeter value="${each.relativeSeverityValue}" width="70px" />
+										</div>
+									</zk>
+									<zk><!-- default -->
+										<div class="ok-progress">
+											<progressmeter value="${each.relativeSeverityValue}" width="70px" />
+										</div>
+									</zk>
+								</zk>
+							</div>
+						</listcell>
+					</listitem>
+				</template>
+			</listbox>
+		</panelchildren>
+	</panel>
+</zk>

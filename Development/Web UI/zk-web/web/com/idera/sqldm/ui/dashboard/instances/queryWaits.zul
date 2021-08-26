@@ -1,0 +1,128 @@
+<zk>
+	<style>
+		.z-hlayout, .z-vlayout {
+			overflow:visible
+		}
+	</style>
+	<div apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.idera.sqldm.ui.dashboard.instances.queryWaits.SingleInstanceQueryWaitsComposer')"
+		xmlns:w="http://www.zkoss.org/2005/zk/client">
+		<div style="height:800px;overflow:auto">
+		 <borderlayout height="100%" vflex="min">
+		 	<center autoscroll="true" vflex="min">
+		<div style="max-height:1200px:overflow:auto">
+			<vlayout>
+				<hlayout sclass="padding-lr-16 align-bottom">
+					<label id="filters" sclass="H4"
+						value="Filter: "/>
+
+					<label id="instanceNameLabel" value="Instance Name" 
+						sclass="cell-label-hover link" onClick="@command('drillUp')" />
+					<hlayout children="@load(vm.filters.values())">
+						<template name="children">
+							<label value=" > " />
+							<label value="@load(each.filterName)" sclass="cell-label-hover link"
+								style="max-width:120px" tooltiptext="@load(each.filterName)"
+								onClick="@command('drillUp', filter=each)"/>
+						</template>
+					</hlayout>	
+				</hlayout>				
+
+				<space height="5px" />
+				<hbox>
+				<vlayout>
+				<hlayout>
+					<idera-cwf-dropdownlist id="optionsCombobox" readonly="true" selectedIndex="@bind(vm.selectedWaitOption)"
+						onChange="@command('changeQueryWaitOption')" width="250px">
+						<comboitem label="Query Waits Over Time" />
+						<comboitem label="Query Waits By Duration" />
+					</idera-cwf-dropdownlist>
+					<!-- Time filters -->
+					<hlayout
+						sclass="filtering-layout-style padding-lr-4 padding-t-0 padding-b-16"
+						hflex="1">
+
+						<label style="padding-left:10px;"
+							value="${idera:getLabel('SQLdm.Labels.query-start-date')}">
+						</label>
+						<datebox id="fromdate" cols="12"
+							format="MM/dd/yyyy" sclass="alert-datebox"
+							constraint="@bind(vm.fromDateConstraint)"
+							value="@bind(vm.fromDate)" onChange="@command('changeTimeRange')" />
+
+						<!--  												<label style="padding-left:10px;"
+							value="${idera:getLabel('SQLdm.Labels.query-start-time')}">
+							</label> -->
+						<timebox id="fromtime" cols="6" format="HH:mm"
+							constraint="@bind(vm.fromTimeConstraint)"
+							value="@bind(vm.fromTime)" onChange="@command('changeTimeRange')" />
+
+						<label style="padding-left:10px;"
+							value="${idera:getLabel('SQLdm.Labels.query-end-date')}">
+						</label>
+						<datebox id="todate" cols="12"
+							format="MM/dd/yyyy" sclass="alert-datebox"
+							value="@bind(vm.endDate)"
+							constraint="@bind(vm.endDateConstraint)"
+							onChange="@command('changeTimeRange')" />
+
+						<!-- 													<label style="padding-left:10px;"
+							value="${idera:getLabel('SQLdm.Labels.query-end-time')}">
+							</label> -->
+						<timebox id="totime" cols="6" format="HH:mm"
+							constraint="@bind(vm.endTimeConstraint)"
+							value="@bind(vm.endTime)" onChange="@command('changeTimeRange')" />
+					</hlayout>
+					</hlayout>
+					<hlayout>
+					<div>
+					<hlayout style="padding-top: 5px;">
+						<label value="Number of Rows: "></label>
+						<spinner id="rowCount" width="50px"
+							value="@bind(vm.limit)"
+							onChange="@command('changeLimit')"
+							constraint="no empty,min 1" />
+
+					
+						<label value="Exclude SQL Text: "></label>
+						<idera-cwf-textbox 
+							value="@bind(vm.excludeSql)"
+							onChange="@command('changeExcludeSqlFilter')" width="108px"
+							style="background-color: white;">
+						</idera-cwf-textbox>
+					</hlayout>
+					</div>
+					</hlayout>
+					</vlayout>
+				</hbox>
+
+				<space height="5px" />
+				<tabbox id="queryWaitsTabbox" selectedIndex="@save(vm.selectedOptionForCharting)" 
+					onSelect="@command('changeChartingOption')">
+					<tabs children="@load(vm.queryWaitsDimensions)" visible="false">
+						<template name="children">
+							<tab label="@load(each)"
+								selected="@load(vm.selectedOptionForCharting eq forEachStatus.index)"
+								onCreate="@command('initTabbox', target=self)"
+								sclass="${(queryWaitsTabbox.selectedTab eq self)?'query-waits-tabs-seld':'query-waits-tabs'}"/>
+						</template>
+					</tabs>
+					<tabpanels children="@load(vm.queryWaitsDimensionsUrls)">
+						<template name="children">
+							<tabpanel>
+								<!-- Include graphs -->
+								<include hflex="4" src="@load(each)" />
+							</tabpanel>
+						</template>
+					</tabpanels>
+				</tabbox>
+				<space height="5px" />
+<!-- 				<include id="waitView" src="@bind(vm.queryWaitsSource)" />
+				<space height="5px" />
+ -->			</vlayout>
+		</div>
+		</center>
+</borderlayout>
+</div>
+	</div>
+</zk>

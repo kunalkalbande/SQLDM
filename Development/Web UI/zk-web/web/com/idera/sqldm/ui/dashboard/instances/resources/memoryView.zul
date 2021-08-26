@@ -1,0 +1,21 @@
+<div apply="com.idera.sqldm.ui.dashboard.instances.resources.MemoryViewComposer">
+<vlayout>
+     <space height="1"/>
+     <hlayout>
+     	<div sclass="chart-border">
+     		<sqldm-idera-linechart id="sqlMemoryUsage" width="540px" height="270px" leftMargin="20px" rightMargin="0px" topMargin="10px" bottomMargin="40px" />
+     	</div>
+       	<div sclass="chart-border">
+       		<sqldm-idera-linechart id="memoryAreas" width="540px" height="270px" leftMargin="20px" rightMargin="0px" topMargin="10px" bottomMargin="37px" />
+       	</div>
+     </hlayout>
+     <hlayout>
+     	<div sclass="chart-border">
+     		<sqldm-idera-areachart id="pageLifeExpectancy" width="540px" height="270px" leftMargin="20px" rightMargin="0px" topMargin="10px" bottomMargin="47px" />
+     	</div>
+     	<div sclass="chart-border">
+     		<sqldm-idera-linechart id="cacheHitRatios" width="540px" height="270px" leftMargin="20px" rightMargin="0px" topMargin="10px" bottomMargin="41px" />
+     	</div>
+     </hlayout>	
+</vlayout>
+</div>

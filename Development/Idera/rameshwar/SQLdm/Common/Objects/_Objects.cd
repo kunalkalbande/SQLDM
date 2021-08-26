@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Idera.SQLdm.Objects.Database">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Objects\Database.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAABAAAAAQAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Idera.SQLdm.Objects.NamedObject">
+    <Position X="3.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>Objects\NamedObject.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAIREgAAAQARAAAAEAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Idera.SQLdm.Objects.Index">
+    <Position X="2.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Objects\Index.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Idera.SQLdm.Objects.Table">
+    <Position X="7.25" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>Objects\Table.cs</FileName>
+      <HashCode>AAAAAgAAAAAAAIAAAAAAAAAEAAAABAAIAAAAAAAAAAI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Idera.SQLdm.Objects.Server">
+    <Position X="5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Objects\Server.cs</FileName>
+      <HashCode>AAAgAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Idera.SQLdm.Objects.NamedObjectFactory">
+    <Position X="0.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>Objects\NamedObjectFactory.cs</FileName>
+      <HashCode>AIAAAAAAAAAIAAAAAAAAAAAAAAAAgAQAAAAAAAAACAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Idera.SQLdm.Objects.IStatusObject">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Objects\IStatusObject.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Idera.SQLdm.MonitoredState">
+    <Position X="6.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>MonitoredState.cs</FileName>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAABAAAAAAAAAAAAABAAEAAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+</ClassDiagram>

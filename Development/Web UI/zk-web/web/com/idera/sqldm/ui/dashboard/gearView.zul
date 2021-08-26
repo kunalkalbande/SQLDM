@@ -1,0 +1,396 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:w="client">
+	<zscript><![CDATA[
+	class MyConst implements Constraint {
+		//Constraint//
+		public void validate(Component comp, Object value1) {
+
+			try {
+				Double value = Double.parseDouble(value1.toString());
+				if (value == null || ((Double) value) < 0 || ((Double) value) > 10)
+					throw new WrongValueException(comp, "Scale Factor should lie between 0 and 10.");
+				if (value1.toString().charAt(0) == '.' && value1.toString().length() == 4)
+					throw new WrongValueException(comp, "Only 2 digits after decimal are allowed.");
+			} catch (NumberFormatException e) {
+				throw new WrongValueException(comp, "Please enter a Number.");
+			}
+		}
+
+	}
+	Constraint ctt = new MyConst();
+]]>
+     </zscript>
+     
+	<window id="win" 
+		apply="com.idera.sqldm.ui.dashboard.GearViewComposer"
+		style="width:610px">
+
+		<div style="background-color: #C4BAA3;" height="15px" />
+
+		<label style="float:left;padding:5px;font-weight:bold;" sclass="H4"
+			value="${idera:getLabel('SQLdm.Tooltip.heatmapCalculationConfiguration')}" />
+
+		<label
+			style="float:left;padding-left:10px;padding-top:10px;color:gray"
+			width="580px"
+			value="The scale factors specified below are used to calculate the health index displayed in " />
+		<hlayout style="float:left;padding-left:10px;color:gray"
+			width="580px">
+			<label style="float:left;color:gray" value="the " />
+			<label id="navigateToHeatmap" value="heat map" onClick="@command('navigateToHeatmap')" sclass="link" style="float:left;word-wrap:break-word;"/>
+			<label style="float:left;color:gray" width="580px"
+				value=".The total number of active alerts per severity are multiplied by their" />
+		</hlayout>
+		<label style="float:left;padding-left:10px;color:gray"
+			value="respective factor and added to get a raw score which is normalized to a range between 0% and 100%. Use the severity factors to change the relative weight in the calculation. Use tag and instance factors to assign instances more or less importance in the overall heatmap ranking. IDERA recommends factor values between 0 and 10." />
+
+		<grid id="Main" span="true" align="center"  
+			sclass="idera-invisible-grid thumbnail-styled-grid" width="585px"
+			style="padding: 15px">
+			<columns>
+				<column align="left" label="Alerts" width="50%" />
+				<column align="left" label="Scale Factors" width="50%" />
+			</columns>
+			<rows id="rows">
+				<row id="critical">
+					<label style="padding: 5px;" id="critical_lbl"
+						tooltiptext="Critical" value="Critical" />
+					<hlayout id="critical_hlayout">
+						<idera-cwf-textbox id="critical_txt" 
+							 maxlength="4"
+							constraint="${ctt}" >
+						<!-- constraint="/0*(([0-9]([.]([0-9]([0-9]?)?)?)?)|10|10.|10.0|10.00)/:please enter a number between 0 to 10(up to 2 digits after decimal)" /> -->
+						<attribute w:name="doKeyDown_">
+								<![CDATA[ function (evt) { var keyCode =
+								event.keyCode; if( keyCode == 8 // backspace 
+								|| keyCode == 9 // tab 
+								|| keyCode == 13 // enter 
+								|| keyCode == 16 // enter
+								|| (keyCode >= 35 && keyCode <= 40) //home, end, arrows 
+								|| keyCode == 46 //Delete
+								|| (!evt.shiftKey && keyCode == 190)
+								&& (keyCode != 222)
+								) { 
+									this.$doKeyDown_(evt); 
+									} else if (!evt.shiftKey && // only do withoutshift key 
+											(keyCode >= 48 && keyCode <=
+								57) || (keyCode >= 96 && keyCode <= 105) 
+								 ) // number range
+									{ 
+								this.$doKeyDown_(evt); }
+								else {
+								evt.stop(); return; } 
+								system.out.print("pressed key code:"+keyCode);
+								}
+								
+								]]>
+							</attribute>
+						</idera-cwf-textbox>
+					</hlayout>
+					<idera-cwf-button label="X"
+						style="visibility:hidden;float:right;padding-bottom:3px"
+						sclass="white-text-orange-button" />
+				</row>
+				<row id="warning">
+					<label style="padding: 5px;" id="warning_lbl"
+						tooltiptext="Warning" value="Warning" />
+					<hlayout id="warning_hlayout">
+						<!-- <textbox id="warning_txt"
+							style="padding:5px;margin-top:3px" height="15px" maxlength="4"
+							constraint="${ctt}" /> -->
+						<idera-cwf-textbox xmlns:w="client" id="warning_txt"  
+							 maxlength="4"
+							constraint="${ctt}">
+							<attribute w:name="doKeyDown_">
+								<![CDATA[ function (evt) { var keyCode =
+								event.keyCode; if( keyCode == 8 // backspace 
+								|| keyCode == 9 // tab 
+								|| keyCode == 13 // enter 
+								|| keyCode == 16 // enter
+								|| (keyCode >= 35 && keyCode <= 40) //home, end, arrows 
+								|| keyCode == 46 //Delete
+								|| (!evt.shiftKey && keyCode == 190)
+								&& (keyCode != 222)
+								) { 
+									this.$doKeyDown_(evt); 
+									} else if (!evt.shiftKey && // only do withoutshift key 
+											(keyCode >= 48 && keyCode <=
+								57) || (keyCode >= 96 && keyCode <= 105) 
+								 ) // number range
+									{ 
+								this.$doKeyDown_(evt); }
+								else {
+								evt.stop(); return; } 
+								system.out.print("pressed key code:"+keyCode);
+								}
+								
+								]]>
+							</attribute>
+						</idera-cwf-textbox>
+
+						<!-- constraint="/0*(([0-9]([.]([0-9]([0-9]?)?)?)?)|10|10.|10.0|10.00)/:please enter a number between 0 to 10(up to 2 digits after decimal)" /> -->
+					</hlayout>
+					<idera-cwf-button label="X"
+						style="visibility:hidden;;float:right;padding-bottom:3px"
+						sclass="white-text-orange-button" />
+				</row>
+				<row id="informational">
+					<label style="padding: 5px;" id="informational_lbl"
+						tooltiptext="Informational" value="Informational" />
+					<hlayout id="informational_hlayout">
+						<idera-cwf-textbox id="informational_txt"  
+							maxlength="4"
+							constraint="${ctt}" >
+						<!-- constraint="/0*(([0-9]([.]([0-9]([0-9]?)?)?)?)|10|10.|10.0|10.00)/:please enter a number between 0 to 10(up to 2 digits after decimal)" /> -->
+						<attribute w:name="doKeyDown_">
+								<![CDATA[ function (evt) { var keyCode =
+								event.keyCode; if( keyCode == 8 // backspace 
+								|| keyCode == 9 // tab 
+								|| keyCode == 13 // enter 
+								|| keyCode == 16 // enter
+								|| (keyCode >= 35 && keyCode <= 40) //home, end, arrows 
+								|| keyCode == 46 //Delete
+								|| (!evt.shiftKey && keyCode == 190)
+								&& (keyCode != 222)
+								) { 
+									this.$doKeyDown_(evt); 
+									} else if (!evt.shiftKey && // only do withoutshift key 
+											(keyCode >= 48 && keyCode <=
+								57) || (keyCode >= 96 && keyCode <= 105) 
+								 ) // number range
+									{ 
+								this.$doKeyDown_(evt); }
+								else {
+								evt.stop(); return; } 
+								system.out.print("pressed key code:"+keyCode);
+								}
+								
+								]]>
+							</attribute>
+						</idera-cwf-textbox>
+					</hlayout>
+					<idera-cwf-button label="X"
+						style="visibility:hidden;float:right;padding-bottom:3px"
+						sclass="white-text-orange-button" />
+				</row>
+			</rows>
+		</grid>
+
+
+<separator height="1px" orient="horizontal" bar="true" />
+		<!-- <timer id="timer" delay="1000" repeats="false"
+			w:onTimer="zk.Widget.$('$critical_txt').updateChange_();zk.Widget.$('$warning_txt').updateChange_();zk.Widget.$('$informational_txt').updateChange_();zk.Widget.$('$setInstance_txt').updateChange_();" />
+		-->
+		<grid id="instanceGrid" span="true" align="center"
+			model="${win$composer.instanceModel}"
+			sclass="idera-invisible-grid thumbnail-styled-grid" width="580px"
+			style="padding: 15px;overflow-y: auto;padding-top: 1px;min-height: 5px;
+    max-height: 400px;">
+			<columns width="580px">
+				<column align="left" label="Instances" width="50%" />
+				<column align="left" label="Scale Factors" width="38%" />
+				<column align="left" label="Disable" width="12%" />
+			</columns>
+			<template id="instanceTemp" name="model">
+				<row>
+					<label style="padding: 5px"
+						tooltiptext="${each.displayName}" value="${each.displayName}" />
+					<hlayout>
+						<idera-cwf-textbox  maxlength="4" 
+							 value="${each.instanceHealthScaleFactor}"
+							constraint="${ctt}" >
+						<!-- constraint="/0*(([0-9]([.]([0-9]([0-9]?)?)?)?)|10|10.|10.0|10.00)/:please enter a number between 0 to 10(up to 2 digits after decimal)" /> -->
+						<attribute w:name="doKeyDown_">
+								<![CDATA[ function (evt) { var keyCode =
+								event.keyCode; if( keyCode == 8 // backspace 
+								|| keyCode == 9 // tab 
+								|| keyCode == 13 // enter 
+								|| keyCode == 16 // enter
+								|| (keyCode >= 35 && keyCode <= 40) //home, end, arrows 
+								|| keyCode == 46 //Delete
+								|| (!evt.shiftKey && keyCode == 190)
+								&& (keyCode != 222)
+								) { 
+									this.$doKeyDown_(evt); 
+									} else if (!evt.shiftKey && // only do withoutshift key 
+											(keyCode >= 48 && keyCode <=
+								57) || (keyCode >= 96 && keyCode <= 105) 
+								 ) // number range
+									{ 
+								this.$doKeyDown_(evt); }
+								else {
+								evt.stop(); return; } 
+								system.out.print("pressed key code:"+keyCode);
+								}
+								
+								]]>
+							</attribute>
+						</idera-cwf-textbox>
+					</hlayout>
+					<idera-cwf-button label="X" 
+						forward="onClick=instanceGrid.onDisable(${each.SQLServerId})"
+						style="float:right;padding-bottom:3px"
+						sclass="white-text-orange-button" />
+				<label value="${each.SQLServerId}"  style="width:.5px" visible="flase"></label>
+				</row>
+			</template>
+
+		</grid>
+		<hlayout id="instanceLayout" sclass="padding-tb-4">
+			<vlayout hflex="5">
+				<hlayout sclass="padding-l-12">
+					<idera-cwf-dropdownlist id="instanceCombobox"
+						model="${win$composer.instanceDropdownModel}" placeholder="Choose"
+						style="float:left;padding-top: 3px;padding-bottom: 1px;">
+						<template name="model">
+							<comboitem label="${each.displayName}" 
+								value="${each.SQLServerId}" />
+						</template>
+					</idera-cwf-dropdownlist>
+					<idera-cwf-textbox id="setInstance_txt" droppable="flase"
+						style=" margin-top: 4px;" value="1" maxlength="4"
+						disabled="true" constraint="${ctt}" >
+					<!-- constraint="/0*(([0-9]([.]([0-9]([0-9]?)?)?)?)|10|10.|10.0|10.00)/:please enter a number between 0 to 10(up to 2 digits after decimal)" /> -->
+					<attribute w:name="doKeyDown_">
+								<![CDATA[ function (evt) { var keyCode =
+								event.keyCode; if( keyCode == 8 // backspace 
+								|| keyCode == 9 // tab 
+								|| keyCode == 13 // enter 
+								|| keyCode == 16 // enter
+								|| (keyCode >= 35 && keyCode <= 40) //home, end, arrows 
+								|| keyCode == 46 //Delete
+								|| (!evt.shiftKey && keyCode == 190)
+								&& (keyCode != 222)
+								) { 
+									this.$doKeyDown_(evt); 
+									} else if (!evt.shiftKey && // only do withoutshift key 
+											(keyCode >= 48 && keyCode <=
+								57) || (keyCode >= 96 && keyCode <= 105) 
+								 ) // number range
+									{ 
+								this.$doKeyDown_(evt); }
+								else {
+								evt.stop(); return; } 
+								system.out.print("pressed key code:"+keyCode);
+								}
+								
+								]]>
+							</attribute>
+						</idera-cwf-textbox>
+					<idera-cwf-button label="Add" id="Add" 
+						style="float:left; margin-top: 4px;"
+						sclass="white-text-orange-button" />
+				</hlayout>
+			</vlayout>
+		</hlayout>
+<separator height="1px" orient="horizontal" bar="true" />
+		<grid id="tagGrid" span="true" align="center"
+			model="${win$composer.tagModel}"
+			sclass="idera-invisible-grid thumbnail-styled-grid" width="580px"
+			style="padding: 15px;overflow-y: auto;padding-top: 1px;min-height: 5px;
+    max-height: 280px;">
+			<columns>
+				<column align="left" label="Tags" width="50%" />
+				<column align="left" label="Scale Factors" width="38%" />
+				<column align="left" label="Disable" width="12%" />
+			</columns>
+			<template name="model">
+				<row>
+					<label style="padding: 5px" value="${each.tagName}"
+						tooltiptext="${each.tagName}" />
+					<hlayout>
+						<idera-cwf-textbox  maxlength="4"
+							 value="${each.tagHealthScaleFactor}"
+							constraint="${ctt}" >
+						<!-- constraint="/0*(([0-9]([.]([0-9]([0-9]?)?)?)?)|10|10.|10.0|10.00)/:please enter a number between 0 to 10(up to 2 digits after decimal)" /> -->
+						<attribute w:name="doKeyDown_">
+								<![CDATA[ function (evt) { var keyCode =
+								event.keyCode; if( keyCode == 8 // backspace 
+								|| keyCode == 9 // tab 
+								|| keyCode == 13 // enter 
+								|| keyCode == 16 // enter
+								|| (keyCode >= 35 && keyCode <= 40) //home, end, arrows 
+								|| keyCode == 46 //Delete
+								|| (!evt.shiftKey && keyCode == 190)
+								&& (keyCode != 222)
+								) { 
+									this.$doKeyDown_(evt); 
+									} else if (!evt.shiftKey && // only do withoutshift key 
+											(keyCode >= 48 && keyCode <=
+								57) || (keyCode >= 96 && keyCode <= 105) 
+								 ) // number range
+									{ 
+								this.$doKeyDown_(evt); }
+								else {
+								evt.stop(); return; } 
+								system.out.print("pressed key code:"+keyCode);
+								}
+								
+								]]>
+							</attribute>
+						</idera-cwf-textbox>
+					</hlayout>
+					<idera-cwf-button label="X"
+						forward="onClick=tagGrid.onDisabletag(${each.tagId})"
+						style="float:right;padding-bottom:3px"
+						sclass="white-text-orange-button" />
+						<label value="${each.tagId}"  style="width:.5px" visible="flase"></label>
+				</row>
+			</template>
+		</grid>
+		<hlayout id="tagLayout" sclass="padding-tb-4">
+			<vlayout hflex="5">
+				<hlayout sclass="padding-l-12">
+					<idera-cwf-dropdownlist id="tagCombobox"
+						model="${win$composer.tagDropdownModel}" placeholder="Choose"
+						style="float:left;padding-top: 3px;padding-bottom: 1px;">
+						<template name="model">
+							<comboitem label="${each.tagName}"
+								value="${each.tagId}" />
+						</template>
+					</idera-cwf-dropdownlist>
+					<idera-cwf-textbox id="setTag_txt"
+						style=" margin-top: 4px;" value="1" maxlength="4"
+						disabled="true" constraint="${ctt}" >
+					<!-- constraint="/0*(([0-9]([.]([0-9]([0-9]?)?)?)?)|10|10.|10.0|10.00)/:please enter a number between 0 to 10(up to 2 digits after decimal)" /> -->
+					<attribute w:name="doKeyDown_">
+								<![CDATA[ function (evt) { var keyCode =
+								event.keyCode; if( keyCode == 8 // backspace 
+								|| keyCode == 9 // tab 
+								|| keyCode == 13 // enter 
+								|| keyCode == 16 // enter
+								|| (keyCode >= 35 && keyCode <= 40) //home, end, arrows 
+								|| keyCode == 46 //Delete
+								|| (!evt.shiftKey && keyCode == 190)
+								&& (keyCode != 222)
+								) { 
+									this.$doKeyDown_(evt); 
+									} else if (!evt.shiftKey && // only do withoutshift key 
+											(keyCode >= 48 && keyCode <=
+								57) || (keyCode >= 96 && keyCode <= 105) 
+								 ) // number range
+									{ 
+								this.$doKeyDown_(evt); }
+								else {
+								evt.stop(); return; } 
+								system.out.print("pressed key code:"+keyCode);
+								}
+								
+								]]>
+							</attribute>
+						</idera-cwf-textbox>
+					<idera-cwf-button label="Add" id="addTag"
+						style="float:left;    margin-top: 4px;"
+						sclass="white-text-orange-button" />
+				</hlayout>
+			</vlayout>
+		</hlayout>
+		<idera-cwf-button id="Submit" label="Submit" width="125px"
+			style="float:right;"
+			sclass="white-text-orange-button" />
+		<idera-cwf-button id="Close" label="Close" width="125px"
+			style="float:right;"
+			sclass="white-text-orange-button" />
+	</window>
+	
+</zk>

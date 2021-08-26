@@ -1,0 +1,16 @@
+F:\Idera\SQLdm\Development\bin\Debug\SQLdmPlugin.dll.config
+F:\Idera\SQLdm\Development\bin\Debug\SQLdmPlugin.dll
+F:\Idera\SQLdm\Development\bin\Debug\SQLdmPlugin.pdb
+F:\Idera\SQLdm\Development\Idera\SQLdm\Service\obj\Debug\Idera.SQLdm.Service.csprojAssemblyReference.cache
+F:\Idera\SQLdm\Development\Idera\SQLdm\Service\obj\Debug\Idera.SQLdm.Service.csproj.CoreCompileInputs.cache
+F:\Idera\SQLdm\Development\Idera\SQLdm\Service\obj\Debug\Idera.SQLdm.Service.csproj.CopyComplete
+F:\Idera\SQLdm\Development\Idera\SQLdm\Service\obj\Debug\SQLdmPlugin.dll
+F:\Idera\SQLdm\Development\Idera\SQLdm\Service\obj\Debug\SQLdmPlugin.pdb
+E:\Idera\SQLdm\Development\bin\Debug\SQLdmPlugin.dll.config
+E:\Idera\SQLdm\Development\bin\Debug\SQLdmPlugin.dll
+E:\Idera\SQLdm\Development\bin\Debug\SQLdmPlugin.pdb
+E:\Idera\SQLdm\Development\Idera\SQLdm\Service\obj\Debug\Idera.SQLdm.Service.csprojAssemblyReference.cache
+E:\Idera\SQLdm\Development\Idera\SQLdm\Service\obj\Debug\Idera.SQLdm.Service.csproj.CoreCompileInputs.cache
+E:\Idera\SQLdm\Development\Idera\SQLdm\Service\obj\Debug\Idera.SQLdm.Service.csproj.CopyComplete
+E:\Idera\SQLdm\Development\Idera\SQLdm\Service\obj\Debug\SQLdmPlugin.dll
+E:\Idera\SQLdm\Development\Idera\SQLdm\Service\obj\Debug\SQLdmPlugin.pdb

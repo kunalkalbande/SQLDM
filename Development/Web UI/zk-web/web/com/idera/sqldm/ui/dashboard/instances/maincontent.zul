@@ -1,0 +1,9 @@
+<zk>
+<window border="none" sclass="idera-products-nav-wrapper">
+ 	<vlayout  sclass = "" style="overflow:auto">
+	    <div>
+	    	<include src="~./sqldm/com/idera/sqldm/ui/dashboard/instances/instanceDetails.zul" />
+        </div>
+	</vlayout>
+</window>
+</zk>

@@ -1,0 +1,16 @@
+﻿  Performing Custom Build Tools
+  MC: Compiling E:\Idera\SQLdm\Development\Idera\SQLdm\Common\Messages\messages.mc
+  Performing Custom Build Tools
+  Processing: E:\Idera\SQLdm\Development\Idera\SQLdm\Common\Messages\messages.h
+  Stdafx.cpp
+  AssemblyInfo.cpp
+E:\Idera\SQLdm\Development\Idera\SQLdm\Common\Messages\AssemblyInfo.cpp(27,29): warning C4947: 'System::Security::Permissions::SecurityAction::RequestMinimum': marked as obsolete
+E:\Idera\SQLdm\Development\Idera\SQLdm\Common\Messages\AssemblyInfo.cpp(27,29): message : Message: 'Assembly level declarative security is obsolete and is no longer enforced by the CLR by default. See http://go.microsoft.com/fwlink/?LinkID=155570 for more information.'
+  HModule.cpp
+  MessageDll.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\sddl.h(36,28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+E:\Idera\SQLdm\Development\Idera\SQLdm\Common\Messages\MessageDll.cpp(118,21): warning C4101: 'e': unreferenced local variable
+  Generating Code...
+  .NETFramework,Version=v4.0.AssemblyAttributes.cpp
+  AssemblyInfo.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Idera.SQLdm.Common.Messages.vcxproj -> E:\Idera\SQLdm\Development\bin\Debug\Idera.SQLdm.Common.Messages.dll

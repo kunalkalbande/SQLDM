@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="office2007PropertyPage6.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="lblQueryPlanMessage.Text" xml:space="preserve">
+    <value>Enabling actual query execution plans collection can have a significant performance overhead. IDERA recommends using this feature only when troubleshooting or monitoring specific problems for short periods of time. You can also use estimated query plans.</value>
+  </data>
+  <data name="informationBox8.Text" xml:space="preserve">
+    <value>The Activity Monitor captures non-query related activities and events that could impact your monitored SQL Server such as blocking events. </value>
+  </data>
+  <metadata name="testConnectionBackgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 173</value>
+  </metadata>
+  <metadata name="propertiesControl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>682, 95</value>
+  </metadata>
+  <metadata name="popularPropertiesContentPage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>462, 95</value>
+  </metadata>
+  <metadata name="office2007PropertyPage4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>273, 95</value>
+  </metadata>
+  <data name="informationBox1.Text" xml:space="preserve">
+    <value>The Query Monitor collects and detects queries that are performing over specified thresholds, helping you discover worst performing queries.</value>
+  </data>
+  <data name="informationBox3.Text" xml:space="preserve">
+    <value>Collecting replication statistics can have a performace impact on the SQL Server when publisher or distribution queues contain a large number of items.  This only affects servers that have replication enabled.</value>
+  </data>
+  <metadata name="replicationPropertyPageContentPanel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
+  </metadata>
+  <data name="informationBox2.Text" xml:space="preserve">
+    <value>Collecting table statistics is a performance intensive operation that should only occur during periods that your server is not doing production work.  These times are local to the monitored SQL Server instance.</value>
+  </data>
+  <metadata name="office2007PropertyPage2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>709, 56</value>
+  </metadata>
+  <metadata name="customCountersContentPage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>830, 95</value>
+  </metadata>
+  <data name="informationBox7.Text" xml:space="preserve">
+    <value>Custom counters can be explicitely linked to a monitored instance or linked to a group of instances using Tags. A counter linked through a Tag is shown in gray text and cannot be removed unless the Tag is removed from the instance. Note that a counter will only be collected once for an instance regardless of the number of times it is linked.</value>
+  </data>
+  <metadata name="maintenanceModeContentPage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>350, 56</value>
+  </metadata>
+  <data name="informationBox14.Text" xml:space="preserve">
+    <value>SQL Diagnostic Manager uses direct WMI collection by default to collect diagnostic information such as Operating System metrics and service status on clustered SQL Servers. This dialog allows you to specify the credentials that the SQLDM Collection service uses or you can choose to have SQLdm use OLE automation to collect diagnostic information.</value>
+  </data>
+  <metadata name="osContentPage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>574, 56</value>
+  </metadata>
+  <data name="informationBox9.Text" xml:space="preserve">
+    <value>By default SQLDM attempts to auto-discover local disk drives on monitored instances for use in disk drive alerting and for database space calculations.  In some environments the auto-discovered list may be incomplete or contain drives which are not related to SQL Server.  To modify this list, disable auto-discovery and specify the exact drive letters and/or mount points to be monitored.  Please take care to include all drives on which any SQL Server files may reside as otherwise database size alerting may be affected.  
+
+Note: If you are trying to prevent alerts on particular disk drives but would like the data available for other calculations in the product, that may be done in the Alert Configuration screen.
+</value>
+  </data>
+  <metadata name="diskContentPage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>206, 56</value>
+  </metadata>
+  <data name="informationBox10.Text" xml:space="preserve">
+    <value>SQL Diagnostic Manager uses this setting to provide alerts whenever a cluster is running on a non-preferred node.  The Cluster Active Node alert must be enabled under Alert Configuration for this to take effect.  This setting will have no impact on servers which do not have this alert enabled or which are not clustered.</value>
+  </data>
+  <metadata name="office2007PropertyPage1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <data name="informationBox12.Text" xml:space="preserve">
+    <value>System-level wait monitoring is enabled at all times, but by default query-level wait statistics are only available in real time.  Enable scheduled or continuous collection and storage of wait statistics below.  This collection may impact performance on some systems.  Schedule times should be specified in the monitored server's time zone.</value>
+  </data>
+  <data name="informationBox13.Text" xml:space="preserve">
+    <value>The query-level wait collector can be started either by the scheduled refresh or by opening the Query Waits view.  Stopping the collector here will not prevent the collector from being restarted if the view remains open.</value>
+  </data>
+  <metadata name="office2007PropertyPage3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>696, 17</value>
+  </metadata>
+  <data name="informationBox11.Text" xml:space="preserve">
+    <value>If this SQL Server instance resides on a virtual machine and you wish to use SQLDM to monitor the performance of the virtual machine and its physical host server, you can click on the VM Configuration button below to open the VM Configuration dialog and link this instance with a virtual machine.
+
+Please note that this only applies to SQL Server instances that are running on a virtual machine.</value>
+  </data>
+  <metadata name="office2007PropertyPage5.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>507, 17</value>
+  </metadata>
+  <metadata name="office2007PropertyPageAnalysisConfiguration.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>206, 17</value>
+  </metadata>
+  <metadata name="waitCollectorStatusBackgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>256, 173</value>
+  </metadata>
+  <metadata name="stopWaitCollectorBackgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>517, 173</value>
+  </metadata>
+  <metadata name="serverDateTimeVersionBackgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>566, 134</value>
+  </metadata>
+  <metadata name="serverPermissionsBackgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 134</value>
+  </metadata>
+  <metadata name="blockedProcessThresholdBackgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>271, 134</value>
+  </metadata>
+</root>

@@ -1,0 +1,415 @@
+<zk xmlns:w="http://www.zkoss.org/2005/zk/client" xmlns:n="native">
+    <script type="text/javascript">
+        function HideInstances()
+        {
+        var hideILink = zk.Widget.$('$hideInstances');
+        if(hideILink.getLabel()=='Show Instances'){
+        $("div.instancesgriddiv").css("display","block");
+        $("div.instancesgriddiv").css("visibility","visible");
+        $("div.actiondivclass").css("display","block");
+        $("div.actiondivclass").css("visibility","visible");
+        hideILink.setLabel('Hide Instances');
+        }else{
+        $("div.instancesgriddiv").css("display","none");
+        $("div.actiondivclass").css("display","none");
+        hideILink.setLabel('Show Instances');
+
+        }
+        }
+    </script>
+    <div apply="org.zkoss.bind.BindComposer"
+         viewModel="@id('vm') @init('com.idera.sqldm.ui.dashboard.DashboardInstanceViewComposer')">
+        <div> <!-- workaround -->
+            <hlayout sclass="padding-t-12 padding-b-12 cwf-main-background" width="100%" id="outerHLayout">
+                <hlayout sclass="z-valign-top" hflex="1">
+                    <vlayout hflex="3" class="instancesHeader">
+                        <div height="18px" hflex="1">
+                            <label value="@load(vm.titleLabel)" sclass="H4 dashboard-h4"/>
+                        </div>
+
+                    </vlayout>
+                    <vlayout hflex="2">
+                        <div id="actiondiv" style="padding-right:6px;height:24px;text-align:right" hflex="1">
+                            <!-- <div visible="@bind(vm.isListVisible)" style="float:right">
+                                <a id="makeReportLink" sclass="link"
+                                   style="word-wrap:break-word;text-decoration: underline;"
+                                   label="${idera:getLabel('Labels.export')}"
+                                   popup="reportsMenupopup, position=after_end"/>
+                                <space bar="true" spacing="3px"/>
+                                <a id="hideInstances" class="hideI" label="Hide Instances" sclass="link"
+                                   style="word-wrap:break-word;text-decoration: underline;"
+                                   w:onClick="javascript:HideInstances();"/>
+                                <space width="10px"/>
+                                <menupopup id="reportsMenupopup">
+                                    <menuitem id="createPDFMenuitem"
+                                              label="${idera:getLabel('Labels.export-as-pdf')}"
+                                              onClick="@command('exportGrid', instanceListGrid=instanceListGrid)"/>
+                                    <menuitem id="createXLSMenuitem"
+                                              label="${idera:getLabel('Labels.export-as-xls')}"
+                                              onClick="@command('exportToExcel',instanceListGrid=instanceListGrid)"/>
+                                    <menuitem id="createXMLMenuitem"
+                                              label="${idera:getLabel('Labels.export-as-xml')}"
+                                              onClick="@command('exportToXml', instanceListGrid=instanceListGrid, title=vm.titleLabel)"/>
+                                </menupopup>
+                            </div> -->
+                            <div style="width: 25px; height:100%; float:right; margin-right:8px;"
+                                 class="actiondivclass">
+                                <a id="refreshButton" sclass="fa fa-refresh"
+                                   tooltiptext="${idera:getLabel('SQLdm.Tooltip.refresh')}" style="float:right;text-decoration: none;font-size: 20px;color: #000000;"
+                                   onClick="@command('updateDashboardManually')"/>
+                            </div>
+                            <div style="width: 25px; height:100%; float:right; padding-right:8px;" class="actiondivclass">
+                                <a id="gear"
+                                   tooltiptext="${idera:getLabel('SQLdm.Tooltip.heatmapCalculationConfiguration')}"
+                                   sclass="fa fa-cog" style="float:right;text-decoration: none;font-size: 20px;color: #000000;"
+                                   onClick="@command('onClickgear')"/>
+                            </div>
+                            <div style="float:right; height: 24px; padding-right:8px;" class="actiondivclass">
+                                <space bar="true" spacing="3px" style="height: 25px"/>
+                            </div>
+                            <div style="width: 25px; height:100%; float:right; margin-right:8px;"
+                                 class="actiondivclass">
+                                <a id="heatmapBtn" sclass="clickable clickable-heatmap"
+                                   tooltiptext="${idera:getLabel('SQLdm.Tooltip.heatmap')}"
+                                   disabled="@bind(vm.isHeatMapVisible)" style="float:right;"
+                                   onClick="@command('showHeatMapView')"/>
+                            </div>
+                            <div style="width: 25px; height:100%; float:right; padding-right:8px;" class="actiondivclass">
+                                <a id="thumbnailViewBtn" sclass="clickable clickable-thumbnail"
+                                   tooltiptext="${idera:getLabel('SQLdm.Tooltip.thumbnail')}"
+                                   disabled="@bind(vm.isThumbnailVisible)" style="float:right;"
+                                   onClick="@command('showThumbnailView')"/>
+                            </div>
+                            <div style="width: 25px; height:100%; float:right; padding-right:8px;" class="actiondivclass">
+                                <a id="listViewBtn" sclass="clickable clickable-list"
+                                   tooltiptext="${idera:getLabel('SQLdm.Tooltip.listview')}"
+                                   disabled="@bind(vm.isListVisible)" style="float:right;"
+                                   onClick="@command('showListView')"/>
+                            </div>
+
+                            <div>
+                                <columnchooser sclass="z-vlayout-inner"
+                                               id="columnchooser"
+                                               visibleColumns="@load(vm.defaultColumnList)"
+                                               hiddenColumns="@load(vm.columnList)"
+                                               template="~./sqldm/com/idera/sqldm/ui/dashboard/customColumnChooser.zul"
+                                               onColumnVisibilityChange="@command('doColumnVisibilityChange', visibleColumns=event.visibleColumns, hiddenColumns=event.hiddenColumns)">
+                                </columnchooser>
+                            </div>
+
+                            <hlayout style="float:right">
+                                <!-- <div visible="@bind(vm.isListVisible)"
+                                     align="left"
+                                     style="padding-top:10px"
+                                     class="actiondivclass">
+                                    <a label="Options"
+                                       onClick="@command('openDefaultColumnChooser', ref=outerHLayout, ref2=columnchooser)"
+                                       style="word-wrap:break-word;text-decoration: underline"
+                                       sclass="link" width="150px"/>
+                                </div> -->
+                                <div visible="@bind(vm.isListVisible)" style="padding-right:8px;"
+                                     class="actiondivclass">
+                                    <label
+                                            value="Group by"
+                                            class="boxlabel" hflex="1" />
+                                    <idera-cwf-dropdownlist sclass="group_by_instances" id="viewByCombobox" readonly="true"
+                                                            model="@load(vm.sortingCategoryList)"
+                                                            selectedItem="@bind(vm.selectedCategoryForSorting)"
+                                                            width="105px"/>
+                                </div>
+                                <div visible="@bind(not vm.isListVisible)" style="padding-right:8px;" class="actiondivclass">
+                                    <idera-cwf-textbox sclass="search_box search_box_instances" value="@bind(vm.searchText)"
+                                                       onOK="@command('searchInstances')" instant="true" width="110px"
+                                                       placeholder="${idera:getLabel('SQLdm.Labels.serachinstance')}"></idera-cwf-textbox>
+                                </div>
+                            </hlayout>
+                        </div>
+
+                    </vlayout>
+                </hlayout>
+
+            </hlayout>
+            <!-- <separator height="1px" orient="horizontal" bar="true"/>
+            <space height="2px"/> -->
+            <hlayout visible="@bind(vm.isListVisible)"
+                     id="instancesListLayout" sclass="instancesLayout">
+                <div id="igd" visible="@bind(vm.isListAndGroupVisible || vm.showGroups)"
+                     class="instancesgriddiv">
+                    <n:div id="grid_row_editing_url" />
+                </div>
+            </hlayout>
+            <!-- adding  newthumnailView  @author:prakash -->
+            <hlayout visible="@bind(vm.isThumbnailVisible)" width="100%" height="100%"
+                     style=" overflow-y: auto;overflow-x: hidden;">
+                <label hflex="1" sclass="empty-message"
+                       value="${idera:getMessage('SQLdm.Messages.no-instances-registered-for-selected-filter') }"
+                       visible="@bind(vm.isListEmpty)"></label>
+                <div id="instancesThumbnailLayoutNew" children="@load(vm.instancesModel)" width="100%" height="100%"
+                     style=" overflow-y: auto;overflow-x: hidden;padding:16px;">
+                    <template name="children" var="instance">
+                        <div sclass="@load('coppereggServerSummary '.concat(instance.serverStatus.severityString.toLowerCase()))">
+                            <div>
+                                <groupbox mold="3d" contentStyle="" width="100%" sclass="thumbnail-view"
+                                          style="float:left; margin: 1px;"
+                                          open="@bind(instance.isInstanceOpenInHeatMap)"
+                                          onOpen="@command('heatMapViewOpen',instanceId=instance.serverStatus.SQLServerId , instance = instance, instanceName = instance.overview.instanceName , swaID = instance.swaID)">
+                                    <caption style="border-bottom: 2px; align:left">
+                                        <image src="${sqldmidera:getImageURL('Server'.concat(instance.serverStatus.severityString), 'small')}"
+                                               width="30px" style="float:left"/>
+                                        <a style="float:left;font-weight:bold;" sclass="thumbnailAnchor">
+                                            <!-- <label onClick="@command('navigateToSingleInstance' , product = instance.product , instanceID = instance.overview.SQLServerId)" value = "@load(instance.overview.instanceName)" style="padding-top:5px;text-align:left;max-width:220px" sclass = "thumbnailAnchor" /> @author Saumyadeep -->
+                                            <label onClick="@command('navigateToSingleInstance' , product = instance.product , instanceID = instance.overview.SQLServerId)"
+                                                   value="@load(instance.overview.displayName)"
+                                                   style="padding-top:5px;text-align:left;max-width:220px"
+                                                   sclass="thumbnailAnchor"/>
+                                        </a>
+                                        <toolbar style="float: right;"
+                                                 tooltiptext="${idera:getLabel('SQLdm.Labels.launch-dm')}">
+                                            <toolbarbutton src="${sqldmidera:getImageURLWithoutSize('SQLdmIcon')}"
+                                                           onClick="@command('launchDeskTopConsole',instanceID = instance.overview.SQLServerId)"/>
+                                        </toolbar>
+                                        <vlayout style="float:right;" sclass="grade">
+                                            <hlayout style="text-align:center;padding-top:7px;">
+                                                <label sclass="healthValue"
+                                                       value="@load(instance.serverStatus.healthIndex)"
+                                                       style="text-align:center;font-size:16px;font-weight:500;"/>
+                                                <label value="%" style="font-size:16px;font-weight:500;"/>
+                                            </hlayout>
+                                            <label sclass="label_copperEgg" value="Health Index"/>
+                                        </vlayout>
+                                    </caption>
+                                    <hlayout height="100%">
+
+                                        <vlayout width="32px" sclass="vertical-links-thumbnails"
+                                                 style="padding-top:10px">
+                                            <zk choose="">
+                                                <zk when="${instance.sessionsMaxSeverity == 8 || instance.sessionsMaxSeverity == 4}">
+                                                    <toolbarbutton
+                                                            image="${sqldmidera:getImageURLWithoutSize(instance.sessionsCatImage)}"
+                                                            popup="detail_sessions_${instance.product.productId}_${instance.overview.SQLServerId}_1, position=end_before"/>
+                                                    <popup id="detail_sessions_${instance.product.productId}_${instance.overview.SQLServerId}_1">
+                                                        <vlayout>
+                                                            <a href=""
+                                                               onClick="@command('categoryClicked', category='Sessions', instanceid=instance.overview.SQLServerId, goTo='alerts')">
+                                                                <label value="${idera:getMessage('SQLdm.Messages.show-alert') }"/>
+                                                            </a>
+                                                            <a href=""
+                                                               onClick="@command('categoryClicked', category='Sessions', instanceid=instance.overview.SQLServerId, goTo='categories')">
+                                                                <label value="${idera:getMessage('SQLdm.Messages.go-to-category') }"/>
+                                                            </a>
+                                                        </vlayout>
+                                                    </popup>
+                                                </zk>
+                                                <zk>
+                                                    <toolbarbutton
+                                                            image="${sqldmidera:getImageURLWithoutSize(instance.sessionsCatImage)}"
+                                                            onClick="@command('categoryClicked', category='Sessions', instanceid=instance.overview.SQLServerId, goTo='categories')"/>
+                                                </zk>
+                                            </zk>
+                                            <zk choose="">
+                                                <zk when="${instance.queriesMaxSeverity == 8 || instance.queriesMaxSeverity == 4}">
+                                                    <toolbarbutton
+                                                            image="${sqldmidera:getImageURLWithoutSize(instance.queriesCatImage)}"
+                                                            popup="detail_queries_${instance.product.productId}_${instance.overview.SQLServerId}_1, position=end_before"/>
+                                                    <popup id="detail_queries_${instance.product.productId}_${instance.overview.SQLServerId}_1">
+                                                        <vlayout>
+                                                            <a href=""
+                                                               onClick="@command('categoryClicked', category='Queries', instanceid=instance.overview.SQLServerId, goTo='alerts')">
+                                                                <label value="${idera:getMessage('SQLdm.Messages.show-alert') }"/>
+                                                            </a>
+                                                            <a href=""
+                                                               onClick="@command('categoryClicked', category='Queries', instanceid=instance.overview.SQLServerId, goTo='categories')">
+                                                                <label value="${idera:getMessage('SQLdm.Messages.go-to-category') }"/>
+                                                            </a>
+                                                        </vlayout>
+                                                    </popup>
+                                                </zk>
+                                                <zk>
+                                                    <toolbarbutton
+                                                            image="${sqldmidera:getImageURLWithoutSize(instance.queriesCatImage)}"
+                                                            onClick="@command('categoryClicked', category='Queries', instanceid=instance.overview.SQLServerId, goTo='categories')"/>
+                                                </zk>
+                                            </zk>
+                                            <zk choose="">
+                                                <zk when="${instance.resourcesMaxSeverity == 8 || instance.resourcesMaxSeverity == 4}">
+                                                    <toolbarbutton
+                                                            image="${sqldmidera:getImageURLWithoutSize(instance.resourcesCatImage)}"
+                                                            popup="detail_resources_${instance.product.productId}_${instance.overview.SQLServerId}_2, position=end_before"/>
+                                                    <popup id="detail_resources_${instance.product.productId}_${instance.overview.SQLServerId}_2">
+                                                        <vlayout>
+                                                            <a href=""
+                                                               onClick="@command('categoryClicked', category='Resources', instanceid=instance.overview.SQLServerId, goTo='alerts')">
+                                                                <label value="${idera:getMessage('SQLdm.Messages.show-alert') }"/>
+                                                            </a>
+                                                            <a href=""
+                                                               onClick="@command('categoryClicked', category='Resources', instanceid=instance.overview.SQLServerId, goTo='categories')">
+                                                                <label value="${idera:getMessage('SQLdm.Messages.go-to-category') }"/>
+                                                            </a>
+                                                        </vlayout>
+                                                    </popup>
+                                                </zk>
+                                                <zk>
+                                                    <toolbarbutton
+                                                            image="${sqldmidera:getImageURLWithoutSize(instance.resourcesCatImage)}"
+                                                            onClick="@command('categoryClicked', category='Resources', instanceid=instance.overview.SQLServerId, goTo='categories')"/>
+                                                </zk>
+                                            </zk>
+                                            <zk choose="">
+                                                <zk when="${instance.databasesMaxSeverity == 8 || instance.databasesMaxSeverity == 4}">
+                                                    <toolbarbutton
+                                                            image="${sqldmidera:getImageURLWithoutSize(instance.databasesCatImage)}"
+                                                            popup="detail_databases_${instance.product.productId}_${instance.overview.SQLServerId}_2, position=end_before"/>
+                                                    <popup id="detail_databases_${instance.product.productId}_${instance.overview.SQLServerId}_2">
+                                                        <vlayout>
+                                                            <a href=""
+                                                               onClick="@command('categoryClicked', category='Databases', instanceid=instance.overview.SQLServerId, goTo='alerts')">
+                                                                <label value="${idera:getMessage('SQLdm.Messages.show-alert') }"/>
+                                                            </a>
+                                                            <a href=""
+                                                               onClick="@command('categoryClicked', category='Databases', instanceid=instance.overview.SQLServerId, goTo='categories')">
+                                                                <label value="${idera:getMessage('SQLdm.Messages.go-to-category') }"/>
+                                                            </a>
+                                                        </vlayout>
+                                                    </popup>
+                                                </zk>
+                                                <zk>
+                                                    <toolbarbutton
+                                                            image="${sqldmidera:getImageURLWithoutSize(instance.databasesCatImage)}"
+                                                            onClick="@command('categoryClicked', category='Databases', instanceid=instance.overview.SQLServerId, goTo='categories')"/>
+                                                </zk>
+                                            </zk>
+                                            <toolbarbutton
+                                                    image="${sqldmidera:getImageURLWithoutSize(instance.servicesCatImage)}"
+                                                    onClick="@command('categoryClicked', category='Services', instanceid=instance.overview.SQLServerId, goTo='alerts')"/>
+                                            <toolbarbutton
+                                                    image="${sqldmidera:getImageURLWithoutSize(instance.logsCatImage)}"
+                                                    onClick="@command('categoryClicked', category='Logs', instanceid=instance.overview.SQLServerId, goTo='alerts')"/>
+                                            <toolbarbutton image="${sqldmidera:getImageURLWithoutSize('swa_24x24')}"
+                                                           width="28px" visible="@load(instance.isSWAInstance)"
+                                                           onClick="@command('navigateToSWAInstance' , instanceName = instance.overview.instanceName , swaID = instance.swaID)"
+                                                           tooltiptext="${idera:getLabel('SQLdm.Labels.swa-instance-launch-tooltip')}"/>
+                                        </vlayout>
+
+                                        <vlayout sclass="contentContainer" height="271px" style="padding-left:5px">
+                                            <grid span="true"
+                                                  sclass="idera-invisible-grid thumbnail-styled-grid styled-cwf-list"
+                                                  width="190px">
+                                                <columns>
+                                                    <column align="left" width="70%"/>
+                                                    <column align="right" width="30%"/>
+                                                </columns>
+                                                <rows>
+
+                                                    <row>
+                                                        <cell colspan="2">
+
+                                                            <vlayout>
+
+                                                                <div>
+                                                                    <label value="@bind(instance.serverEditionString)"
+                                                                           maxlength="25"
+                                                                           tooltiptext="@bind(instance.serverEditionString)"/>
+                                                                </div>
+                                                                <label value="@bind(instance.overview.productVersionString)"/>
+                                                            </vlayout>
+
+                                                        </cell>
+                                                    </row>
+                                                    <row>
+                                                        <hlayout>
+                                                            <separator spacing="1px"/>
+                                                        </hlayout>
+                                                    </row>
+                                                    <row>
+                                                        <div>
+                                                            <label style="padding-left:5px;"
+                                                                   value="${idera:getLabel('SQLdm.Labels.alerts-count')}"/>
+                                                        </div>
+                                                        <hbox>
+                                                            <label value="@bind(instance.serverStatus.activeCriticalAlertCount)"/>
+                                                            <image src="${sqldmidera:getImageURLWithoutSize('critical16x16')}"/>
+                                                            <label value="@bind(instance.serverStatus.activeWarningAlertCount)"/>
+                                                            <image src="${sqldmidera:getImageURLWithoutSize('warning-16x16')}"/>
+                                                        </hbox>
+
+                                                    </row>
+
+                                                    <row>
+                                                        <div>
+                                                            <label style="padding-left:5px;"
+                                                                   value="${idera:getLabel('SQLdm.Labels.response-time-thumbnail')}"/>
+                                                            <label value=":"/>
+                                                        </div>
+                                                        <label value="@bind(instance.overview.responseTimeString)"/>
+                                                    </row>
+                                                    <row>
+                                                        <hlayout>
+                                                            <separator spacing="1px"/>
+                                                        </hlayout>
+                                                    </row>
+                                                    <row>
+                                                        <div>
+                                                            <label style="padding-left:5px;"
+                                                                   value="${idera:getLabel('SQLdm.Labels.user-session')}"/>
+                                                            <label value=":"/>
+                                                        </div>
+                                                        <label value="@bind(instance.userSessions) @converter('com.idera.sqldm.ui.converter.CommaSeparatedNumberLabelForMVVMConverter')"/> <!-- replace this with data values -->
+                                                    </row>
+                                                    <row>
+                                                        <hlayout>
+                                                            <separator spacing="1px"/>
+                                                        </hlayout>
+                                                    </row>
+                                                    <row>
+                                                        <div>
+                                                            <label style="padding-left:5px;"
+                                                                   value="${idera:getLabel('SQLdm.Labels.sql-cpu-usage')}"/>
+                                                            <label value=":"/>
+                                                        </div>
+                                                        <label value="@bind(instance.overview.statistics.cpuPercentageString)"/>
+                                                    </row>
+                                                    <row>
+                                                        <hlayout>
+                                                            <separator spacing="1px"/>
+                                                        </hlayout>
+                                                    </row>
+                                                    <row>
+                                                        <div>
+                                                            <label style="padding-left:5px;"
+                                                                   value="${idera:getLabel('SQLdm.Labels.sql-memory-usage')}"/>
+                                                            <label value=":"/>
+                                                        </div>
+                                                        <label value="@bind(instance.memoryUsageString)"/>
+                                                    </row>
+                                                    <row>
+                                                        <div>
+                                                            <label style="padding-left:5px;"
+                                                                   value="${idera:getLabel('SQLdm.Labels.sql-disk-io')}"/>
+                                                            <label value=":"/>
+                                                        </div>
+                                                        <label value="@bind(instance.diskIOString)"/>
+                                                    </row>
+                                                </rows>
+                                            </grid>
+                                        </vlayout>
+
+                                        <div id="graphDiv_${instance.product.productId}_${instance.overview.SQLServerId}"
+                                             style="float:left">
+                                            <include
+                                                    id="includeGraph_${instance.product.productId}_${instance.overview.SQLServerId}"
+                                                    style="float:right;"/>
+                                        </div>
+                                    </hlayout>
+                                </groupbox>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </hlayout>
+            <hlayout sclass="heatmapView" visible="@bind(vm.isHeatMapVisible)" width="100%" height="100%">
+                <include src="~./sqldm/com/idera/sqldm/ui/dashboard/heatMapView.zul"/>
+            </hlayout>
+            <script type="text/javascript" src="~./sqldm/com/idera/sqldm/js/instances-list.js"/>
+        </div>
+    </div>
+</zk>

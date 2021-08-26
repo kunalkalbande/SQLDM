@@ -1,0 +1,50 @@
+<zk>
+ <div id="sessionsListView" apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.idera.sqldm.ui.topten.SessionsWidgetComposer')" >
+ <div fulfill="self.onCreate" > <!-- workaround -->
+  <hlayout id = "sessionsListWidgetLayout" >
+			<div style= "height: 148px">
+ 	<grid id="sessionsList" vflex = "1" 
+			  sclass="styled-list"
+			  model="@load(vm.instancesModel)"  
+			  emptyMessage="@bind(vm.displayMessageForGrid)" >
+				<columns sizable = "true">
+			   <!-- <extcolumn label="${idera:getLabel('SQLdm.Labels.topten.instance')}" width = "20%" sort = "auto(LOWER(instanceName))"/> Author Saumyadeep -->
+					<extcolumn label="${idera:getLabel('SQLdm.Labels.topten.instance')}" width = "20%" sort = "auto(LOWER(displayName))"/>
+					<extcolumn label="${idera:getLabel('SQLdm.Labels.sessionID')}"  width = "15%" sort = "auto(sessionId)"   />
+					<extcolumn label="${idera:getLabel('Labels.host')}"  width = "15%" sort = "auto(host)"/>
+					<extcolumn label="${idera:getLabel('Labels.database')}"  width = "20%" sort = "auto(database)"/>
+					<extcolumn label="${idera:getLabel('SQLdm.Labels.sessionCPUUsage')}"  width = "15%" sort = "auto(sessionCPUUsage)" align="right" sclass="numbers-position-header-topten"/>
+				</columns>
+			        <template name="model">
+						 <row style="word-wrap:break-word; cursor:pointer;" value="${each}" onClick = "@command('redirectToInstance', instanceId = each.instanceId, product=each.product)">
+						 	<!-- <label sclass="link" value="@load(each.instanceName)" style="word-wrap:break-word;"/> @author Saumyadeep -->
+						 	<label sclass="link" value="@load(each.displayName)" style="word-wrap:break-word;"/>
+							<label value="@load(each.sessionId)" />
+							<label value="@load(each.host)" />
+							<label value="@load(each.database)" />
+							<label value="@load(each.sessionCPUUsage) @converter('com.idera.sqldm.ui.converter.CommaSeparatedNumberLabelForMVVMConverter')" sclass="numbers-position-topten"  />
+							<zk choose="">
+							    <zk when="${each.severity == 8}">
+									<div class="critical-progress" style="float:right"><progressmeter value="${each.relativeSeverityValue}" width="60px" /></div>
+							    </zk>
+							    <zk when="${each.severity == 4}">    
+									<div class="warning-progress" style="float:right"><progressmeter value="${each.relativeSeverityValue}" width="60px" /></div>
+							    </zk>
+							    <zk when="${each.severity == 2}">    
+									<div class="ok-progress" style="float:right"><progressmeter value="${each.relativeSeverityValue}" width="60px" /></div>
+							    </zk>
+							    <zk when="${each.severity == 1}">
+									<div class="ok-progress" style="float:right"><progressmeter value="${each.relativeSeverityValue}" width="60px" /></div>
+							    </zk>
+							    <zk><!-- default -->
+									<div class="ok-progress"><progressmeter value="${each.relativeSeverityValue}" width="60px" /></div>
+							    </zk>
+							</zk>	
+						</row> 
+			        </template>
+				</grid>
+				</div>
+				</hlayout>
+ </div>
+ </div>               
+</zk>

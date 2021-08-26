@@ -1,0 +1,128 @@
+<?taglib uri="http://sqldm/taglib" prefix="sqldmidera"?>
+<zk>
+	<!--Each panel should be extended by DashboardWidget -->
+	<panel use="com.idera.dashboard.ui.widget.DashboardWidget"
+		apply="com.idera.sqldm_10_3.ui.widgetComposers.AlertsListComposer"
+		sclass="top-x-resource-by-count-panel">
+		<caption sclass="main-caption" hflex="1" vflex="1">
+			<hlayout sclass="z-toolbar"
+				style="padding:0; margin-left:0px" hflex="1" vflex="1">
+				<idera-cwf-dropdownlist id="productListCombobox" readonly="true"
+					width="90px">
+					<template name="model">
+						<comboitem label="${each.name}"></comboitem>
+					</template>
+				</idera-cwf-dropdownlist>
+
+<!-- 				<button id="settingsActionButton"
+					style="margin-right:3px" sclass="settings-button"
+					image="/images/gray-gear-16x16.png" /> -->
+				<popup id="widgetSettings">
+					<hlayout>
+						<div sclass="padding-t-8">
+							<label value="Limit" width="150px" />
+						</div>
+						<div sclass="padding-t-4">
+							<intbox id="limit" width="50px"
+								value="@{setting.Limit}"
+								constraint="no negative,no zero,no empty" />
+						</div>
+						<idera-cwf-button id="save"
+							sclass="white-text-orange-button" label="Save" />
+					</hlayout>
+				</popup>
+			</hlayout>
+		</caption>
+		<panelchildren sclass="panel-main-content">
+			<hbox hflex="1" vflex="1" id="errorContainer" align="center"
+				pack="center">
+				<label sclass="error-message" value="@{message}" />
+			</hbox>
+			<listbox id="alertsListbox"
+				height="300px"
+				sclass="top-x-instances-by-alerts-count"
+				emptyMessage="Data not available">
+				<listhead>
+					<listheader label="!" width="28px" align="center"
+						hflex="1" sort="auto(severity)" />
+					<listheader
+						label="${sqldmidera:getLabel('SQLdm.Labels.alert-date')}"
+						hflex="2" sort="auto(utcUpdated)" width="100px" />
+					<listheader
+						label="${sqldmidera:getLabel('SQLdm.Labels.summary-cc')}"
+						hflex="2" sort="auto(name)" width="100px" />
+					<!-- <listheader
+						label="${sqldmidera:getLabel('SQLdm.Labels.instance')}"
+						sort="auto(instanceName)" hflex="2" width="100px" /> @author Saumyadeep -->
+						<listheader
+						label="${sqldmidera:getLabel('SQLdm.Labels.instance')}"
+						sort="auto(displayName)" hflex="2" width="100px" />	
+					<listheader
+						label="${sqldmidera:getLabel('SQLdm.Labels.serverwaits.category')}"
+						hflex="2" sort="auto(metric.metricCategory)" width="100px" />
+					<!-- <listheader
+						label="${sqldmidera:getLabel('SQLdm.Labels.actions')}" hflex="2" /> -->
+				</listhead>
+
+				<template name="model">
+					<listitem style="background: white;">
+						<listcell>
+							<zk choose="">
+								<zk when="${each.severity == 8}">
+									<image
+										src="${sqldmidera:getImageURLWithoutSize('critical16x16')}" />
+								</zk>
+								<zk when="${each.severity == 4}">
+									<image
+										src="${sqldmidera:getImageURLWithoutSize('warning-16x16')}" />
+								</zk>
+								<zk when="${each.severity == 2}">
+									<image
+										src="${sqldmidera:getImageURLWithoutSize('Information16x16')}" />
+								</zk>
+								<zk when="${each.severity == 1}">
+									<image
+										src="${sqldmidera:getImageURLWithoutSize('OK')}" />
+								</zk>
+								<zk><!-- default -->
+									<image
+										src="${sqldmidera:getImageURLWithoutSize('OK')}" />
+								</zk>
+							</zk>
+						</listcell>
+						<listcell>
+							<label
+								value="${sqldmidera:getLocalShortDateTime(each.utcUpdated)}" />
+						</listcell>
+						<listcell>
+							<a sclass="link"
+								style="word-wrap:break-word;" label="${each.name}"
+								forward="alertsListbox.onClickSelectedAlert(${each})" />
+						</listcell>
+						<listcell>
+
+							<!-- <a sclass="link"
+								label="${each.instanceName}" style="word-wrap:break-word;"								
+								forward="alertsListbox.onClickSelectedAlertInstance(${each})" /> @author Saumyadeep -->
+								<a sclass="link"
+								label="${each.displayName}" style="word-wrap:break-word;"								
+								forward="alertsListbox.onClickSelectedAlertInstance(${each})" />
+
+						</listcell>
+						<listcell>
+							<label value="${each.metric.metricCategory}"
+								sclass="wrap-word" />
+						</listcell>
+						<!-- <listcell>
+							<div>
+							<a sclass="link" label="Show Details"
+							style="text-decoration: underline;float:left;"
+							onClick="@command('onClickSelectedAlert', alert=each)" />
+							</div>
+							</listcell> -->
+					</listitem>
+				</template>
+			</listbox>
+		</panelchildren>
+	</panel>
+</zk>

@@ -1,0 +1,22 @@
+<zk>
+	<div apply="com.idera.sqldm.ui.dashboard.instances.overview.OverViewChartComposer" vflex = "1"  hflex="1">
+	   <vlayout>
+		 <hlayout>
+             <div id="responseTimeChartDiv" sclass="chart-border" style="cursor:pointer;"  hflex="1">
+           		<sqldm-idera-areachart id="responseTime"  width="450px" height="155px" leftMargin="25px" rightMargin="15x" topMargin="15px" bottomMargin="38px" />
+	 		 </div>
+             <div id="cpuActivityChartDiv" sclass="chart-border" style="cursor:pointer;" hflex="1">
+	            <sqldm-idera-areachart id="cpuActivity" width="450px" height="155px" leftMargin="25px" rightMargin="15px" topMargin="15px" bottomMargin="35px" />
+		     </div>
+  	 	</hlayout>
+        <hlayout>
+			<div id="memoryUsageChartDiv" sclass="chart-border" style="cursor:pointer;" hflex="1">
+	           	<sqldm-idera-areachart id="memoryUsage" width="450px" height="160px" leftMargin="25px" rightMargin="15px" topMargin="15px" bottomMargin="38px" />
+	     	</div>
+			<div id="diskBusyChartDiv" sclass="chart-border" style="cursor:pointer;" hflex="1">
+	           	<sqldm-idera-areachart id="diskBusy" width="450px" height="160px" leftMargin="25px" rightMargin="15px" topMargin="15px" bottomMargin="35px" />
+	     	</div>
+  	 	</hlayout>
+	</vlayout>
+	</div>
+</zk>

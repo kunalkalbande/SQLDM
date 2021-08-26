@@ -1,0 +1,7 @@
+<zk>
+		<div vflex="1"
+			apply="com.idera.sqldm.ui.dashboard.TestPing">
+	<label id="pingLbl"/>
+	</div> 
+	Test Ping
+</zk>

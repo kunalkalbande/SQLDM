@@ -1,0 +1,619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DC3D7464-76DF-4212-AE5C-9AF39E856CA6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Idera.SQLdm.Common</RootNamespace>
+    <AssemblyName>Idera.SQLdm.Common</AssemblyName>
+    <SccProvider>
+    </SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Idera.PrescriptiveAnalytics.PrescriptiveAnalyzer.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Idera.PrescriptiveAnalytics.PrescriptiveAnalyzer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="License4Net, Version=6.0.6436.29810, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\libraries\BBSLicense\x64\License4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Schema.ScriptDom, Version=9.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Microsoft.Data.Schema.ScriptDom.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Schema.ScriptDom.Sql, Version=9.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Microsoft.Data.Schema.ScriptDom.Sql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PowerCollections, Version=1.0.2141.24679, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\PowerCollections.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TracerX, Version=1.0.10501.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\TracerX.exe</HintPath>
+    </Reference>
+    <Reference Include="Vim25Service">
+      <HintPath>..\..\..\..\Libraries\Vim25Service.dll</HintPath>
+    </Reference>
+    <Reference Include="Vim25Service.XmlSerializers">
+      <HintPath>..\..\..\..\Libraries\Vim25Service.XmlSerializers.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Analysis\RecommendationCategory.cs" />
+    <Compile Include="Baseline\MetricBaselineMap.cs" />
+    <Compile Include="Configuration\AmazonRDSMetricConfiguration.cs" />
+    <Compile Include="Configuration\AzureSQLMetricConfiguration.cs" />
+    <Compile Include="Data\TextItem.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Events\AzureMonitor\Interfaces\IMonitorManagementConfiguration.cs" />
+    <Compile Include="Events\AzureMonitor\MonitorManagementConfiguration.cs" />
+    <Compile Include="Objects\AWSAccountProp.cs" />
+    <Compile Include="Recommendations\Result.cs" />
+    <Compile Include="ServerVersionExtensions.cs" />
+    <Compile Include="Configuration\AnalysisConfiguration.cs" />
+    <Compile Include="Configuration\DiskSizeDetailsConfiguration.cs" />
+    <Compile Include="Configuration\EstimatedQueryPlanConfiguration.cs" />
+    <Compile Include="Configuration\ScheduledPrescriptiveAnalysisConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\PrescriptiveScriptConfiguration.cs" />
+    <Compile Include="Configuration\ServerConfiguration.cs" />
+    <Compile Include="CWFDataContracts\Alert.cs" />
+    <Compile Include="CWFDataContracts\DashboardWidget.cs" />
+    <Compile Include="CWFDataContracts\GlobalTag.cs" />
+    <Compile Include="CWFDataContracts\Instance.cs" />
+    <Compile Include="CWFDataContracts\InstanceStatus.cs" />
+    <Compile Include="CWFDataContracts\Product.cs" />
+    <Compile Include="CWFDataContracts\User.cs" />
+    <Compile Include="HyperV\HyperVCommonObjects.cs" />
+    <Compile Include="HyperV\HyperVCustomCounter.cs" />
+    <Compile Include="HyperV\HyperVService.cs" />
+    <Compile Include="HyperV\HyperVServiceConnection.cs" />
+    <Compile Include="Launch\Enums.cs" />
+    <Compile Include="Launch\LaunchParameters.cs" />
+    <Compile Include="Notification\Providers\EnablePADestination.cs" />
+    <Compile Include="Notification\Providers\EnablePANotificationProviderInfo.cs" />
+    <Compile Include="Notification\Providers\EnableQWaitsDestination.cs" />
+    <Compile Include="Notification\Providers\EnableQWaitsNotificationProviderInfo.cs" />
+    <Compile Include="Notification\Providers\PowerShellDestination.cs" />
+    <Compile Include="Notification\Providers\PowerShellNotificationProviderInfo.cs" />
+    <Compile Include="Notification\Providers\SCOMAlertDestination.cs" />
+    <Compile Include="Notification\Providers\SCOMAlertNotificationProviderInfo.cs" />
+    <Compile Include="Notification\Providers\SCOMEventDestination.cs" />
+    <Compile Include="Notification\Providers\SCOMEventNotificationProviderInfo.cs" />
+    <Compile Include="Objects\HistoryTimeValue.cs" />
+    <Compile Include="Objects\MonitoredSqlServerMixin.cs" />
+    <Compile Include="Security\Encryption\EncryptionHelper.cs" />
+    <Compile Include="Serialization\XmlObjectSerializer.cs" />
+    <Compile Include="Services\IPrescriptiveAnalysisService.cs" />
+    <Compile Include="Snapshots\AlwaysOn\AlwaysOnDatabase.cs" />
+    <Compile Include="Snapshots\AlwaysOn\AlwaysOnStatistics.cs" />
+    <Compile Include="Snapshots\AlwaysOn\AvailabilityGroup.cs" />
+    <Compile Include="Snapshots\AlwaysOn\AvailabilityReplica.cs" />
+    <Compile Include="Configuration\AlwaysOnAvailabilityGroupsConfiguration.cs" />
+    <Compile Include="Attributes\CustomAttributes.cs" />
+    <Compile Include="Auditing\AuditableAction.cs" />
+    <Compile Include="Auditing\AuditableEntity.cs" />
+    <Compile Include="Auditing\AuditAuxiliar.cs" />
+    <Compile Include="Auditing\AuditingEngine.cs" />
+    <Compile Include="Auditing\AuditTools.cs" />
+    <Compile Include="Auditing\IAuditable.cs" />
+    <Compile Include="Auditing\PropertiesComparer.cs" />
+    <Compile Include="Conditions\AndCondition.cs" />
+    <Compile Include="Conditions\AttributeConditions.cs" />
+    <Compile Include="Conditions\BaseCompositeCondition.cs" />
+    <Compile Include="Conditions\BaseNavigationCondition.cs" />
+    <Compile Include="Conditions\DatabaseConditions.cs" />
+    <Compile Include="Conditions\ICondition.cs" />
+    <Compile Include="Conditions\NotCondition.cs" />
+    <Compile Include="Conditions\OrCondition.cs" />
+    <Compile Include="Conditions\ParameterConditions.cs" />
+    <Compile Include="Conditions\Rule.cs" />
+    <Compile Include="Conditions\ServerConditions.cs" />
+    <Compile Include="Conditions\StateConditions.cs" />
+    <Compile Include="Configuration\ActiveWaitsConfiguration.cs" />
+    <Compile Include="Configuration\ActivityMonitorConfiguration.cs" />
+    <Compile Include="Configuration\AdvancedAlertConfigurationSettings.cs" />
+    <Compile Include="Configuration\AdvancedQueryFilterConfiguration.cs" />
+    <Compile Include="Configuration\AgentJobHistoryConfiguration.cs" />
+    <Compile Include="Configuration\AlertConfiguration.cs" />
+    <Compile Include="Configuration\BackupRestoreHistoryConfiguration.cs" />
+    <Compile Include="Configuration\BaselineConfiguration.cs" />
+    <Compile Include="Configuration\CollectionServiceConfigurationMessage.cs" />
+    <Compile Include="Configuration\CollectionServiceInfo.cs" />
+    <Compile Include="Configuration\CollectionServiceWorkload.cs" />
+    <Compile Include="Configuration\CustomCounterConfiguration.cs" />
+    <Compile Include="Configuration\DatabaseFilesConfiguration.cs" />
+    <Compile Include="Configuration\DatabaseSizeConfiguration.cs" />
+    <Compile Include="Configuration\DiskCollectionSettings.cs" />
+    <Compile Include="Configuration\DistributorDetailsConfiguration.cs" />
+    <Compile Include="Configuration\FileActivityConfiguration.cs" />
+    <Compile Include="Configuration\JobsAndStepsConfiguration.cs" />
+    <Compile Include="Configuration\MirrorMonitoringHistoryConfiguration.cs" />
+    <Compile Include="Configuration\MirrorMonitoringRealtimeConfiguration.cs" />
+    <Compile Include="Configuration\DatabaseProbeConfiguration.cs" />
+    <Compile Include="Configuration\DatabaseSummaryConfiguration.cs" />
+    <Compile Include="Configuration\DistributorQueueConfiguration.cs" />
+    <Compile Include="Configuration\EnumDescriptionConverter.cs" />
+    <Compile Include="Configuration\ErrorLogConfiguration.cs" />
+    <Compile Include="Configuration\FullTextColumnsConfiguration.cs" />
+    <Compile Include="Configuration\FullTextTablesConfiguration.cs" />
+    <Compile Include="Configuration\GroomingConfiguration.cs" />
+    <Compile Include="Configuration\IndexStatisticsConfiguration.cs" />
+    <Compile Include="Configuration\IUserFilter.cs" />
+    <Compile Include="Configuration\AgentJobSummaryConfiguration.cs" />
+    <Compile Include="Configuration\LockDetailsConfiguration.cs" />
+    <Compile Include="Configuration\ManagementServiceConfigurationMessage.cs" />
+    <Compile Include="Configuration\ManagementServiceInfo.cs" />
+    <Compile Include="Configuration\MonitoredServerInfo.cs" />
+    <Compile Include="Configuration\MonitoredServerWorkload.cs" />
+    <Compile Include="Configuration\MonitoredSqlServerConfiguration.cs" />
+    <Compile Include="Configuration\OnDemandConfiguration.cs" />
+    <Compile Include="Configuration\ProcedureCacheConfiguration.cs" />
+    <Compile Include="Configuration\PropertySorter.cs" />
+    <Compile Include="Configuration\PublisherDetailsConfiguration.cs" />
+    <Compile Include="Configuration\PublisherQueueConfiguration.cs" />
+    <Compile Include="Configuration\QueryMonitorConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\AdhocQueryConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\BlockedProcessThresholdConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\FreeProcedureCacheConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\FullTextActionConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\IServerActionConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\JobControlConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\KillSessionConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\MirroringPartnerActionConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\ReconfigurationConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\RecycleAgentLogConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\RecycleLogConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\ReindexConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\ServiceControlConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\SetNumberOfLogsConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\ShutdownSQLServerConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\StartActivityMonitorTraceConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\StartQueryMonitorTraceConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\StopActivityMonitorTraceConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\StopQueryMonitorTraceConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\StopSessionDetailsTraceConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\TableActionBaseConfiguration.cs" />
+    <Compile Include="Configuration\ServerActions\UpdateStatisticsConfiguration.cs" />
+    <Compile Include="Configuration\ServerOverviewConfiguration.cs" />
+    <Compile Include="Configuration\SessionDetailsConfiguration.cs" />
+    <Compile Include="Configuration\SessionsConfiguration.cs" />
+    <Compile Include="Configuration\SessionSummaryConfiguration.cs" />
+    <Compile Include="Configuration\SqlConnectionInfo.cs" />
+    <Compile Include="Configuration\SQLsafeRepositoryConfiguration.cs" />
+    <Compile Include="Configuration\SubscriberDetailsConfiguration.cs" />
+    <Compile Include="Configuration\TableDetailConfiguration.cs" />
+    <Compile Include="Configuration\TableGrowthConfiguration.cs" />
+    <Compile Include="Configuration\TableSummaryConfiguration.cs" />
+    <Compile Include="Configuration\TestWmiConfiguration.cs" />
+    <Compile Include="Configuration\VirtualizationConfiguration.cs" />
+    <Compile Include="Configuration\WaitStatisticsConfiguration.cs" />
+    <Compile Include="Configuration\WmiConfiguration.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Counters\Counter.cs" />
+    <Compile Include="Counters\ICounter.cs" />
+    <Compile Include="Data\BaselineHelpers.cs" />
+    <Compile Include="Data\CachedObjectRepositoryConnectionFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Collections.cs" />
+    <Compile Include="Data\IQueue.cs" />
+    <Compile Include="Data\ObjectWrapper.cs" />
+    <Compile Include="Data\ScheduledRefreshValueAdapter.cs" />
+    <Compile Include="Data\Serialized.cs" />
+    <Compile Include="Data\XmlSerializerFactory.cs" />
+    <Compile Include="Events\BaseEvent.cs" />
+    <Compile Include="Events\IEvent.cs" />
+    <Compile Include="Events\IEventContainer.cs" />
+    <Compile Include="Events\Metric.cs" />
+    <Compile Include="Events\MetricDefinition.cs" />
+    <Compile Include="Events\MetricMetaData.cs" />
+    <Compile Include="Events\StateChangeEvent.cs" />
+    <Compile Include="Events\StateDeviationClearEvent.cs" />
+    <Compile Include="Events\StateDeviationEvent.cs" />
+    <Compile Include="Events\StateDeviationUpdateEvent.cs" />
+    <Compile Include="Events\ThresholdViolationEvent.cs" />
+    <Compile Include="Events\Transition.cs" />
+    <Compile Include="HelpTopics.cs" />
+    <Compile Include="Import\ImportRequest.cs" />
+    <Compile Include="Import\ODBCOption.cs" />
+    <Compile Include="Import\ServerImport.cs" />
+    <Compile Include="LicenseSummary.cs" />
+    <Compile Include="Microsoft\ApplicationBlocks\Data\SQLHelper.cs" />
+    <Compile Include="MonitoredState.cs" />
+    <Compile Include="MonitoredStateFlags.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="Notification\BaseNotificationInfo.cs" />
+    <Compile Include="Notification\INotificationProvider.cs" />
+    <Compile Include="Notification\MetricStateChangeRule.cs" />
+    <Compile Include="Notification\MetricStateRule.cs" />
+    <Compile Include="Notification\NotificationContext.cs" />
+    <Compile Include="Notification\NotificationDestinationInfo.cs" />
+    <Compile Include="Notification\NotificationDestinationProperty.cs" />
+    <Compile Include="Notification\NotificationProviderInfo.cs" />
+    <Compile Include="Notification\NotificationProviderProperty.cs" />
+    <Compile Include="Notification\NotificationRule.cs" />
+    <Compile Include="Notification\ObjectMapper.cs" />
+    <Compile Include="Notification\PropertyDetails.cs" />
+    <Compile Include="Notification\PropertyInfoAttribute.cs" />
+    <Compile Include="Notification\ProviderDisplayInfoAttribute.cs" />
+    <Compile Include="Notification\ProviderInfoAttribute.cs" />
+    <Compile Include="Notification\Providers\EnableQMDestination.cs" />
+    <Compile Include="Notification\Providers\EnableQMNotificationProviderInfo.cs" />
+    <Compile Include="Notification\Providers\EventLogDestination.cs" />
+    <Compile Include="Notification\Providers\EventLogNotificationProviderInfo.cs" />
+    <Compile Include="Notification\Providers\JobDestination.cs" />
+    <Compile Include="Notification\Providers\JobNotificationProviderInfo.cs" />
+    <Compile Include="Notification\Providers\NotificationMessageFormatter.cs" />
+    <Compile Include="Notification\Providers\ProgramDestination.cs" />
+    <Compile Include="Notification\Providers\ProgramNotificationProviderInfo.cs" />
+    <Compile Include="Notification\Providers\PulseDestination.cs" />
+    <Compile Include="Notification\Providers\PulseNotificationProviderInfo.cs" />
+    <Compile Include="Notification\Providers\SnmpDestination.cs" />
+    <Compile Include="Notification\Providers\SnmpNotificationProviderInfo.cs" />
+    <Compile Include="Notification\Providers\SqlDestination.cs" />
+    <Compile Include="Notification\Providers\SqlNotificationProviderInfo.cs" />
+    <Compile Include="Notification\Providers\TaskDestination.cs" />
+    <Compile Include="Notification\Providers\TaskNotificationProviderInfo.cs" />
+    <Compile Include="Notification\Providers\SmtpDestination.cs" />
+    <Compile Include="Notification\Providers\SmtpNotificationProviderInfo.cs" />
+    <Compile Include="Notification\ServerNameRule.cs" />
+    <Compile Include="Notification\ServerTagRule.cs" />
+    <Compile Include="Notification\SmtpAddressHelpers.cs" />
+    <Compile Include="Notification\SnapshotTimeRule.cs" />
+    <Compile Include="ObjectHelper.cs" />
+    <Compile Include="ObjectProperty.cs" />
+    <Compile Include="ObjectPropertyInfoAttribute.cs" />
+    <Compile Include="Objects\ApplicationSecurity.cs" />
+    <Compile Include="Objects\CategoryJobStep.cs" />
+    <Compile Include="Objects\CustomReport.cs" />
+    <Compile Include="Objects\IStatusObject.cs" />
+    <Compile Include="Objects\MaintenanceMode.cs" />
+    <Compile Include="Objects\MirroringSession.cs" />
+    <Compile Include="Objects\MonitoredDatabase.cs" />
+    <Compile Include="Objects\MonitoredObject.cs" />
+    <Compile Include="Objects\MonitoredObjectName.cs" />
+    <Compile Include="Objects\MonitoredServer.cs" />
+    <Compile Include="Objects\MonitoredSqlServer.cs" />
+    <Compile Include="Objects\MonitoredTable.cs" />
+    <Compile Include="Objects\ReplicationSession.cs" />
+    <Compile Include="Objects\ServerPreferredMirrorConfig.cs" />
+    <Compile Include="Objects\Tag.cs" />
+    <Compile Include="Objects\Task.cs" />
+    <Compile Include="Objects\WaitTypeInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Security\Encryption\Cipher.cs" />
+    <Compile Include="Serialization\IXmlWritable.cs" />
+    <Compile Include="ServerVersion.cs" />
+    <Compile Include="Services\AsyncResult.cs" />
+    <Compile Include="Services\CommonAssemblyInfo.cs" />
+    <Compile Include="Services\IBaselineAnalysis.cs" />
+    <Compile Include="Services\ICollectionService.cs" />
+    <Compile Include="Services\ICollectionServiceConfiguration.cs" />
+    <Compile Include="Services\ICommonAssemblyInfo.cs" />
+    <Compile Include="Services\IManagementService.cs" />
+    <Compile Include="Services\IManagementService2.cs" />
+    <Compile Include="Services\IManagementServiceConfiguration.cs" />
+    <Compile Include="Services\IOnDemandClient.cs" />
+    <Compile Include="Services\IOnDemandServer.cs" />
+    <Compile Include="Services\IPredictiveAnalytics.cs" />
+    <Compile Include="Services\ISnapshotSink.cs" />
+    <Compile Include="Services\LicenseKeyOperation.cs" />
+    <Compile Include="Services\NetworkMonitor.cs" />
+    <Compile Include="Services\ServiceCallProxy.cs" />
+    <Compile Include="Services\MethodResult.cs" />
+    <Compile Include="Services\ServiceException.cs" />
+    <Compile Include="Services\RemotingHelper.cs" />
+    <Compile Include="Services\Result.cs" />
+    <Compile Include="Services\ScheduledCollectionDataMessage.cs" />
+    <Compile Include="Services\SQLdmServiceStatus.cs" />
+    <Compile Include="Services\TestSqlConnectionResult.cs" />
+    <Compile Include="Services\WmiException.cs" />
+    <Compile Include="Snapshots\ActiveWaitsSnapshot.cs" />
+    <Compile Include="Snapshots\ActivityMonitorSnapshot.cs" />
+    <Compile Include="Snapshots\ActivityMonitorStatement.cs" />
+    <Compile Include="Snapshots\AdhocQuerySnapshot.cs" />
+    <Compile Include="Snapshots\AgentJob.cs" />
+    <Compile Include="Snapshots\AgentJobCompletion.cs" />
+    <Compile Include="Snapshots\AgentJobExecution.cs" />
+    <Compile Include="Snapshots\AgentJobFailure.cs" />
+    <Compile Include="Snapshots\AgentJobHistory.cs" />
+    <Compile Include="Snapshots\AgentJobHistorySnapshot.cs" />
+    <Compile Include="Snapshots\AgentJobRunning.cs" />
+    <Compile Include="Snapshots\AgentJobStep.cs" />
+    <Compile Include="Snapshots\AlertableSnapshot.cs" />
+    <Compile Include="Snapshots\AlwaysOnAvailabilityGroupsSnapshot.cs" />
+    <Compile Include="Snapshots\BackupRestoreHistory.cs" />
+    <Compile Include="Snapshots\BlockedSessionInfo.cs" />
+    <Compile Include="Snapshots\BlockingSession.cs" />
+    <Compile Include="Snapshots\BlockingSessionInfo.cs" />
+    <Compile Include="Snapshots\BombedJobs.cs" />
+    <Compile Include="Snapshots\BufferPoolExtIOSnapshot.cs" />
+    <Compile Include="Snapshots\AzureDbDetail.cs" />
+    <Compile Include="Snapshots\Cloud\CloudMetricList.cs" />
+    <Compile Include="Snapshots\ColumnStoreIndexSnapshot.cs" />
+    <Compile Include="Snapshots\CompletedJobs.cs" />
+    <Compile Include="Snapshots\ConfigurationSnapshot.cs" />
+    <Compile Include="Snapshots\BackupAndRecoverySnapshot.cs" />
+    <Compile Include="Snapshots\AdhocCachedPlanBytesSnapshot.cs" />
+    <Compile Include="Snapshots\DependentObjectSnapshot.cs" />
+    <Compile Include="Snapshots\FilteredColumnNotInKeyOfFilteredIndexSnapshot.cs" />
+    <Compile Include="Snapshots\HashIndexSnapshot.cs" />
+    <Compile Include="Snapshots\HighCPUTimeProcedureSnapshot.cs" />
+    <Compile Include="Snapshots\LargeTableStatsSnapshot.cs" />
+    <Compile Include="Snapshots\NonIncrementalColumnStatSnapshot.cs" />
+    <Compile Include="Snapshots\PermissionDetails.cs" />
+    <Compile Include="Snapshots\ProbePermissionHelpers.cs" />
+    <Compile Include="Snapshots\ProbePermissionsResourceMessage.cs" />
+    <Compile Include="ProbePermissionsResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProbePermissionsResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Snapshots\QueryAnalyzerSnapshot.cs" />
+    <Compile Include="Snapshots\QueryPlanSnapshot.cs" />
+    <Compile Include="Snapshots\PrescriptiveOptimizationStatusSnapshot.cs" />
+    <Compile Include="Snapshots\QueryStoreSnapshot.cs" />
+    <Compile Include="Snapshots\RarelyUsedIndexOnInMemoryTableSnapshot.cs" />
+    <Compile Include="Snapshots\WmiTCPv6Snapshot.cs" />
+    <Compile Include="Snapshots\WmiTCPv4Snapshot.cs" />
+    <Compile Include="Snapshots\WmiServiceSnapshot.cs" />
+    <Compile Include="Snapshots\WmiPerfDiskPhysicalDiskSnapshot.cs" />
+    <Compile Include="Snapshots\WmiPerfDiskLogicalDiskSnapshot.cs" />
+    <Compile Include="Snapshots\WmiPhysicalMemorySnapshot.cs" />
+    <Compile Include="Snapshots\WmiPageFileSnapshot.cs" />
+    <Compile Include="Snapshots\WmiNetworkInterfaceSnapshot.cs" />
+    <Compile Include="Snapshots\WmiPerfOSProcessorSnapshot.cs" />
+    <Compile Include="Snapshots\WmiProcessorSnapshot.cs" />
+    <Compile Include="Snapshots\WmiComputerSystemSnapshot.cs" />
+    <Compile Include="Snapshots\WmiEncryptableVolumeSnapshot.cs" />
+    <Compile Include="Snapshots\WmiNetworkRedirectorSnapshot.cs" />
+    <Compile Include="Snapshots\WmiPerfOSMemorySnapshot.cs" />
+    <Compile Include="Snapshots\WmiPerfOSSystemSnapshot.cs" />
+    <Compile Include="Snapshots\WmiTCPSnapshot.cs" />
+    <Compile Include="Snapshots\WmiProcessSnapshot.cs" />
+    <Compile Include="Snapshots\WmiVolumeSnapshot.cs" />
+    <Compile Include="Snapshots\DatabaseRankingSnapshot.cs" />
+    <Compile Include="Snapshots\DatabaseNamesSnapshot.cs" />
+    <Compile Include="Snapshots\PrescriptiveAnalyticsSnapshot.cs" />
+    <Compile Include="Snapshots\ServerConfigurationSnapshot.cs" />
+    <Compile Include="Snapshots\WaitingBatchesSnapshot.cs" />
+    <Compile Include="Snapshots\LockedPageKBSnapshot.cs" />
+    <Compile Include="Snapshots\SampleServerResourcesSnapshot.cs" />
+    <Compile Include="Snapshots\QueryPlanEstRowsSnapshot.cs" />
+    <Compile Include="Snapshots\NUMANodeCountersSnapshot.cs" />
+    <Compile Include="Snapshots\DatabaseFileInfoSnapshot.cs" />
+    <Compile Include="Snapshots\DBSecuritySnapshot.cs" />
+    <Compile Include="Snapshots\SQLModuleOptionsSnapshot.cs" />
+    <Compile Include="Snapshots\OutOfDateStatsSnapshot.cs" />
+    <Compile Include="Snapshots\WorstFillFactorIndexesSnapshot.cs" />
+    <Compile Include="Snapshots\HighIndexUpdatesSnapshot.cs" />
+    <Compile Include="Snapshots\FragmentedIndexesSnapshot.cs" />
+    <Compile Include="Snapshots\DisabledIndexesSnapshot.cs" />
+    <Compile Include="Snapshots\IndexContentionSnapshot.cs" />
+    <Compile Include="Snapshots\MachineNameSnapshot.cs" />
+    <Compile Include="Snapshots\DiskSizeDetails.cs" />
+    <Compile Include="Snapshots\DiskDriveStatistics.cs" />
+    <Compile Include="Snapshots\DatabaseFileStatistics.cs" />
+    <Compile Include="Snapshots\CpuTime.cs" />
+    <Compile Include="Snapshots\CustomCounterCollectionSnapshot.cs" />
+    <Compile Include="Snapshots\CustomCounterSnapshot.cs" />
+    <Compile Include="Snapshots\Database.cs" />
+    <Compile Include="Snapshots\DatabaseConfigurationSnapshot.cs" />
+    <Compile Include="Snapshots\DatabaseDetail.cs" />
+    <Compile Include="Snapshots\DatabaseFile.cs" />
+    <Compile Include="Snapshots\DatabaseFileBase.cs" />
+    <Compile Include="Snapshots\DatabaseFileGroup.cs" />
+    <Compile Include="Snapshots\DatabaseFilesSnapshot.cs" />
+    <Compile Include="Snapshots\DatabaseSizeSnapshot.cs" />
+    <Compile Include="Snapshots\DeadlockInfo.cs" />
+    <Compile Include="Snapshots\FileActivitySnapshot.cs" />
+    <Compile Include="Snapshots\JobsAndStepsSnapshot.cs" />
+    <Compile Include="Snapshots\MirroringMetrics.cs" />
+    <Compile Include="Snapshots\DistributorDetails.cs" />
+    <Compile Include="Snapshots\MirrorMonitoringHistorySnapshot.cs" />
+    <Compile Include="Snapshots\MirrorMonitoringRealtimeSnapshot.cs" />
+    <Compile Include="Snapshots\DatabaseOptions.cs" />
+    <Compile Include="Snapshots\DatabaseReplicationCategories.cs" />
+    <Compile Include="Snapshots\DatabaseReplicationStatistics.cs" />
+    <Compile Include="Snapshots\DatabaseSize.cs" />
+    <Compile Include="Snapshots\DatabaseStatistics.cs" />
+    <Compile Include="Snapshots\DatabaseSummary.cs" />
+    <Compile Include="Snapshots\DiskDrive.cs" />
+    <Compile Include="Snapshots\DistributorQueue.cs" />
+    <Compile Include="Snapshots\Enumerations.cs" />
+    <Compile Include="Snapshots\ErrorLog.cs" />
+    <Compile Include="Snapshots\FileSize.cs" />
+    <Compile Include="Snapshots\FullTextCatalogs.cs" />
+    <Compile Include="Snapshots\FullTextColumns.cs" />
+    <Compile Include="Snapshots\FullTextTables.cs" />
+    <Compile Include="Snapshots\Index.cs" />
+    <Compile Include="Snapshots\IndexColumn.cs" />
+    <Compile Include="Snapshots\IndexDataDistribution.cs" />
+    <Compile Include="Snapshots\IndexStatistics.cs" />
+    <Compile Include="Snapshots\AgentJobSummary.cs" />
+    <Compile Include="Snapshots\Lock.cs" />
+    <Compile Include="Snapshots\LockCounter.cs" />
+    <Compile Include="Snapshots\LockDetails.cs" />
+    <Compile Include="Snapshots\LockStatistics.cs" />
+    <Compile Include="Snapshots\LogFile.cs" />
+    <Compile Include="Snapshots\LogFileList.cs" />
+    <Compile Include="Snapshots\Memory.cs" />
+    <Compile Include="Snapshots\MirrorMonitoringDatabaseDetail.cs" />
+    <Compile Include="Snapshots\OpenTransaction.cs" />
+    <Compile Include="Snapshots\OSMetrics.cs" />
+    <Compile Include="Snapshots\OverlappingIndexesSnapshot.cs" />
+    <Compile Include="Snapshots\PinnedTable.cs" />
+    <Compile Include="Snapshots\ProcedureCache.cs" />
+    <Compile Include="Snapshots\ProcedureCacheObjectType.cs" />
+    <Compile Include="Snapshots\PublisherDetails.cs" />
+    <Compile Include="Snapshots\ReindexSnapshot.cs" />
+    <Compile Include="Snapshots\PublisherQueue.cs" />
+    <Compile Include="Snapshots\ReplicationSummary.cs" />
+    <Compile Include="Snapshots\ScheduledRefreshAlerts.cs" />
+    <Compile Include="Snapshots\ServerActionSnapshot.cs" />
+    <Compile Include="Snapshots\ServerSummarySnapshots.cs" />
+    <Compile Include="Snapshots\Service.cs" />
+    <Compile Include="Snapshots\ServicesSnapshot.cs" />
+    <Compile Include="Snapshots\SessionDetail.cs">
+    </Compile>
+    <Compile Include="Snapshots\ScheduledRefresh.cs" />
+    <Compile Include="Snapshots\ServerConfigurationOptions.cs" />
+    <Compile Include="Snapshots\ServerDatabaseSummary.cs" />
+    <Compile Include="Snapshots\ServerLoginConfiguration.cs" />
+    <Compile Include="Snapshots\ServerOverview.cs" />
+    <Compile Include="Snapshots\ServerStatistics.cs" />
+    <Compile Include="Snapshots\ServerSummary.cs" />
+    <Compile Include="Snapshots\ServerSystemProcesses.cs" />
+    <Compile Include="Snapshots\Session.cs" />
+    <Compile Include="Snapshots\SessionDetailSnapshot.cs" />
+    <Compile Include="Snapshots\SessionOptions.cs" />
+    <Compile Include="Snapshots\SessionSnapshot.cs" />
+    <Compile Include="Snapshots\SessionSummary.cs" />
+    <Compile Include="Snapshots\Snapshot.cs" />
+    <Compile Include="Snapshots\SnapshotList.cs" />
+    <Compile Include="Snapshots\State\ScheduledRefreshState.cs" />
+    <Compile Include="Snapshots\State\ServerSummaryState.cs" />
+    <Compile Include="Snapshots\State\SnapshotState.cs" />
+    <Compile Include="Snapshots\SubscriberDetails.cs" />
+    <Compile Include="Snapshots\Table.cs" />
+    <Compile Include="Snapshots\TableDependency.cs" />
+    <Compile Include="Snapshots\TableDetail.cs" />
+    <Compile Include="Snapshots\TableFragmentationSnapshot.cs" />
+    <Compile Include="Snapshots\TableGrowthSnapshot.cs" />
+    <Compile Include="Snapshots\TableReorganization.cs" />
+    <Compile Include="Snapshots\TableSize.cs" />
+    <Compile Include="Snapshots\QueryMonitorStatement.cs" />
+    <Compile Include="Snapshots\TableSummary.cs" />
+    <Compile Include="Snapshots\TempdbStatistics.cs" />
+    <Compile Include="Snapshots\TraceStatement.cs" />
+    <Compile Include="Snapshots\Wait.cs" />
+    <Compile Include="Snapshots\WaitStatisticsSummary.cs" />
+    <Compile Include="Snapshots\WaitStatisticsSnapshot.cs" />
+    <Compile Include="Snapshots\SqlParsingHelper.cs" />
+    <Compile Include="Snapshots\WmiConfigurationTestSnapshot.cs" />
+    <Compile Include="Status\MonitoredObjectStateGraph.cs" />
+    <Compile Include="Status\OutstandingDatabaseEventEntry.cs" />
+    <Compile Include="Status\OutstandingEventEntry.cs" />
+    <Compile Include="Status\OutstandingServerEventEntry.cs" />
+    <Compile Include="Status\OutstandingTableEventEntry.cs" />
+    <Compile Include="Configuration\TableFragmentationConfiguration.cs" />
+    <Compile Include="System\Runtime\CompilerServices\CrossThreadHelper.cs" />
+    <Compile Include="Thresholds\BaselineMetricMean.cs" />
+    <Compile Include="Thresholds\BaselineMetricMeanCollection.cs" />
+    <Compile Include="Thresholds\BaseThreshold.cs" />
+    <Compile Include="Thresholds\GreaterThanThreshold.cs" />
+    <Compile Include="Thresholds\IThreshold.cs" />
+    <Compile Include="Thresholds\MetricThresholdEntry.cs" />
+    <Compile Include="Thresholds\ServiceStateThreshold.cs" />
+    <Compile Include="Thresholds\StateThreshold.cs" />
+    <Compile Include="Thresholds\Threshold.cs" />
+    <Compile Include="Helpers\MathHelper.cs" />
+    <Compile Include="Helpers\GenericHelpers.cs" />
+    <Compile Include="Helpers\RegistryHelper.cs" />
+    <Compile Include="TimeZone\SystemTime.cs" />
+    <Compile Include="TimeZone\TimeZoneID.cs" />
+    <Compile Include="TimeZone\TimeZoneInfo.cs" />
+    <Compile Include="TimeZone\TimeZoneStruct.cs" />
+    <Compile Include="TimeZone\TZI.cs" />
+    <Compile Include="VMware\ServiceConnection.cs" />
+    <Compile Include="VMware\ServiceUtil.cs" />
+    <Compile Include="VMware\vmCommonObjects.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Notification\Notification.cd" />
+    <None Include="Objects\_Objects.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProbePermissionsResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProbePermissionsResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Caching\" />
+    <Folder Include="Logging\" />
+    <Folder Include="Security\WebClient\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Messages\Idera.SQLdm.Common.Messages.vcxproj">
+      <Project>{FAC83EB7-75C5-4B92-A9F5-3FC8D24FCEC8}</Project>
+      <Name>Idera.SQLdm.Common.Messages</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Idera.SQLdm.PrescriptiveAnalyzer.Common.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

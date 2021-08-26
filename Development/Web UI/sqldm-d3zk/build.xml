@@ -1,0 +1,68 @@
+<!DOCTYPE project>
+<project name="idera-d3zk.sqldm" default="jar" basedir=".">
+
+	<property name="base.dir" value="." />
+
+	<property name="build.plugins.dir" value="${basedir}/../build-plugins" />
+
+	<!-- Global properties for this build -->
+	<property name="src.java.dir" value="${base.dir}/src" />
+	<property name="build.dir" value="${base.dir}/bin" />
+	<property name="lib.dir" value="${base.dir}/../zk-web/lib" />
+
+	<property name="jar.file.name" value="${ant.project.name}.jar" />
+
+	<patternset id="meta.files">
+		<exclude name="**/*.java" />
+	</patternset>
+
+	<patternset id="class.files">
+		<include name="**/*.class" />
+	</patternset>
+
+	<patternset id="lib.files">
+		<include name="**/*.jar" />
+	</patternset>
+
+	<!-- Classpath declaration -->
+	<path id="project.classpath">
+		<fileset dir="${lib.dir}">
+			<patternset refid="lib.files" />
+		</fileset>
+		<pathelement location="${build.dir}" />
+	</path>
+
+	<!-- Clean up -->
+	<target name="clean" description="Clean the project">
+		<delete dir="${build.dir}" />
+		<mkdir dir="${build.dir}" />
+
+		<delete dir="${dist.dir}" />
+		<mkdir dir="${dist.dir}" />
+
+		<delete file="${base.dir}/${jar.file.name}" />
+	</target>
+
+	<!-- Compile Java src -->
+	<target name="compile" depends="copymetafiles">
+		<mkdir dir="${build.dir}" />
+		<javac srcdir="${src.java.dir}" destdir="${build.dir}" nowarn="on">
+			<classpath refid="project.classpath" />
+		</javac>
+	</target>
+
+	<!-- Copy metadata to build classpath -->
+	<target name="copymetafiles">
+		<copy todir="${build.dir}">
+			<fileset dir="${src.java.dir}">
+				<patternset refid="meta.files" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="jar" depends="clean,compile, copymetafiles">
+		<!-- Create JAR archive -->
+		<jar destfile="${base.dir}/${jar.file.name}" basedir="${build.dir}" />
+	</target>
+
+</project>

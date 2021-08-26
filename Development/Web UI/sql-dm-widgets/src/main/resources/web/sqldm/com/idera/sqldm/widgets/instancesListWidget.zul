@@ -1,0 +1,136 @@
+<zk>
+	<!--Each panel should be extended by DashboardWidget -->
+	<panel use="com.idera.dashboard.ui.widget.DashboardWidget"
+		apply="com.idera.sqldm_10_3.ui.widgetComposers.InstancesListComposer"
+		sclass="top-x-resource-by-count-panel">
+		<caption sclass="main-caption" hflex="1" vflex="1">
+			<hlayout sclass="z-toolbar"
+				style="padding:0; margin-left:0px" hflex="1" vflex="1">
+				<idera-cwf-dropdownlist id="productListCombobox" readonly="true"
+					width="90px">
+					<template name="model">
+						<comboitem label="${each.name}"></comboitem>
+					</template>
+				</idera-cwf-dropdownlist>
+
+<!-- 				<button id="settingsActionButton"
+					style="margin-right:3px" sclass="settings-button"
+					image="/images/gray-gear-16x16.png" />
+ -->				<popup id="widgetSettings">
+					<hlayout>
+						<div sclass="padding-t-8">
+							<label value="Limit" width="150px" />
+						</div>
+						<div sclass="padding-t-4">
+							<intbox id="limit" width="50px"
+								value="@{setting.Limit}"
+								constraint="no negative,no zero,no empty" />
+						</div>
+						<idera-cwf-button id="save"
+							sclass="white-text-orange-button" label="Save" />
+					</hlayout>
+				</popup>
+			</hlayout>
+		</caption>
+		<panelchildren sclass="panel-main-content">
+			<hbox hflex="1" vflex="1" id="errorContainer" align="center"
+				pack="center">
+				<label sclass="error-message" value="@{message}" />
+			</hbox>
+			<listbox id="instancesListbox"
+				height="300px"
+				sclass="top-x-instances-by-alerts-count"
+				emptyMessage="Data not available">
+				<listhead>
+					<listheader label="!" width="28px" align="center"
+						sort="auto(serverStatus.maxSeverity)" />
+					<!-- <listheader
+						label="${idera:getLabel('SQLdm.Labels.instance')}"
+						sort="auto(LOWER(overview.instanceName))" width="100px"
+						align="center" /> @author Saumyadeep -->
+					<listheader
+						label="${idera:getLabel('SQLdm.Labels.instance')}"
+						sort="auto(LOWER(overview.displayName))" width="100px"
+						align="center" />
+					<listheader
+						label="${idera:getLabel('SQLdm.Labels.instance-dashboard-version')}"
+						sort="auto(overview.productVersion)" width="100px" align="center" />
+					<listheader
+						label="${idera:getLabel('SQLdm.Labels.instance-dashboard-status')}"
+						sort="auto(overview.sqlServiceStatus) " width="100px"
+						align="center" />
+					<listheader
+						label="${idera:getLabel('SQLdm.Labels.instance-agent-status')}"
+						sort="auto(overview.agentServiceStatus)" width="100px"
+						align="center" />
+					<listheader
+						label="${idera:getLabel('SQLdm.Labels.instance-available-menory')}"
+						width="170px" sortAscending="@bind(vm.availMemAscComparator)"
+						sortDescending="@bind(vm.availMemDescComparator)" align="center" />
+					<listheader
+						label="${idera:getLabel('SQLdm.Labels.instance-blocked-sessions')}"
+						width="130px"
+						sortAscending="@bind(vm.blockedProcessAscComparator)"
+						sortDescending="@bind(vm.blockedProcessDescComparator)"
+						align="center" />
+					<listheader
+						label="${idera:getLabel('SQLdm.Labels.instance-cpu-activity')}"
+						width="100px" sortAscending="@bind(vm.cpuActivityAscComparator)"
+						sortDescending="@bind(vm.cpuActivityDescComparator)"
+						align="center" />
+				</listhead>
+
+
+				<template name="model">
+					<listitem style="background: white;">
+						<listcell>
+							<image
+								src="${sqldmidera:getImageURL('Server'.concat(each.serverStatus.severityString), 'small')}" />
+						</listcell>
+						<!-- href="${sqldmidera:buildPathRelativeToCurrentProduct('singleInstance')}/${instance.overview.SQLServerId}" -->
+						<listcell>
+							<!-- <a sclass="wrap-word"
+								tooltiptext="${each.overview.instanceName}"
+								label="${each.overview.instanceName}"
+								forward="instancesListbox.onClickSelectedInstance(${each})" /> @author Saumyadeep -->
+							<a sclass="wrap-word"
+								tooltiptext="${each.overview.instanceName}"
+								label="${each.overview.displayName}"
+								forward="instancesListbox.onClickSelectedInstance(${each})" />
+						</listcell>
+						<listcell>
+							<label
+								value="${each.overview.productVersion}"
+								style="word-wrap:break-word;" />
+						</listcell>
+						<listcell>
+							<label
+								value="${each.overview.sqlServiceStatus}"
+								style="word-wrap:break-word;" />
+						</listcell>
+						<listcell>
+							<label
+								value="${each.overview.agentServiceStatus}"
+								style="word-wrap:break-word;" />
+						</listcell>
+						<listcell>
+							<label
+								value="${each.overview.osMetricsStatistics.availableMemoryInMB}"
+								sclass="numbers-position" />
+						</listcell>
+						<listcell>
+							<label
+								value="${each.overview.systemProcesses.blockedProcesses}"
+								sclass="numbers-position" />
+						</listcell>
+						<listcell>
+							<label
+								value="${each.overview.statistics.cpuPercentage}"
+								sclass="numbers-position" />
+						</listcell>
+					</listitem>
+				</template>
+			</listbox>
+		</panelchildren>
+	</panel>
+</zk>

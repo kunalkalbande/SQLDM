@@ -1,0 +1,4 @@
+<package name="com.idera.server.web.component.zul.grid" language="xul/html" depends="zul.grid,zul.sel">
+	<widget name="ExtColumn"/>
+	<widget name="ExtListheader"/>		
+</package>

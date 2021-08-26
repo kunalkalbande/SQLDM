@@ -1,0 +1,203 @@
+<zk>
+	<div apply="com.idera.sqldm.ui.dashboard.instances.overview.SingleInstanceOverviewCustomizationComposer">
+		<vlayout>
+			<div>
+				<hlayout
+					sclass="filtering-layout-style light-panel-color-shade padding-lr-204" >
+
+					<div id="overviewCustomization"
+						sclass="chart-border" style="overflow:auto" hflex="1" draggable="false"> <!-- height:1200px;  -->
+						<vlayout>
+							<space height="5px" />
+							<hlayout>
+								<label value="Overview Customization"
+									sclass="padding-l-12 padding-t-8"
+									style="font-weight:bold;float:left">
+								</label>
+								<div id="filtersDiv"
+									style="margin-left:680px">
+
+									<!--<space spacing="680px"></space>-->
+
+									<idera-cwf-button
+										id="manageGraphButton" label="Manage Graphs"
+										style="text-transform: uppercase;" sclass="smBtn"
+										popup="manageGraphPopup,position=end_before"> <!-- end_before / overlap-->
+									</idera-cwf-button>
+									<popup id="manageGraphPopup"
+										sclass="black-shade" zclass="change-this-to-a-valid-class"
+										width="260px" > <!-- height="500px" -->
+										<hlayout
+											sclass="black-shade;padding-l-12 padding-t-12">
+											<grid sclass="black-shade"
+												id="categoryList" >
+												<columns>
+													<column
+														label="Order" style="color:black"
+														sclass="padding-lr-12"
+														width="55px">
+													</column>
+													<column
+														label="Visible" style="color:black" width="55px"/>
+													<column
+														label="Graph Category" style="color:black"
+														sclass="padding-lr-12" />
+												</columns>
+												<template
+													name="model">
+													<row>
+														<idera-cwf-textbox
+															
+															style="padding-left:4px"
+															value="${each.tempPosition}"
+															constraint="@bind(orderConstraint)" width="35px"
+															maxlength="2" xmlns:w="client">
+														<attribute w:name="doKeyDown_">
+								<![CDATA[ function (evt) { var keyCode =
+								event.keyCode; if( keyCode == 8 // backspace 
+								|| keyCode == 9 // tab 
+								|| keyCode == 13 // enter 
+								|| keyCode == 16 // enter
+								|| (keyCode >= 35 && keyCode <= 40) //home, end, arrows 
+								|| keyCode == 46 //Delete
+								|| (!evt.shiftKey && keyCode == 190)
+								&& (keyCode != 222)
+								) { 
+									this.$doKeyDown_(evt); 
+									} else if (!evt.shiftKey && // only do withoutshift key 
+											(keyCode >= 48 && keyCode <=
+								57) || (keyCode >= 96 && keyCode <= 105) 
+								 ) // number range
+									{ 
+								this.$doKeyDown_(evt); }
+								else {
+								evt.stop(); return; } 
+								system.out.print("pressed key code:"+keyCode);
+								}
+								
+								]]>
+							</attribute>
+														</idera-cwf-textbox>
+														<idera-cwf-checkbox
+														
+															style="color: white" sclass="padding-l-24"
+															checked="${each.visible}" />
+														<label
+															value="${each.category.categoryName}"
+															sclass="padding-l-24" style="color: black" />
+													</row>
+												</template>
+
+											</grid>
+											<!-- <listhead>
+												<listheader
+												label="Order" style="color:white" sclass="padding-lr-12" />
+												<listheader
+												label="Visible" style="color:white" />
+												<listheader
+												label="Graph Category" style="color:white"
+												sclass="padding-lr-12" />
+												</listhead>
+												<template name="model" var="node">
+												<listitem>
+												<listcell>
+												<idera-cwf-textbox
+												style="padding-left:4px"
+												value="@load(node.position)"
+												constraint="@bind(orderConstraint)" width="35px"
+												maxlength="2"> @save(node.tempPosition)
+												</idera-cwf-textbox>
+												</listcell>
+												<listcell>
+												<idera-cwf-checkbox 
+												style="color: white" sclass="padding-l-24"
+												checked="@load(node.visible) @save(node.tempVisible)" />
+												</listcell>
+												<listcell><label value="${each.category.categoryName}" sclass="padding-l-24" style="color: white"></label>
+												<label
+												value="@load(node.category.categoryName)"
+												sclass="padding-l-24" style="color: white" />
+												</listcell>
+												</listitem>
+												</template>
+												</listbox> -->
+										</hlayout>
+										<!-- <hlayout
+											sclass="padding-l-12 padding-t-12">
+											<label value="Order"
+											style="color:white" sclass="padding-lr-12" />
+											<label value="Visible"
+											style="color:white" />
+											<label
+											value="Graph Category" style="color:white"
+											sclass="padding-lr-12" />
+											</hlayout>
+											<vlayout
+											id="categoryOptionsLayout" vflex="min"
+											children="graphCategoryOption"
+											sclass="padding-l-12 padding-t-12"
+											style="margin-left:20px"> children="@bind(graphCategoryOptions)"
+											<template name="children"
+											var="node">
+											<hlayout
+											valign="middle">
+											<idera-cwf-textbox id="popupPosition"
+											style="padding-left:4px"
+											value="@load(node.position) @save(node.tempPosition)"
+											constraint="@bind(orderConstraint)" width="35px"
+											maxlength="2">
+											</idera-cwf-textbox>
+											<idera-cwf-checkbox id="popupVisCB"
+											style="color: white" sclass="padding-l-24"
+											checked="@load(node.visible) @save(node.tempVisible)" />
+											<label
+											id="popupCatName"
+											value="@load(node.category.categoryName)"
+											sclass="padding-l-24" style="color: white" />
+											</hlayout>
+											</template>
+											</vlayout> -->
+
+
+										<hlayout
+											sclass="padding-l-24 padding-t-12">
+											<idera-cwf-button
+												id="applyButton" label="Save"
+												sclass="white-text-orange-button">
+											</idera-cwf-button>
+											<idera-cwf-button
+												id="cancelButton" label="Cancel"
+												sclass="white-text-orange-button">
+											</idera-cwf-button>
+										</hlayout>
+									</popup>
+								</div>
+							</hlayout>
+							<div id="customChartsContainerDiv"
+								 vflex="1" hflex="1"> <!-- sclass="chart-border padding-b-12" -->
+								<vlayout>
+									<space height="5px" />
+									<!-- <label value="Alert Categories"
+										sclass="padding-l-12 padding-t-8" style="font-weight:bold;">
+										</label> -->
+									<vlayout>
+									<columnchooser id="columnchooser"
+									template="~./sqldm/com/idera/sqldm/ui/dashboard/instances/overview/customFileActivityColumnChooser.zul"
+									></columnchooser>
+										<div id="customChartsVLayout">
+											<!-- <label
+												value="Alert Categories" sclass="padding-l-12 padding-t-8"
+												style="font-weight:bold;" /> -->
+										</div>
+									</vlayout>
+								</vlayout>
+							</div>
+
+						</vlayout>
+					</div>
+				</hlayout>
+			</div>
+
+		</vlayout>
+	</div>
+</zk>

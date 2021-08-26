@@ -1,0 +1,24 @@
+<zk>
+	<div id="dashBoardListView" apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.idera.sqldm.ui.customDashboard.dashboardListSideBarComposer')" 
+		vflex = "min" style="min-height:780px;">
+		<grid sclass="idera-invisible-grid" model="@load(vm.dashboardListModel)"
+			style="margin-bottom: 30px;"
+			emptyMessage="zero dashboards added">
+			<columns>
+				<column align="left" style="word-wrap:break-word;"/>
+			</columns>
+			<rows>
+				<template name="model">
+					<row>
+						<idera-cwf-hyperlink label="@load(each.customDashboardName)" sclass="link dashboardNmae-link"
+							onClick = "@command('displaySelectedDashboard', dashBoardname = each)"/>
+					</row>
+				</template>
+			</rows>
+		</grid>
+		<a sclass="link dashboardNmae-link" style="text-decoration:underline;font-size:14px;"
+				label="${sqldmidera:getLabel('SQLdm.Labels.add-a-dashboard')}"
+				onClick = "@command('createDashboard')" />
+		<space height="15px" />
+	</div>
+</zk>

@@ -1,0 +1,579 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActiveWaits" xml:space="preserve">
+    <value>It It requires ALTER ANY EVENT SESSION or ALTER TRACE, and TempDb Db_Owner or Tempdb Db_DataWriter permission</value>
+    <comment>ActiveWaits2012.sql</comment>
+  </data>
+  <data name="ActiveWaitsEx" xml:space="preserve">
+    <value>It It requires ALTER ANY EVENT SESSION and TempDb Db_Owner or Tempdb Db_DataWriter permission .</value>
+    <comment>ActiveWaits2012.sql</comment>
+  </data>
+  <data name="ActiveWaitsTrc" xml:space="preserve">
+    <value>It requires ALTER TRACE and TempDb Db_Owner or Tempdb Db_DataWriter permission</value>
+    <comment>ActiveWaits2012.sql</comment>
+  </data>
+  <data name="ActivityMonitor" xml:space="preserve">
+    <value>It requires ALTER TRACE permission or ALTER ANY EVENT SESSION,  and TempDb Db_Owner or Tempdb Db_DataWriter permission and VIEW DATABASE STATE (on Azure SQL Database) permissions.</value>
+    <comment>ActivityMonitor2005.sql,ActivityMonitor2012EX.sql,ActivityMonitorAutogrow2012EX.sql,ActivityMonitorBlocking2005.sql,ActivityMonitorRead2005.sql,
+	ActivityMonitorDeadlocks2012EX.sql,ActivityMonitorBlocking2012EX.sql,ActivityMonitorRead2012EX.sql,ActivityMonitorRestart2005.sql,
+	ActivityMonitorRestart2012.sql,ActivityMonitorStop2005.sql,ActivityMonitorStopEX.sql,ActivityMonitorTraceAutogrow.sql,ActivityMonitorTraceDeadlocks.sql</comment>
+  </data>
+  <data name="AgentJobHistory" xml:space="preserve">
+    <value>It requires access to MSDB.</value>
+    <comment>AgentJobHistory.sql</comment>
+  </data>
+  <data name="AgentJobSummary" xml:space="preserve">
+    <value>It requires access to MSDB, EXECUTE on master..xp_sqlagent_enum_jobs, EXECUTE on msdb..sp_get_composite_job_info or Db_Owner in MSDB, 
+"Sysadmin or SQLAgentOperatorRole or SQLAgentReaderRole in MSDB", "user will be able to control services only if using SYSADMIN role or for SQL 2008 R2 and above 
+for viewing sercvices status, SELECT permission on sys.dm_server_services is required"</value>
+    <comment>AgentJobSummary2000.sql and AgentJobSummary2008.sql</comment>
+  </data>
+  <data name="AlwaysOnStatistics2012" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE permission.</value>
+    <comment>AlwaysOnStatistics2012.sql</comment>
+  </data>
+  <data name="AlwaysOnMetrics" xml:space="preserve">
+    <value>It requires VIEW ANY DEFINITION, VIEW ANY DATABASE and VIEW SERVER STATE permissions, ALTERANYDATABASE, CREATEDATABASE and metadata visibility for master.sys.availability_group_listener_ip_addresses and master.sys.availability_group_listeners.</value>
+    <comment>AlwaysOnTopology2012.sql</comment>
+  </data>
+  <data name="BackupAndRecovery" xml:space="preserve">
+    <value>It requires access to MSDB and Sysadmin role and ALTER ANY DATABASE or VIEW ANY DATABASE, and VIEW ANY DEFINITION permissions.</value>
+    <comment>BackupAndRecovery2005.sql</comment>
+  </data>
+  <data name="BackupRestoreHistory" xml:space="preserve">
+    <value>It requires access to MSDB BACKUPFILE,BACKUPMEDIAFAMILY, BACKUPSET and RESTOREHISTORY.</value>
+    <comment>BackupHistoryFull.sql, BackupHistorySmall.sql, RestoreHistoryFull.sql, RestoreHistorySmall.sql</comment>
+  </data>
+  <data name="BombedJobVariablesStore" xml:space="preserve">
+    <value>It requires access to MSDB SYSCATEGORIES,SYSJOBHISTORY,SYSJOBS and SYSJOBSTEPS.</value>
+    <comment>BombedJobs.sql</comment>
+  </data>
+  <data name="BUFFERPOOLEXTIO" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE, VIEW DATABASE STATE, Server admin account or an Azure Active Directory admin account for Azure SQL Database.</value>
+    <comment>BufferPoolExtIO2014.sql</comment>
+  </data>
+  <data name="ColumnStoreIndex" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE, VIEW DATABASE STATE, Server admin account or an Azure Active Directory admin account for Azure SQL Database.</value>
+    <comment>ColumnStoreIndex2016.sql</comment>
+  </data>
+  <data name="Configuration" xml:space="preserve">
+    <value>It requires VIEW DEFINITION, ALTER ANY DATABASE or the VIEW ANY DATABASE, Server admin or an Azure Active Directory admin account for Azure SQL Database, CONTROL SERVER (may be disabled)</value>
+    <comment>Configuration2012</comment>
+  </data>
+  <data name="CustomCounterOS" xml:space="preserve">
+    <value>It requires SYSADMIN role.</value>
+    <comment>CustomCounterOS.sql</comment>
+  </data>
+  <data name="DatabaseConfiguration2012" xml:space="preserve">
+    <value>It requires ALTER ANY DATABASE or VIEW ANY DATABASE permissions</value>
+    <comment>DatabaseConfiguration2012.sql</comment>
+  </data>
+  <data name="DatabaseFiles" xml:space="preserve">
+    <value>It requires Server admin account or an Azure Active Directory admin account, VIEW SERVER STATE, VIEW DATABASE STATE, VIEW ANY DATABASE,
+        ALTER ANY DATABASE, CREATE DATABASE, ALTER SERVER STATE	and Metadata visibility for Sysfilegroups and Sysfiles</value>
+    <comment>DatabaseFiles2005.sql, TEMPDBSUMMARY2005.sql, DiskSize2005.sql</comment>
+  </data>
+  <data name="DatabaseLastBackupDateTime" xml:space="preserve">
+    <value>It requires access to MSDB.</value>
+    <comment>DatabaseLastBackupDateTime.sql</comment>
+  </data>
+  <data name="DatabaseRanking2005" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE permission.</value>
+    <comment>DatabaseRanking2005.sql</comment>
+  </data>
+  <data name="DatabaseSize" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE, ALTER SERVER STATE, CREATE DATABASE, ALTER ANY DATABASE, or VIEW ANY DEFINITION, Tempdb db_owner access,
+          Server admin account or an Azure Active Directory admin account (Azure SQL Database), Access to MSDB,
+         and Metadata Visibility for sys.internal_tables, sysfiles, sySysAllocationUnits,SysPartitions and Temp DB SysDatabaseFiles</value>
+    <comment>DatabaseSize2012.sql</comment>
+  </data>
+  <data name="DatabaseSummary" xml:space="preserve">
+    <value>It requires Sysadmin role for viewing data using OLE Automation, ALTER SERVER STATE, VIEW SERVER STATE, VIEW DATABASE STATE, Server admin account or an Azure Active Directory admin account (Azure SQL Database), Access to MSDB
+	and Metadata visibility for sysfilegroups, sysfiles, sysallobjects,sysinternaltables, tempdb sysobjects.</value>
+    <comment>DatabaseSummary2012.sql, DiskSize2005.sql</comment>
+  </data>
+  <data name="DBSecurity" xml:space="preserve">
+    <value>It requires VIEW ANY DATABASE, SYSADMIN role and metadata visibility for sys.symmetric_keys and sysusers.</value>
+    <comment>DBSecurity2005.sql</comment>
+  </data>
+  <data name="DependentObject" xml:space="preserve">
+    <value>It requires metadata visibility for  sys.assemblies, sys.assembly_modules, sys.assembly_references, sys.assembly_types, sys.columns, sys.foreign_keys, sys.indexes, sys.objects, sys.parameters, sys.synonyms, sys.tables, sys.types and sys.xml_schema_collections.</value>
+    <comment>DependentObjectsPrescriptiveRecommendation.sql</comment>
+  </data>
+  <data name="DisabledIndexes" xml:space="preserve">
+    <value>It requires metadata visibility for sys.indexes.</value>
+    <comment>DisabledIndexes2005.sql</comment>
+  </data>
+  <data name="DiskDrives" xml:space="preserve">
+    <value>It requires SYSADMIN role for OLEAutomation, VIEW ANY DEFINITION permissions, CREATE DATABASE and ALTER ANY DATABASE.</value>
+    <comment>DiskDrives2005.sql</comment>
+  </data>
+  <data name="FileActivity" xml:space="preserve">
+    <value>It requires sysadmin member role for collecting data via OLE Automation.</value>
+    <comment>DistributorQueue.sql</comment>
+  </data>
+  <data name="DropPlans" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE, VIEW DATABASE STATE, Server admin account or an Azure Active Directory admin account (Azure SQL Database), and ALTER SERVER STATE permissions.</value>
+    <comment>DropPlansFromCache2008.sql</comment>
+  </data>
+  <data name="DTCStatus" xml:space="preserve">
+    <value>It requires sysadmin member role for OLE Automation to collect data.</value>
+    <comment>DTCStatus.sql</comment>
+  </data>
+  <data name="FailedVariables" xml:space="preserve">
+    <value>It requires access to MSDB.</value>
+    <comment>FILTEREDINDEX2008.sql</comment>
+  </data>
+  <data name="FileActivity2005" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE, CREATE DATABASE, ALTER ANY DATABASE, or VIEW ANY DEFINITION permissions and membership in SYSADMIN role.</value>
+    <comment>FileActivity2005.sql</comment>
+  </data>
+  <data name="FileGroup" xml:space="preserve">
+    <value>It requires membership of SERVERADMIN role, and CREATE DATABASE, ALTER ANY DATABASE, or VIEW ANY DEFINITION permissions.</value>
+    <comment>See DiskSize2005.sql</comment>
+  </data>
+  <data name="FilteredColumnNotInKeyOfFilteredIndex" xml:space="preserve">
+    <value>It requires metadata visibility for sys.columns, sys.index_columns and sys.indexes.</value>
+    <comment>FilteredIndex2008.sql</comment>
+  </data>
+  <data name="TableFragmentation" xml:space="preserve">
+    <value>It requires CONTROL permission on the specified object within the database, VIEW DATABASE STATE and VIEW SERVER STATE permissions based on certain conditions.</value>
+    <comment>Fragmentation2005.sql</comment>
+  </data>
+  <data name="TableFragmentationWorkload" xml:space="preserve">
+    <value>It requires metadata visibility for  sysindexes, sysobjects and syscolumns</value>
+    <comment>FragmentationWorkload2005.sql</comment>
+  </data>
+  <data name="FragmentedIndexes2005" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE, VIEW DATABASE STATE (Azure SQL Database) permissions and metadata visibility for sys.indexes.</value>
+    <comment>FragmentedIndexes2005.sql</comment>
+  </data>
+  <data name="FullTextCatalogs" xml:space="preserve">
+    <value>It requires CREATE DATABASE, VIEW SERVER STATE, VIEW DATABASE STATE (Azure SQL Database), ALTER ANY USER permissions and metadata visibility for sys.fulltext_catalogs and sysobjects.</value>
+    <comment>See FullTextCatalogs2005.sql</comment>
+  </data>
+  <data name="FullTextColumns" xml:space="preserve">
+    <value>It requires metadata visibility for syscolumns and systypes.</value>
+    <comment>FullTextColumns.sql</comment>
+  </data>
+  <data name="FullTextSearchService" xml:space="preserve">
+    <value>It requires sysadmin member role for OLE Automation to collect data.</value>
+    <comment>FullTextSearchService2005.sql</comment>
+  </data>
+  <data name="FullTextTables" xml:space="preserve">
+    <value>FULLTEXTTABLES</value>
+    <comment>FullTextTables.sql</comment>
+  </data>
+  <data name="GetAdhocCachedPlanBytes2005" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE and VIEW DATABASE STATE (Azure SQL Database) permissions.</value>
+    <comment>GetAdhocCachedPlanBytes2005.sql</comment>
+  </data>
+  <data name="LockedPageKB" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE and VIEW DATABASE STATE (Azure SQL Database) permissions and SERVERADMIN or AzureAdmin account.</value>
+    <comment>GetLockedPageKB2005.sql</comment>
+  </data>
+  <data name="GetLockedPageKB2008" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE and VIEW DATABASE STATE (Azure SQL Database) permissions.</value>
+    <comment>GetLockedPageKB2008.sql</comment>
+  </data>
+  <data name="DatabaseFileInfo" xml:space="preserve">
+    <value>It requires VIEW ANY DATABASE, VIEW SERVER STATE,VIEW ANY DEFINITION and CREATE DATABASE or ALTER ANY DATABASE permissions.</value>
+    <comment>GetMasterFiles2005.sql</comment>
+  </data>
+  <data name="WorstFillFactorIndexes" xml:space="preserve">
+    <value>It requires ALTER ANY DATABASE or the VIEW ANY DATABASE, and VIEW SERVER STATE permissions, and metadata visibility for sys.internal_tables, sys.objects, and sys.sysindexes. </value>
+    <comment>GetWorstFillFactorIndexes2005.sql</comment>
+  </data>
+  <data name="HashIndex" xml:space="preserve">
+    <value>It requires SYSADMIN role, or VIEW SERVER STATE and VIEW DATABASE STATE (Azure SQL Database) permissions, and metadata visibility for sys.hash_indexes.</value>
+    <comment>HashIndex2014.sql</comment>
+  </data>
+  <data name="HighCPUTimeProcedures" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE and VIEW DATABASE STATE (Azure SQL Database), SERVERADMIN or AzureAdmin permissions.</value>
+    <comment>HighCPUTimeProcedure2016.sql</comment>
+  </data>
+  <data name="HighIndexUpdates" xml:space="preserve">
+    <value>It requires SERVERADMIN and VIEW SERVER STATE, AzureAdmin and VIEW DATABASE STATE (Azure SQL Database) permissions and metadata visiblity for sys.indexes and sys.tables.</value>
+    <comment>HighIndexUpdates2005.sql</comment>
+  </data>
+  <data name="IndexContention" xml:space="preserve">
+    <value>It requires VIEW DATABASE STATE and metadata visiblity for sys.indexes and sys.objects.</value>
+    <comment>IndexContention2005.sql</comment>
+  </data>
+  <data name="IndexStatistics" xml:space="preserve">
+    <value>It requires to be a member of SYSADMIN, DB_OWNER or DB_DDLADMIN roles and metadata visibility for Sysobjects.</value>
+    <comment>IndexStatistics.sql</comment>
+  </data>
+  <data name="LargeTableStats" xml:space="preserve">
+    <value>It requires select permissions on table or needs to have SYSADMIN, DB_OWNER or DB_DDLADMIN roles, and metadata visibility for sys.stats.</value>
+    <comment>LargeTableStats2008.sql</comment>
+  </data>
+  <data name="LockCounterStatistics2005" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE, VIEW DATABASE STATE permissions, and Server admin account or an Azure Active Directory admin account (Azure SQL Database).</value>
+    <comment>LockCounterStatistics2005.sql</comment>
+  </data>
+  <data name="LockDetails" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE, VIEW DATABASE STATE (Azure SQL Database Premium), Server admin or an Azure Active Directory admin account (Azure SQL Database Std or Basic), 
+	Meta Visibility Configuration for sys.all_objects, sysobjects and SysPartitions</value>
+    <comment>LockDetails2005.sql</comment>
+  </data>
+  <data name="LogList2005" xml:space="preserve">
+    <value>It requires EXECUTE permission on master..xp_instance_regread and master..xp_readerrorlog.</value>
+    <comment>LogList2005.sql</comment>
+  </data>
+  <data name="LogScan" xml:space="preserve">
+    <value>It requires SecurityAdmin server-level role or the View Server State permissions.</value>
+    <comment>LogScan2005.sql</comment>
+  </data>
+  <data name="JobAlerts" xml:space="preserve">
+    <value>It requires EXECUTE permission and access to MSDB.</value>
+    <comment>LongJobsWithSteps2005.sql, LongJobsByRuntime.sql, LongJobsByPercent.sql,LongJobs2005.sql,CompletedJobs.sql and FAILEDJOBS2005.sql </comment>
+  </data>
+  <data name="MinimumPermissions" xml:space="preserve">
+    <value>It requires minimum permissions VIEWANYDATABASE, VIEWANYDEFINITION and VIEWSERVERSTATE</value>
+  </data>
+  <data name="MinimumPermissions1" xml:space="preserve">
+    <value>It requires minimum permissions VIEWANYDATABASE, VIEWANYDEFINITION and VIEWSERVERSTATE</value>
+  </data>
+  <data name="MinimumPermissions2" xml:space="preserve">
+    <value>It requires minimum permissions VIEWANYDATABASE, VIEWANYDEFINITION, VIEWSERVERSTATE and VIEWDATABASESTATE</value>
+  </data>
+  <data name="MinimumPermissions3" xml:space="preserve">
+    <value>It requires minimum permissions VIEWANYDATABASE, VIEWANYDEFINITION and VIEWSERVERSTATE</value>
+  </data>
+  <data name="MirrorMetricsUpdateCallback" xml:space="preserve">
+    <value>It requires SYSADMIN role and ALTER ANY DATABASE or VIEW ANY DATABASE permissions.</value>
+    <comment>MirrorMetricsUpdate2005.sql</comment>
+  </data>
+  <data name="MirrorMonitoringHistoryCallback" xml:space="preserve">
+    <value>It requires SYSADMIN or DBM_MONITOR roles.</value>
+    <comment>MirrorMonitoringHistory2005.sql</comment>
+  </data>
+  <data name="MirrorMonitoringRealtimeCallback" xml:space="preserve">
+    <value>It requires ALTER ANY DATABASE or CREATEDATABASE permissions and SYSADMIN or DBM_MONITOR roles.</value>
+    <comment>MirrorMonitoringRealtime2005.sql, See MirrorMonitoringRealtime</comment>
+  </data>
+  <data name="NonIncrementalColumnStatsCallback" xml:space="preserve">
+    <value>It requires metadata visibility for sys.columns, sys.indexes, sys.stats and sys.stats_columns.</value>
+    <comment>NonIncrementalColumnStatOnPartitionedTable2014.sql</comment>
+  </data>
+  <data name="NUMANodeCounters" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE, VIEW DATABASE STATE(Azure SQL Database Premium) permissions, and Server admin account or an Azure Active Directory admin account (Azure SQL Database Std or Basic).</value>
+    <comment>NUMANodeCounters2005.sql</comment>
+  </data>
+  <data name="OldestOpenTransaction" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE, VIEW DATABASE STATE(Azure SQL Database Premium) permissions, and Server admin account or an Azure Active Directory admin account (Azure SQL Database Std or Basic).</value>
+    <comment>OldestOpenTransaction2005.sql</comment>
+  </data>
+  <data name="OSMetrics" xml:space="preserve">
+    <value>It requires SYSADMIN role.</value>
+    <comment>OSMetrics.sql</comment>
+  </data>
+  <data name="OutOfDateStats" xml:space="preserve">
+    <value>It requires metadata visibility for sys.objects and sysindexes.</value>
+    <comment>OutOfDateStats2005.sql</comment>
+  </data>
+  <data name="OverlappingIndexes" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE, VIEW DATABASE STATE(Azure SQL Database Premium) permissions, and Server admin account or an Azure Active Directory admin account (Azure SQL Database Std or Basic) and metadata visibility for sys.foreign_keys, sys.index_columns, sys.indexes and sys.objects.</value>
+    <comment>OverlappingIndexes2005.sql</comment>
+  </data>
+  <data name="OverlappingIndexes2008" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE, VIEW DATABASE STATE(Azure SQL Database Premium) permissions, and Server admin account or an Azure Active Directory admin account (Azure SQL Database Std or Basic) and metadata visibility for sys.foreign_keys, sys.index_columns, sys.indexes and sys.objects.</value>
+    <comment>OverlappingIndexes2008.sql</comment>
+  </data>
+  <data name="ProcedureCache" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE, VIEW DATABASE STATE(Azure SQL Database Premium) permissions, and Server admin account or an Azure Active Directory admin account (Azure SQL Database Std or Basic).</value>
+    <comment>See ProcedureCacheList2005.sql</comment>
+  </data>
+  <data name="QueryAnalyzer2016" xml:space="preserve">
+    <value>Reuqires VIEW DATABASE STATE permission.</value>
+    <comment>QueryAnalyzer2016.sql</comment>
+  </data>
+  <data name="QueryMonitor" xml:space="preserve">
+    <value>It requires VIEW DATABASE STATE and DB_Owner for Tempdb for Query Store or; ALTER ANY EVENT SESSION  and TempDb Db_Owner for Extended Events or; ALTER TRACE and TempDb Db_Owner for Trace.</value>
+    <comment>See QueryMonitor2012.sql</comment>
+  </data>
+  <data name="QueryPlanEstRows" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE, VIEW DATABASE STATE(Azure SQL Database Premium) permissions, and Server admin account or an Azure Active Directory admin account (Azure SQL Database Std or Basic).</value>
+    <comment>QueryPlanEstRows2005.sql</comment>
+  </data>
+  <data name="QueryStore" xml:space="preserve">
+    <value>It requires VIEW DATABASE STATE and metadata visibility for sys.plan_guides.</value>
+    <comment>QueryStore2016.sql</comment>
+  </data>
+  <data name="QueryMonitorStateStore" xml:space="preserve">
+    <value>It requires metadata visibility for temp db sysobjects).</value>
+    <comment>QUERYMONITORWRITE2012EX.sql</comment>
+  </data>
+  <data name="RarelyUsedIndexOnInMemoryTable" xml:space="preserve">
+    <value>It requires VIEW DATABASE STATE and metadata visibility for sys.indexes.</value>
+    <comment>RarelyUsedIndexOnInMemoryTable2014.sql</comment>
+  </data>
+  <data name="Reindex2005" xml:space="preserve">
+    <value>It requires ALTER, CREATE DATABASE and VIEW DATABASE STATE permissions, should be a member of SYSADMIN, DB_OWNER, or DB_DDLADMIN roles and should have metadata visibility for sys.columns, sys.index_columns, sys.indexes, sys.types, sys.xml_indexes and sysobjects.</value>
+    <comment>Reindex2005.sql</comment>
+  </data>
+  <data name="Replication" xml:space="preserve">
+    <value>It requires CREATE DATABASE, VIEW SERVER STATE, ALTER ANY LINKED SERVER or ALTER ANY LOGIN ON SERVER (for Linked Servers) and EXECUTE(in master) permissions, SYSADMIN role at the Publisher and DB_OWNER role on the publication database, and metadata visibility for sysobjects.</value>
+    <comment>ReplicationCheck.sql and ReplicationCheck2005.sql</comment>
+  </data>
+  <data name="DistributorDetails" xml:space="preserve">
+    <value>It requires ALTER ANY LINKED SERVER or ALTER ANY LOGIN ON SERVER (for Linked Servers) permission.
+	It requires SETUPADMIN member or Sysadmin member.</value>
+    <comment>ReplicationDistributorDetails2005.sql</comment>
+  </data>
+  <data name="ReplicationStatus" xml:space="preserve">
+    <value>It requires SYSADMIN role.</value>
+    <comment>ReplicationStatus2000.sql and ReplicationStatus2008.sql</comment>
+  </data>
+  <data name="RestoreHistoryFull" xml:space="preserve">
+    <value>It requires access to MSDB.</value>
+    <comment>RestoreHistoryFull.sql</comment>
+  </data>
+  <data name="RestoreHistorySmall" xml:space="preserve">
+    <value>It requires access to MSDB.</value>
+    <comment>RestoreHistorySmall.sql</comment>
+  </data>
+  <data name="SampleServerResources" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE, VIEW DATABASE STATE(Azure SQL Database Premium) permissions, and Server admin account or an Azure Active Directory admin account (Azure SQL Database Std or Basic).</value>
+    <comment>SampleServerResources2005.sql</comment>
+  </data>
+  <data name="ServerAction" xml:space="preserve">
+    <value>Server Action missing permissions for {0} action</value>
+    <comment>Generic Permissions</comment>
+  </data>
+  <data name="ServerBasics" xml:space="preserve">
+    <value>It requires ALTERSETTINGS, VIEWDEFINITION, SYSADMINMember and EXECUTEMASTERDBOXPINSTANCEREGREAD Permissions.</value>
+    <comment>ServerBasics2000.sql and ServerBasics2005.sql</comment>
+  </data>
+  <data name="ServerConfiguration" xml:space="preserve">
+    <value>It requires ALTER ANY LOGIN, ALTER ANY USER, CREATEDATABASE, ALTERANYDATABASE ,VIEW SERVER STATE and VIEW ANY DEFINITION permissions, access to MSDB and SYSADMIN role.</value>
+    <comment>ServerConfiguration2014.sql and ServerConfiguration2016.sql</comment>
+  </data>
+  <data name="ServerDetails" xml:space="preserve">
+    <value>It requires CREATE DATABASE, VIEW SERVER STATE, VIEW DATABASE STATE, VIEW ANY DEFINITION and VIEW ANY DATABASE permissions, ALTER ANY DATABASE permission, TempDb Db_Owner permission
+Server admin account or an Azure Active Directory admin account (SQL Database Standard and Basic Tiers).</value>
+    <comment>See ServerDetails2012.sql, MEMORY2012.sql, ResourceCheck2005.sql, BlockingCheck2005.sql</comment>
+  </data>
+  <data name="ServerOverview" xml:space="preserve">
+    <value>It requires CREATEDATABASE, VIEWDEFINITION or ALTERSERVERSTATE, CONTROLSERVER or EXECUTE permission on master..xp_loginconfig and EXECUTE permission on master..dbo.xp_regread
+It requires SERVERADMIN or Azure Admin for Cloud.</value>
+    <comment>FileActivity2005, WAITSTATISTICS, SERVEROVERVIEW2012 and LockCounterStatistics2005</comment>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>It requires SYSADMIN role for OLE Automation sp_OACreate</value>
+    <comment>Services2005.sql</comment>
+  </data>
+  <data name="SessionCount" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE permission.</value>
+    <comment>SessionCount.sql and SessionCount2005.sql</comment>
+  </data>
+  <data name="SessionDetails2005" xml:space="preserve">
+    <value>It requires SYSADMIN role, VIEW SERVER STATE, VIEW DATABASE STATE permissions, and Server admin account or an Azure Active Directory admin account (SQL Database Standard and Basic Tiers).</value>
+    <comment>SessionDetails2005.sql</comment>
+  </data>
+  <data name="SessionDetails" xml:space="preserve">
+    <value>It requires ALTER TRACE, and metadata visibility for master.sys.traces, sysobjects and Server admin account or an Azure Active Directory admin account.</value>
+    <comment>SessionDetailsTrace2005.sql</comment>
+  </data>
+  <data name="SessionSummary2005" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE, VIEW DATABASE STATE(Azure SQL Database Premium) permissions, and Server admin account or an Azure Active Directory admin account (Azure SQL Database Std or Basic).</value>
+    <comment>SessionSummary2005.sql, See SessionSummary</comment>
+  </data>
+  <data name="SQLModuleOptions" xml:space="preserve">
+    <value>It requires metadata visibility for sys.all_objects, sys.all_sql_modules, sys.objects, and sys.schemas.</value>
+    <comment>SQLModuleOptions2005.sql</comment>
+  </data>
+  <data name="StopSessionDetailsTrace2005" xml:space="preserve">
+    <value>It requires ALTER TRACE permission and metadata visibility for master.sys.traces and tempdb..sysobjects.</value>
+    <comment>StopSessionDetailsTrace2005.sql</comment>
+  </data>
+  <data name="TableDetails" xml:space="preserve">
+    <value>It requires metadata visibility for sysdepends, sysindexes, sysobjects and sysreferences. </value>
+    <comment>TableDetails.sql</comment>
+  </data>
+  <data name="TableGrowth" xml:space="preserve">
+    <value>It requires VIEW ANY DATABASE, VIEW SERVER STATE, VIEW DATABASE STATE permissions, and Server admin account or an Azure Active Directory admin account (Azure SQL Database Std or Basic).
+	It requires metadata visibility for sys.indexes, sys.internal_tables, and sys.objects</value>
+    <comment>TableGrowth2005.sql</comment>
+  </data>
+  <data name="TableSummary" xml:space="preserve">
+    <value>It requires CREATE DATABASE permission and metadata visibility for sys.fulltext_catalogs, sys.indexes, sys.internal_tables, and sys.objects.</value>
+    <comment>See TableSummary2005.sql</comment>
+  </data>
+  <data name="WaitingBatches" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE, VIEW DATABASE STATE permissions, and Server admin account or an Azure Active Directory admin account (Azure SQL Database Std or Basic).</value>
+    <comment>WaitingBatches2005.sql</comment>
+  </data>
+  <data name="sp_OACheckTest" xml:space="preserve">
+    <value>It requires SYSADMIN role.</value>
+    <comment>WmiConfigurationTest.sql</comment>
+  </data>
+  <data name="ServerActionReindexConfiguration" xml:space="preserve">
+    <value>It requires ALTER on {0} database and and Control on table id {1}, CREATE DATABASE and VIEW DATABASE STATE permissions, should be a member of SYSADMIN, DB_OWNER, or DB_DDLADMIN roles and should have metadata visibility for sys.columns, sys.index_columns, sys.indexes, sys.types, sys.xml_indexes and sysobjects.</value>
+    <comment>Reindex2005.sql</comment>
+  </data>
+  <data name="DatabaseConfiguration" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SessionList" xml:space="preserve">
+    <value>User must be a member of the sysadmin fixed server role, or User must have VIEW SERVER STATE permission, or session_id must be the same as the session ID on which the command is being run and CREATE Database. Server admin account or an Azure Active Directory admin account (SQL Database Standard and Basic Tiers).</value>
+    <comment>See Sessions2005</comment>
+  </data>
+  <data name="SessionSummary" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE, VIEW DATABASE STATE(Azure SQL Database Premium) permissions, and Server admin account or an Azure Active Directory admin account (Azure SQL Database Std or Basic).</value>
+    <comment>See SessionSummary2005.sql</comment>
+  </data>
+  <data name="WaitStats" xml:space="preserve">
+    <value>It requires VIEW SERVER STATE, VIEW DATABASE STATE permissions, and Server admin account or an Azure Active Directory admin account (Azure SQL Database Std or Basic).</value>
+    <comment>See WaitStatistics.sql</comment>
+  </data>
+  <data name="MirrorMonitoringRealtime" xml:space="preserve">
+    <value>It requires SYSADMIN or DBM_MONITOR role, ALTER ANY DATABASE or VIEW ANY DATABASE, VIEW SERVER STATE, VIEW DATABASE STATE (Azure SQL Database Premium) permissions and Server admin account or an Azure Active Directory admin account (Azure SQL Database Std or Basic) and SYSADMIN or DBM_MONITOR roles.</value>
+    <comment>See MirrorMonitoringRealtime2005.sql
+MirroredDatabaseScheduled2005.sql</comment>
+  </data>
+  <data name="LogList" xml:space="preserve">
+    <value>It requires EXECUTE permission on master..xp_instance_regread and master..xp_readerrorlog.</value>
+    <comment>LogList2005.sql, See LogList2005</comment>
+  </data>
+  <data name="LogScanvariablestore" xml:space="preserve">
+    <value>It requires SecurityAdmin server-level role permission.</value>
+    <comment>LogScanVariableStore Probe</comment>
+  </data>
+  <data name="ServerActionFullTextActionConfiguration" xml:space="preserve">
+    <value>Server Action - FullTextActionConfiguration. It requires DbOwner in {0} database.</value>
+    <comment>Dynamic Query for particular table or view StopSessionDetailsTrace2005, MIRRORINGPARTNERACTION and UpdateStatistics</comment>
+  </data>
+  <data name="ServerActionMirroringPartnerActionConfiguration" xml:space="preserve">
+    <value>Server Action - MirroringPartnerActionConfiguration. It requires visibility of the metadata for sysobjects,sysindexcolumns, sysindexes, systypes, sysxmlindexes, syscolumns
+	and ALTER permission on the table or view id {1} in {0} database.</value>
+    <comment>Dynamic Query for particular table or view StopSessionDetailsTrace2005, MIRRORINGPARTNERACTION and UpdateStatistics</comment>
+  </data>
+  <data name="ServerActionUpdateStatisticsConfiguration" xml:space="preserve">
+    <value>ServerAction - UpdateStatisticsConfiguration. It requires visibility of the metadata for sysobjects,sysindexcolumns, sysindexes, systypes, sysxmlindexes, syscolumns
+	and ALTER permission on the table or view id {1} in {0} database.</value>
+    <comment>Dynamic Query for particular table or view StopSessionDetailsTrace2005, MIRRORINGPARTNERACTION and UpdateStatistics</comment>
+  </data>
+  <data name="ActiveWaitsQs" xml:space="preserve">
+    <value>It requires VIEW DATABASE STATE and DB_Owner for Tempdb .</value>
+    <comment>ActiveWaits2016.sql</comment>
+  </data>
+</root>

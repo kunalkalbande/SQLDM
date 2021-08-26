@@ -1,0 +1,21 @@
+<language-addon>
+
+	<addon-name>idera</addon-name>
+	<language-name>xul/html</language-name>
+
+	<version>
+		<version-class>com.idera.server.web.component.Version</version-class>
+		<version-uid>0.0.1</version-uid>
+		<zk-version>5.0.0</zk-version>
+	</version>
+
+	<component>
+		<component-name>sqldm-idera-linechart</component-name>
+		<component-class>com.idera.sqldm_10_3.ui.components.charts.line.IderaLineChart
+		</component-class>
+	</component>
+
+	<stylesheet href="/css/spacing.css.dsp"
+		type="text/css" />
+
+</language-addon>

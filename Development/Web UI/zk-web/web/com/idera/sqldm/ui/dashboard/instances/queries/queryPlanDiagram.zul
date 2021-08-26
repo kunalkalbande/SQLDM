@@ -1,0 +1,43 @@
+<zk>
+
+	<div
+		apply="com.idera.sqldm.ui.dashboard.instances.queries.QueryPlanDiagram"
+		hflex="1" style="height:425px;"
+		xmlns:w="http://www.zkoss.org/2005/zk/client">
+
+		<vlayout vflex="1" hflex="1">
+			<!-- Manage user links -->
+			<hlayout style="float:right">
+				<a id="zoomInLink" sclass="link"
+					label="${idera:getLabel('SQLdm.Labels.zoom-in')}"
+					w:onClick="zoomin()" 
+					style="word-wrap:break-word;text-decoration: underline;"/>
+				<label value=" | " sclass="H5" />
+				<a id="zoomOutLink" sclass="link"
+					label="${idera:getLabel('SQLdm.Labels.zoom-out')}"
+					w:onClick="zoomout()" 
+					style="word-wrap:break-word;text-decoration: underline;"/>
+				<label value=" | " sclass="H5" />
+				<a id="zoomToFitLink" sclass="link"
+					label="${idera:getLabel('SQLdm.Labels.zoom-to-fit')}"
+					w:onClick="zoomtofit()" 
+					style="word-wrap:break-word;text-decoration: underline;"
+					/>
+				<label value=" | " sclass="H5" />
+				<a id="exportLink" sclass="link"
+					label="${idera:getLabel('SQLdm.Labels.export')}"
+					w:onClick="exportData()" 
+					style="word-wrap:break-word;text-decoration: underline;"/>
+			</hlayout>
+			<separator style="margin-top:10px" />
+			<div style="width:870px;height:370px;overflow:auto">
+				<div class="divQueryPlan">
+					<div id="divQueryPlan"
+						style="position: relative; top: 0px; left: 0px;z-index:80">
+					</div>
+				</div>
+			</div>
+		</vlayout>
+
+	</div>
+</zk>

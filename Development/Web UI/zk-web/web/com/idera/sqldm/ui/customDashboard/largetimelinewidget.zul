@@ -1,0 +1,56 @@
+<panel use="com.idera.sqldm.ui.customDashboard.widgets.CustomDashboardWidget"
+		apply="com.idera.sqldm.ui.customDashboard.LargeTimelineWidgetComposer"
+		sclass="widget-caption" style="float:left;margin:5px;border-radius: 4px;border-bottom-width: 2px;border-bottom-style: inset;">
+	<caption height="40px" style="cursor:pointer;">
+		<!-- label value="Large Timeline"  style="float:left;font-size:16px;font-weight:bold;white-space:nowrap;"/-->
+	</caption>
+		<panelchildren>
+			<div id="editLTWidgetDiv">
+				<hlayout>
+					<vlayout style="margin-left:3px;text-align:center;" vflex="1">
+						<label style="font-size:11px;font-weight:bold" value="large Timeline" />
+						<image width="100%" height="90px" 
+								src="~./sqldm/com/idera/sqldm/images/large-timeline.png" />
+					</vlayout>
+					<vlayout vflex="3" style="margin-left:35px;text-align:left;">
+						<label id="ltWidgetMetricLbl" style="font-size:11px;font-weight:bold;margin-left: 4px;" />
+						<div>
+							<idera-cwf-button id="ltRemoveBtn" sclass="white-text-dark-gray-button widget-button button-font" 
+									label="${sqldmidera:getLabel('SQLdm.Labels.remove')}"/>
+							<idera-cwf-button id="ltEditbtn" sclass="white-text-dark-gray-button widget-button button-font" 
+									label="${sqldmidera:getLabel('SQLdm.Labels.edit')}" />
+						</div>
+					</vlayout>
+				</hlayout>
+			</div>
+			<div id="displayLTWidgetDiv" style="margin-top:4px;">
+				<div id="ltErrorDiv" style="text-align:center;">
+					<space height="100px;" />
+					<label value="${sqldmidera:getLabel('SQLdm.Labels.no-data-available')}"/>
+				</div>
+				<div id="ltDataDiv">
+					<hlayout>
+						<div width="426px">
+							<sqldm-idera-linechart id="ltLineChart" height="212px" width="400px" 
+										leftMargin="20px" topMargin="10px" bottomMargin="20px"/>
+						</div>
+						<div width="width: 266px;height: 212px;border-left: 1px solid #CCC;overflow-y: auto;">
+							<div sclass="largetimeline-timestamp-container">
+								<label id="ltTimeStampLbl" sclass="largetimeline-timestamp"/>
+							</div>
+							<div sclass="largetimeline-series-container">
+								<label sclass="largetimeline-head-value" value="Current Value" />
+								<label sclass="largetimeline-head-series" value="Series" />
+							</div>
+							<div id="seriesDiv">
+							</div>
+						</div>
+					</hlayout>
+					<div>
+						<idera-cwf-button id="ltdetailsBtn" style="float:right" sclass="idera-button-primary-dashboard-Details white-text-dark-gray-button widget-button button-font" 
+								label="${sqldmidera:getLabel('SQLdm.Labels.details')}" />
+					</div>
+				</div>
+			</div>
+		</panelchildren>
+</panel>

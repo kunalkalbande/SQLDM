@@ -1,0 +1,11 @@
+    <config>
+
+        <taglib>
+
+            <taglib-uri>http://sqldm/taglib</taglib-uri>
+
+            <taglib-location>/metainfo/tld/sqldm.tld</taglib-location>
+
+        </taglib>
+
+    </config>

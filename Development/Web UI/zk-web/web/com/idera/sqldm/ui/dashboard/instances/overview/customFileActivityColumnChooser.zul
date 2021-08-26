@@ -1,0 +1,67 @@
+<zk xmlns:n="native">
+	<window apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('org.zkoss.addon.columnchooser.impl.ColumnchooserViewModel')"
+		sclass="modal-dialog-window margin-all-0 padding-all-0" border= "none">
+		<vlayout spacing="5px">
+		<label id = "headerLbl" >Select options to display associated file activity</label>
+			<hlayout spacing="10px">
+				<vlayout sclass="padding-tb-12">
+					<label value = "Available:" sclass="H5 z-label" style = "font-weight : bold"></label>
+					<separator height="10px"></separator>
+					<idera-cwf-listbox model="@load(vm.hiddenColumns)"
+						width="170px" height="200px" droppable="true"
+						selectedItem="@bind(vm.selectedHiddenColumn)"
+						style="overflow:auto;"
+						onDrop="@command('dropToHiddenColumns', column=event.dragged.value)">
+						<template name="model">
+							<listitem draggable="true" droppable="true"
+								 value="@load(each)"
+								attributes.item="@load(each)"
+								onDrop="@command('insertToHiddenColumns', drag=event.dragged.value, drop=each)">
+								<listcell><label value = "@load(each)" multiline="true" style = "font-weight : normal; font-size:12px"></label></listcell>
+								</listitem>
+						</template>
+					</idera-cwf-listbox>
+				</vlayout>
+				<vlayout spacing="5px" width="110px">
+					<separator height="40px"></separator>
+					<idera-cwf-button disabled="@load(vm.addDisabled)"
+						onClick="@command('addSelectedHiddenColumnToVisibleColumn')"
+						label="Add&gt;" width="100%" 
+						><!-- change text (ADD) -->
+					</idera-cwf-button>
+					<idera-cwf-button disabled="@load(vm.removeDisabled)"
+						onClick="@command('removeSelectedVisibleColumnToHiddenColumn')"
+						label="&lt;Remove " width="100%" 
+						><!-- change text (REMOVE) -->
+					</idera-cwf-button>
+				</vlayout>
+				
+				<vlayout sclass="padding-tb-12">
+					<label value = "Selected:" sclass="H5 z-label" style = "font-weight : bold"></label>
+					<separator height="10px"></separator>
+					<idera-cwf-listbox model="@load(vm.visibleColumns)"
+						width="150px" height="200px" droppable="true"
+						selectedItem="@bind(vm.selectedVisibleColumn)"
+						onDrop="@command('dropToVisibleColumns', column=event.dragged.value)">
+						<template name="model">
+							<listitem  draggable="true" droppable="true"
+								 value="@load(each)"
+								onDrop="@command('insertToVisibleColumns', drag=event.dragged.value, drop=each)" >
+								<listcell><label value = "@load(each)" multiline="true" style = "font-weight : normal; font-size:12px"></label></listcell>
+								</listitem>
+						</template>
+					</idera-cwf-listbox>
+				</vlayout>
+			</hlayout>
+			<hbox pack="end" width="100%" spacing="5px">
+				<idera-cwf-button onClick="@command('ok')" label="OK"
+					 width="75px">
+				</idera-cwf-button>
+				<idera-cwf-button onClick="@command('cancel')" label="Cancel"
+				 width="75px" >
+				</idera-cwf-button>
+			</hbox>
+		</vlayout>
+	</window>
+</zk>

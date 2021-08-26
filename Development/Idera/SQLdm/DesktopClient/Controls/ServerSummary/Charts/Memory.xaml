@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Idera.SQLdm.DesktopClient.Controls.ServerSummary.Charts.Memory"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:local="clr-namespace:Idera.SQLdm.DesktopClient.Controls.ServerSummary"
+             mc:Ignorable="d" 
+             d:DesignHeight="150.245" d:DesignWidth="649.377" 
+             xmlns:ig="http://schemas.infragistics.com/xaml"
+             d:DataContext="{d:DesignInstance local:ServerSummaryDataModel, IsDesignTimeCreatable=True}">
+    <Grid>
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="auto"/>
+    		<RowDefinition Height="*"/>
+    	</Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <ig:XamDataChart Grid.Column="1" Name="pagingChart" Grid.Row="1" Grid.RowSpan="1" HorizontalZoomable="True">
+            <ig:XamDataChart.Axes>
+                <ig:CategoryDateTimeXAxis Name="xAxis2" DateTimeMemberPath="Date" ItemsSource="{Binding RealtimeSnapshotData, Mode=OneWay}"/>
+                <ig:NumericYAxis Name="yAxis2"/>
+            </ig:XamDataChart.Axes>
+            <ig:XamDataChart.Series>
+                <ig:ColumnSeries Title="Paging" ValueMemberPath="PagesPerSec" ItemsSource="{Binding RealtimeSnapshotData, Mode=OneWay}" XAxis="{Binding ElementName=xAxis2}" YAxis="{Binding ElementName=yAxis2}" Legend="{Binding ElementName=pagingLegend}"/>
+            </ig:XamDataChart.Series>
+            <ig:SyncManager.SyncSettings>
+                <ig:SyncSettings SyncChannel="serverOverview" SynchronizeHorizontally="True" SynchronizeVertically="False"/>
+            </ig:SyncManager.SyncSettings>
+		</ig:XamDataChart>
+        <ig:Legend HorizontalAlignment="Center" Grid.Column="1" Name="pagingLegend" Orientation="Horizontal" Margin="0" VerticalAlignment="Center" />
+        <ig:XamDataChart Name="memoryChart" Grid.Row="1" Grid.RowSpan="1" HorizontalZoomable="True">
+            <ig:XamDataChart.Axes>
+                <ig:CategoryDateTimeXAxis Name="xAxis1" DateTimeMemberPath="Date" ItemsSource="{Binding RealtimeSnapshotData, Mode=OneWay}"/>
+                <ig:NumericYAxis Name="yAxis1"/>
+            </ig:XamDataChart.Axes>
+            <ig:XamDataChart.Series>
+                <ig:AreaSeries Title="Total Used"  ValueMemberPath="OSMemoryUsed" ItemsSource="{Binding RealtimeSnapshotData, Mode=OneWay}" XAxis="{Binding ElementName=xAxis1}" YAxis="{Binding ElementName=yAxis1}" Legend="{Binding ElementName=memoryLegend}" ></ig:AreaSeries>
+                <ig:AreaSeries Title="SQL Allocated" ValueMemberPath="SqlServerMemoryAllocated" ItemsSource="{Binding RealtimeSnapshotData, Mode=OneWay}" XAxis="{Binding ElementName=xAxis1}" YAxis="{Binding ElementName=yAxis1}" Legend="{Binding ElementName=memoryLegend}"></ig:AreaSeries>
+                <ig:AreaSeries Title="SQL Used" ValueMemberPath="SqlServerMemoryUsed" ItemsSource="{Binding RealtimeSnapshotData, Mode=OneWay}" XAxis="{Binding ElementName=xAxis1}" YAxis="{Binding ElementName=yAxis1}" Legend="{Binding ElementName=memoryLegend}"></ig:AreaSeries>
+            </ig:XamDataChart.Series>
+            <ig:SyncManager.SyncSettings>
+                <ig:SyncSettings SyncChannel="serverOverview" SynchronizeHorizontally="True" SynchronizeVertically="False"/>
+            </ig:SyncManager.SyncSettings>
+        </ig:XamDataChart>
+        <ig:Legend HorizontalAlignment="Center" Name="memoryLegend" Orientation="Horizontal" Margin="0" VerticalAlignment="Center"/>		
+    </Grid>
+</UserControl>

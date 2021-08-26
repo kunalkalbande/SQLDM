@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{70EA2AF7-6A20-4B78-B357-0899AE0A40E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Idera.SQLdm.PrescriptiveAnalyzer.Common</RootNamespace>
+    <AssemblyName>Idera.SQLdm.PrescriptiveAnalyzer.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TracerX, Version=2.1.809.18205, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\..\..\..\Libraries\TracerX.exe</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdHoc\AdHocBatch.cs" />
+    <Compile Include="AdHoc\AdHocBatches.cs" />
+    <Compile Include="Cache\CacheFile.cs" />
+    <Compile Include="Cache\PlanCache.cs" />
+    <Compile Include="Cache\StringCache.cs" />
+    <Compile Include="Configuration\OptimizerHint.cs" />
+    <Compile Include="Configuration\ServerVersion.cs" />
+    <Compile Include="Configuration\SQLConnectionInfo.cs" />
+    <Compile Include="Configuration\WmiConnectionInfo.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="ExceptionLogger.cs" />
+    <Compile Include="Helpers\ApplicationHelper.cs" />
+    <Compile Include="Helpers\DataHelper.cs" />
+    <Compile Include="Helpers\SQLSchemaNameHelper.cs" />
+    <Compile Include="Helpers\SqlSystemObjectManager.cs" />
+    <Compile Include="Helpers\SQLTablePropHelper.cs" />
+    <Compile Include="Helpers\WmiHelper.cs" />
+    <Compile Include="Ranking\TableRankingStats.cs" />
+    <Compile Include="Recommendations\AvailabilityGroupNotEnabledForFailoverRecommendation.cs" />
+    <Compile Include="Recommendations\BatchStatements.cs" />
+    <Compile Include="Recommendations\BothNewAndOldCardinalityEstimatorInUseRecommendation.cs" />
+    <Compile Include="Recommendations\BufferPoolExtensionHighIORecommendation.cs" />
+    <Compile Include="Recommendations\BufferPoolExtensionNotUsefulRecommendation.cs" />
+    <Compile Include="Recommendations\CachedPlanMisuseRecommendation.cs" />
+    <Compile Include="Recommendations\ColumnStoreIndexMissingOnLargeTablesRecommendation.cs" />
+    <Compile Include="Recommendations\DbWithCompatibility.cs" />
+    <Compile Include="Recommendations\DMVMissingIndexRecommendation.cs" />
+    <Compile Include="Recommendations\FilteredColumnNotInKeyOfFilteredIndexRecommendation.cs" />
+    <Compile Include="Recommendations\Flag4199AllDbCompatibleRecommendation.cs" />
+    <Compile Include="Recommendations\Flag4199LowCompatibleRecommendation.cs" />
+    <Compile Include="Recommendations\FrequentlyExecutedProcedureWithHighCPUTimeRecommendation.cs" />
+    <Compile Include="Recommendations\FunctionInPredicateRecommendation.cs" />
+    <Compile Include="Recommendations\HashIndexFewBucketsRecommendation.cs" />
+    <Compile Include="Recommendations\HashIndexLargeDuplicateKeyRecommendation.cs" />
+    <Compile Include="Recommendations\HashIndexRecommendation.cs" />
+    <Compile Include="Recommendations\HashIndexTooManyBucketsRecommendation.cs" />
+    <Compile Include="Recommendations\HighModificationsSinceLastStatUpdateRecommendation.cs" />
+    <Compile Include="Recommendations\ImplicitConversionInPredicateRecommendation.cs" />
+    <Compile Include="Recommendations\IntrinsicFunctionInPredicateRecommendation.cs" />
+    <Compile Include="Recommendations\LargeBufferPoolExtensionSizeRecommendation.cs" />
+    <Compile Include="Recommendations\MemLimitExceededRecommendation.cs" />
+    <Compile Include="Recommendations\MissingIndexBaseRecommendation.cs" />
+    <Compile Include="Recommendations\MissingIndexCost.cs" />
+    <Compile Include="Recommendations\MissingIndexRecommendation.cs" />
+    <Compile Include="Recommendations\NewCardinalityEstimatorNotBeingUsedRecommendation.cs" />
+    <Compile Include="Recommendations\NoColumnStatsRecommendation.cs" />
+    <Compile Include="Recommendations\NoJoinPredicateRecommendation.cs" />
+    <Compile Include="Recommendations\NonIncrementalColumnStatOnPartitionedTableRecommendation.cs" />
+    <Compile Include="Recommendations\PlanGuidesUsedOverQueryStoreRecommendation.cs" />
+    <Compile Include="Recommendations\PredicateRecommendation.cs" />
+    <Compile Include="Recommendations\QueriesWithDoubleIncreaseInExecutionTimeRecommendation.cs" />
+    <Compile Include="Recommendations\QueriesWithFourDifferentPlanInTwoDaysRecommendation.cs" />
+    <Compile Include="Recommendations\QueryRecommendation.cs" />
+    <Compile Include="Recommendations\QueryStoreAlmostFullRecommendation.cs" />
+    <Compile Include="Recommendations\QueryStoreDisabledRecommendation.cs" />
+    <Compile Include="Recommendations\QueryStoreOutOfSpaceRecommendation.cs" />
+    <Compile Include="Recommendations\RarelyUsedIndexOnInMemoryTableRecommendation.cs" />
+    <Compile Include="Recommendations\RecommendationOptimizationStatus.cs" />
+    <Compile Include="Recommendations\RecommendationProperties.cs" />
+    <Compile Include="Helpers\FormatHelper.cs" />
+    <Compile Include="Helpers\PageHelper.cs" />
+    <Compile Include="Helpers\ProcessInfoHelper.cs" />
+    <Compile Include="Helpers\RecommendationCountHelper.cs" />
+    <Compile Include="Helpers\SqlDbNameManager.cs" />
+    <Compile Include="Helpers\SQLHelper.cs" />
+    <Compile Include="Objects\Column.cs" />
+    <Compile Include="Objects\ColumnList.cs" />
+    <Compile Include="Objects\DeadlockData.cs" />
+    <Compile Include="Objects\Index.cs" />
+    <Compile Include="Objects\Partition.cs" />
+    <Compile Include="Objects\PartitionList.cs" />
+    <Compile Include="Persistence\AbstractPersistenceObject.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Ranking\DatabaseRankingStats.cs" />
+    <Compile Include="Ranking\RankingStats.cs" />
+    <Compile Include="Ranking\RecommendationRankingComparer.cs" />
+    <Compile Include="RealTime\GridData\IProvideGridData.cs" />
+    <Compile Include="Recommendations\AutoStatsRecommendation.cs" />
+    <Compile Include="Recommendations\BufferLocation.cs" />
+    <Compile Include="Recommendations\CpuAffinityRecommendation.cs" />
+    <Compile Include="Recommendations\CpuAffinityReducedRecommendation.cs" />
+    <Compile Include="Recommendations\CpuClockSpeedLostRecommendation.cs" />
+    <Compile Include="Recommendations\CpuConstantFrequencyRecommendation.cs" />
+    <Compile Include="Recommendations\CpuDisableParallelismRecommendation.cs" />
+    <Compile Include="Recommendations\CpuEncryptedVolumeRecommendation.cs" />
+    <Compile Include="Recommendations\CpuFullFrequencyRecommendation.cs" />
+    <Compile Include="Recommendations\CpuInterruptsDiskRecommendation.cs" />
+    <Compile Include="Recommendations\CpuInterruptsNetworkRecommendation.cs" />
+    <Compile Include="Recommendations\CpuInterruptsRecommendation.cs" />
+    <Compile Include="Recommendations\CpuMaxDOPRecommendation.cs" />
+    <Compile Include="Recommendations\CpuRecommendation.cs" />
+    <Compile Include="Recommendations\DatabaseAutoShrinkRecommendation.cs" />
+    <Compile Include="Recommendations\DatabaseBackupsDeletedRecommendation.cs" />
+    <Compile Include="Recommendations\DatabaseBackupsOnSameVolumeRecommendation.cs" />
+    <Compile Include="Recommendations\DatabaseCheckIntegrityRecommendation.cs" />
+    <Compile Include="Recommendations\DatabaseCollationRecommendation.cs" />
+    <Compile Include="Recommendations\DatabaseCompatibilityRecommendation.cs" />
+    <Compile Include="Recommendations\DatabaseConfigurationRecommendation.cs" />
+    <Compile Include="Recommendations\DatabaseNoFixRecommendation.cs" />
+    <Compile Include="Recommendations\DatabaseNoRecentLogBackupRecommendation.cs" />
+    <Compile Include="Recommendations\DatabaseObjectName.cs" />
+    <Compile Include="Recommendations\DatabaseOutdatedBackupsRecommendation.cs" />
+    <Compile Include="Recommendations\DatabaseRecommendation.cs" />
+    <Compile Include="Recommendations\DatabaseRecoveryModelRecommendation.cs" />
+    <Compile Include="Recommendations\DatabaseSuspectPagesRecommendation.cs" />
+    <Compile Include="Recommendations\DatabaseWithFixRecommendation.cs" />
+    <Compile Include="Recommendations\DeadlockRecommendation.cs" />
+    <Compile Include="Recommendations\DeadlockTraceFlagsRecommendation.cs" />
+    <Compile Include="Recommendations\DeprecatedAgentTokenInUseRecommendation.cs" />
+    <Compile Include="Recommendations\DisabledIndexRecommendation.cs" />
+    <Compile Include="Recommendations\DiskBlockSizeRecommendation.cs" />
+    <Compile Include="Recommendations\DiskQueueLengthRecommendation1.cs" />
+    <Compile Include="Recommendations\DiskQueueLengthRecommendation2.cs" />
+    <Compile Include="Recommendations\DiskQueueLengthRecommendation3.cs" />
+    <Compile Include="Recommendations\DiskQueueLengthRecommendation5.cs" />
+    <Compile Include="Recommendations\DiskQueueLengthRecommendation6.cs" />
+    <Compile Include="Recommendations\DiskWaitingRecommendation.cs" />
+    <Compile Include="Recommendations\DuplicateIndexRecommendation.cs" />
+    <Compile Include="Recommendations\FillFactorRecommendation.cs" />
+    <Compile Include="Recommendations\FragmentedIndexRecommendation.cs" />
+    <Compile Include="Recommendations\HighCompilationsRecommendation.cs" />
+    <Compile Include="Recommendations\HypotheticalIndexRecommendation.cs" />
+    <Compile Include="Recommendations\IndexLockContentionRecommendation.cs" />
+    <Compile Include="Recommendations\IndexPageLatchContentionRecommendation.cs" />
+    <Compile Include="Recommendations\IndexPageLockContentionRecommendation.cs" />
+    <Compile Include="Recommendations\IndexRecommendation.cs" />
+    <Compile Include="Recommendations\IndexRowLockContentionRecommendation.cs" />
+    <Compile Include="Recommendations\IndexUnderutilizedRecommendation.cs" />
+    <Compile Include="Recommendations\IndexUnusedRecommendation.cs" />
+    <Compile Include="Recommendations\IRecommendation.cs" />
+    <Compile Include="Recommendations\LogicalDiskRecommendation.cs" />
+    <Compile Include="Recommendations\LongRunningJobRecommendation.cs" />
+    <Compile Include="Recommendations\Mem32bit16gRecommendation.cs" />
+    <Compile Include="Recommendations\Mem32bit3gOrLessRecommendation.cs" />
+    <Compile Include="Recommendations\Mem32bit3to4gRecommendation.cs" />
+    <Compile Include="Recommendations\Mem32bit4gRecommendation.cs" />
+    <Compile Include="Recommendations\Mem32bit4gSS2012Recommendation.cs" />
+    <Compile Include="Recommendations\Mem32bit4to16gRecommendation.cs" />
+    <Compile Include="Recommendations\Mem64bitLockPagesRecommendation.cs" />
+    <Compile Include="Recommendations\MemDecreaseDefaultFillFactorRecommendation.cs" />
+    <Compile Include="Recommendations\MemDecreasedRecommendation.cs" />
+    <Compile Include="Recommendations\MemDomainControllerRecommendation.cs" />
+    <Compile Include="Recommendations\MemFileSharingRecommendation.cs" />
+    <Compile Include="Recommendations\MemIncreaseDefaultFillFactorRecommendation.cs" />
+    <Compile Include="Recommendations\MemIndexCreationRecommendation.cs" />
+    <Compile Include="Recommendations\MemMaxServerMemoryRecommendation.cs" />
+    <Compile Include="Recommendations\MemOptimizeForAdhocRecommendation.cs" />
+    <Compile Include="Recommendations\MemPagingRecommendation.cs" />
+    <Compile Include="Recommendations\MemPerfOfServicesRecommendation.cs" />
+    <Compile Include="Recommendations\MemRecommendation.cs" />
+    <Compile Include="Recommendations\MemRunningProcessRecommendation.cs" />
+    <Compile Include="Recommendations\MemStarvationRecommendation.cs" />
+    <Compile Include="Recommendations\MemTop10ProcessesRecommendation.cs" />
+    <Compile Include="Recommendations\MemUserConnectionsRecommendation.cs" />
+    <Compile Include="Recommendations\MixedModeAuthentication.cs" />
+    <Compile Include="Recommendations\NetBandwidthLostRecommendation.cs" />
+    <Compile Include="Recommendations\NetCardErrorsRecommendation.cs" />
+    <Compile Include="Recommendations\NetCardLostRecommendation.cs" />
+    <Compile Include="Recommendations\NetCongestionRecommendation.cs" />
+    <Compile Include="Recommendations\NetNoCountRecommendation.cs" />
+    <Compile Include="Recommendations\NetRedirectorErrorsRecommendation.cs" />
+    <Compile Include="Recommendations\NetRedundantCardsRecommendation.cs" />
+    <Compile Include="Recommendations\NetRetranSegsRecommendation.cs" />
+    <Compile Include="Recommendations\NetworkRecommendation.cs" />
+    <Compile Include="Recommendations\NonClusteredMatchingClusteredIndexRecommendation.cs" />
+    <Compile Include="Recommendations\OffendingSql.cs" />
+    <Compile Include="Recommendations\OpenTransactionRecommendation.cs" />
+    <Compile Include="Recommendations\OutOfDateStatsRecommendation.cs" />
+    <Compile Include="Recommendations\OverlappingIndexRecommendation.cs" />
+    <Compile Include="Recommendations\PageVerifyRecommendation.cs" />
+    <Compile Include="Recommendations\PartialDuplicateIndexRecommendation.cs" />
+    <Compile Include="Recommendations\Recommendation.cs" />
+    <Compile Include="Recommendations\RecommendationFactory.cs" />
+    <Compile Include="Recommendations\RecommendationType.cs" />
+    <Compile Include="Recommendations\RecommendedIndex.cs" />
+    <Compile Include="Recommendations\RedundantIndex.cs" />
+    <Compile Include="Recommendations\ResourceGovernerIOStallRecommendation.cs" />
+    <Compile Include="Recommendations\Result.cs" />
+    <Compile Include="Recommendations\ScannedHashIndexRecommendation.cs" />
+    <Compile Include="Recommendations\SelectionRectangle.cs" />
+    <Compile Include="Recommendations\SeManageVolumeNameRecommendation.cs" />
+    <Compile Include="Recommendations\SerializableDictionary.cs" />
+    <Compile Include="Recommendations\ServerConfigurationRecommendation.cs" />
+    <Compile Include="Recommendations\SQLModuleOptionRecommendation.cs" />
+    <Compile Include="Recommendations\TempDbAutogrowthRecommendation.cs" />
+    <Compile Include="Recommendations\TempDbFileSizeMismatchRecommendation.cs" />
+    <Compile Include="Recommendations\TempDbInitialSizeRecommendation.cs" />
+    <Compile Include="Recommendations\TempDbRecoveryModelRecommendation.cs" />
+    <Compile Include="Recommendations\TempDbTooManyFilesRecommendation.cs" />
+    <Compile Include="Recommendations\TempDbWaitingRecommendation.cs" />
+    <Compile Include="Recommendations\Top10QueriesConsumingMostIORecommendation.cs" />
+    <Compile Include="Recommendations\Top10QueriesHavingLongerDurationInLastHourRecommendation.cs" />
+    <Compile Include="Recommendations\Top10QueriesWithLongestAverageExecutionTimeRecommendation.cs" />
+    <Compile Include="Recommendations\TSqlRecommendation.cs" />
+    <Compile Include="Recommendations\UserDefinedFunctionInPredicateRecommendation.cs" />
+    <Compile Include="Recommendations\VulnerableSqlLoginRecommendation.cs" />
+    <Compile Include="Recommendations\WaitStatsAsyncNetIORecommendation.cs" />
+    <Compile Include="Recommendations\WaitStatsHighCXPacketRecommendation.cs" />
+    <Compile Include="Recommendations\WaitStatsMaxDOPRecommendation.cs" />
+    <Compile Include="Recommendations\WaitStatsPageIoLatchCxPacketRecommendation.cs" />
+    <Compile Include="Recommendations\WaitStatsPageIoLatchDatabaseRecommendation.cs" />
+    <Compile Include="Recommendations\WaitStatsPageLatchAllocPageContentionRecommendation.cs" />
+    <Compile Include="Recommendations\WaitStatsPageLatchIndexRecommendation.cs" />
+    <Compile Include="Recommendations\WaitStatsPageLatchTableRecommendation.cs" />
+    <Compile Include="Recommendations\WaitStatsParallelismThresholdRecommendation.cs" />
+    <Compile Include="Recommendations\WaitStatsRecommendation.cs" />
+    <Compile Include="Recommendations\WaitStatsThreadPoolRecommendation.cs" />
+    <Compile Include="Resources\FindingIdAttribute.cs" />
+    <Compile Include="Resources\MasterRecommendation.cs" />
+    <Compile Include="Resources\MasterRecommendations.cs" />
+    <Compile Include="Resources\RecommendationLinks.cs" />
+    <Compile Include="Resources\SQLdoctorResources.cs" />
+    <Compile Include="ScheduledTask.cs" />
+    <Compile Include="ScriptGenerator\AutoStatisticsScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\AvailabilityGroupDBFailoverScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\BothNewAndOldCardinalityEstimatorInUseScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\BufferPoolExtensionNotUsefulScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\ColumnStatisticsScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\ConfigureAffinityMaskScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\ConfigureIndexCreateMemoryScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\ConfigureMaxDOPScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\ConfigureMaxServerMemoryGenerator.cs" />
+    <Compile Include="ScriptGenerator\ConfigureMaxWorkerThreadsScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\ConfigureOptimizeAdhocScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\ConfigureParallelismThresholdScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\ConfigureUserConnectionsScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\CreateIndexScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\CreateStartupProcedureScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\DatabaseCompatibilityScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\DatabaseConfigurationScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\DropIndexScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\Flag4199LowCompatibleScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\GuestHasDatabaseAccessScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\HighModificationsSinceLastStatUpdateScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\LargeBufferPoolExtensionSizeScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\NewCardinalityEstimatorNotBeingUsedScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\NonIncrementalColumnStatOnPartitionedTableScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\PlanGuidesUsedOverQueryStoreScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\ClearQueryStoreScriptGenerator .cs" />
+    <Compile Include="ScriptGenerator\QueryStoreDisabledScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\RebuildIndexScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\RecatalogModuleScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\ResourceGovernerIOStallScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\ServerConfigurationScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\SetNoCountOnScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\Templates\ConfigureMaxServerMemoryGenerator.cs" />
+    <Compile Include="ScriptGenerator\Templates\Flag4199AllDbCompatibleScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\UpdateStatisticsScriptGenerator.cs" />
+    <Compile Include="ScriptGenerator\VulnerableSqlLoginScriptGenerator.cs" />
+    <Compile Include="Services\IGetBatches.cs" />
+    <Compile Include="Services\IRealTimeEngine.cs" />
+    <Compile Include="ShowPlan\ColumnTypeComparers.cs" />
+    <Compile Include="ShowPlan\ShowPlanParser.cs" />
+    <Compile Include="ShowPlan\showplanxml.cs">
+      <DependentUpon>showplanxml.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="State\AnalysisState.cs" />
+    <Compile Include="State\AnalysisStateInfo.cs" />
+    <Compile Include="State\AnalysisStateInfoCollection.cs" />
+    <Compile Include="State\AnalysisStateInfoHistory.cs" />
+    <Compile Include="Values\AnalysisValues.cs" />
+    <Compile Include="Values\SnapshotMetrics.cs" />
+    <Compile Include="Values\SnapshotValues.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SQLdoctor Recommendations.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ScriptGenerator\Templates\AutoCreateStatistics.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\AutoCreateStatisticsUndo.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\AutoUpdateStatistics.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\AutoUpdateStatisticsUndo.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\ConfigureAffinityMask.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\ConfigureAffinityMaskUndo.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\ConfigureC2AuditMode.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\ConfigureC2AuditModeUndo.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\ConfigureIndexCreateMemory.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\ConfigureIndexCreateMemoryUndo.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\ConfigureMaxDOP.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\ConfigureMaxDOPUndo.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\ConfigureMaxServerMemory.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\ConfigureMaxServerMemoryUndo.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\ConfigureMaxWorkerThreads.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\ConfigureMaxWorkerThreadsUndo.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\ConfigureOptimizeAdhoc.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\ConfigureOptimizeAdhocUndo.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\ConfigureParallelismThreshold.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\ConfigureParallelismThresholdUndo.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\ConfigureUserConnections.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\ConfigureUserConnectionsUndo.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\CreateIndex.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\CreateStartupProcedure.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\CreateStartupProcedureUndo.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\DatabaseConfiguration.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\DisableParallelism.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\DisableParallelismUndo.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\DropIndex.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\DropUniqueConstraint.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\FixVulnerableLogin.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\FixVulnerableLoginUndo.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\RebuildIndex.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\RemoveGuestAccess.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\RemoveGuestAccessUndo.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\ServerConfiguration.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\SetDatabaseCompatibility.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\SetDatabaseCompatibilityUndo.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\SetNoCountOnServerProperty.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\SetNoCountOnServerPropertyUndo.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\UpdateColumnStatistics.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\UpdateDatabaseStatistics.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\UpdateStatistics.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ScriptGenerator\Templates\DisableAvailablityGroupDBFailover.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\EnableAvailablityGroupDBFailover.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\DisableTrace4199.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\EnableTrace4199.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\EnableTrace2371.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\DisableTrace2371.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\DisableQueryStore.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\EnableQueryStore.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\DisableBufferPoolExt.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\EnableBufferPoolExt.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\SetCompatibilityForDatabase.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\SetBufferPoolExtSize.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\SetIOPSPerVolumeForResourcePool.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\SetQueryStoreClear.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\DisableTrace2312.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\DisableTrace9481.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\EnableTrace2312.sql" />
+    <EmbeddedResource Include="ScriptGenerator\Templates\EnableTrace9481.sql" />
+    <Content Include="Scripts\DatabaseRankingStats.sql" />
+    <Content Include="Scripts\GetIndexInfo.sql" />
+    <Content Include="Scripts\GetObjectSchemaName.sql" />
+    <Content Include="Scripts\GetPageInfo.sql" />
+    <Content Include="Scripts\GetPropertiesFromSysDataSpaces.sql" />
+    <Content Include="Scripts\GetPropertiesFromSysIndexColumns.sql" />
+    <Content Include="Scripts\GetPropertiesFromSysIndexes2005.sql" />
+    <Content Include="Scripts\GetPropertiesFromSysIndexes2008.sql" />
+    <Content Include="Scripts\GetPropertiesFromSysObjects.sql" />
+    <Content Include="Scripts\GetPropertiesFromSysPartitions2005.sql" />
+    <Content Include="Scripts\GetPropertiesFromSysPartitions2008.sql" />
+    <Content Include="Scripts\GetPropertiesFromSysSpatialIndexTessellations.sql" />
+    <Content Include="Scripts\GetPropertiesFromSysStats.sql" />
+    <Content Include="Scripts\GetPropertiesFromSysTables2008.sql" />
+    <Content Include="Scripts\GetPropertiesFromSysXMLIndexes.sql" />
+    <Content Include="Scripts\GetPropertiesFromSysXMLIndexesPrimary.sql" />
+    <Content Include="Scripts\GetTableDependentObjects.sql" />
+    <Content Include="Scripts\IsCmdShellEnabled.sql" />
+    <Content Include="Scripts\IsIndexRebuildableOnline.sql" />
+    <Content Include="Scripts\IsOleEnabled.sql" />
+    <Content Include="Scripts\IsSystemObject.sql" />
+    <Content Include="Scripts\IsSystemTable.sql" />
+    <Content Include="Scripts\SetOleAutomationConfig.sql" />
+    <Content Include="Scripts\TableRankingStats.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ShowPlan\showplanxml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

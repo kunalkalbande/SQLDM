@@ -1,0 +1,179 @@
+﻿<ResourceDictionary x:Name="Light"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:igPrim="http://schemas.infragistics.com/xaml/primitives"
+	xmlns:igMenu="http://schemas.infragistics.com/xaml"
+    xmlns:igRibbon="http://infragistics.com/Ribbon"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:p="clr-namespace:Idera.SQLdm.DesktopClient.Controls.Presentation" 
+    xmlns:igDock="http://infragistics.com/DockManager"
+    mc:Ignorable="d">
+
+    <SolidColorBrush x:Key="BodyBackgroundColor" Color="White"></SolidColorBrush>
+    <SolidColorBrush x:Key="ContentAreaBackground" Color="#eeeff4"></SolidColorBrush>
+    <SolidColorBrush x:Key="BarAboveContentPane" Color="#3a3b3d"></SolidColorBrush>
+    <SolidColorBrush x:Key="TabForeground" Color="#7fb0c4"></SolidColorBrush>
+    <SolidColorBrush x:Key="TabBackground" Color="Transparent"></SolidColorBrush>
+    <SolidColorBrush x:Key="TabMouseOverTabText" Color="#00a1dd"></SolidColorBrush>
+    <SolidColorBrush x:Key="TabMouseOverTabBorder" Color="#00a1dd"></SolidColorBrush>
+    <SolidColorBrush x:Key="TabIsSelectedBackground" Color="#eeeff2"></SolidColorBrush>
+    <SolidColorBrush x:Key="TabIsSelectedBorder" Color="#006089"></SolidColorBrush>
+    <SolidColorBrush x:Key="TabIsSelectedText" Color="#006089"></SolidColorBrush>
+    <SolidColorBrush x:Key="SecondToolbarColor" Color="#006089"></SolidColorBrush>
+    <SolidColorBrush x:Key="RightFlyoutForeground" Color="#006089"></SolidColorBrush>
+    <SolidColorBrush x:Key="RightFlyoutBackground" Color="White"></SolidColorBrush>
+    <SolidColorBrush x:Key="RightFlyoutBorder" Color="#eeeff2"></SolidColorBrush>
+
+    <Style x:Key="LeftNavMainSectionStyle" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="#88898e"></Setter>
+        <Setter Property="Height" Value="24"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+        <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+    </Style>
+    <Style x:Key="LeftNavCollapsedBtn" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="#80D6D7DC"></Setter>
+        <Setter Property="Padding" Value="6,3,3,3"></Setter>
+    </Style>
+    <Style TargetType="{x:Type igDock:PaneHeaderPresenter}">
+        <Setter Property="Background" Value="#3a3b3d"></Setter>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="true">
+                <Setter Property="Background" Value="#3a3b3d"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="SearchTextBox" TargetType="{x:Type TextBox}">
+        <Setter Property="Foreground" Value="#006089"></Setter>
+        <Setter Property="BorderThickness" Value="3"></Setter>
+        <Setter Property="BorderBrush" Value="#006089"></Setter>
+        <Setter Property="FontSize" Value="14.5"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+        <Setter Property="Margin" Value="0,0,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Style.Triggers>
+            <Trigger Property="IsFocused" Value="true">
+                <Setter Property="Background" Value="#eeeff2"></Setter>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="#eeeff2"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="CollapsedLeftNavHeaderFlyout_LabelGrandParent" TargetType="{x:Type Grid}">
+        <Setter Property="Background" Value="White"></Setter>
+    </Style>
+    <Style x:Key="CollapsedLeftNavHeaderFlyout_LabelParent" TargetType="{x:Type Grid}">
+        <Setter Property="Background" Value="#D6D7DC"></Setter>
+        <Setter Property="Opacity" Value="0.5"></Setter>
+    </Style>
+    <Style x:Key="CollapsedLeftNavHeaderFlyout_Label" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="#006089"></Setter>
+    </Style>
+    <Style x:Key="RightFlyoutMenu" TargetType="MenuItem">
+        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="Foreground" Value="#006089"></Setter>
+        <Setter Property="BorderThickness" Value="2,0,2,0"></Setter>
+        <Setter Property="BorderBrush" Value="#acacac"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+        <Setter Property="FontSize" Value="10px"></Setter>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="LeftFlyoutMenu" TargetType="MenuItem">
+        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="Foreground" Value="#006089"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+        <Setter Property="FontSize" Value="10px"></Setter>
+    </Style>
+    <Style x:Key="TreeNavHeader" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="FontFamily" Value="Arial"></Setter>
+        <Setter Property="FontSize" Value="11"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="Padding" Value="8, 5, 0, 3"></Setter>
+    </Style>
+    <Style x:Key="FlyoutMenuSeparator" TargetType="{x:Type Separator}">
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Separator}">
+                    <Border BorderBrush="#d0d0d0" BorderThickness="1"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="AddTabPopupText" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+        <Setter Property="FontStretch" Value="Normal"></Setter>
+        <Setter Property="FontStyle" Value="Normal"></Setter>
+        <Setter Property="FontWeight" Value="Normal"></Setter>
+        <Setter Property="Foreground" Value="#006089"></Setter>
+        <Setter Property="Margin" Value="5,0,0,0"></Setter>
+    </Style>
+    <Style x:Key="BreadcrumbStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="15.75"></Setter>
+        <Setter Property="FontFamily" Value="Arial"></Setter>
+        <Setter Property="FontStretch" Value="Normal"></Setter>
+        <Setter Property="FontStyle" Value="Normal"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="Foreground" Value="#006089"></Setter>
+    </Style>
+    <Style TargetType="{x:Type Button}" x:Key="TabActionButtonStyle">
+        <Setter Property="Height" Value="26"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+        <Setter Property="FontSize" Value="10"></Setter>
+        <Setter Property="Background" Value="#006089"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="Margin" Value="0,-8,9,0"></Setter>
+        <Setter Property="BorderBrush" Value="#006089"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="Transparent" BorderThickness="1" Padding="5,0,5,0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#00a1dd"/>
+                <Setter Property="BorderBrush" Value="#00a1dd"/>
+                <Setter Property="BorderThickness" Value="1"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="TabActionMenuStyle" TargetType="{x:Type Menu}">
+        <Setter Property="Background" Value="#006089"></Setter>
+        <Setter Property="Height" Value="24"></Setter>
+        <Setter Property="Padding" Value="0,0,0,0"></Setter>
+        <Setter Property="Margin" Value="0,-8,9,0"></Setter>
+        <Setter Property="BorderBrush" Value="#006089"></Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#00a1dd"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="TabActionMenuItemStyle" TargetType="{x:Type MenuItem}">
+        <Setter Property="Height" Value="24"></Setter>
+    </Style>
+    <Style TargetType="{x:Type TextBlock}" x:Key="TabActionMenuTextStyle">
+        <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+        <Setter Property="FontSize" Value="10"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="Idera.SQLdm.DesktopClient.Controls.ServerSummary.Charts.CpuTrends"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Idera.SQLdm.DesktopClient.Controls.ServerSummary"
+             mc:Ignorable="d" 
+             d:DesignHeight="150.245" d:DesignWidth="649.377" 
+             xmlns:ig="http://schemas.infragistics.com/xaml"
+             d:DataContext="{d:DesignInstance local:ServerSummaryDataModel, IsDesignTimeCreatable=True}">
+    <Grid Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <ig:XamDataChart Name="cpuChart" Grid.RowSpan="2" HorizontalZoomable="True">
+        	<ig:XamDataChart.Series>
+                <ig:AreaSeries ItemsSource="{Binding RealtimeSnapshotData}"  ValueMemberPath="TotalCpuUsage" XAxis="{Binding ElementName=xAxis1}" YAxis="{Binding ElementName=yAxis1}" Title="Total"/>
+        		<ig:AreaSeries ItemsSource="{Binding RealtimeSnapshotData}" ValueMemberPath="SqlServerCpuUsage" XAxis="{Binding ElementName=xAxis1}" YAxis="{Binding ElementName=yAxis1}" Title="SQL Server"/>
+        	</ig:XamDataChart.Series>
+        	<ig:XamDataChart.Axes>
+        		<ig:CategoryDateTimeXAxis x:Name="xAxis1" ItemsSource="{Binding RealtimeSnapshotData}" DateTimeMemberPath="Date"/>
+        		<ig:NumericYAxis x:Name="yAxis1"/>
+        	</ig:XamDataChart.Axes>
+            <ig:SyncManager.SyncSettings>
+                <ig:SyncSettings SyncChannel="serverOverview" SynchronizeHorizontally="True" SynchronizeVertically="False"/>
+            </ig:SyncManager.SyncSettings>
+        </ig:XamDataChart>
+        <ig:XamLinearGauge Name="queueLengthGauge" Width="35" Grid.Column="1">
+            <ig:XamLinearGauge.Scales>
+                <ig:LinearGaugeScale>
+                    <ig:LinearGaugeScale.BarMarkers>
+                        <ig:LinearGaugeBarMarker Value="{Binding Path=LastSnapshotProcessorQueueLength}" />
+                    </ig:LinearGaugeScale.BarMarkers>
+                </ig:LinearGaugeScale>
+            </ig:XamLinearGauge.Scales>
+        </ig:XamLinearGauge>
+        <ig:XamDataChart Name="callRatesChart" Grid.Column="2" Grid.RowSpan="2" HorizontalZoomable="True">
+        	<ig:XamDataChart.Series>
+        		<ig:ColumnSeries ItemsSource="{Binding RealtimeSnapshotData}" ValueMemberPath="CallRatesBatches" XAxis="{Binding ElementName=xAxis2}" YAxis="{Binding ElementName=yAxis2}" MarkerType="None" TransitionDuration="00:00:01" />
+        		<ig:LineSeries ItemsSource="{Binding RealtimeSnapshotData}" ValueMemberPath="CallRatesCompiles" XAxis="{Binding ElementName=xAxis2}" YAxis="{Binding ElementName=yAxis2}" MarkerType="None" />
+        		<ig:LineSeries ItemsSource="{Binding RealtimeSnapshotData}" ValueMemberPath="CallRatesReCompiles" XAxis="{Binding ElementName=xAxis2}" YAxis="{Binding ElementName=yAxis2}" MarkerType="None" />
+        	</ig:XamDataChart.Series>
+			<ig:XamDataChart.Axes>
+        		<ig:CategoryDateTimeXAxis x:Name="xAxis2" ItemsSource="{Binding RealtimeSnapshotData}" DateTimeMemberPath="Date"/>
+        		<ig:NumericYAxis x:Name="yAxis2"/>
+        	</ig:XamDataChart.Axes>
+            <ig:SyncManager.SyncSettings>
+                <ig:SyncSettings SyncChannel="serverOverview" SynchronizeHorizontally="True" SynchronizeVertically="False"/>
+            </ig:SyncManager.SyncSettings>
+        </ig:XamDataChart>
+    </Grid>
+</UserControl>

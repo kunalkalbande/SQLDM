@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?taglib uri="/WEB-INF/tld/idera.tld" prefix="idera"?>
+<zk xmlns:html="http://www.w3.org/1999/xhtml">
+<window 
+	apply="com.idera.sqldm.ui.components.CustomMessageBox"
+	border="none" width="450px" closable="true" sizable="true"
+	zclass="popup_container" contentSclass="padding-all-0"
+	style="border-top: 8px solid #FE4210"
+	position="middle, center">
+	
+	<vlayout style="background-color:white;" sclass="padding-tb-0 padding-lr-8">
+		<separator spacing="5px" />
+		<label sclass="H3" id="titleMessage" multiline="true"/>
+		<space height="5px" />
+		<label sclass="error-subtitle" id="primaryCause" multiline="true"/>
+		<hlayout sclass="padding-l-0 padding-t-16 padding-r-36">
+			<div sclass="@{iconURL}" visible="@{isIconVisible}"/>
+			<grid id="messageGrid" sclass="idera-invisible-grid" model="@{messageListModel}">
+				<columns>
+					<column align="left"/>
+				</columns>
+				<rows>
+					<row self="@{each='messageEntry'}" value="@{messageEntry}">
+						<label value="@{messageEntry}"/>
+					</row>
+				</rows>
+			</grid>
+		</hlayout>
+		<toolbar align="end" style="background:transparent;">
+			<idera-cwf-button autodisable="okButton, yesButton, noButton, cancelButton" id="okButton" label="${idera:getLabel('Messages.ok')}" visible="false" sclass="orange-text-light-gray-button"/>
+			<idera-cwf-button autodisable="okButton, yesButton, noButton, cancelButton" id="yesButton" label="${idera:getLabel('Labels.UI.yes')}" visible="false" sclass="orange-text-light-gray-button"/>
+			<idera-cwf-button autodisable="okButton, yesButton, noButton, cancelButton" id="noButton" label="${idera:getLabel('Labels.UI.no')}" visible="false" sclass="orange-text-light-gray-button"/>
+			<idera-cwf-button autodisable="okButton, yesButton, noButton, cancelButton" id="cancelButton" label="${idera:getLabel('Messages.cancel')}" visible="false" sclass="orange-text-light-gray-button"/>
+		</toolbar>
+	</vlayout>
+</window>
+</zk>

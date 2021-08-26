@@ -1,0 +1,183 @@
+<zk>
+	<div
+		apply="com.idera.sqldm.ui.dashboard.instances.sessions.SummaryPageComposer"
+		style="padding-left:2px;">
+		<vlayout>
+			<hlayout>
+				<div hflex="1"
+					style="height:30px; text-align:right; padding-top: 10px"
+					sclass="padding-b-4">
+					<label id="titleLabel" sclass="H4"
+						value="${idera:getLabel('SQLdm.Labels.sessions-capital')}"
+						style="float:left;" />
+				</div>
+				<div hflex="1"  style="float: right">
+				<a id="makeReportLink" sclass="link"
+					label="${idera:getLabel('Labels.export')}"
+					popup="reportsMenupopup, position=after_end" style="float:right;text-decoration: underline;padding-right: 10px;" />
+
+				<menupopup id="reportsMenupopup">
+					<menuitem id="createPDFMenuitem"
+						label="${idera:getLabel('Labels.export-as-pdf')}" />
+					<menuitem id="createXLSMenuitem"
+						label="${idera:getLabel('Labels.export-as-xls')}" />
+					<menuitem id="createXMLMenuitem"
+						label="${idera:getLabel('Labels.export-as-xml')}" />
+				</menupopup>
+				</div>
+			</hlayout>
+			<separator height="1px" orient="horizontal" bar="true" />
+			<div>
+				<grid id="sessionSummaryGrid" span="true"
+					model="@{sessionsModel}"
+					emptyMessage="${idera:getLabel('SQLdm.Labels.data-not-available')}"
+					mold="paging" paginal="${sessionsListPgId}" hflex="1"
+					sclass="styled-list styled-cwf-list table_header">
+					<columns sizable="true">
+						<extcolumn
+							label="${idera:getLabel('SQLdm.Labels.sessionID')}" width="95px"
+							sort="auto(connection.id)" sortDirection="descending"
+							sclass="numbers-position-header" />
+						<extcolumn
+							label="${idera:getLabel('Labels.host')}" width="110px"
+							sort="auto(LOWER(connection.host))" />
+						<extcolumn
+							label="${idera:getLabel('Labels.database')}" width="120px"
+							style="word-wrap:break-word;"
+							sort="auto(LOWER(connection.database))" />
+						<extcolumn id="statusColumn"
+							label="${idera:getLabel('Labels.status')}" width="100px"
+							style="word-wrap:break-word;"
+							sort="auto(LOWER(connection.status))" />
+						<extcolumn
+							label="${idera:getLabel('SQLdm.Labels.sessions.openTransactions')}"
+							width="125px" sort="auto(usage.OpenTransactions)"
+							sclass="numbers-position-header" />
+						<extcolumn
+							label="${idera:getLabel('SQLdm.Labels.sessions.command')}"
+							width="120px" sort="auto(LOWER(connection.Command))" />
+						<extcolumn
+							label="${idera:getLabel('SQLdm.Labels.sessions.application')}"
+							width="200px" style="word-wrap:break-word;"
+							sort="auto(LOWER(connection.Application))" />
+						<extcolumn
+							label="${idera:getLabel('SQLdm.Labels.sessions.waitTime')}"
+							width="105px" sort="auto(lock.waitTime)"
+							sclass="numbers-position-header" />
+						<extcolumn
+							label="${idera:getLabel('SQLdm.Labels.sessions.waitType')}"
+							width="100px" sort="auto(LOWER(lock.waitType))" />
+						<extcolumn
+							label="${idera:getLabel('SQLdm.Labels.sessions.waitResource')}"
+							width="100px" />
+						<extcolumn
+							label="${idera:getLabel('SQLdm.Labels.sessions.cpu')}"
+							width="75px" sort="auto(usage.Cpu)"
+							sclass="numbers-position-header" />
+						<extcolumn
+							label="${idera:getLabel('SQLdm.Labels.sessions.cpuDelta')}"
+							width="110px" sort="auto(usage.CpuDelta)"
+							sclass="numbers-position-header" />
+						<extcolumn
+							label="${idera:getLabel('SQLdm.Labels.sessions.io')}"
+							width="90px" sort="auto(usage.Io)"
+							sclass="numbers-position-header" />
+						<extcolumn
+							label="${idera:getLabel('SQLdm.Labels.sessions.memoryUsage')}"
+							width="155px" />
+						<extcolumn
+							label="${idera:getLabel('SQLdm.Labels.sessions.loginTime')}"
+							width="145px" sort="auto(usage.loginTime)" />
+						<extcolumn
+							label="${idera:getLabel('SQLdm.Labels.sessions.lastBatch')}"
+							width="135px" sort="auto(usage.lastBatch)" />
+						<extcolumn
+							label="${idera:getLabel('SQLdm.Labels.sessions.blockedBy')}"
+							width="80px" sort="auto(lock.blockedby)" />
+						<extcolumn
+							label="${idera:getLabel('SQLdm.Labels.sessions.blocking')}"
+							width="80px" sort="auto(lock.blocking)" />
+						<extcolumn
+							label="${idera:getLabel('SQLdm.Labels.sessions.blocking.count')}"
+							width="110px" sort="auto(lock.count)" />
+						<extcolumn
+							label="${idera:getLabel('SQLdm.Labels.sessions.address')}"
+							width="120px" sort="auto(LOWER(connection.address))" />
+						<extcolumn
+							label="${idera:getLabel('SQLdm.Labels.sessions.netLibrary')}"
+							width="95px" sort="auto(LOWER(connection.netLibrary))" />
+						<extcolumn
+							label="${idera:getLabel('SQLdm.Labels.sessions.versionStoreSec')}"
+							width="175px" sort="auto(LOWER(connection.netLibrary))" />
+					</columns>
+					<template name="model">
+						<row>
+							<label value="${each.connection.id}"
+								sclass="numbers-position" />
+							<label value="${each.connection.host}"
+								sclass="wrap-word" />
+							<label value="${each.connection.database}"
+								sclass="wrap-word" />
+							<label value="${each.connection.status}"
+								sclass="wrap-word" />
+							<label
+								value="${each.usage.openTransactions}"
+								sclass="numbers-position" />
+							<label value="${each.connection.command}"
+								sclass="wrap-word" />
+							<label
+								value="${each.connection.application}" sclass="wrap-word" />
+							<label value="${each.lock.waitTime}"
+								sclass="numbers-position" />
+							<label value="${each.lock.waitType}"
+								sclass="numbers-position" />
+							<label value="${each.lock.resource}"
+								sclass="numbers-position" />
+							<label value="${each.usage.cpu}"
+								sclass="numbers-position" />
+							<label value="${each.usage.cpuDelta}"
+								sclass="numbers-position" />
+							<label value="${each.usage.io}"
+								sclass="numbers-position" />
+							<label value="${each.usage.memoryUsage}"
+								sclass="wrap-word" />
+							<label
+								value="${sqldmidera:getLocalShortDateTime(each.usage.loginTime)}"
+								sclass="wrap-word" />
+							<label
+								value="${sqldmidera:getLocalShortDateTime(each.usage.lastBatch)}"
+								sclass="wrap-word" />
+							<label value="${each.lock.blockedby}"
+								sclass="numbers-position" />
+							<label value="${each.lock.blocking}"
+								sclass="numbers-position" />
+							<label value="${each.lock.count}"
+								sclass="numbers-position" />
+							<label value="${each.connection.address}"
+								sclass="wrap-word" />
+							<label value="${each.connection.netLibrary}"
+								sclass="wrap-word" />
+							<label
+								value="${each.tempDBUsage.versionStoreElapsedSeconds}"
+								sclass="numbers-position" />
+						</row>
+					</template>
+					<foot>
+						<footer span="12" align="center">
+							<hbox align="center">
+								<paging id="sessionsListPgId" />
+								<intbox id="sessionListRowsBox"
+									zclass="z-paging-inp"
+									constraint="no empty,no negative, no zero: ${idera:getLabel('SQLdm.Messages.page-size-error')}"
+									width="30px" placeholder="#" maxlength="3">
+								</intbox>
+								<label
+									value="${idera:getLabel('SQLdm.Labels.pagination-items-per-page')}" />
+							</hbox>
+						</footer>
+					</foot>
+				</grid>
+			</div>
+		</vlayout>
+	</div>
+</zk>

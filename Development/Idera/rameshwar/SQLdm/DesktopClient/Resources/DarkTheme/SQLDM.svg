@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="SQLDM" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-1{fill:#95c942}.cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="Base">
+        <circle id="Ellipse_1" cx="12" cy="12" r="12" class="cls-1" data-name="Ellipse 1"/>
+    </g>
+    <g id="Diagnostic_Manager" data-name="Diagnostic Manager" transform="translate(.84 6.459)">
+        <path id="Path_27" d="M36.642 226.321a.216.216 0 0 1-.158-.069l-3.448-3.7-4.832-.293a.216.216 0 0 1-.2-.215v-.164a.216.216 0 0 1 .2-.216l6.33-.384h.013a.216.216 0 0 1 .158.069l1.65 1.77 4.83-7.729a.216.216 0 0 1 .183-.1h.008a.216.216 0 0 1 .183.115l2.9 5.453 5.637.342a.216.216 0 0 1 .2.216v.165a.216.216 0 0 1-.2.216l-7.08.429H43a.216.216 0 0 1-.19-.115l-1.571-2.953-4.413 7.062a.216.216 0 0 1-.163.1z" class="cls-2" data-name="Path 27" transform="translate(-28 -215.29)"/>
+    </g>
+</svg>

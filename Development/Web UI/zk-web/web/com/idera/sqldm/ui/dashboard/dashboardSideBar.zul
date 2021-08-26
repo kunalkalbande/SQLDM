@@ -1,0 +1,221 @@
+<zk>
+	<div id="leftNavigationView" apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.idera.sqldm.ui.dashboard.LeftNavigationComposer')" vflex = "1">
+        <div fulfill="self.onCreate" vflex="1">
+            <!-- <vlayout id="filterLayout" vflex="1" width="100%" style="overflow-y: auto; overflow-x:hidden"> -->
+            <idera-cwf-sidebar id="sidebar-container sidebar" width="250px" vflex="1">
+
+                <vlayout vflex="1" sclass="padding-lr-0">
+                    <style>
+                        .h4NewStyle{
+                        width: 116px;
+                        height: 16px;
+                        font-weight: bold;
+                        line-height: 1;
+                        text-align: left;
+                        color: #ffffff;
+                        margin-left: 9px;
+                        }
+                        .selectedColor{
+                        background-color: #8cc63e !important;
+                        }
+                        .z-ideraradio-cnt{
+                        font-weight: normal !important;
+                        }
+                        .specicalLink:hover{
+                        cursor: pointer;
+                        background-color: #655744 !important;
+                        }
+                        .z-grid-body{
+                        width: 100%;
+                        }
+                        .newSizeImg{
+                        width: 14px !important;
+                        height: 14px !important;
+                        }
+                        .idera-groupbox-header {
+                        border-bottom: 1px solid #2F281F !important;
+                        }
+                        .sidebar-container {
+                        background-color: #726559;
+                        color: #FFF;
+                        box-shadow: none;
+                        -webkit-box-shadow: none;
+                        -moz-box-shadow: none;
+                        font-family: "Source Sans Pro", sans-serif;
+                        font-weight: normal;
+                        font-size: 1rem;
+                        width: 13.125rem;
+                        overflow-y: auto;
+                        }
+                        .z-caption .z-caption-l {
+                        font-size: 1rem;
+                        font-weight: normal;
+                        padding-left: 16px
+                        }
+                    </style>
+                    <radiogroup id="radioGroups" visible="false"/>
+                    <div align="center" sclass="filtering-layout-style"
+                         width="250px" hflex="1" style="border-top: 1px solid #2F281F !important;">
+                        <idera-cwf-groupbox sclass="groupbox-header-colored" id="byStatusBox" mold="3d"
+                                            contentStyle="border: 0px;overflow:hidden;"
+                                            onOpen="@command('onOpenGroupBox')">
+                            <caption id="byStatusCaption" label="By Status" sclass="open-true"/>
+                            <vbox id="partialByStatusContainerVbox">
+                                <grid id="partialByStatusGrid" sclass="idera-invisible-grid"
+                                      model="@load(vm.severityModel)" width="100%" style="padding: 0;margin-right: 3px;"
+                                      emptyMessage="@bind(vm.displayMessageForSeverity)">
+
+                                    <columns visible="false">
+                                        <column width="100%" align="left"/>
+                                        <!--<column width="28px" align="left"/>
+                                        <column align="left" style="word-wrap:break-word;"/>-->
+                                    </columns>
+                                    <rows>
+                                        <template name="model">
+                                            <row width="100%" sclass="specicalLink"
+                                                 onClick="@command('filterInstancesByStatus', name = each.name)"
+                                                 id="${each.name}" style="padding: 0">
+                                                <zk choose="">
+                                                    <zk when="${each.maxSeverity == 8}">
+                                                        <zk if="${each.name == 'ALL'}">
+
+                                                            <idera-cwf-radio radiogroup="radioGroups"
+                                                                             selected="@load(vm.checked(each.name))"
+                                                                             onClick="@command('filterInstancesByStatus', name = each.name)"
+                                                                             label="All Instances(${each.count })"/>
+                                                        </zk>
+                                                        <zk if="${each.name =='CRITICAL'}">
+                                                            <idera-cwf-radio radiogroup="radioGroups"
+                                                                             selected="@load(vm.checked(each.name))"
+                                                                             image="${sqldmidera:getImageURLWithoutSize('critical-icon')}"
+                                                                             onClick="@command('filterInstancesByStatus', name = each.name)"
+                                                                             label="Critical(${each.count })"/>
+                                                        </zk>
+                                                    </zk>
+                                                    <zk when="${each.maxSeverity == 4}">
+                                                        <idera-cwf-radio radiogroup="radioGroups"
+                                                                         selected="@load(vm.checked(each.name))"
+                                                                         image="${sqldmidera:getImageURLWithoutSize('warning-icon')}"
+                                                                         onClick="@command('filterInstancesByStatus', name = each.name)"
+                                                                         label="Warning(${each.count })"/>
+                                                    </zk>
+                                                    <zk when="${each.maxSeverity == 2}">
+                                                        <idera-cwf-radio radiogroup="radioGroups"
+                                                                         selected="@load(vm.checked(each.name))"
+                                                                         image="${sqldmidera:getImageURLWithoutSize('maint-icon')}"
+                                                                         onClick="@command('filterInstancesByStatus', name = each.name)"
+                                                                         label="Maint. Mode"/>
+                                                    </zk>
+                                                    <zk when="${each.maxSeverity == 1}">
+                                                        <idera-cwf-radio radiogroup="radioGroups"
+                                                                         selected="@load(vm.checked(each.name))"
+                                                                         image="${sqldmidera:getImageURLWithoutSize('ok-icon14x14')}"
+                                                                         onClick="@command('filterInstancesByStatus', name = each.name)"
+                                                                         label="Successful(${each.count })"/>
+                                                    </zk>
+                                                    <zk when="${each.maxSeverity == -1}">
+                                                        <zk if="${each.name == 'OK'}">
+                                                            <idera-cwf-radio radiogroup="radioGroups"
+                                                                             selected="@load(vm.checked(each.name))"
+                                                                             image="${sqldmidera:getImageURLWithoutSize('ok-icon14x14')}"
+                                                                             onClick="@command('filterInstancesByStatus', name = each.name)"
+                                                                             label="Successful(${each.count })"/>
+                                                        </zk>
+                                                        <zk if="${each.name == 'WARNING'}">
+                                                            <idera-cwf-radio radiogroup="radioGroups"
+                                                                             selected="@load(vm.checked(each.name))"
+                                                                             image="${sqldmidera:getImageURLWithoutSize('warning-icon')}"
+                                                                             onClick="@command('filterInstancesByStatus', name = each.name)"
+                                                                             label="Warning(${each.count })"/>
+                                                        </zk>
+                                                        <zk if="${each.name == 'MAINT. MODE'}">
+                                                            <idera-cwf-radio radiogroup="radioGroups"
+                                                                             selected="@load(vm.checked(each.name))"
+                                                                             image="${sqldmidera:getImageURLWithoutSize('maint-icon')}"
+                                                                             onClick="@command('filterInstancesByStatus', name = each.name)"
+                                                                             label="Maint. Mode"/>
+                                                        </zk>
+                                                    </zk>
+                                                    <zk>
+                                                        <idera-cwf-radio radiogroup="radioGroups"
+                                                                         selected="@load(vm.checked(each.name))"
+                                                                         image="${sqldmidera:getImageURLWithoutSize('ok-icon14x14')}"
+                                                                         onClick="@command('filterInstancesByStatus', name = each.name)"
+                                                                         label="${each.name} (${each.count })"/>
+                                                    </zk>
+                                                </zk>
+                                            </row>
+                                        </template>
+                                    </rows>
+                                </grid>
+                            </vbox>
+                        </idera-cwf-groupbox>
+                        <idera-cwf-groupbox sclass="groupbox-header-colored" id="byGroupBox" mold="3d"
+                                            contentStyle="border: 0px;overflow:hidden;" open="false"
+                                            onOpen="@command('onOpenGroupBox')">
+                            <caption id="byGroupCaption" label="By Tags" sclass="open-true"/>
+                            <vbox id="partialByGroupContainerVbox" width="100%">
+                                <grid id="partialByGroupGrid" sclass="idera-invisible-grid" model="@load(vm.tagsModel)"
+                                      style="padding: 0;"
+                                      emptyMessage="@bind(vm.displayMessageForTags)">
+                                    <columns>
+                                        <column width="100%" align="left"/>
+                                        <!--<column align="left" style="word-wrap:break-word;"/>-->
+                                    </columns>
+                                    <rows style="padding: 0">
+                                        <template name="model">
+                                            <row width="100%" sclass="specicalLink" style="padding: 0">
+                                                <idera-cwf-radio radiogroup="radioGroups"
+                                                                 selected="@load(vm.checked(each.name))"
+                                                                 onClick="@command('filterInstancesByTags', name = each.name)"
+                                                                 label="${each.name} (${each.count })"/>
+                                            </row>
+                                        </template>
+                                    </rows>
+                                </grid>
+                            </vbox>
+                        </idera-cwf-groupbox>
+                        <idera-cwf-groupbox sclass="groupbox-header-colored" id="byCriticalInstancesBox" mold="3d"
+                                            contentStyle="border: 0px;overflow:hidden;" open="false"
+                                            onOpen="@command('onOpenGroupBox')">
+                            <caption id="byCriticalInstancesCaption"
+                                     label="Most Critical Instances" sclass="open-true"/>
+                            <vbox id="partialByCriticalInstancesContainerVbox" width="100%">
+                                <grid id="partialByCriticalInstancesGrid" sclass="idera-invisible-grid"
+                                      model="@load(vm.criticalInstancesModel)" style="padding: 0"
+                                      emptyMessage="@bind(vm.displayMessageForCriticalInstances)">
+                                    <columns>
+                                        <column width="20%" align="left"/>
+                                        <column align="left" width="80%" style="word-wrap:break-word;"/>
+                                    </columns>
+                                    <rows>
+                                        <template name="model">
+                                            <row sclass="specicalLink" width="100%" style="cursor: auto">
+                                                <image src="${sqldmidera:getImageURL('ServerCritical', 'small')}"
+                                                       style="margin-left: 10px"/>
+                                                <div style="overflow:hidden">
+                                                    <idera-cwf-hyperlink
+                                                            href="${sqldmidera:buildPathRelativeToCurrentProduct('singleInstance')}/${each.instanceId}"
+                                                            sclass="hyperlinkonDashboard"
+                                                            tooltip="${forEachStatus.index}, position = end_after">
+                                                        <!-- <label value = "${each.name}" maxlength="12" /> @author Saumyadeep -->
+                                                        <label value="${each.displayName}" maxlength="12"/>
+                                                    </idera-cwf-hyperlink>
+                                                    <popup id="${forEachStatus.index}">
+                                                        <label value="${each.name}"/>
+                                                    </popup>
+                                                </div>
+                                            </row>
+                                        </template>
+                                    </rows>
+                                </grid>
+                            </vbox>
+                        </idera-cwf-groupbox>
+                    </div>
+
+                </vlayout>
+            </idera-cwf-sidebar>
+            <!-- </vlayout> -->
+        </div>
+    </div>
+</zk>

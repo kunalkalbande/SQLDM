@@ -1,0 +1,31 @@
+<zk>
+<div apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.idera.sqldm.ui.dashboard.instances.resources.InstanceResourcesViewModel')">
+<div style="height:1700px;overflow:auto">
+		 <borderlayout height="100%" vflex="min">
+		 	<center autoscroll="true" vflex="min">
+		 	<div>
+<toolbar id="resourcesTb" visible="false">
+	<!-- Remove the commented code if images are not required -->
+	<!-- <button sclass="white-text-dark-gray-button" label="Summary" visible="false" image="${idera:getImageURLWithoutSize('SessionsSummary')}" orient="horizontal" onClick="@command('toolbarBtnClicked', view='Summary')"/>
+	<idera-cwf-button sclass="white-text-dark-gray-button" label="CPU" image="${idera:getImageURLWithoutSize('ResourcesCpuView32x32')}" orient="horizontal" onClick="@command('toolbarBtnClicked', view='CPU')" />
+	<idera-cwf-button sclass="gray-text-transparent-button" label="Memory" image="${idera:getImageURLWithoutSize('ResourcesMemoryView32x32')}" orient="horizontal" onClick="@command('toolbarBtnClicked', view='Memory')" />
+	<idera-cwf-button sclass="gray-text-transparent-button" label="Disk" image="${idera:getImageURLWithoutSize('ResourcesDiskView32x32')}" orient="horizontal" onClick="@command('toolbarBtnClicked', view='Disk')" />
+	<idera-cwf-button sclass="gray-text-transparent-button" label="File Activity" image="${idera:getImageURLWithoutSize('ResourcesFileActivity32x32')}" orient="horizontal" onClick="@command('toolbarBtnClicked', view='FileActivity')" />
+	<idera-cwf-button sclass="gray-text-transparent-button" label="Server Waits" image="${idera:getImageURLWithoutSize('server_waits_32x32')}" orient="horizontal" onClick="@command('toolbarBtnClicked', view='ServerWaits')" /> -->
+	<!-- <button id = "button1" sclass="dark-gray-text-white-button" label="Summary" orient="horizontal" onClick="@command('toolbarBtnClicked', tabId = '3' , subTabId='1')"/> -->
+	<idera-cwf-button id = "button2" style="text-transform: uppercase;" sclass="gray-text-transparent-button" label="${idera:getLabel('SQLdm.Labels.cpu')}" orient="horizontal" onClick="@command('toolbarBtnClicked', tabId = '3' , subTabId='2')" />
+	<idera-cwf-button id = "button3" style="text-transform: uppercase;" sclass="white-text-dark-gray-button" label="${idera:getLabel('SQLdm.Labels.memory')}" orient="horizontal" onClick="@command('toolbarBtnClicked', tabId = '3' , subTabId='3')" />
+	<idera-cwf-button id = "button4" style="text-transform: uppercase;" sclass="white-text-dark-gray-button" label="${idera:getLabel('SQLdm.Labels.disk')}" orient="horizontal" onClick="@command('toolbarBtnClicked', tabId = '3', subTabId='4')" />
+	<!-- <button id = "button5" sclass="white-text-dark-gray-button" label="${idera:getLabel('SQLdm.Labels.resources-file-activity')}" orient="horizontal" onClick="@command('toolbarBtnClicked', tabId = '3', subTabId='5')" /> -->
+	<idera-cwf-button id = "button6" style="text-transform: uppercase;" sclass="white-text-dark-gray-button" label="${idera:getLabel('SQLdm.Labels.serverwaits')}" orient="horizontal" onClick="@command('toolbarBtnClicked', tabId = '3', subTabId='6')" />
+
+</toolbar>
+
+<include id="contentView"/>
+</div>
+</center>
+</borderlayout>
+</div>
+</div>
+</zk>
+		

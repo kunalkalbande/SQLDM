@@ -1,0 +1,16 @@
+F:\Idera\SQLdm\Development\bin\Debug\Idera.SQLdm.Service.Runner.exe.config
+F:\Idera\SQLdm\Development\bin\Debug\Idera.SQLdm.Service.Runner.exe
+F:\Idera\SQLdm\Development\bin\Debug\Idera.SQLdm.Service.Runner.pdb
+F:\Idera\SQLdm\Development\Idera\SQLdm\ServiceRunner\obj\Debug\Idera.SQLdm.Service.Runner.csprojAssemblyReference.cache
+F:\Idera\SQLdm\Development\Idera\SQLdm\ServiceRunner\obj\Debug\Idera.SQLdm.Service.Runner.csproj.CoreCompileInputs.cache
+F:\Idera\SQLdm\Development\Idera\SQLdm\ServiceRunner\obj\Debug\Idera.SQLdm.Service.Runner.csproj.CopyComplete
+F:\Idera\SQLdm\Development\Idera\SQLdm\ServiceRunner\obj\Debug\Idera.SQLdm.Service.Runner.exe
+F:\Idera\SQLdm\Development\Idera\SQLdm\ServiceRunner\obj\Debug\Idera.SQLdm.Service.Runner.pdb
+E:\Idera\SQLdm\Development\bin\Debug\Idera.SQLdm.Service.Runner.exe.config
+E:\Idera\SQLdm\Development\bin\Debug\Idera.SQLdm.Service.Runner.exe
+E:\Idera\SQLdm\Development\bin\Debug\Idera.SQLdm.Service.Runner.pdb
+E:\Idera\SQLdm\Development\Idera\SQLdm\ServiceRunner\obj\Debug\Idera.SQLdm.Service.Runner.csprojAssemblyReference.cache
+E:\Idera\SQLdm\Development\Idera\SQLdm\ServiceRunner\obj\Debug\Idera.SQLdm.Service.Runner.csproj.CoreCompileInputs.cache
+E:\Idera\SQLdm\Development\Idera\SQLdm\ServiceRunner\obj\Debug\Idera.SQLdm.Service.Runner.csproj.CopyComplete
+E:\Idera\SQLdm\Development\Idera\SQLdm\ServiceRunner\obj\Debug\Idera.SQLdm.Service.Runner.exe
+E:\Idera\SQLdm\Development\Idera\SQLdm\ServiceRunner\obj\Debug\Idera.SQLdm.Service.Runner.pdb

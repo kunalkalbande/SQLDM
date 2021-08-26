@@ -1,0 +1,386 @@
+<zk>
+	<div id="leftNavigationView" apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.idera.sqldm.ui.dashboard.instances.queries.LeftNavigationQueryComposer')"
+		vflex="1">
+		<div id="leftBarDiv" fulfill="self.onCreate" vflex="1">
+		<!-- 	<vlayout id="filterLayout" vflex="1" width="100%"
+				style="overflow-y: auto; overflow-x:hidden"> -->
+				<idera-cwf-sidebar id="filterLayout" vflex="1" width="100%"
+				   style="overflow-y: auto; overflow-x:hidden">
+				<vlayout vflex="1" sclass="padding-lr-8 padding-tb-12"
+					width="95%" style="overflow-y: auto; ; overflow-x:hidden">
+					<space height="5px" />
+					<label sclass="H4 dashboard-h4"
+						value="${idera:getLabel('SQLdm.Labels.views-selection')}" />
+					<space height="5px" />
+					<div align="center"
+						sclass="filtering-layout-style padding-lr-4 padding-t-0 padding-b-16"
+						hflex="1">
+
+						<grid sclass="idera-invisible-grid"
+							width="100%">
+							<columns hflex="1">
+								<column class="boxlabel"
+									style="padding-right:15px; width:38%">
+								</column>
+								<column style="padding-right:15px;"></column>
+							</columns>
+							<rows>
+								<row>
+									<label
+										value="${idera:getLabel('SQLdm.Labels.query-view')}" />
+									<idera-cwf-dropdownlist id="viewMetricCombobox" 
+										readonly="true" model="@load(vm.viewMetricOptions)"
+										selectedItem="@bind(vm.queryFilters.selectedView)"
+										width="120px" onSelect="@command('changeFilter')">
+										<template name="model">
+											<comboitem
+												label="@load(each.metricName)">
+											</comboitem>
+										</template>
+									</idera-cwf-dropdownlist>
+								</row>
+								<row>
+									<label
+										value="${idera:getLabel('SQLdm.Labels.query-group')}" />
+									<idera-cwf-dropdownlist id="queryGroupCombobox" 
+										readonly="true" model="@load(vm.queryGroupOptions)"
+										selectedItem="@bind(vm.queryFilters.selectedGroupBy)"
+										width="120px" onSelect="@command('changeGroupBy', flag=1)">
+										<template name="model">
+											<comboitem
+												label="@load(each.groupName)"
+												visible="@load(forEachStatus.index lt 5)">
+											</comboitem>
+										</template>
+
+									</idera-cwf-dropdownlist>
+								</row>
+								<row>
+									<label
+										value="${idera:getLabel('SQLdm.Labels.query-time-period')}" />
+									<idera-cwf-dropdownlist id="queryTimeCombobox" 
+										readonly="true" model="@load(vm.queryTimePeriodOptions)"
+										selectedItem="@bind(vm.queryFilters.selectedTimePeriod)"
+										width="120px" onSelect="@command('timeGroupOpened')" />
+								</row>
+								<row
+									visible="@bind(vm.queryFilters.selectedTimePeriod eq 'Custom')">
+									<label style="padding-left:10px;"
+										value="${idera:getLabel('SQLdm.Labels.query-start-date')}">
+									</label>
+									<datebox id="fromdate" cols="12" style="margin-left: 8px;"
+										format="MM/dd/yyyy" sclass="alert-datebox"
+										constraint="@bind(vm.fromDateConstraint)"
+										value="@bind(vm.queryFilters.fromDate)"
+										onChange="@command('changeFilter')" />
+								</row>
+								<row
+									visible="@bind(vm.queryFilters.selectedTimePeriod eq 'Custom')">
+									<label style="padding-left:10px;"
+										value="${idera:getLabel('SQLdm.Labels.query-start-time')}">
+									</label>
+									<timebox id="fromtime" cols="12" style="margin-left: 8px;"
+										format="HH:mm" 
+										constraint="@bind(vm.fromTimeConstraint)"
+										value="@bind(vm.queryFilters.fromTime)"
+										onChange="@command('changeFilter')" />
+								</row>
+								<row
+									visible="@bind(vm.queryFilters.selectedTimePeriod eq 'Custom')">
+									<label style="padding-left:10px;"
+										value="${idera:getLabel('SQLdm.Labels.query-end-date')}">
+									</label>
+									<datebox id="todate" cols="12" style="margin-left: 8px;"
+										format="MM/dd/yyyy" sclass="alert-datebox"
+										value="@bind(vm.queryFilters.endDate)"
+										constraint="@bind(vm.endDateConstraint)"
+										onChange="@command('changeFilter')" />
+								</row>
+								<row
+									visible="@bind(vm.queryFilters.selectedTimePeriod eq 'Custom')">
+									<label style="padding-left:10px;"
+										value="${idera:getLabel('SQLdm.Labels.query-end-time')}">
+									</label>
+									<timebox id="totime" cols="12" style="margin-left: 8px;"
+										format="HH:mm"
+										constraint="@bind(vm.endTimeConstraint)"
+										value="@bind(vm.queryFilters.endTime)"
+										onChange="@command('changeFilter')" />
+								</row>
+							</rows>
+						</grid>
+					</div>
+
+					<space height="5px" />
+					<hbox hflex="1" style="padding-right:10px;">
+						<label sclass="H4 dashboard-h4"
+							value="${idera:getLabel('SQLdm.Labels.query-filtering')}"
+							hflex="1" />
+						<div hflex="2" align="right">
+							<a label="Clear all filters"
+								onClick="@command('clearFilters')"
+								style="word-wrap:break-word;text-decoration: underline;"
+								sclass = "hyperlinkonInstaceQueries">
+							</a>
+						</div>
+					</hbox>
+					<space height="5 px " />
+
+					<div
+						sclass="filtering-layout-style padding-lr-0 padding-t-0 padding-b-16" 
+						hflex="1" style="padding-right:15px;" class="filterwidth">
+
+						<idera-cwf-groupbox id="applicationFilter" mold="3d" style="width:260px;"
+							contentStyle="border: 0px;overflow:visible;" open="false" sclass="groupbox-header-colored"
+							onOpen="@command('onOpenGroupBox')">
+							<caption id="applicationFilterCaption"
+								label="${idera:getLabel('SQLdm.Labels.filter-application')}" />
+							<vlayout style="height: inherit;">
+								<label
+									value="@bind(vm.displayMessageForApplication)"
+									visible="@bind(vm.applicationModel.getSize() eq 0)"
+									style="font-style: italic;color: gray;">
+								</label>
+								<idera-cwf-checkbox id="applicationAll"
+									label="All" checked="@bind(vm.queryFilters.applicationAllChecked)"
+									onCheck="@command('checkApplication')"
+									visible="@bind(vm.applicationModel.getSize() ne 0)" />
+								<vlayout id="applicationLayout"
+									children="@bind(vm.applicationModel)">
+									<template name="children"
+										var="node">
+										<idera-cwf-checkbox
+											label="@load(node.application)" checked="@bind(node.checked)"
+											onCheck="@command('checkApplication', application=node)"
+											visible="@bind(nodeStatus.index lt 10)" />
+									</template>
+								</vlayout>
+								<a label="More"
+									onClick="@command('moreApplications', grpbx=applicationFilter, target=moreApplicationsPopup)"
+									visible="@bind(vm.applicationModel.getSize() ge 10)"
+									style="text-decoration:none;">
+								</a>
+							</vlayout>
+						</idera-cwf-groupbox>
+
+						<idera-cwf-groupbox id="databasesFilter" mold="3d" style="width:260px;"
+							contentStyle="border: 0px;overflow:hidden;" open="false" sclass="groupbox-header-colored"
+							onOpen="@command('onOpenGroupBox')">
+							<caption id="databasesFilterCaption"
+								label="${idera:getLabel('SQLdm.Labels.filter-databases')}" />
+							<vlayout style="height: inherit;">
+								<label
+									value="@bind(vm.displayMessageForDatabases)"
+									visible="@bind(vm.databasesModel.getSize() eq 0)"
+									style="font-style: italic;color: gray;">
+								</label>
+								<idera-cwf-checkbox id="databasesAll" label="All"
+									checked="@bind(vm.queryFilters.databasesAllChecked)"
+									onCheck="@command('checkDatabase')"
+									visible="@bind(vm.databasesModel.getSize() ne 0)" />
+								<vlayout id="databasesLayout"
+									children="@bind(vm.databasesModel)">
+									<template name="children"
+										var="node">
+										<idera-cwf-checkbox
+											label="@load(node.database)" checked="@bind(node.checked)"
+											onCheck="@command('checkDatabase', database=node)"
+											visible="@bind(nodeStatus.index lt 10)" />
+									</template>
+								</vlayout>
+								<a label="More"
+									onClick="@command('moreDatabases', grpbx=databasesFilter, target=moreDatabasesPopup)"
+									visible="@bind(vm.databasesModel.getSize() ge 10)"
+									style="text-decoration:none;">
+								</a>
+							</vlayout>
+						</idera-cwf-groupbox>
+
+						<idera-cwf-groupbox id="usersFilter" mold="3d" style="width:260px;"
+							contentStyle="border: 0px;overflow:hidden;" open="false" sclass="groupbox-header-colored"
+							onOpen="@command('onOpenGroupBox')">
+							<caption id="usersFilterCaption"
+								label="${idera:getLabel('SQLdm.Labels.filter-users')}"/>
+							<vlayout style="height: inherit;">
+								<label
+									value="@bind(vm.displayMessageForUsers)"
+									visible="@bind(vm.usersModel.getSize() eq 0)"
+									style="font-style: italic;color: gray;">
+								</label>
+								<idera-cwf-checkbox id="usersAll" label="All"
+									checked="@bind(vm.queryFilters.usersAllChecked)"
+									onCheck="@command('checkUser')"
+									visible="@bind(vm.usersModel.getSize() ne 0)" />
+								<vlayout id="usersLayout"
+									children="@bind(vm.usersModel)">
+									<template name="children"
+										var="node">
+										<idera-cwf-checkbox
+											label="@load(node.user)" checked="@bind(node.checked)"
+											onCheck="@command('checkUser', user=node)"
+											visible="@bind(nodeStatus.index lt 10)" />
+									</template>
+								</vlayout>
+								<a label="More"
+									onClick="@command('moreUsers', grpbx=usersFilter, target=moreUsersPopup)"
+									visible="@bind(vm.usersModel.getSize() ge 10)"
+									style="text-decoration:none;">
+								</a>
+							</vlayout>
+						</idera-cwf-groupbox>
+
+						<idera-cwf-groupbox id="clientsFilter" mold="3d" style="width:260px;"
+							contentStyle="border: 0px;overflow:hidden;" open="false" sclass="groupbox-header-colored"
+							onOpen="@command('onOpenGroupBox')">
+							<caption id="clientsFilterCaption"
+								label="${idera:getLabel('SQLdm.Labels.filter-clients')}"/>
+							<vlayout style="height: inherit;">
+								<label
+									value="@bind(vm.displayMessageForClients)"
+									visible="@bind(vm.clientsModel.getSize() eq 0)"
+									style="font-style: italic;color: gray;">
+								</label>
+								<idera-cwf-checkbox id="clientsAll" label="All"
+									checked="@bind(vm.queryFilters.clientsAllChecked)"
+									onCheck="@command('checkClient')"
+									visible="@bind(vm.clientsModel.getSize() ne 0)" />
+								<vlayout id="clientsLayout"
+									children="@bind(vm.clientsModel)">
+									<template name="children"
+										var="node">
+										<idera-cwf-checkbox
+											label="@load(node.client)" checked="@bind(node.checked)"
+											onCheck="@command('checkClient', client=node)"
+											visible="@bind(nodeStatus.index lt 10)" />
+									</template>
+								</vlayout>
+								<a label="More"
+									onClick="@command('moreClients', grpbx=clientsFilter, target=moreClientsPopup)"
+									visible="@bind(vm.clientsModel.getSize() ge 10)"
+									style="text-decoration:none;">
+								</a>
+							</vlayout>
+						</idera-cwf-groupbox>
+
+						<idera-cwf-groupbox id="sqlTextFilter" mold="3d" style="width:260px;"
+							contentStyle="border: 0px;overflow:hidden;" open="false" sclass="groupbox-header-colored"
+							onOpen="@command('onOpenGroupBox')">
+							<caption id="sqlTextFilterCaption"
+								label="${idera:getLabel('SQLdm.Labels.filter-sql')}"/>
+							<vbox>
+								<hbox>
+									<label
+										value="Include SQL Matching">
+									</label>
+									<idera-cwf-textbox sclass="search_box"
+										value="@bind(vm.queryFilters.includeSQLText)"
+										onChange="@command('changeFilter')" instant="true" width="108px"
+										style="background-color: white;">
+									</idera-cwf-textbox>
+								</hbox>
+								<hbox>
+									<label
+										value="Exclude SQL Matching">
+									</label>
+									<idera-cwf-textbox sclass="search_box"
+										value="@bind(vm.queryFilters.excludeSQLText)"
+										onChange="@command('changeFilter')" instant="true" width="108px"
+										style="background-color: white;">
+									</idera-cwf-textbox>
+								</hbox>
+							</vbox>
+
+						</idera-cwf-groupbox>
+
+						<idera-cwf-groupbox id="advancedFilter" mold="3d" style="width:260px;"
+							contentStyle="border: 0px;overflow:hidden;" open="false" sclass="groupbox-header-colored"
+							onOpen="@command('onOpenGroupBox')">
+							<caption id="advancedFilterCaption"
+								label="${idera:getLabel('SQLdm.Labels.filter-advanced')}"/>
+							<vbox>
+								<idera-cwf-checkbox id="showSQLStatementsCheckBox"
+									label="Show SQL Statements"
+									checked="@bind(vm.queryFilters.showSQLStatements)" 
+									onCheck="@command('changeFilter')" />
+								<idera-cwf-checkbox
+									id="showStoredProceduresCheckBox"
+									label="Show Stored Procedures"
+									checked="@bind(vm.queryFilters.showStoredProcs)"  
+									onCheck="@command('changeFilter')" />
+								<idera-cwf-checkbox id="showSQLBatchesCheckBox"
+									label="Show SQL Batches"
+									checked="@bind(vm.queryFilters.showSQLBatches)"  
+									onCheck="@command('changeFilter')" />
+								<idera-cwf-checkbox
+									id="includeOverlappingCheckBox"
+									label="Include Overlapping Queries"
+									checked="@bind(vm.queryFilters.includeOverlapping)"  
+									onCheck="@command('changeFilter')" />
+								<idera-cwf-checkbox id="includeIncompleteCheckBox"
+									label="Include Incomplete Queries"
+									checked="@bind(vm.queryFilters.includeIncomplete)"  
+									onCheck="@command('changeFilter')" />
+							</vbox>
+						</idera-cwf-groupbox>
+					</div>
+				</vlayout>
+			</idera-cwf-sidebar>
+			<popup id="moreApplicationsPopup" sclass="black-shade"
+				zclass="change-this-to-a-valid-class" width="280px" height="250px"
+				style="overflow-y: scroll;">
+				<vlayout id="applicationsMoreLayout" vflex="1"
+					children="@bind(vm.applicationModel)">
+					<template name="children" var="node">
+						<idera-cwf-checkbox style="color: white"
+							label="@load(node.application)" checked="@bind(node.checked)"
+							onCheck="@command('checkApplication', application=node)"
+							visible="@bind(nodeStatus.index ge 10)" />
+					</template>
+				</vlayout>
+			</popup>
+			<popup id="moreDatabasesPopup" sclass="black-shade"
+				zclass="change-this-to-a-valid-class" width="280px" height="250px"
+				style="overflow-y: scroll;">
+				<vlayout id="databasesMoreLayout" vflex="1"
+					children="@bind(vm.databasesModel)">
+					<template name="children" var="node">
+						<idera-cwf-checkbox style="color: white"
+							label="@load(node.database)"
+							checked="@bind(node.checked)"
+							onCheck="@command('checkDatabase', database=node)"
+							visible="@bind(nodeStatus.index ge 10)" />
+					</template>
+				</vlayout>
+			</popup>
+			<popup id="moreUsersPopup" sclass="black-shade"
+				zclass="change-this-to-a-valid-class" width="280px" height="250px"
+				style="overflow-y: scroll;">
+				<vlayout id="usersMoreLayout" vflex="1"
+					children="@bind(vm.usersModel)">
+					<template name="children" var="node">
+						<idera-cwf-checkbox style="color: white"
+							label="@load(node.user)"
+							checked="@bind(node.checked)"
+							onCheck="@command('checkUser', user=node)"
+							visible="@bind(nodeStatus.index ge 10)" />
+					</template>
+				</vlayout>
+			</popup>
+			<popup id="moreClientsPopup" sclass="black-shade"
+				zclass="change-this-to-a-valid-class" width="280px" height="250px"
+				style="overflow-y: scroll;">
+				<vlayout id="clientsMoreLayout" vflex="1"
+					children="@bind(vm.clientsModel)">
+					<template name="children" var="node">
+						<idera-cwf-checkbox style="color: white"
+							label="@load(node.client)"
+							checked="@bind(node.checked)"
+							onCheck="@command('checkClient', client=node)"
+							visible="@bind(nodeStatus.index ge 10)" />
+					</template>
+				</vlayout>
+			</popup>
+		</div>
+	</div>
+</zk>

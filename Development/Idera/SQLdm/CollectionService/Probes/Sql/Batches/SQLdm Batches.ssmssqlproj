@@ -1,0 +1,782 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SQLdm Batches">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="dmlab03:REDHOUSE\vsherrouse">
+          <Created>2010-04-06T09:27:39.5406394-05:00</Created>
+          <Type>SQL</Type>
+          <Server>dmlab03</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>master</InitialDB>
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="dmlab03\two:REDHOUSE\vsherrouse">
+          <Created>2010-06-16T13:20:35.6093097-05:00</Created>
+          <Type>SQL</Type>
+          <Server>dmlab03\two</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="qa-hoover\sql2005:sa">
+          <Created>2010-06-29T09:51:23.788035-05:00</Created>
+          <Type>SQL</Type>
+          <Server>qa-hoover\sql2005</Server>
+          <UserName>sa</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="vharpl:REDHOUSE\vsherrouse">
+          <Created>2010-03-23T13:45:39.0091845-05:00</Created>
+          <Type>SQL</Type>
+          <Server>vharpl</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="vickyharpl:REDHOUSE\vsherrouse">
+          <Created>2010-08-27T08:49:53.2894757-05:00</Created>
+          <Type>SQL</Type>
+          <Server>vickyharpl</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>master</InitialDB>
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="AgentJobHistory.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03\two:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03\two</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>AgentJobHistory.sql</FullPath>
+        </FileNode>
+        <FileNode Name="AgentJobSummary.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>AgentJobSummary.sql</FullPath>
+        </FileNode>
+        <FileNode Name="BackupHistoryFull.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>BackupHistoryFull.sql</FullPath>
+        </FileNode>
+        <FileNode Name="BackupHistorySmall.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vharpl:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vharpl</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>BackupHistorySmall.sql</FullPath>
+        </FileNode>
+        <FileNode Name="BlockingCheck.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>BlockingCheck.sql</FullPath>
+        </FileNode>
+        <FileNode Name="BlockingCheck2000.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vickyharpl:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vickyharpl</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>C:\dev\sqldmdev\development\bin\Debug\Default\Data\CollectionService\Batches\BlockingCheck2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="BlockingCheck2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vickyharpl:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vickyharpl</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>BlockingCheck2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="FailedJobs2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>FailedJobs2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Configuration2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Configuration2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Configuration2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Configuration2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CustomCounterOS.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CustomCounterOS.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DatabaseConfiguration2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>DatabaseConfiguration2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DatabaseConfiguration2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>DatabaseConfiguration2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DatabaseFiles2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>DatabaseFiles2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DatabaseFiles2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>DatabaseFiles2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DatabaseSize2000.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03\two:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03\two</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>DatabaseSize2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DatabaseSize2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vharpl:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vharpl</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>DatabaseSize2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DatabaseSummary2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>DatabaseSummary2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DatabaseSummary2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vharpl:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vharpl</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>DatabaseSummary2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DiskDrives2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>DiskDrives2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DiskDrives2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vharpl:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vharpl</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>DiskDrives2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DistributorQueue.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>DistributorQueue.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DTCStatus.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>DTCStatus.sql</FullPath>
+        </FileNode>
+        <FileNode Name="FileActivity2000.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vickyharpl:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vickyharpl</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>FileActivity2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="FullTextCatalogs2000.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>FullTextCatalogs2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="FullTextCatalogs2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>FullTextCatalogs2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="FullTextColumns.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>FullTextColumns.sql</FullPath>
+        </FileNode>
+        <FileNode Name="FullTextSearchService2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>FullTextSearchService2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="FullTextSearchService2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>FullTextSearchService2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="FullTextTables.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>FullTextTables.sql</FullPath>
+        </FileNode>
+        <FileNode Name="IndexStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>IndexStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LockCounterStatistics.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vharpl:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vharpl</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>LockCounterStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LockDetails2000.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03\two:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03\two</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>LockDetails2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LockDetails2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vharpl:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vharpl</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>LockDetails2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LogList2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LogList2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LogList2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LogList2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LogScan2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LogScan2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LogScan2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>LogScan2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LongJobs2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>LongJobs2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LongJobs2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03\two:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03\two</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>LongJobs2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LongJobsByPercent.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03\two:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03\two</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>LongJobsByPercent.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LongJobsByRuntime.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03\two:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03\two</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>LongJobsByRuntime.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Memory2000.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03\two:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03\two</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Memory2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Memory2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Memory2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="MirroredDatabaseScheduled2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>MirroredDatabaseScheduled2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="MirroringPartnerAction.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>MirroringPartnerAction.sql</FullPath>
+        </FileNode>
+        <FileNode Name="MirrorMetricsUpdate2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>MirrorMetricsUpdate2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="MirrorMonitoringHistory2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>MirrorMonitoringHistory2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="MirrorMonitoringRealtime2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>MirrorMonitoringRealtime2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="OldestOpenTransaction2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>OldestOpenTransaction2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="OldestOpenTransaction2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>OldestOpenTransaction2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="OSMetrics.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>OSMetrics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="PinnedTables.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>PinnedTables.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ProcedureCache2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>ProcedureCache2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ProcedureCache2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vharpl:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vharpl</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>ProcedureCache2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ProcedureCacheList2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>ProcedureCacheList2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ProcedureCacheList2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>ProcedureCacheList2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="PublisherQueue.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>PublisherQueue.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryMonitor2000.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>QueryMonitor2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryMonitor2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>QueryMonitor2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryMonitorCheckSettings2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>QueryMonitorCheckSettings2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryMonitorCheckSettings2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>QueryMonitorCheckSettings2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryMonitorRead2000.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>QueryMonitorRead2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryMonitorRead2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>QueryMonitorRead2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryMonitorRestart2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>QueryMonitorRestart2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryMonitorStop2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>QueryMonitorStop2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryMonitorStop2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>QueryMonitorStop2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryMonitorTraceBatches.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>QueryMonitorTraceBatches.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryMonitorTraceDeadlocks.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>QueryMonitorTraceDeadlocks.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryMonitorTraceSingleStmt.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>QueryMonitorTraceSingleStmt.sql</FullPath>
+        </FileNode>
+        <FileNode Name="QueryMonitorTraceSP.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>QueryMonitorTraceSP.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Reindex2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Reindex2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Reindex2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Reindex2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Reorganization2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Reorganization2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Reorganization2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vharpl:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vharpl</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Reorganization2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ReplicationCheck.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>ReplicationCheck.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ReplicationCheck2005_Debug.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:qa-hoover\sql2005:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>qa-hoover\sql2005</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>C:\Documents and Settings\vsherrouse.REDHOUSE\Desktop\ReplicationCheck2005_Debug.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ReplicationDistributorDetails2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>ReplicationDistributorDetails2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ReplicationDistributorDetails2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>ReplicationDistributorDetails2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ReplicationStatus.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>ReplicationStatus.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ReplicationSubscriberDetails2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>ReplicationSubscriberDetails2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ResourceCheck2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>ResourceCheck2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ResourceCheck2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>ResourceCheck2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Resources2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Resources2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Resources2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Resources2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="RestoreHistoryFull.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>RestoreHistoryFull.sql</FullPath>
+        </FileNode>
+        <FileNode Name="RestoreHistorySmall.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>RestoreHistorySmall.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ServerBasics2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>ServerBasics2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ServerBasics2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>ServerBasics2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ServerDetails2000.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>ServerDetails2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ServerDetails2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>ServerDetails2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ServerOverview2000.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>ServerOverview2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ServerOverview2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>ServerOverview2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Services2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Services2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Services2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Services2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SessionCount.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vickyharpl:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vickyharpl</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SessionCount.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SessionDetails2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SessionDetails2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SessionDetails2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SessionDetails2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SessionDetailsTrace2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SessionDetailsTrace2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SessionDetailsTrace2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SessionDetailsTrace2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Sessions2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Sessions2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Sessions2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vharpl:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vharpl</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Sessions2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SessionSummary2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SessionSummary2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SessionSummary2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SessionSummary2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="ActiveWaits2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>ActiveWaits2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="FailedJobVariables.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>FailedJobVariables.sql</FullPath>
+        </FileNode>
+        <FileNode Name="FailedJobs2000.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03\two:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03\two</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>FailedJobs2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="StopSessionDetailsTrace2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>StopSessionDetailsTrace2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="StopSessionDetailsTrace2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>StopSessionDetailsTrace2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TableDetails.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TableDetails.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TableGrowth2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TableGrowth2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TableGrowth2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TableGrowth2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TableSummary2000.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TableSummary2000.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TableSummary2005.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TableSummary2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TempdbSummary2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:vickyharpl:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>vickyharpl</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>TempdbSummary2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="UpdateStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>UpdateStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="WaitStatistics.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:dmlab03:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>dmlab03</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>WaitStatistics.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+  <SccProjectName>Perforce Project</SccProjectName>
+  <SccAuxPath />
+  <SccLocalPath>.</SccLocalPath>
+  <SccProvider>MSSCCI:Perforce SCM</SccProvider>
+</SqlWorkbenchSqlProject>

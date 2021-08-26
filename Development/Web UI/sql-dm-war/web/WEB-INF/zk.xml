@@ -1,0 +1,193 @@
+<zk>
+
+  <device-config>
+    <device-type>ajax</device-type>
+    <!-- Custom javascript snippet
+    The code below overrides the progress box and configured it to show in the center of the screen, being modal,
+    disabling the rest of the screen while showing.
+    http://forum.zkoss.org/question/71292/progressbox-with-modal-effect-disabling-all-components/
+    -->
+    <embed>
+      <![CDATA[
+            <script type="text/javascript">
+                zUtl.progressbox = function(id, msg, mask, icon) {
+
+                // makes the progress message box modal
+                mask=true;
+
+                    if (mask && zk.Page.contained.length) {
+                        for (var c = zk.Page.contained.length, e = zk.Page.contained[--c];
+                          e; e = zk.Page.contained[--c]) {
+                            if (!e._applyMask)
+                                e._applyMask = new zk.eff.Mask({
+                                    id: e.uuid + "-mask",
+                                    message: msg,
+                                    anchor: e.$n()
+                                });
+                        }
+                        return;
+                    }
+
+                    if (mask)
+                        zk.isBusy++;
+
+                    var x = jq.innerX(), y = jq.innerY(),
+                        style = ' style="left:'+x+'px;top:'+y+'px"',
+                        idtxt = id + '-t',
+                        idmsk = id + '-m',
+                        html = '<div id="'+id+'"';
+                    if (mask)
+                        html += '><div id="' + idmsk + '" class="z-modal-mask"'+style+'></div';
+                    html += '><div id="'+idtxt+'" class="z-loading"'+style
+                        +'><div class="z-loading-indicator"><span class="z-loading-icon"></span> '
+                        +msg+'</div></div>';
+                    if (icon)
+                        html += '<div class="' + icon + '"></div>';
+                    jq(document.body).append(html + '</div>');
+                    var $n = jq(id, zk),
+                        n = $n[0],
+                        $txt = jq(idtxt, zk);
+                    if (mask)
+                        n.z_mask = new zk.eff.FullMask({
+                            mask: jq(idmsk, zk)[0],
+                            zIndex: $txt.css('z-index') - 1
+                        });
+
+                    //center
+                    var txt = $txt[0],
+                        st = txt.style;
+                    st.left = jq.px((jq.innerWidth() - txt.offsetWidth) / 2 + x);
+                    st.top = jq.px((jq.innerHeight() - txt.offsetHeight) / 2 + y);
+
+                    $n.zk.cleanVisibility();
+                }
+            </script>]]>
+    </embed>
+  </device-config>
+
+  <error-page>
+    <exception-type>java.lang.Throwable</exception-type>
+    <location>/error/error.zul</location>
+  </error-page>
+  <!--language-config>
+    <addon-uri>/WEB-INF/classes/metainfo/zk/lang-addon.xml</addon-uri>
+  </language-config-->
+  <session-config>
+    <device-type>ajax</device-type>
+    <session-timeout>1800</session-timeout>
+    <timeout-uri>/login</timeout-uri>
+    <timer-keep-alive>false</timer-keep-alive>
+    <automatic-timeout/>
+  </session-config>
+  <session-config>
+    <!-- 10 hours of inactivity timeout. -->
+    <session-timeout>36000</session-timeout>
+    <timeout-uri>/login</timeout-uri>
+    <timer-keep-alive>false</timer-keep-alive>
+    <automatic-timeout/>
+  </session-config>
+
+  <preference>
+    <name>PollingServerPush.delay.factor</name>
+    <value>1</value>
+  </preference>
+
+  <system-config>
+    <disable-event-thread>false</disable-event-thread>
+  </system-config>
+
+  <system-config>
+    <engine-class>com.idera.loader.IderaCustomUiEngine</engine-class>
+  </system-config>
+
+  <listener>
+    <description>ThreadLocal Synchronization Listener</description>
+    <listener-class>org.zkoss.zkplus.util.ThreadLocalListener</listener-class>
+  </listener>
+
+  <listener>
+    <listener-class>com.idera.loader.CustomDesktopListener</listener-class>
+  </listener>
+
+  <listener>
+    <listener-class>com.idera.common.IderaExecutorHolder</listener-class>
+  </listener>
+
+  <preference>
+    <name>ThreadLocal</name>
+    <value>
+      org.springframework.security.context.ThreadLocalSecurityContextHolderStrategy=contextHolder
+    </value>
+  </preference>
+
+  <library-property>
+    <name>org.zkoss.zul.Button.mold</name>
+    <value>trendy</value>
+  </library-property>
+  <library-property>
+    <name>org.zkoss.zul.grid.rod</name>
+    <value>false</value>
+  </library-property>
+  <library-property>
+    <name>org.zkoss.zul.listbox.rod</name>
+    <value>false</value>
+  </library-property>
+  <!--<library-property>-->
+    <!--<name>org.zkoss.bind.appConverters</name>-->
+    <!--<value>-->
+      <!--stringEmptyBooleanConverter=com.idera.cwf.ui.converter.StringEmptyBooleanConverter,-->
+      <!--stringNotEmptyBooleanConverter=com.idera.cwf.ui.converter.StringNotEmptyBooleanConverter,-->
+      <!--notEmptyCollectionBooleanConverter=com.idera.cwf.ui.converter.NotEmptyCollectionBooleanConverter,-->
+    <!--</value>-->
+  <!--</library-property>-->
+
+	<!-- https://www.zkoss.org/wiki/ZK%20Configuration%20Reference/zk.xml/The%20Library%20Properties/org.zkoss.zkmax.ui.comet.async.disabled -->
+	<library-property>
+	    <name>org.zkoss.zkmax.ui.comet.async.disabled</name>
+	    <value>true</value>
+	</library-property>
+
+  <client-config>
+    <debug-js>true</debug-js>
+  </client-config>
+
+  <library-property>
+    <name>org.zkoss.web.classWebResource.cache</name>
+    <value>false</value>
+  </library-property>
+
+  <library-property>
+    <name>org.zkoss.zul.progressbox.position</name>
+    <value>center</value>
+  </library-property>
+
+  <library-property>
+        <name>org.zkoss.zul.chart.engine.class</name>
+        <value>org.zkoss.zkex.zul.impl.JFreeChartEngine</value>
+    </library-property>
+
+  <language-mapping>
+    <language-name>xml</language-name>
+    <extension>svg</extension>
+  </language-mapping>
+
+    <desktop-config>
+        <theme-uri>/css/Source-Sans-Pro.css.dsp
+        </theme-uri>
+    </desktop-config>
+
+    <library-property>
+        <name>org.zkoss.zul.theme.fontFamilyT</name>
+        <value>"Source Sans Pro", sans-serif</value>
+    </library-property>
+
+    <library-property>
+        <name>org.zkoss.zul.theme.fontFamilyC</name>
+        <value>"Source Sans Pro", sans-serif</value>
+    </library-property>
+
+    <library-property>
+        <name>org.zkoss.zul.theme.fontSizeM</name>
+        <value>1rem</value>
+    </library-property>
+</zk>

@@ -1,0 +1,1923 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{877819E3-B5EE-4592-BCB0-5A113D3EC9A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Idera.SQLdm.CollectionService</RootNamespace>
+    <AssemblyName>SQLdmCollectionServiceResources</AssemblyName>
+    <SccProvider>
+    </SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <StartupObject>
+    </StartupObject>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2012.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaits2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\AgentJobHistory.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\AgentJobSummary2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\BackupHistoryFull.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\BackupHistorySmall.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\BlockingCheck.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\BlockingCheck2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\BlockingCheck2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\BombedJobs.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\CompletedJobs.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Configuration2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Configuration2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\CustomCounterOS.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\CustomCounterSQL.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseConfiguration2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseConfiguration2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseFiles2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseFiles2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSize2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSize2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSummary2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSummary2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DiskDrives2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DiskDrives2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DistributorQueue.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DistributorQueue2016.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DropPlansFromCache2008.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DTCStatus.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FailedJobs2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FailedJobs2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FailedJobVariables.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Fragmentation2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Fragmentation2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FragmentationWorkload2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FragmentationWorkload2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FullTextCatalogs2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FullTextCatalogs2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FullTextColumns.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FullTextSearchService2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FullTextSearchService2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FullTextTables.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\IndexStatistics.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LockCounterStatistics.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LockDetails2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LockDetails2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LogList2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LogList2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LogScan2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LogScan2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LongJobs2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LongJobs2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LongJobsByPercent.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LongJobsByRuntime.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LongJobsWithSteps2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LongJobsWithSteps2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Memory2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Memory2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\MirroredDatabaseScheduled2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\MirroringPartnerAction.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\MirrorMetricsUpdate2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\MirrorMonitoringHistory2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\MirrorMonitoringRealtime2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\OldestOpenTransaction2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\OldestOpenTransaction2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\OSMetrics.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\PinnedTables.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ProcedureCache2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ProcedureCache2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ProcedureCacheList2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ProcedureCacheList2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitor2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitor2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorCheckSettings2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorCheckSettings2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRead2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRead2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRestart2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorStop2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorStop2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorTraceAutogrow.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorTraceBatches.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorTraceDeadlocks.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorTraceSingleStmt.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorTraceSP.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Reindex2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Reindex2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Reorganization2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Reorganization2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationCheck.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationCheck2005.sql" />
+
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationCheck2016.sql" />
+
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationDistributorDetails2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationDistributorDetails2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationDistributorDetails2016.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationStatus2000.sql" />
+    <None Include="Probes\Sql\Batches\ReplicationSubscriberDetails2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ResourceCheck2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ResourceCheck2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\RestoreHistoryFull.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\RestoreHistorySmall.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerDetails2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerDetails2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Services2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Services2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionCount.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionDetails2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionDetails2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionDetailsTrace2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionDetailsTrace2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2014.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionSummary2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionSummary2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\StopSessionDetailsTrace2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\StopSessionDetailsTrace2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\TableDetails.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\TableGrowth2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\TableGrowth2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\TableSummary2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\TableSummary2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\TempdbSummary2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\UpdateStatistics.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\WaitStatistics.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Memory2012.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerDetails2012.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaits2012.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\WmiConfigurationTest.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LockCounterStatistics2005.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionCount2005.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DiskSize2005.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DiskDriveHeader.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DiskDriveHeader2000.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DiskSize2000.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitor2005.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitor2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorStop2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorStop2005.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorRead2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorRead2005.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorRestart2000.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorBlocking2005.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\AlwaysOnStatistics2012.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\AlwaysOnTopology2012.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorRestart2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRestart2005.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSize2012.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSummary2012.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitor2008EX.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitor2012EX.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorExtendedEventsBatches2012.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorExtendedEventsSingleStmt2008.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorExtendedEventsSingleStmt2012.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorExtendedEventsSP2008.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorExtendedEventsSP2012.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRead2008EX.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRead2012EX.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRestart2008EX.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRestart2012EX.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorStopEX.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitor2012EX.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorAutogrow2012EX.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorBlocking2012EX.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorDeadlocks2012EX.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorRead2012EX.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorRestart2012EX.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorStopEX.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FileGroup2000.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FileGroup2005.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DiskDriveStatistics.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorReadEstimatedPlan2005.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Configuration2012.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DisabledIndexes2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FragmentedIndexes2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\HighIndexUpdates2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\GetWorstFillFactorIndexes2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\BackupAndRecovery2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseConfiguration2012.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\OutOfDateStats2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\SQLModuleOptions2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DBSecurity2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\GetMasterFiles2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\NUMANodeCounters2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryPlanEstRows2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\SampleServerResources2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\IndexContention2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\OverlappingIndexes2005.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\OverlappingIndexes2008.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetAdhocCachedPlanBytes2005.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetLockedPageKB2008.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetLockedPageKB2005.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\WaitingBatches2005.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerConfiguration2005.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseNames2000.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseRanking2005.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DependentObjectsPrescriptiveRecommendation.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\NonIncrementalColumnStatOnPartitionedTable2014.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\HashIndex2014.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryStore2016.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerConfiguration2014.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\RarelyUsedIndexOnInMemoryTable2014.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryAnalyzer2016.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ColumnStoreIndex2016.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FilteredIndex2008.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\HighCPUTimeProcedure2016.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LargeTableStats2008.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerConfiguration2016.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BufferPoolExtIO2014.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2005_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2005_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LockCounterStatistics2005_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LockCounterStatistics2005_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2000_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2005_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2005_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerDetails2000_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerDetails2005_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerDetails2012_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2000_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2005_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2012_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2012_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionCount2005_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionCount2005_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\TempdbSummary2005_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\TempdbSummary2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\WaitStatistics_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\WaitStatistics_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2005_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2014_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2014_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LockDetails2005_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LockDetails2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LockDetails2000_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LockDetails2000_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LockCounterStatistics_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LockCounterStatistics_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2000_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2000_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerDetails2012_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorWrite2012EX.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseLastBackupDateTime.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\AlwaysOnToplogySummary2012.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\AlwaysOnToplogyDetail2012.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaits2012_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaits2012_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaits2012_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaitsRead2012EX_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaitsRead2012EX_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaitsRead2012EX_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitor2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitor2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitor2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitor2012EX_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitor2012EX_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitor2012EX_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorRead2012EX_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorRead2012EX_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorRead2012EX_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorRestart2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorRestart2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorRestart2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorStop2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorStop2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorStop2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2000_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2000_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2000_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LockCounterStatistics2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LockCounterStatistics_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LockDetails2000_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LockDetails2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitor2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitor2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitor2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitor2008EX_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitor2008EX_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitor2008EX_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitor2012EX_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitor2012EX_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitor2012EX_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRead2012EX_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRead2012EX_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRead2012EX_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRestart2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRestart2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRestart2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRestart2008EX_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRestart2008EX_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRestart2008EX_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRestart2012EX_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRestart2012EX_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRestart2012EX_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorStop2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorStop2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorStop2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2000_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2000_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerDetails2000_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerDetails2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerDetails2012_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2000_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionCount2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionCount_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionDetailsTrace2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionDetailsTrace2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionDetailsTrace2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2000_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\StopSessionDetailsTrace2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\StopSessionDetailsTrace2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\StopSessionDetailsTrace2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\TempdbSummary2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\WaitStatistics_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaitsRead2012EX.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaitsWrite2012EX.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorWrite2012EX.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2012_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\MetadataPermissions.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\MinimumPermissions.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\CollectionPermissions2008.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationCheckPermissions.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\UpdateStatisticsPermissions.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\AgentJobSummary2008.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationStatus2008.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2008.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2008_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2008_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2008_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Services2008.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\CollectionPermissions2000.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\CollectionPermissions2000_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\CollectionPermissions2008_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\CollectionPermissions2000_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\CollectionPermissions2008_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\CollectionPermissions2000_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\CollectionPermissions2008_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\MetadataPermissions_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\MinimumPermissions_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\MetadataPermissions_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\MinimumPermissions_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\MetadataPermissions_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\MinimumPermissions_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Fragmentation2005Permissions.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ReindexPermissions.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DTCStatusServiceControl.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServicesServiceControlAccess2000.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServicesServiceControlAccess2005.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServicesServiceControlAccess2008.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FullTextSearchServiceServiceControl2000.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FullTextSearchServiceServiceControl2005.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\MirroringPartnerActionPermissions.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationDistributorDetailsPermissions.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DiskSize2008.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2008.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2008_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2008_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2008_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2017.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2008.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2008_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2008_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2017_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2017_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2017_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2017.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2017_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2017_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2017_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2008Sp1R2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2008Sp1R2_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2008Sp1R2_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2008Sp1R2_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2008Sp1R2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2008Sp1R2_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2008Sp1R2_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServicesServiceControlAccess2008Sp1R2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Services2008Sp1R2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationStatus2008Sp1R2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\AgentJobSummary2008Sp1R2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2008Sp1R2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2008Sp1R2_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2008Sp1R2_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2008Sp1R2_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DiskSize2008Sp1R2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionDetails2014sp2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2014sp2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2014sp2_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2014sp2_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\BlockingCheck2014sp2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LockDetails2014sp2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LockDetails2014sp2_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LockDetails2014sp2_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LockDetails2014sp2_3.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ResourceCheck2014sp2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaits2012EXN.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaits2012EXN_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaits2012EXN_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaits2012EXN_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorStop2016Qs.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRead2016Qs.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaitsRead2017Qs.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LogScan2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LogScan2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LogScan2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationCheckPermissions_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LockDetails2000_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LockDetails2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LockDetails2014sp2_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LogScan2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\MetadataPermissions_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\MinimumPermissions_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitor2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitor2008EX_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitor2012EX_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRead2012EX_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRestart2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRestart2008EX_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRestart2012EX_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorStop2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2000_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2008Sp1R2_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2008_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2017_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerDetails2000_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerDetails2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerDetails2012_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2000_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2008Sp1R2_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2008_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2012_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2017_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionCount2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionCount_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionDetailsTrace2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2000_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\StopSessionDetailsTrace2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\TempdbSummary2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\WaitStatistics_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\CollectionPermissions2000_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\CollectionPermissions2008_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2000_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2008Sp1R2_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2008_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LockCounterStatistics2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\LockCounterStatistics_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaits2012_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaits2012EXN_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaitsRead2012EX_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitor2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitor2012EX_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorRead2012EX_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorRestart2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorStop2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\AzureSQLMetrics.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationCheckPermissions_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationCheckPermissions_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationCheckPermissions_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\CloudSQLDatabases.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\AzureServiceTierChanged.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2014sp2_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2014sp2_3.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2014_3.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2014_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Memory2012_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Memory2012_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Memory2012_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Memory2012_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ColumnStoreIndex2016_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ColumnStoreIndex2016_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ColumnStoreIndex2016_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ColumnStoreIndex2016_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Configuration2012_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Configuration2012_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Configuration2012_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Configuration2012_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\CustomCounterSQL_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\CustomCounterSQL_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\CustomCounterSQL_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\CustomCounterSQL_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseNames2000_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseNames2000_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseNames2000_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseNames2000_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FragmentedIndexes2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FragmentedIndexes2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FragmentedIndexes2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FragmentedIndexes2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetAdhocCachedPlanBytes2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetAdhocCachedPlanBytes2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetAdhocCachedPlanBytes2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetAdhocCachedPlanBytes2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetMasterFiles2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetMasterFiles2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetMasterFiles2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetMasterFiles2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\NUMANodeCounters2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\NUMANodeCounters2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\NUMANodeCounters2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\NUMANodeCounters2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ProcedureCache2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ProcedureCache2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ProcedureCache2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ProcedureCache2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ProcedureCacheList2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ProcedureCacheList2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ProcedureCacheList2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ProcedureCacheList2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryPlanEstRows2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryPlanEstRows2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryPlanEstRows2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryPlanEstRows2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\TableGrowth2005_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerDetails2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ResourceCheck2005_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ResourceCheck2005_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ResourceCheck2005_3.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ResourceCheck2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ResourceCheck2014sp2_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ResourceCheck2014sp2_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ResourceCheck2014sp2_3.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\ResourceCheck2014sp2_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\SampleServerResources2005_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\SampleServerResources2005_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\SampleServerResources2005_3.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\SampleServerResources2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionSummary2005_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionSummary2005_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionSummary2005_3.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionSummary2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\TableDetails_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\TableDetails_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\TableDetails_3.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\TableDetails_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\TableGrowth2005_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\TableGrowth2005_3.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\TableGrowth2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\TableSummary2005_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\TableSummary2005_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\TableSummary2005_3.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\TableSummary2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\UpdateStatistics_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\UpdateStatistics_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\UpdateStatistics_3.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\UpdateStatistics_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\WaitingBatches2005_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\WaitingBatches2005_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\WaitingBatches2005_3.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\WaitingBatches2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BlockingCheck2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BlockingCheck2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BlockingCheck2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BlockingCheck2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BlockingCheck2014sp2_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BlockingCheck2014sp2_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BlockingCheck2014sp2_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BlockingCheck2014sp2_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\OldestOpenTransaction2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\OldestOpenTransaction2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\OldestOpenTransaction2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\OldestOpenTransaction2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetLockedPageKB2008_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetLockedPageKB2008_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetLockedPageKB2008_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetLockedPageKB2008_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DBSecurity2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DBSecurity2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DBSecurity2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DBSecurity2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BackupAndRecovery2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BackupAndRecovery2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BackupAndRecovery2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BackupAndRecovery2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseConfiguration2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseConfiguration2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseConfiguration2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseConfiguration2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseConfiguration2012_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseConfiguration2012_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseConfiguration2012_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseConfiguration2012_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BufferPoolExtIO2014_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BufferPoolExtIO2014_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BufferPoolExtIO2014_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BufferPoolExtIO2014_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerConfiguration2014_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerConfiguration2014_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerConfiguration2014_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerConfiguration2014_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerConfiguration2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerConfiguration2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerConfiguration2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerConfiguration2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerConfiguration2016_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerConfiguration2016_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerConfiguration2016_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerConfiguration2016_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaits2012_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaits2012EXN_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaitsRead2012EX_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitor2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitor2012EX_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorRead2012EX_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorRestart2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorStop2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BackupAndRecovery2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BlockingCheck2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BlockingCheck2014sp2_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\BufferPoolExtIO2014_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\CollectionPermissions2000_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\CollectionPermissions2008_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ColumnStoreIndex2016_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Configuration2012_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\CustomCounterSQL_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseConfiguration2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseConfiguration2012_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseNames2000_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DBSecurity2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2000_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2008_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FileActivity2008Sp1R2_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FragmentedIndexes2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetAdhocCachedPlanBytes2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetLockedPageKB2008_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetMasterFiles2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LockCounterStatistics_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LockCounterStatistics2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LockDetails2000_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LockDetails2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LockDetails2014sp2_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LogScan2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Memory2012_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\MetadataPermissions_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\MinimumPermissions_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\NUMANodeCounters2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\OldestOpenTransaction2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ProcedureCache2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ProcedureCacheList2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitor2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitor2008EX_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitor2012EX_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRead2012EX_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRestart2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRestart2008EX_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRestart2012EX_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorStop2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryPlanEstRows2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationCheckPermissions_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ResourceCheck2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ResourceCheck2014sp2_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\SampleServerResources2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2000_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2008_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2008Sp1R2_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerBasics2017_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerConfiguration2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerConfiguration2014_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerConfiguration2016_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerDetails2000_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerDetails2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerDetails2012_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2000_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2008_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2008Sp1R2_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2012_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ServerOverview2017_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionCount2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionDetailsTrace2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2000_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2014_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Sessions2014sp2_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\SessionSummary2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\StopSessionDetailsTrace2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\TableDetails_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\TableGrowth2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\TableSummary2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\TempdbSummary2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\UpdateStatistics_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\WaitingBatches2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\WaitStatistics_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Fragmentation2005Permissions_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Fragmentation2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FragmentationWorkload2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Fragmentation2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Fragmentation2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Fragmentation2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Fragmentation2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Fragmentation2005Permissions_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Fragmentation2005Permissions_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Fragmentation2005Permissions_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Fragmentation2005Permissions_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FragmentationWorkload2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FragmentationWorkload2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FragmentationWorkload2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\FragmentationWorkload2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\MirroringPartnerActionPermissions_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ReindexPermissions_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\UpdateStatisticsPermissions_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Reindex2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Reindex2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Reindex2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Reindex2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\Reindex2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ReindexPermissions_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ReindexPermissions_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ReindexPermissions_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ReindexPermissions_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationCheck2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationCheck2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationCheck2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationCheck2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ReplicationCheck2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\UpdateStatisticsPermissions_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\UpdateStatisticsPermissions_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\UpdateStatisticsPermissions_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\UpdateStatisticsPermissions_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\MirroringPartnerActionPermissions_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\MirroringPartnerActionPermissions_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\MirroringPartnerActionPermissions_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\MirroringPartnerActionPermissions_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSize2005_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSize2005_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSize2005_3.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSize2005_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSize2005_5.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSize2012_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSize2012_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSize2012_3.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSize2012_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSize2012_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSummary2012_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSummary2012_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSummary2012_3.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSummary2012_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\DatabaseSummary2012_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorExtendedEventsBatches2012_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorExtendedEventsSingleStmt2012_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorExtendedEventsSP2012_2.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorStopEX_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorExtendedEventsBatches2012_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorExtendedEventsSingleStmt2012_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorExtendedEventsSP2012_4.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorStopEX_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorExtendedEventsBatches2012_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorExtendedEventsBatches2012_3.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorExtendedEventsBatches2012_5.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorExtendedEventsSingleStmt2012_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorExtendedEventsSingleStmt2012_3.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorExtendedEventsSingleStmt2012_5.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorExtendedEventsSP2012_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorExtendedEventsSP2012_3.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorExtendedEventsSP2012_5.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorStopEX_1.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorStopEX_3.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorStopEX_5.sql" />
+    <EmbeddedResource Include="Probes\Sql\Batches\AzureElasticPool.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRead2016Qs_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRead2016Qs_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRead2016Qs_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRead2016Qs_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorRead2016Qs_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaitsRead2017Qs_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaitsRead2017Qs_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaitsRead2017Qs_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaitsRead2017Qs_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActiveWaitsRead2017Qs_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\QueryMonitorDatabasesAzure.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorDeadlocks2012EX_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorBlocking2012EX_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorAutogrow2012EX_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorStopEX_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorBlocking2012EX_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorAutogrow2012EX_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorDeadlocks2012EX_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorStopEX_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorAutogrow2012EX_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorAutogrow2012EX_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorAutogrow2012EX_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorBlocking2012EX_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorBlocking2012EX_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorBlocking2012EX_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorDeadlocks2012EX_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorDeadlocks2012EX_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorDeadlocks2012EX_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorStopEX_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorStopEX_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\ActivityMonitorStopEX_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\CollectionPermissionsMaster.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\OSMetrics_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\OSMetrics_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\OSMetrics_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\OSMetrics_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\OSMetrics_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetWorstFillFactorIndexes2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetWorstFillFactorIndexes2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetWorstFillFactorIndexes2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetWorstFillFactorIndexes2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\GetWorstFillFactorIndexes2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DTCStatus_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DTCStatus_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DTCStatus_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DTCStatus_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\DTCStatus_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LongJobs2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LongJobs2005_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LongJobs2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LongJobs2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LongJobs2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LongJobsWithSteps2005_5.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LongJobsWithSteps2005_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LongJobsWithSteps2005_3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LongJobsWithSteps2005_4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Probes\Sql\Batches\LongJobsWithSteps2005_1.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>$(ProjectDir)AssemblyEncryptor $(TargetPath)</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

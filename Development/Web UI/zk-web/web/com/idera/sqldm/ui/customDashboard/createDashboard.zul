@@ -1,0 +1,23 @@
+<window closable="true" style="width:600px;height:200px;border-radius:0px;" 
+		apply="com.idera.sqldm.ui.customDashboard.CreateDashboardComposer">
+	<div>
+		<div style="border-top:1px solid #ccc;border-bottom:1px solid #ccc;background-color: #ECECEC;height: 35px;text-align: center;">
+			<label style="font-family: 'lucida grande', sans-serif;color:#000;font-size:20px;line-height: 35px;padding: 2px;text-shadow: 0 1px #fff;font-weight:bold;"
+				value="${sqldmidera:getLabel('SQLdm.Labels.add-a-dashboard')}" />
+		</div>
+		<div style="margin-top: 35px;margin-left: 30px;" sclass="cdashboard">
+			<label style="font-family: 'lucida grande',sans-serif;font-size: 16px;font-weight: normal;" 
+					value="${sqldmidera:getLabel('SQLdm.Labels.dashboard-name')}" />
+			<idera-cwf-textbox  id="dashboardNametb"
+				style="height: 25px;width: 250px;    background-color: #EBEBEB;font-size: 20px;font-family: 'lucida grande',sans-serif;font-weight: normal;font-style: normal;"/>
+			<idera-cwf-checkbox id="isDefaultcb" style="font-family: 'lucida grande',sans-serif;font-size: 10px;font-weight: normal;" 
+					label="${sqldmidera:getLabel('SQLdm.Labels.default')}"/>
+		</div>
+		<div style="margin-left: 395px;margin-top: 30px;">
+			<idera-cwf-button id="saveDBBtn" width="70px" sclass="white-text-orange-button button-font" 
+					label="${sqldmidera:getLabel('SQLdm.Labels.save')}"/>
+			<idera-cwf-button id="cancelDBbtn" width="70px" sclass="white-text-orange-button button-font" 
+					label="${sqldmidera:getLabel('SQLdm.Labels.cancel')}"/>
+		</div>
+	</div>
+</window>

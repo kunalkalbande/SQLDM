@@ -1,0 +1,257 @@
+<zk>
+	<div apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.idera.sqldm.ui.dashboard.DashboardWidgetsComposer')">
+		<div fulfill="self.onCreate"><!-- workaround -->
+			<panel id="widget4" sclass="widget-panel"
+				title="${idera:getLabel('SQLdm.Labels.alerts-instances')}"
+				border="normal" collapsible="true" closable="false"
+				maximizable="false" style="margin-bottom:10px">
+				<caption>
+					<toolbar style="float: right;">
+						<toolbarbutton
+							src="${sqldmidera:getImageURLWithoutSize('settings_icon_grey')}"
+							popup="iaWidgetPopup,position=start_before" />
+					</toolbar>
+					<popup id="iaWidgetPopup">
+						<label
+							value="${idera:getLabel('SQLdm.Labels.top-ten.configure-row')}" />
+						<separator height="18px" />
+						<vlayout style="width:350px">
+							<hlayout style="padding: 2px">
+								<label style="padding: 5px;padding-right: 2px;padding-left: 2px;font-size:15px;"
+									value="${idera:getLabel('SQLdm.Labels.top-ten.configure-server-count')}" />
+								<separator orient="vertical"
+									spacing="2px" />
+								<spinner id="iaCount" 
+									value="@bind(vm.iaCount)"
+									constraint="no empty,min 1 max 5: between 1 to 5" />
+							</hlayout>
+							<idera-cwf-button id="applyIAConfigBtn" sclass="applyBtn"
+								onClick="@command('applyIAConfig', popup=iaWidgetPopup)"
+								label="${idera:getLabel('SQLdm.Labels.apply')}" width="125px"
+								style="float:right" />
+						</vlayout>
+					</popup>
+				</caption>
+				<panelchildren style="height:115px">
+					<grid id="alertsInstanceGrid" span="true"
+						sclass="dashboard-widget-grid styled-list" model="@load(vm.alertsByInstance)"
+						
+						emptyMessage="@bind(vm.displayMessageForAlertsByInstance)">
+					<!-- height=100px" -->
+						<columns sizable="true">
+							<!-- <extcolumn sort="auto(InstanceName)"
+								label="${idera:getLabel('SQLdm.Labels.instance')}" /> @author Saumyadeep -->
+							<extcolumn sort="auto(displayName)"
+								label="${idera:getLabel('SQLdm.Labels.instance')}" />
+							<extcolumn
+								label="${idera:getLabel('SQLdm.Labels.alerts')}"
+								sort="auto(numOfAlerts)" />
+						</columns>
+						<template name="model" var="data">
+							<row
+								onClick="@command('redirectToInstance', instanceId=data.instanceId, tabId=4, subTabId=1 , product = data.product)"
+								style="cursor:pointer">
+								<!-- <label value="@load(data.instanceName)"
+									sclass="link" style="word-wrap:break-word;" /> @author Saumyadeep -->
+								<label value="@load(data.displayName)"
+									sclass="link" style="word-wrap:break-word;" />
+								<label
+									value="@load(data.numOfAlerts) @converter('com.idera.sqldm.ui.converter.CommaSeparatedNumberLabelForMVVMConverter')"
+									style="word-wrap:break-word;" />
+							</row>
+						</template>
+					</grid>
+				</panelchildren>
+			</panel>
+		</div>
+		<space height="2px" />
+		<div fulfill="self.onCreate"><!-- workaround -->
+			<panel id="widget3" sclass="widget-panel"
+				title="${idera:getLabel('SQLdm.Labels.worst-response-time')}"
+				border="normal" collapsible="true" closable="false"
+				maximizable="false" style="margin-bottom:10px">
+				<caption>
+					<toolbar style="float: right;">
+						<toolbarbutton
+							src="${sqldmidera:getImageURLWithoutSize('settings_icon_grey')}"
+							popup="rtWidgetPopup,position=start_before" />
+					</toolbar>
+					<popup id="rtWidgetPopup">
+						<label
+							value="${idera:getLabel('SQLdm.Labels.top-ten.configure-row')}" />
+						<separator height="18px" />
+						<vlayout style="width:350px">
+							<hlayout style="padding: 2px">
+								<label style="padding: 5px;padding-right: 2px;padding-left: 2px;font-size:15px;"
+									value="${idera:getLabel('SQLdm.Labels.top-ten.configure-server-count')}" />
+								<separator orient="vertical"
+									spacing="2px" />
+								<spinner id="rtCount" 
+									value="@bind(vm.rtCount)"
+									constraint="no empty,min 1 max 5: between 1 to 5" />
+							</hlayout>
+							<idera-cwf-button id="applyRTConfigBtn" sclass="applyBtn"
+								onClick="@command('applyRTConfig', popup=rtWidgetPopup)"
+								label="${idera:getLabel('SQLdm.Labels.apply')}" width="125px"
+								style="float:right" />
+						</vlayout>
+					</popup>
+				</caption>
+				<panelchildren style="height:115px">
+					<grid id="worstResponseGrid" span="true"
+						sclass="dashboard-widget-grid styled-list" model="@load(vm.worstResponseTime)"
+						
+						emptyMessage="@bind(vm.displayMessageForWorstResponseTime)">
+						<!-- height=100px" -->
+						<columns sizable="true">
+							<!-- <extcolumn sort="auto(InstanceName)"
+								label="${idera:getLabel('SQLdm.Labels.instance')}" /> @author Saumyadeep -->
+							<extcolumn sort="auto(displayName)"
+								label="${idera:getLabel('SQLdm.Labels.instance')}" />
+							<extcolumn sort="auto(responseTimeMillis)"
+								label="${idera:getLabel('SQLdm.Labels.timems')}" />
+						</columns>
+						<template name="model" var="data">
+							<row
+								onClick="@command('redirectToInstance', instanceId=data.instanceId, tabId=1, subTabId=1 , product = data.product)"
+								style="cursor:pointer">
+								<!-- <label value="@load(data.instanceName)"
+									sclass="link" style="word-wrap:break-word;" /> @author Saumyadeep -->
+								<label value="@load(data.displayName)"
+									sclass="link" style="word-wrap:break-word;" />
+								<label
+									value="@load(data.responseTimeMillis) @converter('com.idera.sqldm.ui.converter.CommaSeparatedNumberLabelForMVVMConverter')" />
+							</row>
+						</template>
+					</grid>
+				</panelchildren>
+			</panel>
+		</div>
+		<space height="2px" />
+		<div fulfill="self.onCreate"><!-- workaround -->
+			<panel id="widget2" sclass="widget-panel"
+				title="${idera:getLabel('SQLdm.Labels.alerts-database')}"
+				border="normal" collapsible="true" closable="false"
+				maximizable="false" minimized="false" style="margin-bottom:10px">
+				<caption>
+					<toolbar style="float: right;">
+						<toolbarbutton
+							src="${sqldmidera:getImageURLWithoutSize('settings_icon_grey')}"
+							popup="daWidgetPopup,position=start_before" />
+					</toolbar>
+					<popup id="daWidgetPopup">
+						<label
+							value="${idera:getLabel('SQLdm.Labels.top-ten.configure-row')}" />
+						<separator height="18px" />
+						<vlayout style="width:350px">
+							<hlayout style="padding: 2px">
+								<label style="padding: 5px;padding-right: 2px;padding-left: 2px;font-size:15px;"
+									value="${idera:getLabel('SQLdm.Labels.top-ten.configure-db-count')}" />
+								<separator orient="vertical"
+									spacing="2px" />
+								<spinner id="daCount" 
+									value="@bind(vm.daCount)"
+									constraint="no empty,min 1 max 5: between 1 to 5" />
+							</hlayout>
+							<idera-cwf-button id="applyDAConfigBtn" sclass="applyBtn"
+								onClick="@command('applyDAConfig', popup=daWidgetPopup)"
+								label="${idera:getLabel('SQLdm.Labels.apply')}" width="125px"
+								style="float:right;padding-bottom:2px " />
+						</vlayout>
+					</popup>
+				</caption>
+				<panelchildren style="height:115px">
+				<!-- height=100px -->
+					<grid id="alertsDatabaseGrid" 
+						span="true" sclass="dashboard-widget-grid styled-list"
+						model="@load(vm.alertsByDatabase)"
+						emptyMessage="@bind(vm.displayMessageForAlertsByDatabase)">
+						<columns>
+							<extcolumn
+								label="${idera:getLabel('SQLdm.Labels.database')}"
+								sort="auto(databaseName)" />
+							<extcolumn
+								label="${idera:getLabel('SQLdm.Labels.alerts')}"
+								sort="auto(numOfAlerts)" />
+						</columns>
+						<template name="model" var="data">
+							<row
+								onClick="@command('redirectToInstance', instanceId=data.instanceId, tabId=4, subTabId=1 , product = data.product)"
+								style="cursor:pointer">
+								<!-- <label
+									value="@load((data.instanceName).concat('.').concat(data.databaseName))"
+									sclass="link" style="word-wrap:break-word;" /> @author Saumyadeep -->
+								<label
+									value="@load((data.displayName).concat('.').concat(data.databaseName))"
+									sclass="link" style="word-wrap:break-word;" />
+								<label
+									value="@load(data.numOfAlerts) @converter('com.idera.sqldm.ui.converter.CommaSeparatedNumberLabelForMVVMConverter')"
+									style="word-wrap:break-word;" />
+							</row>
+						</template>
+					</grid>
+				</panelchildren>
+			</panel>
+		</div>
+		<space height="2px" />
+		<div fulfill="self.onCreate"><!-- workaround -->
+			<panel id="widget1" sclass="widget-panel"
+				title="${idera:getLabel('SQLdm.Labels.alerts-category')}"
+				border="normal" collapsible="true" closable="false"
+				maximizable="false" style="margin-bottom:10px">
+				<caption sclass="open-true-widget">
+					<toolbar style="float: right;">
+						<toolbarbutton
+							src="${sqldmidera:getImageURLWithoutSize('settings_icon_grey')}"
+							popup="caWidgetPopup,position=start_before" />
+					</toolbar>
+					<popup id="caWidgetPopup">
+						<label
+							value="${idera:getLabel('SQLdm.Labels.top-ten.configure-row')}" />
+						<separator height="18px" />
+						<vlayout style="width:350px">
+							<hlayout style="padding: 2px">
+								<label style="padding: 5px;padding-right: 2px;padding-left: 2px;font-size:15px;"
+									value="${idera:getLabel('SQLdm.Labels.top-ten.configure-alert-cat-count')}" />
+								<separator orient="vertical"
+									spacing="2px" />
+								<spinner id="caCount" 
+									value="@bind(vm.caCount)"
+									constraint="no empty,min 1 max 8: between 1 to 8" />
+							</hlayout>
+							<idera-cwf-button id="applyCAConfigBtn" sclass="applyBtn"
+								onClick="@command('applyCAConfig', popup=caWidgetPopup)"
+								label="${idera:getLabel('SQLdm.Labels.apply')}" width="125px"
+								style="float:right" />
+						</vlayout>
+					</popup>
+				</caption>
+				<panelchildren style="height:115px">
+					<grid id="alertsCategoryGrid" span="true"
+						 sclass="dashboard-widget-grid styled-list"
+						model="@load(vm.alertsByCategory)"
+						emptyMessage="@bind(vm.displayMessageForAlertsByCategory)">
+						<!-- height=120px -->
+						<columns>
+							<extcolumn sort="auto(category)"
+								label="${idera:getLabel('SQLdm.Labels.serverwaits.category')}" />
+							<extcolumn sort="auto(numOfAlerts)"
+								label="${idera:getLabel('SQLdm.Labels.alerts')}" />
+						</columns>
+						<template name="model" var="data">
+							<row
+								onClick="@command('categoryClicked', category=data.category)"
+								style="cursor:pointer">
+								<label value="@load(data.category)"
+									sclass="link" style="word-wrap:break-word;" />
+								<label
+									value="@load(data.numOfAlerts) @converter('com.idera.sqldm.ui.converter.CommaSeparatedNumberLabelForMVVMConverter')" />
+							</row>
+						</template>
+					</grid>
+				</panelchildren>
+			</panel>
+		</div>
+	</div>
+</zk>

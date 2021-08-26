@@ -1,0 +1,15 @@
+<zk>
+	<vlayout spacing="0" width="100%" 
+		apply="com.idera.sqldm.ui.basepage.NavigationBarComposer">
+        <div style="width: 100%">
+            <idera-cwf-navigation-bar id="nav" sclass="sqldm-sec-nav-bar idera-navbar-position-fixed">
+            </idera-cwf-navigation-bar>
+            <div id="filterDropdown"
+                 sclass="padding-t-8 padding-lr-24 nav-bar-element navigation-bar-height nav-bar-drop-down">
+                <label value="SQLDM : " sclass="nav-bar-label"/>
+                <idera-cwf-dropdownlist id="comboBox" width="130px" readonly="true"><!-- visible="$composer.listVisible" --><!--onSelect="@command('selectProduct')"-->
+                </idera-cwf-dropdownlist>
+            </div>
+        </div>
+	</vlayout>
+</zk>

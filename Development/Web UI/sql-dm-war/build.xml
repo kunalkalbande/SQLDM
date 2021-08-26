@@ -1,0 +1,183 @@
+<!DOCTYPE project>
+<project name="idera-sql-dm-war" default="compile" basedir=".">
+
+  <property file="iderabuild.properties"/>
+  <property name="base.dir" value="."/>
+
+  <property name="build.plugins.dir" value="${basedir}/../build-plugins"/>
+
+  <!-- Global properties for this build -->
+  <property name="src.java.dir" value="${base.dir}/src"/>
+  <property name="build.dir" value="${base.dir}/classes"/>
+  <property name="dist.dir" value="${base.dir}/dist"/>
+  <property name="web.dir" value="${base.dir}/web"/>
+  <property name="main.classes.dir" value="${base.dir}/../idera-main/classes"/>
+
+  <property name="web.dir.name" value="web"/>
+
+  <property name="test.dir" value="${base.dir}/test"/>
+  <property name="build.test.dir" value="${base.dir}/test/classes"/>
+  <property name="junit.report.out.dir" value="${base.dir}/test/reports"/>
+  <property name="junit.haltonfailure" value="on"/>
+
+  <property name="war.file.name" value="${ant.project.name}.war"/>
+
+  <property name="webapp.lib.dir" value="${web.dir}/WEB-INF/lib"/>
+  <property name="compile.debug" value="on"/>
+
+  <patternset id="lib.files">
+    <include name="**/*.jar"/>
+    <include name="**/*.zip"/>
+  </patternset>
+
+  <patternset id="meta.files">
+    <include name="**/*.xml"/>
+    <include name="**/*.properties"/>
+  </patternset>
+
+  <patternset id="web.files">
+    <exclude name="**/*.java"/>
+  </patternset>
+
+  <patternset id="debug.web.files">
+    <exclude name="**/*.java"/>
+    <exclude name="apidoc/**"/>
+  </patternset>
+
+  <patternset id="class.files">
+    <include name="**/*.class"/>
+  </patternset>
+
+  <patternset id="zk.files">
+    <include name="**/*.dsp"/>
+    <include name="**/*.js"/>
+  </patternset>
+
+  <!-- Classpath declaration -->
+  <path id="project.classpath">
+    <!-- <fileset dir="${idera.lib.dir}">
+      <patternset refid="lib.files"/>
+    </fileset> -->
+    <fileset dir="${webapp.lib.dir}">
+      <patternset refid="lib.files"/>
+    </fileset>
+  </path>
+
+  <!-- Test -->
+  <target name="test">
+  </target>
+
+  <!-- Clean up -->
+  <target name="clean" description="Clean the project">
+    <delete dir="${build.dir}"/>
+    <mkdir dir="${build.dir}"/>
+
+    <delete dir="${dist.dir}"/>
+    <mkdir dir="${dist.dir}"/>
+
+    <delete file="${base.dir}/${war.file.name}"/>
+  </target>
+
+  <!-- Compile Java source -->
+  <target name="compile" depends="">
+    <mkdir dir="${build.dir}"/>
+    <javac srcdir="${src.java.dir}" destdir="${build.dir}" nowarn="on" debug="${compile.debug}">
+      <classpath refid="project.classpath"/>
+    </javac>
+  </target>
+
+  <target name="compile-debug" depends="clean">
+    <mkdir dir="${build.dir}"/>
+    <javac srcdir="${src.java.dir}" destdir="${build.dir}" nowarn="on" debug="${compile.debug}">
+      <classpath refid="project.classpath"/>
+    </javac>
+  </target>
+
+  <!-- Copy metadata to build classpath -->
+  <target name="copymetafiles">
+    <copy todir="${build.dir}">
+      <fileset dir="${src.java.dir}">
+        <patternset refid="meta.files"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="war" depends="compile, copymetafiles">
+
+    <!-- Copy web files to dist -->
+    <copy todir="${dist.dir}">
+      <fileset dir="${web.dir}">
+        <patternset refid="web.files"/>
+      </fileset>
+    </copy>
+
+    <!-- Copy class and meta files to dist -->
+    <mkdir dir="${dist.dir}/WEB-INF/classes"/>
+    <copy todir="${dist.dir}/WEB-INF/classes">
+      <fileset dir="${src.java.dir}">
+        <patternset refid="meta.files"/>
+      </fileset>
+      <fileset dir="${build.dir}">
+        <patternset refid="class.files"/>
+      </fileset>
+    </copy>
+
+    <!-- Copy ZK files to dist
+    <mkdir dir="${dist.dir}/WEB-INF/classes/web"/>
+    <copy todir="${dist.dir}/WEB-INF/classes/web">
+      <fileset dir="${web.src.dir}"/>
+    </copy-->
+
+    <!-- Create WAR archive -->
+    <jar destfile="${base.dir}/${war.file.name}" basedir="${dist.dir}"/>
+
+  </target>
+
+  <target name="war-debug" depends="compile-debug, copymetafiles">
+
+    <!-- Copy web files to dist -->
+    <copy todir="${dist.dir}">
+      <fileset dir="${web.dir}">
+        <patternset refid="web.files"/>
+      </fileset>
+    </copy>
+
+    <!-- Copy class and meta files to dist -->
+    <mkdir dir="${dist.dir}/WEB-INF/classes"/>
+    <copy todir="${dist.dir}/WEB-INF/classes">
+      <fileset dir="${src.java.dir}">
+        <patternset refid="meta.files"/>
+      </fileset>
+      <fileset dir="${build.dir}">
+        <patternset refid="class.files"/>
+      </fileset>
+    </copy>
+
+    <!-- Copy libraries to dist
+    <mkdir dir="${dist.dir}/WEB-INF/lib"/>
+    <copy todir="${dist.dir}/WEB-INF/lib">
+      <fileset dir="${lib.dir}">
+        <patternset refid="lib.files"/>
+      </fileset>
+    </copy>-->
+
+    <!-- Create WAR archive -->
+    <jar destfile="${base.dir}/${war.file.name}" basedir="${dist.dir}"/>
+
+  </target>
+
+  <target name="findbugs" depends="compile">
+    <findbugs home="${findbugs.home}" output="xml" outputFile="${base.dir}/findbugs.xml" jvmargs="-Xmx1024m" effort="max" reportLevel="low">
+      <auxClasspath>
+        <path refid="project.classpath"/>
+        <fileset dir="${findbugs.lib}">
+          <include name="**/*.jar"/>
+          <include name="**/*.zip"/>
+        </fileset>
+      </auxClasspath>
+      <sourcePath path="${src.java.dir}"/>
+      <class location="${build.dir}"/>
+    </findbugs>
+  </target>
+
+</project>

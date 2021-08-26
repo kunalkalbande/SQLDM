@@ -1,0 +1,28 @@
+
+<zk>
+<div  apply="com.idera.sqldm.ui.dashboard.instances.queryWaits.UserComposer"> 
+
+<hlayout>
+	<div id="timeGraphDiv" sclass="chart-border" width="100%">
+     	<vlayout>
+     	<sqldm-idera-stackedbarchart id="stackedBarChart" width="1200px" height="500px" leftMargin="100px" rightMargin="200px" topMargin="50px" bottomMargin="50px" />
+     	 <space height="5px"/>
+     	<div style="max-height:100px;overflow:auto;padding:5px;">
+	     	<label id="stackedBarChartLabel" value=""></label>
+	    </div>
+	    <space height="5px"/>
+     	</vlayout>
+	</div>
+	<div id="durationGraphDiv" sclass="chart-border" width="100%">
+     	<vlayout>
+	    <sqldm-idera-stackedbarchart id="durationChart" width="1200px" height="600px" leftMargin="120px" rightMargin="200px" topMargin="50px" bottomMargin="50px" />
+     	 <space height="5px"/>
+     	<div style="max-height:100px;overflow:auto;padding:5px;">
+	     	<label id="lineChartLabel" value=""></label>
+	    </div>
+	    <space height="5px"/>
+     	</vlayout>
+	</div>
+</hlayout>
+</div>
+</zk>

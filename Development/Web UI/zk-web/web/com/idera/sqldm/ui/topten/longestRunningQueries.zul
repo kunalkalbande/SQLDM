@@ -1,0 +1,68 @@
+
+<zk>
+<div fulfill="self.onCreate" > <!-- workaround -->
+<div id="longestRunningQueryView" apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.idera.sqldm.ui.topten.LongestRunningQueriesComposer')" >
+<hlayout id = "longestRunningQueryLayout" >
+
+			<div style= "height: 148px">
+				<grid id="longestRunningQueryList" vflex = "1" 
+					  sclass="styled-list"
+					  model="@load(vm.instancesModel)"  
+					  emptyMessage="@bind(vm.displayMessageForGrid)" >
+					<columns sizable = "true">
+				   <!-- <extcolumn label="${idera:getLabel('SQLdm.Labels.topten.instance')}" width = "12%" sort = "auto(LOWER(instanceName))"/> @author Saumyadeep -->
+						<extcolumn label="${idera:getLabel('SQLdm.Labels.topten.instance')}" width = "12%" sort = "auto(LOWER(displayName))"/>
+						<extcolumn label="${idera:getLabel('SQLdm.Labels.database')}" width="12%" sort = "auto(database)"/>
+						<extcolumn label="${idera:getLabel('SQLdm.Labels.query')}"  width = "12%" sort = "auto(queryText)"/>
+						<extcolumn label="${idera:getLabel('SQLdm.Labels.cpu-time')}" width = "12%" sortAscending = "@bind(vm.cpuTimeAscComparator)" sortDescending = "@bind(vm.cpuTimeDescComparator)" sclass="numbers-position-header"/> 
+						<extcolumn label="${idera:getLabel('SQLdm.Labels.physical-reads')}" width = "12%" sort = "auto(physicalReads)" align = "right" sclass="numbers-position-header"/> 
+						<extcolumn label="${idera:getLabel('SQLdm.Labels.logical-reads')}" width = "12%" sort = "auto(logicalReads)" align = "right" sclass="numbers-position-header"/> 
+						<extcolumn label="${idera:getLabel('SQLdm.Labels.logical-writes')}" width = "12%" sort = "auto(logicalWrites)" align = "right" sclass="numbers-position-header"/> 
+						<extcolumn label="${idera:getLabel('SQLdm.Labels.query-time')}" width = "130px" sortAscending = "@bind(vm.queryTimeAscComparator)" sortDescending = "@bind(vm.queryTimeDescComparator)" align="right" sclass="numbers-position-header-topten"/>
+						<extcolumn label=""  width = "74px" />
+					</columns>
+			        <template name="model">
+						 <row style = "cursor:pointer" onClick = "@command('redirectToInstance', instanceId = each.instanceId , product = each.product)">
+						 	<!--  @author Saumyadeep 
+						 	<label value="@load(each.instanceName)" style="word-wrap:break-word;"/> -->
+						 	<label value="@load(each.displayName)" sclass="link"  style="word-wrap:break-word;"/>
+								<label value="@load(each.database)" sclass="link" />
+								<div>
+									<label value="@load(each.queryText)" maxlength="20" tooltip="${forEachStatus.index}"/>
+									<popup id="${forEachStatus.index}">
+									    <label value="@load(each.queryText)"/>
+									</popup>								
+								</div>
+								<label value="@load(each.cpuTime) @converter('com.idera.sqldm.ui.converter.CommaSeparatedNumberLabelForMVVMConverter')" sclass="numbers-position"/>
+								<label value="@load(each.physicalReads) @converter('com.idera.sqldm.ui.converter.CommaSeparatedNumberLabelForMVVMConverter')" sclass="numbers-position"/>
+								<label value="@load(each.logicalReads) @converter('com.idera.sqldm.ui.converter.CommaSeparatedNumberLabelForMVVMConverter')" sclass="numbers-position"/>
+								<label value="@load(each.logicalWrites) @converter('com.idera.sqldm.ui.converter.CommaSeparatedNumberLabelForMVVMConverter')" sclass="numbers-position"/>
+								<label value="@load(each.queryExecTimeInMs) @converter('com.idera.sqldm.ui.converter.CommaSeparatedNumberLabelForMVVMConverter')" sclass="numbers-position-topten" />
+								<div>
+								<zk choose="">
+								    <zk when="${each.severity == 8}">
+										<div class="critical-progress" ><progressmeter value="${each.relativeSeverityValue}" width="60px" /></div>
+								    </zk>
+								    <zk when="${each.severity == 4}">    
+										<div class="warning-progress" ><progressmeter value="${each.relativeSeverityValue}" width="60px" /></div>
+								    </zk>
+								    <zk when="${each.severity == 2}">    
+										<div class="ok-progress" ><progressmeter value="${each.relativeSeverityValue}" width="60px" /></div>
+								    </zk>
+								    <zk when="${each.severity == 1}">
+										<div class="ok-progress" ><progressmeter value="${each.relativeSeverityValue}" width="60px" /></div>
+								    </zk>
+								    <zk><!-- default -->
+										<div class="ok-progress" ><progressmeter value="${each.relativeSeverityValue}" width="60px" /></div>
+								    </zk>
+								</zk>	
+								</div>
+						</row> 
+			        </template>
+				</grid>
+	
+			</div>
+		</hlayout>
+</div>
+</div>
+</zk>

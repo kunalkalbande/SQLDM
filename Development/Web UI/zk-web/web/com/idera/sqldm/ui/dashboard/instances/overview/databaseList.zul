@@ -1,0 +1,94 @@
+<zk>
+	<div
+		apply="com.idera.sqldm.ui.dashboard.instances.overview.DatabaseListComposer"
+		style="padding-left:10px;overflow:auto;">
+		<vlayout>
+			<hlayout>
+				<div hflex="1"
+					style="height:30px; text-align:right; padding-top: 10px"
+					sclass="padding-b-4">
+					<label id="titleLabel" sclass="H4"
+						style="float:left;font-size: 15.5pt !important;padding-bottom: 10px;"
+						value="${idera:getLabel('SQLdm.Labels.databases-label-capital')}" />
+				</div>
+				<a id="makeReportLink" sclass="link"
+					style="word-wrap:break-word;float:right;padding-right:10px;text-decoration: underline;"
+					label="${idera:getLabel('Labels.export')}"
+					popup="reportsMenupopup, position=after_end" />
+			</hlayout>
+			<separator height="1px" orient="horizontal" bar="true" />
+			<grid id="databasesGrid" span="true" width="100%"
+				model="@{databasesModel}"
+				emptyMessage="${idera:getLabel('Labels.no-database-information-available')}"
+				mold="paging" paginal="${databaseListPgId}" sclass="styled-list styled-cwf-list">
+				<columns sizable="true">
+					<extcolumn
+						label="${idera:getLabel('SQLdm.Labels.database')}" width="43%"
+						sortAscending="@{nameSortAsc}" sortDescending="@{nameSortDesc}" />
+					<extcolumn
+						label="${idera:getLabel('SQLdm.Labels.database.creationdate')}"
+						width="25%" sort="auto(creationDateTimeUtc)" />
+					<extcolumn
+						label="${idera:getLabel('SQLdm.Labels.database.data.size')}"
+						width="110px" align="right" sort="auto(CurrentDataSizeInMb)"
+						sclass="numbers-position-header" />
+					<extcolumn
+						label="${idera:getLabel('SQLdm.Labels.database.log.size')}"
+						width="130px" align="right" sort="auto(CurrentLogFileSizeInMb)"
+						sclass="numbers-position-header" />
+					<extcolumn id="statusColumn"
+						label="${idera:getLabel('SQLdm.Labels.status')}" width="20%"
+						sort="auto(LOWER(CurrentDatabaseStatus))" />
+				</columns>
+				<rows>
+					<row id="selectedRowDatabase" self="@{each='db'}"
+						value="@{db}" style="cursor:pointer">
+						<label value="@{db.databaseName}"
+							sclass="wrap-word" />
+						<label
+							value="@{db.creationDateTimeUtc, converter='com.idera.sqldm.ui.converter.DateLabelConverter'}"
+							sclass="wrap-word" />
+						<label
+							value="@{db, converter='com.idera.sqldm.ui.dashboard.instances.overview.DatabaseDataSizeLabelConverter'}"
+							sclass="numbers-position" />
+						<label
+							value="@{db, converter='com.idera.sqldm.ui.dashboard.instances.overview.DatabaseLogSizeLabelConverter'}"
+							sclass="numbers-position" />
+						<label
+							value="@{db, converter='com.idera.sqldm.ui.dashboard.instances.overview.DatabaseStatusLabelConverter'}"
+							sclass="wrap-word" />
+					</row>
+				</rows>
+				<foot>
+					<footer span="5" align="center">
+						<hbox align="center">
+							<paging id="databaseListPgId" />
+							<intbox id="databaseListRowsBox"
+								zclass="z-paging-inp"
+								constraint="no empty,no negative, no zero: ${idera:getLabel('SQLdm.Messages.page-size-error')}"
+								width="30px" placeholder="#" maxlength="3">
+							</intbox>
+							<label
+								value="${idera:getLabel('SQLdm.Labels.pagination-items-per-page')}" />
+						</hbox>
+					</footer>
+				</foot>
+			</grid>
+			<hlayout>
+				<div hflex="true" style="text-align:center;">
+					<label id="errorLabel" sclass="idera-bold-red"
+						value="${idera:getLabel('Labels.failed-to-fetch-databases')}" />
+				</div>
+			</hlayout>
+		</vlayout>
+	</div>
+	<menupopup id="reportsMenupopup">
+		<menuitem id="createPDFMenuitem"
+			label="${idera:getLabel('Labels.export-as-pdf')}" />
+		<menuitem id="createXLSMenuitem"
+			label="${idera:getLabel('Labels.export-as-xls')}" />
+		<menuitem id="createXMLMenuitem"
+			label="${idera:getLabel('Labels.export-as-xml')}" />
+	</menupopup>
+
+</zk>

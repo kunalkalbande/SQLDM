@@ -1,0 +1,260 @@
+<div apply="com.idera.sqldm.ui.dashboard.instances.resources.DiskViewComposer">
+	<portallayout id="widgets1" maximizedMode="whole">
+			<portalchildren style="padding: 5px" width="49%">
+				<panel id="diskReadsWidget"
+					title="${idera:getLabel('SQLdm.Labels.resources-disk-reads-per-second-per-disk')}"
+					draggable="false" droppable="false" border="normal"
+					collapsible="true" closable="false" sclass="widget-panel"
+					maximizable="false" style="margin-bottom:10px">
+					<caption>
+						<!-- <hlayout style="margin:5px">
+							<div id="diskReadsDiv" height="100%">
+								<a label="12h" id="Reads12"
+									sclass="action-link"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<space bar="true" spacing="10px"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<a label="8h" id="Reads8"
+									sclass="action-link"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<space bar="true" spacing="10px"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<a label="4h" id="Reads4"
+									sclass="action-link"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<space bar="true" spacing="10px"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<a label="1h" id="Reads1"
+									sclass="action-link"
+									style="vertical-align: -webkit-baseline-middle; font-weight: bold" />
+								<space bar="true" spacing="10px"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<a label="30m" id="Reads30"
+									sclass="action-link"
+									style="vertical-align: -webkit-baseline-middle;" />
+							</div>
+														
+							<toolbar style="float: right;">
+								<toolbarbutton
+								src="${sqldmidera:getImageURLWithoutSize('settings_icon_grey')}"
+								popup="diskReadsWidgetPopup,position=start_before" />
+							</toolbar> 
+							
+						</hlayout> -->
+						<popup id="diskReadsWidgetPopup">
+							<label
+								value="${idera:getLabel('SQLdm.Labels.top-ten.configure-instance-alert')}" />
+							<separator height="18px" />
+							<vlayout style="width:350px">
+								<hlayout style="padding: 5px">
+									<label style="padding: 5px"
+										value="${idera:getLabel('SQLdm.Labels.top-ten.configure-server-count')}" />
+									<separator orient="vertical"
+										spacing="2px" />
+									<spinner id="diskReadsCount"
+										constraint="no empty,min 1 max 50: between 1 to 50" />
+								</hlayout>
+								<idera-cwf-button id="applydiskReadsConfig" sclass="applyBtn"
+									label="${idera:getLabel('SQLdm.Labels.apply')}" width="125px"
+									style="float:right" />
+							</vlayout>
+						</popup>
+					</caption>
+					<panelchildren>
+						<sqldm-idera-linechart id="diskReads"
+							width="540px" height="270px" leftMargin="40px" rightMargin="5px"
+							topMargin="10px" bottomMargin="70px" />
+					</panelchildren>
+				</panel>
+			</portalchildren>
+			<portalchildren style="padding: 5px" width="49%">
+				<panel id="diskWritesWidget"
+					title="${idera:getLabel('SQLdm.Labels.resources-disk-writes-per-second-per-disk')}"
+					draggable="false" droppable="false" border="normal"
+					collapsible="true" closable="false" sclass="widget-panel"
+					maximizable="false" style="margin-bottom:10px">
+					<caption>
+						<!-- <hlayout style="margin:5px">
+							<div id="diskWritesDiv" height="100%">
+								<a label="12h" id="Writes12"
+									sclass="action-link"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<space bar="true" spacing="10px"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<a label="8h" id="Writes8"
+									sclass="action-link"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<space bar="true" spacing="10px"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<a label="4h" id="Writes4"
+									sclass="action-link"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<space bar="true" spacing="10px"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<a label="1h" id="Writes1"
+									sclass="action-link"
+									style="vertical-align: -webkit-baseline-middle; font-weight: bold" />
+								<space bar="true" spacing="10px"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<a label="30m" id="Writes30"
+									sclass="action-link"
+									style="vertical-align: -webkit-baseline-middle;" />
+							</div>
+													<toolbar style="float: right;">
+								<toolbarbutton
+								src="${sqldmidera:getImageURLWithoutSize('settings_icon_grey')}"
+								popup="diskWritesWidgetPopup,position=start_before" />
+								</toolbar>
+						</hlayout> -->
+						<popup id="diskWritesWidgetPopup">
+							<label
+								value="${idera:getLabel('SQLdm.Labels.top-ten.configure-instance-alert')}" />
+							<separator height="18px" />
+							<vlayout style="width:350px">
+								<hlayout style="padding: 5px">
+									<label style="padding: 5px"
+										value="${idera:getLabel('SQLdm.Labels.top-ten.configure-server-count')}" />
+									<separator orient="vertical"
+										spacing="2px" />
+									<spinner id="diskWritesCount"
+										constraint="no empty,min 1 max 50: between 1 to 50" />
+								</hlayout>
+								<idera-cwf-button id="applydiskWritesConfig"
+									label="${idera:getLabel('SQLdm.Labels.apply')}" width="125px"
+									style="float:right" />
+							</vlayout>
+						</popup>
+					</caption>
+					<panelchildren>
+						<sqldm-idera-linechart id="diskWrites"
+							width="540px" height="270px" leftMargin="40px" rightMargin="5px"
+							topMargin="10px" bottomMargin="70px" />
+					</panelchildren>
+				</panel>
+			</portalchildren>
+		</portallayout>
+		<portallayout id="widgets2" maximizedMode="whole">
+			<portalchildren style="padding: 5px" width="49%">
+				<panel id="diskTransfersWidget"
+					title="${idera:getLabel('SQLdm.Labels.graph-disk-transfers')}"
+					draggable="false" droppable="false" border="normal"
+					collapsible="true" closable="false" sclass="widget-panel"
+					maximizable="false" style="margin-bottom:10px">
+					<caption>
+						<!-- <hlayout style="margin:5px">
+							<div id="diskTransfersDiv" height="100%">
+								<a label="12h" id="Transfers12"
+									sclass="action-link"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<space bar="true" spacing="10px"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<a label="8h" id="Transfers8"
+									sclass="action-link"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<space bar="true" spacing="10px"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<a label="4h" id="Transfers4"
+									sclass="action-link"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<space bar="true" spacing="10px"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<a label="1h" id="Transfers1"
+									sclass="action-link"
+									style="vertical-align: -webkit-baseline-middle; font-weight: bold" />
+								<space bar="true" spacing="10px"
+									style="vertical-align: -webkit-baseline-middle;" />
+								<a label="30m" id="Transfers30"
+									sclass="action-link"
+									style="vertical-align: -webkit-baseline-middle;" />
+							</div>
+													<toolbar style="float: right;">
+								<toolbarbutton
+								src="${sqldmidera:getImageURLWithoutSize('settings_icon_grey')}"
+								popup="diskTransfersWidgetPopup,position=start_before" />
+								</toolbar>
+						</hlayout> -->
+						<popup id="diskTransfersWidgetPopup">
+							<label
+								value="${idera:getLabel('SQLdm.Labels.top-ten.configure-instance-alert')}" />
+							<separator height="18px" />
+							<vlayout style="width:350px">
+								<hlayout style="padding: 5px">
+									<label style="padding: 5px"
+										value="${idera:getLabel('SQLdm.Labels.top-ten.configure-server-count')}" />
+									<separator orient="vertical"
+										spacing="2px" />
+									<spinner id="diskTransfersCount"
+										constraint="no empty,min 1 max 50: between 1 to 50" />
+								</hlayout>
+								<idera-cwf-button id="applydiskTransfersConfig" sclass="applyBtn"
+									label="${idera:getLabel('SQLdm.Labels.apply')}" width="125px"
+									style="float:right" />
+							</vlayout>
+						</popup>
+					</caption>
+					<panelchildren>
+						<sqldm-idera-linechart id="diskTransfers"
+							width="540px" height="270px" leftMargin="40px" rightMargin="5px"
+							topMargin="10px" bottomMargin="70px" />
+					</panelchildren>
+				</panel>
+			</portalchildren>
+			<portalchildren style="padding: 5px" width="49%">
+				<panel id="sqlPhysicalIOChartWidget"
+					title="${idera:getLabel('SQLdm.Labels.resources-sql-server-physical-io')}"
+					draggable="false" droppable="false" border="normal"
+					collapsible="true" closable="false" sclass="widget-panel"
+					maximizable="false" style="margin-bottom:10px">
+					<caption style="margin:3px;width:99%"></caption>
+					<panelchildren>
+						<sqldm-idera-linechart id="sqlPhysicalIO"
+							width="540px" height="270px" leftMargin="40px" rightMargin="5px"
+							topMargin="10px" bottomMargin="63px" />
+					</panelchildren>
+				</panel>
+			</portalchildren>
+		</portallayout>
+
+		<portallayout id="listWidgetsPortalLayout"
+			maximizedMode="whole">
+			<portalchildren id="topSessionsPortal" style="padding: 5px" width="49%">
+				<panel id="widget1"
+					title="${idera:getLabel('SQLdm.Labels.session-io-activity')}"
+					draggable="false" droppable="false" border="normal"
+					collapsible="true" closable="false" sclass="widget-panel"
+					maximizable="false" style="margin-bottom:10px">
+					<caption>
+						<toolbar style="float: right;">
+							<toolbarbutton
+								src="${sqldmidera:getImageURLWithoutSize('settings_icon_grey')}"
+								popup="sessionsCPUWidgetPopup,position=start_before" />
+						</toolbar>
+						<popup id="sessionsCPUWidgetPopup">
+							<label
+								value="${idera:getLabel('SQLdm.Labels.configure-session-io-activity')}" />
+							<separator height="18px" />
+							<vlayout style="width:350px" vflex="1">
+								<hlayout style="padding: 5px">
+									<label style="padding: 5px"
+										value="${idera:getLabel('SQLdm.Labels.top-ten.configure-sessions-count')}" />
+									<separator orient="vertical"
+										spacing="2px" />
+									<spinner id="sessionsCpuCount"
+										constraint="no empty,min 1 max 50: between 1 to 50" />
+								</hlayout>
+								<idera-cwf-button id="applySessionsCPUConfig" sclass="applyBtn"
+									label="${idera:getLabel('SQLdm.Labels.apply')}" width="125px"
+									style="float:right" />
+							</vlayout>
+						</popup>
+					</caption>
+					<panelchildren>
+						<zk>
+							<include renderdefer="100"
+								src="~./sqldm/com/idera/sqldm/ui/dashboard/instances/resources/topSessionsByIOActivity.zul" />
+						</zk>
+					</panelchildren>
+				</panel>
+			</portalchildren>
+	</portallayout>
+</div>

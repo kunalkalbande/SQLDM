@@ -1,0 +1,80 @@
+<zk>
+<window closable="true" border="none" width="1143px"  position="center,center" action="show: slideDown;hide: slideUp"
+		apply="com.idera.sqldm.ui.customDashboard.CustomWidgetsComposer">
+	<div sclass="container" style="padding-top:10px">
+		<radiogroup id="radiogroup" />
+		<grid id="customWidgetGrid" sclass="styled-list widgetGrid">
+			<columns>
+            	<column style="vertical-align:baseline;" hflex="1" />
+            	<column hflex="11"/>
+        	</columns>
+			<rows>
+				<row>
+					<label id="widgetNameLbl" sclass="label" value="${sqldmidera:getLabel('SQLdm.Labels.label')}:" />
+					<div>
+						<idera-cwf-textbox id="widgetNametxtbox" width="322px" />
+						<label style="font-size:9px;" value="${sqldmidera:getLabel('SQLdm.Labels.optional-leave-empty-for-default')}" />
+					</div>
+				</row>
+				<row>
+					<label sclass="label" value="${sqldmidera:getLabel('SQLdm.Labels.widget')}:"/>
+					<div id="typeContainer">
+						<hlayout id="customWidgetContainer">
+			  
+						</hlayout>
+					</div>
+				</row>
+				<row>
+					<label sclass="label" value="${sqldmidera:getLabel('SQLdm.Labels.metric')}:"/>
+					<idera-cwf-dropdownlist placeholder="(choose a metric value)" width="422px" id="metric"
+							readonly="true">
+						<template name="model">
+							<comboitem label="${each.value}"
+									value="${each.id}" />
+						</template>
+					</idera-cwf-dropdownlist>
+				</row>
+				<row>
+					<label sclass="label" style="width:85.6px" value="${sqldmidera:getLabel('SQLdm.Labels.match')}:"/>
+					<idera-cwf-dropdownlist id="sourceType" width="150px"
+							readonly="true">
+						<template name="model">
+							<comboitem label="${each.value}"
+								value="${each.id}" />
+						</template>
+					</idera-cwf-dropdownlist>
+				</row>
+				<row>
+					<div visible="false">
+						a place holder
+					</div>
+					<div>
+						<hlayout>
+							<image width="48px" height="48px" 
+									src="${sqldmidera:getImageURLWithoutSize('arrow-down-right')}"/>
+							<vlayout sclass="identifierContainer">
+									<label value="${sqldmidera:getLabel('SQLdm.Labels.identifier')}:" />
+									<hlayout>
+										<vlayout>
+											<idera-cwf-dropdownlist readonly="true" id="instanceCombobox" width="322px"/>
+											<chosenbox id="instancechosenBox" width="322px" />
+											<chosenbox id="tagchosenBox" width="322px" />
+										</vlayout>
+											<idera-cwf-dropdownlist id="indentifierErrorBox" style="visibility:hidden;width:0px;"/>
+									</hlayout>
+							</vlayout>
+						</hlayout>
+					</div>
+				</row>
+			</rows>
+		</grid>
+		<separator bar="true" width="98%" height="2px" style="margin-left:1%"/>
+		<div id="buttonContainer" style="padding-left: 1%;padding-top: 5px;padding-bottom:10px">
+	 		<idera-cwf-button sclass="white-text-orange-button" id="saveBtn" 
+	 				label="${sqldmidera:getLabel('SQLdm.Labels.save')}" />
+	 		<idera-cwf-button sclass="white-text-orange-button" id="closeBtn" 
+	 				label="${sqldmidera:getLabel('SQLdm.Labels.cancel')}" />
+		</div>
+	</div>
+</window>
+</zk>

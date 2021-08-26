@@ -1,0 +1,2028 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SQLdmDB">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items />
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="DatabaseCreate.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>DatabaseCreate.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DatabaseLoad.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>DatabaseLoad.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLdmDatabaseInstall.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SQLdmDatabaseInstall.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fn_CompareDateTimeRange.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>fn_CompareDateTimeRange.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fn_GetDatabaseCreationDate.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>fn_GetDatabaseCreationDate.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fn_GetDatabaseVersion.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>fn_GetDatabaseVersion.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fn_GetServerName.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>fn_GetServerName.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fn_GetServerVersionString.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>fn_GetServerVersionString.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fn_GroomingFragmentation.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>fn_GroomingFragmentation.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fn_RoundDateTime.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>fn_RoundDateTime.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fn_ServerVersionnVarcharToBigInt.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>fn_ServerVersionnVarcharToBigInt.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQL_Signature.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SQL_Signature.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AddAlert.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AddAlert.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AddAlertTemplate.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AddAlertTemplate.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AddCollectionServices.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AddCollectionServices.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AddCounter.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AddCounter.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AddDefaultAlertTemplate.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AddDefaultAlertTemplate.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AddDefaultMetricThreshold.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AddDefaultMetricThreshold.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AddLicenseKey.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AddLicenseKey.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AddLogin.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AddLogin.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AddManagementService.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AddManagementService.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AddMonitoredSQLServer.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AddMonitoredSQLServer.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AddNotificationProvider.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AddNotificationProvider.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AddNotificationRule.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AddNotificationRule.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AddPermission.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AddPermission.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AddPredictiveForecast.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AddPredictiveForecast.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AddPredictiveModel.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AddPredictiveModel.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AddTag.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AddTag.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AddTask.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AddTask.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AddUpdateVirtualHost.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AddUpdateVirtualHost.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AddVMToMonitoredServer.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AddVMToMonitoredServer.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AggregateQueryData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AggregateQueryData.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AppSecDisable.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AppSecDisable.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AppSecEnable.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AppSecEnable.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AppendToMetricThreshold.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AppendToMetricThreshold.sql</FullPath>
+        </FileNode>
+		<FileNode Name="AlwaysOnStatisticsIndexes2019.sql">
+		  <AssociatedConnectionMoniker />
+	      <AssociatedConnSrvName />
+		  <AssociatedConnUserName />
+		  <FullPath>="AlwaysOnStatisticsIndexes2019.sql</FullPath>
+        <FileNode Name="p_AssignCounterToServers.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AssignCounterToServers.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_AssignCountersToServer.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AssignCountersToServer.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_ClearAlerts.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_ClearAlerts.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_CreateAggregationJob.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_CreateAggregationJob.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_CreateGroomJob.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_CreateGroomJob.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_DatabaseGrowthForecast.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_DatabaseGrowthForecast.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_DeactivateMonitoredSqlServer.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_DeactivateMonitoredSqlServer.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_DeleteAlertTemplate.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_DeleteAlertTemplate.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_DeleteCounter.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_DeleteCounter.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_DeleteCountersFromCustomReport.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_DeleteCountersFromCustomReport.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_DeleteCustomReport.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_DeleteCustomReport.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_DeleteLicenseKey.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_DeleteLicenseKey.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_DeleteMirroringPreferredConfig.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_DeleteMirroringPreferredConfig.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_DeleteMirroringSessionFromServer.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_DeleteMirroringSessionFromServer.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_DeleteMonitoredSqlServer.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_DeleteMonitoredSqlServer.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_DeleteNotificationProvider.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_DeleteNotificationProvider.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_DeleteNotificationRule.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_DeleteNotificationRule.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_DeletePermission.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_DeletePermission.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_DeleteReplicationSessionFromServer.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_DeleteReplicationSessionFromServer.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_DeleteRunQueryScript.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_DeleteRunQueryScript.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_DeleteTagsById.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_DeleteTagsById.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_DeleteTasks.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_DeleteTasks.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_DeleteVirtualHost.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_DeleteVirtualHost.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_DiskDetailsReport.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_DiskDetailsReport.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_DiskUsageForecast.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_DiskUsageForecast.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_getMirroringParticipantsForServer.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_getMirroringParticipantsForServer.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetActiveAlerts.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetActiveAlerts.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetActiveWaits.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetActiveWaits.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetAlertHistory.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetAlertHistory.sql</FullPath>
+        </FileNode>
+		<FileNode Name="p_ServerUptime.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_ServerUptime.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetAlertTemplates.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetAlertTemplates.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetAlertThresholdsForEnums.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetAlertThresholdsForEnums.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetAlertThresholdsForNumerics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetAlertThresholdsForNumerics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetAlerts.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetAlerts.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetBaselineMetaData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetBaselineMetaData.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetBaselineParameters.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetBaselineParameters.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetBlockingDetails.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetBlockingDetails.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetCPUSummary.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetCPUSummary.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetCollectionServiceForSQLServer.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetCollectionServiceForSQLServer.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetCollectionServices.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetCollectionServices.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetCopyright.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetCopyright.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetCounterCategories.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetCounterCategories.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetCounterNameAvailable.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetCounterNameAvailable.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetCounters.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetCounters.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetCurrentDiskDrives.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetCurrentDiskDrives.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetCustomCounterStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetCustomCounterStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetCustomCounterTags.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetCustomCounterTags.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetCustomCounterTagsAndServers.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetCustomCounterTagsAndServers.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetCustomCountersWithTagIds.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetCustomCountersWithTagIds.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetCustomReportName.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetCustomReportName.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetCustomReports.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetCustomReports.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetCustomReportsDataSet.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetCustomReportsDataSet.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetDatabaseCounters.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetDatabaseCounters.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetDatabaseOverview.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetDatabaseOverview.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetDatabaseStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetDatabaseStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetDatabases.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetDatabases.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetDeadlock.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetDeadlock.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetDefaultManagementService.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetDefaultManagementService.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetDefaultManagementServiceID.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetDefaultManagementServiceID.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetDefaultTemplateID.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetDefaultTemplateID.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetDiskDrives.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetDiskDrives.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetDiskSummary.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetDiskSummary.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetEnterpriseSummary.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetEnterpriseSummary.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetExcludedWaitTypes.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetExcludedWaitTypes.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetFileActivity.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetFileActivity.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetGrooming.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetGrooming.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetHoursList.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetHoursList.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetInstancesMonitoringCustomCounter.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetInstancesMonitoringCustomCounter.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetLicenseKeys.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetLicenseKeys.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetListOfCounters.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetListOfCounters.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetLocksDetails.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetLocksDetails.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetManagementServices.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetManagementServices.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMasterMetrics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMasterMetrics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMaxAlertID.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMaxAlertID.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMemorySummary.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMemorySummary.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMetricInfo.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMetricInfo.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMetricThresholdDetails.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMetricThresholdDetails.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMetricThresholds.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMetricThresholds.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMirroredDatabases.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMirroredDatabases.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMirroringHistory.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMirroringHistory.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMirroringPreferredConfig.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMirroringPreferredConfig.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMirroringServerStatus.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMirroringServerStatus.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMirroringSessions.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMirroringSessions.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMonitoredMirroredServers.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMonitoredMirroredServers.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMonitoredSQLServerCounters.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMonitoredSQLServerCounters.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMonitoredSQLServerWorkload.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMonitoredSQLServerWorkload.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMonitoredSqlServerById.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMonitoredSqlServerById.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMonitoredSqlServerId.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMonitoredSqlServerId.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMonitoredSqlServerNames.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMonitoredSqlServerNames.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMonitoredSqlServerStatus.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMonitoredSqlServerStatus.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMonitoredSqlServers.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMonitoredSqlServers.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMonitoredSqlServersUsingCounter.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMonitoredSqlServersUsingCounter.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetMostCriticalServers.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetMostCriticalServers.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetNewTemplateOptions.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetNewTemplateOptions.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetNextPredictiveForecast.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetNextPredictiveForecast.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetNextPredictiveModelRebuild.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetNextPredictiveModelRebuild.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetNextServerActivitySnapshotDateTime.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetNextServerActivitySnapshotDateTime.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetNotificationProviders.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetNotificationProviders.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetNotificationRules.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetNotificationRules.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetOSStatisticsAvailable.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetOSStatisticsAvailable.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetPermissionTagsAndServers.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetPermissionTagsAndServers.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetPermissions.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetPermissions.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetPredictiveAnalyticsEnabled.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetPredictiveAnalyticsEnabled.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetPredictiveForecasts.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetPredictiveForecasts.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetPredictiveModelInput.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetPredictiveModelInput.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetPredictiveModelsCount.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetPredictiveModelsCount.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetPredictiveTrainingData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetPredictiveTrainingData.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetPreviousServerActivitySnapshotDateTime.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetPreviousServerActivitySnapshotDateTime.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetQueryMonitorStatements.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetQueryMonitorStatements.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetQueryMonitorUpgradeData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetQueryMonitorUpgradeData.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetQueryOverview.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetQueryOverview.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetQueryStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetQueryStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetReplicationChartMetrics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetReplicationChartMetrics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetReplicationParticipantsForServer.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetReplicationParticipantsForServer.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetReplicationSummary.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetReplicationSummary.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetReportPeriodIntervals.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetReportPeriodIntervals.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetReportServers.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetReportServers.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetRunQueryScripts.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetRunQueryScripts.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetSQLText.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetSQLText.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetSelectedCustomReportCounters.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetSelectedCustomReportCounters.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetServerActivity.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetServerActivity.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetServerInventory.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetServerInventory.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetServerOverview.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetServerOverview.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetServerOverviewStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetServerOverviewStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetServerSummary.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetServerSummary.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetServerSummaryReport.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetServerSummaryReport.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetServerTags.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetServerTags.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetServerWideStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetServerWideStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetServersWithTagId.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetServersWithTagId.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetSessionsDetails.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetSessionsDetails.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetSessionsSummary.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetSessionsSummary.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetSnoozedAlerts.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetSnoozedAlerts.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetSqlAgentRunning.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetSqlAgentRunning.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetStateOverview.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetStateOverview.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetTableFragmentation.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetTableFragmentation.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetTables.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetTables.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetTagAssociations.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetTagAssociations.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetTagConfiguration.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetTagConfiguration.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetTagServersAsXML.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetTagServersAsXML.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetTags.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetTags.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetTagsWithMirroredServers.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetTagsWithMirroredServers.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetTasks.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetTasks.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetTempdbFileData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetTempdbFileData.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetTempdbOverall.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetTempdbOverall.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetTempdbStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetTempdbStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetTempdbSummaryData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetTempdbSummaryData.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetTopDatabaseApplications.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetTopDatabaseApplications.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetTopDatabases.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetTopDatabases.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetTopQueries.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetTopQueries.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetTopTablesFragmentation.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetTopTablesFragmentation.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetTopTablesFragmentationChart.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetTopTablesFragmentationChart.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetTopTablesGrowth.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetTopTablesGrowth.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetTopTablesGrowthChart.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetTopTablesGrowthChart.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetUserIdentifiers.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetUserIdentifiers.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetUserToken.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetUserToken.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetVMConfigReport.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetVMConfigReport.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetVMSummaryReport.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetVMSummaryReport.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetVirtualHostServers.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetVirtualHostServers.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetVirtualHostServersByAddress.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetVirtualHostServersByAddress.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetVirtualizationStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetVirtualizationStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetWaitCategory.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetWaitCategory.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GetWaitStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GetWaitStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_HeartbeatCollectionService.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_HeartbeatCollectionService.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_ImportGetMonitoredSqlServers.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_ImportGetMonitoredSqlServers.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_ImportUpdateEarliestDateImported.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_ImportUpdateEarliestDateImported.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertActiveWait.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertActiveWait.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertApplicationName.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertApplicationName.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertBlockingSession.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertBlockingSession.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertCustomCounterStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertCustomCounterStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertCustomReportsCounters.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertCustomReportsCounters.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertDatabaseFile.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertDatabaseFile.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertDatabaseName.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertDatabaseName.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertDatabaseStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertDatabaseStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertDeadlock.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertDeadlock.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertDeadlockProcess.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertDeadlockProcess.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertDiskDrive.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertDiskDrive.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertESXConfigData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertESXConfigData.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertESXStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertESXStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertFileActivity.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertFileActivity.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertHostName.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertHostName.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertLoginName.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertLoginName.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertMirrorMonitoringStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertMirrorMonitoringStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertOSStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertOSStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertQueryMonitorStatement.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertQueryMonitorStatement.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertRunQueryScript.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertRunQueryScript.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertSQLSignature.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertSQLSignature.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertSQLStatement.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertSQLStatement.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertServerActivity.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertServerActivity.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertServerStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertServerStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertTableGrowth.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertTableGrowth.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertTableName.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertTableName.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertTableReorganization.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertTableReorganization.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertTempdbFileData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertTempdbFileData.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertVMConfigData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertVMConfigData.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertVMStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertVMStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertWaitStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertWaitStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertWaitStatisticsDetails.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertWaitStatisticsDetails.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_InsertWaitTypes.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_InsertWaitTypes.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_IsUserAdministrator.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_IsUserAdministrator.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_MoveQueryMonitorStatement.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_MoveQueryMonitorStatement.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_PostInstallUpgrade.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_PostInstallUpgrade.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_RemoveFromMetricThreshold.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_RemoveFromMetricThreshold.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_RemoveManagementService.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_RemoveManagementService.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_RepositoryInfo.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_RepositoryInfo.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_SetAggregationFlag.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_SetAggregationFlag.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_SetBaselineParameters.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_SetBaselineParameters.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_SetDefaultAlertTemplate.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_SetDefaultAlertTemplate.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_SetDefaultCollectionService.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_SetDefaultCollectionService.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_SetDefaultManagementService.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_SetDefaultManagementService.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_SetMirroringPreferredConfig.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_SetMirroringPreferredConfig.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_SetNextPredictiveForecast.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_SetNextPredictiveForecast.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_SetNextPredictiveModelRebuild.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_SetNextPredictiveModelRebuild.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_SetPredictiveAnalyticsEnabled.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_SetPredictiveAnalyticsEnabled.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_SnoozeAlerts.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_SnoozeAlerts.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_StartAggregationJob.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_StartAggregationJob.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_StartGroomJob.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_StartGroomJob.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_SyncCustomCounterThresholds.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_SyncCustomCounterThresholds.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_TableGrowthForecast.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_TableGrowthForecast.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_TopServersAlerts.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_TopServersAlerts.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_TopServersCpu.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_TopServersCpu.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_TopServersDisk.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_TopServersDisk.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_TopServersMemory.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_TopServersMemory.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_TopServersResponseTime.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_TopServersResponseTime.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UnsnoozeAlerts.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UnsnoozeAlerts.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdateAlertTemplate.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdateAlertTemplate.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdateCounter.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdateCounter.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdateCounterStatus.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdateCounterStatus.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdateCustomCounterTags.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdateCustomCounterTags.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdateCustomReport.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdateCustomReport.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdateGrooming.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdateGrooming.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdateLastRefreshTime.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdateLastRefreshTime.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdateMetricInfo.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdateMetricInfo.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdateMetricThreshold.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdateMetricThreshold.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdateMonitoredSqlServer.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdateMonitoredSqlServer.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdateNotificationProvider.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdateNotificationProvider.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdateNotificationRule.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdateNotificationRule.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdatePermission.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdatePermission.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdatePermissionStatus.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdatePermissionStatus.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdatePermissionTags.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdatePermissionTags.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdateReplicationTopology.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdateReplicationTopology.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdateRunQueryScript.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdateRunQueryScript.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdateServerTags.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdateServerTags.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdateServerVersion.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdateServerVersion.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdateStatisticsRunTime.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdateStatisticsRunTime.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdateTag.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdateTag.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdateTagConfiguration.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdateTagConfiguration.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpdateTask.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpdateTask.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_UpgradeAlertData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_UpgradeAlertData.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomActiveWaitStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomActiveWaitStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomAlerts.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomAlerts.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomApplicationNames.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomApplicationNames.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomBlockingSessionStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomBlockingSessionStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomCustomCounterStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomCustomCounterStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomDatabaseFileActivity.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomDatabaseFileActivity.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomDatabaseFiles.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomDatabaseFiles.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomDatabaseNames.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomDatabaseNames.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomDatabaseStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomDatabaseStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomDeadlocks.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomDeadlocks.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomDiskDrives.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomDiskDrives.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomESXConfigData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomESXConfigData.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomESXStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomESXStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomExpiredForecasts.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomExpiredForecasts.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomGroomingLog.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomGroomingLog.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomHostNames.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomHostNames.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomJobMaintenance.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomJobMaintenance.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomLegacyQueryMonitor.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomLegacyQueryMonitor.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomLoginNames.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomLoginNames.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomMetricMetaData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomMetricMetaData.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomMirroringStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomMirroringStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomMonitoredSQLServers.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomMonitoredSQLServers.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomOSStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomOSStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomQueryMonitorStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomQueryMonitorStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomQuerySignatureAggregation.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomQuerySignatureAggregation.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomReplicationTopology.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomReplicationTopology.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomRepository.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomRepository.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomRepositoryData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomRepositoryData.sql</FullPath>
+        </FileNode>
+		<FileNode Name="p_VerifyAGNode.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_VerifyAGNode.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomRepositoryOrphanData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomRepositoryOrphanData.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomSQLSignatures.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomSQLSignatures.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomSQLStatements.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomSQLStatements.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomServerActivity.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomServerActivity.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomServerStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomServerStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomTableGrowth.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomTableGrowth.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomTableReorganization.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomTableReorganization.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomTasks.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomTasks.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomTempdbFileData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomTempdbFileData.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomVMConfigData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomVMConfigData.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomVMStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomVMStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomWaitStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomWaitStatistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_GroomingDefrag.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomingDefrag.sql</FullPath>
+        </FileNode>
+        <FileNode Name="p_LogGroomingAction.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_LogGroomingAction.sql</FullPath>
+        </FileNode>
+		<FileNode Name="p_GroomDatabaseSizeDateTime.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_GroomDatabaseSizeDateTime.sql</FullPath>
+        </FileNode>
+		<FileNode Name="p_AggregateDatabaseFileStatisticsData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AggregateDatabaseFileStatisticsData.sql</FullPath>
+        </FileNode>
+		<FileNode Name="p_AggregateDatabaseSize.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AggregateDatabaseSize.sql</FullPath>
+        </FileNode>
+		<FileNode Name="p_AggregateDatabaseSizeDateTime.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AggregateDatabaseSizeDateTime.sql</FullPath>
+        </FileNode>
+		<FileNode Name="p_AggregateForecastingData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AggregateForecastingData.sql</FullPath>
+        </FileNode>
+		<FileNode Name="p_AggregateTableGrowthData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AggregateTableGrowthData.sql</FullPath>
+        </FileNode>
+		<FileNode Name="p_AggregateDatabaseStatistics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AggregateDatabaseStatistics.sql</FullPath>
+        </FileNode>
+		<FileNode Name="p_AggregateDiskDriveStatisticsData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>p_AggregateDiskDriveStatisticsData.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+  <SccProjectName>Perforce Project</SccProjectName>
+  <SccAuxPath />
+  <SccLocalPath>.</SccLocalPath>
+  <SccProvider>MSSCCI:Perforce SCM</SccProvider>
+</SqlWorkbenchSqlProject>

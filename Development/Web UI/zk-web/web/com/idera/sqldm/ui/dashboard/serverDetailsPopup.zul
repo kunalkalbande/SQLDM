@@ -1,0 +1,52 @@
+<div sclass="serverPopup white" id="popContainerDiv" apply="com.idera.sqldm.ui.dashboard.ServerDetailsPopupComposer">
+	<vlayout vflex="1">
+	<vlayout id="serverHeatMapHeader">
+			<hlayout hflex="2">
+			<label sclass="z-label label" id="instanceName" value = "" />
+			</hlayout>
+			<hlayout><label sclass="z-label healthLabel" value="Health Index:"/><label sclass="healthLabel" id="healthIdx" value=""/></hlayout>
+	</vlayout>
+	<space height="10px"/>
+	<vlayout id="chartDiv" style="padding:15px 15px;">
+		<label>CPU</label>
+		<div id="cpuUsageDiv" sclass="chart-border">
+			<sqldm-idera-linechart id="cpuUsage" width="100%" height="60px"/>
+		</div>
+		<label id = "cpuTime" style="float:right;font-size:10px;font-weight:500">
+				1 hour
+		</label>
+		<space height="5px"/>
+		<label>Memory</label>
+		<div id="memoryUsageDiv" sclass="chart-border">
+			<sqldm-idera-linechart id="memoryUsage" width="100%" height="60px"/>
+		</div>
+		<label id = "memoryTime" style="float:right;font-size:10px;font-weight:500">
+				1 hour
+		</label>
+		<space height="5px"/>
+		<label>IO</label>
+		<div id="ioActivityDiv" sclass="chart-border">
+			<sqldm-idera-linechart id="ioActivity" width="100%" height="60px"/>
+		</div>
+		<label id = "ioTime" style="float:right;font-size:10px;font-weight:500">
+				1 hour
+		</label>
+		<space height="5px"/>
+		<label>Response Time</label>
+		<div id="responseTimeDiv" sclass="chart-border">
+			<sqldm-idera-linechart id="responseTime" width="100%" height="60px"/>
+		</div>
+		<label id = "responseTimehour" style="float:right;font-size:10px;font-weight:500">
+				1 hour
+		</label>
+		<a id="detailsBtn" tooltiptext="Click here for details" label="Details" sclass="button"/>
+		
+		<span id="tagLabel" sclass="tag">
+			TAGS :
+			<div id="tags" style="float:left;"></div>
+		</span>
+		<image id="launchSWAHeatMap" style="float:right; cursor:hand;" tooltiptext="Launch instance in SWA" sclass="white-text-blue-button" src="~./sqldm/com/idera/sqldm/images/swa_24x24.png"/>
+	</vlayout>
+	
+	</vlayout>
+</div>

@@ -1,0 +1,21 @@
+<div apply="com.idera.sqldm.ui.dashboard.instances.resources.ResourcesSummaryComposer">
+<vlayout>
+	 <space height="1"/>
+     <hlayout>
+     	<div sclass="chart-border">
+     		<sqldm-idera-linechart id="sqlCPUUsage" width="650px" height="290px" leftMargin="65px" rightMargin="20px" topMargin="60px" bottomMargin="20px" />
+     	</div>
+       	<div sclass="chart-border">
+       		<sqldm-idera-linechart id="sqlPhysicalIO" width="650px" height="290px" leftMargin="60px" rightMargin="20px" topMargin="60px" bottomMargin="20px" />
+       	</div>
+     </hlayout>
+     <hlayout>
+     	<div sclass="chart-border">
+     		<sqldm-idera-linechart id="sqlMemoryUsage" width="650px" height="290px" leftMargin="65px" rightMargin="20px" topMargin="60px" bottomMargin="20px" />
+     	</div>
+     	<div sclass="chart-border">
+     		<sqldm-idera-linechart id="cacheHitRatios" width="650px" height="290px" leftMargin="60px" rightMargin="20px" topMargin="60px" bottomMargin="20px" />
+     	</div>
+     </hlayout>
+</vlayout>
+</div>

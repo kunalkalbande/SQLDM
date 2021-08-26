@@ -1,0 +1,222 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Idera.SQLdoctor.AnalysisEngine.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CPU_HighAvgLoadPercentage" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">45</Value>
+    </Setting>
+    <Setting Name="CPU_HighAvgQueueLength" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">1.5</Value>
+    </Setting>
+    <Setting Name="CPU_MaxCPUWhenMaxDopZero" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="CPU_MaxDopPerCPU" Type="System.Decimal" Scope="Application">
+      <Value Profile="(Default)">0.5</Value>
+    </Setting>
+    <Setting Name="CPU_MaxEncryptedIOPercent" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="CPU_ContextSwitchesPerSecond" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">25000</Value>
+    </Setting>
+    <Setting Name="OLEContext" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="IO_HighPagesPerSecond" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="IO_HighPercentDiskTime" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.3</Value>
+    </Setting>
+    <Setting Name="IO_HighSplitIOToDiskTransfersPercentage" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.05</Value>
+    </Setting>
+    <Setting Name="IO_HighIOWaitsPercentOfTotal" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.3</Value>
+    </Setting>
+    <Setting Name="IO_MinVolumeBlockSize" Type="System.UInt32" Scope="Application">
+      <Value Profile="(Default)">65536</Value>
+    </Setting>
+    <Setting Name="IO_DiskSecPerTransTimesPctDiskTime" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.0035</Value>
+    </Setting>
+    <Setting Name="CPU_AvgPrivilegedTimePercent" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="CPU_MaxSqlThreadCount" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">400</Value>
+    </Setting>
+    <Setting Name="IO_HighDiskQueueLength" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="CPU_ActivityPerSecDenominator" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">3.5</Value>
+    </Setting>
+    <Setting Name="CPU_ActivityPerSecAdjustment" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2500</Value>
+    </Setting>
+    <Setting Name="CPU_HighPercentInterruptTime" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">1.5</Value>
+    </Setting>
+    <Setting Name="Net_HighStatementsWithNoCountPercent" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.75</Value>
+    </Setting>
+    <Setting Name="Net_MinUptimeInMinutesForNetworkUtilization" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="Net_MinSqlServerNetworkUtilizationPercent" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.7</Value>
+    </Setting>
+    <Setting Name="Net_MaxAvgQueueLength" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.5</Value>
+    </Setting>
+    <Setting Name="Net_HighRetranSegmentsPercent" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.03</Value>
+    </Setting>
+    <Setting Name="IO_HighTempDbMetadataWaits" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="CPU_LightweightPoolingMinProcessorTimePercent" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">74</Value>
+    </Setting>
+    <Setting Name="CPU_LightweightPoolingMinProcessorCount" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="IO_HighProcessorQueueLengthPerProcessor" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">1.5</Value>
+    </Setting>
+    <Setting Name="IO_HighSqlServerCPU" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">45</Value>
+    </Setting>
+    <Setting Name="IO_IOFillFactorThresholdMedium" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">80</Value>
+    </Setting>
+    <Setting Name="IO_IOFillFactorThresholdHigh" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">65</Value>
+    </Setting>
+    <Setting Name="Mem_Pressure_BufferCacheHitRatio" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">95</Value>
+    </Setting>
+    <Setting Name="Mem_Pressure_PageLife" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">300</Value>
+    </Setting>
+    <Setting Name="Mem_Pressure_MemoryGrantsPending" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="Mem_MinMemory_PagesPerSec" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="Mem_DefaultFillFactorEqual" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Mem_DefaultFillFactorOver" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">95</Value>
+    </Setting>
+    <Setting Name="Mem_PageSplitsLow" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="Mem_DefaultFillFactorLow" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">75</Value>
+    </Setting>
+    <Setting Name="Mem_HighPageSplitsToAllocationRatio" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.05</Value>
+    </Setting>
+    <Setting Name="Mem_MaxUserConnections" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">150</Value>
+    </Setting>
+    <Setting Name="Mem_HighAdhocCacheSizeMB" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="Mem_HighPageFaultsPerSec" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="Mem_CPUForPageCompression" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">80</Value>
+    </Setting>
+    <Setting Name="BP_SelectStarAbuseIncludeTempTables" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Trace1_Continuous" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Trace1_MinQueryTime" Type="System.UInt64" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="Trace1_MaxQueryTime" Type="System.UInt64" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Trace1_SampleInterval" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="Trace2_Enabled" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Trace2_Continuous" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Trace2_MinQueryTime" Type="System.UInt64" Scope="Application">
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="Trace2_MaxQueryTime" Type="System.UInt64" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Trace2_SampleInterval" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="Max_RankedRecommendations" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5000</Value>
+    </Setting>
+    <Setting Name="Max_RecommendationsPerAnalyzer" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="DefaultSqlCommandTimeoutInMinutes" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="EnumWMICommandTimeoutInMinutes" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="Max_TableUpdatesPerSecForMissingIndexRecommendation" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">4.5</Value>
+    </Setting>
+    <Setting Name="Min_DMVMissingIndexImpact" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">30000</Value>
+    </Setting>
+    <Setting Name="Max_RecommendationsPerType" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">400</Value>
+    </Setting>
+    <Setting Name="Max_UniqueTraceBuckets" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">40000</Value>
+    </Setting>
+    <Setting Name="Cache_TSQL_MinSizeInMB" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="Cache_TSQL_MaxSizeInMB" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2048</Value>
+    </Setting>
+    <Setting Name="Cache_TSQL_GrowSizeInMB" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="Cache_Plan_MinSizeInMB" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="Cache_Plan_MaxSizeInMB" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2048</Value>
+    </Setting>
+    <Setting Name="Cache_Plan_GrowSizeInMB" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="UseTSQLHashing" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="DumpDataBuckets" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="DaysSinceLastCheckDB" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">14</Value>
+    </Setting>
+    <Setting Name="DaysSinceLastBackup" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

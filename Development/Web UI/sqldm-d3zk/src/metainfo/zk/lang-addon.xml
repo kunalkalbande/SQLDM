@@ -1,0 +1,59 @@
+<language-addon>
+
+	<addon-name>idera-d3zk.sqldm</addon-name>
+	<language-name>xul/html</language-name>
+	
+	<javascript src="~./js/colorbrewer.js"/>
+	<javascript src="~./js/d3.min.js"/>
+	<javascript src="~./js/heatmapDependencyLib.js"/>
+	
+
+	<version>
+		<version-class>com.idera.sqldm.d3zk.Version</version-class>
+		<version-uid>0.0.1</version-uid>
+		<zk-version>5.0.0</zk-version>
+	</version>
+	
+	<component>
+		<component-name>heatmapchart</component-name>
+		<component-class>com.idera.sqldm.d3zk.chart.HeatmapChart</component-class>
+		<widget-class>com.idera.sqldm.d3zk.chart.HeatmapChart</widget-class>
+	</component>
+	
+	<component>
+		<component-name>sqldm-barchart</component-name>
+		<component-class>com.idera.sqldm.d3zk.chart.BarChart</component-class>
+		<widget-class>com.idera.sqldm.d3zk.chart.BarChart</widget-class>
+	</component>
+
+    <component>
+        <component-name>stackedbarchart</component-name>
+        <component-class>com.idera.sqldm.d3zk.chart.StackedBarChart</component-class>
+        <widget-class>com.idera.sqldm.d3zk.chart.StackedBarChart</widget-class>
+    </component>
+
+	<component>
+		<component-name>sqldm-piechart</component-name>
+		<component-class>com.idera.sqldm.d3zk.chart.PieChart</component-class>
+		<widget-class>com.idera.sqldm.d3zk.chart.PieChart</widget-class>
+	</component>
+
+	<component>
+		<component-name>linechart</component-name>
+		<component-class>com.idera.sqldm.d3zk.chart.LineChart</component-class>
+		<widget-class>com.idera.sqldm.d3zk.chart.LineChart</widget-class>
+	</component>
+
+	<component>
+		<component-name>areachart</component-name>
+		<component-class>com.idera.sqldm.d3zk.chart.AreaChart</component-class>
+		<widget-class>com.idera.sqldm.d3zk.chart.AreaChart</widget-class>
+	</component>
+
+	<component>
+		<component-name>timelinechart</component-name>
+		<component-class>com.idera.sqldm.d3zk.chart.TimelineChart</component-class>
+		<widget-class>com.idera.sqldm.d3zk.chart.TimelineChart</widget-class>
+	</component>
+
+</language-addon>

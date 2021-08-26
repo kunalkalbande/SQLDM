@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E3D4ADDB-B8ED-42B1-9831-6A360775FCA7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Idera.SQLdm.PowerShell</RootNamespace>
+    <AssemblyName>SQLdmSnapIn</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <StartupObject>
+    </StartupObject>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.PowerShell.Commands.Management, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Microsoft.PowerShell.Commands.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerCollections, Version=1.0.2141.24679, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\PowerCollections.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\System.Management.Automation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TracerX, Version=1.8.11209.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\..\..\..\Libraries\TracerX.exe</HintPath>
+    </Reference>
+    <Reference Include="Vim25Service, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Vim25Service.dll</HintPath>
+    </Reference>
+    <Reference Include="Vim25Service.XmlSerializers, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Vim25Service.XmlSerializers.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Commands\EscapeSQLdmNameCommand.cs" />
+    <Compile Include="Commands\GetSqlServersCommand.cs" />
+    <Compile Include="Commands\GrantSQLdmPermissionCommand.cs" />
+    <Compile Include="Commands\ItemProviderCmdletBase.cs" />
+    <Compile Include="Commands\NewItemCommandExtension.cs" />
+    <Compile Include="Commands\NewSQLdmAlertTemplateCommand.cs" />
+    <Compile Include="Commands\NewSQLdmDriveCommand.cs" />
+    <Compile Include="Commands\NewSQLdmMonitoredInstanceCommand.cs" />
+    <Compile Include="Commands\NewSQLdmUserCommand.cs" />
+    <Compile Include="Commands\RemoveItemCommandExtension.cs" />
+    <Compile Include="Commands\RemoveSQLdmMonitoredInstanceCommand.cs" />
+    <Compile Include="Commands\RemoveSQLdmUserCommand.cs" />
+    <Compile Include="Commands\RevokeSQLdmPermissionCommand.cs" />
+    <Compile Include="Commands\SetItemCommandExtension.cs" />
+    <Compile Include="Commands\SetSQLdmAppSecurityCommand.cs" />
+    <Compile Include="Commands\SetSQLdmGeneralConfigurationCommand.cs" />
+    <Compile Include="Commands\SetSQLdmLoggingCommand.cs" />
+    <Compile Include="Commands\SetSQLdmMaintenanceModeCommand.cs" />
+    <Compile Include="Commands\SetSQLdmMonitoredInstanceCommand.cs" />
+    <Compile Include="Commands\SetSQLdmQueryMonitorCommand.cs" />
+    <Compile Include="Commands\SetSQLdmQuietTimeCommand.cs" />
+    <Compile Include="Commands\SetSQLdmUser.cs" />
+    <Compile Include="Commands\TestSQLdmPermissionCommand.cs" />
+    <Compile Include="Helpers\DataHelper.cs" />
+    <Compile Include="Helpers\DynamicParameterHelpGenerator.cs" />
+    <Compile Include="Helpers\ProgressProvider.cs" />
+    <Compile Include="Helpers\SQLdmPath.cs" />
+    <Compile Include="Objects\ActivityMonitorConfigurationInfo.cs" />
+    <Compile Include="Objects\SQLdmAlertTemplateInfo.cs" />
+    <Compile Include="Objects\SQLdmPermissionInfo.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="DynamicParameterAttribute.cs" />
+    <Compile Include="Helpers\Helper.cs" />
+    <Compile Include="Objects\SQLServerLocator.cs" />
+    <Compile Include="PasswordAttribute.cs" />
+    <Compile Include="RuntimeParameterBuilder.cs" />
+    <Compile Include="Objects\AlertInfo.cs" />
+    <Compile Include="Objects\AlertsInfo.cs" />
+    <Compile Include="Objects\AppSecurityInfo.cs" />
+    <Compile Include="Objects\CaseInsensitiveEqualityComparer.cs" />
+    <Compile Include="Objects\CustomCounterInfo.cs" />
+    <Compile Include="Objects\CustomCountersInfo.cs" />
+    <Compile Include="Objects\Enumerations.cs" />
+    <Compile Include="Objects\InstancesInfo.cs" />
+    <Compile Include="Objects\MaintenanceModeConfigurationInfo.cs" />
+    <Compile Include="Objects\MonitoredSqlServerInfo.cs" />
+    <Compile Include="Objects\PathType.cs" />
+    <Compile Include="Objects\QueryMonitorConfigurationInfo.cs" />
+    <Compile Include="Objects\SQLdmDriveInfo.cs" />
+    <Compile Include="Objects\SQLdmUserInfo.cs" />
+    <Compile Include="Objects\SqlServerInstanceInfo.cs" />
+    <Compile Include="Objects\StaticContainerInfo.cs" />
+    <Compile Include="Objects\TableStatisticsCollectionConfigurationInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLdmProvider.cs" />
+    <Compile Include="SQLdmProvider_Unsupported.cs" />
+    <Compile Include="SQLdmSnapin.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Idera.SQLdm.Common.csproj">
+      <SpecificVersion>True</SpecificVersion>
+      <Project>{DC3D7464-76DF-4212-AE5C-9AF39E856CA6}</Project>
+      <Name>Idera.SQLdm.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SQLdmSnapin-Formats.ps1xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="SQLdmSnapin.dll-Help.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

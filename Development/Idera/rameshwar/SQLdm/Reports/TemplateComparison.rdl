@@ -1,0 +1,926 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="SQL diagnostic manager Data Source">
+      <rd:DataSourceID>9978649f-93e8-4e28-991c-1aef3a96e782</rd:DataSourceID>
+      <DataSourceReference>SQL diagnostic manager Data Source</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="SourceTemplate">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>SourceTemplate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TargetTemplate">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>TargetTemplate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="executionStart">
+      <DataType>DateTime</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>What time did this report execution start?</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="SourceName">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>SourceName</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TargetName">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>TargetName</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>6in</RightMargin>
+  <LeftMargin>8in</LeftMargin>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Image Name="image1">
+        <Sizing>Fit</Sizing>
+        <Top>0.02in</Top>
+        <Width>5.545in</Width>
+        <Source>Embedded</Source>
+        <Style />
+        <ZIndex>2</ZIndex>
+        <Height>0.47in</Height>
+        <Value>sqldmtoday_productname</Value>
+      </Image>
+      <Line Name="line1">
+        <Top>0.625in</Top>
+        <Style>
+          <BorderColor>
+            <Default>#95c943</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <BorderWidth>
+            <Default>20pt</Default>
+          </BorderWidth>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Height>0in</Height>
+      </Line>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Top>0.25in</Top>
+        <Style>
+          <Color>#4b4b4b</Color>
+          <FontSize>14pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Left>7in</Left>
+        <Height>0.28in</Height>
+        <Value>Template Comparison</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.75in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <BottomMargin>8in</BottomMargin>
+  <rd:ReportID>cb8199e4-68c8-4264-aa1a-fbb40d886775</rd:ReportID>
+  <EmbeddedImages>
+    <EmbeddedImage Name="testvc">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAGYktHRAAAAAAAAPlDu38AAAAJdnBBZwAAAIAAAACAADDhMZoAAAN0SURBVEhL1ZV7TFt1FMc/Le3a4pgwZLOrW2CM4cJrDMw0M5HAjKS0pNNsMzFR/1GJcYmJJpvJNGaJjkbd5iMxxrdM0cWwdRM2MzUSHvJo3RjQdVhb6CpsDAZrC5S+flYSWRrLICJ/eO5/9577/ZzfPed8r0REgyUM6RJqz0j/fwD7ml+k9JNtjPvHYj7Kf3IC44XX+dH2E3pNJc+bqvAHJ2chiwZUR8VNF0zoUyoY843juOzkgZdLiBCagUgWM0Uvte/ldE8DhmQdE/hocjTRbu9CpZKwcTyX5vdb/n2Tqy0Haej5jsrVWqZVAZpHGumc6kJaAIXp96ArriAcFrEAgeCRBj1D3j9uOb1Gs5Fj3bXoM7UEkvy0TzfRFu4mpUhKxAklslJeqXqV25evuAkIRUJsObGB+9T3kn8yk6tTQ3Eh+y37+ML5MRV5DzJ5m5c2fwsWfydZOXcQbJWwfaKE1547yDKZ4uYe+EN+njy7k/JUA9qVlRhz3qGobhPWse4YyJGL1ZwZNLH77oeRyKXYpnrpD9rJLljPtbM+SsNaTh6uj3lHcn3iuni37TD3p29DJVPimHSikCvo89j41PEB7bpeVipSeePiAU4NHker0ROMToh1opvzXjOa9WosH1nJ9xXxvfEHlHJV7B5c9V7BOWDn0aZddE5bUKoUeLmBOnkNT+c+S8GZDL7qq2FUjFCeoSOwLIgt0svvkj6ysjbQV+cmT7aZxkMt/xCfHdP+EQdv179FbdKXlGeWsT1ZOzN20oQEBgNuXPZhigtz8Ez7+C1gxRmws0ajprXuHLlTBXxT9S1KEuP2bHYPLl22svXN
+QjJ2akhasZzHU59BJIgoyEOiPBFPyIM74sIesqFZpaHx51bSr2zk1BP1yKPyc0XMop1zmzF8riOrYi0iLUJRwlbWKdIJS8O4RD9uMcDqpFU0n+9g3Y1MTpTFNjQeJMYqCu8q5rPHjmIzDZAmuZOhFBeXZFZGFcOMqobZlJJN868d5IsijpeZFuT0ca2iZ6yLPONmnnphN4lpyuj6CTKj19HOY2Qn5FGzpXZB4jNJf3lRvLB6u8XaQ2qx17VHfC0+FDpzmdjTVTVX+pz3b2l2Hdd+wVBjYNdDO6KlyDiS897CK/87c76SzCMd4kD/fhEUgflS4z5flF0v5DiL/uHMB1lywJ/dmwgzN0gCegAAAABJRU5ErkJggg==</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="sqldmtoday_productname">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAABRQAAABaCAYAAADJjNpTAAAgAElEQVR4nO3de3yT5d0/8E/SpmmapjQ92pZDORUshYIoBQVlIAoDYfMwmfMwHzd83Nx0U/faJs/jnLrtce71qNsj6n7i2eGBoSgCKlUOCngqpQhSig2lB9qkTWia3NxNm/7+iLlI2rS9095pUvi8X6+9ltxNrly57+vmZT+9ruursVmbukBERERERERERESkQDwApGdkRrsfREQxo9lmjXYXiIiIiIiIiGKWNtodICIiIiIiIiIiouGDgSIREREREREREREpxkCRiIiIiIiIiIiIFGOgSERERERERERERIoxUCQiIiIiIiIiIiLFGCgSERERERERERGRYgwUiYiIiIiIiIiISDEGikRERERERERERKQYA0UiIiIiIiIiIiJSjIEiERERERERERERKcZAkYiIiIiIiIiIiBRjoEhERERERERERESKMVAkIiIiIiIiIiIixRgoEhERERERERERkWIMFImIiIiIiIiIiEgxBopERERERERERESkGANFIiIiIiIiIiIiUoyBIhERERERERERESnGQJGIiIiIiIiIiIgUY6BIREREREREREREijFQJCIiIiIiIiIiIsUYKBIREREREREREZFiDBSJiIiIiIiIiIhIMQaKREREREREREREpBgDRSIiIiIiIiIiIlKMgSIREREREREREREpxkCRiIiIiIiIiIiIFGOgSERERERERERERIoxUCQiIiIiIiIiIiLFGCgSERERERERERGRYvHR7oASrjaneKzRaJBkTI7o53V2dAy+EY0m4P800Gh8/4s1XV1eeLtU+L4qidPqAKh7nlS5nkppNNBoAI1GG5PXeyC83k50ebuCjsXFD4t/Os5aHq8Eh1wnnht1aUiKT1OtfatUFbG2iYiIiIiIKPYNi1Tg93fdJh6npWfgvj89GrHPktxu/PZXqyLSdlx8PMzmdKSa05CZlY2c
+3FHIGzUao/PHIyEhISKf2Z/9jRvwcc2aqHx2KDcUvwST/hxV27z37p9BktyqtqlEQkICMrPOwfiJkzGpsAjnFk4bdkGctekEHnnov3DqlBR0/PKl38N3l18dpV5RKB6vhGrnblS1bobTY+nxc73WjJykEmQbipBvKgmrbXdHC2pd+3C87RPY5PKQr8lPXhx225UnS1HW7Pv3Z0b6bSgYsSCsfilllapQ2vC7fl+n15qRrp+CNP14mPWjkWucFtbn1Lv2o63DhrGmOdBpDQPtLkVRLFzDUON1Qc6fkWmYENW2iIiIiIgCDa90Y5jr7OiAzdoIm7URVZWHxHGtNg6j88eisGg6ps+chexzcqPYS1JLe3s76mprUFdbgx0fvodkUwoWLPou5l+6BHFxcdHuXr/a29ux9snHeoSJALB105vIHzcBhUXTo9Az6q7etR+fWv8B2Wvv9TWy1w5L2xZY2rbgaGsxZmbcjFR9Xp/t+kNKf+jXF3/b+5rNmJV5e9hhXCyQvXbUS7tQL+0CAJh0+ShMvVpRSGpx7sVe6yMAAJenCTMyVka0rxQeh1wHj9f3b1lvYVosX8Na1+cDCgFrXZ9HoDdERERERAwU+5Wg12P0mHFhv8/b2QlZPoXOzk5IkhtulwseT3vo13o7YfmmCpZvqvDuxjeQP24C5s1fhPMumAOtlttcqkmr1WLchEkRa7+9XYYsn4K92Yb29uDr3eZsxcZ/r8OXn+/BT3/2a6SaY3uZ6Gsvr0V93XHx3JyWDntLs3j+4jNrcM/qB5GWnhmN7tG36l37sbPxAfFcrzVjTPICGHVZ4phdrkaDe68IHG1yObbW3YmSzLt7Dcs8Xgk7Gv7WY0ZifvJimPVjT7+u040T0j7xOtlrx87GB1CQclVMBTJ+/lmIvWmWvxLnyemxYK/1ERxvm4vZ2av6nLHWKB0Qj4+1lcbkdz+bVbS8IYLia8e9HvI1sXwNK1vXoyhtRVizJj1eCZWt6yP
+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
+YrEvTNcZmQTERERDQYDxSGi0WhgTDYh1ZwGszkdGZlZyMkbhbxRo5GbNwpaLcOUM9H4iZNw970PYM/H27HpzdfgdPr2q2yor8UTj/4FhUXT8b1rrkP2ObmqfF5DfS1efemZoGPXXHcTRuePU6X9wdJq43Dzql/grw+thsPum2XyzdFKbPz3Onz/mh9FuXdEw4N/lpaSEKvSsU08zk6aGsluEcU83jtERERE6hkWS54D9xjUarTQJyZG9PM6OzsH3YZvpbLm28eamK1m29XlhberI9rdEOK0OvjPm1q83k7465JoNIhaeNvV1QWv19vjuJp98nq9QUVYovl9+xLqXMTSDMXhvuSZzmzb6h6E01ODQvPKkMVMAN/sqkrHNlGkQq81Y+nox7j0ks5qvHeIiIiI1DMsZigaDElD+nmxFGxEmkajRZwmIdrdiKhYCdQ0Gk3Ex1Yk92VU01CcC6IzkX9fNtlrR1nzGhy0r0NOUgnM+rHiNXa5Gg3uvaL4iF5rxvyc+xiI0FmN9w4RERGRuobFDEUioqHEGYoUy7rPoOpLrmEuZmbeEJP74RENNd47REREROphoEhE1A0DRRoOPF4Jda79cHmsaJGPiuPJumwYdVkYaZzOMIQoBN47RERERIPHQJGIqBsGikRERERERES9Gx4brhEREREREREREVFMYKBIREREREREREREijFQJCIiIiIiIiIiIsUYKBIREREREREREZFiDBSJiIiIiIiIiIhIMQaKREREREREREREpBgDRSIiIiIiIiIiIlKMgSIREREREREREREpxkCRiIiIiIiIiIiIFGOgSERERERERERERIoxUCQiIiIiIiIiIiLFGCgSERERERERERGRYgwUiYiIiIiIiIiISDEGikRERERERERERKQYA0UiIiIiIiIiIiJSjIEiERERERERERERKcZAkYiIiIiIiIiIiBRjoEhERERERERERESKMVAkIiIiIiIiIiIixRgoEhER
+ERERERERkWIMFImIiIiIiIiIiEgxBopERERERERERESkGANFIiIiIiIiIiIiUoyBIhERERERERERESkWDwDNNmu0+0FERERERERERETDwP8Hx8eXjNlR7xwAAAAASUVORK5CYII=</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="ideralogo">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAGwAAAAZCAYAAADUicu/AAAEVklEQVRoge2ZfUxVdRzGP+ece89AuqEIhCFoq5WIaKSZORzWLKul05IWtBm0JXMziwmKSTCEgKEUOCPtBcsSN3GkKb6UG2s6TTcaiW8MwRsSyFuAgui93EN/NBkG3HMuU+/Odj5//n7P9/k9u8/OPefsCG2tLf0Y6AYTwHhfP3fnMNBAe1srortDGLiGUZjOMArTGUZhOsMoTGcYhekMk5ogYeVypkydTvwHiU516xPisdttQ9YFQUAQRcwmM55jvPDzD2D28xGEz5qjGq7pRhUHqtep6gZjlryICy8ZcX/L5gzqrXWqPoIoIptlvMeOY+HrS5kR/qxLOQaTk55MW2sz43x82bBx06h9QENhiqLQ0dGuanTzZg+SZGLuvBeG7PX29tDV2Ul7WwvVF6u4cK6Snd8W8vJrS3h10RtOfV1/q3c+0XytEbvdzrz5LznV2fvstFxrxFp3maJtBURELiAqJtblNPm56TQ1NjB2nA8tzU3kbFxPcmq2yz53UC3MJTOzmWXR76rqzldVUrS9gCMHS+lobyUmNn5Y3QRLGPGzDt3LiANoyQlgs91i7er3OXWi3OXCyvaXcKW2Bp/xvqRl5ZOVlkTT31cpKf5uVOWDm+5hoWFPk/3ZdkRR5PSp4zgcDnfE0IQseyBJEoqiuDRXU32BXw7tRzKZSMnIA2Bdag5ms5kTvx3j3Nk/RpXnnl5hriDLMhODJ1NvraPm0gWmhIYN0dR3VVBWnezUZ6xnENFhRfcrJnt27aCvrw+LxVvzTG9vL4X5OQCsSU5HkiQAJEliXWo2n6Ym8U3h52TkbsXysHZfcGNhgxFE4YGfuWZVnNP9fkUZuPI9PDxJ/DhDs3dGSgKKorD4zWgCgybdtefnH0BUdCx7ineQ8UkiuQVfu5TbbYXZbDYa6q0IgsATT4YMqwn2nsnK2b/el/MnTX78fyv9WOtq
+cTj6EASBKVPDCJgQyMzn5hIU/Jhm3y2bM+np7kYQBI6W7eNo2b5hdYIgcPtWL5syU0hKydTs75bCKitO80PRlyiKwpyI+QN/GQ+S1Ykpw64X7/yKMyePc/H8WUwmM48GBmv2PHyglNqaS5hlGV+/R1T17W0tNFy1sq9kF0ui3tF0xj0trM9uZ+/u7+9aczgc9HR303W9g85/2rne1YmiKIiiyKKlb7HglcUj+jXdqOJnF9/DZGkMceF7R5UfIGb5Cpa9HcsX+dlU/VlB4qo4Il9cqPqDXrlcw5GDpYiSRFZeIbLsoXqWzWYj+aMVlB87zFMh0wiZNkN1RrUwSTLh7z9B1chi8cZmv82Z348P2RMFEckk4eVlITQsnDkRkUyb/oyqJ4DrdzfnE4ETJ9PYUO9UI8syCWvT6OrqoGhbASdPlPOXtZb34j8c8SGhZPcOxng9xOqkFE1l3TlnQ3oueTmp/FTyo6bChLbWln7jA6Y+MD5g6hCjMJ1hFKYzjMJ0hlGYzjDBf08fBvrgX9L6Y+KXiNk5AAAAAElFTkSuQmCC</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <PageWidth>11in</PageWidth>
+  <DataSets>
+    <DataSet Name="TemplateComparison">
+      <Fields>
+        <Field Name="UserViewID">
+          <DataField>UserViewID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MetricID">
+          <DataField>MetricID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="WarningThresholdSrc">
+          <DataField>WarningThresholdSrc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CriticalThresholdSrc">
+          <DataField>CriticalThresholdSrc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InfoThresholdSrc">
+          <DataField>InfoThresholdSrc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EnabledSrc">
+          <DataField>EnabledSrc</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="WarningThresholdTar">
+          <DataField>WarningThresholdTar</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CriticalThresholdTar">
+          <DataField>CriticalThresholdTar</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InfoThresholdTar">
+          <DataField>InfoThresholdTar</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="infoThresholdEnabled">
+          <DataField>infoThresholdEnabled</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="warningThresholdEnabled">
+          <DataField>warningThresholdEnabled</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="criticalThresholdEnabled">
+          <DataField>criticalThresholdEnabled</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EnabledTar">
+          <DataField>EnabledTar</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="ThresholdEnabled">
+          <DataField>ThresholdEnabled</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>SQL diagnostic manager Data Source</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>p_GetTemplateComparison</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@SourceTemplate">
+            <Value>=Parameters!SourceTemplate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@TargetTemplate">
+            <Value>=Parameters!TargetTemplate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Code>Function GetOffset() As Integer
+   return DateDiff("n",Date.UtcNow,Date.Now)
+End Function
+Function GetExecutionTime(ExecTime As DateTime) as String
+Dim ts As TimeSpan
+ts = Now.Subtract(ExecTime)
+
+return String.Format("Execution Time: {0} hours, {1} minutes, {2} seconds", ts.Hours, ts.Minutes, ts.Seconds)
+
+End Function</Code>
+  <Width>9.875in</Width>
+  <Body>
+    <ReportItems>
+      <Textbox Name="textbox5">
+        <rd:DefaultName>textbox5</rd:DefaultName>
+        <Top>0.125in</Top>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>The Template Comparison report will display all the metric thresholds difference for selected Source and Targets Template</Value>
+      </Textbox>
+      <List Name="List1">
+        <DataSetName>TemplateComparison</DataSetName>
+        <ReportItems>
+          <Table Name="table2">
+            <ZIndex>1</ZIndex>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox3">
+                          <rd:DefaultName>textbox3</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>#e5e5e5</BackgroundColor>
+                            <BorderColor>
+                              <Default>#bbbbbb</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontWeight>700</FontWeight>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>3</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Source:</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox4">
+                          <rd:DefaultName>textbox4</rd:DefaultName>
+                          <Style>
+                            <BorderColor>
+                              <Default>#dddddd</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>2</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Parameters!SourceName.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.63492cm</Height>
+                </TableRow>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox7">
+                          <rd:DefaultName>textbox7</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>#e5e5e5</BackgroundColor>
+                            <BorderColor>
+                              <Default>#bbbbbb</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontWeight>700</FontWeight>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>1</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Target:</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox9">
+                          <rd:DefaultName>textbox9</rd:DefaultName>
+                          <Style>
+                            <BorderColor>
+                              <Default>#dddddd</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Parameters!TargetName.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.63492cm</Height>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <TableColumns>
+              <TableColumn>
+                <Width>2.85714cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>22.22222cm</Width>
+              </TableColumn>
+            </TableColumns>
+            <Height>1.26984cm</Height>
+          </Table>
+          <Table Name="table1">
+            <DataSetName>TemplateComparison</DataSetName>
+            <Top>1.90476cm</Top>
+            <TableGroups>
+              <TableGroup>
+                <Grouping Name="table1_UserViewID">
+                  <GroupExpressions>
+                    <GroupExpression>=Fields!UserViewID.Value</GroupExpression>
+                  </GroupExpressions>
+                </Grouping>
+                <Sorting>
+                  <SortBy>
+                    <SortExpression>=Fields!UserViewID.Value</SortExpression>
+                    <Direction>Ascending</Direction>
+                  </SortBy>
+                </Sorting>
+                <Header>
+                  <TableRows>
+                    <TableRow>
+                      <TableCells>
+                        <TableCell>
+                          <ReportItems>
+                            <Textbox Name="textbox2">
+                              <rd:DefaultName>textbox2</rd:DefaultName>
+                              <Style>
+                                <BackgroundColor>#e5e5e5</BackgroundColor>
+                                <BorderColor>
+                                  <Default>#bbbbbb</Default>
+                                </BorderColor>
+                                <BorderStyle>
+                                  <Default>Solid</Default>
+                                </BorderStyle>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                              <ZIndex>17</ZIndex>
+                              <Value>Source Enabled</Value>
+                            </Textbox>
+                          </ReportItems>
+                        </TableCell>
+                        <TableCell>
+                          <ReportItems>
+                            <Textbox Name="textbox16">
+                              <rd:DefaultName>textbox16</rd:DefaultName>
+                              <Style>
+                                <BackgroundColor>#e5e5e5</BackgroundColor>
+                                <BorderColor>
+                                  <Default>#bbbbbb</Default>
+                                </BorderColor>
+                                <BorderStyle>
+                                  <Default>Solid</Default>
+                                </BorderStyle>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                              <ZIndex>16</ZIndex>
+                              <Value>Target Enabled</Value>
+                            </Textbox>
+                          </ReportItems>
+                        </TableCell>
+                        <TableCell>
+                          <ReportItems>
+                            <Textbox Name="Name">
+                              <rd:DefaultName>Name</rd:DefaultName>
+                              <Style>
+                                <BackgroundColor>#e5e5e5</BackgroundColor>
+                                <BorderColor>
+                                  <Default>#bbbbbb</Default>
+                                </BorderColor>
+                                <BorderStyle>
+                                  <Default>Solid</Default>
+                                </BorderStyle>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                              <ZIndex>15</ZIndex>
+                              <CanGrow>true</CanGrow>
+                              <Value>Name</Value>
+                            </Textbox>
+                          </ReportItems>
+                        </TableCell>
+                        <TableCell>
+                          <ReportItems>
+                            <Textbox Name="InfoThresholdTar">
+                              <rd:DefaultName>InfoThresholdTar</rd:DefaultName>
+                              <Style>
+                                <BackgroundColor>#e5e5e5</BackgroundColor>
+                                <BorderColor>
+                                  <Default>#bbbbbb</Default>
+                                </BorderColor>
+                                <BorderStyle>
+                                  <Default>Solid</Default>
+                                </BorderStyle>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                              <ZIndex>14</ZIndex>
+                              <CanGrow>true</CanGrow>
+                              <Value>Source Informational</Value>
+                            </Textbox>
+                          </ReportItems>
+                        </TableCell>
+                        <TableCell>
+                          <ReportItems>
+                            <Textbox Name="InfoThresholdSrc">
+                              <rd:DefaultName>InfoThresholdSrc</rd:DefaultName>
+                              <Style>
+                                <BackgroundColor>#e5e5e5</BackgroundColor>
+                                <BorderColor>
+                                  <Default>#bbbbbb</Default>
+                                </BorderColor>
+                                <BorderStyle>
+                                  <Default>Solid</Default>
+                                </BorderStyle>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                              <ZIndex>13</ZIndex>
+                              <CanGrow>true</CanGrow>
+                              <Value>Target Informational</Value>
+                            </Textbox>
+                          </ReportItems>
+                        </TableCell>
+                        <TableCell>
+                          <ReportItems>
+                            <Textbox Name="WarningThresholdSrc">
+                              <rd:DefaultName>WarningThresholdSrc</rd:DefaultName>
+                              <Style>
+                                <BackgroundColor>#e5e5e5</BackgroundColor>
+                                <BorderColor>
+                                  <Default>#bbbbbb</Default>
+                                </BorderColor>
+                                <BorderStyle>
+                                  <Default>Solid</Default>
+                                </BorderStyle>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                              <ZIndex>12</ZIndex>
+                              <CanGrow>true</CanGrow>
+                              <Value>Source Warning </Value>
+                            </Textbox>
+                          </ReportItems>
+                        </TableCell>
+                        <TableCell>
+                          <ReportItems>
+                            <Textbox Name="WarningThresholdTar">
+                              <rd:DefaultName>WarningThresholdTar</rd:DefaultName>
+                              <Style>
+                                <BackgroundColor>#e5e5e5</BackgroundColor>
+                                <BorderColor>
+                                  <Default>#bbbbbb</Default>
+                                </BorderColor>
+                                <BorderStyle>
+                                  <Default>Solid</Default>
+                                </BorderStyle>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                              <ZIndex>11</ZIndex>
+                              <CanGrow>true</CanGrow>
+                              <Value>Target Warning</Value>
+                            </Textbox>
+                          </ReportItems>
+                        </TableCell>
+                        <TableCell>
+                          <ReportItems>
+                            <Textbox Name="CriticalThresholdSrc">
+                              <rd:DefaultName>CriticalThresholdSrc</rd:DefaultName>
+                              <Style>
+                                <BackgroundColor>#e5e5e5</BackgroundColor>
+                                <BorderColor>
+                                  <Default>#bbbbbb</Default>
+                                </BorderColor>
+                                <BorderStyle>
+                                  <Default>Solid</Default>
+                                </BorderStyle>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                              <ZIndex>10</ZIndex>
+                              <CanGrow>true</CanGrow>
+                              <Value>Source Critical </Value>
+                            </Textbox>
+                          </ReportItems>
+                        </TableCell>
+                        <TableCell>
+                          <ReportItems>
+                            <Textbox Name="CriticalThresholdTar">
+                              <rd:DefaultName>CriticalThresholdTar</rd:DefaultName>
+                              <Style>
+                                <BackgroundColor>#e5e5e5</BackgroundColor>
+                                <BorderColor>
+                                  <Default>#bbbbbb</Default>
+                                </BorderColor>
+                                <BorderStyle>
+                                  <Default>Solid</Default>
+                                </BorderStyle>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                              <ZIndex>9</ZIndex>
+                              <CanGrow>true</CanGrow>
+                              <Value>Target Critical </Value>
+                            </Textbox>
+                          </ReportItems>
+                        </TableCell>
+                      </TableCells>
+                      <Height>0.23984in</Height>
+                    </TableRow>
+                  </TableRows>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
+                </Header>
+              </TableGroup>
+            </TableGroups>
+            <Details>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Image Name="image4">
+                          <Sizing>Clip</Sizing>
+                          <Visibility>
+                            <Hidden>=IIf(Fields!EnabledSrc.Value = 0,true,false)</Hidden>
+                          </Visibility>
+                          <Source>Embedded</Source>
+                          <Style>
+                            <BorderColor>
+                              <Default>#dddddd</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                          </Style>
+                          <ZIndex>8</ZIndex>
+                          <Value>testvc</Value>
+                        </Image>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Image Name="image3">
+                          <Sizing>Clip</Sizing>
+                          <Visibility>
+                            <Hidden>=IIf(Fields!EnabledTar.Value = 0, True,False)</Hidden>
+                          </Visibility>
+                          <Source>Embedded</Source>
+                          <Style>
+                            <BorderColor>
+                              <Default>#dddddd</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                          </Style>
+                          <ZIndex>7</ZIndex>
+                          <Value>testvc</Value>
+                        </Image>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="Name_1">
+                          <rd:DefaultName>Name_1</rd:DefaultName>
+                          <Style>
+                            <BorderColor>
+                              <Default>#dddddd</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>6</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!Name.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="InfoThresholdSrc_2">
+                          <rd:DefaultName>InfoThresholdSrc_2</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>=IIf(Fields!InfoThresholdSrc.Value=Fields!InfoThresholdTar.Value , "Transparent","Gold")</BackgroundColor>
+                            <BorderColor>
+                              <Default>#dddddd</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>5</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=IIf(IsNothing(Fields!InfoThresholdSrc.Value), "N/A", Fields!InfoThresholdSrc.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="InfoThresholdTar_1">
+                          <rd:DefaultName>InfoThresholdTar_1</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>=IIf(Fields!InfoThresholdSrc.Value=Fields!InfoThresholdTar.Value , "Transparent","Gold")</BackgroundColor>
+                            <BorderColor>
+                              <Default>#dddddd</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>4</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=IIf(IsNothing(Fields!InfoThresholdTar.Value), "N/A", Fields!InfoThresholdTar.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="WarningThresholdSrc_1">
+                          <rd:DefaultName>WarningThresholdSrc_1</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>=IIf(Fields!WarningThresholdSrc.Value=Fields!WarningThresholdTar.Value , "Transparent","Gold")</BackgroundColor>
+                            <BorderColor>
+                              <Default>#dddddd</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>3</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=IIf(IsNothing(Fields!WarningThresholdSrc.Value), "N/A", Fields!WarningThresholdSrc.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="WarningThresholdTar_1">
+                          <rd:DefaultName>WarningThresholdTar_1</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>=IIf(Fields!WarningThresholdSrc.Value=Fields!WarningThresholdTar.Value , "Transparent","Gold")</BackgroundColor>
+                            <BorderColor>
+                              <Default>#dddddd</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>2</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=IIf(IsNothing(Fields!WarningThresholdTar.Value), "N/A", Fields!WarningThresholdTar.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="CriticalThresholdSrc_2">
+                          <rd:DefaultName>CriticalThresholdSrc_2</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>=IIf(Fields!CriticalThresholdSrc.Value=Fields!CriticalThresholdTar.Value , "Transparent","Gold")</BackgroundColor>
+                            <BorderColor>
+                              <Default>#dddddd</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>1</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=IIf(IsNothing(Fields!CriticalThresholdSrc.Value), "N/A", Fields!CriticalThresholdSrc.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="CriticalThresholdTar_1">
+                          <rd:DefaultName>CriticalThresholdTar_1</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>=IIf(Fields!CriticalThresholdSrc.Value=Fields!CriticalThresholdTar.Value , "Transparent","Gold")</BackgroundColor>
+                            <BorderColor>
+                              <Default>#dddddd</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=IIf(IsNothing(Fields!CriticalThresholdTar.Value), "N/A", Fields!CriticalThresholdTar.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.26016in</Height>
+                </TableRow>
+              </TableRows>
+            </Details>
+            <TableColumns>
+              <TableColumn>
+                <Width>0.75in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.75in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>2.875in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.875in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.875in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.875in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.875in</Width>
+              </TableColumn>
+            </TableColumns>
+          </Table>
+        </ReportItems>
+        <Top>0.5in</Top>
+        <Grouping Name="list1_Enabled">
+          <GroupExpressions>
+            <GroupExpression>=Fields!EnabledSrc.Value</GroupExpression>
+          </GroupExpressions>
+          <PageBreakAtEnd>true</PageBreakAtEnd>
+        </Grouping>
+      </List>
+    </ReportItems>
+    <Height>1.75in</Height>
+  </Body>
+  <Language>en-US</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Image Name="image2">
+        <Sizing>Fit</Sizing>
+        <Width>1.39in</Width>
+        <Source>Embedded</Source>
+        <Style />
+        <ZIndex>4</ZIndex>
+        <Height>0.51in</Height>
+        <Value>ideralogo</Value>
+      </Image>
+      <Textbox Name="textbox8">
+        <Top>0.25in</Top>
+        <Style>
+          <Color>DimGray</Color>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>6.25in</Left>
+        <Height>0.175in</Height>
+        <Value>=Code.GetExecutionTime(Iif(Parameters!executionStart.Value is nothing, Globals!ExecutionTime, Parameters!executionStart.Value))</Value>
+      </Textbox>
+      <Textbox Name="textbox10">
+        <Top>0.425in</Top>
+        <Style>
+          <Color>DimGray</Color>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>6.25in</Left>
+        <Height>0.25417in</Height>
+        <Value>="Page " &amp; Globals!PageNumber &amp; " of " &amp; Globals!TotalPages</Value>
+      </Textbox>
+      <Textbox Name="generatedby">
+        <Top>0.05in</Top>
+        <Style>
+          <Color>DimGray</Color>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>4.75in</Left>
+        <Height>0.2in</Height>
+        <Value>="Generated by " + User!UserID + " on " + DateTime.Now.ToString()</Value>
+      </Textbox>
+      <Textbox Name="copyright">
+        <Top>0.5in</Top>
+        <Action>
+          <Hyperlink>http://www.idera.com/legal/trademarkscopyright</Hyperlink>
+        </Action>
+        <Width>2.5in</Width>
+        <Style>
+          <Color>Blue</Color>
+          <FontSize>8pt</FontSize>
+          <TextDecoration>Underline</TextDecoration>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Value>Copyright © 2003-2020 IDERA, Inc., all rights reserved.</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.75in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+  <TopMargin>6in</TopMargin>
+  <PageHeight>8.5in</PageHeight>
+</Report>

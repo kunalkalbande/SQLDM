@@ -1,0 +1,20 @@
+<zk>
+	<div id="titleDiv" sclass="padding-l-12">
+		<hlayout>
+		<space width="${arg.leftMargin}"/>
+		<label id="mc_titleLabel" value="${arg.title}" sclass="H4" />
+		</hlayout>
+	</div>
+
+	<div id="mc_containerDiv" sclass="padding-l-12">
+		<heatmapchart height="100%" width="100%" id="mc_chart"
+			animationDelay="${arg.animationDelay}" animateBars="${arg.animateBars}" animationLength="${arg.animationLength}" orient="${arg.orient}"
+			plotMarginLeft="${arg.leftMargin}" plotMarginRight="${arg.rightMargin}" plotMarginTop="${arg.topMargin}" plotMarginBottom="${arg.bottomMargin}"
+			renderdefer="0"/>
+			
+		<div id="errorDiv" sclass="padding-t-12 padding-l-24">
+			<label id="mc_errorLabel" visible="false" sclass="H5 darker-gray-text italic" />
+		</div>
+
+	</div>
+</zk>

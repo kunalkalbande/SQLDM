@@ -1,0 +1,13 @@
+<zk>
+	<div
+		apply="com.idera.sqldm.ui.dashboard.instances.overview.OverviewQueryWaitsComposer">
+
+		<hlayout>
+			<div id="overviewTimeGraphDiv" sclass="chart-border" >
+				<sqldm-idera-stackedbarchart id="overviewStackedBarChart"
+					width="1500px" height="500px" leftMargin="80px"
+					rightMargin="80px" topMargin="50px" bottomMargin="50px" />
+			</div>
+		</hlayout>
+	</div>
+</zk>

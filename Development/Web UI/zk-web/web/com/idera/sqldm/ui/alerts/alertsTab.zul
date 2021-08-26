@@ -1,0 +1,160 @@
+<div id="alertTab" apply="org.zkoss.bind.BindComposer"
+	viewModel="@id('vm') @init('com.idera.sqldm.ui.alerts.AlertFiltersViewModel')"
+	style="overflow-:auto" sclass="padding-r-8" hflex="1">
+	<div sclass="filtering-layout-style">
+		<groupbox mold="3d" open="true" closable="false">
+			<caption label="ALERTS" sclass="H1 alerts-box-header">
+				<a id="makeReportLink" sclass="link"
+					style="word-wrap:break-word; color:#0054A6; text-decoration:underline; font-weight : bold;float:right; font-size:13px; margin-right:20px"
+					label="${idera:getLabel('Labels.export')}"
+					popup="reportsMenupopup, position=after_end" />
+			</caption>
+			<hlayout sclass="padding-tb-4">
+				<vlayout hflex="5">
+					<hlayout sclass="padding-l-12">
+						<label
+							value="${sqldmidera:getLabel('SQLdm.Labels.alerts.filter.instance')}"
+							class="boxlabel" hflex="1" />
+						<idera-cwf-dropdownlist id="server"
+							model="@load(vm.allInstances)" hflex="10"
+							value="@bind(vm.selectedFilters.instanceId) @converter('com.idera.sqldm.ui.alerts.CustomComboBoxConvertor')"
+							readonly="true">
+							<template name="model">
+								<comboitem label="@load(each.value)"
+									value="@load(each.id)" />
+							</template>
+						</idera-cwf-dropdownlist>
+					</hlayout>
+					<hlayout sclass="padding-l-12">
+						<label
+							value="${sqldmidera:getLabel('SQLdm.Labels.alerts.filter.metrics')}"
+							class="boxlabel" hflex="1" />
+						<idera-cwf-dropdownlist id="metric"
+							model="@load(vm.allMetrics)" hflex="10"
+							value="@bind(vm.selectedFilters.metricId) @converter('com.idera.sqldm.ui.alerts.CustomComboBoxConvertor')"
+							readonly="true">
+							<template name="model">
+								<comboitem label="@load(each.value)"
+									value="@load(each.id)" />
+							</template>
+						</idera-cwf-dropdownlist>
+					</hlayout>
+					<hlayout sclass="padding-l-12">
+						<label
+							value="${sqldmidera:getLabel('SQLdm.Labels.alerts.filter.severity')}"
+							class="boxlabel" hflex="1" />
+						<idera-cwf-dropdownlist id="severity"
+							model="@load(vm.allSeverity)" hflex="10"
+							value="@bind(vm.selectedFilters.severity) @converter('com.idera.sqldm.ui.alerts.CustomComboBoxConvertor')"
+							readonly="true">
+							<template name="model">
+								<comboitem label="@load(each.value)"
+									value="@load(each.value)" />
+							</template>
+						</idera-cwf-dropdownlist>
+						<!-- <idera-cwf-dropdownlist id="severity" hflex="10" selectedItem="@bind(vm.selectedSeverity)" 
+							itemRenderer="com.idera.sqldm.ui.alerts.SelectionItemRenderer" readonly="true"/> -->
+					</hlayout>
+					<hlayout sclass="padding-l-12">
+						<label
+							value="${sqldmidera:getLabel('SQLdm.Labels.alerts.filter.repo')}"
+							class="boxlabel" hflex="1" />
+						<idera-cwf-dropdownlist id="repo"
+							model="@load(vm.allRepos)" hflex="10"
+							value="@bind(vm.selectedFilters.productId) @converter('com.idera.sqldm.ui.alerts.CustomComboBoxConvertor')"
+							readonly="true">
+							<template name="model">
+								<comboitem label="@load(each.value)"
+									value="@load(each.id)" />
+							</template>
+						</idera-cwf-dropdownlist>
+					</hlayout>
+				</vlayout>
+				<separator orient="vertical" spacing="2px" />
+				<vlayout hflex="2">
+					<div style="border-left:1px solid #CFCFCF;">
+						<hlayout>
+							<vlayout sclass="padding-l-4" hflex="1">
+								<radiogroup id="radioActive"
+									onCheck="@command('changeRadioActive')">
+									<vlayout>
+										<idera-cwf-radio id="activeAlerts"
+											label="${sqldmidera:getLabel('SQLdm.Labels.alerts.filter.active')}"
+											value="true" selected="true" />
+										<idera-cwf-radio id="timedAlerts"
+											label="${sqldmidera:getLabel('SQLdm.Labels.alerts.filter.time')}"
+											value="false" />
+									</vlayout>
+								</radiogroup>
+								<hbox pack="end" hflex="1">
+									<label
+										value="${sqldmidera:getLabel('SQLdm.Labels.alerts.filter.datefrom')}">
+									</label>
+									<datebox id="fromdate" cols="12"
+										format="MM/dd/yyyy" sclass="alert-datebox"
+										onCreate="self.value = new Date()" 
+										constraint="@bind(vm.fromDateConstraint)"
+										value = "@bind(vm.fromDate)"
+										/>
+									<timebox id="fromtime" cols="12"
+										format="HH:mm" onCreate="self.value = new Date()" 
+										constraint="@bind(vm.fromTimeConstraint)"
+										value = "@bind(vm.fromTime)"
+										
+										/>
+								</hbox>
+								<hbox pack="end" hflex="1">
+									<label
+										value="${sqldmidera:getLabel('SQLdm.Labels.alerts.filter.dateto')}">
+									</label>
+									<datebox id="todate" cols="12"
+										format="MM/dd/yyyy" sclass="alert-datebox"
+										onCreate="self.value = new Date()" 
+										constraint="@bind(vm.toDateConstraint)"
+										value = "@bind(vm.endDate)"
+										/>
+										
+									<timebox id="totime" cols="12"
+										format="HH:mm" onCreate="self.value = new Date()" 
+										constraint="@bind(vm.endTimecontraint)"
+										value = "@bind(vm.endTime)"
+										/>
+								</hbox>
+								<hbox width="100%" sclass="padding-t-4">
+									<vlayout hflex="2">
+										<div>
+											<idera-cwf-button id="resetFiltersBtn"
+												label="${sqldmidera:getLabel('SQLdm.Labels.alerts.filter.clear')}"
+												width="125px" onClick="@command('resetFilters')"
+												sclass="white-text-orange-button" />
+											<idera-cwf-button id="applyFiltersBtn"
+												label="${sqldmidera:getLabel('SQLdm.Labels.alerts.filter.apply')}"
+												width="125px" onClick="@command('applyFilters')"
+												sclass="white-text-orange-button" />
+										</div>
+									</vlayout>
+								</hbox>
+							</vlayout>
+						</hlayout>
+					</div>
+				</vlayout>
+			</hlayout>
+		</groupbox>
+	</div>
+	
+	<hbox width="100%">
+		<include src="~./sqldm/com/idera/sqldm/ui/alerts/alertList.zul" />
+	</hbox>	
+	<menupopup id="reportsMenupopup">
+		<menuitem id="createPDFMenuitem"
+			label="${idera:getLabel('Labels.export-as-pdf')}"
+			onClick="@command('onCreatePDFMenuitem')" />
+		<menuitem id="createXLSMenuitem"
+			label="${idera:getLabel('Labels.export-as-xls')}"
+			onClick="@command('onCreateXLSMenuitem')" />
+		<menuitem id="createXMLMenuitem"
+			label="${idera:getLabel('Labels.export-as-xml')}"
+			onClick="@command('onCreateXMLMenuitem')" />
+	</menupopup>
+
+</div>

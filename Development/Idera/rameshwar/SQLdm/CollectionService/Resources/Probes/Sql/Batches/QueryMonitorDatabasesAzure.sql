@@ -1,0 +1,1 @@
+SELECT name FROM sys.databases WHERE name NOT IN ('master', 'model', 'msdb', 'Resource', 'tempdb') {0}

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="introductoryTextLabel2.Text" xml:space="preserve">
+    <value>• Select the counter type you would like to monitor.
+
+• Choose the Windows or SQL Server counter you would like to monitor or provide a custom SQL script that returns a numerical value of interest.  For servers hosted on VMware or HyperV, you can select from a list of VM or Host performance counters.  For Azure servers, you can select from a list of Azure Monitor metrics.
+
+• Customize the counter value to suit your needs and test it against monitored SQL Servers to see the resulting values.
+
+• Customize the name, category and description of your custom counter.
+
+• Configure the default alert settings for your counter.</value>
+  </data>
+  <data name="informationBox1.Text" xml:space="preserve">
+    <value>The counter type determines the method with which the counter will be collected. Windows System counters are collected using Windows Management Instrumentation (WMI) through SQL Server, whereas SQL Server System counters are collected from system tables maintained by SQL Server. The Custom SQL Script option allows you to provide a SQL script to collect a numerical value of interest that may not be provided by standard Windows or SQL Server system counters.  Virtual Machine counters are collected using an API supplied by virtualization host. Azure Monitor counters are collected using API supplied by Azure</value>
+  </data>
+  <data name="label33.Text" xml:space="preserve">
+    <value>The scale factor can be used to manipulate a custom counter value in the case where the raw value does not fit the number format you would expect. For example, if your selected custom counter returns bytes and you want to see the value in megabytes, the scale factor can be used to adjust the value accordingly. Choose the scale factor that meets your needs.</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>By default, the value for a custom counter is interpreted as the value collected. This is not always ideal, particularly if the counter value continues to increment over time. In that case, taking the difference between two collections and calculating a value on a per second basis can provide a relative value that is more useful. Choose the calculation type that meets your needs.</value>
+  </data>
+  <data name="informationBox7.Text" xml:space="preserve">
+    <value>Many custom counter values are returned in a numerical form that is easy to interpret, but in some cases the time between collections and/or the scale of the value must be manipulated to provide a value that is easy to consume. Use the following options to customize your counter value as needed.</value>
+  </data>
+  <data name="informationBox3.Text" xml:space="preserve">
+    <value>The counter name is simply a descriptive name you can use to identify your custom counter. The name will show up in the Server Details view that lists your custom counter values. The Server Details view and Alert Configuration dialog use the counter category to organize counters into groups for easier navigation. You can select an existing category or enter a custom category of your own.</value>
+  </data>
+  <data name="informationBox6.Text" xml:space="preserve">
+    <value>Some counter values should trigger alerts when they are higher than normal and some should trigger alerts when they are lower than normal. Choose how your counter value should be evaluated for alerting.</value>
+  </data>
+  <data name="informationBox5.Text" xml:space="preserve">
+    <value>The alert thresholds govern when an alert will be raised for your custom counter. These thresholds are evaluated on each scheduled collection of the custom counter. The values you provide here are used as defaults and can be customized for each monitored instance.</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>• You must associate this counter with one or more monitored SQL Server instances before it will be collected.
+
+• The alert configuration you provided in this wizard will be applied the first time the counter is associated with a monitored SQL Server instance. Any further changes to the counter alert configuration must be made through the Alert Configuration dialog for the associated SQL Server instance.</value>
+  </data>
+</root>

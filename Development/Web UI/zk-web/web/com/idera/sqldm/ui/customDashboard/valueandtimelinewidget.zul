@@ -1,0 +1,58 @@
+<panel use="com.idera.sqldm.ui.customDashboard.widgets.CustomDashboardWidget" 
+	apply="com.idera.sqldm.ui.customDashboard.ValueTimelineWidgetComposer" 
+	sclass="widget-caption" style="float:left;margin:5px;border-radius: 4px;border-bottom-width: 2px;border-bottom-style: inset;">
+	<caption height="40px" style="cursor:pointer;">
+		<!-- label value="Value &amp; Timeline"  style="float:left;font-size:16px;font-weight:bold;white-space:nowrap;"/-->
+	</caption>
+		<panelchildren>
+			<div id="editVTWidgetDiv">
+				<hlayout>
+					<vlayout style="margin-left:3px;text-align:center;">
+						<label style="font-size:11px;font-weight:bold" value="Value &amp; Timeline" />
+						<image src="~./sqldm/com/idera/sqldm/images/value-and-timeline.png" />
+					</vlayout>
+					<vlayout style="margin-left:35px;text-align:left;">
+						<label id="vtWidgetNameLbl" style="font-size:11px;font-weight:bold;margin-left: 4px;" />
+						<div>
+							<idera-cwf-button id="vtRemoveBtn" sclass="white-text-dark-gray-button widget-button button-font" 
+									label="${sqldmidera:getLabel('SQLdm.Labels.remove')}"/>
+							<idera-cwf-button id="vtEditbtn" sclass="white-text-dark-gray-button widget-button button-font" 
+									label="${sqldmidera:getLabel('SQLdm.Labels.edit')}" />
+						</div>
+					</vlayout>
+				</hlayout>
+			</div>
+			<div id="displayVTWidgetDiv">
+				<div id="vtErrorDiv" style="text-align:center;">
+					<space height="100px;" />
+					<label value="${sqldmidera:getLabel('SQLdm.Labels.no-data-available')}"/>
+				</div>
+				<div id="vtDataDiv">
+					<div style="margin-top:3px;text-align:center;">
+						<label id="vtInstanceName" style="font-size:14px;font-weight:normal;font-family: 'lucida grande', sans-serif;" />
+						<grid sclass="styled-list value-timeline-grid" style="margin-left:8px;margin-right:8px;margin-top:3px;">
+        					<rows>
+        						<row>
+        							<label value="Current:"/>
+        							<label value="Average:"/>
+        							<label value="Peak:"/>
+        						</row>
+        						<row>
+        							<label id="vtCurrentValue" />
+        							<label id="vtAverageValue" />
+        							<label id="vtPeakValue" />
+        						</row>
+        					</rows>
+						</grid>
+					</div>
+					<div style="border:solid 1px #aaa;border-radius:2px;height:110px;margin-left:8px;margin-right:8px;margin-top:3px;">
+						<sqldm-idera-linechart id="vtLineChart" height="100px"/>
+					</div>
+					<div>
+						<idera-cwf-button id="vtdetailsBtn" style="float:right" sclass="white-text-dark-gray-button widget-button button-font" 
+								label="${sqldmidera:getLabel('SQLdm.Labels.details')}" />
+					</div>
+				</div>
+			</div>
+		</panelchildren>
+</panel>

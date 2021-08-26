@@ -1,0 +1,60 @@
+<?taglib uri="http://sqldm/taglib" prefix="sqldmidera"?>
+<zk>
+<div apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.idera.sqldm.ui.dashboard.instances.resources.ServerWaitsViewModel')"
+	xmlns:w="http://www.zkoss.org/2005/zk/client">
+		<vlayout>
+			<space height="5px"/>
+			<idera-cwf-dropdownlist id="totalWaits" model="@load(vm.serverWaitsOptions)" selectedItem="@bind(vm.waitTypelabel)" width="130px" onSelect="@command('showWaitType')"/>
+			<space height="5px"/>
+		</vlayout>
+		<vlayout>
+			 <hlayout>
+		     	<div sclass="chart-border">
+		     		<sqldm-idera-linechart id="serverWaitsChart1" width="1000px" height="300px" leftMargin="40px" rightMargin="10px" topMargin="10px" bottomMargin="72px" />
+		     	</div>
+		     </hlayout>
+		<separator height="8px" />
+		<div style="height:30px; text-align:right; padding-top: 10px" sclass="padding-b-4">
+   			<label id="titleLabel" value="${idera:getLabel('SQLdm.Labels.serverwaits')}" sclass="H4" style="float:left;font-size: 15.5pt !important;"/>
+		</div>
+ 		<grid id="serverWaitGrid" model="@load(vm.waitItems)" emptyMessage=""
+			  sclass="styled-list table_header" sizedByContent="true" span="true"
+			  mold="paging" paginal="${fileActivityListPgId}">			  
+			<columns sizable = "true">
+				<extcolumn label="${idera:getLabel('SQLdm.Labels.serverwaits.category')}" hflex="3" sort="auto(category)" width="15%"/>
+				<extcolumn label="${idera:getLabel('Labels.type')}" hflex="3" sort="auto(waitType)" width="15%" />
+				<extcolumn label="${idera:getLabel('SQLdm.Labels.serverwaits.wait')}" hflex="2" sort="auto(waitingTime)" sclass="numbers-position-header" width="80px"/>
+				<extcolumn label="${idera:getLabel('SQLdm.Labels.serverwaits.totalwait')}" hflex="2" sort="auto(totalWait)" sclass="numbers-position-header" width="95px"/>
+				<extcolumn label="${idera:getLabel('SQLdm.Labels.description')}" hflex="8" width="35%"/>
+				<extcolumn label="${idera:getLabel('SQLdm.Labels.help')}" hflex="4" width="35%"/>
+			</columns>
+			
+			<!-- template for each element in model -->
+	        <template name="model" var="item">
+	            <row>
+	            	<label value="@load(item.category)" />
+	            	<!-- Show tooltip text only when length goes beyond the visible area -->
+	            	<label value="@load(item.waitType)" maxlength="32" tooltiptext="@load(item.waitType)"/>
+				 	<label value="@load(item.waitingTime)" sclass="numbers-position"/>
+				 	<label value="@load(item.totalWait)" sclass="numbers-position"/>
+					<label value="@load(item.description)" sclass="wrap-word"/> 
+					<label value="@load(item.help)" sclass="wrap-word"/>
+				</row>
+	        </template>
+	        <foot>
+				<footer span="6" align="center" >
+					<hbox align="center">
+						<paging id="fileActivityListPgId" pageSize="@bind(vm.listRowsCount)"/>
+						<intbox value="@bind(vm.fileActivityListRowsCount)" zclass="z-paging-inp" 
+							constraint="no empty,no negative, no zero: ${idera:getLabel('SQLdm.Messages.page-size-error')}" 
+							onOK="@command('setFileActivityRowsCount')"  width="30px"  placeholder="#" maxlength="3"></intbox>
+						<label value="${idera:getLabel('SQLdm.Labels.pagination-items-per-page')}"/>
+					</hbox>
+				</footer>
+			</foot>
+		</grid>
+		</vlayout>
+</div>
+
+
+</zk>

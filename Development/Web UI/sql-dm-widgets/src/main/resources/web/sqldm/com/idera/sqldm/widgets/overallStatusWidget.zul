@@ -1,0 +1,73 @@
+<zk>
+	<!--Each panel should be extended by DashboardWidget -->
+	<panel use="com.idera.dashboard.ui.widget.DashboardWidget"
+		apply="com.idera.sqldm_10_3.ui.widgetComposers.OverallStatusComposer"
+		sclass="top-x-resource-by-count-panel">
+		<caption sclass="main-caption" hflex="1" vflex="1">
+			<hlayout sclass="z-toolbar" style="padding:3px; margin-left:0px" hflex="1"
+				vflex="1">
+				<idera-cwf-dropdownlist id="productListCombobox" readonly="true"
+					width="90px">
+					<template name="model">
+						<comboitem label="${each.name}"></comboitem>
+					</template>
+				</idera-cwf-dropdownlist>
+			</hlayout>
+		</caption>
+		<panelchildren sclass="panel-main-content" style="background: white;">
+			 <hbox hflex="1" vflex="1" id="errorContainer" align="center" pack="center">
+			 	<label sclass="error-message" value="@{message}"/>
+			 </hbox>
+			 <hbox hflex="1" id="mainContainer">
+				<vbox hflex="1" vflex="1" align="center" pack="center">
+					<image src="@{alertIcon}" />
+				</vbox>
+				<vbox hflex="3" vflex="1" pack="center" style="margin:20px">
+					<hbox id="totalAlertsBox" align="left" style="cursor:pointer">
+						<label value="Total Alerts:"
+							sclass="heading" style="font-size:15px"/>
+						<label value="@{status.totalAlerts}" sclass="heading" style="font-size:15px" />
+					</hbox>
+					<hbox>
+						<label
+							value="@{status.totalCriticalAlerts}" />
+						<label value=" Critical Alerts" />
+					</hbox>
+					<hbox>
+						<label value="@{status.totalWarningAlerts}" />
+						<label value=" Warning Alerts" />
+					</hbox>
+					<hbox>
+						<label
+							value="@{status.totalInformationalAlerts}" />
+						<label value=" Informational Alerts" />
+					</hbox>
+					<hbox>
+						<label value="As of: " />
+						<label id="lastSeenLabel" value="@{labelId}" />
+						<script type="text/javascript">
+							function setLastSeen(labelId) {
+							
+								var dateValue = new Date();		
+								var date = dateValue.getDate();
+								var month = dateValue.getMonth() + 1;
+								var year = dateValue.getFullYear(); 			
+								var hours = dateValue.getHours();
+								var minutes = dateValue.getMinutes();
+								var ampm = hours >= 12 ? 'pm' : 'am';
+								hours = hours % 12;
+								hours = hours ? hours : 12; // the hour '0' should be '12'
+								minutes = 10 - minutes > 0 ? '0'+minutes : minutes;
+								hours = 10 - hours > 0 ? '0'+hours : hours;
+							
+								var windowWidget = zk.Widget.$('$' + labelId);
+								windowWidget.setValue(month + '/' + date + '/' + year + ' ' + hours + ':' + minutes + ' ' + ampm);
+							
+							}
+						</script>
+					</hbox>
+				</vbox>
+			</hbox>
+		</panelchildren>
+	</panel>
+</zk>

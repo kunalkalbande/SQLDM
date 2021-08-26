@@ -1,0 +1,145 @@
+<div
+	apply="com.idera.sqldm.ui.dashboard.instances.resources.CPUUsageComposer">
+	<portallayout id="widgets1" maximizedMode="whole">
+		<portalchildren style="padding: 5px" width="49%">
+			<panel id="processorTimeChartWidget"
+				title="${idera:getLabel('SQLdm.Labels.resources-processor-time-in-percentage')}"
+				draggable="false" droppable="false" border="normal"
+				collapsible="true" closable="false" sclass="widget-panel"
+				maximizable="false" style="margin-bottom:10px">
+				<caption style="margin:3px;width:99%"></caption>
+				<panelchildren>
+					<sqldm-idera-linechart id="processorTime"
+						width="540px" height="270px" leftMargin="20px" rightMargin="20px"
+						topMargin="10px" bottomMargin="45px" />
+				</panelchildren>
+			</panel>
+		</portalchildren>
+		<portalchildren style="padding: 5px" width="49%">
+			<panel id="processorQueueTimeChartWidget"
+				title="${idera:getLabel('SQLdm.Labels.resources-processor-queue-length')}"
+				draggable="false" droppable="false" border="normal"
+				collapsible="true" closable="false" sclass="widget-panel"
+				maximizable="false" style="margin-bottom:10px">
+				<caption style="margin:3px;width:99%"></caption>
+				<panelchildren>
+				<div style="margin-top:25px">
+					<sqldm-idera-areachart id="processorQueueTime"
+						width="550px" height="270px" leftMargin="20px" rightMargin="20px"
+						topMargin="10px" bottomMargin="45px" />
+				</div>
+				</panelchildren>
+			</panel>
+		</portalchildren>
+	</portallayout>
+	<portallayout id="widgets2" maximizedMode="whole">
+		<portalchildren style="padding: 5px" width="49%">
+			<panel id="cpuAlertsWidget"
+				title="${idera:getLabel('SQLdm.Labels.resources-cpu-usage-percentage')}"
+				draggable="false" droppable="false" border="normal"
+				collapsible="true" closable="false" sclass="widget-panel"
+				maximizable="false" style="margin-bottom:10px">
+				<caption>
+					<!-- <hlayout style="margin:5px">
+						<div id="cpuUsageDiv" height="100%">
+							<a label="12h" id="cpuUsage12"
+								sclass="action-link"
+								style="vertical-align: -webkit-baseline-middle;" />
+							<space bar="true" spacing="10px"
+								style="vertical-align: -webkit-baseline-middle;" />
+							<a label="8h" id="cpuUsage8"
+								sclass="action-link"
+								style="vertical-align: -webkit-baseline-middle;" />
+							<space bar="true" spacing="10px"
+								style="vertical-align: -webkit-baseline-middle;" />
+							<a label="4h" id="cpuUsage4"
+								sclass="action-link"
+								style="vertical-align: -webkit-baseline-middle;" />
+							<space bar="true" spacing="10px"
+								style="vertical-align: -webkit-baseline-middle;" />
+							<a label="1h" id="cpuUsage1"
+								sclass="action-link"
+								style="vertical-align: -webkit-baseline-middle; font-weight: bold" />
+							<space bar="true" spacing="10px"
+								style="vertical-align: -webkit-baseline-middle;" />
+							<a label="30m" id="cpuUsage30"
+								sclass="action-link"
+								style="vertical-align: -webkit-baseline-middle;" />
+						</div>
+														
+						<toolbar style="float: right;">
+							<toolbarbutton
+							src="${sqldmidera:getImageURLWithoutSize('settings_icon_grey')}"
+							popup="cpuUsageWidgetPopup,position=start_before" />
+						</toolbar> 
+						
+					</hlayout> -->
+					<popup id="cpuUsageWidgetPopup">
+						<label
+							value="${idera:getLabel('SQLdm.Labels.top-ten.configure-instance-alert')}" />
+						<separator height="18px" />
+						<vlayout style="width:350px">
+							<hlayout style="padding: 5px">
+								<label style="padding: 5px"
+									value="${idera:getLabel('SQLdm.Labels.top-ten.configure-server-count')}" />
+								<separator orient="vertical"
+									spacing="2px" />
+								<spinner id="diskReadsCount"
+									constraint="no empty,min 1 max 50: between 1 to 50" />
+							</hlayout>
+							<idera-cwf-button id="applydiskReadsConfig" sclass="applyBtn"
+								label="${idera:getLabel('SQLdm.Labels.apply')}" width="125px"
+								style="float:right" />
+						</vlayout>
+					</popup>
+				</caption>
+				<panelchildren>
+					<sqldm-idera-linechart id="sqlCPUUsage"
+						width="540px" height="270px" leftMargin="20px" rightMargin="30px"
+						topMargin="10px" bottomMargin="45px" />
+				</panelchildren>
+			</panel>
+		</portalchildren>
+	</portallayout>
+	<portallayout id="topSessionsPortalLayout" maximizedMode="whole">
+		<portalchildren style="padding: 5px" width="99%">
+			<panel id="widget2"
+				title="${idera:getLabel('SQLdm.Labels.sessions-active-cpu')}"
+				draggable="false" droppable="false" border="normal"
+				collapsible="true" closable="false" sclass="widget-panel"
+				maximizable="false" style="margin-bottom:10px">
+				<caption>
+					<toolbar style="float: right;">
+						<toolbarbutton
+							src="${sqldmidera:getImageURLWithoutSize('settings_icon_grey')}"
+							popup="sessionsWidgetPopup,position=start_before" />
+					</toolbar>
+					<popup id="sessionsWidgetPopup">
+						<label
+							value="${idera:getLabel('SQLdm.Labels.configure-session-active-cpu')}" />
+						<separator height="18px" />
+						<vlayout style="width:350px">
+							<hlayout style="padding: 5px">
+								<label style="padding: 5px"
+									value="${idera:getLabel('SQLdm.Labels.top-ten.configure-sessions-count')}" />
+								<separator orient="vertical"
+									spacing="2px" />
+								<spinner id="sessionsCount"
+									constraint="no empty,min 1 max 50: between 1 to 50" />
+							</hlayout>
+							<idera-cwf-button id="applySessionsConfig" sclass="applyBtn"
+								label="${idera:getLabel('SQLdm.Labels.apply')}" width="125px"
+								style="float:right" />
+						</vlayout>
+					</popup>
+				</caption>
+				<panelchildren>
+					<zk>
+						<include renderdefer="100"
+							src="~./sqldm/com/idera/sqldm/ui/dashboard/instances/resources/topSessionsByActiveCpu.zul" />
+					</zk>
+				</panelchildren>
+			</panel>
+		</portalchildren>
+	</portallayout>
+</div>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/basepage/basepage.zul"?>
+<?meta http-equiv="X-UA-Compatible" content="${idera:browserVersionContentString()}"?>
+<?page title="${idera:productHeaderString()}"?>
+<?taglib uri="http://sqldm/taglib" prefix="sqldmidera"?>
+
+<?style src="/css/menupopup.css.dsp" ?>
+<?style src="/css/main.css.dsp" ?>
+<?style src="/css/input.css.dsp" ?>
+<?style src="/css/spacing.css.dsp" ?>
+<?style src="/css/tags.css.dsp" ?>
+<?style src="/css/basepage/header.css.dsp" ?>
+<?style src="/css/explorer/explorer.css.dsp" ?>
+<?style src="com/idera/sqldm/css/sqldm-list.css.dsp" ?>
+<?style src="com/idera/sqldm/css/sqldm.css.dsp" ?>
+<?style src="com/idera/sqldm/css/modalDialogTemplate.css.dsp" ?>
+<?style src="com/idera/sqldm/css/dashboard/singleInstance.css.dsp" ?>
+<?style src="com/idera/sqldm/css/dashboard/dashboard.css.dsp" ?>
+<?style src="com/idera/sqldm/css/dashboard/dashboardRightNavigation.css.dsp" ?>
+<?style src="com/idera/sqldm/css/chart.css.dsp" ?>
+<?style src="com/idera/sqldm/css/dashboard/qp.css.dsp" ?>
+<?style src="com/idera/sqldm/css/topten/topten.css.dsp" ?>
+<?style src="com/idera/sqldm/css/widget-panel.css.dsp" ?>
+<?style src="com/idera/sqldm/css/CWF_Components.css.dsp" ?>
+<?script type="text/javascript" src="~./sqldm/com/idera/sqldm/js/jquery-1.11.1.min.js"?>
+<?script type="text/javascript" src="~./sqldm/com/idera/sqldm/js/qp.js"?>
+<?script type="text/javascript" src="~./sqldm/com/idera/sqldm/js/html2canvas.min.js"?>
+<?script type="text/javascript" src="~./sqldm/com/idera/sqldm/js/jquery.plugin.html2canvas.js"?>
+<?style src="com/idera/sqldm/css/navigation-bar_new.css.dsp" ?>
+
+<zk>
+	<div self="@define(maincontent)">
+
+		<vlayout>
+			<div>
+				<include src="~./sqldm/navigation-bar.zul" />
+				<include
+					src="~./sqldm/com/idera/sqldm/ui/dashboard/instances/maincontent.zul" />
+			</div>
+		</vlayout>
+	</div>
+</zk>

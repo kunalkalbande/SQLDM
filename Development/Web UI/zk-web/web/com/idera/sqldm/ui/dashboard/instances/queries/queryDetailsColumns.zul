@@ -1,0 +1,39 @@
+<zk>
+
+	<div
+		apply="com.idera.sqldm.ui.dashboard.instances.queries.QueryDetailsColumns"
+		hflex="1" style="height:425px;">
+
+		<vlayout vflex="1" hflex="1">
+			<hlayout style="float:right">
+				<a id="exportLink" sclass="link  padding-all-16"
+					label="${idera:getLabel('SQLdm.Labels.export')}" 
+					style="word-wrap:break-word;text-decoration: underline;"/>
+			</hlayout>
+			<separator style="margin-top:10px; margin-bottom:10px" />
+			<div style="padding-left: 80px;padding-right: 80px;">
+				<grid id="queryColumnsGrid" model="${queryColumns}"
+					sclass="styled-list" span="true" height="320px"
+					sizedByContent="true" vflex="1"
+					emptyMessage="@load(sqldmidera:getLabel('SQLdm.Labels.query-plan-data-not-available'))">
+					<columns>
+						<column label="Database" hflex="min"></column>
+						<column label="Schema" hflex="min"></column>
+						<column label="Table" hflex="min"></column>
+						<column label="Column" hflex="min"></column>
+					</columns>
+					<rows>
+						<template name="model">
+							<row>
+								<label value="${each.database}"></label>
+								<label value="${each.schema}"></label>
+								<label value="${each.table}"></label>
+								<label value="${each.columns}"></label>
+							</row>
+						</template>
+					</rows>
+				</grid>
+			</div>
+		</vlayout>
+	</div>
+</zk>

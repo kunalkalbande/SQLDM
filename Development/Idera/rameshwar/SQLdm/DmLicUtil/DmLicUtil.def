@@ -1,0 +1,6 @@
+LIBRARY	DmLicUtil
+EXPORTS	
+   EncryptString     @1
+   DecryptString     @2
+   FreeCryptBuffer   @3
+   SetObjectAccess   @4

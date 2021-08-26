@@ -1,0 +1,82 @@
+<zk>
+	<window  id="analysisDetailsWindow" title="Recommendations" border="normal" 
+				apply="com.idera.sqldm.ui.prescreptiveanalysis.PrescreptiveAnalysisDetailsComposer" 
+				position="top,center" closable="true"
+				action="show: slideDown;hide: slideUp">
+			<vlayout>
+				<hlayout>
+					<style>.z-paging table { width:auto; }</style>
+					<listbox id="paDetailsListbox" sclass="styled-list styled-cwf-list" mold="paging"
+							pageSize="9" model="${recommendations}" emptyMessage="Data not available">
+						<listhead>
+							<listheader label="Finding Text" align="left"
+								sort="auto(findingText)" width="80%" />
+							<listheader label="Priority" align="left"
+								sort="auto(computedRankFactor)" width="20%" />
+						</listhead>
+						<template name="model">
+							<listitem>
+								<listcell label="${each.findingText}" />
+								<listcell>
+									<div>
+										<zk choose="">
+											<zk>
+												<div class="critical-progress">
+													<progressmeter
+														value="${each.computedRankFactor}" width="60px" />
+												</div>
+											</zk>
+										</zk>
+									</div>
+								</listcell>
+							</listitem>
+						</template>
+					</listbox>
+				</hlayout>
+				<hlayout>
+					<div id="recDetails" visible="false">
+						<div sclass="padding-all-16" style="color: #006089;">
+							<label sclass="H1" id="lblFindingText" />
+						</div>
+						<label id="lblExplanationText" style="padding: 10px 0; display: block" />
+						
+						<div>
+							<label value="Recommendation: " style="font-weight: bold; padding: 15px 0; display: block" />
+							<label id="lblRecommendationText" style="padding: 10px 0; display: block" />
+						</div>
+						
+						<div>
+							<label value="Details: " style="font-weight: bold; padding: 15px 0; display: block" />
+						</div>
+
+						<listbox id="propertiesListbox" emptyMessage="">
+							<template name="model">
+								<listitem>
+									<listcell label="${each.key}" />
+									<listcell 
+										label="${each.key == 'statement' || each.key == 'sourceObjects' || each.key == 'StatementText' || each.key == 'Batch' ? '' : each.value}" />
+								</listitem>
+							</template>
+						</listbox>
+						
+						<div>
+							<label value="Learn more about: " style="font-weight: bold; padding: 15px 0; display: block" />
+						</div>
+
+						<listbox id="linksListbox" emptyMessage="No Additional Details for this Recommendation">
+							<template name="model">
+								<listitem>
+									<listcell>
+										<div>
+											<a sclass="link" target="_blank" label="${each.title}"
+											style="text-decoration: underline;" href="${each.link}" />
+										</div>
+									</listcell>
+								</listitem>
+							</template>
+						</listbox>
+					</div>
+				</hlayout>
+			</vlayout>
+	</window>
+</zk>

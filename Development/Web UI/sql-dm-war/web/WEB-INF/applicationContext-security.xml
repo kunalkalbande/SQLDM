@@ -1,0 +1,108 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+             http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+             http://www.springframework.org/schema/security
+             http://www.springframework.org/schema/security/spring-security-2.0.2.xsd">
+
+  <authentication-manager alias="authenticationManager" session-controller-ref="customConcurrentSessionController"/>
+
+  <beans:bean id="passwordEncoder" class="com.idera.server.PasswordEncoder"/>
+  <beans:bean id="userDetailsService" class="com.idera.core.user.UserDetailsService"/>
+
+  <beans:bean id="simpleAuth" class="com.idera.server.auth.SimpleAuthenticationProvider">
+    <custom-authentication-provider/>
+  </beans:bean>
+
+  <beans:bean id="waffleWindowsAuthProvider" class="waffle.windows.auth.impl.WindowsAuthProviderImpl" />
+  <beans:bean id="negotiateSecurityFilterProvider" class="com.idera.server.web.servlet.IderaNegotiateSecurityProvider">
+    <beans:constructor-arg ref="waffleWindowsAuthProvider" />
+    <beans:property name="protocols" value="NTLM" />
+  </beans:bean>
+  <beans:bean id="userNotificationSubscriber" class="com.idera.core.events.IderaUserNotificationSubscriber"/>
+
+<beans:bean id="basicSecurityFilterProvider" class="waffle.servlet.spi.BasicSecurityFilterProvider">
+    <beans:constructor-arg ref="waffleWindowsAuthProvider" />
+</beans:bean>
+
+<beans:bean id="waffleSecurityFilterProviderCollection" class="waffle.servlet.spi.SecurityFilterProviderCollection">
+    <beans:constructor-arg>
+        <beans:list>
+            <beans:ref bean="negotiateSecurityFilterProvider" />
+            <beans:ref bean="basicSecurityFilterProvider" />
+        </beans:list>
+    </beans:constructor-arg>
+</beans:bean>
+
+<!-- <beans:bean id="waffleNegotiateSecurityFilter" class="waffle.spring.NegotiateSecurityFilter"> -->
+<beans:bean id="waffleNegotiateSecurityFilter" class="com.idera.cwf.rewrite.provider.CustomNegotiateSecurityFilter">
+    <beans:property name="provider" ref="waffleSecurityFilterProviderCollection" />
+    <custom-filter position="BASIC_PROCESSING_FILTER"/>
+</beans:bean>
+
+  <beans:bean id="restoreSessionContextFromJwtToken" class="com.idera.server.web.servlet.RestoreSessionContext">
+    <custom-filter before="SESSION_CONTEXT_INTEGRATION_FILTER"/>
+  </beans:bean>
+
+  <!-- Extended Filter Entry Points -->
+  <beans:bean id="extendedAuthEntryPoint" class="com.idera.server.web.servlet.ExtendedAuthenticationProcessingFilterEntryPoint">
+    <beans:property name="loginFormUrl" value="/login"/>
+    <beans:property name="forceHttps" value="false"/>
+     <beans:property name="provider" ref="waffleSecurityFilterProviderCollection" />
+  </beans:bean>
+
+  <beans:bean id="sessionRegistry" class="com.idera.server.registry.IderaSessionRegistry"/>
+
+  <!--  Custom Auth Processing Filter -->
+  <beans:bean id="authenticationProcessingFilter" class="com.idera.server.web.servlet.AuthenticationProcessingFilter">
+    <custom-filter position="AUTHENTICATION_PROCESSING_FILTER"/>
+    <beans:property name="defaultTargetUrl" value="/"/>
+    <beans:property name="authenticationManager" ref="authenticationManager"/>
+    <beans:property name="authenticationFailureUrl" value="/login?failed=true"/>
+    <beans:property name="sessionRegistry" ref="sessionRegistry"/>
+  </beans:bean>
+
+  <beans:bean id="logoutProcessingFilter" class="com.idera.server.web.servlet.ExtendedLogoutFilter">
+    <custom-filter position="LOGOUT_FILTER"/>
+    <beans:constructor-arg value="/login"/>
+    <beans:constructor-arg>
+      <beans:bean class="org.springframework.security.ui.logout.SecurityContextLogoutHandler"/>
+    </beans:constructor-arg>
+  </beans:bean>
+
+  <beans:bean id="customConcurrentSessionController"
+              class="org.springframework.security.concurrent.ConcurrentSessionControllerImpl">
+    <beans:property name="sessionRegistry" ref="sessionRegistry" />
+    <beans:property name="maximumSessions" value="5"/>
+    <beans:property name="exceptionIfMaximumExceeded"
+                    value="true" />
+  </beans:bean>
+
+  <!-- Secure the pages per the URL pattern -->
+  <http auto-config="false" entry-point-ref="extendedAuthEntryPoint">
+
+    <!-- These need to be open to anonymous or the login page doesn't look right or submit properly -->
+    <intercept-url pattern="/login.zul*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+    <intercept-url pattern="/login.*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+    <intercept-url pattern="/css/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+    <intercept-url pattern="/images/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+    <intercept-url pattern="/zkau/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+    <intercept-url pattern="/favicon.ico" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+    <intercept-url pattern="/version.txt" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+    <intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+    <intercept-url pattern="/administration/tags**" access="ROLE_ADMIN,ROLE_USER"/>
+    <intercept-url pattern="/administration/tags/**" access="ROLE_ADMIN,ROLE_USER"/>
+    <intercept-url pattern="/administration/instances**" access="ROLE_USER"/>
+    <intercept-url pattern="/administration/instances/**" access="ROLE_USER"/>
+
+    <intercept-url pattern="/administration" access="ROLE_DashboardAdministrator,ROLE_ProductAdministrator"/>
+    <intercept-url pattern="/administration/**" access="ROLE_DashboardAdministrator,ROLE_ProductAdministrator"/>
+
+    <intercept-url pattern="/**" access="ROLE_ADMIN,ROLE_USER"/>
+
+    <!--  Allow anonymous access and logout -->
+    <anonymous/>
+  </http>
+
+</beans:beans>

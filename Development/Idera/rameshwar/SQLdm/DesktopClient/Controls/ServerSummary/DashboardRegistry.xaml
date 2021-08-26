@@ -1,0 +1,74 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:local="clr-namespace:Idera.SQLdm.DesktopClient.Controls.ServerSummary"
+					xmlns:widget="clr-namespace:Idera.SQLdm.DesktopClient.Controls.ServerSummary.Charts">
+
+    <DataTemplate x:Key="defaultTileHeaderTemplate">
+        <TextBlock Text="{Binding Path=Title}"/>
+    </DataTemplate>
+    <DataTemplate x:Key="EmptyTemplate">
+        <Border VerticalAlignment="Top" Background="#FF666666" BorderBrush="#FFA3918C" BorderThickness="1" Padding="1" Margin="10,10,10,0">
+            <TextBlock Text="No component selected"/>
+        </Border>
+    </DataTemplate>
+    <!-- CPU -->
+    <DataTemplate x:Key="CPUTrendsTemplate">
+        <widget:CpuTrends HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DataContext="{Binding Path=Model}"/>
+    </DataTemplate>
+    <Image x:Key="CPUTrendsImage" Source="/SQLdmDesktopClient;component/Resources/Chart32x32.png" />
+    <local:DashboardComponentMetaData x:Key="CPUTrends"
+            Name="CPU Trends" 
+            Description="CPU Trends chart" 
+            TemplateKey="CPUTrendsTemplate"
+            ImageKey="CPUTrendsImage"/>
+    <!-- Sessions -->
+    <DataTemplate x:Key="SessionsTemplate">
+        <widget:Sessions HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DataContext="{Binding Path=Model}"/>
+    </DataTemplate>
+    <Image x:Key="SessionsImage" Source="/SQLdmDesktopClient;component/Resources/Chart32x32.png" />
+    <local:DashboardComponentMetaData x:Key="Sessions"
+            Name="Sessions" 
+            Description="Sessions chart" 
+            TemplateKey="SessionsTemplate"
+            ImageKey="SessionsImage"/>
+    <!-- Memory -->
+    <DataTemplate x:Key="MemoryTemplate">
+        <widget:Memory HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DataContext="{Binding Path=Model}"/>
+    </DataTemplate>
+    <Image x:Key="MemoryImage" Source="/SQLdmDesktopClient;component/Resources/Chart32x32.png" />
+    <local:DashboardComponentMetaData x:Key="Memory"
+            Name="Memory" 
+            Description="Memory chart" 
+            TemplateKey="MemoryTemplate"
+            ImageKey="MemoryImage"/>
+    <!-- Memory Cache -->
+    <DataTemplate x:Key="MemoryCacheTemplate">
+        <widget:MemoryCache HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DataContext="{Binding Path=Model}"/>
+    </DataTemplate>
+    <Image x:Key="MemoryCacheImage" Source="/SQLdmDesktopClient;component/Resources/Chart32x32.png" />
+    <local:DashboardComponentMetaData x:Key="MemoryCache"
+            Name="Memory Cache" 
+            Description="Memory Cache chart" 
+            TemplateKey="MemoryCacheTemplate"
+            ImageKey="MemoryCacheImage"/>
+	<!-- Network -->
+    <DataTemplate x:Key="NetworkTemplate">
+        <widget:Network HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DataContext="{Binding Path=Model}"/>
+    </DataTemplate>
+    <Image x:Key="NetworkImage" Source="/SQLdmDesktopClient;component/Resources/Chart32x32.png" />
+    <local:DashboardComponentMetaData x:Key="Network"
+            Name="Network" 
+            Description="Network chart" 
+            TemplateKey="NetworkTemplate"
+            ImageKey="NetworkImage"/>
+	<!-- Waits -->
+    <DataTemplate x:Key="WaitsTemplate">
+        <widget:SQLServerWaits HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DataContext="{Binding Path=Model}"/>
+    </DataTemplate>
+    <Image x:Key="WaitsImage" Source="/SQLdmDesktopClient;component/Resources/Chart32x32.png" />
+    <local:DashboardComponentMetaData x:Key="Waits"
+            Name="Waits" 
+            Description="Server Waits chart" 
+            TemplateKey="WaitsTemplate"
+            ImageKey="WaitsImage"/>
+</ResourceDictionary>

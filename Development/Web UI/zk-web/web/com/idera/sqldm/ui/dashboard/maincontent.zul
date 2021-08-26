@@ -1,0 +1,58 @@
+<zk xmlns:w="http://www.zkoss.org/2005/zk/client">
+    <script type="text/javascript">
+        function Hide()
+        {
+        if($("a.hideA").text()=='Show Alerts'){
+        $("div.alertsgriddiv").css("display","block");
+        $("div.alertsgriddiv").css("visibility","visible");
+        $("a.hideA").text('Hide Alerts');
+        }else{
+        $("div.alertsgriddiv").css("display","none");
+        $("a.hideA").text('Show Alerts');
+        }
+        }
+
+        // Logic to resize the home page container based on browser height
+        jq(this).load(function(){
+            var browserHeight = $('body').height();
+            var containerHeight = browserHeight-72;
+            zk.Widget.$('$instances-page-main-window-div').setHeight(containerHeight + 'px');
+            zk.Widget.$('$instances-page-grid-container-div').setHeight(containerHeight + 'px');
+        });
+    </script>
+    <window border="none"
+            apply="org.zkoss.bind.BindComposer"
+            viewModel="@id('vm') @init('com.idera.sqldm.ui.dashboard.DashboardComposer')"
+            height="800px" id="instances-page-main-window-div" sclass="idera-products-nav-wrapper">
+        <div fulfill="self.onCreate" vflex="1"> <!-- workaround -->
+            <timer id="timer" delay="60000" repeats="true" onTimer="@command('updateDashboard', forceLoad=true)"/>
+            <!--   	<timer id="timerDefer" delay="100" repeats="false" onTimer="@command('updateDashboard', forceLoad=false)"/> -->
+            <borderlayout style="overflow-y: auto; overflow-x:hidden;" vflex="1">
+
+                <!-- 	   <west collapsible="true"
+                       maxsize="315" size="15%" flex="true" border="1" vflex = "1"  sclass = "light-panel-color-shade">
+                            <include src="~./sqldm/com/idera/sqldm/ui/dashboard/dashboardSideBar.zul" />
+                            <div style="background:#B8D335">
+                        <label value="25%"
+                            style="color:white;font-size:50px" />
+                    </div>
+                       </west> -->
+                <west size="15%" flex="true" splittable="false" collapsible="false"
+                      style="background:white;" border="1" vflex="1" sclass="cwf-main-background">
+                    <include src="~./sqldm/com/idera/sqldm/ui/dashboard/dashboardSideBar.zul"/>
+                </west>
+
+                <center border="1" vflex="1" hflex="true" sclass="idera-content-area padding-t-0">
+                    <borderlayout style="overflow-y: auto; overflow-x:hidden;" vflex="1">
+                        <north border="1" height="800px" splittable="true"  id="instances-page-grid-container-div">
+                            <vlayout id="mainArea" vflex="1" hflex="1"
+                                     style="padding:0; overflow:auto; overflow-x:hidden">
+                                <include vflex="1" src="~./sqldm/com/idera/sqldm/ui/dashboard/instancesView.zul"/>
+                            </vlayout>
+                        </north>
+                    </borderlayout>
+                </center>
+            </borderlayout>
+        </div>
+    </window>
+</zk>

@@ -1,0 +1,61 @@
+<div  apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.idera.sqldm.ui.dashboard.instances.databases.AvailabilityGrpsViewModel')">
+<vlayout>
+	<!-- <div style="height:30px; text-align:right; padding-top: 10px" sclass="padding-b-4">
+  			<label id="titleLabel" sclass="H4" style="float:left;"/>
+	</div> -->
+	<grid id="availabilityGrpGrid" model="@load(vm.availabilityGroups)" emptyMessage="${idera:getLabel('SQLdm.Labels.data-not-available')}"
+				  sclass="styled-list table_header selectable-styled-list" sizedByContent="true" span="true"
+				  mold="paging" paginal="${availabilityGroupListPgId}">			  
+		<columns sizable = "true">
+			<!-- <extcolumn label="${idera:getLabel('SQLdm.Labels.database-name')}" hflex="2" sort="auto(LOWER(databaseName))"/> -->
+			<extcolumn label="${idera:getLabel('SQLdm.Labels.ag.group')}" hflex="1" sort="auto(LOWER(groupName))"/>
+			<extcolumn label="${idera:getLabel('SQLdm.Labels.ag.replica-name')}" hflex="2" sort="auto(LOWER(replicaName))"/>
+			<extcolumn label="${idera:getLabel('SQLdm.Labels.ag.replica-role')}" hflex="1" sort="auto(LOWER(replicaRole))"/>
+			<extcolumn label="${idera:getLabel('SQLdm.Labels.ag.sync-health')}" hflex="2" sort="auto(LOWER(syncHealth))"/>
+			<extcolumn label="${idera:getLabel('SQLdm.Labels.ag.redo-size')}" hflex="1" sort="auto(redoQueueSize)"/>
+			<extcolumn label="${idera:getLabel('SQLdm.Labels.ag.redo-rate')}" hflex="1" sort="auto(redoTransferRate)"/>
+			<extcolumn label="${idera:getLabel('SQLdm.Labels.ag.log-size')}" width="130px" sort="auto(logSendQueueSize)"/>
+			<extcolumn label="${idera:getLabel('SQLdm.Labels.ag.log-rate')}" hflex="1" sort="auto(logTransferRate)"/>
+			<extcolumn label="${idera:getLabel('SQLdm.Labels.ag.db-status')}" width="130px" sort="auto(LOWER(databaseStatus))"/>
+		</columns>
+		
+		<!-- template for each element in model -->
+	       <template name="model" var="item">
+	           <row onClick="@command('refreshChartModel', avg=item)" sclass="clickable_row">
+	           	<!-- <label value="@load(item.databaseName)" />  -->
+	           	<label value="@load(item.groupName)" /> 
+	           	<label value="@load(item.replicaName)" />
+			 	<label value="@load(item.replicaRole)" />
+			 	<label value="@load(item.syncHealth)" />
+			 	<label value="@load(item.redoQueueSize)" />
+				<label value="@load(item.redoTransferRate)" /> 
+				<label value="@load(item.logSendQueueSize)" />
+				<label value="@load(item.logTransferRate)" /> 
+				<label value="@load(item.databaseStatus)" />
+			</row>
+	       </template>
+	       <foot>
+				<footer span="9" align="center">
+					<hbox align="center">
+						<paging id="availabilityGroupListPgId" pageSize="@bind(vm.listRowsCount)"/>
+						<span>
+							<intbox zclass="z-paging-inp" value="@bind(vm.availablityGroupsListRowsCount)" maxlength="3" 
+									constraint="no empty,no negative, no zero, end_after: ${idera:getLabel('SQLdm.Messages.page-size-error')}" 
+									onOK="@command('setAvailablityGroupsRowsCount')" width="30px" placeholder="#">
+							</intbox>
+							<label value="${idera:getLabel('SQLdm.Labels.pagination-items-per-page')}" />
+						</span>
+					</hbox>
+				</footer>
+			</foot>
+	</grid>
+	<hlayout>
+	 	<div sclass="chart-border">
+	 		<sqldm-idera-linechart id="queueSize" width="540px"  height="280px" leftMargin="50px" rightMargin="20px" topMargin="50px" bottomMargin="35px" title="${idera:getLabel('SQLdm.Labels.queue-size')}"/>
+	 	</div>
+	   	<div sclass="chart-border">
+	   		<sqldm-idera-linechart id="transferRate" width="540px"  height="280px" leftMargin="50px" rightMargin="20px" topMargin="50px" bottomMargin="35px" title="${idera:getLabel('SQLdm.Labels.transfer-rate-percentage')}"/>
+	   	</div>
+	 </hlayout>
+ </vlayout>
+</div>

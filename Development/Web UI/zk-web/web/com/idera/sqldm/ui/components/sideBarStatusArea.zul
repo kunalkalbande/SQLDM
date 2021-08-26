@@ -1,0 +1,33 @@
+<zk>
+
+	<div id="statusAreaHeaderDiv" height="8px" />
+
+	<hlayout spacing="0">
+
+		<div id="leftStatusElementDiv"
+			sclass="shadow left-status-element">
+			<label id="leftTitleLabel" sclass="H5 status-element-title padding-l-12 padding-tb-4"
+				value="${arg.leftTitle}" />
+			<label id="leftValueLabel" sclass="H1 status-element-text padding-l-12"
+				value="${arg.leftValue}" />
+		</div>
+
+		<div id="centerStatusElementDiv"
+			sclass="shadow center-status-element">
+			<label id="centerTitleLabel"
+				sclass="H5 status-element-title padding-l-12 padding-tb-4" value="${arg.centerTitle}" />
+			<label id="centerValueLabel" sclass="H1 status-element-text padding-l-12"
+				value="${arg.centerValue}" />
+		</div>
+
+		<div id="rightStatusElementDiv"
+			sclass="shadow right-status-element">
+			<label id="rightTitleLabel" sclass="H5 status-element-title padding-l-12 padding-tb-4"
+				value="${arg.rightTitle}" />
+			<label id="rightValueLabel" sclass="H1 status-element-text padding-l-12"
+				value="${arg.rightValue}" />
+		</div>
+
+	</hlayout>
+
+</zk>

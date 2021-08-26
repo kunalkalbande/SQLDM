@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Designers", "..\Internal\Idera.SQLdm.DesktopClient.Designers\Designers.csproj", "{371AFA17-AF90-42F1-9688-6FC049B4D940}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controls", "..\Shipping\Idera.SQLdm.DesktopClient.Controls\Controls\Controls.csproj", "{ACC2CFDB-9610-4D0A-98F6-4231A2335058}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{833ECD68-4D35-4347-99E1-9A799238CA33}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccProjectName0 = Perforce\u0020Project
+		SccLocalPath0 = ..\\..
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		SccProjectFilePathRelativizedFromConnection0 = Utilities\\Idera.SQLdm.DesktopClient.Controls\\
+		SccProjectUniqueName1 = Setup\\Setup.vdproj
+		SccLocalPath1 = ..\\..
+		SccProjectFilePathRelativizedFromConnection1 = Utilities\\Idera.SQLdm.DesktopClient.Controls\\Setup\\
+		SccProjectUniqueName2 = ..\\Internal\\Idera.SQLdm.DesktopClient.Designers\\Designers.csproj
+		SccLocalPath2 = ..\\..
+		SccProjectFilePathRelativizedFromConnection2 = Utilities\\Internal\\Idera.SQLdm.DesktopClient.Designers\\
+		SccProjectUniqueName3 = ..\\Shipping\\Idera.SQLdm.DesktopClient.Controls\\Controls\\Controls.csproj
+		SccLocalPath3 = ..\\..
+		SccProjectFilePathRelativizedFromConnection3 = Utilities\\Shipping\\Idera.SQLdm.DesktopClient.Controls\\Controls\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{371AFA17-AF90-42F1-9688-6FC049B4D940}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{371AFA17-AF90-42F1-9688-6FC049B4D940}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{371AFA17-AF90-42F1-9688-6FC049B4D940}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{371AFA17-AF90-42F1-9688-6FC049B4D940}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACC2CFDB-9610-4D0A-98F6-4231A2335058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACC2CFDB-9610-4D0A-98F6-4231A2335058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACC2CFDB-9610-4D0A-98F6-4231A2335058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACC2CFDB-9610-4D0A-98F6-4231A2335058}.Release|Any CPU.Build.0 = Release|Any CPU
+		{833ECD68-4D35-4347-99E1-9A799238CA33}.Debug|Any CPU.ActiveCfg = Debug
+		{833ECD68-4D35-4347-99E1-9A799238CA33}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

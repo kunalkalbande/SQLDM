@@ -1,0 +1,1693 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TracerX</name>
+    </assembly>
+    <members>
+        <member name="F:BBS.TracerX.Viewer.CallStack.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.CallStack.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.CallStack.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:BBS.TracerX.Viewer.PasswordDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.PasswordDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.PasswordDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:BBS.TracerX.Viewer.OptionsDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.OptionsDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.OptionsDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:BBS.TracerX.Viewer.FullText.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.FullText.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.FullText.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:BBS.TracerX.Viewer.FilterDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.FilterDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.FilterDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.FilterDialog.TextFilterDisable">
+            <summary>Turns text filtering off.</summary>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.FilterDialog.TextFilterTestString(System.String)">
+            <summary>Determines if the string passes the text filter.</summary>
+        </member>
+        <member name="P:BBS.TracerX.Viewer.FilterDialog.TextFilterOn">
+            <summary>True if text filtering is in effect.</summary>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.ThreadObject.Reset">
+            <summary>
+            Reset is called before loading a new logfile.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Viewer.ThreadObject.Visible">
+            <summary>
+            Is the output from this thread visible?
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Viewer.ThreadObject.AllVisible">
+            <summary>
+            Are all threads visible?
+            </summary>
+        </member>
+        <member name="E:BBS.TracerX.Viewer.ThreadObject.AllVisibleChanged">
+            <summary>
+            Event called when AllVisible changes.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Viewer.Reader.Records_LostViaWrapping">
+            <summary>
+            Number of records lost due to wrapping in the circular part of the log.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Viewer.Reader.Records_TotalRead">
+            <summary>
+            Number of records read from the file.
+            </summary>
+        </member>
+        <member name="T:BBS.TracerX.Viewer.Record">
+            <summary>
+            A Record object corresponds to a message logged by the logger.  The Record text may contain
+            embedded newlines, which the viewer can expand into multiple Row objects.
+            </summary>
+        </member>
+        <member name="T:BBS.TracerX.DefaultRenderer">
+            <summary>
+            This is the default object Renderer.  It currently has special formatting 
+            for arrays, collections, and DictionaryEntry objects.  
+            Other types end up using object.ToString() unless they have their own renderer.
+            To create renderers
+            for other types, implement IObjectRenderer and add the new renderer class to RendererMap.
+            </summary>
+        </member>
+        <member name="T:BBS.TracerX.IObjectRenderer">
+            <summary>
+            Implement this interface and add the new class to the
+            RendererMap in order to render objects as strings.
+            </summary>
+            <remarks>
+            <para>
+            Certain types require special-case conversion to
+            string form. This conversion is done by an object renderer.
+            Object renderers implement the <see cref="T:BBS.TracerX.IObjectRenderer"/>
+            interface, which has only one method.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:BBS.TracerX.IObjectRenderer.RenderObject(System.Object,System.IO.TextWriter)">
+            <summary>
+            Render the object <paramref name="obj"/> to a string.
+            </summary>
+            <param name="obj">The object to render</param>
+            <param name="writer">The writer to render to</param>
+        </member>
+        <member name="M:BBS.TracerX.DefaultRenderer.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+            <remarks>
+            <para>
+            Default constructor
+            </para>
+            </remarks>
+        </member>
+        <member name="M:BBS.TracerX.DefaultRenderer.RenderObject(System.Object,System.IO.TextWriter)">
+            <summary>
+            Render the object <paramref name="obj"/> to a string
+            </summary>
+            <remarks>
+            <para>
+            Render the object <paramref name="obj"/> to a string.
+            </para>
+            <para>
+            The <paramref name="rendererMap"/> parameter is
+            provided to lookup and render other objects. This is
+            very useful where <paramref name="obj"/> contains
+            nested objects of unknown type. The <see cref="M:BBS.TracerX.RendererMap.FindAndRender(System.Object)"/>
+            method can be used to render these objects.
+            </para>
+            <para>
+            The default renderer supports rendering objects to strings as follows:
+            </para>
+            <list type="table">
+            	<listheader>
+            		<term>Value</term>
+            		<description>Rendered String</description>
+            	</listheader>
+            	<item>
+            		<term><c>null</c></term>
+            		<description>
+            		<para>"(null)"</para>
+            		</description>
+            	</item>
+            	<item>
+            		<term><see cref="T:System.Array"/></term>
+            		<description>
+            		<para>
+            		For a one dimensional array this is the
+            		array type name, an open brace, followed by a comma
+            		separated list of the elements (using the appropriate
+            		renderer), followed by a close brace. 
+            		</para>
+            		<para>
+            		For example: <c>int[] {1, 2, 3}</c>.
+            		</para>
+            		<para>
+            		If the array is not one dimensional the 
+            		<c>Array.ToString()</c> is returned.
+            		</para>
+            		</description>
+            	</item>
+            	<item>
+            		<term><see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> &amp; <see cref="T:System.Collections.IEnumerator"/></term>
+            		<description>
+            		<para>
+            		Rendered as an open brace, followed by a comma
+            		separated list of the elements (using the appropriate
+            		renderer), followed by a close brace.
+            		</para>
+            		<para>
+            		For example: <c>{a, b, c}</c>.
+            		</para>
+            		<para>
+            		All collection classes that implement <see cref="T:System.Collections.ICollection"/> its subclasses, 
+            		or generic equivalents all implement the <see cref="T:System.Collections.IEnumerable"/> interface.
+            		</para>
+            		</description>
+            	</item>		
+            	<item>
+            		<term><see cref="T:System.Collections.DictionaryEntry"/></term>
+            		<description>
+            		<para>
+            		Rendered as the key, an equals sign ('='), and the value (using the appropriate
+            		renderer). 
+            		</para>
+            		<para>
+            		For example: <c>key=value</c>.
+            		</para>
+            		</description>
+            	</item>		
+            	<item>
+            		<term>other</term>
+            		<description>
+            		<para><c>Object.ToString()</c></para>
+            		</description>
+            	</item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:BBS.TracerX.DefaultRenderer.RenderArray(System.Array,System.IO.TextWriter)">
+            <summary>
+            Render the array argument into a string
+            </summary>
+            <param name="rendererMap">The map used to lookup renderers</param>
+            <param name="array">the array to render</param>
+            <param name="writer">The writer to render to</param>
+            <remarks>
+            <para>
+            For a one dimensional array this is the
+            array type name, an open brace, followed by a comma
+            separated list of the elements (using the appropriate
+            renderer), followed by a close brace. For example:
+            <c>int[] {1, 2, 3}</c>.
+            </para>
+            <para>
+            If the array is not one dimensional the 
+            <c>Array.ToString()</c> is returned.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:BBS.TracerX.DefaultRenderer.RenderEnumerator(System.Collections.IEnumerator,System.IO.TextWriter)">
+            <summary>
+            Render the enumerator argument into a string
+            </summary>
+            <param name="rendererMap">The map used to lookup renderers</param>
+            <param name="enumerator">the enumerator to render</param>
+            <param name="writer">The writer to render to</param>
+            <remarks>
+            <para>
+            Rendered as an open brace, followed by a comma
+            separated list of the elements (using the appropriate
+            renderer), followed by a close brace. For example:
+            <c>{a, b, c}</c>.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:BBS.TracerX.DefaultRenderer.RenderDictionaryEntry(System.Collections.DictionaryEntry,System.IO.TextWriter)">
+            <summary>
+            Render the DictionaryEntry argument into a string
+            </summary>
+            <param name="rendererMap">The map used to lookup renderers</param>
+            <param name="entry">the DictionaryEntry to render</param>
+            <param name="writer">The writer to render to</param>
+            <remarks>
+            <para>
+            Render the key, an equals sign ('='), and the value (using the appropriate
+            renderer). For example: <c>key=value</c>.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:BBS.TracerX.Viewer.LoggerObject.Visible">
+            <summary>
+            Is the output from this logger visible?
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Viewer.LoggerObject.AllVisible">
+            <summary>
+            Are all loggers visible?
+            </summary>
+        </member>
+        <member name="E:BBS.TracerX.Viewer.LoggerObject.AllVisibleChanged">
+            <summary>
+            Event called when AllVisible changes.
+            </summary>
+        </member>
+        <member name="F:BBS.TracerX.Viewer.License.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.License.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.License.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:BBS.TracerX.Viewer.About.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.About.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.About.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:BBS.TracerX.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:BBS.TracerX.Logger">
+            <summary>
+            The Logger class is the user's primary interface to TracerX.  It manages a hierarchy
+            of Logger instances that the user creates by calling the static GetLogger() method or
+            by putting "Logger" nodes in the XML configuration file.
+            The hierarchy is determined by the "dotted" substrings of each Logger's Name property
+            (e.g. "A.B" is the parent of "A.B.C"). The static member Logger.Root is the root (ultimate 
+            parent) of all loggers.  
+            </summary>
+            <remarks>
+            Actual logging is done by calling instance methods such as Logger.Info() and Logger.Debug(),
+            whose names imply the TraceLevel of the output.  The FileTraceLevel property determines 
+            which calls send output to the log file (other properties control logging to the console,
+            Trace.WriteLine, and the event log).  Setting FileTraceLevel higher results in more output.
+            The default FileTraceLevel of every Logger except Root is Undefined.  Any logger with an 
+            Undefined trace level inherits the trace level of its parent, all the way up to Root if needed.
+            Users can control the logging of whole branches of the hierarchy by setting 
+            FileTraceLevel to Debug, Info, Off, etc. in upper-Level loggers such as Logger.Root
+            since the lower-Level loggers will inherit it unless explicitly overridden.
+            </remarks>
+        </member>
+        <member name="M:BBS.TracerX.Logger.GetLogger(System.String)">
+            <summary>
+            Gets the logger with the specified name, creating it if necessary.
+            Loggers created this way have the Undefined trace Level, causing
+            the effective trace Level to be inheritted from the parent 
+            logger (ultimately the Root logger).
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.GetLogger(System.Type)">
+            <summary>
+            Gets the logger with the name equal to type.ToString(), creating it if necessary.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.GetHierarchy">
+            <summary>
+            Returns info about all loggers in a string that contains the names, explicit trace levels, and
+            effective trace levels in a hierarchical representation.  This is a debugging aid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:BBS.TracerX.Logger.Root">
+            <summary>
+            The parent/ancestor of all Loggers.  If desired, all logging can be done through this logger.
+            </summary>
+        </member>
+        <member name="F:BBS.TracerX.Logger.StandardData">
+            <summary>
+            The Logger used to log standard environment data when the log file is opened.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Fatal(System.String)">
+            <summary>
+            Log a single string message.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Fatal(System.Object)">
+            <summary>
+            Log one object using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Fatal(System.Object,System.Object)">
+            <summary>
+            Log two objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Fatal(System.Object,System.Object,System.Object)">
+            <summary>
+            Log three objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Fatal(System.Object[])">
+            <summary>
+            Log many objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.FatalFormat(System.String,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.FatalFormat(System.String,System.Object,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.FatalFormat(System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.FatalFormat(System.String,System.Object[])">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.FatalCall">
+            <summary>
+            Log the entry of a method call. Use with "using" so the returned object's Dispose
+            method, which logs the method's exit, will be called automatically.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.FatalCall(System.String)">
+            <summary>
+            Log the entry of a manually specified method call. Use with "using" so the returned object's Dispose
+            method, which logs the method's exit, will be called automatically.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Error(System.String)">
+            <summary>
+            Log a single string message.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Error(System.Object)">
+            <summary>
+            Log one object using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Error(System.Object,System.Object)">
+            <summary>
+            Log two objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Error(System.Object,System.Object,System.Object)">
+            <summary>
+            Log three objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Error(System.Object[])">
+            <summary>
+            Log many objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.ErrorFormat(System.String,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.ErrorFormat(System.String,System.Object,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.ErrorFormat(System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.ErrorFormat(System.String,System.Object[])">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.ErrorCall">
+            <summary>
+            Log the entry of a method call. Use with "using" so the returned object's Dispose
+            method, which logs the method's exit, will be called automatically.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.ErrorCall(System.String)">
+            <summary>
+            Log the entry of a manually specified method call. Use with "using" so the returned object's Dispose
+            method, which logs the method's exit, will be called automatically.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Warn(System.String)">
+            <summary>
+            Log a single string message.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Warn(System.Object)">
+            <summary>
+            Log one object using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Warn(System.Object,System.Object)">
+            <summary>
+            Log two objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Warn(System.Object,System.Object,System.Object)">
+            <summary>
+            Log three objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Warn(System.Object[])">
+            <summary>
+            Log many objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.WarnFormat(System.String,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.WarnFormat(System.String,System.Object,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.WarnFormat(System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.WarnFormat(System.String,System.Object[])">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.WarnCall">
+            <summary>
+            Log the entry of a method call. Use with "using" so the returned object's Dispose
+            method, which logs the method's exit, will be called automatically.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.WarnCall(System.String)">
+            <summary>
+            Log the entry of manually specified a method call. Use with "using" so the returned object's Dispose
+            method, which logs the method's exit, will be called automatically.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Info(System.String)">
+            <summary>
+            Log a single string message.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Info(System.Object)">
+            <summary>
+            Log one object using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Info(System.Object,System.Object)">
+            <summary>
+            Log two objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Info(System.Object,System.Object,System.Object)">
+            <summary>
+            Log three objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Info(System.Object[])">
+            <summary>
+            Log many objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.InfoFormat(System.String,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.InfoFormat(System.String,System.Object,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.InfoFormat(System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.InfoFormat(System.String,System.Object[])">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.InfoCall">
+            <summary>
+            Log the entry of a method call. Use with "using" so the returned object's Dispose
+            method, which logs the method's exit, will be called automatically.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.InfoCall(System.String)">
+            <summary>
+            Log the entry of a manually specified method call. Use with "using" so the returned object's Dispose
+            method, which logs the method's exit, will be called automatically.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Debug(System.String)">
+            <summary>
+            Log a single string message.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Debug(System.Object)">
+            <summary>
+            Log one object using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Debug(System.Object,System.Object)">
+            <summary>
+            Log two objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Debug(System.Object,System.Object,System.Object)">
+            <summary>
+            Log three objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Debug(System.Object[])">
+            <summary>
+            Log many objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.DebugFormat(System.String,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.DebugFormat(System.String,System.Object,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.DebugFormat(System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.DebugFormat(System.String,System.Object[])">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.DebugCall">
+            <summary>
+            Log the entry of a method call. Use with "using" so the returned object's Dispose
+            method, which logs the method's exit, will be called automatically.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.DebugCall(System.String)">
+            <summary>
+            Log the entry of a method call. Use with "using" so the returned object's Dispose
+            method, which logs the method's exit, will be called automatically.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Verbose(System.String)">
+            <summary>
+            Log a single string message.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Verbose(System.Object)">
+            <summary>
+            Log one object using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Verbose(System.Object,System.Object)">
+            <summary>
+            Log two objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Verbose(System.Object,System.Object,System.Object)">
+            <summary>
+            Log three objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Verbose(System.Object[])">
+            <summary>
+            Log many objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.VerboseFormat(System.String,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.VerboseFormat(System.String,System.Object,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.VerboseFormat(System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.VerboseFormat(System.String,System.Object[])">
+            <summary>
+            Log a message with the semantics of string.Format.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.VerboseCall">
+            <summary>
+            Log the entry of a method call. Use with "using" so the returned object's Dispose
+            method, which logs the method's exit, will be called automatically.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.VerboseCall(System.String)">
+            <summary>
+            Log the entry of a manually specified method call. Use with "using" so the returned object's Dispose
+            method, which logs the method's exit, will be called automatically.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.#ctor(System.String)">
+            <summary>
+            Ctor is private.  GetLogger() should be the only caller.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.IsLevelEnabled(BBS.TracerX.TraceLevel)">
+            <summary>
+            Returns true if the specified message TraceLevel is enabled for any destination.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.MaybeLog(BBS.TracerX.TraceLevel,System.String)">
+            <summary>
+            Log a single string message.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.MaybeLog(BBS.TracerX.TraceLevel,System.Object)">
+            <summary>
+            Log one object using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.MaybeLog(BBS.TracerX.TraceLevel,System.Object,System.Object)">
+            <summary>
+            Log two objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.MaybeLog(BBS.TracerX.TraceLevel,System.Object,System.Object,System.Object)">
+            <summary>
+            Log three objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.MaybeLog(BBS.TracerX.TraceLevel,System.Object[])">
+            <summary>
+            Log many objects concatenated together using the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.MaybeLogFormat(BBS.TracerX.TraceLevel,System.String,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            This does NOT use the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.MaybeLogFormat(BBS.TracerX.TraceLevel,System.String,System.Object,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            This does NOT use the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.MaybeLogFormat(BBS.TracerX.TraceLevel,System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            Log a message with the semantics of string.Format.
+            This does NOT use the RendererMap.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.MaybeLogFormat(BBS.TracerX.TraceLevel,System.String,System.Object[])">
+            <summary>
+            Log a message with the semantics of string.Format.
+            This does NOT use the RendererMap
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.GetCaller">
+            <summary>
+            Searches the call stack for the first StackFrame that is not
+            for a method from this class.  We can't hard-code the depth
+            because the optimizer sometimes inlines the calling method(s)
+            from this class.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.AddLogger(BBS.TracerX.Logger)">
+            <summary>
+            Makes the specified Logger this logger's child or sub-child and sets
+            _effectiveTraceLevel for the specified Logger and any children.
+            Thread safety is ensured by the caller.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.MaxUnhandledExceptionsLogged">
+            <summary>
+            The maximum number of events TracerX will log to the event log regarding
+            unhandled exceptions that occur in the application.  TracerX detects these exceptions
+            via the Application.ThreadException and AppDomain.CurrentDomain.UnhandledException events.
+            If you have your own handlers for these events, you can set this to 0.  Otherwise,
+            unhandled exceptions will be very hard to diagnose.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.Name">
+            <summary>
+            The name of the logger determines how the logger fits in the hierarchy based on
+            it's dotted notation (e.g. A.B.C is a child or grandchild of A).
+            The name is set in the call to GetLogger and is read-only thereafter.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.FileTraceLevel">
+            <summary>
+            This controls which logging calls send output to the file.  Only those calls at levels
+            less than or equal to FileTraceLevel go to the file.  If FileTraceLevel is set to
+            Undefined, the getter returns the trace Level inherited from the parent logger.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.ConsoleTraceLevel">
+            <summary>
+            Similar to FileTraceLevel, but applies to console output.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.DebugTraceLevel">
+            <summary>
+            Similar to FileTraceLevel, but applies to Debug output.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.EventLogTraceLevel">
+            <summary>
+            Similar to FileTraceLevel, but applies to event log output.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.IsFatalEnabled">
+            <summary>
+            True if Fatal level logging is enabled for any destination.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.IsErrorEnabled">
+            <summary>
+            True if Error level logging is enabled for any destination.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.IsWarnEnabled">
+            <summary>
+            True if Warn level logging is enabled for any destination.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.IsInfoEnabled">
+            <summary>
+            True if Info level logging is enabled for any destination.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.IsDebugEnabled">
+            <summary>
+            True if Debug level logging is enabled for any destination.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.IsVerboseEnabled">
+            <summary>
+            True if Verbose level logging is enabled for any destination.
+            </summary>
+        </member>
+        <member name="T:BBS.TracerX.Logger.FileLogging">
+            <summary>
+            Methods and configuration for logging to a file.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.FileLogging.Open">
+            <summary>
+            Open the log file using the current value of various properties.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.FileLogging.Close">
+            <summary>
+            Close the log file.  It cannot be reopened.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.FileLogging.FormatVersion">
+            <summary>
+            The format version of the file.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.FileLogging.IsOpen">
+            <summary>
+            Is the output file currently open?
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.FileLogging.CircularStarted">
+            <summary>
+            Has circular logging started (not necessarily wrapped)?
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.FileLogging.Wrapped">
+            <summary>
+            Returns true if the file size has exceeded the max size.  Once this becomes
+            true, future output replaces old output.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.FileLogging.CurrentSize">
+            <summary>
+            The current size of the output file.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.FileLogging.Directory">
+            <summary>
+            Directory of the output log file.  Environment variables are expanded
+            when this is set.  
+            %LOCAL_APPDATA% (not a real environment variable) 
+            is expanded to the current user's local (i.e. non-roaming) 
+            application data directory.
+            %EXEDIR% (not a real environment variable) is expanded to the directory
+            of the executable.  Other special variables are %COMMON_APPDATA%,
+            %DESKTOP%, and %MY_DOCUMENTS%.
+            Attempts to change this property after the log file is open are ignored.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.FileLogging.Name">
+            <summary>
+            The name of the log file within the LogDirectory.  The default is based on the
+            running executable name.  The extension is always coerced to ".tx1".
+            Attempts to change this property after the log file is open are ignored.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.FileLogging.FullPath">
+            <summary>
+            Full path of the log file.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.FileLogging.MaxSizeMb">
+            <summary>
+            Max size of the output log file in megabytes (1 Mb = 2**20 bytes).
+            Values over 4095 are coerced to 4095.
+            Attempts to change this property after the log file is open are ignored.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.FileLogging.Archives">
+            <summary>
+            How many backups of the output log file to keep (max of 9).
+            Attempts to change this property after the log file is open are ignored.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.FileLogging.CircularStartSizeKb">
+            <summary>
+            Circular logging will start when the log file reaches this size, unless already started.
+            Set this to 0 to disable this feature.
+            Attempts to change this value are ignored after circular logging starts.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.FileLogging.CircularStartDelaySeconds">
+            <summary>
+            Circular logging will start when the log file has been opened this many seconds, unless already started.
+            Set this to 0 to disable this feature.
+            Attempts to change this value are ignored after circular logging starts.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.FileLogging.Password">
+            <summary>
+            If a password is set before the file is opened, the viewer will
+            require the user to enter the same password to open the file.
+            </summary>
+        </member>
+        <member name="T:BBS.TracerX.Logger.ConsoleLogging">
+            <summary>
+            Methods and configuration for logging to the console.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.ConsoleLogging.FormatString">
+            <summary>
+            Controls which fields are written to the console by all all loggers
+            where Logger.ConsoleTraceLevel is greater than or equal to the log statement's level.
+            Uses the following substitution parameters.
+            {line} = Line number 
+            {level} = Trace level 
+            {logger} = Logger name 
+            {thnum} = Thread number (not thread ID). 
+            {thname} = Thread name  
+            {time} = Time stamp   
+            {method} = Method name  
+            {ind} = Indentation  
+            {msg} = Message text 
+            </summary>
+        </member>
+        <member name="T:BBS.TracerX.Logger.CallEnder">
+            <exclude/>
+            <summary>
+            The Logger.*Call methods log a call to a method and return an instance of this class. 
+            Its Dispose method logs the exit of the call.
+            Users should not create instances of this object.  
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.CallEnder.#ctor">
+            <summary>
+            Internal ctor keeps logging clients from creating instances.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.CallEnder.Dispose">
+            <summary>
+            If MaybeLogCall logged entry into a call, this logs the exit.
+            </summary>
+        </member>
+        <member name="T:BBS.TracerX.Logger.Xml">
+            <summary>
+            Use this class to initialize the TracerX environment using an Xml tree.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Xml.Configure">
+            <summary>
+            Automatically configures the TracerX system based on the 
+            application's configuration settings.  Does not open the log file
+            </summary>
+            <remarks>
+            <para>
+            Each application has a configuration file. This has the
+            same name as the application with '.config' appended.
+            This file is XML and calling this function prompts the
+            configurator to look in that file for a section called
+            <c>TracerX</c> that contains the configuration data.
+            </para>
+            <para>
+            To use this method to configure TracerX you must specify 
+            the "ConfigurationSectionHandler" section
+            handler for the <c>TracerX</c> configuration section. 
+            </para>
+            </remarks>
+            <returns>
+            Returns true if no errors or warnings occurred. If false is returned,
+            look in the application event log for events logged by TracerX.
+            </returns>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Xml.Configure(System.IO.FileInfo)">
+            <summary>
+            Configures TracerX using the specified configuration file.
+            </summary>
+            <param name="configFile">The XML file to load the configuration from.</param>
+            <remarks>
+            The configuration file must be valid XML. It must contain
+            at least one element called <c>TracerX</c> that holds
+            the TracerX configuration data.
+            </remarks>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Xml.Configure(System.IO.Stream)">
+            <summary>
+            Configures TracerX using the specified configuration data stream.
+            </summary>
+            <param name="configStream">A stream to load the XML configuration from.</param>
+            <remarks>
+            <para>
+            The configuration data must be valid XML. It must contain
+            at least one element called <c>TracerX</c> that holds
+            the TracerX configuration data.
+            </para>
+            <para>
+            Note that this method will NOT close the stream parameter.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Xml.ConfigureFromXml(System.Xml.XmlElement)">
+            <summary>
+            Configures TracerX using an <c>TracerX</c> element.
+            </summary>
+            <param name="element">The element to parse.</param>
+            <remarks>
+            <para>
+            Loads the TracerX configuration from the XML element
+            supplied as <paramref name="element"/>.
+            </para>
+            <para>
+            This method is ultimately called by one of the Configure methods 
+            to load the configuration from an <see cref="T:System.Xml.XmlElement"/>.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Xml.ConfigureAndWatch(System.IO.FileInfo)">
+            <summary>
+            Configures TracerX using the file specified, monitors the file for changes 
+            and reloads the configuration if a change is detected.
+            </summary>
+            <param name="configFile">The XML file to load the configuration from.</param>
+            <remarks>
+            <para>
+            The configuration file must be valid XML. It must contain
+            at least one element called <c>TracerX</c> that holds
+            the configuration data.
+            </para>
+            <para>
+            The configuration file will be monitored using a <see cref="T:System.IO.FileSystemWatcher"/>
+            and depends on the behavior of that class.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:BBS.TracerX.Logger.Xml.ConfigureAndWatchHandler">
+            <summary>
+            Class used to watch config files.
+            </summary>
+            <remarks>
+            <para>
+            Uses the <see cref="T:System.IO.FileSystemWatcher"/> to monitor
+            changes to a specified file. Because multiple change notifications
+            may be raised when the file is modified, a timer is used to
+            compress the notifications into a single event. The timer
+            waits for <see cref="F:BBS.TracerX.Logger.Xml.ConfigureAndWatchHandler.TimeoutMillis"/> time before delivering
+            the event notification. If any further <see cref="T:System.IO.FileSystemWatcher"/>
+            change notifications arrive while the timer is waiting it
+            is reset and waits again for <see cref="F:BBS.TracerX.Logger.Xml.ConfigureAndWatchHandler.TimeoutMillis"/> to
+            elapse.
+            </para>
+            </remarks>
+        </member>
+        <member name="F:BBS.TracerX.Logger.Xml.ConfigureAndWatchHandler.TimeoutMillis">
+            <summary>
+            The default amount of time to wait after receiving notification
+            before reloading the config file.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Xml.ConfigureAndWatchHandler.StartWatching(System.IO.FileInfo)">
+            <summary>
+            Watch a specified config file used to configure TracerX
+            </summary>
+            <param name="configFile">The configuration file to watch.</param>
+        </member>
+        <member name="F:BBS.TracerX.Logger.Xml.ConfigureAndWatchHandler.m_configFile">
+            <summary>
+            Holds the FileInfo used to configure the XmlConfigurator
+            </summary>
+        </member>
+        <member name="F:BBS.TracerX.Logger.Xml.ConfigureAndWatchHandler.m_timer">
+            <summary>
+            The timer used to compress the notification events.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Xml.ConfigureAndWatchHandler.#ctor(System.IO.FileInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BBS.TracerX.Logger.Xml.ConfigureAndWatchHandler"/> class.
+            </summary>
+            <param name="configFile">The configuration file to watch.</param>
+            <remarks>
+            <para>
+            Initializes a new instance of the <see cref="T:BBS.TracerX.Logger.Xml.ConfigureAndWatchHandler"/> class.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Xml.ConfigureAndWatchHandler.ConfigureAndWatchHandler_OnChanged(System.Object,System.IO.FileSystemEventArgs)">
+            <summary>
+            Event handler used by <see cref="T:BBS.TracerX.Logger.Xml.ConfigureAndWatchHandler"/>.
+            </summary>
+            <param name="source">The <see cref="T:System.IO.FileSystemWatcher"/> firing the event.</param>
+            <param name="e">The argument indicates the file that caused the event to be fired.</param>
+            <remarks>
+            <para>
+            This handler reloads the configuration from the file when the event is fired.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Xml.ConfigureAndWatchHandler.ConfigureAndWatchHandler_OnRenamed(System.Object,System.IO.RenamedEventArgs)">
+            <summary>
+            Event handler used by <see cref="T:BBS.TracerX.Logger.Xml.ConfigureAndWatchHandler"/>.
+            </summary>
+            <param name="source">The <see cref="T:System.IO.FileSystemWatcher"/> firing the event.</param>
+            <param name="e">The argument indicates the file that caused the event to be fired.</param>
+            <remarks>
+            <para>
+            This handler reloads the configuration from the file when the event is fired.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:BBS.TracerX.Logger.Xml.ConfigureAndWatchHandler.OnWatchedFileChange(System.Object)">
+            <summary>
+            Called by the timer when the configuration has been updated.
+            </summary>
+            <param name="state">null</param>
+        </member>
+        <member name="T:BBS.TracerX.Logger.DebugLogging">
+            <summary>
+            Methods and configuration for logging via Trace.WriteLine.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.DebugLogging.FormatString">
+            <summary>
+            Controls which fields are passed to Trace.WriteLine by all loggers
+            where Logger.DebugTraceLevel is greater than or equal to the log statement's level.
+            Uses the following substitution parameters.
+            {line} = Line number 
+            {level} = Trace level 
+            {logger} = Logger name 
+            {thnum} = Thread number (not thread ID). 
+            {thname} = Thread name  
+            {time} = Time stamp   
+            {method} = Method name  
+            {ind} = Indentation  
+            {msg} = Message text 
+            </summary>
+        </member>
+        <member name="T:BBS.TracerX.Logger.EventLogging">
+            <summary>
+            Methods and configuration for logging to an event log.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.EventLogging.EventLog">
+            <summary>
+            The EventLog object used for all TracerX event logging.  Set this before opening the
+            log file, since that action can log events.  By default, TracerX logs to the
+            application event log on the local computer using the source "TracerX - 'exe name'".
+            Cannot be set in XML.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.EventLogging.FormatString">
+            <summary>
+            Controls which fields are written to the event log by all loggers where
+            Logger.EventLogTraceLevel is greater than or equal to the log statement's level. See ConsoleFormatString for the
+            substitution parameters.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.EventLogging.EventIdMap">
+            <summary>
+            This specifies what event ID number to use for each TraceLevel.
+            Cannot be set in XML.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.EventLogging.EventTypeMap">
+            <summary>
+            This specifies what EventTypeMap to use for each TraceLevel.
+            Cannot be set in XML.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.EventLogging.MaxInternalEventNumber">
+            <summary>
+            The maximum internal event number that will be logged by TracerX.  
+            1-100 for errors, 101-200 for warnings, 201-300 for info.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Logger.EventLogging.InternalEventOffset">
+            <summary>
+            The number that is added to internal event numbers just before they are logged.
+            </summary>
+        </member>
+        <member name="T:BBS.TracerX.XmlConfigSectionHandler">
+            <summary>
+            Class to register for the TracerX section of the app.config file
+            </summary>
+            <remarks>
+            The TracerX section of the configuration file needs to have a section
+            handler registered. This is the section handler used. It simply returns
+            the XML element that is the root of the section.
+            </remarks>
+            <example>
+            Example of registering the TracerX section handler :
+            <code lang="XML" escaped="true">
+            <configuration>
+            	<configSections>
+            		<section name="TracerX" type="TracerX.XmlConfigSectionHandler, TracerX" />
+            	</configSections>
+            	<TracerX>
+            		TracerX configuration XML goes here
+            	</TracerX>
+            </configuration>
+            </code>
+            </example>
+        </member>
+        <member name="M:BBS.TracerX.XmlConfigSectionHandler.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BBS.TracerX.XmlConfigSectionHandler"/> class.
+            </summary>
+            <remarks>
+            <para>
+            Default constructor.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:BBS.TracerX.XmlConfigSectionHandler.Create(System.Object,System.Object,System.Xml.XmlNode)">
+            <summary>
+            Parses the configuration section.
+            </summary>
+            <param name="parent">The configuration settings in a corresponding parent configuration section.</param>
+            <param name="configContext">The configuration context when called from the ASP.NET configuration system. Otherwise, this parameter is reserved and is a null reference.</param>
+            <param name="section">The <see cref="T:System.Xml.XmlNode"/> for the TracerX section.</param>
+            <returns>The <see cref="T:System.Xml.XmlNode"/> for the TracerX section.</returns>
+            <remarks>
+            <para>
+            Returns the <see cref="T:System.Xml.XmlNode"/> containing the configuration data,
+            </para>
+            </remarks>
+        </member>
+        <member name="T:BBS.TracerX.TraceLevel">
+            <summary>
+            Each Logger has a TracerX.TraceLevel property for each logging destination that specifies
+            the highest Level of output allowed by that Logger for each destination. If the TraceLevel
+            is Undefined, the effective TraceLevel is inherited from the Logger's parent Logger.
+            </summary>
+        </member>
+        <member name="F:BBS.TracerX.TraceLevel.Undefined">
+            <summary> 
+            A Logger with an Undefined trace level inherits its TraceLevel from its parent. 
+            </summary>
+        </member>
+        <member name="F:BBS.TracerX.TraceLevel.Off">
+            <summary> Turns logging off for the Logger/destination with this level. </summary>
+        </member>
+        <member name="F:BBS.TracerX.TraceLevel.Fatal">
+            <summary> Allows only Fatal level messages to be logged. </summary>
+        </member>
+        <member name="F:BBS.TracerX.TraceLevel.Error">
+            <summary> Allows only Fatal and Error level messages to be logged. </summary>
+        </member>
+        <member name="F:BBS.TracerX.TraceLevel.Warn">
+            <summary> Allows only Fatal through Warn level messages to be logged. </summary>
+        </member>
+        <member name="F:BBS.TracerX.TraceLevel.Info">
+            <summary> Allows only Fatal through Info level messages to be logged. </summary>
+        </member>
+        <member name="F:BBS.TracerX.TraceLevel.Debug">
+            <summary> Allows only Fatal through Debug level messages to be logged. </summary>
+        </member>
+        <member name="F:BBS.TracerX.TraceLevel.Verbose">
+            <summary> Allows only Fatal through Verbose level messages to be logged. </summary>
+        </member>
+        <member name="T:BBS.TracerX.DataFlags">
+            <summary> One of these is prepended to every logged message to indicate what data is present. </summary>
+        </member>
+        <member name="F:BBS.TracerX.Viewer.MainForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.MainForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.MainForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Commander.UICommandProvider">
+            <summary>
+            UICommandProvider allows most UI elements (those derived from Control and ToolStripItem)
+            to have a UICommand property.  When several UI elements have the same UICommand property,
+            they can all be enabled/disabled at the same time via UICommand.Enabled and they all raise
+            the same UICommand.Execute event when clicked.
+            </summary>
+        </member>
+        <member name="M:Commander.UICommandProvider.SetUICommand(System.ComponentModel.Component,Commander.UICommand)">
+            <summary>
+            This sets the UICommand instance of the specified control.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Commander.UICommandProvider.GetUICommand(System.ComponentModel.Component)" -->
+        <member name="F:Commander.UICommandProvider.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Commander.UICommandProvider.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Commander.UICommandProvider.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:BBS.TracerX.Viewer.FileProperties.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.FileProperties.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.FileProperties.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:BBS.TracerX.RendererMap">
+            <summary>
+            Maps object types to <see cref="T:BBS.TracerX.IObjectRenderer"/>s that render objects of each registered
+            type as strings for logging.
+            </summary>
+            <remarks>
+            <para>
+            Maintains a mapping between types that require special
+            rendering and the <see cref="T:BBS.TracerX.IObjectRenderer"/> that
+            is used to render them.  Users should implement IObjectRenderer as required
+            for types where ToString() is insufficient and add the IObjectRenderer objects
+            to the RendererMap.  
+            </para>
+            <para>
+            The <see cref="M:BBS.TracerX.RendererMap.FindAndRender(System.Object)"/> method is called by TracerX to render an
+            <c>object</c> using the appropriate renderers defined in this map.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:BBS.TracerX.RendererMap.FindAndRender(System.Object)">
+            <summary>
+            Render <paramref name="obj"/> using the appropriate renderer.
+            </summary>
+            <param name="obj">the object to render to a string</param>
+            <returns>the object rendered as a string</returns>
+            <remarks>
+            <para>
+            This is a convenience method used to render an object to a string.
+            The alternative method <see cref="M:BBS.TracerX.RendererMap.FindAndRender(System.Object,System.IO.TextWriter)"/>
+            should be used when streaming output to a <see cref="T:System.IO.TextWriter"/>.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:BBS.TracerX.RendererMap.FindAndRender(System.Object,System.IO.TextWriter)">
+            <summary>
+            Render <paramref name="obj"/> using the appropriate renderer.
+            </summary>
+            <param name="obj">the object to render to a string</param>
+            <param name="writer">The writer to render to</param>
+            <remarks>
+            <para>
+            Find the appropriate renderer for the type of the
+            <paramref name="obj"/> parameter. This is accomplished by calling the
+            <see cref="M:BBS.TracerX.RendererMap.Get(System.Type)"/> method. Once a renderer is found, it is
+            applied on the object <paramref name="obj"/> and the result is returned
+            as a <see cref="T:System.String"/>.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:BBS.TracerX.RendererMap.Get(System.Object)">
+            <summary>
+            Gets the renderer for the specified object type
+            </summary>
+            <param name="obj">the object to lookup the renderer for</param>
+            <returns>the renderer for <paramref name="obj"/></returns>
+            <remarks>
+            <param>
+            Gets the renderer for the specified object type.
+            </param>
+            <param>
+            Syntactic sugar method that calls <see cref="M:BBS.TracerX.RendererMap.Get(System.Type)"/> 
+            with the type of the object parameter.
+            </param>
+            </remarks>
+        </member>
+        <member name="M:BBS.TracerX.RendererMap.Get(System.Type)">
+            <summary>
+            Gets the renderer for the specified type
+            </summary>
+            <param name="type">the type to lookup the renderer for</param>
+            <returns>the renderer for the specified type</returns>
+            <remarks>
+            <para>
+            Returns the renderer for the specified type.
+            If no specific renderer has been defined the
+            <see cref="P:BBS.TracerX.RendererMap.DefaultRenderer"/> will be returned.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:BBS.TracerX.RendererMap.SearchTypeAndInterfaces(System.Type)">
+            <summary>
+            Internal function to recursively search interfaces
+            </summary>
+            <param name="type">the type to lookup the renderer for</param>
+            <returns>the renderer for the specified type</returns>
+        </member>
+        <member name="M:BBS.TracerX.RendererMap.Clear">
+            <summary>
+            Clear the map of renderers
+            </summary>
+            <remarks>
+            <para>
+            Clear the custom renderers defined by using
+            <see cref="M:BBS.TracerX.RendererMap.Put(System.Type,BBS.TracerX.IObjectRenderer)"/>. The <see cref="P:BBS.TracerX.RendererMap.DefaultRenderer"/>
+            cannot be removed.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:BBS.TracerX.RendererMap.Put(System.Type,BBS.TracerX.IObjectRenderer)">
+            <summary>
+            Register an <see cref="T:BBS.TracerX.IObjectRenderer"/> for <paramref name="typeToRender"/>. 
+            </summary>
+            <param name="typeToRender">the type that will be rendered by <paramref name="renderer"/></param>
+            <param name="renderer">the renderer for <paramref name="typeToRender"/></param>
+            <remarks>
+            <para>
+            Register an object renderer for a specific source type.
+            This renderer will be returned from a call to <see cref="M:BBS.TracerX.RendererMap.Get(System.Type)"/>
+            specifying the same <paramref name="typeToRender"/> as an argument.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:BBS.TracerX.RendererMap.DefaultRenderer">
+            <summary>
+            Get the default renderer instance
+            </summary>
+            <value>the default renderer</value>
+            <remarks>
+            <para>
+            Get the default renderer
+            </para>
+            </remarks>
+        </member>
+        <member name="F:BBS.TracerX.Viewer.FindDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.FindDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.FindDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:BBS.TracerX.ExceptionRenderer">
+            <summary>
+            Renders an Exception object and its inner exceptions.  
+            This includes the key:value pairs in Exception.Data, which
+            Exception.ToString() does not.  Exception.Message is typically
+            overridden in derived classes as necessary to render additional information
+            that is not present in the base Exception class (e.g. ArgumentException.ParamName).
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.ExceptionRenderer.RenderObject(System.Object,System.IO.TextWriter)">
+            <summary>
+            Render the object <paramref name="obj"/> to a string
+            </summary>
+        </member>
+        <member name="F:BBS.TracerX.Viewer.ColumnsDlg.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.ColumnsDlg.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.ColumnsDlg.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:BBS.TracerX.Viewer.ListViewItemSorter">
+            <summary>
+            Implements the sorting of a ListView by any column.
+            By default, it sorts by the text property of the column 
+            passed to the Sort method.  To override that, set the
+            column's Tag to a RowComparer delegate.
+            </summary>
+        </member>
+        <member name="M:BBS.TracerX.Viewer.ListViewItemSorter.#ctor(System.Windows.Forms.ListView)">
+            <summary>
+            Ctor takes the ListView to be sorted as a parameter.
+            </summary>
+        </member>
+        <member name="T:BBS.TracerX.Viewer.ListViewItemSorter.RowComparer">
+            <summary>
+            If it is not sufficient to sort a given column by passing the column text
+            to string.Compare() (see DefaultComparer), implement your own delegate
+            of this type and store a reference to it in the ColumnHeader.Tag property.
+            </summary>
+        </member>
+        <member name="T:Commander.UICommand">
+            <summary>
+            Several UI controls (e.g. a menu item, toolbar button, and a regular
+            button) can be associated with a single UICommand.  Enabling/disabling the UICommand
+            object enables/disables the UI controls.  Clicking one of the UI controls raises the
+            UICommand.Execute event.  Another class (UICommandProvider) allows the programmer to
+            specify a UICommand instance for each UI controls.
+            </summary>
+        </member>
+        <member name="F:Commander.UICommand.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Commander.UICommand.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Commander.UICommand.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Viewer.ThreadName.Visible">
+            <summary>
+            Is the output from this thread visible?
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.Viewer.ThreadName.AllVisible">
+            <summary>
+            Are all threads visible?
+            </summary>
+        </member>
+        <member name="E:BBS.TracerX.Viewer.ThreadName.AllVisibleChanged">
+            <summary>
+            Event called when AllVisible changes.
+            </summary>
+        </member>
+        <member name="T:BBS.TracerX.ThreadData">
+            <summary>
+            Contains information about a logging thread stored 
+            in ThreadStatic (i.e. thread-local) memory.
+            An instance is created for each thread that uses TracerX.
+            
+            Testing has shown that the instance is released when the thread exits and that
+            instances associated with ThreadPool threads DO NOT get released
+            when the thread is returned to the pool.  
+            Testing has shown that when a ThreadPool thread is recycled, 
+              1) Its ManagedThreadId remains the same.
+              2) Its ThreadStatic storage remains allocated and associated with the thread.
+              3) Its Name is reset to null and a new name can be assigned.
+            
+            TracerX does not use the ManagedThreadId because the CLR
+            appears to recycle the IDs.  That is, a new thread will often be assigned the
+            same ManagedThreadId as another thread that recently terminated.  This means
+            ManagedThreadId isn't unique for the life of the process (and therefore the log).
+            </summary>
+        </member>
+        <member name="P:BBS.TracerX.ThreadData.CurrentThreadData">
+            <summary>
+            This returns the thread-local (i.e. ThreadStatic) instance of ThreadData
+            for the calling thread, creating it on the first reference from a given thread. 
+            </summary>
+        </member>
+    </members>
+</doc>

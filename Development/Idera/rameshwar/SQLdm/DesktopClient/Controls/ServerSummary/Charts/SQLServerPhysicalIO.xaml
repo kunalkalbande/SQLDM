@@ -1,0 +1,75 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:ig="http://schemas.infragistics.com/xaml"
+	mc:Ignorable="d"
+	x:Class="Idera.SQLdm.DesktopClient.Controls.ServerSummary.Charts.SQLServerPhysicalIO"
+	xmlns:local="clr-namespace:Idera.SQLdm.DesktopClient.Controls.ServerSummary" d:DesignWidth="661" d:DesignHeight="104" DataContextChanged="UserControl_DataContextChanged" MouseRightButtonUp="UserControl_MouseRightButtonUp">    
+	<d:UserControl.Resources>
+		<local:OverviewDiskDriveStatisticsConverter x:Key="OverviewDiskDriveStatisticsConverter"/>
+	</d:UserControl.Resources>
+	<d:UserControl.DataContext>
+		<local:ServerSummaryDataModel/>
+	</d:UserControl.DataContext>	
+	<Grid x:Name="LayoutRoot">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<ig:XamDataChart x:Name="xamDataChart1" Margin="0" Grid.Column="0">
+			<ig:XamDataChart.Series>
+                <ig:LineSeries ValueMemberPath="Disk.AvgDiskSecPerRead" YAxis="{Binding ElementName=yAxis1}" XAxis="{Binding ElementName=xAxis1}" ItemsSource="{Binding ChartData, ConverterParameter=C:, Converter={StaticResource OverviewDiskDriveStatisticsConverter}}"/>
+                <ig:LineSeries ValueMemberPath="Disk.AvgDiskSecPerWrite" YAxis="{Binding ElementName=yAxis1}" XAxis="{Binding ElementName=xAxis1}" ItemsSource="{Binding ChartData, ConverterParameter=C:, Converter={StaticResource OverviewDiskDriveStatisticsConverter}}"/>
+                <ig:LineSeries ValueMemberPath="Disk.AvgDiskSecPerRead" YAxis="{Binding ElementName=yAxis1}" XAxis="{Binding ElementName=xAxis1}" ItemsSource="{Binding ChartData, ConverterParameter=D:, Converter={StaticResource OverviewDiskDriveStatisticsConverter}}"/>
+                <ig:LineSeries ValueMemberPath="Disk.AvgDiskSecPerWrite" YAxis="{Binding ElementName=yAxis1}" XAxis="{Binding ElementName=xAxis1}" ItemsSource="{Binding ChartData, ConverterParameter=D:, Converter={StaticResource OverviewDiskDriveStatisticsConverter}}"/>
+			</ig:XamDataChart.Series>
+			<ig:XamDataChart.Axes>
+				<ig:CategoryDateTimeXAxis x:Name="xAxis1" DateTimeMemberPath="TimeStampLocal" ItemsSource="{Binding ChartData}" Label="{}{H:mm:ss}" Interval="00:15:00" />
+				<ig:NumericYAxis x:Name="yAxis1" Interval="100000">
+					<ig:NumericYAxis.LabelSettings>
+						<ig:AxisLabelSettings Extent="50" Location="InsideTop" FontStretch="Expanded" />
+					</ig:NumericYAxis.LabelSettings>
+				</ig:NumericYAxis>
+			</ig:XamDataChart.Axes>
+			<ig:SyncManager.SyncSettings><ig:SyncSettings SyncChannel="serverOverview" SynchronizeHorizontally="True" SynchronizeVertically="False"/></ig:SyncManager.SyncSettings>
+		</ig:XamDataChart>
+		<ig:XamDataChart x:Name="xamDataChart2" Margin="0" Grid.Column="1">
+			<ig:XamDataChart.Series>
+                <ig:LineSeries ValueMemberPath="Disk.DiskReadsPerSec" YAxis="{Binding ElementName=yAxis2}" XAxis="{Binding ElementName=xAxis2}" ItemsSource="{Binding ChartData, ConverterParameter=C:, Converter={StaticResource OverviewDiskDriveStatisticsConverter}}"/>
+                <ig:LineSeries ValueMemberPath="Disk.DiskWritesPerSec" YAxis="{Binding ElementName=yAxis2}" XAxis="{Binding ElementName=xAxis2}" ItemsSource="{Binding ChartData, ConverterParameter=C:, Converter={StaticResource OverviewDiskDriveStatisticsConverter}}"/>
+                <ig:LineSeries ValueMemberPath="Disk.DiskReadsPerSec" YAxis="{Binding ElementName=yAxis2}" XAxis="{Binding ElementName=xAxis2}" ItemsSource="{Binding ChartData, ConverterParameter=D:, Converter={StaticResource OverviewDiskDriveStatisticsConverter}}"/>
+                <ig:LineSeries ValueMemberPath="Disk.DiskWritesPerSec" YAxis="{Binding ElementName=yAxis2}" XAxis="{Binding ElementName=xAxis2}" ItemsSource="{Binding ChartData, ConverterParameter=D:, Converter={StaticResource OverviewDiskDriveStatisticsConverter}}"/>
+			</ig:XamDataChart.Series>
+			<ig:XamDataChart.Axes>
+                <ig:CategoryDateTimeXAxis x:Name="xAxis2" DateTimeMemberPath="TimeStampLocal" Label="{}{H:mm:ss}" Interval="00:15:00" ItemsSource="{Binding ChartData}"/>
+				<ig:NumericYAxis x:Name="yAxis2" Interval="90">
+					<ig:NumericYAxis.LabelSettings>
+						<ig:AxisLabelSettings Extent="30" FontStretch="Condensed"/>
+					</ig:NumericYAxis.LabelSettings>
+				</ig:NumericYAxis>
+			</ig:XamDataChart.Axes>
+			<ig:SyncManager.SyncSettings><ig:SyncSettings SyncChannel="serverOverview" SynchronizeHorizontally="True" SynchronizeVertically="False"/></ig:SyncManager.SyncSettings>
+		</ig:XamDataChart>
+		<ig:XamDataChart x:Name="xamDataChart3" Margin="0" Grid.Column="2">
+			<ig:XamDataChart.Series>
+				<ig:LineSeries ValueMemberPath="CheckPointWrites" YAxis="{Binding ElementName=yAxis3}" XAxis="{Binding ElementName=xAxis3}" ItemsSource="{Binding RealtimeSnapshotData}"/>
+                <ig:LineSeries ValueMemberPath="LazyWriterWrites" YAxis="{Binding ElementName=yAxis3}" XAxis="{Binding ElementName=xAxis3}" ItemsSource="{Binding RealtimeSnapshotData}"/>
+                <ig:LineSeries ValueMemberPath="ReadAheadPages" YAxis="{Binding ElementName=yAxis3}" XAxis="{Binding ElementName=xAxis3}" ItemsSource="{Binding RealtimeSnapshotData}"/>
+                <ig:LineSeries ValueMemberPath="PageReads" YAxis="{Binding ElementName=yAxis3}" XAxis="{Binding ElementName=xAxis3}" ItemsSource="{Binding RealtimeSnapshotData}"/>
+                <ig:LineSeries ValueMemberPath="PageWrites" YAxis="{Binding ElementName=yAxis3}" XAxis="{Binding ElementName=xAxis3}" ItemsSource="{Binding RealtimeSnapshotData}"/>
+			</ig:XamDataChart.Series>
+			<ig:XamDataChart.Axes>
+                <ig:CategoryDateTimeXAxis x:Name="xAxis3" DateTimeMemberPath="Date" Label="{}{hh:mm}" Interval="00:15:00" ItemsSource="{Binding RealtimeSnapshotData}"></ig:CategoryDateTimeXAxis>
+                <ig:NumericYAxis x:Name="yAxis3">					
+					<ig:NumericYAxis.LabelSettings>
+						<ig:AxisLabelSettings Extent="20"/>
+					</ig:NumericYAxis.LabelSettings>
+				</ig:NumericYAxis>
+			</ig:XamDataChart.Axes>
+			<ig:SyncManager.SyncSettings><ig:SyncSettings SyncChannel="serverOverview" SynchronizeHorizontally="True" SynchronizeVertically="False"/></ig:SyncManager.SyncSettings>
+		</ig:XamDataChart>
+	</Grid>
+</UserControl>

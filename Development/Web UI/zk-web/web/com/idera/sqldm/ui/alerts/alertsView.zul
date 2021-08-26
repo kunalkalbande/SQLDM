@@ -1,0 +1,196 @@
+<window id="alertDetailWindow" border="none" height="640px" width="900px"
+    apply="com.idera.sqldm.ui.alerts.AlertDetailsViewModel"
+    position="center,center" closable="true"
+    contentSclass="modal-dialog-window margin-all-0 padding-all-0 vertical-overflow" style="border-radius: 0;">
+    <style>
+        .highcharts-button {
+           display:none;
+        }
+
+	.white-text-orange-button
+	{
+	text-transform: uppercase;
+	}
+    </style>
+    
+    <zk>
+    <script type="text/javascript" defer="true">
+		 var dateTime  = zk.Widget.$('$alertTime').$n().textContent;
+		 var date = dateTime.replace(/\s/g,' ');
+
+		 var tokens = date.split(/[ /:]/);
+
+		 var month = tokens[0];
+		 var day = tokens[1];
+		 var year = tokens[2];
+		 var hours = tokens[3];
+		 var minutes = tokens[4];
+         var format = tokens[5];
+		 
+		 if(format === "PM"){
+		 	hours += 12;
+		 }
+		
+		 var newDate = new Date(Date.UTC(tokens[2], tokens[0], tokens[1], hours, tokens[4]));
+
+		 var newDay = newDate.getDate();
+		 var newYear = newDate.getYear();
+		 var newMonth = newDate.getMonth();
+		 var newMinutes = newDate.getMinutes();
+		 var newHours = newDate.getHours();
+		 var newFormat = "AM";
+		 
+		 if(newHours > 12 ){
+			newHours -= 12;
+			newFormat = "PM";
+		 }
+
+		var innerHtml = newMonth + "/" + newDay + "/" + newYear + " " + newHours + ":" + newMinutes + " " + newFormat;
+		zk.Widget.$('$alertTime').$n().textContent = innerHtml;
+ 
+	</script>
+    <vlayout>
+		<div hflex="1" sclass="idera-grey" height="8px" />
+		<hlayout>
+		    <div hflex="1">
+	    		<vlayout>
+					<separator height="8px" />
+					<!-- REPLACE MODAL DIALOG TITLE HERE -->
+					<div sclass="padding-l-12">
+						<hlayout>
+							<image id="statusImg" src=""/>
+							<vlayout>
+								<label id="statusLabel" sclass="H4" value=" " />
+								<label id="titleLabel" sclass="H6" value="@{alertBean.name}" />
+							</vlayout>
+						</hlayout>
+					</div>
+				</vlayout>
+		    </div>
+		    
+	    	<div sclass="modal-dialog-close-link margin-r-8">
+	    		<vlayout>
+					<idera-cwf-button id="previousBtn" label="${idera:getLabel('Messages.prev')}" sclass="white-text-orange-button"/>
+					<idera-cwf-button id="nextBtn" label="${idera:getLabel('Messages.next')}" sclass="white-text-orange-button"/>
+				</vlayout>
+			</div>
+		</hlayout>
+	</vlayout>
+    
+	<div id="alertsView" sclass="padding-tb-0 padding-lr-8">
+		<vlayout>
+		<hlayout>		
+				<hbox id="instanceDetails" sclass="padding-all-12" align="center" hflex="1">
+					<vbox hflex="1">
+						<!-- Alert Information -->
+						<grid sclass="idera-invisible-grid styled-cwf-list">
+					          <columns sizable="false">
+					               <column width="140px"></column>
+					               <column/>
+					           </columns>
+							<rows>
+								<row >
+									<label value="${idera:getLabel('SQLdm.Labels.instance-name')}:"/>
+									<!-- <label value="@{alertBean.instanceName}"/> @author Saumyadeep -->
+									<label value="@{alertBean.displayName}"/>
+								</row>
+								<row >
+									<label value="${idera:getLabel('SQLdm.Labels.value')}:"/>
+									<label pre="true" value="@{alertBean.StringValueStr}"/>
+								</row>
+								<row>
+									<label value="${idera:getLabel('SQLdm.Labels.current-alert-time')}:"/>
+									<label  id="alertTime" pre="true" value="@{alertBean.utcUpdated, converter='com.idera.sqldm.ui.converter.DateLabelConverter'}"/>
+								</row>
+							</rows>
+						</grid>
+					</vbox>
+					<vbox hflex="1">
+						<grid id="thresholdGrid" sclass="idera-invisible-grid styled-cwf-list">
+					          <columns sizable="false">
+					               <column width="140px"></column>
+					               <column/>
+					           </columns>
+							<rows>
+								<row >
+									<label value="${idera:getLabel('SQLdm.Labels.warning-threshold')}:"/>
+									<label value="@{alertBean.warningThresholdStr}"/>
+								</row>
+								<row >
+									<label value="${idera:getLabel('SQLdm.Labels.critical-threshold')}:"/>
+									<label value="@{alertBean.criticalThresholdStr}"/>
+								</row>
+							</rows>
+						</grid>
+					</vbox>
+					
+				</hbox>
+			</hlayout>
+		<div id="metricsDetails">
+			<hlayout  height = "20px">
+				<!-- <vbox hflex="15"> -->
+				<vbox width = "180px">
+					<label id="metricHistoryTitle" value="${idera:getLabel('SQLdm.Labels.history.four-hours')}" sclass="H6" style = "float:left;font-size: 15px;"/>
+				</vbox>
+				<vbox hflex = "1" sclass="padding-t-4">
+					<separator bar = "true" height="8px" width="470px" />
+				</vbox>
+				<!-- <vbox hflex="25"> -->
+				<vbox width = "200px" style = "float:right">
+					<hlayout>
+						<div style = "float:right">
+							<a id="fourHoursThresholds" label="${idera:getLabel('SQLdm.Labels.four-hours')}" sclass="link"/>
+							<separator bar = "true" height="8px" orient="vertical"/>
+							<a id="twentyFourHoursThresholds" label="${idera:getLabel('SQLdm.Labels.twenty-four-hours')}" sclass="link"/>
+							<separator bar = "true" height="8px" orient="vertical"/>
+							<a id="sevenDaysThresholds" label="${idera:getLabel('SQLdm.Labels.seven-days')}" sclass="link"/>
+							<a id="hideThresholds" label="${idera:getLabel('SQLdm.Labels.hide-thresholds')}" sclass="link" visible="false"/>
+						</div>
+					</hlayout>
+				</vbox>
+			</hlayout>
+			<hlayout id="chartLayout" height = "220px">
+				<vbox sclass="bar-chart" hflex = "3">
+					<sqldm-idera-linechart id="alertsActivity" width="560px"  height="220px" leftMargin="50px" rightMargin="20px" topMargin="20px" bottomMargin="70px" />
+	            </vbox>
+				<vbox hflex = "1">
+					<vlayout>
+						<hlayout>
+							<label value="${idera:getLabel('SQLdm.Labels.minimum-value')}:" style = "font-size: 15px;float:left"/>
+							<label value="@{alertBean.metric.minValue}" style = "float:left"/>
+						</hlayout>
+						<hlayout>
+							<label value="${idera:getLabel('SQLdm.Labels.maximum-value')}:" style = "font-size: 15px;float:left"/>
+							<label value="@{alertBean.metric.maxValue}" style = "float:left"/>
+						</hlayout>
+					</vlayout>
+				</vbox>
+	
+			</hlayout>
+		</div>
+		<hlayout  height = "20px">
+			<vbox hflex="1" sclass="H6">
+				<label value="${idera:getLabel('SQLdm.Labels.alert.detail')}"/>
+			</vbox>
+			<vbox hflex="9" sclass="padding-t-4">
+				<separator bar = "true" height="8px" width="780px" />
+			</vbox>
+		</hlayout>
+		<idera-cwf-textbox id="alertDetail" rows="6" style = "border: 1px solid black; background-color: #FFFFFF; resize: none;overflow-y: auto;height: 60px;" width="850px"
+                             readonly="true"/>
+		<hlayout>
+			<div hflex = "1"><!-- sclass = "padding-r-24" -->
+				<idera-cwf-button id="closeBtn" label="${idera:getLabel('Messages.close')}" width = "75px" sclass="white-text-orange-button" style = "float: right;"/>
+				<idera-cwf-button id="instanceViewBtn" label="${idera:getLabel('SQLdm.Labels.alerts.instance-button')}" sclass="white-text-orange-button padding-r-24" style = "float: right;"/>
+				<idera-cwf-button id="categoryViewBtn" label="${idera:getLabel('SQLdm.Labels.alerts.category-button')}" sclass="white-text-orange-button padding-r-24" style = "float: right;"/>
+				<toolbar style="float: left;" tooltiptext="${idera:getLabel('SQLdm.Labels.launch-dm')}">
+					<toolbarbutton id = "toolbarLaunch" src="${sqldmidera:getImageURLWithoutSize('SQLdmIcon')}" />     
+				</toolbar>
+				
+			</div>
+		</hlayout>
+		<separator height="15px" />
+		</vlayout>
+	</div>
+</zk>
+</window>

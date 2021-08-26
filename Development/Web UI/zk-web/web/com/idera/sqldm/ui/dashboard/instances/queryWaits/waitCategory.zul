@@ -1,0 +1,19 @@
+<zk>
+	<div
+		apply="com.idera.sqldm.ui.dashboard.instances.queryWaits.WaitCategoryComposer">
+
+		<hlayout>
+			<div id="timeGraphDiv" sclass="chart-border" width="100%">
+				<sqldm-idera-stackedbarchart id="stackedBarChart"
+					width="1200px" height="500px" leftMargin="60px"
+					rightMargin="80px" topMargin="50px" bottomMargin="50px" />
+			</div>
+			<div id="durationGraphDiv" sclass="chart-border"
+				 width="100%">
+				<sqldm-idera-stackedbarchart id="durationChart"
+					width="1200px" height="600px" leftMargin="100px"
+					rightMargin="200px" topMargin="50px" bottomMargin="50px" />
+			</div>
+		</hlayout>
+	</div>
+</zk>

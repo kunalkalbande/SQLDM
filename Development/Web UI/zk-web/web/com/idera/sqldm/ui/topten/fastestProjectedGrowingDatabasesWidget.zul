@@ -1,0 +1,52 @@
+
+<zk>
+
+<div id="fastestProjectedGrowingDatabasesWidgetView" apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.idera.sqldm.ui.topten.FastestProjectedGrowingDatabasesWidgetComposer')" >
+<div fulfill="self.onCreate" > <!-- workaround -->
+<hlayout id = "fastestProjectedGrowingDatabasesWidgetLayout" >
+			<div style= "height: 148px">
+				<grid id="fastestProjectedGrowingDatabasesWidgetList" vflex = "1" 
+					  sclass="styled-list"
+					   model="@load(vm.instancesModel)" 
+					  emptyMessage="@bind(vm.displayMessageForGrid)" >
+					<columns sizable = "true">
+						<extcolumn label="${idera:getLabel('SQLdm.Labels.database')}" width = "210px" sort = "auto(LOWER(databaseName))"/>
+						<extcolumn label="${idera:getLabel('SQLdm.Labels.growth-over-7-days')}"  width = "124px" sort = "auto(totalSizeDiffernceKb)" sclass="numbers-position-header-topten"/>
+						<extcolumn label=""  width = "80px" />
+					</columns>
+			        <template name="model">
+						 <row value="${each}" style = "cursor:pointer">
+						 	<div onClick = "@command('redirectToInstance', instanceId = each.instanceId, product=each.product)" style="width:100%;">
+						 	<label value="@load(each.databaseName)" sclass="link" />
+							</div>
+						 	<div onClick = "@command('redirectToInstance', instanceId = each.instanceId, product=each.product)" style="width:100%;">
+							<label value="@load(each.totalSizeDiffernceKb) @converter('com.idera.sqldm.ui.converter.CommaSeparatedNumberLabelForMVVMConverter')" sclass="numbers-position-topten" />
+							</div>
+						 	<div onClick = "@command('redirectToInstance', instanceId = each.instanceId, product=each.product)" style="width:100%;">
+							<zk choose="">
+							    <zk when="${each.severity == 8}">
+									<div class="critical-progress" ><progressmeter value="${each.relativeSeverityValue}" width="70px" /></div>
+							    </zk>
+							    <zk when="${each.severity == 4}">    
+									<div class="warning-progress" ><progressmeter value="${each.relativeSeverityValue}" width="70px" /></div>
+							    </zk>
+							    <zk when="${each.severity == 2}">    
+									<div class="ok-progress" ><progressmeter value="${each.relativeSeverityValue}" width="70px" /></div>
+							    </zk>
+							    <zk when="${each.severity == 1}">
+									<div class="ok-progress" ><progressmeter value="${each.relativeSeverityValue}" width="70px" /></div>
+							    </zk>
+							    <zk><!-- default -->
+									<div class="ok-progress" ><progressmeter value="${each.relativeSeverityValue}" width="70px" /></div>
+							    </zk>
+							</zk>
+							</div>
+						</row> 
+			        </template>
+				</grid>
+	
+			</div>
+		</hlayout>
+</div>
+</div>
+</zk>

@@ -1,0 +1,1 @@
+E:\Idera\SQLdm\Development\Idera\SQLdm\Common\Messages\x64\Debug\Idera.SQLdm.Common.Messages.vcxprojAssemblyReference.cache

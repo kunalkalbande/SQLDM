@@ -1,0 +1,55 @@
+<zk>
+	<!--Each panel should be extended by DashboardWidget -->
+	<panel use="com.idera.dashboard.ui.widget.DashboardWidget"
+		apply="com.idera.sqldm_10_3.ui.widgetComposers.AlertCountsByCategoryComposer"
+		sclass="top-x-resource-by-count-panel">
+		<caption sclass="main-caption">
+			<hlayout sclass="z-toolbar" style="padding:3px; margin-left:0px" hflex="1" vflex="1">
+				<idera-cwf-dropdownlist id="productListCombobox" readonly="true" width="90px">
+					<template name="model">
+						<comboitem label="${each.name}">
+						</comboitem>
+					</template>
+				</idera-cwf-dropdownlist>
+				<idera-cwf-button id="settingsActionButton" style="margin-right:3px;"
+					sclass="settings-button z-button-os" image="/images/cog.svg" />
+				<popup id="widgetSettings">
+					<hlayout>
+						<div sclass="padding-t-8">
+							<label value="Limit" width="150px" />
+						</div>
+						<div sclass="padding-t-4">
+							<intbox id="limit" width="50px"
+								constraint="no negative,no zero,no empty" />
+						</div>
+						<idera-cwf-button id="save"
+							sclass="white-text-orange-button" label="Save" />
+					</hlayout>
+				</popup>
+			</hlayout>
+		</caption>
+		<panelchildren sclass="panel-main-content">
+			<hbox hflex="1" vflex="1" id="errorContainer" align="center"
+				pack="center">
+				<label sclass="error-message" value="@{message}" />
+			</hbox>
+			<listbox id="alertCountsByCategory" sclass="alert-counts-by-category"
+				emptyMessage="No data available">
+				<listhead>
+					<listheader label="Category" width="60%"
+						sort="auto(LOWER(category))" />
+					<listheader label="Count" width="40%"
+						sort="auto(numOfAlerts)" />
+				</listhead>
+				<template name="model">
+					<listitem style="background: white;">
+						<listcell>
+							<label value="${each.category}" />
+						</listcell>
+						<listcell label="${each.numOfAlerts}"></listcell>
+					</listitem>
+				</template>
+			</listbox>
+		</panelchildren>
+	</panel>
+</zk>

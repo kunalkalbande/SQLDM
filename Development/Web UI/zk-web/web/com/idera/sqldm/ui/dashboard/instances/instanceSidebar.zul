@@ -1,0 +1,27 @@
+<zk>
+
+<div >
+	<vlayout sclass="padding-b-16" style="background: #b7afa7;" >
+		<tabbox id="categoryTab" orient="vertical" hflex = "1" sclass = "padding-l-4 styled-tab" style="background: #f3f3f3;">
+        <tabs>
+                <tab id = "overview" label="${idera:getLabel('SQLdm.Labels.sid.overview')}"/>
+                <tab id = "sessions" label="${idera:getLabel('SQLdm.Labels.sid.sessions')}"/>
+                <tab id = "queries" label="${idera:getLabel('SQLdm.Labels.sid.queries')}"/>
+                <tab id = "queryWaits" label="${idera:getLabel('SQLdm.Labels.sid.query-waits')}"/>
+                <tab id = "resources" label="${idera:getLabel('SQLdm.Labels.sid.resources')}"/>
+                <tab id = "databases" label="${idera:getLabel('SQLdm.Labels.databases')}"/>
+                <tab id = "alerts" label="${idera:getLabel('SQLdm.Labels.alerts_capital')}"/>
+        </tabs>
+        <tabpanels >
+                <tabpanel fulfill="overview.onSelect"><include id="tab0" src="~./sqldm/com/idera/sqldm/ui/dashboard/instances/overview.zul"/></tabpanel>
+                <tabpanel fulfill="sessions.onSelect" ><include id="tab1" src="~./sqldm/com/idera/sqldm/ui/dashboard/instances/sessions.zul"/></tabpanel>
+                <tabpanel fulfill="queries.onSelect"><include id="tab2" src="~./sqldm/com/idera/sqldm/ui/dashboard/instances/queries.zul"/></tabpanel>
+                <tabpanel fulfill="queryWaits.onSelect"><include id="tab5" src="~./sqldm/com/idera/sqldm/ui/dashboard/instances/queryWaits.zul"/></tabpanel>
+                <tabpanel fulfill="resources.onSelect"><include id="tab3" src="~./sqldm/com/idera/sqldm/ui/dashboard/instances/resources.zul"/></tabpanel>
+                <tabpanel fulfill="databases.onSelect"><include id="tab4" src="~./sqldm/com/idera/sqldm/ui/dashboard/instances/databases.zul"/></tabpanel>
+                <tabpanel fulfill="alerts.onSelect"><include id="tab6" src="~./sqldm/com/idera/sqldm/ui/dashboard/instances/alerts.zul"/></tabpanel>
+        </tabpanels>
+		</tabbox>
+	</vlayout>
+</div>
+</zk>

@@ -1,0 +1,6 @@
+<zk>
+<config-name>sqldm-configuration</config-name>
+<language-config>
+<addon-uri>metainfo/zk/lang-addon-sqldm.xml</addon-uri>
+</language-config>
+</zk>

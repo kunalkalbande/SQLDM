@@ -1,0 +1,15 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Database", "Idera\SQLdm\Database\Database.ssmssqlproj", "{CC3CBF5D-431D-4474-AEB1-661B944E6203}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccProjectUniqueName0 = Idera\\SQLdm\\Database\\Database.ssmssqlproj
+		SccLocalPath0 = Idera\\SQLdm\\Database
+		SccLocalPath1 = .
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

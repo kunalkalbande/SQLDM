@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5FD22794-3FF1-406E-AA52-C2A574C6C97E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Idera.SQLdm.ManagementService</RootNamespace>
+    <AssemblyName>SQLdmManagementService</AssemblyName>
+    <SccProvider>
+    </SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <StartupObject>Idera.SQLdm.ManagementService.Program</StartupObject>
+    <ManifestCertificateThumbprint>34725BE8D81D0CC3AB0AD44C1A764397B8CD7871</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Idera.SQLdm.ManagementService_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>L:\SQLdmServices\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <TrustUrlParameters>true</TrustUrlParameters>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetZone>LocalIntranet</TargetZone>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bamboo.Prevalence, Version=1.4.4.4, Culture=neutral, PublicKeyToken=0edf2245780ab2d7">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Bamboo.Prevalence.dll</HintPath>
+    </Reference>
+    <Reference Include="Bamboo.Prevalence.Util, Version=1.4.4.4, Culture=neutral, PublicKeyToken=0edf2245780ab2d7">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Bamboo.Prevalence.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="Idera.Newsfeed.Shared20, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Idera.Newsfeed.Shared20.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Idera.PrescriptiveAnalytics.PrescriptiveAnalyzer.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Idera.PrescriptiveAnalytics.PrescriptiveAnalyzer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="License4Net, Version=6.0.6436.29810, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\libraries\BBSLicense\x64\License4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=4.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Libraries\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.Monitor, Version=0.24.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Libraries\Microsoft.Azure.Management.Monitor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.ResourceManager, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Libraries\Microsoft.Azure.Management.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=4.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Libraries\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Libraries\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime.Azure, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Libraries\Microsoft.Rest.ClientRuntime.Azure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime.Azure.Authentication, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Libraries\Microsoft.Rest.ClientRuntime.Azure.Authentication.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Libraries\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Libraries\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Libraries\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Libraries\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Libraries\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>...\..\..\..\Libraries\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Libraries\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PowerCollections, Version=1.0.2141.24679, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\PowerCollections.dll</HintPath>
+    </Reference>
+    <Reference Include="SnmpSharpNet, Version=0.7.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\SnmpSharpNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\System.Management.Automation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TracerX, Version=1.0.10501.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\TracerX.exe</HintPath>
+    </Reference>
+    <Reference Include="Vim25Service">
+      <HintPath>..\..\..\..\Libraries\Vim25Service.dll</HintPath>
+    </Reference>
+    <Reference Include="Vim25Service.XmlSerializers">
+      <HintPath>..\..\..\..\Libraries\Vim25Service.XmlSerializers.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Auditing\Actions\AddCounterToTagAction.cs" />
+    <Compile Include="Auditing\Actions\AggregateAction.cs" />
+    <Compile Include="Auditing\Actions\AnalysisConfigurationAction.cs" />
+    <Compile Include="Auditing\Actions\BaselineConfigurationAction.cs" />
+    <Compile Include="Auditing\Actions\LicenseAction.cs" />
+    <Compile Include="Auditing\Actions\SessionAction.cs" />
+    <Compile Include="Auditing\Actions\SnoozeAlertsAction.cs" />
+    <Compile Include="Auditing\Actions\AlertTemplateAction.cs" />
+    <Compile Include="Auditing\Actions\EditConfigurationValue.cs" />
+    <Compile Include="Auditing\Actions\EditServerAction.cs" />
+    <Compile Include="Auditing\Actions\AddServer.cs" />
+    <Compile Include="Auditing\Actions\GroomingAction.cs" />
+    <Compile Include="Auditing\Actions\MaintenanceModeUpdatedAction.cs" />
+    <Compile Include="Auditing\Actions\NotificationRulesActions.cs" />
+    <Compile Include="Auditing\Actions\TagAction.cs" />
+    <Compile Include="Auditing\Actions\TagSecurityAction.cs" />
+    <Compile Include="Auditing\Actions\UpdateStatisticsAction.cs" />
+    <Compile Include="Auditing\Actions\VirtualizationAction.cs" />
+    <Compile Include="Auditing\AuditServerAction.cs" />
+    <Compile Include="Auditing\IAuditAction.cs" />
+    <Compile Include="Auditing\MAuditableEntity.cs" />
+    <Compile Include="Auditing\MAuditingEngine.cs" />
+    <Compile Include="Auditing\Actions\RecycleLogAction.cs" />
+    <Compile Include="Auditing\Actions\MirrorAction.cs" />
+    <Compile Include="Configuration\ClientAuthorizationProvider.cs" />
+    <Compile Include="Configuration\ConfigurationService.cs" />
+    <Compile Include="Configuration\ManagementServiceCollection.cs" />
+    <Compile Include="Configuration\ManagementServiceConfiguration.cs" />
+    <Compile Include="Configuration\ManagementServiceElement.cs" />
+    <Compile Include="Configuration\ManagementServicesSection.cs" />
+    <Compile Include="Configuration\RemotingConfig.cs" />
+    <Compile Include="CommonWebFramework.cs" />
+    <Compile Include="Health\InstrumentedCollection.cs" />
+    <Compile Include="Health\InstrumentedQueue.cs" />
+    <Compile Include="Health\Statistics.cs" />
+    <Compile Include="Helpers\ApplicationHelper.cs" />
+    <Compile Include="Helpers\AlertsUpgradeHelper.cs" />
+    <Compile Include="Helpers\BaselineTemplatesUpgradeHelper.cs" />
+    <Compile Include="Helpers\CWFHelper.cs" />
+    <Compile Include="Helpers\DatabaseStatisticsUpgradeHelper.cs" />
+    <Compile Include="Helpers\InstallInfo.cs" />
+    <Compile Include="Helpers\LicenseHelper.cs" />
+    <Compile Include="Helpers\LMHelper.cs" />
+    <Compile Include="Helpers\ODBCHelper.cs" />
+    <Compile Include="Helpers\PersistenceManager.cs" />
+    <Compile Include="Helpers\QueryMonitorUpgradeHelper.cs" />
+    <Compile Include="Helpers\RegistryHelper.cs" />
+    <Compile Include="Helpers\RepositoryHelper.BaselineAnalysis.cs" />
+    <Compile Include="Helpers\RepositoryHelper.cs" />
+    <Compile Include="Helpers\TagManager.cs" />
+    <Compile Include="MainService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MainService.designer.cs">
+      <DependentUpon>MainService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management.cs" />
+    <Compile Include="ManagementService.cs" />
+    <Compile Include="ManagementService.IBaselineAnalysis.cs" />
+    <Compile Include="ManagementServiceInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ManagementServiceInstaller.designer.cs">
+      <DependentUpon>ManagementServiceInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monitoring\AlertTableWriter.cs" />
+    <Compile Include="Monitoring\BulkAlertTableWriter.cs" />
+    <Compile Include="Monitoring\CollectionServiceManager.cs" />
+    <Compile Include="Monitoring\CollectionServiceContext.cs" />
+    <Compile Include="Monitoring\CollectionServiceSessionMap.cs" />
+    <Compile Include="Monitoring\Data\AlertWriterQueue.cs" />
+    <Compile Include="Monitoring\Data\CollectionServiceDataManager.cs" />
+    <Compile Include="Monitoring\Data\CollectionServiceHibernateDataManager.cs" />
+    <Compile Include="Monitoring\Data\ICollectionServiceDataManager.cs" />
+    <Compile Include="Monitoring\Data\IScheduledCollectionDataManager.cs" />
+    <Compile Include="Monitoring\Data\ScheduledCollectionDataManager.cs" />
+    <Compile Include="Monitoring\Data\ScheduledCollectionQueue.cs" />
+    <Compile Include="Monitoring\HeartbeatMonitor.cs" />
+    <Compile Include="Monitoring\MonitoredSqlServerWrapper.cs" />
+    <Compile Include="Monitoring\OnDemandCollectionContext.cs" />
+    <Compile Include="Monitoring\ScheduledCollectionManager.cs" />
+    <Compile Include="Monitoring\ScheduledCollectionQueues.cs" />
+    <Compile Include="Notification\NotificationManager.cs" />
+    <Compile Include="Notification\Providers\EnablePANotificationProvider.cs" />
+    <Compile Include="Notification\Providers\EnableQMNotificationProvider.cs" />
+    <Compile Include="Notification\Providers\EnableQWaitsNotificationProvider.cs" />
+    <Compile Include="Notification\Providers\EventLogNotificationProvider.cs" />
+    <Compile Include="Notification\Providers\JobNotificationProvider.cs" />
+    <Compile Include="Notification\Providers\PowerShellNotificationProvider.cs" />
+    <Compile Include="Notification\Providers\ProgramNotificationProvider.cs" />
+    <Compile Include="Notification\Providers\PulseNotificationProvider.cs" />
+    <Compile Include="Notification\Providers\SCOMAlertNotificationProvider.cs" />
+    <Compile Include="Notification\Providers\SCOMEventNotificationProvider.cs" />
+    <Compile Include="Notification\Providers\SmtpNotificationProvider.cs" />
+    <Compile Include="Notification\Providers\SnmpNotificationProvider.cs" />
+    <Compile Include="Notification\Providers\SqlNotificationProvider.cs" />
+    <Compile Include="Notification\Providers\TaskNotificationProvider.cs" />
+    <Compile Include="Notification\TaskScheduler.cs" />
+    <Compile Include="Program.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebClient\Databases.cs" />
+    <Compile Include="WebClient\ImpersonationContext.cs" />
+    <Compile Include="WebClient\Jobs.cs" />
+    <Compile Include="WebClient\Native.cs" />
+    <Compile Include="WebClient\ServerDetails.cs" />
+    <Compile Include="WebClient\Sessions.cs" />
+    <Compile Include="WebClient\WebClient.cs" />
+    <Compile Include="WorkQueue.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Idera.SQLdm.Common.csproj">
+      <SpecificVersion>True</SpecificVersion>
+      <Project>{DC3D7464-76DF-4212-AE5C-9AF39E856CA6}</Project>
+      <Name>Idera.SQLdm.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Messages\Idera.SQLdm.Common.Messages.vcxproj">
+      <Project>{FAC83EB7-75C5-4B92-A9F5-3FC8D24FCEC8}</Project>
+      <Name>Idera.SQLdm.Common.Messages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services.Common\Idera.SQLdm.Services.Common.csproj">
+      <Project>{1a30f64d-06c7-4497-8e91-8a9a7be377ce}</Project>
+      <Name>Idera.SQLdm.Services.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainService.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagementServiceInstaller.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ManagementServiceInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <EmbeddedResource Include="Resources\SQLdmLogo16.png" />
+    <EmbeddedResource Include="Resources\SQLdmLogo64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Collection\Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

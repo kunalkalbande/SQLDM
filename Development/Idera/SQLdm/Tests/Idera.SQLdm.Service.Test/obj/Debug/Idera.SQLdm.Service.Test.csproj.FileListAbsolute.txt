@@ -1,0 +1,16 @@
+F:\Idera\SQLdm\Development\bin\Debug\Idera.SQLdm.Service.Test.exe.config
+F:\Idera\SQLdm\Development\bin\Debug\Idera.SQLdm.Service.Test.exe
+F:\Idera\SQLdm\Development\bin\Debug\Idera.SQLdm.Service.Test.pdb
+F:\Idera\SQLdm\Development\Idera\SQLdm\Tests\Idera.SQLdm.Service.Test\obj\Debug\Idera.SQLdm.Service.Test.csprojAssemblyReference.cache
+F:\Idera\SQLdm\Development\Idera\SQLdm\Tests\Idera.SQLdm.Service.Test\obj\Debug\Idera.SQLdm.Service.Test.csproj.CoreCompileInputs.cache
+F:\Idera\SQLdm\Development\Idera\SQLdm\Tests\Idera.SQLdm.Service.Test\obj\Debug\Idera.SQLdm.Service.Test.csproj.CopyComplete
+F:\Idera\SQLdm\Development\Idera\SQLdm\Tests\Idera.SQLdm.Service.Test\obj\Debug\Idera.SQLdm.Service.Test.exe
+F:\Idera\SQLdm\Development\Idera\SQLdm\Tests\Idera.SQLdm.Service.Test\obj\Debug\Idera.SQLdm.Service.Test.pdb
+E:\Idera\SQLdm\Development\bin\Debug\Idera.SQLdm.Service.Test.exe.config
+E:\Idera\SQLdm\Development\bin\Debug\Idera.SQLdm.Service.Test.exe
+E:\Idera\SQLdm\Development\bin\Debug\Idera.SQLdm.Service.Test.pdb
+E:\Idera\SQLdm\Development\Idera\SQLdm\Tests\Idera.SQLdm.Service.Test\obj\Debug\Idera.SQLdm.Service.Test.csprojAssemblyReference.cache
+E:\Idera\SQLdm\Development\Idera\SQLdm\Tests\Idera.SQLdm.Service.Test\obj\Debug\Idera.SQLdm.Service.Test.csproj.CoreCompileInputs.cache
+E:\Idera\SQLdm\Development\Idera\SQLdm\Tests\Idera.SQLdm.Service.Test\obj\Debug\Idera.SQLdm.Service.Test.csproj.CopyComplete
+E:\Idera\SQLdm\Development\Idera\SQLdm\Tests\Idera.SQLdm.Service.Test\obj\Debug\Idera.SQLdm.Service.Test.exe
+E:\Idera\SQLdm\Development\Idera\SQLdm\Tests\Idera.SQLdm.Service.Test\obj\Debug\Idera.SQLdm.Service.Test.pdb

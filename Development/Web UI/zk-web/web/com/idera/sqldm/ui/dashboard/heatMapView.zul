@@ -1,0 +1,10 @@
+<zk>
+<div apply="com.idera.sqldm.ui.dashboard.HeatmapViewComposer">
+	<hlayout>
+		<label id="errorMsg" hflex = "1" sclass = "empty-message" visible="false" value = "${idera:getMessage('SQLdm.Messages.no-instances-registered-for-selected-filter') }" />
+		<div id="heatmapChartDiv">
+			<sqldm-idera-heatmapchart id="heatmapChart"/>
+		</div>
+	</hlayout>
+</div>
+</zk>

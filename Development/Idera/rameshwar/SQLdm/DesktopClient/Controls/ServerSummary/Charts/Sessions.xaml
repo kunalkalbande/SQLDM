@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="Idera.SQLdm.DesktopClient.Controls.ServerSummary.Charts.Sessions"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Idera.SQLdm.DesktopClient.Controls.ServerSummary"
+             mc:Ignorable="d" 
+             d:DesignHeight="150.245" d:DesignWidth="649.377" 
+             xmlns:ig="http://schemas.infragistics.com/xaml"
+             d:DataContext="{d:DesignInstance local:ServerSummaryDataModel, IsDesignTimeCreatable=True}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+        <ig:Legend Name="lockingChartLegend" Orientation="Horizontal" HorizontalAlignment="Center" />
+        <ig:XamDataChart Grid.Row="1" Name="lockingChart"  HorizontalZoomable="True">
+            <ig:XamDataChart.Series>
+                <ig:LineSeries ItemsSource="{Binding RealtimeSnapshotData}"  ValueMemberPath="BlockedProcesses" XAxis="{Binding ElementName=xAxis1}" YAxis="{Binding ElementName=yAxis1}" Legend="{Binding ElementName=lockingChartLegend}" Title="Blocked Processes" MarkerType="None" />
+                <ig:LineSeries ItemsSource="{Binding RealtimeSnapshotData}"  ValueMemberPath="LeadBlockers" XAxis="{Binding ElementName=xAxis1}" YAxis="{Binding ElementName=yAxis1}" Legend="{Binding ElementName=lockingChartLegend}" Title="Lead Blockers" MarkerType="None" />
+                <ig:LineSeries ItemsSource="{Binding RealtimeSnapshotData}" ValueMemberPath="TotalDeadlocks" XAxis="{Binding ElementName=xAxis1}" YAxis="{Binding ElementName=yAxis1}" Legend="{Binding ElementName=lockingChartLegend}" Title="Deadlocks" MarkerType="None" />
+            </ig:XamDataChart.Series>
+            <ig:XamDataChart.Axes>
+                <ig:CategoryDateTimeXAxis x:Name="xAxis1" ItemsSource="{Binding RealtimeSnapshotData}" DateTimeMemberPath="Date"/>
+                <ig:NumericYAxis x:Name="yAxis1"/>
+            </ig:XamDataChart.Axes>
+            <ig:SyncManager.SyncSettings>
+                <ig:SyncSettings SyncChannel="serverOverview" SynchronizeHorizontally="True" SynchronizeVertically="False"/>
+            </ig:SyncManager.SyncSettings>
+        </ig:XamDataChart>
+        <ig:XamLinearGauge x:Name="gauge1" Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="1" Width="70" Margin="0,2,0,12">
+        	<ig:XamLinearGauge.Scales>
+        		<ig:LinearGaugeScale Orientation="Vertical">
+        			<ig:LinearGaugeScale.BarMarkers>
+        				<ig:LinearGaugeBarMarker Value="{Binding Path=LastSnapshotCurrentProcesses}" StartExtent="0.05" Background="#FFF8A834"/>
+                        <ig:LinearGaugeBarMarker Value="{Binding Path=LastSnapshotCurrentSystemProcesses}" StartExtent="0.05" Background="#FF2CB1E6"/>
+        			</ig:LinearGaugeScale.BarMarkers>
+        			<ig:LinearGaugeScale.TickMarkGroups>
+        				<ig:LinearGaugeTickMarkGroup/>
+        			</ig:LinearGaugeScale.TickMarkGroups>
+        			<ig:LinearGaugeScale.LabelGroups>
+        				<ig:LinearGaugeLabelGroup/>
+        			</ig:LinearGaugeScale.LabelGroups>
+        		</ig:LinearGaugeScale>
+        	</ig:XamLinearGauge.Scales>
+        </ig:XamLinearGauge>
+    </Grid>
+</UserControl>

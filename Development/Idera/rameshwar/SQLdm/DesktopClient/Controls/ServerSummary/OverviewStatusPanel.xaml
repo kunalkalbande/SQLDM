@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="Idera.SQLdm.DesktopClient.Controls.ServerSummary.OverviewStatusPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:local="clr-namespace:Idera.SQLdm.DesktopClient.Controls.ServerSummary"
+             mc:Ignorable="d" 
+			 d:DataContext="{d:DesignInstance local:DashboardLayoutModel, IsDesignTimeCreatable=True}" d:DesignWidth="1450" >
+		<UserControl.Resources>
+		<Style TargetType="{x:Type TextBlock}" x:Key="GroupHeader">
+			<Setter Property="Background">
+				<Setter.Value>
+					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+						<GradientStop Color="White" Offset="0" />
+						<GradientStop Color="#FFC5D5F2" Offset="1" />
+					</LinearGradientBrush>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="LinkLabel" TargetType="{x:Type TextBlock}">
+			<Style.Triggers>         
+				<Trigger Property="IsMouseOver" Value="True">           
+					<Setter Property="TextDecorations" Value="Underline" />
+					<Setter Property="Foreground" Value="Red"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+				</Trigger>       
+			</Style.Triggers>
+	    </Style>
+        <local:SeverityImageKeyColorConverter x:Key="severityImageKeyConverter"/>
+        <local:SeverityImageKeyImageConverter x:Key="severityImageKeyImageConverter" />
+        <local:BoolToTransparencyConverter x:Key="boolToTransparencyConverter" />
+    </UserControl.Resources>
+    <Grid Background="White">
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition Width="*" MinWidth="125" MaxWidth="250"/>
+    		<ColumnDefinition Width="*" MinWidth="350" MaxWidth="450"/>
+    		<ColumnDefinition Width="*" MinWidth="350" />
+    	</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
+		</Grid.RowDefinitions>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="auto"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
+			</Grid.RowDefinitions>
+			<TextBlock Text="Status" Style="{StaticResource GroupHeader}" Grid.ColumnSpan="2"/>
+			<Image x:Name="image" Grid.Row="1" Source="/SQLdmDesktopClient;component/Resources/StatusSummaryCriticalLarge.png" Width="32" Height="32"/>
+			<TextBlock x:Name="textBlock"  TextWrapping="NoWrap" Text="{Binding Path=DataModel.ServerStatus.Severity}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Foreground="{Binding Path=DataModel.ServerStatus.ServerImageKey, Converter={StaticResource severityImageKeyConverter}}" FontFamily="Microsoft Sans Serif" FontWeight="Bold" FontSize="16"  />
+		</Grid>
+		<Grid Grid.Column="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+			<TextBlock Text="Active Alerts" Style="{StaticResource GroupHeader}"/>
+			<WrapPanel Grid.Row="1" Orientation="Horizontal">
+            <Image x:Name="criticalAlertsImage" Source="/SQLdmDesktopClient;component/Resources/StatusSummaryCriticalLarge.png" Opacity="{Binding Path=DataModel.ServerStatus.ActiveCriticalAlertCount, Converter={StaticResource boolToTransparencyConverter}, ConverterParameter=0.3}" Width="32" Height="32" />
+            <TextBlock x:Name="textBlock2" Text="{Binding Path=DataModel.ServerStatus.ActiveCriticalAlertCount, StringFormat=\{0\} Critical}" Style="{DynamicResource LinkLabel}" VerticalAlignment="Center" Margin="5,0,10,0" />
+            <Image x:Name="warningAlertsImage" Source="/SQLdmDesktopClient;component/Resources/StatusSummaryWarningLarge.png" Opacity="{Binding Path=DataModel.ServerStatus.ActiveWarningAlertCount, Converter={StaticResource boolToTransparencyConverter}, ConverterParameter=0.3}" Width="32" Height="32"/>
+            <TextBlock x:Name="textBlock3" Text="{Binding Path=DataModel.ServerStatus.ActiveWarningAlertCount, StringFormat=\{0\} Warning}" Style="{DynamicResource LinkLabel}" VerticalAlignment="Center" Margin="5,0,10,0" />
+            <Image x:Name="informationalAlertsImage" Source="/SQLdmDesktopClient;component/Resources/StatusSummaryInformationLarge.png" Opacity="{Binding Path=DataModel.ServerStatus.ActiveInfoAlertCount, Converter={StaticResource boolToTransparencyConverter}, ConverterParameter=0.3}" Width="32" Height="32"/>
+            <TextBlock x:Name="textBlock4" Text="{Binding Path=DataModel.ServerStatus.ActiveInfoAlertCount, StringFormat=\{0\} Informational}" Style="{DynamicResource LinkLabel}" VerticalAlignment="Center" Margin="5,0,10,0"/>
+			</WrapPanel>
+		</Grid>
+		<Grid Grid.Column="2">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+			<TextBlock Text="Area Status" Style="{StaticResource GroupHeader}"/>
+			<Grid Grid.Row="1">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" MinWidth="30" MaxWidth="50"/>
+					<ColumnDefinition Width="*" MinWidth="30" MaxWidth="50"/>
+					<ColumnDefinition Width="*" MinWidth="30" MaxWidth="50"/>
+					<ColumnDefinition Width="*" MinWidth="30" MaxWidth="50"/>
+					<ColumnDefinition Width="*" MinWidth="30" MaxWidth="50"/>
+					<ColumnDefinition Width="*" MinWidth="30" MaxWidth="50"/>
+					<ColumnDefinition Width="*" MinWidth="30" />
+				</Grid.ColumnDefinitions>
+				<Image Source="/SQLdmDesktopClient;component/Resources/SessionsCriticalThumbnail.png" Opacity="{Binding Path=DataModel.ServerStatus.ActiveInfoAlertCount, Converter={StaticResource boolToTransparencyConverter}, ConverterParameter=0.3}" Margin="5,2,0,2" HorizontalAlignment="Left" Stretch="None" VerticalAlignment="Center" />
+				<Image Grid.Column="1" Source="/SQLdmDesktopClient;component/Resources/QueriesThumbnail.png" Opacity="{Binding Path=DataModel.ServerStatus.ActiveInfoAlertCount, Converter={StaticResource boolToTransparencyConverter}, ConverterParameter=0.3}" HorizontalAlignment="Left" Margin="5,0,0,0" Stretch="None" />
+				<Image Grid.Column="2" Source="/SQLdmDesktopClient;component/Resources/ResourcesWarningThumbnail.png" Opacity="{Binding Path=DataModel.ServerStatus.ActiveInfoAlertCount, Converter={StaticResource boolToTransparencyConverter}, ConverterParameter=0.3}" HorizontalAlignment="Left" Margin="5,0,0,0" Stretch="None" />
+				<Image Grid.Column="3" Source="/SQLdmDesktopClient;component/Resources/DatabasesInfoThumbnail.png" Opacity="{Binding Path=DataModel.ServerStatus.ActiveInfoAlertCount, Converter={StaticResource boolToTransparencyConverter}, ConverterParameter=0.3}" HorizontalAlignment="Left" Margin="5,0,0,0" Stretch="None" />
+				<Image Grid.Column="4" Source="/SQLdmDesktopClient;component/Resources/ServicesThumbnail.png" Opacity="{Binding Path=DataModel.ServerStatus.ActiveInfoAlertCount, Converter={StaticResource boolToTransparencyConverter}, ConverterParameter=0.3}" HorizontalAlignment="Left" Margin="5,0,0,0" Stretch="None" />
+				<Image Grid.Column="5" Source="/SQLdmDesktopClient;component/Resources/LogsWarningThumbnail.png" Opacity="{Binding Path=DataModel.ServerStatus.ActiveInfoAlertCount, Converter={StaticResource boolToTransparencyConverter}, ConverterParameter=0.3}" HorizontalAlignment="Left" Margin="5,0,0,0" Stretch="None" />
+			</Grid>
+		</Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,17 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Idera.SQLdm.DesktopClient.Controls.ServerSummary" 
+             x:Class="Idera.SQLdm.DesktopClient.Controls.ServerSummary.ServerSummaryContent" 
+             d:DataContext="{d:DesignInstance local:DashboardLayoutModel, IsDesignTimeCreatable=True}"
+             mc:Ignorable="d" 
+             DataContextChanged="UserControl_DataContextChanged">
+	<Grid UseLayoutRounding="True">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<local:DashboardControl Grid.Row="0" x:Name="dashboardControl"/>
+	</Grid>
+</UserControl>

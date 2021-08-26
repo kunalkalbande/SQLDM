@@ -1,0 +1,204 @@
+<!DOCTYPE project>
+<project name="zk-web" default="jar" basedir=".">
+
+	<property name="base.dir" value="."/>
+	<property name="compile.debug" value="true"/>
+
+	<property name="build.plugins.dir" value="${basedir}/../build-plugins"/>
+
+	<!-- Global properties for this build -->
+	<property name="src.java.dir" value="${base.dir}/src"/>
+	<property name="lib.dir" value="${base.dir}/lib"/>
+	<property name="build.dir" value="${base.dir}/classes"/>
+	<property name="dist.dir" value="${base.dir}/dist"/>
+	<property name="web.dir" value="${base.dir}/web"/>
+	<property name="dist.web.sqldm.dir" value="${base.dir}/dist/web/sqldm"/>
+	<property name="resources.dir" value="${base.dir}/src/resources"/>
+	<property name="resources.meta.dir" value="${base.dir}/src/resources/meta"/>
+	
+	<property name="web.dir.name" value="web"/>
+	
+	<property name="web.src.dir" value="${src.java.dir}/web"/>
+	
+	<property name="test.dir" value="${base.dir}/test"/>
+	<property name="build.test.dir" value="${base.dir}/test/classes"/>
+	<property name="junit.report.out.dir"  value="${base.dir}/test/reports"/>
+	<property name="junit.haltonfailure" value="on"/>
+	<property name="package.dir" value="C:\Program Files\Idera\Dashboard\CoreService\ProductPlugins\Jars"/>
+	<property name="serverVersionBuild" value="10.2.1.0"/>
+
+	
+	<patternset id="lib.files">
+		<include name="**/*.jar"/>
+		<include name="**/*.zip"/>
+	</patternset>
+	
+	<patternset id="meta.files">
+		<include name="**/*.xml"/>
+		<include name="**/*.properties"/>
+		<include name="metainfo"/>
+		<include name="META-INF"/>
+	</patternset>
+
+	<patternset id="web.files">
+		<exclude name="**/*.java"/>
+	</patternset>
+
+	<patternset id="debug.web.files">
+		<exclude name="**/*.java"/>
+		<exclude name="apidoc/**"/>
+	</patternset>
+	
+	<patternset id="class.files">
+		<include name="**/*.class"/>
+	</patternset>
+	
+	<patternset id="zul.files">
+		<include name="**/*.zul"/>
+	</patternset>
+	
+	<patternset id="zk.files">
+		<include name="**/*.dsp"/>
+		<include name="**/*.js"/>
+	</patternset>
+
+	<!-- Classpath declaration -->
+	<path id="project.classpath">
+		<fileset dir="${lib.dir}">
+			<patternset refid="lib.files"/>
+		</fileset>		
+	</path>	
+	
+	<!-- Test -->
+	<target name="test">
+	</target>
+	
+	<!-- Clean up -->
+	<target name="clean" description="Clean the project">
+		<delete dir="${build.dir}"/>
+		<mkdir dir="${build.dir}"/>
+		<delete dir="${dist.dir}"/>
+		<mkdir dir="${dist.dir}"/>
+		<delete file="${package.dir}/idera-sqldm-${serverVersionBuild}.jar"/>
+	</target>
+
+	<!-- Compile Java source -->
+	<target name="compile" depends="">
+		<mkdir dir="${build.dir}"/>
+		<javac
+			debug="${compile.debug}"
+			srcdir="${src.java.dir}"
+			destdir="${build.dir}"
+			nowarn="on">
+				<classpath refid="project.classpath"/>
+		</javac>
+	</target>
+	
+	<target name="compile-debug" depends="clean">
+		<mkdir dir="${build.dir}"/>
+		<javac
+			debug="true"
+			debuglevel="lines,vars,source"
+			srcdir="${src.java.dir}"
+			destdir="${build.dir}"
+			nowarn="on">
+				<classpath refid="project.classpath"/>
+		</javac>	
+	</target>
+
+	<!-- Copy metadata to build classpath -->
+	<target name="copymetafiles">
+		<copy todir="${dist.dir}">
+			<fileset dir="${resources.meta.dir}">
+				<include name="**/*.*"/>
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="deployjar" depends="clean, jar">
+		<copy file="${package.dir}/idera-sqldm-${serverVersionBuild}.jar" tofile="C:/Program Files/Idera/Dashboard/CoreService/ProductPlugins/Jars/idera-sqldm-${serverVersionBuild}.jar" overwrite="true">
+		</copy>
+	</target>
+	
+	<target name="jar" depends="compile, copymetafiles, build-resource-bundle">
+		<mkdir dir="${dist.web.sqldm.dir}"/>
+
+		<!-- Copy web files to dist -->
+		<copy todir="${dist.web.sqldm.dir}">
+			<fileset dir="${web.dir}">
+				<patternset refid="web.files"/>
+			</fileset>			
+		</copy>
+		
+		<!-- Copy class and meta files to dist -->
+		<copy todir="${dist.dir}">
+			<fileset dir="${build.dir}">
+				<patternset refid="class.files"/>
+			</fileset>
+		</copy>
+
+		<!-- Create archive -->
+		<jar destfile="${package.dir}/idera-sqldm-${serverVersionBuild}.jar" basedir="${dist.dir}"/>
+		
+	</target>
+	
+
+	<target name="findbugs" depends="compile">
+		<findbugs home="${findbugs.home}" output="xml" outputFile="${base.dir}/findbugs.xml" jvmargs="-Xmx1024m"
+			effort="max" reportLevel="low">
+			<auxClasspath>
+				<path refid="project.classpath"/>
+				<fileset dir="${findbugs.lib}">
+					<include name="**/*.jar"/>
+					<include name="**/*.zip"/>
+				</fileset>
+			</auxClasspath>
+			<sourcePath path="${src.java.dir}" />
+			<class location="${build.dir}" />
+		</findbugs>
+	</target>
+	
+	<target name="compile-i18n">
+		<mkdir dir="${build.dir}"/>
+		<javac
+			debug="${compile.debug}"
+			srcdir="${src.java.dir}"
+			destdir="${build.dir}"
+			nowarn="on"
+			includes="**/I18NStrings.java">
+				<classpath refid="project.classpath"/>
+		</javac>
+	</target>
+
+	<path id="i18nlog-jar.classpath">
+		<fileset dir="${lib.dir}">
+			<include name="i18nlog-1.0.9.jar"/>
+		</fileset>
+	</path>
+
+	<taskdef name="i18n" classpathref="i18nlog-jar.classpath" classname="mazz.i18n.ant.I18NAntTask" />
+
+	<path id="i18n.classpath">
+		<pathelement location="${build.dir}"/>
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar"/>
+			<include name="**/*.zip"/>
+		</fileset>
+	</path>
+
+	<target name="build-resource-bundle" description="Rebuild i18n resource bundle" depends="compile-i18n">
+		<mkdir dir="${dist.web.sqldm.dir}"/>
+		<i18n outputdir="." defaultlocale="en" verbose="false" verify="true">
+			<classpath refid="i18n.classpath" />
+			<classfileset dir="${build.dir}">
+				<include name="**/SQLdmI18NStrings.class"/>
+			</classfileset>
+		</i18n>
+		<copy todir="${dist.web.sqldm.dir}">
+			<fileset dir=".">
+				<include name="*messages*.properties"/>
+			</fileset>
+		</copy>
+	</target>
+
+</project>

@@ -1,0 +1,85 @@
+<window id="errorDialogWindow" closable="true" border="none"
+	mode="modal" width="700px"
+	apply="com.idera.sqldm.ui.error.ErrorComposer"
+	contentSclass="modal-dialog-window margin-all-0 padding-all-0 overflow-auto" style="border-radius: 0;">
+
+	<vlayout>
+		<div hflex="1" sclass="idera-grey" height="8px" />
+		<hlayout>
+			<div hflex="1">
+
+			</div>
+			<div hflex="min">
+				<a id="closeLink" sclass="modal-dialog-close-link margin-r-8"
+					label="X" />
+			</div>
+		</hlayout>
+		<separator height="10px" />
+	</vlayout>
+
+
+	<div sclass="padding-tb-0 padding-lr-8">
+		<div sclass="padding-t-20">
+			<label
+				value="${idera:getLabel('Labels.something-unexpected-happened')}"
+				sclass="H1 idera-grey-text" />
+		</div>
+
+		<div sclass="padding-t-20">
+			<label
+				value="${requestScope['javax.servlet.error.message']}"
+				sclass="H3 padding-t-20" />
+		</div>
+
+		<div sclass="padding-t-20 details-button">
+			<idera-cwf-button id="detailsButton" sclass="white-text-orange-button"
+				label="${idera:getLabel('Labels.show-details')}" />
+		</div>
+
+		<div id="detailsSection" sclass="padding-l-20 padding-b-24"
+			visible="false">
+
+			<div sclass="padding-t-20">
+				<label value="${idera:getLabel('Labels.request-url')}:"
+					sclass="H4" />
+				<label
+					value="${requestScope['javax.servlet.error.request_uri']}"
+					sclass="H5" />
+			</div>
+
+			<div sclass="padding-t-20">
+				<label value="${idera:getLabel('Labels.status-code')}:"
+					sclass="H4" />
+				<label
+					value="${requestScope['javax.servlet.error.status_code']}"
+					sclass="H5" />
+
+			</div>
+
+			<div sclass="padding-t-20">
+				<label
+					value="${idera:getLabel('Labels.exception-type')}:" sclass="H4" />
+				<label
+					value="${requestScope['javax.servlet.error.exception_type']}"
+					sclass="H5" />
+			</div>
+
+			<div sclass="padding-t-20">
+				<label value="${idera:getLabel('Labels.exception')}:"
+					sclass="H4" />
+				<label
+					value="${requestScope['javax.servlet.error.exception']}"
+					sclass="H5" />
+
+			</div>
+
+			<div sclass="padding-t-20">
+				<label value="${idera:getLabel('Labels.stack-trace')}:"
+					sclass="H4" />
+				<label id="stackTraceLabel" sclass="H5 stack-trace padding-t-12" />
+			</div>
+
+		</div>
+		<separator height="25px" />
+	</div>
+</window>

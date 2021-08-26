@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>SQL diagnostic manager Data Source</Name>
+  <DataSourceID>50f65e9a-7e7f-4fe6-914c-eea80dd64209</DataSourceID>
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=10.21.12.111;Initial Catalog=SQLdmSKDB</ConnectString>
+  </ConnectionProperties>
+</RptDataSource>

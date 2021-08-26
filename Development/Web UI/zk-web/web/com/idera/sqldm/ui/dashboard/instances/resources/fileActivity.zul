@@ -1,0 +1,145 @@
+<?taglib uri="http://sqldm/taglib" prefix="sqldmidera"?>
+<zk>
+  <window hflex="1" vflex="1" height="635px">
+
+<div vflex="1" hflex="1" apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.idera.sqldm.ui.dashboard.instances.resources.FileActivityViewModel')">
+	<borderlayout vflex="1" hflex="1">
+		<north border="normal" vflex="1" collapsible="true" margins="0,-1,-1,0">
+			<!-- <groupbox mold="3d" open="true"> -->
+		        <caption label="Filters (use % as wildcard)">
+		        	<toolbarbutton image="${idera:getImageURLWithoutSize('Filter')}" onClick="@command('filter')" />
+		        	<toolbarbutton image="${idera:getImageURLWithoutSize('FilterClear')}" dir="reverse" onClick="@command('resetFilters')" />
+		        </caption>
+				<hlayout>
+					
+					<vlayout hflex="5">
+					<separator/>
+					<hlayout>
+						<label value="${idera:getLabel('SQLdm.Labels.file.drive')}" class="boxlabel" hflex="1"/>
+						<bandbox hflex="2" value="@bind(vm.filters.driveBoxValue)">
+							<bandpopup width="210px">
+								<idera-cwf-listbox multiple="true" checkmark="true" width="100%" model="@load(vm.allDrives)" 
+											selectedItems="@bind(vm.filters.selectedDrives)" onSelect="@command('driveSelected')">
+									<listhead>
+										<listheader label="${idera:getLabel('SQLdm.Labels.file.drivename')}"></listheader>
+									</listhead>
+									<template name="model" var="drive">
+										<listitem label="${drive.driveName}" value="${drive.driveID}"/>
+									</template>
+								</idera-cwf-listbox>
+							</bandpopup>
+						</bandbox>
+						<label value="${idera:getLabel('SQLdm.Labels.file.path')}" hflex="1"/>
+		                <idera-cwf-textbox value="@bind(vm.filters.filePathLike)" hflex="2"/>
+		            </hlayout>
+					<hlayout>
+						<label value="${idera:getLabel('SQLdm.Labels.file.database')}" class="boxlabel" hflex="1"/>
+						<bandbox id="databaseBD" value="@bind(vm.filters.databaseBoxValue)" hflex="2" autodrop="true">
+							<bandpopup width="210px">
+								<idera-cwf-listbox multiple="true" model="@load(vm.databasesList)" checkmark="true" width="100%" height="150px"
+													selectedItems="@bind(vm.filters.selectedDatabases)" onSelect="@command('databaseSelected')">
+									<listhead>
+										<listheader label="${idera:getLabel('SQLdm.Labels.database-name')}"></listheader>
+									</listhead>
+									<template name="model" var="database">
+										<listitem label="@load(database.databaseName)" value="@load(database.databaseName)"/>
+									</template>
+								</idera-cwf-listbox>
+							</bandpopup>
+						</bandbox>
+						<label value="${idera:getLabel('SQLdm.Labels.file.name')}" hflex="1"/>
+		                <idera-cwf-textbox value="@bind(vm.filters.fileNameLike)" hflex="2"/>
+					</hlayout>
+					
+			</vlayout>
+			<vlayout>
+				<separator/>
+				<hlayout>
+					<label value="${idera:getLabel('SQLdm.Labels.file.type')}" class="boxlabel" hflex="1"/>
+					<div fulfill="self.onCreate">
+						<vlayout id="vlayout" children="@load(vm.fileTypeList)">
+					        <template name="children">
+					            <idera-cwf-checkbox label="@load(each.name)" checked="@load(each.checked)"
+					                onCheck="@command('filterByFileType', checked=self.checked, picked=each)">
+					            </idera-cwf-checkbox>
+					        </template>
+					    </vlayout>
+				    </div>
+				</hlayout>
+			</vlayout>
+			<separator orient="vertical" spacing="2px"/>
+			<vlayout hflex="3">
+				<div style="border-left:1px solid #CFCFCF;">
+					<hlayout>
+						<separator orient="vertical" spacing="2px"/>
+						<vlayout vflex="1">
+							<separator spacing="2px"/>
+							<label value="${idera:getLabel('SQLdm.Labels.sortby')}"/>
+						</vlayout>
+						<vlayout vflex="1">
+							<radiogroup id="sortBy" selectedItem="@bind(vm.filters.pickedSortByName)"/>
+							<idera-cwf-radio id="databaseName" value="databaseName" label="${idera:getLabel('SQLdm.Labels.database-name')}" radiogroup="sortBy" selected="true"/>
+			                <idera-cwf-radio id="fileName" value="fileName" label="${idera:getLabel('SQLdm.Labels.file-name')}" radiogroup="sortBy" />
+			                <idera-cwf-radio id="readsPerSec" value="readsPerSec" label="${idera:getLabel('SQLdm.Labels.reads-per-sec')}" radiogroup="sortBy" />
+			                <idera-cwf-radio id="writesPerSec" value="writesPerSec" label="${idera:getLabel('SQLdm.Labels.writes-per-sec')}" radiogroup="sortBy" />
+						</vlayout>
+						<separator orient="vertical" spacing="2px"/>
+						<vlayout vflex="1">
+							<separator spacing="2px"/>
+							<label value="${idera:getLabel('SQLdm.Labels.sortdirection')}"/>
+						</vlayout>
+						<vlayout vflex="1">
+							<radiogroup id="sortDir" selectedItem="@bind(vm.filters.pickedSortDirection)"/>
+							<idera-cwf-radio id="ascending" value="ascending" label="${idera:getLabel('SQLdm.Labels.ascending')}" radiogroup="sortDir" selected="true"/>
+			                <idera-cwf-radio id="descending" value="descending" label="${idera:getLabel('SQLdm.Labels.descending')}" radiogroup="sortDir" />
+						</vlayout>
+		            </hlayout>
+		           </div>
+			</vlayout>
+		</hlayout>
+		<!-- </groupbox> -->
+		</north>
+		<west size="30%" flex="true" border="normal" margins="0,-1,0,-1">
+			<grid sclass = "styled-list" id="fileItemsGrid" model="@load(vm.fileItems)">
+				<columns>
+					<column width="40px"/>
+					<column/>
+	          	</columns>
+				<template name="model" var="fileItem">
+					<row>
+						<cell style="vertical-align: center">
+							<vlayout style="text-align: center;">
+								<zk choose="">
+								    <zk when="${fileItem.fileType == 'Data'}">    
+									    <image src="${idera:getImageURLWithoutSize('Database32')}"/>
+								    </zk>
+								    <zk when="${fileItem.fileType == 'Log'}">    
+									    <image src="${idera:getImageURLWithoutSize('DatabaseIndex32')}"/>
+								    </zk>
+								    <zk><!-- default -->
+										<image src="${idera:getImageURLWithoutSize('Documents-32')}"/>
+								    </zk>
+								</zk>	
+								
+							</vlayout>
+						</cell>
+						<cell style="vertical-align: center">
+							<vlayout>
+								<label value = "@load(fileItem.fileName)"></label>
+					 			<a sclass="link" label="@load(fileItem.databaseName)" onClick="@command('redrawChart', item=fileItem)"/>
+							</vlayout>
+						</cell>
+					</row>	
+				</template>
+			</grid>
+		</west>
+		<center vflex="1" hflex="1"  margins="0,0,-1,-1">
+			<div>
+				<sqldm-idera-linechart id="activityChart" width="650px" height="250px" leftMargin="50px" rightMargin="20px" topMargin="30px" bottomMargin="20px" />
+	     	</div>
+		</center>
+	
+	</borderlayout>
+</div>
+</window>
+</zk>

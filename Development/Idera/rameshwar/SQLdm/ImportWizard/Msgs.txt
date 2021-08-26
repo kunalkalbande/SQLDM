@@ -1,0 +1,46 @@
+------------- Start - Pre start error messages ------------------------------------
+A SQL diagnostic manager installation does not exist on this computer. The Import Wizard imports historical data from SQL diagnostic manager 4.x into the new Repository.
+
+This computer does not have a valid SQL diagnostic manager installation. The Import Wizard imports historical data from SQL diagnostic manager 4.x into the new Repository. If you have a earlier installation, upgrade to 4.0 or later before importing the historical data.
+------------- End - Pre start error messages ------------------------------------
+
+
+------------- Start - Welcome page ------------------------------------
+
+This wizard helps you import historical data from a previous installation of SQL diagnostic manager (4.0 and later).
+Historical data includes all the statistics that were available on the Statistics View. This data is imported into the new SQL diagnostic manager Repository.
+
+------------- End - Welcome page ------------------------------------
+
+------------- Start - Connect page ------------------------------------
+Specify the location and credentials used to connect to the new SQL diagnostic manager Repository.
+--- Info box.
+The information you provide below is used to connect to the new Repository. The Import Wizard writes historical data from SQL diagnostic manager 4.x to the new Repository.
+------------- End - Connect page ------------------------------------
+
+------------- Start - Select Servers ------------------------------------
+Select the SQL Server instances that have the historical data you want to import.
+
+The Available Servers list includes all instances registered with the new SQL diagnostic manager that are SQL Server 2000 or SQL Server 2005. Select the instances you want to import, and then click the Add button.
+
+--- No SQL Servers to import
+To import data from your SQL Server instances, first register these instances with the new SQL diagnostic manager.
+
+--- Error encountered when loading
+The Import Wizard encountered an error when retrieving the list of SQL Server registered with the new SQL diagnostic manager. Please verify the SQL diagnostic manager Repository location and connection credentials specified on the previous page.
+
+------------- End - Select Servers ------------------------------------
+
+------------- Start - Select Import Date ------------------------------------
+Specify the date from which to import historical data.
+
+Use the drop-down field to enter the date to which historical data should be imported for the selected SQL Server instances. All data from the selected date to the date in the Current As Of field will be imported.
+
+The specified import date is greater than the last import or registration date for some of the Servers. Data will not be imported for these Servers. Do you want to continue?
+------------- End - Select Import Date ------------------------------------
+
+
+------------- Start - Import Wizard Status ------------------------------------
+This window shows you the status of the historical data import.   You can pause and resume import.  If you cancel the import, any data already imported will not be removed.  You can minimize this window, and restore it by clicking on the notification icon.
+
+------------- End - Import Wizard Status ------------------------------------

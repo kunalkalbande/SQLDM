@@ -1,0 +1,647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Agentxpstatus_Body" xml:space="preserve">
+    <value>SQL Server instance {0} has Agent XPs {1}.</value>
+  </data>
+  <data name="Agentxpstatus_Header" xml:space="preserve">
+    <value>Agent XPs are {1}</value>
+  </data>
+  <data name="Agentxpstatus_Todo" xml:space="preserve">
+    <value>Agent XPs are {1} on {0}</value>
+  </data>
+  <data name="Automationstatus_Body" xml:space="preserve">
+    <value>SQL Server instance {0} has OLE Automation {1}.</value>
+  </data>
+  <data name="Automationstatus_Header" xml:space="preserve">
+    <value>OLE Automation is {1}</value>
+  </data>
+  <data name="Automationstatus_Todo" xml:space="preserve">
+    <value>OLE Automation is {1} on {0}</value>
+  </data>
+  <data name="Blockingprocess_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - Session {3} has been blocking other sessions for {1} seconds.
+
+The session is being run on database [{2}] with application name '{5}' by user '{4}' on host '{6}'. 
+
+Last command issued: 
+
+{7}</value>
+  </data>
+  <data name="Blockingprocess_Header" xml:space="preserve">
+    <value>Session {3} blocking for {1} seconds</value>
+  </data>
+  <data name="Blockingprocess_Todo" xml:space="preserve">
+    <value>Session {3} blocking for {1} seconds on {0}</value>
+  </data>
+  <data name="Blockingsessions_Body" xml:space="preserve">
+    <value>SQL Server instance {0} has {1} sessions blocking other sessions.</value>
+  </data>
+  <data name="Blockingsessions_Header" xml:space="preserve">
+    <value>Blocking sessions count is {1}</value>
+  </data>
+  <data name="Blockingsessions_Todo" xml:space="preserve">
+    <value>Blocking sessions count is {1} on {0}</value>
+  </data>
+  <data name="Bombedjob_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - SQL Agent job '{2}' failed with a Sql Severity of {5}. 
+
+The job started at {3} and was in step {4} which issued the command '{8}'.
+
+Sql Message ID: {6} 
+Message: 
+{7}</value>
+  </data>
+  <data name="Bombedjob_Header" xml:space="preserve">
+    <value>SQL Agent job '{2}' failed</value>
+  </data>
+  <data name="Bombedjob_Todo" xml:space="preserve">
+    <value>SQL Agent job '{2}' failed on {0}</value>
+  </data>
+  <data name="Clientcomputers_Body" xml:space="preserve">
+    <value>SQL Server instance {0} has {1} client computers connected.</value>
+  </data>
+  <data name="Clientcomputers_Header" xml:space="preserve">
+    <value>Client computers is {1}</value>
+  </data>
+  <data name="Clientcomputers_Todo" xml:space="preserve">
+    <value>Client computers is {1} on {0}</value>
+  </data>
+  <data name="Clrstatus_Body" xml:space="preserve">
+    <value>SQL Server instance {0} has the CLR configuration option  {1}.</value>
+  </data>
+  <data name="Clrstatus_Header" xml:space="preserve">
+    <value>CLR configuration option  is {1}</value>
+  </data>
+  <data name="Clrstatus_Todo" xml:space="preserve">
+    <value>CLR configuration option  is {1} on {0}</value>
+  </data>
+  <data name="Collectionservicestatus_Body" xml:space="preserve">
+    <value>The SQL diagnostic manager collection service with service name {0} is {1}</value>
+  </data>
+  <data name="Collectionservicestatus_Header" xml:space="preserve">
+    <value>SQLdm collection service is {1}</value>
+  </data>
+  <data name="Collectionservicestatus_Todo" xml:space="preserve">
+    <value>SQLdm collection service is {1}</value>
+  </data>
+  <data name="Connections_Body" xml:space="preserve">
+    <value>SQL Server instance {0} has {2} user connections and is at {1:F2}% of the maximum connections allowed.</value>
+  </data>
+  <data name="Connections_Header" xml:space="preserve">
+    <value>User connections are at {1:F2}%</value>
+  </data>
+  <data name="Connections_Todo" xml:space="preserve">
+    <value>User connections are at {1:F2}% on {0}</value>
+  </data>
+  <data name="Cpu_Body" xml:space="preserve">
+    <value>SQL Server instance {0} is currently using {1:F2}% of the CPU.</value>
+  </data>
+  <!--SQLdm 10.0 (Tarun Sapra)- Template for baseline alerts-->
+  <data name="Cpu_Baselined_Body" xml:space="preserve">
+    <value>SQL Server instance {0} is currently using {1:F2}% of the CPU-Baseline.</value>
+  </data>
+  <data name="Cpu_Header" xml:space="preserve">
+    <value>SQL Server CPU usage is {1:F2}%</value>
+  </data>
+  <data name="Cpu_Todo" xml:space="preserve">
+    <value>SQL Server CPU usage is {1:F2}% on {0}</value>
+  </data>
+  <data name="Datausedpercent_Body" xml:space="preserve">
+    <value>SQL Server instance {0} has {1:F2}% of the total allocated database file space in use.
+
+If this percentage appears incorrect, you may need to run DBCC UPDATEUSAGE to have SQL Server update the information.</value>
+  </data>
+  <data name="Datausedpercent_Header" xml:space="preserve">
+    <value>SQL Server Data used is {1:F2}%</value>
+  </data>
+  <data name="Datausedpercent_Todo" xml:space="preserve">
+    <value>SQL Server Data used is {1:F2}% on {0}</value>
+  </data>
+  <data name="Dbsize_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - Database [{2}] has data files that are {1:F2}% full.
+
+If this percentage appears incorrect, you may need to run DBCC UPDATEUSAGE to have SQL Server update the information.</value>
+  </data>
+  <data name="Dbsize_Header" xml:space="preserve">
+    <value>Data files are {1:F2}% full for database [{2}]</value>
+  </data>
+  <data name="Dbsize_Todo" xml:space="preserve">
+    <value>Data files are {1:F2}% full for database [{2}] on {0}</value>
+  </data>
+  <data name="Dbstatus_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - Database [{2}] has a status of {1}.</value>
+  </data>
+  <data name="Dbstatus_Header" xml:space="preserve">
+    <value>Database status for [{2}] is {1}</value>
+  </data>
+  <data name="Dbstatus_Todo" xml:space="preserve">
+    <value>Database status for [{2}] is {1} on {0}</value>
+  </data>
+  <data name="Dtcother_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The Distributed Transaction Coordinator service has a status of {1}.</value>
+  </data>
+  <data name="Dtcother_Header" xml:space="preserve">
+    <value>DTC is {1}</value>
+  </data>
+  <data name="Dtcother_Todo" xml:space="preserve">
+    <value>DTC is {1} on {0}</value>
+  </data>
+  <data name="Dtcrunning_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The Distributed Transaction Coordinator service is running.</value>
+  </data>
+  <data name="Dtcrunning_Header" xml:space="preserve">
+    <value>DTC running</value>
+  </data>
+  <data name="Dtcrunning_Todo" xml:space="preserve">
+    <value>DTC running on {0}</value>
+  </data>
+  <data name="Dtcstopped_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The Distributed Transaction Coordinator service is stopped.</value>
+  </data>
+  <data name="Dtcstopped_Header" xml:space="preserve">
+    <value>DTC stopped</value>
+  </data>
+  <data name="Dtcstopped_Todo" xml:space="preserve">
+    <value>DTC stopped on {0}</value>
+  </data>
+  <data name="Execother_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The SQL Server Agent service has a status of {1}.</value>
+  </data>
+  <data name="Execother_Header" xml:space="preserve">
+    <value>SQL Agent is {1}</value>
+  </data>
+  <data name="Execother_Todo" xml:space="preserve">
+    <value>SQL Agent is {1} on {0}</value>
+  </data>
+  <data name="Execrunning_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The SQL Server Agent service is running.</value>
+  </data>
+  <data name="Execrunning_Header" xml:space="preserve">
+    <value>SQL Agent running</value>
+  </data>
+  <data name="Execrunning_Todo" xml:space="preserve">
+    <value>SQL Agent running on {0}</value>
+  </data>
+  <data name="Execstopped_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The SQL Server Agent service is stopped.</value>
+  </data>
+  <data name="Execstopped_Header" xml:space="preserve">
+    <value>SQL Agent stopped</value>
+  </data>
+  <data name="Execstopped_Todo" xml:space="preserve">
+    <value>SQL Agent stopped on {0}</value>
+  </data>
+  <data name="Fulltextother_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The Full-Text Search service has a status of {1}.</value>
+  </data>
+  <data name="Fulltextother_Header" xml:space="preserve">
+    <value>Full-Text Search is {1}</value>
+  </data>
+  <data name="Fulltextother_Todo" xml:space="preserve">
+    <value>Full-Text Search is {1} on {0}</value>
+  </data>
+  <data name="Fulltextrunning_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The Full-Text Search service is running.</value>
+  </data>
+  <data name="Fulltextrunning_Header" xml:space="preserve">
+    <value>Full-Text Search running</value>
+  </data>
+  <data name="Fulltextrunning_Todo" xml:space="preserve">
+    <value>Full-Text Search running on {0}</value>
+  </data>
+  <data name="Io_Body" xml:space="preserve">
+    <value>SQL Server instance {0} has experienced {1:F0} I/O errors while reading or writing to data files.</value>
+  </data>
+  <data name="Io_Header" xml:space="preserve">
+    <value>I/O error count is {1:F0}</value>
+  </data>
+  <data name="Io_Todo" xml:space="preserve">
+    <value>I/O error count is {1:F0} on {0}</value>
+  </data>
+  <data name="Logsize_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - Database [{2}] has transaction log files that are {1:F2}% full.
+
+If this percentage appears incorrect, you may need to run DBCC UPDATEUSAGE to have SQL Server update the information.</value>
+  </data>
+  <data name="Logsize_Header" xml:space="preserve">
+    <value>Log files are {1:F2}% full for database [{2}]</value>
+  </data>
+  <data name="Logsize_Todo" xml:space="preserve">
+    <value>Log files are {1:F2}% full for database [{2}] on {0}</value>
+  </data>
+  <data name="Logusedpercent_Body" xml:space="preserve">
+    <value>SQL Server instance {0} has {1:F2}% of the total allocated database transaction log file space in use.
+
+If this percentage appears incorrect, you may need to run DBCC UPDATEUSAGE to have SQL Server update the information.</value>
+  </data>
+  <data name="Logusedpercent_Header" xml:space="preserve">
+    <value>SQL Server Log used is {1:F2}%</value>
+  </data>
+  <data name="Logusedpercent_Todo" xml:space="preserve">
+    <value>SQL Server Log used is {1:F2}% on {0}</value>
+  </data>
+  <data name="Longrunningjob_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - SQL Agent job '{2}' started at {6} is in step '{7}' and has run for {5} seconds which is {3}% longer than the average of {4} seconds.</value>
+  </data>
+  <data name="Longrunningjob_Header" xml:space="preserve">
+    <value>SQL Agent job '{2}' running {3}% long</value>
+  </data>
+  <data name="Longrunningjob_Todo" xml:space="preserve">
+    <value>SQL Agent job '{2}' running {3}% long on {0}</value>
+  </data>
+  <data name="Maintenancemodeend_Body" xml:space="preserve">
+    <value>SQL Server {0} is no longer in SQL Diagnostic Manager maintenance mode.</value>
+  </data>
+  <data name="Maintenancemodeend_Header" xml:space="preserve">
+    <value>SQLdm maintenance mode ended</value>
+  </data>
+  <data name="Maintenancemodeend_Todo" xml:space="preserve">
+    <value>SQLdm maintenance mode ended on {0}</value>
+  </data>
+  <data name="Maintenancemodestart_Body" xml:space="preserve">
+    <value>SQL Server {0} is in SQL Diagnostic Manager maintenance mode.</value>
+  </data>
+  <data name="Maintenancemodestart_Header" xml:space="preserve">
+    <value>SQLdm maintenance mode started</value>
+  </data>
+  <data name="Maintenancemodestart_Todo" xml:space="preserve">
+    <value>SQLdm maintenance mode started on {0}</value>
+  </data>
+  <data name="Memory_Body" xml:space="preserve">
+    <value>SQL Server instance {0} is currently using {1:F2}% of the server memory.</value>
+  </data>
+  <data name="Memory_Header" xml:space="preserve">
+    <value>SQL Server memory is {1:F2}%</value>
+  </data>
+  <data name="Memory_Todo" xml:space="preserve">
+    <value>SQL Server memory is {1:F2}% on {0}</value>
+  </data>
+  <data name="Nondistributed_Body" xml:space="preserve">
+    <value>SQL Server instance {0} has {1} replication transactions published by the Publisher but not received by the Distributor.</value>
+  </data>
+  <data name="Nondistributed_Header" xml:space="preserve">
+    <value>Non-Distributed transaction count is {1}</value>
+  </data>
+  <data name="Nondistributed_Todo" xml:space="preserve">
+    <value>Non-Distributed transactions count is {1} on {0}</value>
+  </data>
+  <data name="Nonsubscribedtime_Body" xml:space="preserve">
+    <value>SQL Server instance {0} has unsubscribed replication transactions that have been holding at the Distributor for {3} hours {4} minutes {5} seconds ({1} total seconds).</value>
+  </data>
+  <data name="Nonsubscribedtime_Header" xml:space="preserve">
+    <value>Unsubscribed transaction time is {3} hours {4} minutes {5} seconds ({1} total seconds)</value>
+  </data>
+  <data name="Nonsubscribedtime_Todo" xml:space="preserve">
+    <value>Unsubscribed transaction time is {3} hours {4} minutes {5} seconds ({1} total seconds) on {0}</value>
+  </data>
+  <data name="Nonsubscribed_Body" xml:space="preserve">
+    <value>SQL Server instance {0} has {1} unsubscribed replication transactions received by the Distributor and not received by a Subscriber.</value>
+  </data>
+  <data name="Nonsubscribed_Header" xml:space="preserve">
+    <value>Unsubscribed transaction count is {1}</value>
+  </data>
+  <data name="Nonsubscribed_Todo" xml:space="preserve">
+    <value>Unsubscribed transaction count is {1} on {0}</value>
+  </data>
+  <data name="OldestopenEnded_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The oldest open transaction previously alerted has ended and is no longer a problem.</value>
+  </data>
+  <data name="OldestopenEnded_Header" xml:space="preserve">
+    <value>Oldest open transaction ended</value>
+  </data>
+  <data name="OldestopenEnded_Todo" xml:space="preserve">
+    <value>Oldest open transaction ended on {0}</value>
+  </data>
+  <data name="Opentran_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - A transaction in session {6} has been running for {1} minute(s).
+
+The transaction is being run on database [{2}] with application name '{3}' by user '{5}' on host '{4}'. 
+
+Last command issued: 
+
+{7}</value>
+  </data>
+  <data name="Opentran_Header" xml:space="preserve">
+    <value>A transaction in session {6} has been running for {1} minute(s)</value>
+  </data>
+  <data name="Opentran_Todo" xml:space="preserve">
+    <value>A transaction in session {6} has been running for {1} minute(s) on {0}</value>
+  </data>
+  <data name="Oscpuprivilegedtime_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The operating system privileged CPU usage is {1:F2}%.</value>
+  </data>
+  <data name="Oscpuprivilegedtime_Header" xml:space="preserve">
+    <value>OS privileged CPU usage is {1:F2}%</value>
+  </data>
+  <data name="Oscpuprivilegedtime_Todo" xml:space="preserve">
+    <value>OS privileged CPU usage is {1:F2}% on {0}</value>
+  </data>
+  <data name="Oscpuprocessorqueuelength_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The operating system processor queue length is {1}.</value>
+  </data>
+  <data name="Oscpuprocessorqueuelength_Header" xml:space="preserve">
+    <value>OS processor queue length is {1}</value>
+  </data>
+  <data name="Oscpuprocessorqueuelength_Todo" xml:space="preserve">
+    <value>OS processor queue length is {1} on {0}</value>
+  </data>
+  <data name="Oscpuprocessortime_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The operating system CPU usage is {1:F2}%.</value>
+  </data>
+  <data name="Oscpuprocessortime_Header" xml:space="preserve">
+    <value>OS CPU usage is {1:F2}%</value>
+  </data>
+  <data name="Oscpuprocessortime_Todo" xml:space="preserve">
+    <value>OS CPU usage is {1:F2}% on {0}</value>
+  </data>
+  <data name="Oscpuusertime_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The operating system user CPU usage is {1:F2}%.</value>
+  </data>
+  <data name="Oscpuusertime_Header" xml:space="preserve">
+    <value>OS user CPU usage is {1:F2}%</value>
+  </data>
+  <data name="Oscpuusertime_Todo" xml:space="preserve">
+    <value>OS user CPU usage is {1:F2}% on {0}</value>
+  </data>
+  <data name="Osdiskaveragediskqueuelength_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The operating system average disk queue length is {1:F2}.</value>
+  </data>
+  <data name="Osdiskaveragediskqueuelength_Header" xml:space="preserve">
+    <value>OS average disk queue length is {1:F2}</value>
+  </data>
+  <data name="Osdiskaveragediskqueuelength_Todo" xml:space="preserve">
+    <value>OS average disk queue length is {1:F2} on {0}</value>
+  </data>
+  <data name="Osdiskphysicaldisktime_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The operating system physical disks are {1:F2}% busy.</value>
+  </data>
+  <data name="Osdiskphysicaldisktime_Header" xml:space="preserve">
+    <value>OS disk time is currently {1:F2}%</value>
+  </data>
+  <data name="Osdiskphysicaldisktime_Todo" xml:space="preserve">
+    <value>OS disk time is currently {1:F2}% on {0}</value>
+  </data>
+  <data name="Osmemorypagespersecond_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The operating system is paging at {1:F2} pages/second.</value>
+  </data>
+  <data name="Osmemorypagespersecond_Header" xml:space="preserve">
+    <value>OS paging is {1:F2} pages/second</value>
+  </data>
+  <data name="Osmemorypagespersecond_Todo" xml:space="preserve">
+    <value>OS paging is {1:F2} pages/second on {0}</value>
+  </data>
+  <data name="Osmemoryusedpct_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The operating system has {1:F2}% of memory in use.</value>
+  </data>
+  <data name="Osmemoryusedpct_Header" xml:space="preserve">
+    <value>OS memory used is {1:F2}%</value>
+  </data>
+  <data name="Osmemoryusedpct_Todo" xml:space="preserve">
+    <value>OS memory used is {1:F2}% on {0}</value>
+  </data>
+  <data name="Osmetricsstatusavail_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The operating system metrics data is available.</value>
+  </data>
+  <data name="Osmetricsstatusavail_Header" xml:space="preserve">
+    <value>OS metrics data available</value>
+  </data>
+  <data name="Osmetricsstatusavail_Todo" xml:space="preserve">
+    <value>OS metrics data available on {0}</value>
+  </data>
+  <data name="Osmetricsstatusdisabled_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The operating system metrics data is not available.</value>
+  </data>
+  <data name="Osmetricsstatusdisabled_Header" xml:space="preserve">
+    <value>OS metrics data unavailable</value>
+  </data>
+  <data name="Osmetricsstatusdisabled_Todo" xml:space="preserve">
+    <value>OS metrics data unavailable on {0}</value>
+  </data>
+  <data name="Osmetricsstatusother_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The operating system metrics data is not available because OLE Automation is not enabled.</value>
+  </data>
+  <data name="Osmetricsstatusother_Header" xml:space="preserve">
+    <value>OS metrics data unavailable</value>
+  </data>
+  <data name="Osmetricsstatusother_Todo" xml:space="preserve">
+    <value>OS metrics data unavailable on {0}</value>
+  </data>
+  <data name="Osmetricsstatusunavail_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The operating system metrics data is not available because the WMI service did not respond or could not be started.</value>
+  </data>
+  <data name="Osmetricsstatusunavail_Header" xml:space="preserve">
+    <value>OS metrics data unavailable</value>
+  </data>
+  <data name="Osmetricsstatusunavail_Todo" xml:space="preserve">
+    <value>OS metrics data unavailable on {0}</value>
+  </data>
+  <data name="Querymonitorstatus_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - Query Monitor returned {1} statements.</value>
+  </data>
+  <data name="Querymonitorstatus_Header" xml:space="preserve">
+    <value>Query Monitor returned {1} statements</value>
+  </data>
+  <data name="Querymonitorstatus_Todo" xml:space="preserve">
+    <value>Query Monitor returned {1} statements on {0}</value>
+  </data>
+  <data name="Reorg_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - {6}</value>
+  </data>
+  <data name="Reorg_Header" xml:space="preserve">
+    <value>Fragmentation &gt; {5}% on {1} table{2} in database [{3}]</value>
+  </data>
+  <data name="Reorg_Todo" xml:space="preserve">
+    <value>Fragmentation &gt; {5}% on {1} table{2} in database [{3}] on {0}</value>
+  </data>
+  <data name="Resourcelimit_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - Session {2} which logged in at {3} has CPU time of {1:F2} seconds during the last refresh interval.</value>
+  </data>
+  <data name="Resourcelimit_Header" xml:space="preserve">
+    <value>Session CPU time is {1:F2} seconds for session {2}</value>
+  </data>
+  <data name="Resourcelimit_Todo" xml:space="preserve">
+    <value>Session CPU time is {1:F2} seconds for session {2} on {0}</value>
+  </data>
+  <data name="Servernotaccessible_Body" xml:space="preserve">
+    <value>SQL Server instance {0} cannot be accessed. The SQL Server service is stopped, the user may not have been granted login permission to the server or the server is unavailable.</value>
+  </data>
+  <data name="Servernotaccessible_Header" xml:space="preserve">
+    <value>SQL Server cannot be accessed</value>
+  </data>
+  <data name="Servernotaccessible_Todo" xml:space="preserve">
+    <value>SQL Server cannot be accessed on {0}</value>
+  </data>
+  <data name="Serverother_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The SQL Server service status is {1}. 
+
+{3}</value>
+  </data>
+  <data name="Serverother_Header" xml:space="preserve">
+    <value>SQL Server is {1}</value>
+  </data>
+  <data name="Serverother_Todo" xml:space="preserve">
+    <value>SQL Server is {1} on {0}</value>
+  </data>
+  <data name="Serverpaused_Body" xml:space="preserve">
+    <value>SQL Server instance {0} is paused.</value>
+  </data>
+  <data name="Serverpaused_Header" xml:space="preserve">
+    <value>SQL Server paused</value>
+  </data>
+  <data name="Serverpaused_Todo" xml:space="preserve">
+    <value>SQL Server paused on {0}</value>
+  </data>
+  <data name="Serverresponsetime_Body" xml:space="preserve">
+    <value>SQL Server instance {0} has a response time of {1} ms.</value>
+  </data>
+  <data name="Serverresponsetime_Header" xml:space="preserve">
+    <value>Server response time is {1} ms</value>
+  </data>
+  <data name="Serverresponsetime_Todo" xml:space="preserve">
+    <value>Server response time is {1} ms on {0}</value>
+  </data>
+  <data name="Serverrunning_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The SQL Server service is running.</value>
+  </data>
+  <data name="Serverrunning_Header" xml:space="preserve">
+    <value>SQL Server running</value>
+  </data>
+  <data name="Serverrunning_Todo" xml:space="preserve">
+    <value>SQL Server running on {0}</value>
+  </data>
+  <data name="Serverstopped_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - The SQL Server service is stopped.</value>
+  </data>
+  <data name="Serverstopped_Header" xml:space="preserve">
+    <value>SQL Server stopped</value>
+  </data>
+  <data name="Serverstopped_Todo" xml:space="preserve">
+    <value>SQL Server stopped on {0}</value>
+  </data>
+  <data name="Wmistatus_Body" xml:space="preserve">
+    <value>SQL Server instance {0} - WMI is not available on the server</value>
+  </data>
+  <data name="Wmistatus_Header" xml:space="preserve">
+    <value>WMI unavailable</value>
+  </data>
+  <data name="Wmistatus_Todo" xml:space="preserve">
+    <value>WMI unavailable on {0}</value>
+  </data>
+</root>

@@ -1,0 +1,12 @@
+<package name="com.idera.sqldm.d3zk.chart" language="xul/html" depends="zul">
+	<widget name="AbstractChart"/>
+	<widget name="RectangularChart"/>
+	<widget name="XYChart"/>
+	<widget name="BarChart"/>
+	<widget name="PieChart"/>
+	<widget name="LineChart"/>
+	<widget name="AreaChart"/>
+	<widget name="StackedBarChart"/>
+	<widget name="HeatmapChart"/>
+	<widget name="TimelineChart"/>
+</package>

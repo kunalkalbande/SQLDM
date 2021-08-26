@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12">
+    <defs>
+        <style>
+            .cls-1{fill:#fff}
+        </style>
+    </defs>
+    <path id="caret-left" d="M30.339 108.106v10.383a.833.833 0 0 1-1.417.571l-5.34-5.191a.791.791 0 0 1 0-1.141l5.34-5.191a.833.833 0 0 1 1.417.569z" class="cls-1" transform="translate(-23.338 -107.298)"/>
+</svg>

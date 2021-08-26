@@ -1,0 +1,1 @@
+ALTER DATABASE $(Database) SET $(ConfigurationName) $(ConfigurationValue)

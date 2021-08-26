@@ -1,0 +1,78 @@
+<div apply="com.idera.sqldm.ui.customDashboard.CustomDashboardWidgetAreaComposer"
+		id="customDashboardWidgetsDiv" vflex="min" style="min-height:780px;">	
+	<div id="displayDBDiv">
+		<hlayout sclass="time-range-selector" style="background-color:#ECECEC;border: 1px solid rgb(216, 216, 216);padding:8px;">
+			<label sclass="time-range-label" value="${sqldmidera:getLabel('SQLdm.Labels.live')}: " />
+			<idera-cwf-dropdownlist id="liveselectbox" sclass="selected-text-color" readonly="true"
+				width="115px">
+				<template name="model">
+					<comboitem label="${each}" />
+				</template>
+			</idera-cwf-dropdownlist>
+			<separator orient="vertical" bar="true"/>
+			<label sclass="time-range-label" value="${sqldmidera:getLabel('SQLdm.Labels.historic')}"/>
+			<space width="5px" />
+			<label sclass="time-range-label" value="${sqldmidera:getLabel('SQLdm.Labels.from')}: " />
+			<datebox id="startDatebox" sclass="time-range-datebox" style="padding: 0px;" 
+						readonly="true"/>
+			<label sclass="time-range-label" value="${sqldmidera:getLabel('SQLdm.Labels.to')}: " />
+			<datebox id="endDatebox" sclass="time-range-datebox" style="padding: 0px;" 
+						readonly="true"/>	
+		</hlayout>
+		<div style="padding:10px;">
+			<label id="customDashboardNameLbl" value="" style="font-size: 28px;
+				color: #0054A6;line-height: 35px;
+				font-weight: normal;"/>
+			<idera-cwf-button sclass="white-text-orange-button button-font" style="float:right;" id="editBtn" 
+						label="${sqldmidera:getLabel('SQLdm.Labels.edit-dashboard')}" />
+			<idera-cwf-button sclass="white-text-orange-button button-font" style="float:right;" id="copyBtn" 
+						label="Duplicate Dashboard" />
+			<idera-cwf-button sclass="white-text-orange-button button-font" style="float:right;" id="removeBtn" 
+						label="${sqldmidera:getLabel('SQLdm.Labels.remove-dashboard')}" />
+		</div>
+	</div>
+	<div id="editDBDiv" visible="false">
+		<div style="background-color:#ECECEC;border: 1px solid rgb(216, 216, 216);padding:8px;text-align:center;margin-left:15px;margin-right:15px;">
+			<label style="font-size:18px;font-family: 'lucida grande', sans-serif;color#000;text-shadow: 0 1px #fff;font-weight: bold;line-height: 31px;"
+					value="${sqldmidera:getLabel('SQLdm.Labels.edit-dashboard')}" />
+		</div>
+		<div style="background-color:#ECECEC;border: 1px solid rgb(216, 216, 216);margin-left:15px;margin-right:15px;margin-top:15px;">
+			<grid sclass="styled-list">
+				<columns>
+					<column hflex="2" />
+					<column hflex="14"/>
+				</columns>
+				<rows>
+					<row>
+						<label style="float:right" width="" value="${sqldmidera:getLabel('SQLdm.Labels.dashboard-name')}:" />
+						<hlayout sclass="editDBContainer" width="100%">
+							<idera-cwf-textbox id="customDashboardNametxtBox" style="background-color: white;" 
+									width="300px"/>
+							<idera-cwf-checkbox id="dbIsDefaultcb" style="font-family: 'lucida grande',sans-serif;font-size: 10px;font-weight: normal;" 
+									label="${sqldmidera:getLabel('SQLdm.Labels.default')}"/>
+							<idera-cwf-button id="saveBtn" sclass="white-text-orange-button button-font" 
+									width="70px" label="${sqldmidera:getLabel('SQLdm.Labels.save')}" />
+							<idera-cwf-button id="cancelBtn" sclass="white-text-orange-button button-font" 
+									width="70px" label="${sqldmidera:getLabel('SQLdm.Labels.cancel')}" />
+							<div width="400px">
+								<idera-cwf-button id="addWidgetBtn" sclass="white-text-orange-button button-font" 
+										style="float:right;width: 12rem; padding-left: 7px;" label="${sqldmidera:getLabel('SQLdm.Labels.add-a-widget')}" />
+							</div>
+						</hlayout>
+					</row>
+					<row>
+						<label style="float:right" value="${sqldmidera:getLabel('SQLdm.Labels.tag')}:" />
+						<chosenbox id="dbtagChosenbox" 
+							emptyMessage="add tags"
+                    		creatable="true" createMessage="Create new tag '{0}'"
+							style="min-width:100px;" />
+					</row>
+				</rows>
+			</grid>
+		</div>
+	</div>
+	<div>
+		<portallayout id="layout" style="margin-left:10px;margin-right:10px;">
+		</portallayout>
+	</div>
+</div>

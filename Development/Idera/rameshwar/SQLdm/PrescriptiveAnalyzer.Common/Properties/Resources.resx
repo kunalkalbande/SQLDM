@@ -1,0 +1,636 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DeallocateCursorImpact_Text" xml:space="preserve">
+    <value>Cursor {CursorName} is not being properly closed and deallocated. Undisposed cursors may consume memory resources and may hold locks that affect data availability. It is recommended that the cursor be explicitly closed and deallocated after usage.
+
+$(Sql)</value>
+    <comment>98</comment>
+  </data>
+  <data name="FastForwardCursorImpact_Text" xml:space="preserve">
+    <value>Cursor {CursorName} seems to be used for read and forward scroll operations only. The cursor is declared without "Fast Forward" optimization option which may enhance its performance. It is recommended that the cursor declaration be rewritten using the "Fast Forward" cursor option.
+
+$(Sql)</value>
+    <comment>99</comment>
+  </data>
+  <data name="FunctionInWhereClauseImpact_Text" xml:space="preserve">
+    <value>Rewrite query so that the function or expressions is on the right side of the equals in the identified query
+
+$(Sql)
+</value>
+    <comment>140</comment>
+  </data>
+  <data name="HintAbuseImpact_Text" xml:space="preserve">
+    <value>Hints are usually placed either to affect the execution plan or enforce a locking method. Often, hints that helped a query's performance in the past are left in the query without re examination of its affect after data has changed, software or hardware upgrades etc. It is recommended that all queries that use hints be re evaluated periodically for performance with and without the hint and that the hint be removed if it proves not to be beneficial for the query's performance in the current environment.
+
+$(Sql)</value>
+    <comment>112</comment>
+  </data>
+  <data name="LeftExpressionInWhereClauseImpact_Text" xml:space="preserve">
+    <value>A predicate containing the LEFT function is used for a prefix search of a string expression. The use of LEFT may prohibit the optimizer from generating execution plans that use index seeks and from correctly evaluating string statistics. It is recommended that the query be rewritten and that the LEFT function be replaced with the functionally equivalent syntax of LIKE and the % wild card. Using the LIKE operator may enable the optimizer to use indexes and string statistics more efficiently and generate more optimal execution plans.
+
+$(Sql)</value>
+    <comment>115</comment>
+  </data>
+  <data name="LikeUseNotNeededImpact_Text" xml:space="preserve">
+    <value>You can use a direct comparison operator instead of using the LIKE predicate.
+
+$(Sql)</value>
+  </data>
+  <data name="MemLimitExceededImpact_Text" xml:space="preserve">
+    <value>Need someone to updat the recommendation text.
+
+$(Sql)</value>
+  </data>
+  <data name="MissingIndexImpact_Text" xml:space="preserve">
+    <value>Need someone to update the recommendation text.</value>
+  </data>
+  <data name="NakedInsertImpact_Text" xml:space="preserve">
+    <value>You should specify a column list on your insert statements.
+
+$(Sql)</value>
+  </data>
+  <data name="NetBandwidthLostImpact_Text" xml:space="preserve">
+    <value>Sql Doctor has detected that this server has lost network bandwidth. When previously measured its total active bandwidth was xxx megabits/sec and it is now xxx megabits/sec (a xx% reduction). Either a network card has been changed to one of lesser capability or BIOS or power settings or hardware/cable/fiber errors are preventing and card from operating at full potential. Alternatively a failover may have occurred on a cluster to a server with a less capable card.</value>
+    <comment>SDR-N2</comment>
+  </data>
+  <data name="NetCardErrorsImpact_Text" xml:space="preserve">
+    <value>The network card **** is giving serious unexpected errors. These errors are being written to the system event log which should be closely scrutinized as the log entries will give further details. See http://technet.microsoft.com/en-us/library/cc783876(WS.10).aspx</value>
+    <comment>SDR-N?</comment>
+  </data>
+  <data name="NetCardLostImpact_Text" xml:space="preserve">
+    <value>Sql Doctor has detected that one or more network cards seem to have stopped working. Previously SQL Doctor had found xx network cards with a total bandwidth of xxx megabits/sec. Now only xx card(s) with a total bandwidth of xxx megabits/sec have been found (a xx% reduction in capacity). Either a network card has stopped working or been unplugged either on the card or network switch or the network cable/fiber is faulty or another server is being used or a failover has occurred on a cluster to a server with lesser network capability.</value>
+    <comment>SDR-N1</comment>
+  </data>
+  <data name="NetCongestionImpact_Text" xml:space="preserve">
+    <value>Sql Doctor has detected that this instance of SQL Server is generating only xx% of the network load with the other xx% being generated by non-SQL Server processes. See http://www.sql-server-performance.com/articles/audit/operating_system_performance_p1.aspx Processes such as those shown below generate significant network traffic and should be stopped on any production server:Print spooler, IIS, DHCP server, Alerter, Clipbook, Computer browser, Messenger, network DDE, task scheduler, Exchange, Skype, Citrix, terminal services, IM, searchindexer.exe, task manager, teredo service, sidebar, FTP service, License Logging, SMTP, Telnet, fax service, file replication, Distributed Link tracking</value>
+    <comment>SDR-N3</comment>
+  </data>
+  <data name="NetNoCountImpact_Text" xml:space="preserve">
+    <value>This is causing excessive network use as packets containing the number of rows affected being constantly transmitted back to the clients with each and every T-SQL Statement being executed.</value>
+    <comment>SDR-N7</comment>
+  </data>
+  <data name="NetRedirectorErrorsImpact_Text" xml:space="preserve">
+    <value>The network is giving serious unexpected errors. These errors are being written to the system event log which should be closely scrutinized as the log entries will give further details. See http://technet.microsoft.com/en-us/library/cc783876(WS.10).aspx</value>
+    <comment>SDR-N5</comment>
+  </data>
+  <data name="NetRedundantCardsImpact_Text" xml:space="preserve">
+    <value>Having 2 redundant network cards is a best practice suggestion</value>
+    <comment>SDR-N8</comment>
+  </data>
+  <data name="NetRetranSegsImpact_Text" xml:space="preserve">
+    <value>The number of TCP segments being retransmitted is xx%. TCP segments are typically retransmitted either due to the fact that their receipt is not being timeously acknowledged or that the segments are being acknowledged out of order. See http://msdn.microsoft.com/en-us/library/ms819737.aspx and http://support.microsoft.com/kb/224829A high level of retransmissions will significantly slow up SQL Server and indicates one of the following problems:1. Either the network card(s) in the server or the network switch/hub is highly congested.2. The cabling between the network card(s) and the switch/hub is faulty/sub-standard.3. Either the network card(s) of switch/hub is giving intermittent hardware faults.4. The firmware installed on either the network card(s) and/or the switch/hub has bugs.5. A problem or bug in the firewall hardware or software.</value>
+    <comment>SDR-N4</comment>
+  </data>
+  <data name="NetSSLEncryptionImpact_Text" xml:space="preserve">
+    <value>There are high security environments where network transmission is required.  Encryption and decryption of network transmission streams places additional CPU load on the server as well as double the number of network transmissions during each connection made.</value>
+    <comment>SDR-N6</comment>
+  </data>
+  <data name="NoColumnStatsImpact_Text" xml:space="preserve">
+    <value>Need someone to update the recommendation text.</value>
+  </data>
+  <data name="NoJoinPredicateImpact_Text" xml:space="preserve">
+    <value>The query references table {Table} but seems to be missing the join predicate that defines its relationship to another table used in the query. Without a join predicate, the result of the join will be a Cartesian product of all rows. Although this might not affect the final result set due to rows removed by subsequent joins, it still may incur a significant performance overhead. It is recommended that you re evaluate the join and rewrite the query to include the appropriate join predicate.</value>
+    <comment>118</comment>
+  </data>
+  <data name="SelectStarAbuseImpact_Text" xml:space="preserve">
+    <value>Multiple queries that use SELECT * syntax were found. If the application actually requires all table columns, the overhead of using this syntax is minor in terms of performance but still is discouraged due to code maintenance reasons. If the application does not actually use all the columns, reducing the select list to the minimal set of required columns may have a significant positive effect on performance. Either way, it is recommended that these queries be rewritten and that the * be replaced with the minimal required set of columns. 
+
+$(Sql)</value>
+    <comment>121</comment>
+  </data>
+  <data name="TwoExpressionCoalesceImpact_Text" xml:space="preserve">
+    <value>A predicate containing the COALESCE function is used for two expressions null replacement. Although COALESCE is the ANSI standard for null replacement and enables multiple expression null replacement, SQL Server interprets COALESCE as a full CASE expression. This may hinder the optimizer from generating optimal execution plans. ISNULL is a functionally equivalent function in this case which is interpreted more efficiently by the optimizer and may produce more optimal execution plans. It is recommended that the query be rewritten and that the COALESCE function is replaced with ISNULL. Note: ISNULL is a proprietary SQL Server syntax function and may affect code transport to other platforms.
+
+$(Sql)</value>
+    <comment>106</comment>
+  </data>
+  <data name="UnfilteredDeleteImpact_Text" xml:space="preserve">
+    <value>The query deletes all data from table {Table}. It is highly recommended that full truncations of this type be rewritten to use the much more efficient TRUNCATE statement instead of DELETE.
+
+$(Sql)</value>
+    <comment>109</comment>
+  </data>
+  <data name="UnionSetAbuseImpact_Text" xml:space="preserve">
+    <value>A UNION set operator is used. A UNION operator requires that SQL server discards duplicate rows from the result set. This requires sorting or grouping which may consume significant resources. It is recommended that the query be re evaluated manually for the possibility of duplicate rows returning from the individual select statements. If found that there is no possibility of duplicate rows, it is highly recommended that the query be rewritten and the UNION operator replaced with a UNION ALL operator.
+
+$(Sql)</value>
+    <comment>125</comment>
+  </data>
+  <data name="UsingRowCountImpact_Text" xml:space="preserve">
+    <value>Need someone to update the recommendation text.
+
+$(Sql)</value>
+  </data>
+  <data name="DeallocateCursorFinding_Text" xml:space="preserve">
+    <value>Cursor {CursorName} is not being properly closed and deallocated. </value>
+    <comment>98</comment>
+  </data>
+  <data name="FastForwardCursorFinding_Text" xml:space="preserve">
+    <value>Cursor optimization.</value>
+    <comment>99</comment>
+  </data>
+  <data name="FunctionInWhereClauseFinding_Text" xml:space="preserve">
+    <value>Function or expression used in where clause</value>
+    <comment>140</comment>
+  </data>
+  <data name="HintAbuseFinding_Text" xml:space="preserve">
+    <value>Overusing hints</value>
+    <comment>112</comment>
+  </data>
+  <data name="LeftExpressionInWhereClauseFinding_Text" xml:space="preserve">
+    <value>LEFT function used in where clause</value>
+    <comment>115</comment>
+  </data>
+  <data name="LikeUseNotNeededFinding_Text" xml:space="preserve">
+    <value>LIKE not needed</value>
+  </data>
+  <data name="MemLimitExceededFinding_Text" xml:space="preserve">
+    <value>Need someone to updat the recommendation text.
+
+$(Sql)</value>
+  </data>
+  <data name="MissingIndexFinding_Text" xml:space="preserve">
+    <value>Need someone to update the recommendation text.</value>
+  </data>
+  <data name="NakedInsertFinding_Text" xml:space="preserve">
+    <value>No columns specified on insert operation</value>
+  </data>
+  <data name="NetBandwidthLostFinding_Text" xml:space="preserve">
+    <value>The server has lost network bandwidth.</value>
+    <comment>SDR-N2</comment>
+  </data>
+  <data name="NetCardErrorsFinding_Text" xml:space="preserve">
+    <value>A network card is having serious unexpected errors.</value>
+    <comment>SDR-N?</comment>
+  </data>
+  <data name="NetCardLostFinding_Text" xml:space="preserve">
+    <value>One or more network cards have stopped working.</value>
+    <comment>SDR-N1</comment>
+  </data>
+  <data name="NetCongestionFinding_Text" xml:space="preserve">
+    <value>SQL Server is generating only xx% of the network load on your production server while xx% is being generated by non-SQL Server processes.</value>
+    <comment>SDR-N3</comment>
+  </data>
+  <data name="NetNoCountFinding_Text" xml:space="preserve">
+    <value>The default network connection option on SQL Server is not using Nocount On and a sample of the text of the T-SQL being executed by SQL Server shows that in most cases the SET NOCOUNT ON statement is not being included.</value>
+    <comment>SDR-N7</comment>
+  </data>
+  <data name="NetRedirectorErrorsFinding_Text" xml:space="preserve">
+    <value>The network is having serious unexpected errors.</value>
+    <comment>SDR-N5</comment>
+  </data>
+  <data name="NetRedundantCardsFinding_Text" xml:space="preserve">
+    <value>The server does not have 2 active teamed or un-teamed network cards</value>
+    <comment>SDR-N8</comment>
+  </data>
+  <data name="NetRetranSegsFinding_Text" xml:space="preserve">
+    <value>The number of TCP segments being retransmitted is xx%.</value>
+    <comment>SDR-N4</comment>
+  </data>
+  <data name="NetSSLEncryptionFinding_Text" xml:space="preserve">
+    <value>Network encryption has been turned on by default.</value>
+    <comment>SDR-N6</comment>
+  </data>
+  <data name="NoColumnStatsFinding_Text" xml:space="preserve">
+    <value>Need someone to update the recommendation text.</value>
+  </data>
+  <data name="NoJoinPredicateFinding_Text" xml:space="preserve">
+    <value>The query references table {Table} but seems to be missing the join predicate that defines its relationship to another table used in the query. Without a join predicate, the result of the join will be a Cartesian product of all rows. Although this might not affect the final result set due to rows removed by subsequent joins, it still may incur a significant performance overhead. It is recommended that you re evaluate the join and rewrite the query to include the appropriate join predicate.</value>
+    <comment>118</comment>
+  </data>
+  <data name="SelectStarAbuseFinding_Text" xml:space="preserve">
+    <value>Select * abuse</value>
+    <comment>121</comment>
+  </data>
+  <data name="TwoExpressionCoalesceFinding_Text" xml:space="preserve">
+    <value>Coalesce replacement</value>
+    <comment>106</comment>
+  </data>
+  <data name="UnfilteredDeleteFinding_Text" xml:space="preserve">
+    <value>Unfiltered delete statement</value>
+    <comment>109</comment>
+  </data>
+  <data name="UnionSetAbuseFinding_Text" xml:space="preserve">
+    <value>Union set abuse</value>
+    <comment>125</comment>
+  </data>
+  <data name="UsingRowCountFinding_Text" xml:space="preserve">
+    <value>Need someone to update the recommendation text.
+
+$(Sql)</value>
+  </data>
+  <data name="DeallocateCursorRecommendation_Text" xml:space="preserve">
+    <value>Quit being lazy, close and deallocate your cursors.</value>
+    <comment>98</comment>
+  </data>
+  <data name="FastForwardCursorRecommendation_Text" xml:space="preserve">
+    <value>Since you are using a read-only forward cursor you should use the Fast  Forward option.</value>
+    <comment>99</comment>
+  </data>
+  <data name="FunctionInWhereClauseRecommendation_Text" xml:space="preserve">
+    <value>Change your query so it works better.</value>
+    <comment>140</comment>
+  </data>
+  <data name="HintAbuseRecommendation_Text" xml:space="preserve">
+    <value>Quit trying to out think SQL Server and let it do it's job.  </value>
+    <comment>112</comment>
+  </data>
+  <data name="LeftExpressionInWhereClauseRecommendation_Text" xml:space="preserve">
+    <value>Learn how to use LIKE</value>
+    <comment>115</comment>
+  </data>
+  <data name="LikeUseNotNeededRecommendation_Text" xml:space="preserve">
+    <value>Avoid using LIKE if you can accomplish the same thing using boolean operators.</value>
+  </data>
+  <data name="MemLimitExceededRecommendation_Text" xml:space="preserve">
+    <value>Need someone to updat the recommendation text.
+
+$(Sql)</value>
+  </data>
+  <data name="MissingIndexRecommendation_Text" xml:space="preserve">
+    <value>Need someone to update the recommendation text.</value>
+  </data>
+  <data name="NakedInsertRecommendation_Text" xml:space="preserve">
+    <value>Lazy...</value>
+  </data>
+  <data name="NetBandwidthLostRecommendation_Text" xml:space="preserve">
+    <value>It is recommended that the network be analyzed to determine the issue.</value>
+    <comment>SDR-N2</comment>
+  </data>
+  <data name="NetCardErrorsRecommendation_Text" xml:space="preserve">
+    <value>It is recommended that the errors written to the system event log should be closely scrutinized as the log entries will give further details.</value>
+    <comment>SDR-N?</comment>
+  </data>
+  <data name="NetCardLostRecommendation_Text" xml:space="preserve">
+    <value>It is recommended that the the Network cards be examined to determined which are having problems.</value>
+    <comment>SDR-N1</comment>
+  </data>
+  <data name="NetCongestionRecommendation_Text" xml:space="preserve">
+    <value>It is recommended that non-essential applications be stopped on production servers.</value>
+    <comment>SDR-N3</comment>
+  </data>
+  <data name="NetNoCountRecommendation_Text" xml:space="preserve">
+    <value>It is recommended that Nocount On be set as the default network setting on your SQL Server</value>
+    <comment>SDR-N7</comment>
+  </data>
+  <data name="NetRedirectorErrorsRecommendation_Text" xml:space="preserve">
+    <value>It is recommended that the errors written to the system event log should be closely scrutinized as the log entries will give further details.</value>
+    <comment>SDR-N5</comment>
+  </data>
+  <data name="NetRedundantCardsRecommendation_Text" xml:space="preserve">
+    <value>It is recommended that your network cards be teamed.</value>
+    <comment>SDR-N8</comment>
+  </data>
+  <data name="NetRetranSegsRecommendation_Text" xml:space="preserve">
+    <value>It is recommended that the network be analyzed to determine the issue.</value>
+    <comment>SDR-N4</comment>
+  </data>
+  <data name="NetSSLEncryptionRecommendation_Text" xml:space="preserve">
+    <value>It is recommended that, if the network transmission encryption is not necessary, the network encryption be disabled.</value>
+    <comment>SDR-N6</comment>
+  </data>
+  <data name="NoColumnStatsRecommendation_Text" xml:space="preserve">
+    <value>Need someone to update the recommendation text.</value>
+  </data>
+  <data name="NoJoinPredicateRecommendation_Text" xml:space="preserve">
+    <value>The query references table {Table} but seems to be missing the join predicate that defines its relationship to another table used in the query. Without a join predicate, the result of the join will be a Cartesian product of all rows. Although this might not affect the final result set due to rows removed by subsequent joins, it still may incur a significant performance overhead. It is recommended that you re evaluate the join and rewrite the query to include the appropriate join predicate.</value>
+    <comment>118</comment>
+  </data>
+  <data name="SelectStarAbuseRecommendation_Text" xml:space="preserve">
+    <value>Avoid the temptation to be lazy</value>
+    <comment>121</comment>
+  </data>
+  <data name="TwoExpressionCoalesceRecommendation_Text" xml:space="preserve">
+    <value>Change COALESCE to ISNULL</value>
+    <comment>106</comment>
+  </data>
+  <data name="UnfilteredDeleteRecommendation_Text" xml:space="preserve">
+    <value>Give TRUNCATE a try</value>
+    <comment>109</comment>
+  </data>
+  <data name="UnionSetAbuseRecommendation_Text" xml:space="preserve">
+    <value>Change up your query so that you can eliminate duplicates from each rowset in the union so that you can use UNION ALL.</value>
+    <comment>125</comment>
+  </data>
+  <data name="UsingRowCountRecommendation_Text" xml:space="preserve">
+    <value>Need someone to update the recommendation text.
+
+$(Sql)</value>
+  </data>
+  <data name="DisabledIndexFinding_Text" xml:space="preserve">
+    <value>Disabled index</value>
+  </data>
+  <data name="DisabledIndexImpact_Text" xml:space="preserve">
+    <value>Index $(Name) on table $(Table) in database $(Database) is disabled.  </value>
+  </data>
+  <data name="DisabledIndexRecommendation_Text" xml:space="preserve">
+    <value>We recommend you evaluate if this index is still necessary.  If not, drop it.</value>
+  </data>
+  <data name="HypotheticalIndexFinding_Text" xml:space="preserve">
+    <value>Hypothetical index found</value>
+  </data>
+  <data name="HypotheticalIndexImpact_Text" xml:space="preserve">
+    <value>A hypothetical index $(Name) on table $(Schema).$(Table) in database $(Database) was found.  </value>
+  </data>
+  <data name="HypotheticalIndexRecommendation_Text" xml:space="preserve">
+    <value>Consider dropping hypothetical indexes.</value>
+  </data>
+  <data name="FragmentedIndexFinding_Text" xml:space="preserve">
+    <value>Fragmented index</value>
+  </data>
+  <data name="FragmentedIndexImpact_Text" xml:space="preserve">
+    <value>Index $(Name) on table $(Sqhema).$(Table) in database ($Database) is fragmented ($(AvgFragmentation)%).</value>
+  </data>
+  <data name="FragmentedIndexRecommendation_Text" xml:space="preserve">
+    <value>We recommend you buy IDERA SQL defrag and defragment the index.</value>
+  </data>
+  <data name="IndexPageLatchContentionFinding_Text" xml:space="preserve">
+    <value>Page latch contention</value>
+  </data>
+  <data name="IndexPageLatchContentionImpact_Text" xml:space="preserve">
+    <value>Index $(Name) on Table $(Schema).$(Table) in $(Database) is in the top 10 highest indexes with page latch waits.  Sessions have waited a total of $(WaitCount) times for a total of $(WaitMs)ms with an average wait time of $(AvgWaitMs)ms.  </value>
+  </data>
+  <data name="IndexPageLatchContentionRecommendation_Text" xml:space="preserve">
+    <value>You should rearchitect your entire database so this doesn't happen.</value>
+  </data>
+  <data name="IndexPageLockContentionFinding_Text" xml:space="preserve">
+    <value>Page lock contention</value>
+  </data>
+  <data name="IndexPageLockContentionImpact_Text" xml:space="preserve">
+    <value>Index $(Name) on Table $(Schema).$(Table) in $(Database) is in the top 10 highest indexes with pagelock waits.  Sessions have waited a total of $(WaitCount) times for a total of $(WaitMs)ms with an average wait time of $(AvgWaitMs)ms. </value>
+  </data>
+  <data name="IndexPageLockContentionRecommendation_Text" xml:space="preserve">
+    <value>You should rearchitect your entire database so this doesn't happen.</value>
+  </data>
+  <data name="IndexRowLockContentionFinding_Text" xml:space="preserve">
+    <value>Row lock contention</value>
+  </data>
+  <data name="IndexRowLockContentionImpact_Text" xml:space="preserve">
+    <value>Index $(Name) on Table $(Schema).$(Table) in $(Database) is in the top 10 highest indexes with rowlock waits.  Sessions have waited a total of $(WaitCount) times for a total of $(WaitMs)ms with an average wait time of $(AvgWaitMs)ms.</value>
+  </data>
+  <data name="IndexRowLockContentionRecommendation_Text" xml:space="preserve">
+    <value>You should rearchitect your entire database so this doesn't happen.</value>
+  </data>
+  <data name="DuplicateIndexFinding_Text" xml:space="preserve">
+    <value>Duplicate index</value>
+  </data>
+  <data name="DuplicateIndexImpact_Text" xml:space="preserve">
+    <value>Index $(Name) on table $(Schema).$(Table) in database $(Database) is a duplicate of index $(DupName).</value>
+  </data>
+  <data name="DuplicateIndexRecommendation_Text" xml:space="preserve">
+    <value>Drop one</value>
+  </data>
+  <data name="IndexUnderutilizedFinding_Text" xml:space="preserve">
+    <value>Index underutilized</value>
+  </data>
+  <data name="IndexUnderutilizedImpact_Text" xml:space="preserve">
+    <value>Index $(Name) on table $(Schema).$(Table) in database $(Database) does not appear to get  used much.</value>
+  </data>
+  <data name="IndexUnderutilizedRecommendation_Text" xml:space="preserve">
+    <value>Drop it</value>
+  </data>
+  <data name="IndexUnusedFinding_Text" xml:space="preserve">
+    <value>Index not used</value>
+  </data>
+  <data name="IndexUnusedImpact_Text" xml:space="preserve">
+    <value>Index $(Name) on table $(Schema).$(Table) in database $(Database) does not appear to have been used in long time.</value>
+  </data>
+  <data name="IndexUnusedRecommendation_Text" xml:space="preserve">
+    <value>Drop it</value>
+  </data>
+  <data name="PartialDuplicateIndexFinding_Text" xml:space="preserve">
+    <value>Partial duplicate index</value>
+  </data>
+  <data name="PartialDuplicateIndexImpact_Text" xml:space="preserve">
+    <value>Index $(Name) on table $(Schema).$(Table) in database $(Database) is a duplicate of index $(DupName).</value>
+  </data>
+  <data name="PartialDuplicateIndexRecommendation_Text" xml:space="preserve">
+    <value>Drop the one with the least number of columns</value>
+  </data>
+  <data name="OutOfDateStatsFinding_Text" xml:space="preserve">
+    <value>Statistics are out of date</value>
+  </data>
+  <data name="OutOfDateStatsImpact_Text" xml:space="preserve">
+    <value>Statistics object $(Name) on table $(Schema).$(Table) in database $(Database) is out of date.</value>
+  </data>
+  <data name="OutOfDateStatsRecommendation_Text" xml:space="preserve">
+    <value>Statistics should be updated.</value>
+  </data>
+  <data name="CachedPlanMisuseFinding_Text" xml:space="preserve">
+    <value>Cached plan may not be the most efficient for all parameters</value>
+  </data>
+  <data name="CachedPlanMisuseImpact_Text" xml:space="preserve">
+    <value>The procecure was executed $(ExecutionCount) times during the analyzed workload. The smallest execution duration was $(MinimumDuration)ms resulting in $(MinimumReads) reads and $(MinimumCPU) CPU time while the longest execution duration was $(MaximumDuration)ms resulting in $(MaximumReads) reads and $(MaximumCPU) CPU time. The significant difference between execution times and consumed resources likely indicates that an unexpected set of parameters was used resulting in an inefficient cached plan being selected.</value>
+  </data>
+  <data name="CachedPlanMisuseRecommendation_Text" xml:space="preserve">
+    <value>You may need to update statistics so that a more suitable plan will be created or you may need to use the WITH RECOMPILE option on your stored procedure.</value>
+  </data>
+  <data name="RecommendationRequiresRestartMessage" xml:space="preserve">
+    <value>To successfully apply the changes made by this optimization script, you must restart the SQL Server Service on the target instance.</value>
+  </data>
+  <data name="RecommendationScriptRunDuration" xml:space="preserve">
+    <value>This optimization script may take several minutes to apply its changes. The total run time depends on environmental factors such as the current workload on your target server.</value>
+  </data>
+  <data name="RecommendationRequiresRestartMessageUndo" xml:space="preserve">
+    <value>To successfully apply the changes made by this undo script, you must restart the SQL Server Service on the target instance.</value>
+  </data>
+  <data name="RecommendationScriptRunDurationUndo" xml:space="preserve">
+    <value>This undo script may take several minutes to apply its changes. The total run time depends on environmental factors such as the current workload on your target server.</value>
+  </data>
+  <data name="RebuildIndexPerformedOffline" xml:space="preserve">
+    <value>The index {0} cannot be rebuilt online because one or more columns in this index do not support the online rebuild option. If you continue, the index will be taken offline and will be unavailable.</value>
+  </data>
+  <data name="RecommendationCanBreakADO" xml:space="preserve">
+    <value>This optimization script may cause unexpected results or errors from third-party applications that use ActiveX Data Objects (ADO) to connect to SQL Server.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="DatabaseRankingStats" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\DatabaseRankingStats.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GetIndexInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\GetIndexInfo.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GetObjectSchemaName" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\GetObjectSchemaName.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GetPageInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\GetPageInfo.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GetPropertiesFromSysDataSpaces" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\GetPropertiesFromSysDataSpaces.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="GetPropertiesFromSysIndexColumns" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\GetPropertiesFromSysIndexColumns.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="GetPropertiesFromSysIndexes2005" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\GetPropertiesFromSysIndexes2005.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="GetPropertiesFromSysIndexes2008" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\GetPropertiesFromSysIndexes2008.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="GetPropertiesFromSysObjects" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\GetPropertiesFromSysObjects.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="GetPropertiesFromSysPartitions2005" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\GetPropertiesFromSysPartitions2005.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="GetPropertiesFromSysPartitions2008" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\GetPropertiesFromSysPartitions2008.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="GetPropertiesFromSysSpatialIndexTessellations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\GetPropertiesFromSysSpatialIndexTessellations.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="GetPropertiesFromSysStats" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\GetPropertiesFromSysStats.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="GetPropertiesFromSysTables2008" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\GetPropertiesFromSysTables2008.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="GetPropertiesFromSysXMLIndexes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\GetPropertiesFromSysXMLIndexes.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="GetPropertiesFromSysXMLIndexesPrimary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\GetPropertiesFromSysXMLIndexesPrimary.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="GetTableDependentObjects" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\GetTableDependentObjects.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="IsCmdShellEnabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\IsCmdShellEnabled.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="IsIndexRebuildableOnline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\IsIndexRebuildableOnline.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="IsOleEnabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\IsOleEnabled.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="IsSystemObject" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\IsSystemObject.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="IsSystemTable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\IsSystemTable.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="SetOleAutomationConfig" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\SetOleAutomationConfig.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="TableRankingStats" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Scripts\TableRankingStats.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+</root>

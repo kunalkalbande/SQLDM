@@ -1,0 +1,291 @@
+<zk>
+	<div
+		apply="com.idera.sqldm.ui.dashboard.instances.SingleInstanceDashboardComposer">
+		<div style="height:100%;overflow:auto">
+			<borderlayout height="900px">
+				<west maxsize="228" size="16%" flex="true"
+					vflex="1" sclass="light-panel-color-shade">
+					<idera-cwf-sidebar id="filterLayout" vflex="1"
+						width="100%" style="overflow-y: auto; overflow-x:hidden">
+						<vlayout vflex="1" width="100%"
+							style="overflow-y: auto; ; overflow-x:hidden">
+							<div
+								
+								class="filterwidth">
+								<radiogroup id="tabs"/>
+								<idera-cwf-groupbox id="overview" style="width:800px;"
+									contentStyle="overflow:visible;" open="false"
+									sclass="groupbox-header-colored">
+									<caption
+										id="applicationFilterCaption"
+										label="${idera:getLabel('SQLdm.Labels.sid.overview')}" />
+									<vlayout style="height: inherit;">
+										<div id="divOverviewInstanceName" tooltip="popupInstanceName">
+										<popup id="popupInstanceName">
+												<label id="divInstanceName" value=""></label>
+										</popup>
+										<idera-cwf-radio
+											id="overviewInstanceName" radiogroup="tabs" style="padding-left: 0px; width: 500px;" />
+										</div>
+									
+									</vlayout>
+								</idera-cwf-groupbox>
+
+								<idera-cwf-groupbox id="sessions" style="width:800px;"
+									contentStyle="overflow:hidden;" open="false"
+									sclass="groupbox-header-colored">
+									<caption id="sessionsCaption"
+										label="${idera:getLabel('SQLdm.Labels.sid.sessions')}" />
+									<vlayout style="height: inherit;">
+										<idera-cwf-radio style="padding-left: 0px;"
+											id="sessionsOverview" label="OVERVIEW" radiogroup="tabs" />
+										<idera-cwf-radio style="padding-left: 0px;cursor:hand;"
+											id="sessionsSessionGraph" label="SESSION GRAPH" radiogroup="tabs" />
+									</vlayout>
+								</idera-cwf-groupbox>
+
+								<idera-cwf-groupbox id="queries"
+									mold="3d" style="width:800px;"
+									contentStyle="border: 0px;overflow:hidden;" open="false"
+									sclass="groupbox-header-colored">
+									<caption id="queriesCaption"
+										label="QUERIES" />
+									<vlayout style="height: inherit;">
+										<idera-cwf-radio id="queriesTab1"
+											label="QUERIES" radiogroup="tabs" />
+									</vlayout>
+								</idera-cwf-groupbox>
+
+								<idera-cwf-groupbox id="querieswait"
+									mold="3d" style="width:800px;"
+									contentStyle="border: 0px;overflow:hidden;" open="false"
+									sclass="groupbox-header-colored">
+									<caption id="querieswaitCaption"
+										label="${idera:getLabel('SQLdm.Labels.sid.query-waits')}" />
+									<vlayout style="height: inherit;">
+										<idera-cwf-radio
+											id="querieswaitWaits" label="WAITS" radiogroup="tabs" />
+										<idera-cwf-radio
+											id="querieswaitWaitCategory" label="WAIT CATEGORY" radiogroup="tabs" />
+										<idera-cwf-radio
+											id="querieswaitStatements" label="STATEMENTS" radiogroup="tabs"/>
+										<idera-cwf-radio
+											id="querieswaitApplication" label="APPLICATION" radiogroup="tabs"/>
+										<idera-cwf-radio
+											id="querieswaitDatabases" label="DATABASES" radiogroup="tabs"/>
+										<idera-cwf-radio
+											id="querieswaitClients" label="CLIENTS" radiogroup="tabs" />
+										<idera-cwf-radio
+											id="querieswaitSessions" label="SESSIONS" radiogroup="tabs"/>
+										<idera-cwf-radio
+											id="querieswaitUsers" label="USERS" radiogroup="tabs" />
+									</vlayout>
+								</idera-cwf-groupbox>
+
+								<idera-cwf-groupbox id="resources"
+									mold="3d" style="width:800px;"
+									contentStyle="border: 0px;overflow:hidden;" open="false"
+									sclass="groupbox-header-colored">
+									<caption id="resourcesCaption"
+										label="${idera:getLabel('SQLdm.Labels.sid.resources')}" />
+									<vbox>
+										<idera-cwf-radio
+											id="resourcesCpu" label="CPU" radiogroup="tabs" />
+										<idera-cwf-radio
+											id="resourcesMemory" label="MEMORY" radiogroup="tabs" />
+										<idera-cwf-radio
+											id="resourcesDisk" label="DISK" radiogroup="tabs" />
+										<idera-cwf-radio
+											id="resourcesServerWaits" label="SERVER WAITS" radiogroup="tabs"/>
+									</vbox>
+								</idera-cwf-groupbox>
+
+								<idera-cwf-groupbox id="databases"
+									mold="3d" style="width:800px;"
+									contentStyle="border: 0px;overflow:hidden;" open="false"
+									sclass="groupbox-header-colored">
+									<caption id="databasesCaption"
+										label="${idera:getLabel('SQLdm.Labels.databases')}" />
+									<vbox>
+										<idera-cwf-radio
+											id="databasesSummary" label="SUMMARY" radiogroup="tabs" />
+										<idera-cwf-radio
+											id="databasesTempdb" label="TEMPDB" radiogroup="tabs" />
+										<idera-cwf-radio
+											id="databasesAvailabilityGroups"
+											label="AVAILABILITY GROUPS" radiogroup="tabs"/>
+									</vbox>
+								</idera-cwf-groupbox>
+
+								<idera-cwf-groupbox id="alerts"
+									mold="3d" style="width:800px;"
+									contentStyle="border: 0px;overflow:hidden;" open="false"
+									sclass="groupbox-header-colored">
+									<caption id="alertsAdvancedCaption"
+										label="${idera:getLabel('SQLdm.Labels.alerts_capital')}" />
+									<vbox>
+										<idera-cwf-radio
+											id="alertsAlerts" label="ALERTS" radiogroup="tabs"/>
+									</vbox>
+								</idera-cwf-groupbox>
+							</div>
+						</vlayout>
+					</idera-cwf-sidebar>
+				</west>
+				<center>
+					<vlayout id="mainArea">
+						<hlayout hflex="1" style="background: #b7afa7;"
+							droppable="true">
+							<vlayout>
+								<div style="width:1180px">
+									<div sclass="padding-all-16"
+										style="background: #b7afa7;color: #006089;">
+										<label id="lblInstanceName"
+											sclass="H1"
+											value="${idera:getLabel('SQLdm.Labels.instance-name-loading')}" />
+										<label id="swaInstance"
+											style="float: right;padding-top: 10px;padding-left: 5px;padding-right: 60px;"
+											sclass="H3" value="Launch SWA" />
+										<image id="launchSWA"
+											style="float:right; cursor:hand;padding-left: 10px;"
+											tooltiptext="${idera:getLabel('SQLdm.Labels.swa-instance-launch-tooltip')}"
+											sclass="white-text-blue-button"
+											src="~./sqldm/com/idera/sqldm/images/swa_fev.png"
+											width="34px" />
+									</div>
+									<div id="historyPanel"
+										style="background: #b7afa7;" width="100%">
+										<hbox>
+											<!-- Time filters -->
+											<hlayout
+												sclass="filtering-layout-style padding-lr-4 padding-t-0 padding-b-8"
+												hflex="1">
+												<space spacing="40px"></space>
+												<div
+													style="padding-top: 2px;">
+													<label
+														style="padding-left:10px;" value="Scale: ">
+													</label>
+												</div>
+												<combobox
+													id="scaleCombobox" readonly="true" width="120px">
+													<comboitem
+														label="4 Weeks" />
+													<comboitem
+														label="5 Days" />
+													<comboitem
+														label="1 Day" />
+													<comboitem
+														label="8 Hours" />
+													<comboitem
+														label="4 Hours" />
+													<comboitem
+														label="1 Hour" />
+													<comboitem
+														label="15 Minutes" />
+													<comboitem
+														label="Custom" />
+												</combobox>
+
+												<space spacing="60px"></space>
+												<div
+													style="padding-top: 1px;">
+													<label
+														style="padding-left:10px;"
+														value="${idera:getLabel('SQLdm.Labels.query-start-date')}">
+													</label>
+												</div>
+												<datebox
+													id="fromDateBoxComponent" cols="12" format="MM/dd/yyyy"
+													sclass="alert-datebox"
+													constraint="no empty : Please enter a valid date." xmlns:w="client" >
+													<attribute w:name="doKeyDown_">
+								<![CDATA[ function (evt) { var keyCode =
+								event.keyCode; if( keyCode == 8 // backspace 
+								|| keyCode == 9 // tab 
+								|| keyCode == 13 // enter 
+								|| keyCode == 16 // enter
+								|| (keyCode >= 35 && keyCode <= 40) //home, end, arrows 
+								|| keyCode == 46 //Delete
+								|| (!evt.shiftKey && keyCode == 190)
+								&& (keyCode != 222)
+								) { 
+									this.$doKeyDown_(evt); 
+									} else if (!evt.shiftKey && // only do withoutshift key 
+											(keyCode >= 48 && keyCode <=
+								57) || (keyCode >= 96 && keyCode <= 105) 
+								 ) // number range
+									{ 
+								this.$doKeyDown_(evt); }
+								else {
+								evt.stop(); return; } 
+								system.out.print("pressed key code:"+keyCode);
+								}
+								
+								]]>
+							</attribute>
+													</datebox>
+
+												<timebox
+													id="fromTimeBoxComponent" cols="6" format="HH:mm"
+													constraint="no empty : Please enter a valid time." />
+
+												<space spacing="20px"></space>
+												<div
+													style="padding-top: 1px;">
+													<label
+														style="padding-left:10px;"
+														value="${idera:getLabel('SQLdm.Labels.query-end-date')}">
+													</label>
+												</div>
+												<datebox
+													id="toDateBoxComponent" cols="12" format="MM/dd/yyyy"
+													sclass="alert-datebox"
+													constraint="no empty : Please enter a valid date." xmlns:w="client">
+													<attribute w:name="doKeyDown_">
+								<![CDATA[ function (evt) { var keyCode =
+								event.keyCode; if( keyCode == 8 // backspace 
+								|| keyCode == 9 // tab 
+								|| keyCode == 13 // enter 
+								|| keyCode == 16 // enter
+								|| (keyCode >= 35 && keyCode <= 40) //home, end, arrows 
+								|| keyCode == 46 //Delete
+								|| (!evt.shiftKey && keyCode == 190)
+								&& (keyCode != 222)
+								) { 
+									this.$doKeyDown_(evt); 
+									} else if (!evt.shiftKey && // only do withoutshift key 
+											(keyCode >= 48 && keyCode <=
+								57) || (keyCode >= 96 && keyCode <= 105) 
+								 ) // number range
+									{ 
+								this.$doKeyDown_(evt); }
+								else {
+								evt.stop(); return; } 
+								system.out.print("pressed key code:"+keyCode);
+								}
+								
+								]]>
+							</attribute>
+													</datebox>
+
+												<timebox
+													id="toTimeBoxComponent" cols="6" format="HH:mm"
+													constraint="no empty : Please enter a valid time." />
+
+												<!-- <idera-cwf-button id="buttonHistory" sclass="white-text-blue-button" label="SUBMIT" orient="horizontal" /> -->
+											</hlayout>
+										</hbox>
+									</div>
+								</div>
+							</vlayout>
+						</hlayout>
+						<div id="contentAreaDiv">
+							
+						</div>
+					</vlayout>
+				</center>
+			</borderlayout>
+		</div>
+	</div>
+</zk>

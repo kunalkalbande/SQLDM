@@ -1,0 +1,20 @@
+<zk>
+
+	<div
+		apply="com.idera.sqldm.ui.dashboard.instances.queries.QuerySQLText"
+		hflex="1" style="height:425px;">
+
+		<vlayout vflex="1" hflex="1">
+			<hlayout style="float:right">
+				<a id="exportLink" sclass="link  padding-all-16"
+					label="${idera:getLabel('SQLdm.Labels.export')}" 
+					style="word-wrap:break-word;text-decoration: underline;"/>
+			</hlayout>
+			<separator style="margin-top:10px" />
+			<codemirror id="codeSqlText"
+				style="overflow:auto; background-color: white;" syntax="sql"
+				vflex="1" config="lineNumbers:true" readonly="true">
+			</codemirror>
+		</vlayout>
+	</div>
+</zk>

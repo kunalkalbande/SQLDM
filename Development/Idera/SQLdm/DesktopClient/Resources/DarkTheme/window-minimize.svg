@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="5" viewBox="0 0 20 5">
+    <defs>
+        <style>
+            .cls-1{fill:#fff;opacity:.8}
+        </style>
+    </defs>
+    <path id="window-minimize" d="M18.125 352H1.875A1.875 1.875 0 0 0 0 353.875v1.25A1.875 1.875 0 0 0 1.875 357h16.25A1.875 1.875 0 0 0 20 355.125v-1.25A1.875 1.875 0 0 0 18.125 352z" class="cls-1" transform="translate(0 -352)"/>
+</svg>

@@ -1,0 +1,131 @@
+<zk>
+	<div apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.idera.sqldm.ui.dashboard.instances.alerts.InstanceAlertsViewModel')">
+<div style="height:800px;overflow:auto">
+		 <borderlayout height="100%" vflex="min">
+		 	<center autoscroll="true" vflex="min">
+		<vlayout>
+		<div id="historyPanelHide">
+			<hlayout id="filtersDiv"
+				sclass="filtering-layout-style light-panel-color-shade padding-lr-204">
+				<!-- <div >
+				<label style="padding-left:10px;padding-top: 10px;"
+					value="${idera:getLabel('SQLdm.Labels.query-start-date')}">
+				</label>
+				<datebox id="fromdate" cols="12" format="MM/dd/yyyy" style="margin-top: 16px;"
+					sclass="alert-datebox" constraint="@bind(vm.fromDateConstraint)"
+					value="@bind(vm.fromDate)" onChange="@command('changeTimeRange')" />
+				<timebox id="fromtime" cols="6" format="HH:mm" style="margin-top: 16px;"
+					constraint="@bind(vm.fromTimeConstraint)"
+					value="@bind(vm.fromTime)" onChange="@command('changeTimeRange')" />
+
+				<label style="padding-left:10px;padding-top: 10px;"
+					value="${idera:getLabel('SQLdm.Labels.query-end-date')}">
+				</label>
+				<datebox id="todate" cols="12" format="MM/dd/yyyy" style="margin-top: 16px;"
+					sclass="alert-datebox" value="@bind(vm.endDate)"
+					constraint="@bind(vm.endDateConstraint)"
+					onChange="@command('changeTimeRange')" />
+				<timebox id="totime" cols="6" format="HH:mm" style="margin-top: 16px;"
+					constraint="@bind(vm.endTimeConstraint)" value="@bind(vm.endTime)"
+					onChange="@command('changeTimeRange')" />
+				</div>
+				<space spacing="20px"></space>
+
+				<idera-cwf-button label="8H" style="text-transform: uppercase;font-family: sans-serif;font-weight: 200;" sclass="smBtn" width="50px"
+					onClick="@command('updateTimeValues', label=self.label)">
+				</idera-cwf-button>
+				<idera-cwf-button label="1D" style="text-transform: uppercase;font-family: sans-serif;font-weight: 200;" sclass="smBtn" width="50px"
+					onClick="@command('updateTimeValues', label=self.label)">
+				</idera-cwf-button>
+				<idera-cwf-button label="5D" style="text-transform: uppercase;font-family: sans-serif;font-weight: 200;" sclass="smBtn" width="50px"
+					onClick="@command('updateTimeValues', label=self.label)">
+				</idera-cwf-button>
+				<idera-cwf-button label="4W" style="text-transform: uppercase;font-family: sans-serif;font-weight: 200;" sclass="smBtn" width="50px"
+					onClick="@command('updateTimeValues', label=self.label)">
+				</idera-cwf-button> -->
+
+				<space spacing="1000px"></space>
+
+				<idera-cwf-button label="Edit" style="text-transform: uppercase;" sclass="smBtn" popup="editOptionsPopup,position=end_before"></idera-cwf-button>
+				<popup id="editOptionsPopup" sclass="black-shade"
+					zclass="change-this-to-a-valid-class" width="250px"
+					height="500px">
+					<hlayout sclass="padding-l-12 padding-t-12">
+						<label value="Order" style="color:white"
+							sclass="padding-lr-12" />
+						<label value="Visible" style="color:white" />
+						<label value="Category" style="color:white"
+							sclass="padding-lr-12" />
+					</hlayout>
+					<vlayout id="categoryOptionsLayout" vflex="min"
+						children="@bind(vm.categoryOptions)"
+						sclass="padding-l-12 padding-t-12" style="margin-left:20px">
+						<template name="children" var="node">
+							<hlayout valign="middle">
+								<idera-cwf-textbox style="padding-left:4px"
+									value="@load(node.position) @save(node.tempPosition)"
+									constraint="@bind(vm.orderConstraint)" 
+									width="35px" maxlength="2">
+								</idera-cwf-textbox>
+								<idera-cwf-checkbox style="color: white"
+									sclass="padding-l-24" checked="@load(node.visible) @save(node.tempVisible)"/>
+								<label
+									value="@load(node.category.categoryName)" sclass="padding-l-24"
+									style="color: white" />
+							</hlayout>
+						</template>
+					</vlayout>
+					<hlayout sclass="padding-l-24 padding-t-12">
+						<idera-cwf-button label="Save" sclass="applyBtn" onClick="@command('filterByCategory')"></idera-cwf-button>
+						<idera-cwf-button label="Cancel" sclass="applyBtn"  onClick="@command('cancelFiltering')"></idera-cwf-button>
+					</hlayout>
+				</popup>
+
+			</hlayout>
+			</div>
+
+			<div id="TimelineChartContainerDiv" sclass="chart-border"
+				style="height:70px" hflex="1">
+				<vlayout>
+					<space height="5px" />
+					<label value="Alert Timeline"
+						sclass="padding-l-12 padding-t-8" style="font-weight:bold;">
+					</label>
+					<sqldm-idera-timelinechart id="timelineChart"
+						width="1300px" height="70px" leftMargin="95px" rightMargin="150px"
+						topMargin="20px" bottomMargin="20px" />
+				</vlayout>
+			</div>
+
+			<div id="CategoryChartsContainerDiv" sclass="chart-border padding-b-12"
+				vflex="1" hflex="1">
+				<vlayout>
+					<space height="5px" />
+					<label value="Alert Categories"
+						sclass="padding-l-12 padding-t-8" style="font-weight:bold;">
+					</label>
+					<vlayout id="categoryChartsVlayout">
+<!-- 					<template name="children" var="node">
+							<sqldm-idera-timelinechart
+								id="@load(node.category.categoryName.concat('Chart'))" width="1300px" height="25px"
+								leftMargin="70px" rightMargin="150px" topMargin="20px"
+								bottomMargin="20px" />
+						</template> -->
+					</vlayout>
+				</vlayout>
+			</div>
+
+			<div style="padding-left:10px; max-height: 500px;overflow:auto;">
+				<include
+					src="~./sqldm/com/idera/sqldm/ui/dashboard/alertsView.zul"
+					forceLoad="true" pageCount="20" />
+			</div>
+		</vlayout>
+
+</center>
+		 </borderlayout>
+</div>
+	</div>
+</zk>
+

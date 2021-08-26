@@ -1,0 +1,577 @@
+<zk>
+	<style>.z-hlayout, .z-vlayout{ overflow:visible }</style>
+	<div apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.idera.sqldm.ui.dashboard.instances.queries.QueriesDataviewComposer')"
+		hflex="1" vflex="1">
+		<vlayout id="outerVlayout">
+			<hlayout hflex="1" height="150px" droppable="true">
+				<vlayout sclass="padding-lr-28 padding-tb-12"
+					style="width: 150px;" vflex="1">
+					<label value="VIEW" sclass="H4 dashboard-h4 global-orange-shade" />
+					<space height="2px" />
+					<label sclass="H5 padding-l-4"
+						value="@load(vm.filter.selectedView.metricName)" />
+					<label sclass="H5 padding-l-4"
+						value="@load(' By '.concat(vm.filter.selectedGroupBy.groupName))" />
+				</vlayout>
+				<vlayout sclass="padding-lr-28 padding-tb-12"
+					style="width: 210px;" vflex="1">
+					<label value="PERIOD"
+						sclass="H4 dashboard-h4 global-orange-shade">
+					</label>
+					<space height="2px" />
+					<label sclass="H5 padding-l-4"
+						value="@load('Start: '.concat(vm.fromDateTime))">
+					</label>
+					<label sclass="H5 padding-l-4"
+						value="@load('End: '.concat(vm.endDateTime))">
+					</label>
+				</vlayout>
+				<vlayout vflex="1" hflex="1"
+					sclass="padding-lr-28 padding-tb-12" style="overflow:auto">
+					<label value="FILTERED BY"
+						sclass="H4 dashboard-h4 global-orange-shade">
+					</label>
+
+					<grid id="filteredByGrid"
+						sclass="idera-invisible-grid styled-cwf-list">
+						<columns>
+							<column width="120px" />
+							<column align="left" />
+						</columns>
+						<rows>
+
+							<row
+								visible="@bind(vm.selectedApplications.size() ne 0)"
+								style="vertical-align: top;">
+								<label value="Applications: "
+									sclass="H4 z-label" />
+								<div
+									children="@load(vm.filter.applicationAllChecked) @template(vm.filter.applicationAllChecked?'All':'default')">
+									<template name="All">
+										<div id="applicationLayoutAll"
+											hflex="1">
+											<div style="width: 100%;">
+												<a
+													image="${idera:getImageURLWithoutSize('x-gray-10x10')}"
+													sclass="modal-dialog-close-link margin-r-8"
+													onClick="@command('allFilterRemoved', filterType='Application')" />
+												<label value="All"
+													sclass="item-list-spacing padding-lr-4 z-a" />
+											</div>
+										</div>
+									</template>
+									<template name="default">
+										<div id="applicationLayout"
+											children="@bind(vm.selectedApplications)" hflex="1">
+											<template name="children"
+												var="node">
+												<div
+													style="width: 100%;">
+													<a
+														image="${idera:getImageURLWithoutSize('x-gray-10x10')}"
+														sclass="modal-dialog-close-link margin-r-8"
+														onClick="@command('filterRemoved', filterType='Application', unchecked=nodeStatus.index)" />
+													<label
+														value="@load(node.application)"
+														sclass="item-list-spacing padding-lr-4 z-a" />
+												</div>
+											</template>
+										</div>
+									</template>
+								</div>
+							</row>
+
+							<row
+								visible="@bind(vm.selectedDatabases.size() ne 0)"
+								style="vertical-align: top;">
+								<label value="Databases: "
+									sclass="H4 z-label" />
+								<div
+									children="@load(vm.filter.databasesAllChecked) @template(vm.filter.databasesAllChecked?'All':'default')">
+									<template name="All">
+										<div id="databaseLayoutAll"
+											hflex="1">
+											<div style="width: 100%;">
+												<a
+													image="${idera:getImageURLWithoutSize('x-gray-10x10')}"
+													sclass="modal-dialog-close-link margin-r-8"
+													onClick="@command('allFilterRemoved', filterType='Database')" />
+												<label value="All"
+													sclass="item-list-spacing padding-lr-4 z-a" />
+											</div>
+										</div>
+									</template>
+									<template name="default">
+										<div id="databaseLayout"
+											children="@bind(vm.selectedDatabases)" hflex="1">
+											<template name="children"
+												var="node">
+												<div
+													style="width: 100%;">
+													<a
+														sclass="modal-dialog-close-link margin-r-8"
+														image="${idera:getImageURLWithoutSize('x-gray-10x10')}"
+														onClick="@command('filterRemoved', filterType='Database', unchecked=nodeStatus.index)" />
+													<label
+														value="@load(node.database)"
+														sclass="item-list-spacing padding-lr-4 z-a" />
+												</div>
+											</template>
+										</div>
+									</template>
+								</div>
+
+							</row>
+
+							<row
+								visible="@bind(vm.selectedUsers.size() ne 0)"
+								style="vertical-align: top;">
+								<label value="Users: "
+									sclass="H4 z-label" />
+								<div
+									children="@load(vm.filter.usersAllChecked) @template(vm.filter.usersAllChecked?'All':'default')">
+									<template name="All">
+										<div id="usersLayoutAll"
+											hflex="1">
+											<div style="width: 100%;">
+												<a
+													image="${idera:getImageURLWithoutSize('x-gray-10x10')}"
+													sclass="modal-dialog-close-link margin-r-8"
+													onClick="@command('allFilterRemoved', filterType='User')" />
+												<label value="All"
+													sclass="item-list-spacing padding-lr-4 z-a" />
+											</div>
+										</div>
+									</template>
+									<template name="default">
+										<div id="usersLayout"
+											children="@bind(vm.selectedUsers)" hflex="1">
+											<template name="children"
+												var="node">
+												<div
+													style="width: 100%;">
+													<a
+														sclass="modal-dialog-close-link margin-r-8"
+														image="${idera:getImageURLWithoutSize('x-gray-10x10')}"
+														onClick="@command('filterRemoved', filterType='User', unchecked=nodeStatus.index)" />
+													<label
+														value="@load(node.user)"
+														sclass="item-list-spacing padding-lr-4 z-a" />
+												</div>
+											</template>
+										</div>
+									</template>
+								</div>
+							</row>
+
+							<row
+								visible="@bind(vm.selectedClients.size() ne 0)"
+								style="vertical-align: top;">
+								<label value="Clients: "
+									sclass="H4 z-label" />
+								<div
+									children="@load(vm.filter.clientsAllChecked) @template(vm.filter.clientsAllChecked?'All':'default')">
+									<template name="All">
+										<div id="clientsLayoutAll"
+											hflex="1">
+											<div style="width: 100%;">
+												<a
+													image="${idera:getImageURLWithoutSize('x-gray-10x10')}"
+													sclass="modal-dialog-close-link margin-r-8"
+													onClick="@command('allFilterRemoved', filterType='Client')" />
+												<label value="All"
+													sclass="item-list-spacing padding-lr-4 z-a" />
+											</div>
+										</div>
+									</template>
+									<template name="default">
+										<div id="clientsLayout"
+											children="@bind(vm.selectedClients)" hflex="1">
+											<template name="children"
+												var="node">
+												<div
+													style="width: 100%;">
+													<a
+														sclass="modal-dialog-close-link margin-r-8"
+														image="${idera:getImageURLWithoutSize('x-gray-10x10')}"
+														onClick="@command('filterRemoved', filterType='Client', unchecked=nodeStatus.index)" />
+													<label
+														value="@load(node.client)"
+														sclass="item-list-spacing padding-lr-4 z-a" />
+												</div>
+											</template>
+										</div>
+									</template>
+								</div>
+							</row>
+
+							<row style="vertical-align: top;">
+								<label value="Advanced Filters: "
+									sclass="H4 z-label" />
+								<div hflex="1">
+									<div id="includeSQLText"
+										style="width: 100%;">
+										<a
+											sclass="modal-dialog-close-link margin-r-8"
+											image="${idera:getImageURLWithoutSize('x-gray-10x10')}"
+											visible="@bind(!vm.filter.includeSQLText.equals(''))"
+											onClick="@command('filterRemoved', filterType='IncludeText', unchecked=-1)" />
+										<label
+											value="@load('Include SQL Text: '.concat(vm.filter.includeSQLText))"
+											visible="@bind(!vm.filter.includeSQLText.equals(''))"
+											sclass="item-list-spacing padding-lr-4 z-a" />
+									</div>
+									<div id="excludeSQLText"
+										style="width: 100%;">
+										<a
+											sclass="modal-dialog-close-link margin-r-8"
+											image="${idera:getImageURLWithoutSize('x-gray-10x10')}"
+											visible="@bind(!vm.filter.excludeSQLText.equals(''))"
+											onClick="@command('filterRemoved', filterType='ExcludeText', unchecked=-1)" />
+										<label
+											value="@load('Exclude SQL Text: '.concat(vm.filter.excludeSQLText))"
+											visible="@bind(!vm.filter.excludeSQLText.equals(''))"
+											sclass="item-list-spacing padding-lr-4 z-a" />
+									</div>
+									<div id="showSQLStatements"
+										style="width: 100%;">
+										<a
+											sclass="modal-dialog-close-link margin-r-8"
+											image="${idera:getImageURLWithoutSize('x-gray-10x10')}"
+											visible="@load(vm.filter.showSQLStatements)"
+											onClick="@command('filterRemoved', filterType='ShowSQLStatements', unchecked=-1)" />
+										<label
+											value="Show SQL Statements"
+											visible="@load(vm.filter.showSQLStatements)"
+											sclass="item-list-spacing padding-lr-4 z-a" />
+									</div>
+									<div id="showStoredProcedures"
+										style="width: 100%;">
+										<a
+											sclass="modal-dialog-close-link margin-r-8"
+											image="${idera:getImageURLWithoutSize('x-gray-10x10')}"
+											visible="@load(vm.filter.showStoredProcs)"
+											onClick="@command('filterRemoved', filterType='ShowStoredProcs', unchecked=-1)" />
+										<label
+											value="Show Stored Procedures"
+											visible="@load(vm.filter.showStoredProcs)"
+											sclass="item-list-spacing padding-lr-4 z-a" />
+									</div>
+									<div id="showSQLBatches"
+										style="width: 100
+										%;">
+										<a
+											sclass="modal-dialog-close-link margin-r-8"
+											image="${idera:getImageURLWithoutSize('x-gray-10x10')}"
+											visible="@load(vm.filter.showSQLBatches)"
+											onClick="@command('filterRemoved', filterType='ShowSQLBatches', unchecked=-1)" />
+										<label value="Show SQL Batches"
+											visible="@load(vm.filter.showSQLBatches)"
+											sclass="item-list-spacing padding-lr-4 z-a" />
+									</div>
+									<div id="includeOverlappingQueries"
+										style="width: 100%;">
+										<a
+											sclass="modal-dialog-close-link margin-r-8"
+											image="${idera:getImageURLWithoutSize('x-gray-10x10')}"
+											visible="@load(vm.filter.includeOverlapping)"
+											onClick="@command('filterRemoved', filterType='IncludeOverlappingQueries', unchecked=-1)" />
+										<label
+											value="Include Overlapping Queries"
+											visible="@load(vm.filter.includeOverlapping)"
+											sclass="item-list-spacing padding-lr-4 z-a" />
+									</div>
+									<div id="includeIncompleteQueries"
+										style="width: 100%;">
+										<a
+											sclass="modal-dialog-close-link margin-r-8"
+											image="${idera:getImageURLWithoutSize('x-gray-10x10')}"
+											visible="@load(vm.filter.includeIncomplete)"
+											onClick="@command('filterRemoved', filterType='IncludeIncomplete', unchecked=-1)" />
+										<label
+											value="Include Incomplete Queries"
+											visible="@load(vm.filter.includeIncomplete)"
+											sclass="item-list-spacing padding-lr-4 z-a" />
+									</div>
+								</div>
+							</row>
+						</rows>
+					</grid>
+
+
+				</vlayout>
+			</hlayout>
+
+			<separator bar="true" />
+			<space height="10px" />
+			<div id="queryChartDiv" sclass="chart-border"
+				style="height:260px" width="900px" hflex="1">
+				<sqldm-idera-stackedbarchart id="queryChart"
+					width="780px" height="250px" leftMargin="100px" rightMargin="150px"
+					topMargin="20px" bottomMargin="35px" />
+			</div>
+
+			<separator bar="false" />
+			<space height="10px" />
+
+			<div>
+				<hlayout>
+					<div hflex="1">
+						<a sclass="modal-dialog-close-link margin-r-8"
+							image="${idera:getImageURLWithoutSize('chevron-up-16x16')}"
+							onClick="@command('onDrillUp')" style="padding-right : 10px"
+							visible="@load(!vm.queriesWaitsTitle.toLowerCase().contains(vm.filter.selectedGroupBy.groupName.toLowerCase()))" />
+						<label id="QueriesTableTitle" sclass="H4"
+							value="@load(vm.queriesWaitsTitle)" />
+
+					</div>
+					<div>
+						<columnchooser sclass="z-vlayout-inner"
+							id="columnchooser" visibleColumns="@load(vm.defaultColumnList)"
+							hiddenColumns="@load(vm.columnList)"
+							template="~./sqldm/com/idera/sqldm/ui/dashboard/instances/queries/customColumnChooser.zul"
+							onColumnVisibilityChange="@command('doColumnVisibilityChange', 
+							visibleColumns=event.visibleColumns, 
+							hiddenColumns=event.hiddenColumns)">
+						</columnchooser>
+					</div>
+					<div>
+						<hlayout style="float:right">
+							<a label="Options"
+								onClick="@command('openDefaultColumnChooser', ref=outerVlayout, ref2=columnchooser)"
+								style="word-wrap:break-word;text-decoration: underline;"
+								sclass="link"  />
+							<separator width="30px" />
+							<label value="Show Top "></label>
+							<a id="top100Link" sclass="link"
+								style="word-wrap:break-word;text-decoration: underline;"
+								label="100"
+								onClick="@command('showOptions', show='100', ref= queriesListPgId )" />
+							<space bar="true" spacing="10px" />
+							<a id="top200Link" sclass="link"
+								style="word-wrap:break-word;text-decoration: underline;"
+								label="200"
+								onClick="@command('showOptions', show='200', ref= queriesListPgId )" />
+							<space bar="true" spacing="10px" />
+							<a id="AllLink" sclass="link"
+								style="word-wrap:break-word;text-decoration: underline;"
+								label="All"
+								onClick="@command('showOptions', show='All', ref= queriesListPgId )" />
+						</hlayout>
+					</div>
+				</hlayout>
+
+				<space height="10px" />
+				<vlayout vflex="1">
+					<grid id="queriesWaitGrid" mold="paging"
+						paginal="@load(queriesListPgId)" model="@load(vm.queriesModel)"
+						sclass="styled-list styled-cwf-list" span="1" width="1000px" hflex="1"
+						height="300px" style="cursor:pointer"
+						emptyMessage="@load(idera:getLabel('SQLdm.Labels.queries-data-not-available'))">
+						<columns sizable="true"
+							style="padding-left :'10px'"
+							children="@load(vm.defaultColumnList)" width="250px">
+							<template name="children" var="node">
+								<column
+									sortAscending="@load(vm.chooseAscComparator(node))"
+									sortDescending="@load(vm.chooseDescComparator(node))"
+									style="word-wrap : break-word ; padding-left : 5px ;"
+									width="@load(vm.queryColumns.get(node).getWidth())">
+									<label value="@bind(node)"
+										multiline="true" style="font-weight : bold">
+									</label>
+								</column>
+							</template>
+						</columns>
+						<rows hflex="1">
+							<template name="model" var="query">
+								<row
+									children="@load(vm.defaultColumnList) @template(vm.queryColumns.get(each).getTemplate())"
+									onClick="@command('onClickSelectedRow', row=query)">
+
+									<template name="label"
+										var="columnInfo">
+										<label sclass="cell-label-hover"
+											value="@load(query[vm.queryColumns.get(columnInfo).getValue()])">
+										</label>
+									</template>
+									<template name="numberLabel"
+										var="columnInfo">
+										<label
+											value="@load(query[vm.queryColumns.get(columnInfo).getValue()]) @converter('com.idera.sqldm.ui.converter.CommaSeparatedNumberLabelForMVVMConverter')"
+											sclass="numbers-position cell-label-hover">
+										</label>
+									</template>
+									<template name="application"
+										var="columnInfo">
+										<hlayout>
+											<label hflex="2"
+												sclass="cell-label-hover"
+												value="@load(query[vm.queryColumns.get(columnInfo).getValue()].getApplication())">
+											</label>
+											<a hflex="1"
+												onClick="@command('onClickGear'  , vref = query)"
+												image="${idera:getImageURLWithoutSize('gray-gear-16x16')}"
+												style="padding-left : 10px"
+												popup="contextMenuDefault ,  position  = after_end"
+												visible="@load(vm.queriesWaitsLabel.indexOf(sqldmidera:getLabel('SQLdm.Labels.application')) ne -1)" />
+										</hlayout>
+									</template>
+									<template name="database"
+										var="columnInfo">
+										<hlayout>
+											<label hflex="2"
+												sclass="cell-label-hover"
+												value="@load(query[vm.queryColumns.get(columnInfo).getValue()].getDatabase())">
+											</label>
+											<a hflex="1"
+												onClick="@command('onClickGear'  , vref = query)"
+												image="${idera:getImageURLWithoutSize('gray-gear-16x16')}"
+												style="padding-left : 10px"
+												popup="contextMenuDefault ,  position  = after_end"
+												visible="@load(vm.queriesWaitsLabel.indexOf(sqldmidera:getLabel('SQLdm.Labels.database')) ne -1)" />
+
+										</hlayout>
+									</template>
+
+									<template name="client"
+										var="columnInfo">
+										<hlayout>
+											<label hflex="2"
+												sclass="cell-label-hover"
+												value="@load(query[vm.queryColumns.get(columnInfo).getValue()].getClient())">
+											</label>
+											<a hflex="1"
+												onClick="@command('onClickGear'  , vref = query)"
+												image="${idera:getImageURLWithoutSize('gray-gear-16x16')}"
+												style="padding-left : 10px"
+												popup="contextMenuDefault ,  position  = after_end"
+												visible="@load(vm.queriesWaitsLabel.indexOf(sqldmidera:getLabel('SQLdm.Labels.filter-clients')) ne -1)" />
+										</hlayout>
+									</template>
+									<template name="user"
+										var="columnInfo">
+										<hlayout>
+											<label hflex="2"
+												sclass="cell-label-hover"
+												value="@load(query[vm.queryColumns.get(columnInfo).getValue()].getUser())">
+											</label>
+											<a hflex="1"
+												onClick="@command('onClickGear'  , vref = query)"
+												image="${idera:getImageURLWithoutSize('gray-gear-16x16')}"
+												style="padding-left : 10px"
+												popup="contextMenuDefault ,  position  = after_end"
+												visible="@load(vm.queriesWaitsLabel.indexOf(sqldmidera:getLabel('SQLdm.Labels.filter-users')) ne -1)" />
+
+										</hlayout>
+									</template>
+									<template name="signatureSQLText"
+										var="columnInfo">
+										<hlayout>
+											<label hflex="2"
+												sclass="cell-label-hover"
+												tooltiptext="@load(query[vm.queryColumns.get(columnInfo).getValue()])"
+												value="@load(query[vm.queryColumns.get(columnInfo).getValue()])"
+												style="word-break: break-word;">
+											</label>
+											<a hflex="1"
+												onClick="@command('onClickGear'  , vref = query)"
+												image="${idera:getImageURLWithoutSize('gray-gear-16x16')}"
+												style="padding-left : 10px"
+												popup="contextMenuQuerySignature ,  position  = after_end" />
+
+										</hlayout>
+									</template>
+									<template name="statementSQLText"
+										var="columnInfo">
+										<hlayout>
+											<label hflex="2"
+												sclass="cell-label-hover"
+												tooltiptext="@load(query[vm.queryColumns.get(columnInfo).getValue()])"
+												value="@load(query[vm.queryColumns.get(columnInfo).getValue()])">
+											</label>
+										</hlayout>
+									</template>
+									<!-- @load(query[vm.queryColumns.get(columnInfo).getValue()]) -->
+									<template name="queryName"
+										var="columnInfo">
+										<hlayout>
+											<label hflex="2"
+												sclass="cell-label-hover"
+												value="@load(query[vm.queryColumns.get(columnInfo).getValue()])">
+											</label>
+											<a hflex="1"
+												onClick="@command('onClickGear'  , vref = query)"
+												image="${idera:getImageURLWithoutSize('gray-gear-16x16')}"
+												style="padding-left : 10px"
+												popup="contextMenuQueryStatement ,  position  = after_end" />
+
+										</hlayout>
+									</template>
+									<template name="dateTime"
+										var="columnInfo">
+										<label sclass="cell-label-hover"
+											value="@load(idera:getLocalShortDateTime(query[vm.queryColumns.get(columnInfo).getValue()]))">
+										</label>
+									</template>
+								</row>
+							</template>
+						</rows>
+						<foot>
+							<footer span="6" align="center">
+								<hbox align="center">
+									<paging id="queriesListPgId"
+										totalSize="@load(vm.queriesModel.size())"
+										pageSize="@bind(vm.listRowsCount)"
+										activePage="@bind(vm.activePage)" />
+									<span>
+										<intbox zclass="z-paging-inp"
+											value="@bind(vm.queriesListRowsCount)" maxlength="10"
+											constraint="no empty,no negative, no zero, end_after: ${idera:getLabel('SQLdm.Messages.page-size-error')}"
+											onOK="@command('setQueriesRowsCount' , ref= queriesListPgId )"
+											width="30px" placeholder="#">
+										</intbox>
+										<label
+											value="${idera:getLabel('SQLdm.Labels.pagination-items-per-page')}" />
+									</span>
+								</hbox>
+							</footer>
+						</foot>
+					</grid>
+
+				</vlayout>
+			</div>
+		</vlayout>
+		<menupopup id="contextMenuDefault">
+			<menuitem label="Query Signature"
+				onClick="@command('onClickSelectedRow', row=null)" />
+			<menuitem label="Query Statement"
+				onClick="@command('onDirectJump')" />
+		</menupopup>
+		<menupopup id="contextMenuQuerySignature">
+			<menuitem label="Back" visible="@load(vm.drillUp)"
+				onClick="@command('onDrillUp')" />
+			<menuitem label="View SQL"
+				onClick="@command('openModalWindow', flag=false, default=2)" />
+			<menuitem label="Query Statement"
+				onClick="@command('onClickSelectedRow', row=null)" />
+		</menupopup>
+		<menupopup id="contextMenuQueryStatement">
+			<menuitem label="Back" visible="@load(vm.drillUp)"
+				onClick="@command('onDrillUp')" />
+			<menuitem label="View SQL"
+				onClick="@command('openModalWindow', flag=true, default=2)" />
+			<menuitem label="View Execution Plan"
+				visible="@bind(vm.isSQLDB2008OrGreater)"
+				onClick="@command('openModalWindow', flag=true, default=0)" />
+			<menuitem label="View Execution Plan XML"
+				visible="@bind(vm.isSQLDB2008OrGreater)"
+				onClick="@command('openModalWindow', flag=true, default=1)" />
+			<menuitem label="View Query Columns"
+				visible="@bind(vm.isSQLDB2008OrGreater)"
+				onClick="@command('openModalWindow', flag=true, default=3)" />
+		</menupopup>
+	</div>
+
+</zk>

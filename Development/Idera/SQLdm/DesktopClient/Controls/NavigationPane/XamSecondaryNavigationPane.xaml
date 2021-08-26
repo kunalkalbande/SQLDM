@@ -1,0 +1,417 @@
+﻿<UserControl x:Class="Idera.SQLdm.DesktopClient.Controls.NavigationPane.XamSecondaryNavigationPane"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ig="http://schemas.infragistics.com/xaml" 
+             xmlns:p="clr-namespace:Idera.SQLdm.DesktopClient.Controls.Presentation"
+             xmlns:my="clr-namespace:Idera.SQLdm.DesktopClient.Controls.NavigationPane"
+             xmlns:c="clr-namespace:Idera.SQLdm.DesktopClient.Converters"
+             xmlns:vm="clr-namespace:Idera.SQLdm.DesktopClient"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+        <DockPanel Background="{StaticResource SecondaryMenuBackgroundColor}" >
+        <DockPanel.Resources>
+            <c:BoolToVisibilityConverter x:Key="VisibilityConverter"/>
+            <Style TargetType="{x:Type TabControl}">
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TabControl}">
+                            <Grid KeyboardNavigation.TabNavigation="Local">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <TabPanel 
+                                    Name="HeaderPanel"
+                                    Grid.Row="0"
+                                    Panel.ZIndex="1" 
+                                    Margin="0,0,4,-1" 
+                                    IsItemsHost="True"
+                                    KeyboardNavigation.TabIndex="1"
+                                    Background="Transparent" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style TargetType="{x:Type TabItem}">
+                <Setter Property="Height" Value="27"></Setter>
+                <Setter Property="Background" Value="#006089"></Setter>
+                <Setter Property="Foreground" Value="#e4e5ea"></Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="TabItem">
+                            <Border Name="Border" Background="Transparent">
+                                <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Left"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True" SourceName="Border">
+                                    <Setter TargetName="Border" Property="Background" Value="#33FFFFFF" />
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter TargetName="Border" Property="Background" Value="#00A1DD" />
+                                </Trigger>
+
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="FontSize" Value="9.75"></Setter>
+                <Setter Property="FontFamily" Value="Microsoft Sans Serif"></Setter>
+                <Setter Property="FontStretch" Value="Normal"></Setter>
+                <Setter Property="FontStyle" Value="Normal"></Setter>
+                <Setter Property="Padding" Value="7,0,7,3"></Setter>
+            </Style>
+            <Style TargetType="{x:Type Menu}">
+                <Setter Property="Background" Value="#006089"></Setter>
+            </Style>
+            <Style x:Key="HeaderMenuItem" TargetType="TextBlock" >
+                <Setter Property="Background" Value="Transparent"></Setter>
+                <Setter Property="Foreground" Value="#e4e5ea"></Setter>
+                <Setter Property="FontFamily" Value="{StaticResource SourceSansPro}"></Setter>
+                <Setter Property="FontSize" Value="16px"></Setter>
+                <Setter Property="FontWeight" Value="Bold"></Setter>
+                <Setter Property="Padding" Value="10,0"></Setter>
+            </Style>
+            <Style TargetType="{x:Type MenuItem}">
+                <Setter Property="Height" Value="27"></Setter>
+                <Setter Property="Background" Value="Transparent"></Setter>
+                <Setter Property="Foreground" Value="#e4e5ea"></Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="MenuItem">
+                            <Border Name="Border" Background="Transparent">
+                                <StackPanel Orientation="Horizontal">
+                                    <ContentPresenter x:Name="ImageSite"
+                                        ContentSource="Icon"
+                                                  MaxWidth="20"
+                                                  MaxHeight="20"/>
+                                    <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Left"
+                                        ContentSource="Header"
+                                        Margin="5,2"/>
+                                    <Popup x:Name="Popup"
+                                         Placement="Bottom"
+                                         IsOpen="{TemplateBinding IsSubmenuOpen}"
+                                         AllowsTransparency="True"
+                                         Focusable="False">
+                                        <Border x:Name="SubmenuBorder"
+                                            SnapsToDevicePixels="True"
+                                            BorderThickness="1"
+                                            Background="#f0f1f7">
+                                            <Border.Effect>
+                                                <DropShadowEffect ShadowDepth="2" Color="#eeeff2" />
+                                            </Border.Effect>
+                                            <ScrollViewer CanContentScroll="True"
+                                                Style="{StaticResource MenuScrollViewer}">
+                                                <StackPanel IsItemsHost="True"
+                                                KeyboardNavigation.DirectionalNavigation="Cycle" />
+                                            </ScrollViewer>
+                                        </Border>
+                                    </Popup>
+                                </StackPanel>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True" SourceName="Border">
+                                    <Setter TargetName="Border" Property="Background" Value="#33FFFFFF" />
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="Foreground" Value="#32FFFFFF" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </DockPanel.Resources>        
+        <Menu x:Name="filesSecondaryMenu" Visibility="Collapsed" DockPanel.Dock="Left">
+            <MenuItem x:Name="connectMenu" Click="FilesMenu_Click">
+                <MenuItem.Header>
+                    <TextBlock Text="Connect to SQLDM Repository"></TextBlock>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem x:Name="manageServersMenu" Click="FilesMenu_Click">
+                <MenuItem.Header>
+                    <TextBlock Text="Manage Servers"></TextBlock>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem x:Name="manageTagsMenu" Click="FilesMenu_Click">
+                <MenuItem.Header>
+                    <TextBlock Text="Manage Tags"></TextBlock>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem x:Name="createViewMenu" Click="FilesMenu_Click">
+                <MenuItem.Header>
+                    <TextBlock Text="Create View"></TextBlock>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem x:Name="exitMenu" Click="FilesMenu_Click">
+                <MenuItem.Header>
+                    <TextBlock Text="Exit"></TextBlock>
+                </MenuItem.Header>
+            </MenuItem>
+        </Menu>
+        
+        <Menu x:Name="toolsSecondaryMenu" Visibility="Collapsed" DockPanel.Dock="Left" >
+            <MenuItem x:Name="toolsMenuAlertConfig" Click="ToolsMenu_Click">
+                <MenuItem.Header>
+                    <TextBlock Text="Alert Configuration Templates"></TextBlock>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem x:Name="toolsMenuAlertActions" Click="ToolsMenu_Click">
+                <MenuItem.Header>
+                    <TextBlock Text="Alert Actions and Responses"></TextBlock>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem x:Name="toolsMenuVMConfiguration" Click="ToolsMenu_Click">
+                <MenuItem.Header>
+                    <TextBlock Text="VM Configuration"></TextBlock>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem x:Name="toolsMenuAzureProfileConfiguration" Click="ToolsMenu_Click">
+                <MenuItem.Header>
+                    <TextBlock Text="Azure Profile Configuration"></TextBlock>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem x:Name="toolsMenuGroomingOptions" Click="ToolsMenu_Click">
+                <MenuItem.Header>
+                    <TextBlock Text="Grooming Options"></TextBlock>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem x:Name="toolsMenuConsoleOptions" Click="ToolsMenu_Click">
+                <MenuItem.Header>
+                    <TextBlock Text="Console Options"></TextBlock>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem x:Name="toolsMenuSnoozeAlerts" Click="ToolsMenu_Click" IsEnabled="{Binding SnoozeAllAlertsEnabled}">
+                <MenuItem.Header>
+                    <TextBlock Text="Snooze Alerts"></TextBlock>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem x:Name="toolsMenuResumeAlerts" Click="ToolsMenu_Click" IsEnabled="{Binding ResumeAllAlertsEnabled}">
+                <MenuItem.Header>
+                    <TextBlock Text="Resume Alerts"></TextBlock>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem x:Name="toolsMenuMaintenanceMode" Click="ToolsMenu_Click">
+                <MenuItem.Header>
+                    <TextBlock Text="Maintenance Mode"></TextBlock>
+                </MenuItem.Header>
+            </MenuItem>
+        </Menu>
+        <Menu x:Name="alertsSecondaryMenu" Visibility="Collapsed" DockPanel.Dock="Left">
+            <MenuItem Visibility="Visible" Width="0">
+                <!--used as default selected tab-->
+            </MenuItem>
+        </Menu>
+            
+        <TabControl x:Name="serversSecondaryMenu" Visibility="Collapsed" DockPanel.Dock="Left"
+                    SelectionChanged="ServersSecondaryMenu_SelectionChanged">
+            <TabItem Header="" Visibility="Collapsed" IsSelected="True">
+                <!--used as default selected tab-->
+            </TabItem>
+            <TabItem x:Name="serverMenuOverview">
+                <TabItem.Header>
+                    <TextBlock Text="Overview"></TextBlock>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem x:Name="serverMenuSessions">
+                <TabItem.Header>
+                    <TextBlock Text="Sessions"></TextBlock>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem x:Name="serverMenuQuery" Visibility="{Binding Path=VisibilityQueries,Mode=TwoWay}">
+                <TabItem.Header>
+                    <TextBlock Text="Queries"></TextBlock>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem x:Name="serverMenuResources">
+                <TabItem.Header>
+                    <TextBlock Text="Resources"></TextBlock>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem x:Name="serverMenuDatabase">
+                <TabItem.Header>
+                    <TextBlock Text="Databases"></TextBlock>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem x:Name="serverMenuServices" Visibility="{Binding Path=ServicesTabItemVisibilityforAzureDb,Mode=TwoWay}">
+                <TabItem.Header>
+                    <TextBlock Text="Services"></TextBlock>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem x:Name="serverMenuLogs" Visibility="{Binding Path=LogTabItemVisibility1,Mode=TwoWay}">
+                <TabItem.Header>
+                    <TextBlock Text="Logs"></TextBlock>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem x:Name="serverMenuAnalyze">
+                <TabItem.Header>
+                    <TextBlock Text="Analyze"></TextBlock>
+                </TabItem.Header>
+            </TabItem>
+        </TabControl>
+
+        <TabControl x:Name="administrationSecondaryMenu" Visibility="Collapsed" DockPanel.Dock="Left" SelectionChanged="AdminitrationSelectionChanged">
+            <TabItem Header="" Visibility="Collapsed" IsSelected="True">
+                <!--used as default selected tab-->
+            </TabItem>
+            <TabItem x:Name="applicationSecurityMenu">
+                <TabItem.Header>
+                    <TextBlock Text="Application Security" Padding="10,0,10,0"></TextBlock>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem x:Name="customCountersMenu">
+                <TabItem.Header>
+                    <TextBlock Text="Custom Counters" Padding="10,0,10,0"></TextBlock>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem x:Name="changeLogMenu">
+                <TabItem.Header>
+                    <TextBlock Text="Change Log" Padding="10,0,10,0"></TextBlock>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem x:Name="importExportMenu">
+                <TabItem.Header>
+                    <TextBlock Text="Import/Export" Padding="10,0,10,0"></TextBlock>
+                </TabItem.Header>
+            </TabItem>
+        </TabControl>
+        <Menu x:Name="reportsSecondaryMenu" Visibility="Collapsed" DockPanel.Dock="Left" >
+            <Menu.Resources>
+                <CollectionViewSource x:Key="CustomReportMenuCollection" 
+                                          Source="{Binding Path=DataContext.CustomReports, RelativeSource={RelativeSource Mode=FindAncestor, 
+                                        AncestorType={x:Type vm:MainWindow}}}"></CollectionViewSource>
+            </Menu.Resources>
+            <MenuItem x:Name="reportMenu1">
+                <MenuItem.Header>
+                    <TextBlock Text="Monitor" Padding="10,0,10,0"></TextBlock>
+                </MenuItem.Header>
+                <MenuItem Header="Servers" BorderThickness="2,0,2,0" BorderBrush="#acacac" Style="{DynamicResource LeftFlyoutMenu}">
+                    <MenuItem x:Name="menuItemEnterpriseSummary" Header="Enterprise Summary" Click="MenuItemMonitorServer_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemServerSummary" Header="Server Summary" Click="MenuItemMonitorServer_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemActiveAlerts" Header="Active Alerts" Click="MenuItemMonitorServer_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemMirroringSummary" Header="Mirroring Summary" Click="MenuItemMonitorServer_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemMetricThresholds" Header="Metric Thresholds" Click="MenuItemMonitorServer_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemAvailabilityGroupTopology" Header="Availability Group Topology" Click="MenuItemMonitorServer_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemDeadlockReport"  Header="Deadlock Report" Click="MenuItemMonitorServer_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemAlertTemplate" Header="Alert Template Report" Click="MenuItemMonitorServer_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemAlertThreshold" Header="Alert Threshold Report" Click="MenuItemMonitorServer_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemTemplateComparison" Header="Template Comparison" Click="MenuItemMonitorServer_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>                                
+                </MenuItem>
+                <MenuItem Header="Virtualization" BorderThickness="2,0,2,0" BorderBrush="#acacac" Style="{DynamicResource LeftFlyoutMenu}">
+                    <MenuItem x:Name="menuItemVirtualizationSummary" Header="Virtualization Summary" Click="MenuItemMonitorVirtualization_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemVirtualizationStatistics" Header="Virtualization Statistics" Click="MenuItemMonitorVirtualization_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Activity" BorderThickness="2,0,2,2" BorderBrush="#acacac" Style="{DynamicResource LeftFlyoutMenu}">
+                    <MenuItem x:Name="menuItemChangeLogSummary" Header="Change Log Summary" Click="MenuItemMonitorActivity_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="reportMenu2">
+                <MenuItem.Header>
+                    <TextBlock Text="Analyze" Padding="10,0,10,0"></TextBlock>
+                </MenuItem.Header>
+                <MenuItem Header="Servers" BorderThickness="2,0,2,0" BorderBrush="#acacac" Style="{DynamicResource LeftFlyoutMenu}">
+                    <MenuItem x:Name="menuItemTopServers" Header="Top Servers" Click="MenuItemAnalyzeServers_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemServerStatistics" Header="Server Statistics" Click="MenuItemAnalyzeServers_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemServerInventory" Header="Server Inventory" Click="MenuItemAnalyzeServers_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemQueryOverview" Header="Query Overview" Click="MenuItemAnalyzeServers_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemTopQueries" Header="Top Queries" Click="MenuItemAnalyzeServers_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemAlertHistory" Header="Alert History" Click="MenuItemAnalyzeServers_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemBaselineStatistics" Header="Baseline Statistics" Click="MenuItemAnalyzeServers_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemQueryWaitStatistics" Header="Query Wait Statistics" Click="MenuItemAnalyzeServers_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Databases" BorderThickness="2,0,2,0" BorderBrush="#acacac" Style="{DynamicResource LeftFlyoutMenu}">
+                    <MenuItem x:Name="menuItemTopDatabases" Header="Top Databases" Click="MenuItemAnalyzeDatabases_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemDatabaseStatistics" Header="Database Statistics" Click="MenuItemAnalyzeDatabases_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemTopDatabaseApplications" Header="Top Database Applications" Click="MenuItemAnalyzeDatabases_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemMirroringHistory" Header="Mirroring History" Click="MenuItemAnalyzeDatabases_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemTransactionLogStatistics" Header="Transaction Log Statistics" Click="MenuItemAnalyzeDatabases_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemTopTablesByGrowth" Header="Top Tables by Growth" Click="MenuItemAnalyzeDatabases_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemTopTablesByFragmentation" Header="Top Tables by Fragmentation" Click="MenuItemAnalyzeDatabases_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemTempdbStatistics" Header="Tempdb Statistics" Click="MenuItemAnalyzeDatabases_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemAvailabilityGroupStatistics" Header="Availability Group Statistics" Click="MenuItemAnalyzeDatabases_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Resources" BorderThickness="2,0,2,2" BorderBrush="#acacac" Style="{DynamicResource LeftFlyoutMenu}">
+                    <MenuItem x:Name="menuItemSessionStatistics" Header="Session Statistics" Click="MenuItemAnalyzeResources_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemDetailedSessionReport" Header="Detailed Session Report" Click="MenuItemAnalyzeResources_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemCPUStatistics" Header="CPU Statistics" Click="MenuItemAnalyzeResources_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemMemoryStatistics" Header="Memory Statistics" Click="MenuItemAnalyzeResources_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemDiskDetails" Header="Disk Details" Click="MenuItemAnalyzeResources_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemDiskStatistics" Header="Disk Statistics" Click="MenuItemAnalyzeResources_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemReplicationStatistics" Header="Replication Statistics" Click="MenuItemAnalyzeResources_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemDiskSpaceUsage" Header="Disk Space Usage" Click="MenuItemAnalyzeResources_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                    <MenuItem x:Name="menuItemDiskSpaceHistory" Header="Disk Space History" Click="MenuItemAnalyzeResources_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="reportMenu3">
+                <MenuItem.Header>
+                    <TextBlock Text="Plan" Padding="10,0,10,0"></TextBlock>
+                </MenuItem.Header>
+                <MenuItem x:Name="menuItemDiskSpaceUsageForecast" BorderThickness="2,0,2,0" BorderBrush="#acacac" Header="Disk Space Usage Forecast" Click="MenuItemAnalyzePlan_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                <MenuItem x:Name="menuItemDatabaseGrowthForecast" BorderThickness="2,0,2,0" BorderBrush="#acacac" Header="Database Growth Forecast" Click="MenuItemAnalyzePlan_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+                <MenuItem x:Name="menuItemTableGrowthForecast" BorderThickness="2,0,2,2" BorderBrush="#acacac" Header="Table Growth Forecast" Click="MenuItemAnalyzePlan_Click" Style="{DynamicResource LeftFlyoutMenu}"></MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="reportMenu4">
+                <MenuItem.Header>
+                    <TextBlock Text="Custom" Padding="10,0,10,0"></TextBlock>
+                </MenuItem.Header>
+                <MenuItem.ItemsSource>
+                    <CompositeCollection>
+                        <MenuItem x:Name="menuSavedReports" Header="No custom reports" BorderThickness="2,0,2,0" BorderBrush="#acacac" Style="{DynamicResource RightFlyoutMenu}" 
+                                                          IsEnabled="False" Visibility="{Binding Path=HasNoCustomReports, Converter={StaticResource VisibilityConverter}}"></MenuItem>
+                        <CollectionContainer Collection="{Binding Source={StaticResource ResourceKey=CustomReportMenuCollection}}"></CollectionContainer>
+                        <Separator Style="{DynamicResource FlyoutMenuSeparator}"></Separator>
+                        <MenuItem x:Name="newCustomReport" Header="New" BorderThickness="2,0,2,0" BorderBrush="#acacac" Click="NewCustomReport_Click"></MenuItem>
+                        <MenuItem x:Name="editCustomReport" Header="Edit" BorderThickness="2,0,2,0" BorderBrush="#acacac" Click="EditCustomReport_Click" IsEnabled="{Binding Path=ReportIsSelected}"></MenuItem>
+                        <MenuItem x:Name="deleteCustomReport"  Header="Delete" BorderThickness="2,0,2,0" BorderBrush="#acacac" Click="DeleteCustomReport_Click" IsEnabled="{Binding Path=ReportIsSelected}"></MenuItem>
+                        <Separator Style="{DynamicResource FlyoutMenuSeparator}"></Separator>
+                        <MenuItem x:Name="importCustomReport" Header="Import" BorderThickness="2,0,2,0" BorderBrush="#acacac" Click="ImportCustomReport_Click"></MenuItem>
+                        <MenuItem x:Name="exportCustomReport" Header="Export" BorderThickness="2,0,2,0" BorderBrush="#acacac" Click="ExportCustomReport_Click" IsEnabled="{Binding Path=ReportIsSelected}"></MenuItem>
+                        <Separator Style="{DynamicResource FlyoutMenuSeparator}"></Separator>
+                        <MenuItem x:Name="deployCustomReport" Header="Deploy Report" BorderThickness="2,0,2,0" BorderBrush="#acacac" Click="DeployCustomReport_Click" IsEnabled="{Binding Path=ReportIsSelected}"></MenuItem>
+                        <MenuItem x:Name="emailCustomReport" Header="Schedule Email" BorderThickness="2,0,2,2" BorderBrush="#acacac" Click="ScheduleEmailCustomReport_Click" IsEnabled="{Binding Path=ReportIsSelected}"></MenuItem>
+                    </CompositeCollection>
+                </MenuItem.ItemsSource>
+                <MenuItem.ItemContainerStyle>
+                    <Style BasedOn="{StaticResource LeftFlyoutMenu}" TargetType="{x:Type MenuItem}">
+                        <EventSetter Event="Click" Handler="CustomReport_Click"></EventSetter>
+                    </Style>
+                </MenuItem.ItemContainerStyle>
+                
+            </MenuItem>
+            <!--<Button Visibility="{Binding Path=DataContext.HasNoCustomReports, Converter={StaticResource VisibilityConverter}, 
+                                                                RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                AncestorType={x:Type vm:MainWindow}} }">Test</Button>-->
+        </Menu>
+
+        <TabControl x:Name="newsSecondaryMenu" Visibility="Collapsed" DockPanel.Dock="Left"></TabControl>
+        <!--
+        <Button x:Name="toggleNavButtonUp" Style="{StaticResource ToggleImageButton}" Click="ToggleNavButton_Click" 
+                DockPanel.Dock="Right" Visibility="Visible" Margin="0,8,20,8" Width="12" Height="6" 
+                HorizontalAlignment="Right" BorderThickness="0">
+            <Button.Content>
+                <ControlTemplate TargetType="Button">
+                    <Border BorderThickness="0" Width="54" Height="54">
+                        <ContentPresenter/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Content>
+            <Button.Background>
+                <ImageBrush ImageSource="{DynamicResource down_arrow_wht_iconDrawingImage}"></ImageBrush>
+            </Button.Background>
+        </Button>
+            -->
+    </DockPanel>
+
+</UserControl>

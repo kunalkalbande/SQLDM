@@ -1,0 +1,18 @@
+<zk>
+	<div apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.idera.sqldm.ui.dashboard.instances.sessions.InstanceSessionsViewModel')">
+		<div style="height:800px;overflow:auto">
+		 <borderlayout height="100%" vflex="min">
+		 	<center autoscroll="true" vflex="min">
+		 	<div>
+		<toolbar id="sessionsTb" visible="false">
+			<idera-cwf-button id="button1" sclass="white-text-blue-button" style="text-transform: uppercase;" label="${idera:getLabel('SQLdm.Labels.sid.overview')}" orient="horizontal" onClick="@command('toolbarBtnClicked', tabId = '1', subTabId='1')"/>
+			<idera-cwf-button id="button2" sclass="white-text-dark-gray-button" style="text-transform: uppercase;" label="${idera:getLabel('SQLdm.Labels.session-graphs')}" orient="horizontal" onClick="@command('toolbarBtnClicked', tabId = '1', subTabId='2')" />
+		</toolbar>
+		<include id="contentView"/>
+		</div>
+		</center>
+		</borderlayout>
+		</div>
+	</div>
+</zk>
+		

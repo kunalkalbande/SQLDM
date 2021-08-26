@@ -1,0 +1,7 @@
+ALTER SERVER CONFIGURATION SET BUFFER POOL EXTENSION OFF;
+GO
+
+-- Restart SQL Server service before re-enabling ONLY if lowering the size of the BPE
+ALTER SERVER CONFIGURATION SET BUFFER POOL EXTENSION ON
+    (FILENAME = '{0}',
+		SIZE = {1});

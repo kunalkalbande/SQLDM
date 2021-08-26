@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ApplicationIcon>SQLdm.ico</ApplicationIcon>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A7FC31F-CA6D-400C-B56D-657535DE85C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Idera.SQLdm.Service</RootNamespace>
+    <AssemblyName>SQLdmPlugin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Idera.LicenseManager.ProductPlugin">
+      <HintPath>..\..\..\..\Libraries\Idera.LicenseManager.ProductPlugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Idera.PrescriptiveAnalytics.PrescriptiveAnalyzer.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Idera.PrescriptiveAnalytics.PrescriptiveAnalyzer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="License4Net, Version=6.0.6436.29810, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\libraries\BBSLicense\x64\License4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PluginAddInViewV2">
+      <HintPath>..\..\..\..\Libraries\PluginAddInViewV2.dll</HintPath>
+    </Reference>
+    <Reference Include="PluginCommon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\PluginCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerCollections">
+      <HintPath>..\..\..\..\Libraries\PowerCollections.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AddIn" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TracerX, Version=2.1.809.18205, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\..\..\..\Libraries\TracerX.exe</HintPath>
+    </Reference>
+    <Reference Include="Vim25Service">
+      <HintPath>..\..\..\..\Libraries\Vim25Service.dll</HintPath>
+    </Reference>
+    <Reference Include="Vim25Service.XmlSerializers">
+      <HintPath>..\..\..\..\Libraries\Vim25Service.XmlSerializers.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Configuration\RestServiceCollection.cs" />
+    <Compile Include="Configuration\RestServiceConfiguration.cs" />
+    <Compile Include="Configuration\RestServiceElement.cs" />
+    <Compile Include="Configuration\RestServicesSection.cs" />
+    <Compile Include="Core\CoreSettings.cs" />
+    <Compile Include="Core\Enums\CalendarDates.cs" />
+    <Compile Include="Core\Enums\MetricType.cs" />
+    <Compile Include="Core\Enums\GroupType.cs" />
+    <Compile Include="Core\Enums\AuthType.cs" />
+    <Compile Include="Core\Enums\EnumExtensions.cs" />
+    <Compile Include="Core\Enums\ServiceState.cs" />
+    <Compile Include="Core\Enums\UserType.cs" />
+    <Compile Include="Core\Security\CustomAuthenticationManager.cs" />
+    <Compile Include="Core\Security\ImpersonationContext.cs" />
+    <Compile Include="DataContracts\v1\Analysis.cs" />
+    <Compile Include="DataContracts\v1\Category\QueryWaitStatisticsForInstanceOverview.cs" />
+    <Compile Include="DataContracts\v1\GridAlert.cs" />
+    <Compile Include="DataContracts\v1\UIRecommendation.cs" />
+    <Compile Include="ServiceContracts\v1\IRecommendationManager.cs" />
+    <Compile Include="Web\AlertsGridAdvancedFilterParam.cs" />
+    <Compile Include="DataContracts\v1\CPUStatistics.cs" />
+    <Compile Include="DataContracts\v1\CustomCounterStats.cs" />
+    <Compile Include="DataContracts\v1\DatabaseRunningStatistics.cs" />
+    <Compile Include="DataContracts\v1\LockWaitsStatistics.cs" />
+    <Compile Include="DataContracts\v1\NetworkStatistics.cs" />
+    <Compile Include="DataContracts\v1\OSPagesPerSec.cs" />
+    <Compile Include="DataContracts\v1\AlertWiseMaxSeverity.cs" />
+    <Compile Include="DataContracts\v1\BucketKeyForGraphData.cs" />
+    <Compile Include="DataContracts\v1\Category\BaselineForMetric.cs" />
+    <Compile Include="DataContracts\v1\ConsolidatedInstanceOverview.cs" />
+    <Compile Include="DataContracts\v1\CustomDashboard\CustomDashbaord.cs" />
+    <Compile Include="DataContracts\v1\CustomDashboard\CustomDashboardMetricValueCollection.cs" />
+    <Compile Include="DataContracts\v1\CustomDashboard\CustomDashboardWidgets.cs" />
+    <Compile Include="DataContracts\v1\CustomDashboard\CustomDashboardMetricValueForWidgets.cs" />
+    <Compile Include="DataContracts\v1\Errors\LicenseManagerException.cs" />
+    <Compile Include="DataContracts\v1\HealthIndexCoefficient.cs" />
+    <Compile Include="DataContracts\v1\HealthIndexScaleFactors.cs" />
+    <Compile Include="DataContracts\v1\InstanceScaleFoctor.cs" />
+    <Compile Include="DataContracts\v1\PreviousAnalysisInformation.cs" />
+    <Compile Include="DataContracts\v1\QueryMonitorFilters.cs" />
+    <Compile Include="DataContracts\v1\RecommendationSummary.cs" />
+    <Compile Include="DataContracts\v1\ServerWaitsDashboard.cs" />
+    <Compile Include="DataContracts\v1\SQLQueryColumns.cs" />
+    <Compile Include="DataContracts\v1\QueryMonitorDataForGraphs.cs" />
+    <Compile Include="DataContracts\v1\QueryMonitorStatisticsData.cs" />
+    <Compile Include="DataContracts\v1\QueryPlan.cs" />
+    <Compile Include="DataContracts\v1\DatabaseInformation.cs" />
+    <Compile Include="DataContracts\v1\TagScaleFactor.cs" />
+    <Compile Include="DataContracts\v1\User.cs" />
+    <Compile Include="DataContracts\v1\Client.cs" />
+    <Compile Include="DataContracts\v1\Application.cs" />
+    <Compile Include="DataContracts\v1\SupportedMetric.cs" />
+    <Compile Include="DataContracts\v1\SupportedGrouping.cs" />
+    <Compile Include="DataContracts\v1\Alert.cs" />
+    <Compile Include="DataContracts\v1\AlertsByCategory.cs" />
+    <Compile Include="DataContracts\v1\AlertsByDatabase.cs" />
+    <Compile Include="DataContracts\v1\Auth\AppSecurityEnabledResponse.cs" />
+    <Compile Include="DataContracts\v1\Auth\UserAuthenticationRequest.cs" />
+    <Compile Include="DataContracts\v1\Auth\UserAuthenticationResponse.cs" />
+    <Compile Include="DataContracts\v1\Auth\WebApplicationUser.cs" />
+    <Compile Include="DataContracts\v1\Category\FileActivityForInstance.cs" />
+    <Compile Include="DataContracts\v1\Category\FileDrivesForInstance.cs" />
+    <Compile Include="DataContracts\v1\Category\QueryStatisticsForInstance.cs" />
+    <Compile Include="DataContracts\v1\Category\QueryWaitStatisticsForInstance.cs" />
+    <Compile Include="DataContracts\v1\Category\ResourcesForInstance.cs" />
+    <Compile Include="DataContracts\v1\Category\ServerWaitsForInstance.cs" />
+    <Compile Include="DataContracts\v1\Category\Sessions\ServerSessionStatistics.cs" />
+    <Compile Include="DataContracts\v1\Category\Sessions\SessionsForInstance.cs" />
+    <Compile Include="DataContracts\v1\Category\Sessions\SessionActivityForInstance.cs" />
+    <Compile Include="DataContracts\v1\Category\Sessions\SessionResponseTimeForInstance.cs" />
+    <Compile Include="DataContracts\v1\Databases\AvailabilityGroupForDatabase.cs" />
+    <Compile Include="DataContracts\v1\Databases\AvailabilityGroupStatsForDatabase.cs" />
+    <Compile Include="DataContracts\v1\Databases\CapacityUsageForDatabase.cs" />
+    <Compile Include="DataContracts\v1\Databases\TempDBStats.cs" />
+    <Compile Include="DataContracts\v1\License\LicenseDetails.cs" />
+    <Compile Include="DataContracts\v1\MetricCollection.cs" />
+    <Compile Include="DataContracts\v1\AlertCollection.cs" />
+    <Compile Include="DataContracts\v1\Categories.cs" />
+    <Compile Include="DataContracts\v1\DatabaseStatistics.cs" />
+    <Compile Include="DataContracts\v1\Errors\DefaultFaultException.cs" />
+    <Compile Include="DataContracts\v1\Errors\ErrorHandler.cs" />
+    <Compile Include="DataContracts\v1\Errors\ErrorHandlerBehavior.cs" />
+    <Compile Include="DataContracts\v1\Errors\JsonExceptionWrapper.cs" />
+    <Compile Include="DataContracts\v1\GetServiceStatusResponse.cs" />
+    <Compile Include="DataContracts\v1\Metric.cs" />
+    <Compile Include="DataContracts\v1\MonitoredSqlServer.cs" />
+    <Compile Include="DataContracts\v1\MonitoredSqlServerCollection.cs" />
+    <Compile Include="DataContracts\v1\MonitoredSqlServerStatusCollection.cs" />
+    <Compile Include="DataContracts\v1\Databases\MonitoredSqlServerDatabase.cs" />
+    <Compile Include="DataContracts\v1\MonitoredSqlServerStatus.cs" />
+    <Compile Include="DataContracts\v1\OSMetrics.cs" />
+    <Compile Include="DataContracts\v1\TimedValue.cs" />
+    <Compile Include="DataContracts\v1\VirtualizationList.cs" />
+    <Compile Include="DataContracts\v1\VirtualizatioStats.cs" />
+    <Compile Include="DataContracts\v1\Widgets\AlertInstanceStatus.cs" />
+    <Compile Include="DataContracts\v1\Widgets\AlertProductStatus.cs" />
+    <Compile Include="DataContracts\v1\Widgets\AlertsCountForDatabase.cs" />
+    <Compile Include="DataContracts\v1\Widgets\AlertsCountForInstance.cs" />
+    <Compile Include="DataContracts\v1\Widgets\InstanceOverview.cs" />
+    <Compile Include="DataContracts\v1\Widgets\InstancesByQueryCount.cs" />
+    <Compile Include="DataContracts\v1\Widgets\DatabaseByActivity.cs" />
+    <Compile Include="DataContracts\v1\Widgets\InstanceStatus.cs" />
+    <Compile Include="DataContracts\v1\Widgets\IOPhysicalUsageForInstance.cs" />
+    <Compile Include="DataContracts\v1\Widgets\ProductStatus.cs" />
+    <Compile Include="DataContracts\v1\Widgets\ProjectedGrowthOfDatabaseSize.cs" />
+    <Compile Include="DataContracts\v1\Widgets\SessionsByCPUUsage.cs" />
+    <Compile Include="DataContracts\v1\Widgets\InstancesByConnectionCount.cs" />
+    <Compile Include="DataContracts\v1\Widgets\BlockedSessionForInstance.cs" />
+    <Compile Include="DataContracts\v1\Widgets\DiskSpaceByInstance.cs" />
+    <Compile Include="DataContracts\v1\Widgets\LongestQueriesForInstance.cs" />
+    <Compile Include="DataContracts\v1\Widgets\ResponseTimeForInstance.cs" />
+    <Compile Include="DataContracts\v1\ServerDatabaseSummary.cs" />
+    <Compile Include="DataContracts\v1\ServerOverview.cs" />
+    <Compile Include="DataContracts\v1\ServerStatistics.cs" />
+    <Compile Include="DataContracts\v1\ServerSummaryContainerCollection.cs" />
+    <Compile Include="DataContracts\v1\ServerSummaryContainer.cs" />
+    <Compile Include="DataContracts\v1\ServerSystemProcesses.cs" />
+    <Compile Include="DataContracts\v1\ServiceStatus.cs" />
+    <Compile Include="DataContracts\v1\Tag.cs" />
+    <Compile Include="DataContracts\v1\TagsCollection.cs" />
+    <Compile Include="DataContracts\v1\TempdbSummaryStatistics.cs" />
+    <Compile Include="DataContracts\v1\Widgets\SessionCountForInstance.cs" />
+    <Compile Include="DataContracts\v1\Widgets\DatabasesByDatabaseFileSize.cs" />
+    <Compile Include="DataContracts\v1\Widgets\SessionsByIOActivity.cs" />
+    <Compile Include="DataContracts\v1\Widgets\SqlCpuLoadForInstance.cs" />
+    <Compile Include="DataContracts\v1\Widgets\SqlMemoryUsageForInstance.cs" />
+    <Compile Include="DataContracts\v1\Widgets\TempDBUtilizationForInstance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataContracts\v1\Widgets\WaitStatisticsByInstance.cs" />
+    <Compile Include="DataModels\DataModels.cs" />
+    <Compile Include="Events\Metric.cs" />
+    <Compile Include="Events\TimeFrameUtils.cs" />
+    <Compile Include="Helpers\AlertWiseSeverity.cs" />
+    <Compile Include="Helpers\Auth\AuthenticationHelper.cs" />
+    <Compile Include="Helpers\Auth\ServerAuthorizationHelper.cs" />
+    <Compile Include="Helpers\BuisnessLogicHelper.cs" />
+    <Compile Include="Helpers\ConvertToDataContract.cs" />
+    <Compile Include="Helpers\CWF\ObjectTranslation.cs" />
+    <Compile Include="Helpers\DateTimeHelper.cs" />
+    <Compile Include="Helpers\EnumHelpers.cs" />
+    <Compile Include="Helpers\General.cs" />
+    <Compile Include="Helpers\SQLdmLogHelper.cs" />
+    <Compile Include="Repository\RepositoryConnection.cs" />
+    <Compile Include="Repository\RepositoryHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\RepositoryInfo.cs" />
+    <Compile Include="Repository\SQLServerHelper.cs" />
+    <Compile Include="ServiceContracts\v1\ICustomDashboard.cs" />
+    <Compile Include="ServiceContracts\v1\ICWFClient.cs" />
+    <Compile Include="ServiceContracts\v1\IProductInfo.cs" />
+    <Compile Include="ServiceContracts\v1\IQueryManager.cs" />
+    <Compile Include="ServiceContracts\v1\IAlertManager.cs" />
+    <Compile Include="ServiceContracts\v1\IAuthManager.cs" />
+    <Compile Include="ServiceContracts\v1\ICategoryManager.cs" />
+    <Compile Include="ServiceContracts\v1\ILicenseManager.cs" />
+    <Compile Include="ServiceContracts\v1\IServerManager.cs" />
+    <Compile Include="ServiceContracts\v1\ITagManager.cs" />
+    <Compile Include="ServiceContracts\v1\ITopXManager.cs" />
+    <Compile Include="ServiceContracts\v1\IWebService1.cs" />
+    <Compile Include="Helpers\CWF\RestClient.cs" />
+    <Compile Include="Helpers\CWF\StringExtensions.cs" />
+    <Compile Include="Helpers\CWF\JsonHelper.cs" />
+    <Compile Include="Helpers\CWF\HttpRequestHelper.cs" />
+    <Compile Include="Helpers\CWF\CWFApiEndoints.cs" />
+    <Compile Include="Helpers\CWF\CWFHelper.cs" />
+    <Compile Include="ServiceContracts\v1\IGeneral.cs" />
+    <Compile Include="SQLdmAddInHook.cs" />
+    <Compile Include="Types\Extensions\EnumExtension.cs" />
+    <Compile Include="Web\WebService.ICustomDashboard.cs" />
+    <Compile Include="Web\WebService.IProductInfo.cs" />
+    <Compile Include="Web\WebService.ICWFClient.cs" />
+    <Compile Include="Web\WebService.IQueryManager.cs" />
+    <Compile Include="Web\WebService.IGeneral.cs" />
+    <Compile Include="Web\WebService.cs" />
+    <Compile Include="Web\WebService.IAlertManager.cs" />
+    <Compile Include="Web\WebService.IAuthManager.cs" />
+    <Compile Include="Web\WebService.ICategoryManager.cs" />
+    <Compile Include="Web\WebService.ILicenseManager.cs" />
+    <Compile Include="Web\WebService.IRecommendationManager.cs" />
+    <Compile Include="Web\WebService.IServerManager.cs" />
+    <Compile Include="Web\WebService.ITagManager.cs" />
+    <Compile Include="Web\WebService.ITopXManager.cs" />
+    <Compile Include="Web\WebService.IWebService1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQLdm.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Types\Inherited\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Idera.SQLdm.Common.csproj">
+      <SpecificVersion>True</SpecificVersion>
+      <Project>{DC3D7464-76DF-4212-AE5C-9AF39E856CA6}</Project>
+      <Name>Idera.SQLdm.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Messages\Idera.SQLdm.Common.Messages.vcxproj">
+      <Project>{FAC83EB7-75C5-4B92-A9F5-3FC8D24FCEC8}</Project>
+      <Name>Idera.SQLdm.Common.Messages</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

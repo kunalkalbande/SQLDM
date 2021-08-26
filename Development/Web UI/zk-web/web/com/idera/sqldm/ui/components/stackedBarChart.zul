@@ -1,0 +1,24 @@
+<zk>
+
+<!-- 	<space height="5px"/> -->
+	<div sclass="padding-l-12">
+		<hlayout>
+		<space width="${arg.leftMargin}"/>
+		<label id="mc_titleLabel" value="${arg.title}" sclass="H4" />
+		</hlayout>
+	</div>
+<!-- 	<space height="5px"/> -->
+
+	<div id="mc_containerDiv" sclass="padding-l-24">
+		<stackedbarchart height="85%" width="90%" id="mc_chart"
+			animationDelay="${arg.animationDelay}" animateBars="${arg.animateBars}" animationLength="${arg.animationLength}" drillable = "${arg.drillable}" orient="${arg.orient}"
+			plotMarginLeft="${arg.leftMargin}" plotMarginRight="${arg.rightMargin}" plotMarginTop="${arg.topMargin}" plotMarginBottom="${arg.bottomMargin}"
+			renderdefer="0"/>
+			
+		<div sclass="padding-t-12 padding-l-24">
+			<label id="mc_errorLabel" visible="false" sclass="H5 darker-gray-text italic" />
+		</div>
+
+	</div>
+
+</zk>

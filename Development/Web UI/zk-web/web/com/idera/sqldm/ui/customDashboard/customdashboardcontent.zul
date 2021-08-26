@@ -1,0 +1,29 @@
+<zk xmlns:w="http://www.zkoss.org/2005/zk/client" xmlns:h="native">
+	<window border="none"
+		style="min-height:780px; padding-top:32px;" vflex="min">
+	        <!-- div fulfill="self.onCreate" vflex = "1" --> <!-- workaround -->
+				<!-- borderlayout style="overflow-y: auto; overflow-x:hidden;" vflex = "1">
+					<west width="174px" flex="true" border="1" vflex = "1"  sclass = "light-panel-color-shade">
+						<include src="~./sqldm/com/idera/sqldm/ui/customDashboard/customDashboardSideBar.zul" 
+								style="overflow-y:auto;overflow-x:hidden;"/>
+				   </west>
+				   <center flex="true" border="1" vflex = "1" autoscroll="true">
+				   		<include src="~./sqldm/com/idera/sqldm/ui/customDashboard/customDashboardWidgetArea.zul" 
+				   				style="overflow-y:auto"/>
+				   </center>
+				</borderlayout>
+			</div-->
+			<h:table id="html-table" width="100%">
+				<h:tr>
+					<h:td width="15%" style="background-color:#ECECEC;border: 1px solid rgb(216, 216, 216);vertical-align:top;">
+						<include id="sideBarInclude" src="~./sqldm/com/idera/sqldm/ui/customDashboard/customDashboardSideBar.zul" 
+									style="min-height:780px;" vflex="min"/>
+					</h:td>
+					<h:td width="85%" style="vertical-align:top;">
+						<include id="centerInclude" src="~./sqldm/com/idera/sqldm/ui/customDashboard/customDashboardWidgetArea.zul" 
+				   				style="min-height:780px;" vflex="min"/>
+					</h:td>
+				</h:tr>
+			</h:table>
+	</window>
+</zk>

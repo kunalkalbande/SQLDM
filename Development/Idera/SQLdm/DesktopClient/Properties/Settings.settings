@@ -1,0 +1,577 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Idera.SQLdm.DesktopClient.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MainFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="MainFormSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">1280, 960</Value>
+    </Setting>
+    <Setting Name="InvalidLicenseLimitFound_CheckboxState" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="InvalidLicenseProductFound_CheckboxState" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="InvalidLicenseFound_CheckboxState" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="HideAddServersWizardWelcomePage" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="NavigationPaneVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="NavigationPaneUserViewsExpanded" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="HideTodayViewCommonTasks" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="TasksNavigationPaneCurrentViewPanelExpanded" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TasksViewDetailsPanelExpanded" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AlertsNavigationPaneCurrentViewPanelExpanded" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AlertsViewDetailsPanelExpanded" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AlertsViewFilterOptionsPanelVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TasksViewFilterOptionsPanelVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="HideConsoleWhenMinimized" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="BackgroundRefreshIntervalInMinutes" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="ForegroundRefreshIntervalInSeconds" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="MainFormState" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="RealTimeChartHistoryLimitInMinutes" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="ReportsNavigationPaneCurrentViewPanelExpanded" Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ReportsViewFilterOptionsPanelVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AlertConfigurationDialogSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">640, 500</Value>
+    </Setting>
+    <Setting Name="AlertConfigurationDialogDividerLocation" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">270</Value>
+    </Setting>
+    <Setting Name="AlertConfigurationDialogGroupByCategory" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="MainFormToolbarSettings" GenerateDefaultValueInCode="false" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MainForm.toolbarsManager</Value>
+    </Setting>
+    <Setting Name="ServerSummaryViewStatusPanelWidth" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">222</Value>
+    </Setting>
+    <Setting Name="ServerSummaryViewRecentTrendsPanelHeight" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">125</Value>
+    </Setting>
+    <Setting Name="MainFormNavigationPanelSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">207</Value>
+    </Setting>
+    <Setting Name="ShowServerSummaryControlHelpOnClick" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SessionsDetailsViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">261</Value>
+    </Setting>
+    <Setting Name="SessionsLocksViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">242</Value>
+    </Setting>
+    <Setting Name="ResourcesDiskSizeViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">242</Value>
+    </Setting>
+    <Setting Name="SessionsBlockingViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">209</Value>
+    </Setting>
+    <Setting Name="LogsViewLogsSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">202</Value>
+    </Setting>
+    <Setting Name="LogsViewDataSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">140</Value>
+    </Setting>
+    <Setting Name="DatabasesBackupsViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">248</Value>
+    </Setting>
+    <Setting Name="DatabasesFilesViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">394</Value>
+    </Setting>
+    <Setting Name="DatabasesFilesViewFilesSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">221</Value>
+    </Setting>
+    <Setting Name="DatabasesFilesViewGroupsSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">221</Value>
+    </Setting>
+    <Setting Name="DatabasesFilesViewLogsSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">221</Value>
+    </Setting>
+    <Setting Name="DatabasesSummaryViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">308</Value>
+    </Setting>
+    <Setting Name="DatabasesTablesViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">230</Value>
+    </Setting>
+    <Setting Name="ResourcesProcedureCacheViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">328</Value>
+    </Setting>
+    <Setting Name="QueryMonitorViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">206</Value>
+    </Setting>
+    <Setting Name="QueryMonitorViewQuerySplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="ServicesSummaryViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">209</Value>
+    </Setting>
+    <Setting Name="ServicesFullTextViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">255</Value>
+    </Setting>
+    <Setting Name="ServicesFullTextViewCatalogSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">246</Value>
+    </Setting>
+    <Setting Name="ServicesAgentJobsViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">234</Value>
+    </Setting>
+    <Setting Name="ShowMessage_ManyServersSlowsReporting" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ShowServerSummaryAnimations" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SessionsDetailsViewDetailsVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SessionsLocksViewChartVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ResourcesDiskSizeViewChartVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SessionsBlockingViewChartVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SessionsLocksViewChartType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Requests</Value>
+    </Setting>
+    <Setting Name="SessionsSummaryViewLocksChartType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Requests</Value>
+    </Setting>
+    <Setting Name="ServicesFullTextViewDetailsVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ServicesAgentJobsViewHistoryVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ServicesSummaryViewChartVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DatabasesFilesViewFilesChartType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Current Megabytes</Value>
+    </Setting>
+    <Setting Name="DatabasesFilesViewGroupsChartType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Current Megabytes</Value>
+    </Setting>
+    <Setting Name="DatabasesFilesViewLogsChartType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Current Megabytes</Value>
+    </Setting>
+    <Setting Name="DatabasesFilesViewDisksChartType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Megabytes</Value>
+    </Setting>
+    <Setting Name="DatabasesFilesViewFilesTab" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="DatabasesSummaryViewCapacityChartType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Megabytes</Value>
+    </Setting>
+    <Setting Name="DatabasesSummaryViewTrendsChartType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Active Sessions</Value>
+    </Setting>
+    <Setting Name="DatabasesSummaryViewChartsVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DatabasesTablesViewDependencyType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">References</Value>
+    </Setting>
+    <Setting Name="DatabasesTablesViewStatisticsType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Columns</Value>
+    </Setting>
+    <Setting Name="DatabasesTablesViewDetailsVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DatabasesTablesViewDetailsTab" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="LogsViewDetailsPanelVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="LogsViewLogsPanelVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ConsoleAlertNotificationDisplayOption" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="ServerConfigurationViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">133</Value>
+    </Setting>
+    <Setting Name="ServerConfigurationViewDetailsPanelVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ServerDetailsViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">195</Value>
+    </Setting>
+    <Setting Name="ServerDetailsViewChartVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="QueryMonitorViewFiltersVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ResourcesDiskSizeViewChartType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Megabytes</Value>
+    </Setting>
+    <Setting Name="ResourcesProcedureCacheViewChartsVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ResourcesProcedureCacheViewChartType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Hit Ratio</Value>
+    </Setting>
+    <Setting Name="ResourcesProcedureCacheViewQuerySplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="TodayViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">170</Value>
+    </Setting>
+    <Setting Name="RepositoryConnectionTimeoutInSeconds" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="RepositoryCommandTimeoutInSeconds" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">180</Value>
+    </Setting>
+    <Setting Name="UpgradeSettings" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="RecentlyViewedSnapshotsPanelExpanded" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="HideCustomCounterWizardWelcomePage" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="HideAddPermissionsWizardWelcomePage" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ShowMessage_OLEAutomationUnavailable" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ShowMessage_WMIServiceUnreachable" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ShowMessage_LightweightPooling" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ShowCustomizeBaselineConfigurationMessage" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AlertRecommendationWarningThesholdPercentage" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="AlertRecommendationCriticalThesholdPercentage" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="AlertConfigurationDialogSizeUpgradeMarker" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="DatabasesMirroringViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">300</Value>
+    </Setting>
+    <Setting Name="NavigationPaneTagsPanelExpanded" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="PreviouslyUsedReportServers" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PreviouslyUsedReportFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ShowMessage_OLEAutomationDisabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UpgradeIndexesDataTableRemoveRows" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ServicesReplicationViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">120</Value>
+    </Setting>
+    <Setting Name="ServicesReplicationViewGridSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">140</Value>
+    </Setting>
+    <Setting Name="DeadlockViewDetailsPanelExpanded" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DeadlockViewSplitterDistance" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">315</Value>
+    </Setting>
+    <Setting Name="HideCustomReportsWizardWelcomePage" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AlertRowLimit" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="AlertsViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">160</Value>
+    </Setting>
+    <Setting Name="ActiveAlertsViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">160</Value>
+    </Setting>
+    <Setting Name="ActiveAlertsViewDetailsPanelExpanded" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="HideReplicationTrendGraphs" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ResourcesDiskViewChart1Type" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ResourcesDiskViewChart2Type" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ResourcesDiskViewChart3Type" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ResourcesDiskViewChart4Type" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="HideAddActionProviderWelcomePage" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="QueryMonitorViewGridVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="QueryMonitorViewDetailItems" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
+    <Setting Name="TodayViewSelectedTabIndex" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="TrialCenterUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://www.idera.com/Trial-Center/SQL-diagnostic-manager/ </Value>
+    </Setting>
+    <Setting Name="ServerSummaryViewSelectedTabIndex" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="PulseAccountName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PulseAccountKeepLoggedIn" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="HidePulseTeaser" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="TasksEnabled" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="PopupShowPopupServerInfoWarCrit" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ActiveAlertsViewForecastPanelVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CollapseRibbon" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="DashboardDatabasesControlSelectedChart" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ColorScheme" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Office2007Black.isl</Value>
+    </Setting>
+    <Setting Name="TempdbViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">261</Value>
+    </Setting>
+    <Setting Name="TempdbViewMainGrid" Type="Idera.SQLdm.DesktopClient.Objects.GridSettings" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="TempdbViewContentionButton" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Version Store Cleanup Rate</Value>
+    </Setting>
+    <Setting Name="MainWindowLocation" Type="System.Windows.Point" Scope="User">
+      <Value Profile="(Default)">0,0</Value>
+    </Setting>
+    <Setting Name="MainWindowSize" Type="System.Windows.Size" Scope="User">
+      <Value Profile="(Default)">1280,960</Value>
+    </Setting>
+    <Setting Name="MainWindowState" Type="System.Windows.WindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="MainWindowRestoreBounds" Type="System.Windows.Rect" Scope="User">
+      <Value Profile="(Default)">0,0,0,0</Value>
+    </Setting>
+    <Setting Name="MainWindowNavigationPanelSize" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">225</Value>
+    </Setting>
+    <Setting Name="PopupShowCriticalServersOnly" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="PopupEnableCriticalAlertSound" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="PopupShowAllServerStatuses" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="NeverShowPopupServerOk" Type="System.String" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="OSCurrentDPI" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="BlockViewSplitterDistance" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">315</Value>
+    </Setting>
+    <Setting Name="ShowMessage_WMIServiceTimedout" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="MultipleDesktopClients" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="SessionsBlockingViewLocksDeadlocksListVisible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DatabaseAlwaysOnViewMainSplitter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">300</Value>
+    </Setting>
+    <Setting Name="CachedViewCount" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">9</Value>
+    </Setting>
+    <Setting Name="AuditEventsTopCount" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2000</Value>
+    </Setting>
+    <Setting Name="ProductPurchaseUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://www.idera.com/buynow/diagnostic-manager?utm_source=sqldm&amp;utm_medium=inproduct&amp;utm_content=bn&amp;utm_campaign=buynow</Value>
+    </Setting>
+    <Setting Name="VisibilityOverviewDashboard" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityOverviewDetails" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityOverviewConfiguration" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityOverviewActiveAlerts" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityOverviewTimeline" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilitySessionsSummary" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilitySessionsDetails" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilitySessionsLocks" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilitySessionsBlocking" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityQueriesSignatureMode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityQueriesStatementMode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityQueriesQueryHistory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityQueriesQueryWaits" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityResourcesSummary" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityResourcesCPU" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityResourcesMemory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityResourcesDisk" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityResourcesDiskSize" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityResourcesFileActivity" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityResourcesProcedureCache" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityResourcesServerWaits" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityDatabaseSummary" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityDatabaseAvailabilityGroup" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityDatabaseTempdbSummary" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityDatabaseConfiguration" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityDatabaseFiles" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityDatabaseBackupRestore" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityDatabaseTablesIndexes" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityDatabaseMirroring" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityServicesSummary" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityServicesSQLAgentJobs" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityServicesFullTextSearch" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="VisibilityServicesReplication" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visible</Value>
+    </Setting>
+    <Setting Name="SelectedViewFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Custom View 1.xml</Value>
+    </Setting>
+    <Setting Name="SavedViews" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

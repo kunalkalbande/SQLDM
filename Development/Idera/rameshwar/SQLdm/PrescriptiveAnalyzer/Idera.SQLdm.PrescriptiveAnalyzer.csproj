@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{77911CEB-AFF9-477F-B2F2-2192762AEF6F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Idera.SQLdm.PrescriptiveAnalyzer</RootNamespace>
+    <AssemblyName>Idera.SQLdm.PrescriptiveAnalyzer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Data.Schema.ScriptDom, Version=9.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Microsoft.Data.Schema.ScriptDom.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Schema.ScriptDom.Sql, Version=9.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Microsoft.Data.Schema.ScriptDom.Sql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\Debug\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerCollections, Version=1.0.2141.24679, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\PowerCollections.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TracerX, Version=2.1.809.18205, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\..\..\..\Libraries\TracerX.exe</HintPath>
+    </Reference>
+    <Reference Include="TracerX-Logger, Version=3.0.901.1212, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\TracerX-Logger.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analyzer\AbstractAnalyzer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Analyzer\BackupAndRecoveryAnalyzer.cs" />
+    <Compile Include="Analyzer\BaseOptions.cs" />
+    <Compile Include="Analyzer\ColumnStoreIndexAnalyzer.cs" />
+    <Compile Include="Analyzer\DBObjectAnalyzerOptions.cs" />
+    <Compile Include="Analyzer\DBPropertiesAnalyzer.cs" />
+    <Compile Include="Analyzer\DBSecurityAnalyzer.cs" />
+    <Compile Include="Analyzer\DisabledIndexAnalyzer.cs" />
+    <Compile Include="Analyzer\FilteredIndexAnalyzer.cs" />
+    <Compile Include="Analyzer\FragmentedIndexesAnalyzer.cs" />
+    <Compile Include="Analyzer\HashIndexAnalyzer.cs" />
+    <Compile Include="Analyzer\HighCPUTimeProcedureAnalyzer .cs" />
+    <Compile Include="Analyzer\HighIndexUpdatesAnalyzer.cs" />
+    <Compile Include="Analyzer\IAnalyze.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Analyzer\IndexContention.cs" />
+    <Compile Include="Analyzer\InMemoryTableIndexAnalyzer.cs" />
+    <Compile Include="Analyzer\IoAnalyzer.cs" />
+    <Compile Include="Analyzer\LargeTableStatsAnalyzer.cs" />
+    <Compile Include="Analyzer\MemoryAnalyzer.cs" />
+    <Compile Include="Analyzer\NetworkAnalyzer.cs" />
+    <Compile Include="Analyzer\NonIncrementalColumnStatAnalyzer.cs" />
+    <Compile Include="Analyzer\OutOfDateStatsAnalyzer.cs" />
+    <Compile Include="Analyzer\OverlappingIndexesAnalyzer.cs" />
+    <Compile Include="Analyzer\ProcessorAnalyzer.cs" />
+    <Compile Include="Analyzer\QueryAnalyzer.cs" />
+    <Compile Include="Analyzer\QueryStoreAnalyzer.cs" />
+    <Compile Include="Analyzer\ServerAnalyzer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Analyzer\ServerConfigurationAnalyzer.cs" />
+    <Compile Include="Analyzer\SnapshotCommonRecommendations.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Analyzer\SQLModuleOptionsAnalyzer.cs" />
+    <Compile Include="Analyzer\WaitStatsAnalyzer.cs" />
+    <Compile Include="BaseOptions.cs" />
+    <Compile Include="Batches\BatchConstants.cs" />
+    <Compile Include="Batches\BatchFinder.cs" />
+    <Compile Include="Batches\BatchResourceReader.cs" />
+    <Compile Include="Batches\GetBatches.cs" />
+    <Compile Include="BestPractices\Queries\AbstractQueryAnalyzer.cs" />
+    <Compile Include="BestPractices\Queries\CloseCursorAnalyzer.cs" />
+    <Compile Include="BestPractices\Queries\CompositeExpressionSearchAnalyzer.cs" />
+    <Compile Include="BestPractices\Queries\FastFowardCursorAnalyzer.cs" />
+    <Compile Include="BestPractices\Queries\FunctionInSearchAnalyzer.cs" />
+    <Compile Include="BestPractices\Queries\HintAbuseAnalyzer.cs" />
+    <Compile Include="BestPractices\Queries\IAnalyzeQueries.cs" />
+    <Compile Include="BestPractices\Queries\LeftSideExpressionInWhereClauseAnalyzer.cs" />
+    <Compile Include="BestPractices\Queries\LeftUsedInSearchAnalyzer.cs" />
+    <Compile Include="BestPractices\Queries\LikeAbuseAnalyzer.cs" />
+    <Compile Include="BestPractices\Queries\MissingJoinAnalyzer.cs" />
+    <Compile Include="BestPractices\Queries\NakedInsertAnalyzer.cs" />
+    <Compile Include="BestPractices\Queries\NestedMinMaxAnalyzer.cs" />
+    <Compile Include="BestPractices\Queries\QueryBestPracticeAnalyzer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BestPractices\Queries\SelectDistinctAbuseAnalyzer.cs" />
+    <Compile Include="BestPractices\Queries\SemiJoinAnalyzer.cs" />
+    <Compile Include="BestPractices\Queries\StarSqlAbuseAnalyzer.cs" />
+    <Compile Include="BestPractices\Queries\TopTheHardWayAnalyzer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BestPractices\Queries\TopVsRowCountAnalyzer.cs" />
+    <Compile Include="BestPractices\Queries\TwoExpressionCoalesceAnalyzer.cs" />
+    <Compile Include="BestPractices\Queries\UnfilteredDeleteAnalyzer.cs" />
+    <Compile Include="BestPractices\Queries\UnionSetAbuseAnalyzer.cs" />
+    <Compile Include="ExecutionPlan\Analyzers\AbstractPlanAnalyzer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExecutionPlan\Analyzers\EarlyAbortAnalyzer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExecutionPlan\Analyzers\IAnalyzePlan.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExecutionPlan\Analyzers\MissingIndexAnalyzer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExecutionPlan\Analyzers\NotInSubqueryAnalyzer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExecutionPlan\Analyzers\OperatorsAnalyzer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExecutionPlan\Analyzers\WarningAnalyzer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExecutionPlan\ExecutionPlanAnalyzer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExecutionPlan\ExecutionPlanCost.cs" />
+    <Compile Include="ExecutionPlan\ExecutionPlanOperators.cs" />
+    <Compile Include="ExecutionPlan\ExecutionPlanProcessor.cs" />
+    <Compile Include="ExecutionPlan\ExecutionPlanTables.cs" />
+    <Compile Include="ExecutionPlan\ExecutionPlanWarnings.cs" />
+    <Compile Include="Helpers\AutoPilotHelpers.cs" />
+    <Compile Include="Helpers\IndexHelper.cs" />
+    <Compile Include="Helpers\TraverseObjectProps.cs" />
+    <Compile Include="Helpers\TSqlFragmentWalker.cs" />
+    <Compile Include="Helpers\TSqlParsingHelpers.cs" />
+    <Compile Include="MetaData\ColumnResolver.cs" />
+    <Compile Include="MetaData\SqlServerSchema.cs" />
+    <Compile Include="Metrics\BackupAndRecoveryMetrics.cs" />
+    <Compile Include="Metrics\BaseMetrics.cs" />
+    <Compile Include="Metrics\BufferPoolExtIOMetrics.cs" />
+    <Compile Include="Metrics\ColumnStoreIndexMetrics.cs" />
+    <Compile Include="Metrics\DatabaseInfoSnapshotMetrics.cs" />
+    <Compile Include="Metrics\DBPropertiesMetrics.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Metrics\DBSecurityMetrics.cs" />
+    <Compile Include="Metrics\DisabledIndexMetrics.cs" />
+    <Compile Include="Metrics\EstRowsMetrics.cs" />
+    <Compile Include="Metrics\FilteredColumnNotInKeyOfFilteredIndexMetrics.cs" />
+    <Compile Include="Metrics\FragmentedIndexesMetrics.cs" />
+    <Compile Include="Metrics\HashIndexMetrics.cs" />
+    <Compile Include="Metrics\HighCPUTimeProcedureMetrics.cs" />
+    <Compile Include="Metrics\HighIndexUpdatesMetrics.cs" />
+    <Compile Include="Metrics\IndexContentionMetrics.cs" />
+    <Compile Include="Metrics\LargeTableStatsMetrics.cs" />
+    <Compile Include="Metrics\NonIncrementalStatMetrics.cs" />
+    <Compile Include="Metrics\NUMANodeCountersMetrics.cs" />
+    <Compile Include="Metrics\OutOfDateStatsMetrics.cs" />
+    <Compile Include="Metrics\OverlappingIndexesMetrics.cs" />
+    <Compile Include="Metrics\QueryAnalyzerMetrics.cs" />
+    <Compile Include="Metrics\QueryStoreMetrics.cs" />
+    <Compile Include="Metrics\RarelyUsedIndexOnInMemoryTableMetrics.cs" />
+    <Compile Include="Metrics\SampledServerResourcesMetrics.cs" />
+    <Compile Include="Metrics\ServerConfigurationMetrics.cs" />
+    <Compile Include="Metrics\ServerPropertiesMetrics.cs" />
+    <Compile Include="Metrics\SnapshotMetricOptions.cs" />
+    <Compile Include="Metrics\SnapshotMetrics.cs" />
+    <Compile Include="Metrics\SQLModuleOptionsMetrics.cs" />
+    <Compile Include="Metrics\WaitingBatchesMetrics.cs" />
+    <Compile Include="Metrics\WaitingObjects\WaitingBatch.cs" />
+    <Compile Include="Metrics\WaitingObjects\WaitingBatches.cs" />
+    <Compile Include="Metrics\WaitingObjects\WaitingDatabase.cs" />
+    <Compile Include="Metrics\WaitingObjects\WaitingDatabases.cs" />
+    <Compile Include="Metrics\WaitingObjects\WaitingResource.cs" />
+    <Compile Include="Metrics\WaitStatsMetrics.cs" />
+    <Compile Include="Metrics\WMIBiosMetrics.cs" />
+    <Compile Include="Metrics\WMIComputerSystemMetrics.cs" />
+    <Compile Include="Metrics\WMIEncryptableVolumeMetrics.cs" />
+    <Compile Include="Metrics\WMINetworkInterfaceMetrics.cs" />
+    <Compile Include="Metrics\WMINetworkRedirector.cs" />
+    <Compile Include="Metrics\WMIPageFileMetrics.cs" />
+    <Compile Include="Metrics\WMIPerfDiskLogicalDiskMetrics.cs" />
+    <Compile Include="Metrics\WMIPerfDiskPhysicalDiskMetrics.cs" />
+    <Compile Include="Metrics\WMIPerfOSMemoryMetrics.cs" />
+    <Compile Include="Metrics\WMIPerfOSProcessorMetrics.cs" />
+    <Compile Include="Metrics\WMIPerfOSSystemMetrics.cs" />
+    <Compile Include="Metrics\WMIPhysicalMemoryMetrics.cs" />
+    <Compile Include="Metrics\WMIProcessMetrics.cs" />
+    <Compile Include="Metrics\WMIProcessorMetrics.cs" />
+    <Compile Include="Metrics\WMIServiceMetrics.cs" />
+    <Compile Include="Metrics\WMITCPMetrics.cs" />
+    <Compile Include="Metrics\WMITCPv4Metrics.cs" />
+    <Compile Include="Metrics\WMITCPv6Metrics.cs" />
+    <Compile Include="Metrics\WMIVolumeMetrics.cs" />
+    <Compile Include="Metrics\WorstIndexFillFactorMetrics.cs" />
+    <Compile Include="MissingIndexes\AddedIndex.cs" />
+    <Compile Include="MissingIndexes\DMVMissingIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MissingIndexes\HypotheticalIndexCleanupThread.cs" />
+    <Compile Include="MissingIndexes\HypotheticalIndexes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MissingIndexes\MissingIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MissingIndexes\MissingIndexesOnTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MissingIndexes\PlanWithMissingIndexes.cs" />
+    <Compile Include="MissingIndexes\TableIndexes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\BatchResources.Designer.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RecommendationEngine.cs" />
+    <Compile Include="ServerOverview.cs" />
+    <Compile Include="SQL\SampledServerRescourcesSnapshots.cs" />
+    <Compile Include="SQL\SampledServerResources.cs" />
+    <Compile Include="WorkLoad\Analyzers\ExecutionStatsAnalyzer.cs" />
+    <Compile Include="WorkLoad\Analyzers\ExecutionStatsVariationAnalyzer.cs" />
+    <Compile Include="WorkLoad\Analyzers\IAnalyzeDataBucket.cs" />
+    <Compile Include="WorkLoad\Collectors\BaseDataCollector.cs" />
+    <Compile Include="WorkLoad\Collectors\ExtendedEventCollectorOptions.cs" />
+    <Compile Include="WorkLoad\Collectors\DataBucket.cs" />
+    <Compile Include="WorkLoad\Collectors\ExecutionPlanCollector.cs" />
+    <Compile Include="WorkLoad\Collectors\ExtendedEventCollector.cs" />
+    <Compile Include="WorkLoad\Collectors\TraceCollector.cs" />
+    <Compile Include="WorkLoad\Collectors\TraceCollectorOptions.cs" />
+    <Compile Include="WorkLoad\Collectors\TraceParsingThread.cs" />
+    <Compile Include="WorkLoad\Collectors\WorstPerformingTSQL.cs" />
+    <Compile Include="WorkLoad\DTA\DTASchema.cs" />
+    <Compile Include="WorkLoad\Stats\TraceEventStats.cs" />
+    <Compile Include="WorkLoad\Stats\TraceEventStatsCollection.cs" />
+    <Compile Include="WorkLoad\TraceEvents\TEBase.cs" />
+    <Compile Include="WorkLoad\TraceEvents\TEBatchComplete.cs" />
+    <Compile Include="WorkLoad\TraceEvents\TERpcComplete.cs" />
+    <Compile Include="WorkLoad\TraceEvents\TESpComplete.cs" />
+    <Compile Include="WorkLoad\TraceEvents\TEWorstTSQL.cs" />
+    <Compile Include="WorkLoad\TraceEvents\TraceEventPlan.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Idera.SQLdm.Common.csproj">
+      <Project>{DC3D7464-76DF-4212-AE5C-9AF39E856CA6}</Project>
+      <Name>Idera.SQLdm.Common</Name>
+      <SpecificVersion>True</SpecificVersion>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Messages\Idera.SQLdm.Common.Messages.vcxproj">
+      <Project>{FAC83EB7-75C5-4B92-A9F5-3FC8D24FCEC8}</Project>
+      <Name>Idera.SQLdm.Common.Messages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PrescriptiveAnalyzer.Common\Idera.SQLdm.PrescriptiveAnalyzer.Common.csproj">
+      <Project>{70EA2AF7-6A20-4B78-B357-0899AE0A40E1}</Project>
+      <Name>Idera.SQLdm.PrescriptiveAnalyzer.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\BatchResources.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WMI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WorkLoad\Scripts\CollectTraceData.sql" />
+    <EmbeddedResource Include="WorkLoad\Scripts\CreateTrace.sql" />
+    <EmbeddedResource Include="WorkLoad\Scripts\DeleteTrace.sql" />
+    <EmbeddedResource Include="WorkLoad\Scripts\DeleteTraceUsingCmdShell.sql" />
+    <EmbeddedResource Include="WorkLoad\Scripts\GetTraceFilename.sql" />
+    <EmbeddedResource Include="WorkLoad\Scripts\SampleTrace.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Batches\TSQL\WorstPerformingTSQL.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Batches\TSQL\AllowIndexRecommendation.sql" />
+    <EmbeddedResource Include="Batches\TSQL\CreateNonClusteredIndex.sql" />
+    <EmbeddedResource Include="Batches\TSQL\DisableIndex.sql" />
+    <EmbeddedResource Include="Batches\TSQL\DropIndex.sql" />
+    <EmbeddedResource Include="Batches\TSQL\EstimateNonclusteredIndexSize.sql" />
+    <EmbeddedResource Include="Batches\TSQL\GetIndexColumnsForTable.sql" />
+    <EmbeddedResource Include="Batches\TSQL\GetTableUpdatesPerMin.sql" />
+    <EmbeddedResource Include="Batches\TSQL\GetTableUpdatesPerSec.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WorkLoad\Scripts\CreateExEventSession.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WorkLoad\Scripts\CollectExEventSessionData.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WorkLoad\Scripts\DeleteExEventSession.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WorkLoad\Scripts\StartExEventSession.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WorkLoad\Scripts\SampleExEventSession.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Batches\TSQL\GetAdhocCachedPlanBytes.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

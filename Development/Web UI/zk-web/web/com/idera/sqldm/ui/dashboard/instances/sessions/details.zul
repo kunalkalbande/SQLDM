@@ -1,0 +1,22 @@
+<zk>
+	<div apply="com.idera.sqldm.ui.dashboard.instances.sessions.ChartPageComposer" vflex = "1"  hflex="1">
+	   <vlayout>
+   		 <space height="10px"/>
+		 <hlayout>
+             <div sclass="chart-border" style="width:550px;"  hflex="1">
+           		<sqldm-idera-areachart id="responseTimeChart"  width="550px" height="250px" leftMargin="30px" rightMargin="5px" topMargin="10px" bottomMargin="45px"  />
+	 		 </div>
+             <div sclass="chart-border" style="width:550px;" hflex="1">
+	            <sqldm-idera-linechart id="activityChart" width="550px" height="250px" leftMargin="30px" rightMargin="5px" topMargin="10px" bottomMargin="45px"  />
+		     </div>
+  	 	</hlayout>
+		<hlayout>
+			<div sclass="chart-border" style="width:550px;" hflex="1">
+    	       	<sqldm-idera-areachart width="550px" height="250px" leftMargin="30px" rightMargin="10px" topMargin="5px" bottomMargin="50px" id="blockedSessionChart" />
+     		</div>
+			<div style="width:550px;" hflex="1">
+     		</div>
+  	 	</hlayout>
+	</vlayout>
+	</div>
+</zk>

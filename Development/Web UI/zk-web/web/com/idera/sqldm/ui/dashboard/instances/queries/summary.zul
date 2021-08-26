@@ -1,0 +1,62 @@
+<zk>
+<div apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.idera.sqldm.ui.dashboard.instances.queries.SingleInstanceQueryComposer')"
+	xmlns:w="http://www.zkoss.org/2005/zk/client">
+	<div style="height:800px">
+	<hlayout hflex="1">
+	<div>
+		<grid id="singleInstanceQueryGrid" model="@{instancesModel}" 
+			sizedByContent="true" span="true" sclass="styled-list table_header"
+			hflex="true" mold="paging" paginal="${queriesSummaryListPgId}"
+			emptyMessage="${idera:getLabel('SQLdm.Labels.dashboard.query.nodata')}">
+			<columns sizable="true">
+				<extcolumn label="${idera:getLabel('SQLdm.Labels.query-name')}" hflex="2"  sort="auto(LOWER(QueryName))" width="40%" />
+				<extcolumn label="${idera:getLabel('SQLdm.Labels.sql-text')}"  hflex="2"   sort="auto(LOWER(SqlText))" width="40%"/>
+				<extcolumn label="${idera:getLabel('Labels.occurences')}" width="100px"  sort="auto(Occurences)" sclass="numbers-position-header" />
+				<extcolumn label="${idera:getLabel('Labels.event-type')}" hflex="2"  sort="auto(LOWER(EventType))" width="20%"/>
+				<extcolumn label="${idera:getLabel('Labels.average-duration')}" hflex="2"   width="140px" sort="auto(AverageDuration)" sclass="numbers-position-header"/>
+				<extcolumn label="${idera:getLabel('Labels.avg-cpu-time')}" hflex="2"  width="140px" sort="auto(cpuAverage)" sclass="numbers-position-header"/>
+				<extcolumn label="${idera:getLabel('SQLdm.Labels.cpu-time')}" width="110px" sort="auto(cpuTotal)" sclass="numbers-position-header" />
+				<extcolumn label="${idera:getLabel('Labels.avg-cpu')}" hflex="2" sort="auto(cpuPerSecond)" visible="false"/>
+				<extcolumn label="${idera:getLabel('Labels.avg-reads')}" width="90px" sort="auto(averageReads)" sclass="numbers-position-header"/>
+				<extcolumn label="${idera:getLabel('Labels.reads')}" width="65px" sort="auto(totalReads)" sclass="numbers-position-header" />
+				<extcolumn label="${idera:getLabel('Labels.avg-writes')}" width="90px"  sort="auto(averageWrites)" sclass="numbers-position-header"/>
+				<extcolumn label="${idera:getLabel('Labels.writes')}" width="65px"  sort="auto(totalWrites)" sclass="numbers-position-header" />
+			</columns>
+			<template name="model">
+				<row value="${each}">
+					<label value="${each.queryNum}"/>
+					<label value="${each.sqlText}" maxlength="15" tooltip="${forEachStatus.index}"/>
+					<label value="${each.occurences}"  sclass="numbers-position"/>
+					<label value="${each.eventType}" sclass="wrap-word"/>
+					<label value="${each.averageDuration}"  sclass="numbers-position"/>
+					<label value="${each.cpuAverage}"  sclass="numbers-position"/>
+					<label value="${each.cpuTotal}"  sclass="numbers-position"/>
+					<label value="${each.cpuPerSecond}"  sclass="numbers-position"/>
+					<label value="${each.averageReads}"  sclass="numbers-position"/>
+					<label value="${each.totalReads}"  sclass="numbers-position"/>
+					<label value="${each.averageWrites}"  sclass="numbers-position"/>
+					<label value="${each.totalWrites}"  sclass="numbers-position"/>
+					
+					<popup id="${forEachStatus.index}" style="background:white;">
+					    <label value="${each.sqlText}"/>
+					</popup>
+				</row>
+			</template>
+			<foot>
+				<footer span="12" align="center" >
+					<hbox align="center">
+						<paging id="queriesSummaryListPgId" pageSize="@bind(vm.listRowsCount)"/>
+						<intbox value="@bind(vm.queriesListRowsCount)" id="queriesSummaryListRowsBox" zclass="z-paging-inp" 
+							constraint="no empty,no negative, no zero: ${idera:getLabel('SQLdm.Messages.page-size-error')}" 
+							onOK="@command('setQueriesSummaryListRowsCount')"  width="30px"  placeholder="#" maxlength="3"></intbox>
+						<label value="${idera:getLabel('SQLdm.Labels.pagination-items-per-page')}"/>
+					</hbox>
+				</footer>
+			</foot>
+		</grid>
+	</div>
+	</hlayout>
+	</div>
+</div>
+
+</zk>

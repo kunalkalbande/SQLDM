@@ -1,0 +1,149 @@
+<zk xmlns:w="http://www.zkoss.org/2005/zk/client">
+<script type="text/javascript">
+    function Hide()
+    {
+		if($("a.hideA").text()=='Show Alerts'){
+     $("div.alertsgriddiv").css("display","block");
+     $("div.alertsgriddiv").css("visibility","visible");
+ 			$("a.hideA").text('Hide Alerts');
+      }else{
+       $("div.alertsgriddiv").css("display","none");
+			$("a.hideA").text('Show Alerts');
+      }
+    }
+</script>
+<div sclass="alert-list-view" id="alertsTabList" apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.idera.sqldm.ui.alerts.AlertsGroupViewModel')" hflex = "1">
+<div> 
+	<separator height="8px" />
+		<vlayout>
+			<hbox hflex="1">
+				<div visible="@bind(vm.showWarningMsg)">
+					<image src="${sqldmidera:getImageURLWithoutSize('warning-16x16')}"/>
+					<label value="${sqldmidera:getLabel('SQLdm.Messages.more-alerts-available')}" sclass = "padding-l-6"/>
+				</div>
+			</hbox>
+			
+			<div visible = "@bind(vm.showGroup)">
+				<div id="agd" class="alertsgriddiv">
+				<grid id="instanceGroup"  model="@load(vm.alertGroupingModel)" emptyMessage="@bind(vm.emptyGridMessage)"
+				  sclass="styled-list styled-cwf-list table_header" span="true">			  
+			        <columns sizable="true">
+			        	<column label="!" width="28px" sort="auto(severity)"/>
+			        	<column label="${sqldmidera:getLabel('SQLdm.Labels.alert-date')}" width="145px" sort="auto(utcUpdated)"/>
+			        	<column label="${sqldmidera:getLabel('SQLdm.Labels.summary-cc')}" hflex="2"/>
+						<!-- <column label="${sqldmidera:getLabel('SQLdm.Labels.instance')}" hflex="2" sort="auto(LOWER(instanceName))"/> @author Saumyadeep -->
+						<column label="${sqldmidera:getLabel('SQLdm.Labels.instance')}" hflex="2" sort="auto(LOWER(displayName))"/>
+						<column label="${sqldmidera:getLabel('SQLdm.Labels.database')}" hflex="2" sort="auto(LOWER(databaseName))"/> 				
+						<column label="${sqldmidera:getLabel('SQLdm.Labels.serverwaits.category')}" hflex="1" sort="auto(metric.metricCategory)"/>
+						<column hflex="2" />
+<!-- 						<column label="${sqldmidera:getLabel('SQLdm.Labels.actions')}" hflex="2" /> -->
+			        </columns>
+			        <!-- template for group -->
+			        <template name="model:group">
+			            <group label="@load(each)" />
+			        </template>
+			         
+			        <!-- template for each element in model -->
+			        <template name="model">
+			            <row   style="cursor: pointer;">
+			            	<zk choose="">
+							    <zk when="${each.severity == 8}">    
+								    <image src="${sqldmidera:getImageURLWithoutSize('critical16x16')}"/>
+							    </zk>
+							    <zk when="${each.severity == 4}">    
+								    <image src="${sqldmidera:getImageURLWithoutSize('warning-16x16')}"/>
+							    </zk>
+							    <zk when="${each.severity == 2}">    
+								    <image src="${sqldmidera:getImageURLWithoutSize('Information16x16')}"/>
+							    </zk>
+							    <zk when="${each.severity == 1}">    
+								    <image src="${sqldmidera:getImageURLWithoutSize('OK')}"/>
+							    </zk>
+							    <zk><!-- default -->
+									<image src="${sqldmidera:getImageURLWithoutSize('OK')}"/>
+							    </zk>
+							</zk>
+							<label value="${sqldmidera:getLocalShortDateTime(each.utcUpdated)}" style="word-wrap:break-word;" />
+			            	<a sclass="link" label="${each.name}" style="word-wrap:break-word;" onClick="@command('onClickSelectedAlert', alert=each)"/>
+			                <!-- <label sclass="link" value="@load(each.instanceName)" style="word-wrap:break-word;" onClick="@command('onClickSelectedAlertInstance', instanceid=each.instanceId)"/> @author Saumyadeep -->
+			                <label sclass="link" value="@load(each.displayName)" style="word-wrap:break-word;" onClick="@command('onClickSelectedAlertInstance', instanceid=each.instanceId)"/>
+			          		<label value="${sqldmidera:getDefaultStringIfNull(each.databaseName)}" style="word-wrap:break-word;" />
+							<label value="${each.metric.metricCategory}" style="word-wrap:break-word;" />
+							<div>
+								<a sclass="link" label="Show Details" style="text-decoration: underline;float:left;" onClick="@command('onClickSelectedAlert', alert=each)"/> 
+					 		</div>
+			            </row>
+			        </template>
+			    </grid>
+			    </div>
+			</div>
+				
+				
+			<div visible = "@bind(vm.showGroup eq false)" >
+				<div id="agd1" class="alertsgriddiv">
+				<grid id="alertsTabGrid1" span="true" width="100%"
+					model="@load(vm.alertsModel)"
+					emptyMessage="@bind(vm.emptyGridMessage)"
+					mold="paging" paginal="${alertsListPgId}" sclass="styled-list styled-cwf-list">
+					<columns sizable="true">
+						<extcolumn label="!" width="28px" sortAscending = "@bind(vm.severityComparator)" sortDescending = "@bind(vm.severityComparator)"/>
+						<extcolumn label="${sqldmidera:getLabel('SQLdm.Labels.alert-date')}" width="145px" sortAscending = "@bind(vm.dateComparator)" sortDescending = "@bind(vm.dateComparator)"/>
+						<extcolumn label="${sqldmidera:getLabel('SQLdm.Labels.summary-cc')}" hflex="2"/>
+						<extcolumn label="${sqldmidera:getLabel('SQLdm.Labels.instance')}" hflex="2" sortAscending = "@bind(vm.instanceComparator)" sortDescending = "@bind(vm.instanceComparator)"/>
+						<extcolumn label="${sqldmidera:getLabel('SQLdm.Labels.database')}" hflex="2" sortAscending = "@bind(vm.databaseComparator)" sortDescending = "@bind(vm.databaseComparator)"/> 				
+						<extcolumn label="${sqldmidera:getLabel('SQLdm.Labels.serverwaits.category')}" hflex="1"  sortAscending = "@bind(vm.categoryComparator)" sortDescending = "@bind(vm.categoryComparator)"/>
+						<extcolumn hflex="2" />
+<!-- 						<extcolumn label="${sqldmidera:getLabel('SQLdm.Labels.actions')}" hflex="2" /> -->
+					</columns>
+					<!-- template for each element in model -->
+			        <template name="model">
+			            <row style = "cursor:pointer">
+			            	<zk choose="">
+							    <zk when="${each.severity == 8}">    
+								    <image src="${sqldmidera:getImageURLWithoutSize('critical16x16')}"/>
+							    </zk>
+							    <zk when="${each.severity == 4}">    
+								    <image src="${sqldmidera:getImageURLWithoutSize('warning-16x16')}"/>
+							    </zk>
+							    <zk when="${each.severity == 2}">    
+								    <image src="${sqldmidera:getImageURLWithoutSize('Information16x16')}"/>
+							    </zk>
+							    <zk when="${each.severity == 1}">    
+								    <image src="${sqldmidera:getImageURLWithoutSize('OK')}"/>
+							    </zk>
+							    <zk><!-- default -->
+									<image src="${sqldmidera:getImageURLWithoutSize('OK')}"/>
+							    </zk>
+							</zk>	
+			                <label value="${sqldmidera:getLocalShortDateTime(each.utcUpdated)}" style="word-wrap:break-word;" />
+						 	<a sclass="link" label="${each.name}" style="word-wrap:break-word;" onClick="@command('onClickSelectedAlert', alert=each)"/>
+						 	<!-- <a sclass="link" label="${each.instanceName}" style="word-wrap:break-word;" onClick="@command('onClickSelectedAlertInstance', instanceid=each.instanceId)"/> @author Saumyadeep -->
+						 	<a sclass="link" label="${each.displayName}" style="word-wrap:break-word;" onClick="@command('onClickSelectedAlertInstance', instanceid=each.instanceId)"/>
+						 	<label value="${sqldmidera:getDefaultStringIfNull(each.databaseName)}" style="word-wrap:break-word;" />
+							<label value="${each.metric.metricCategory}" style="word-wrap:break-word;" />
+							<div>
+								<a sclass="link" label="Show Details" style="text-decoration: underline;float:left;" onClick="@command('onClickSelectedAlert', alert=each)"/> 
+							 </div>
+						</row>
+			        </template>
+			        <foot>
+					<footer span="6" align="left">
+						<hbox align="center">
+							<paging id="alertsListPgId" />
+							<intbox id="alertListRowsBox"
+								zclass="z-paging-inp"
+								constraint="no empty,no negative, no zero: ${idera:getLabel('SQLdm.Messages.page-size-error')}"
+								onOK="@command('setAlertsRowsCount')" width="30px" placeholder="#" maxlength="3">
+							</intbox>
+							<label
+								value="${idera:getLabel('SQLdm.Labels.pagination-items-per-page')}" />
+						</hbox>
+					</footer>
+				</foot>
+				</grid>
+				</div>
+			</div>
+		</vlayout>
+</div>
+</div>
+</zk>

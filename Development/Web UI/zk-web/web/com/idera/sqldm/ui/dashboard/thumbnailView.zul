@@ -1,0 +1,45 @@
+<zk>
+	<div apply="com.idera.sqldm.ui.dashboard.ThumbnailViewComposer">
+		<vlayout style="float:right;">
+			<space height="3px" />
+			<label id= "cpu" value="CPU" />
+			<div id="cpuDiv" sclass="chart-border">
+				<sqldm-idera-linechart id="cpuUsage" width="120px"
+					height="35px" />
+			</div>
+			<label id = "cpuTime" style="float:right;font-size:10px;font-weight:500">
+				1 hour
+			</label>
+
+			<space height="3px" />
+			<label id="memory" value="Memory" />
+			<div id="memoryDiv" sclass="chart-border">
+				<sqldm-idera-linechart id="memoryUsage" width="120px"
+					height="35px" />
+			</div>
+			<label id = "memoryTime" style="float:right;font-size:10px;font-weight:500">
+				1 hour
+			</label>
+
+			<space height="3px" />
+			<label id="io" value="I/O" />
+			<div id="ioDiv" sclass="chart-border">
+				<sqldm-idera-linechart id="ioActivity" width="120px"
+					height="35px" />
+			</div>
+			<label id = "ioTime" style="float:right;font-size:10px;font-weight:500">
+				1 hour
+			</label>
+
+			<space height="3px" />
+			<label id="responseTimeLabel" value="Response Time" style="white-space: nowrap"/>
+			<div id="responseTimeChartDiv" sclass="chart-border">
+           		<sqldm-idera-linechart id="responseTime"  width="120px" height="35px" />
+	 		 </div>
+			<label id = "responseTimehour" style="float:right;font-size:10px;font-weight:500">
+				1 hour
+			</label>
+			<space height="3px" />						
+		</vlayout>
+	</div>
+</zk>

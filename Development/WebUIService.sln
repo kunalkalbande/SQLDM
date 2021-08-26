@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Idera.SQLdm.Service", "Idera\SQLdm\Service\Idera.SQLdm.Service.csproj", "{2A7FC31F-CA6D-400C-B56D-657535DE85C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Idera.SQLdm.Service.Test", "Idera\SQLdm\Tests\Idera.SQLdm.Service.Test\Idera.SQLdm.Service.Test.csproj", "{45C7B40F-25FF-499E-90AE-C22DB5990FBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Itanium = Debug|Itanium
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|Itanium = Release|Itanium
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A7FC31F-CA6D-400C-B56D-657535DE85C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A7FC31F-CA6D-400C-B56D-657535DE85C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A7FC31F-CA6D-400C-B56D-657535DE85C3}.Debug|Itanium.ActiveCfg = Debug|Any CPU
+		{2A7FC31F-CA6D-400C-B56D-657535DE85C3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2A7FC31F-CA6D-400C-B56D-657535DE85C3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2A7FC31F-CA6D-400C-B56D-657535DE85C3}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{2A7FC31F-CA6D-400C-B56D-657535DE85C3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2A7FC31F-CA6D-400C-B56D-657535DE85C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A7FC31F-CA6D-400C-B56D-657535DE85C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A7FC31F-CA6D-400C-B56D-657535DE85C3}.Release|Itanium.ActiveCfg = Release|Any CPU
+		{2A7FC31F-CA6D-400C-B56D-657535DE85C3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2A7FC31F-CA6D-400C-B56D-657535DE85C3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2A7FC31F-CA6D-400C-B56D-657535DE85C3}.Release|Win32.ActiveCfg = Release|Any CPU
+		{2A7FC31F-CA6D-400C-B56D-657535DE85C3}.Release|x64.ActiveCfg = Release|Any CPU
+		{45C7B40F-25FF-499E-90AE-C22DB5990FBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45C7B40F-25FF-499E-90AE-C22DB5990FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45C7B40F-25FF-499E-90AE-C22DB5990FBD}.Debug|Itanium.ActiveCfg = Debug|Any CPU
+		{45C7B40F-25FF-499E-90AE-C22DB5990FBD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{45C7B40F-25FF-499E-90AE-C22DB5990FBD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{45C7B40F-25FF-499E-90AE-C22DB5990FBD}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{45C7B40F-25FF-499E-90AE-C22DB5990FBD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{45C7B40F-25FF-499E-90AE-C22DB5990FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45C7B40F-25FF-499E-90AE-C22DB5990FBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45C7B40F-25FF-499E-90AE-C22DB5990FBD}.Release|Itanium.ActiveCfg = Release|Any CPU
+		{45C7B40F-25FF-499E-90AE-C22DB5990FBD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{45C7B40F-25FF-499E-90AE-C22DB5990FBD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{45C7B40F-25FF-499E-90AE-C22DB5990FBD}.Release|Win32.ActiveCfg = Release|Any CPU
+		{45C7B40F-25FF-499E-90AE-C22DB5990FBD}.Release|x64.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

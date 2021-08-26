@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="Idera.SQLdm.DesktopClient.Controls.ServerSummary.TileLayoutCustomHeader"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="28" d:DesignWidth="522" Height="auto">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="26"/>
+            <ColumnDefinition Width="26"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Name="Text" Text="Tile" />
+        <Button Grid.Column="1" ToolTip="Clear dashboard component" Name="deleteButton" Click="deleteButton_Click">
+            <Image Source="/SQLdmDesktopClient;component/Resources/Chart/table_sql_delete.png" Width="16" Height="16" VerticalAlignment="Center" />
+        </Button>
+        <Button Grid.Column="2" ToolTip="Dashboard component information" Name="infoButton" Click="infoButton_Click">
+            <Image Source="/SQLdmDesktopClient;component/Resources/Chart/table_sql_information.png" Width="16" Height="16" VerticalAlignment="Center" />
+        </Button>
+    </Grid>
+</UserControl>

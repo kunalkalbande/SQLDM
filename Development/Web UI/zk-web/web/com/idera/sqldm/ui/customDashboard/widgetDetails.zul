@@ -1,0 +1,40 @@
+<zk>
+<window closable="true" border="none" width="1143px"  height="600px" position="center,center" 
+			action="show: slideDown;hide: slideUp"
+			apply="com.idera.sqldm.ui.customDashboard.WidgetDetailsComposer">
+	<div>
+		<div id="wdErrorDiv" style="text-align:center;">
+			<space height="250px;" />
+			<label value="${sqldmidera:getLabel('SQLdm.Labels.no-data-available')}"/>
+			<div height="310px">
+			 <!-- space place holder-->
+			</div>
+		</div>
+		<div id="wdDataDiv">
+			<div sclass="widget-details-label">
+				<label id="wdWidgetNameLbl" style="font-size:18px;font-weight:bold;margin-left:20px;" />
+			</div>
+			<hlayout>
+				<div width="800px">
+					<sqldm-idera-linechart id="detailsLineChart" height="500px" width="780px" leftMargin="20px" topMargin="10px" bottomMargin="20px"/>
+				</div>
+				<div width="width: 320px;height: 510px;border-left: 1px solid #CCC;overflow-y: auto;">
+					<div style="border-top-left-radius: 5px;border-top-right-radius: 5px;  background: #ccc;  text-align: center;border-bottom: 1px solid #ddd;height: 11px;width: 320px;margin-left: 6px;padding-top: 8px;padding-bottom: 5px;line-height: 10px;">
+						<label id="wdTimeStampLbl" sclass="largetimeline-timestamp"/>
+					</div>
+					<div style="background: #c0c0c0;border-bottom: 1px solid #999;margin-left: 6px;width: 320px;">
+						<label sclass="largetimeline-head-value" style="width: 150px;" value="Current Value" />
+						<label sclass="largetimeline-head-series" value="Series" />
+					</div>
+					<div id="detailsseriesDiv">
+					</div>
+				</div>
+			</hlayout>
+		</div>
+		<div>
+			<idera-cwf-button id="wdCloseBtn" style="float:right" sclass="white-text-dark-gray-button widget-button button-font" 
+					label="${sqldmidera:getLabel('SQLdm.Labels.close')}" />
+		</div>
+	</div>
+</window>
+</zk>

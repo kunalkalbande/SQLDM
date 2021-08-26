@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/basepage/basepage.zul"?>
+<?meta http-equiv="X-UA-Compatible" content="${idera:browserVersionContentString()}"?>
+<?page title="${idera:productHeaderString()}"?>
+<?style src="/css/action-item.css.dsp" ?>
+<?style src="/css/input.css.dsp" ?>
+<?style src="com/idera/sqldm/css/sqldm-list.css.dsp" ?>
+<?style src="/css/listbox.css.dsp" ?>
+<?style src="/css/menupopup.css.dsp" ?>
+<?style src="/css/main.css.dsp" ?>
+<?style src="/css/tags.css.dsp" ?>
+<?style src="/css/basepage/header.css.dsp" ?>
+<?style src="/css/error/error.css.dsp" ?>
+<?style src="/css/login/login.css.dsp" ?>
+<?style src="com/idera/sqldm/css/widget-panel.css.dsp" ?>
+<?style src="com/idera/sqldm/css/topten/topten.css.dsp" ?>
+<?style src="com/idera/sqldm/css/CWF_Components.css.dsp" ?>
+<?taglib uri="http://sqldm/taglib" prefix="sqldmidera"?>
+<?style src="com/idera/sqldm/css/navigation-bar_new.css.dsp" ?>
+
+
+<zk>
+<div self="@define(maincontent)" sclass="cwf-overview-wrapper" style="padding: 0;">
+	
+	<vlayout>
+	<div>
+	<include src="navigation-bar.zul" />
+	<include src="~./sqldm/com/idera/sqldm/ui/topten/maincontent.zul" />
+	</div>
+	</vlayout>
+</div>	
+</zk>

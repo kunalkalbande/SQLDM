@@ -1,0 +1,23 @@
+
+<zk>
+	<idera-cwf-dialog id="dialog" title="Confirmation" apply="com.idera.sqldm.ui.customDashboard.IderaDiaglogComposer">
+		<vlayout>
+		<hlayout style="width: 430px; padding-top: 10px;">
+		<label id="confirmationMessage" style="float:left;font-size: 21px;line-height: 1.2em;"/>
+		</hlayout>
+		</vlayout>
+		<space style="height:50px"></space>
+		<vlayout>
+		<div>
+		<hlayout >
+			<idera-cwf-button id="okbutton" style="float:right" >
+				OK
+			</idera-cwf-button>
+			<idera-cwf-button id="cancelbutton" style="float:right">
+				CANCEL
+			</idera-cwf-button>
+		</hlayout>
+		</div>
+		</vlayout>
+	</idera-cwf-dialog>
+</zk>

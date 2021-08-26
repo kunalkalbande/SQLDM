@@ -1,0 +1,49 @@
+<panel use="com.idera.sqldm.ui.customDashboard.widgets.CustomDashboardWidget"
+		apply="com.idera.sqldm.ui.customDashboard.ListOfValuesWidgetComposer"
+		sclass="widget-caption" style="float:left;margin:5px;border-radius: 4px;border-bottom-width: 2px;border-bottom-style: inset;">
+	<caption height="40px" style="cursor:pointer;">
+		<!-- label value="List Of Values"  style="float:left;font-size:16px;font-weight:bold;white-space:nowrap;"/ -->
+	</caption>
+		<panelchildren>
+			<div id="editLVWidgetDiv">
+				<hlayout>
+					<vlayout style="margin-left:3px;text-align:center;">
+						<label style="font-size:11px;font-weight:bold" value="List of Value" />
+						<image width="100%" height="90px" src="~./sqldm/com/idera/sqldm/images/list-of-values.png" />
+					</vlayout>
+					<vlayout style="margin-left:35px;text-align:left;">
+						<label id="lvWidgetNameLbl" style="font-size:11px;font-weight:bold;margin-left: 4px;" />
+						<div>
+							<idera-cwf-button id="lvRemoveBtn" sclass="white-text-dark-gray-button widget-button button-font" 
+									label="${sqldmidera:getLabel('SQLdm.Labels.remove')}"/>
+							<idera-cwf-button id="lvEditbtn" sclass="white-text-dark-gray-button widget-button button-font" 
+									label="${sqldmidera:getLabel('SQLdm.Labels.edit')}" />
+						</div>
+					</vlayout>
+				</hlayout>
+			</div>
+			<div id="displayLVWidgetDiv">
+				<div id="lvErrorDiv" style="text-align:center;">
+					<space height="100px;" />
+					<label value="${sqldmidera:getLabel('SQLdm.Labels.no-data-available')}"/>
+				</div>
+				<div id="lvDataDiv">
+					<div style="text-align:center;height: 216px;">
+						<grid sclass="styled-list list-of-value-grid" autopaging="true" mold="paging"  vflex="true">
+							<columns>
+            					<column label="Instances" hflex="3"/>
+            					<column label="Current" hflex="3" />
+            					<column label="Trend" hflex="3" />
+        					</columns>
+        					<rows id="chartGridRows">
+        					</rows>
+						</grid>
+					</div>
+					<div>
+						<idera-cwf-button id="lvdetailsBtn" style="float:right" sclass=" idera-button-primary-dashboard-Details white-text-dark-gray-button widget-button button-font" 
+								label="${sqldmidera:getLabel('SQLdm.Labels.details')}" />
+					</div>
+				</div>
+			</div>
+		</panelchildren>
+</panel>

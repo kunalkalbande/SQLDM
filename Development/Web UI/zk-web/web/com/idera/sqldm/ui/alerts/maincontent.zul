@@ -1,0 +1,17 @@
+<zk xmlns:n="native">
+<window border="none" apply="com.idera.sqldm.ui.alerts.AlertsExtViewModel" vflex="1" style = "height: 100%; padding: 16px; padding-top:48px;" >
+<style>
+.idera-groupbox-open, .idera-groupbox-close {
+    margin-right: 4rem;
+}
+</style>
+    <div><n:span style="font-size: 24px; font-weight: 600; font-style: normal; font-stretch: normal; line-height: 1.33;letter-spacing: normal;text-align: left; color: #483e2f;">Alerts</n:span></div>
+	<n:div style="border-bottom: solid 1px #525143; margin-bottom: 16px; padding-top: 8px;"/>
+	<n:div id="filter_label" style="float:left;position:relative;top:8px;display:none;">Applied Filters:</n:div>
+	<n:div id="applied_filters" style="height:40px;float:left" />
+    <n:div id="alerts_grid_in_tab_panel" />
+    <n:div id="sqldm-alerts-list-grid" />
+    <div id="alertsShowDetailsListenerDiv"/>
+    <script type="text/javascript" src="~./sqldm/com/idera/sqldm/js/alerts-grid.js"/>
+</window>
+</zk>

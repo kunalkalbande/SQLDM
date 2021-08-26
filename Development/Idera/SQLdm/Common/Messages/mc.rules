@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VisualStudioToolFile
+	Name="Message Files"
+	Version="8.00"
+	>
+	<Rules>
+		<CustomBuildRule
+			Name="McCompiler"
+			DisplayName="Message Compiler"
+			CommandLine="$(ProjectDir)MessageCompilerTool.exe [Inputs] -pause"
+			Outputs="$(InputName).rc"
+			FileExtensions="*.mc"
+			ExecutionDescription="Compiling messages..."
+			>
+			<Properties>
+			</Properties>
+		</CustomBuildRule>
+	</Rules>
+</VisualStudioToolFile>

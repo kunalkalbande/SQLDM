@@ -1,0 +1,12 @@
+F:\Idera\SQLdm\Development\bin\SQLdmCollectionServiceResources.dll
+F:\Idera\SQLdm\Development\bin\SQLdmCollectionServiceResources.pdb
+F:\Idera\SQLdm\Development\Idera\SQLdm\CollectionService\Resources\obj\Debug\Idera.SQLdm.CollectionService.Resources.csprojAssemblyReference.cache
+F:\Idera\SQLdm\Development\Idera\SQLdm\CollectionService\Resources\obj\Debug\Idera.SQLdm.CollectionService.Resources.csproj.CoreCompileInputs.cache
+F:\Idera\SQLdm\Development\Idera\SQLdm\CollectionService\Resources\obj\Debug\SQLdmCollectionServiceResources.dll
+F:\Idera\SQLdm\Development\Idera\SQLdm\CollectionService\Resources\obj\Debug\SQLdmCollectionServiceResources.pdb
+E:\Idera\SQLdm\Development\bin\SQLdmCollectionServiceResources.dll
+E:\Idera\SQLdm\Development\bin\SQLdmCollectionServiceResources.pdb
+E:\Idera\SQLdm\Development\Idera\SQLdm\CollectionService\Resources\obj\Debug\Idera.SQLdm.CollectionService.Resources.csprojAssemblyReference.cache
+E:\Idera\SQLdm\Development\Idera\SQLdm\CollectionService\Resources\obj\Debug\Idera.SQLdm.CollectionService.Resources.csproj.CoreCompileInputs.cache
+E:\Idera\SQLdm\Development\Idera\SQLdm\CollectionService\Resources\obj\Debug\SQLdmCollectionServiceResources.dll
+E:\Idera\SQLdm\Development\Idera\SQLdm\CollectionService\Resources\obj\Debug\SQLdmCollectionServiceResources.pdb

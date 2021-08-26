@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3" height="10" viewBox="0 0 3 10">
+    <defs>
+        <style>
+            .cls-1{fill:#fff}
+        </style>
+    </defs>
+    <path id="ellipsis-v" d="M25.5 11.548A1.452 1.452 0 1 1 24 13a1.475 1.475 0 0 1 1.5-1.452zM24 9.452A1.5 1.5 0 1 0 25.5 8 1.475 1.475 0 0 0 24 9.452zm0 7.1a1.5 1.5 0 1 0 1.5-1.452 1.475 1.475 0 0 0-1.5 1.448z" class="cls-1" transform="translate(-24 -8)"/>
+</svg>

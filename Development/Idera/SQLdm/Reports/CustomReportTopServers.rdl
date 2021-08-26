@@ -1,0 +1,1045 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="SQL diagnostic manager Data Source">
+      <rd:DataSourceID>fe859439-7076-4492-a9d6-1530ee98ed69</rd:DataSourceID>
+      <DataSourceReference>SQL diagnostic manager Data Source</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>14in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="addSelectRequest">
+      <DataType>Boolean</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=true</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>addSelectRequest</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="Tags">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>0</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Select a Tag</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>GetTags</DataSetName>
+          <ValueField>Id</ValueField>
+          <LabelField>Name</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="Period">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>1</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Period</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ReportPeriods</DataSetName>
+          <ValueField>value</ValueField>
+          <LabelField>Label</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="rsStart">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=Code.GetStartDate(Parameters!Period.Value)</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Start Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="rsEnd">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=Code.GetDatePart(Now)</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>End Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="GUITags">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_9</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="rsStartHours">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=Iif(Parameters!Period.Value = 4, "0", "0")</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Start Hours</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>GetHoursList</DataSetName>
+          <ValueField>hoursKey</ValueField>
+          <LabelField>hoursValue</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="rsEndHours">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=Iif(Parameters!Period.Value = 4, "23", "23")</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>End Hours</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>GetHoursList</DataSetName>
+          <ValueField>hoursKey</ValueField>
+          <LabelField>hoursValue</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="NumServers">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>5</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Number Of Servers</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ServerXML">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>GetServerXML</DataSetName>
+          <ValueField>ServerXML</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ServerXML</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>GetServerXML</DataSetName>
+          <ValueField>ServerXML</ValueField>
+          <LabelField>ServerXML</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="executionStart">
+      <DataType>DateTime</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>What time did this report execution start?</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="GUIDateRange">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_11</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>10.0in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>0.5in</RightMargin>
+  <LeftMargin>0.5in</LeftMargin>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Top>0.25in</Top>
+        <Width>2.00001in</Width>
+        <Style>
+          <Color>#4b4b4b</Color>
+          <FontSize>14pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>4.34375in</Left>
+        <Height>0.28in</Height>
+        <Value>{Custom Report Title}</Value>
+      </Textbox>
+      <Line Name="line1">
+        <Top>0.66667in</Top>
+        <Width>6.37501in</Width>
+        <Style>
+          <BorderColor>
+            <Default>#ff6d06</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <BorderWidth>
+            <Default>20pt</Default>
+          </BorderWidth>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Height>0in</Height>
+      </Line>
+      <Image Name="image1">
+        <Sizing>AutoSize</Sizing>
+        <Width>4.21875in</Width>
+        <Source>Embedded</Source>
+        <Style />
+        <Height>0.52083in</Height>
+        <Value>sqldmlogoreportsheader</Value>
+      </Image>
+    </ReportItems>
+    <Height>0.81125in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <BottomMargin>1in</BottomMargin>
+  <rd:ReportID>d6047b5b-9254-422b-af4b-0c2e387e6a58</rd:ReportID>
+  <EmbeddedImages>
+    <EmbeddedImage Name="idera_1">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>
+        R0lGODlheAAkAPcAAP///////v///SIeH2ZmZp6dnf9FAD4+PszMyv+1mEtLS/r6+mRhYs3MzFlWV7u5uquqqf+oh6Sjo/Ly8OXl5NjY1/9REfn5935+fv93Q9jX18XExP+cdv/z7P+DVNLR0CUhIqWlpIWDg7KysaemprGwsFhYVzIvML+/vf/ayv9eIv/Nuri3t4uLitnY2MvLyr69vf9qM97e3f+PZWVlZEE+P//BqUI/QHFxcf/m25iYl0pHR9HQ0O/u7uHg4O/v7/Ly8dbW1uzr6zIuL0xJSmNgYcjHyKWjpFZTVCQgIcG/wGFeX/7+/lhVVfz8/CUiI/n5+eXl5S4qK+7t7fLy8vv7++Tk5CMfIOLh4f39/WViY/T09EA9PvJkMM7OzmZkZGJfYMPCwqakpdLR0fHx8URAQSgkJfz7+zEtLs7NzWZjZN7d3t3d3by7u9zc3Dw4OWtoaT46O7+/vu3s7VxZWtXU1FdUVUZCQ728vJiYmHZ0dJ6cndTT03Fub3x6erKwsTQxMW5sbNrZ2WdlZSomJzk2N09MTfPz87m4uMrJyVVSU9vb22BdXVlWVszLy+jo6EVBQoeEhVpXWLSys/X19fb29qqpqT88PUtHSOjn58jHxzg0NbW0tMnIyVRRUvf39/Dw8DMwMZORkeDf37++voOBgXt5eXNxcq6trbe2ttPS0pSSk29tbXh1dubl5v/8+3p4efR3Ss/Oz6+urkZDRFBNTuLi4jo3OMC/v/j4+CYiI/q3n6GgoOvr605LTCsnKP7z8F9cXHVzc6upqmBeXsfGxpyam4KAgcbFxd/e3piWloqIiPaVckdERfrDr/WNZl1aW0hFRltYWTUxMp2bnPJmMvehgv/+/TAsLfR6Tf718Ts4OOrq6oF/gP3i2F5bXPq+qGxpavR9UfvSw5KQkOzs7MvKym1ra/r7+358fIaDhDczNHRyctDP0P7v6v7x7ElGR/708Lq4uf/+/pCOjzk1
+        NkxISfX09Pece/JpNwAAAAAAAAAAAAAAAAAAAAAAACwAAAAAeAAkAAAI/wAJCBxIsKDBgwgTKlzIsKHDhwAiSpxIsaLFixgzatzIsaPHjyBDihxJUuM1Z9nEjSs5kQkqLpD+MGFJs6bGd8+6dMH3qua9JQMGDCJjs6jRiN7y6YwVr6aPN0HfuDhKlSYwZl2qWZvn9EZQLhqqiiXpbhc4bTZ9eB1QY+rYt3A1qg3aNq7duxLnsnWLt+9EdFUuOllAuLDhw2ci6q1LcfDhx49nZswC+TAUJxKrVIaMWaLklo4C9eEbccqsVgyKMFjNuvVqMHrCLiZNJhUs1a5zsy7yRQSMShYP4TqmBrduBktMhVUCx/jx1Az8IAIVMTDFKJCC0oEisQGSoODDi/8PjwSKlbWMAdRhNL69+wGBrFB0weB9+y+qLtl3H6zORT5SBFXGFBFpcMt+7tVDhSvoueVGDQgiKM0cEo2CSYTkHYEGhuLVwIZFQZwQ1A4/AODEFxyGZ8YyWWDRIAAL6JGifcrM5IQfM5qxyg9wzAgeKyCKOACJALQjZBLhpNLGA0w26SSTLHSyAACzAYBFgEExwsmST3bJJB7D7AAeJj0AwAYXQV1BByd4eNkkImlMSQUp8rjpZBuTgHFFUJskU1GII5Y4yS9BGZJJSFWGAV4cj4Q0BpahLAKALEMEFYekYo1SRlBoaPKnkESK8URQDFCC6ItKgKcGdyA1gOUJbgD/wIOQvlAxVg+SBDWEEZ8GCsARow6wxBan0jVVqkGpkQsAUYhxBAnQRitttKI0A14tJc4aFBFlbmTLH2JMKy60YlgSBQBzNKErrxQBOmSJwAY1bLF7AYDsAFpk0csSSSQBwr8ABwyweMZkIauQ3Gr0ySpcEOKvwBCDkIQuTVDRg7oD7Nrru78GOy9IVd6rBQBp7OljEd1qO0DCGC3Qh8kzmkMGxhq3Cyq8HhMLMqrgacGEFUTMCMgph0akMssX7ZGEjwO
+        U8cjF625MZLzC6vyRi8ba2zN3PIjQjQhghy122KWI4ulER3drESjfBVUIO5GoM/bcpUTiBbo0szuRu1MH/1tqSFgPwMWxW9eUNkZ1bBNUKA+EhGvUNvtaAiFBeVJOSGFUypYgACga1B2HGI6w2hXxsElUsYJkhZgDoFGM1CWmoTkIpjTgRQO456677jyEYQd4ihDFhhlpCrP78cjj7oggiR28LenXsZ4EGMjwkPzxXiRyytIDTENaRHyXeAY0TLdHT0SfoFi+iuRMeThG6awvHhjWTaQKlncQCEAimsvvCTcS8QIg5AceKawBAF7ARlCiob+LrIEWBBxAIfhgER/oZwCGAE5EYLCp9RXhgBMhBTwiGIdzaWAdQXEAqzAyBoyVzx6dEMwD6EAMvUUEC3tgABIcwMMe+vCHjUDCOURKYKuKWIEaDLDDD5fIRAco4hswMFgVUOGAQfCAI1OwBByQ0IgmMhEJX+DFufxCxjKa8YxoTKMa18jGNrrxjXCMY0UCAgA7
+      </ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="idera">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>
+        R0lGODlhhwAtAPcAAP///////v///SIeH2ZmZp6dnf9FAD4+PszMyv+1mEtLS/r6+mRhYs3MzFlWV7u5uquqqf+oh6Sjo/Ly8OXl5NjY1/9REfn5935+fv93Q9jX18XExP+cdv/z7P+DVNLR0CUhIqWlpIWDg7KysaemprGwsFhYVzIvML+/vf/ayv9eIv/Nuri3t4uLitnY2MvLyr69vf9qM97e3f+PZWVlZEE+P//BqUI/QHFxcf/m25iYl0pHR9HQ0O/u7uHg4O/v7/Ly8dbW1uzr6zIuL0xJSmNgYcjHyKWjpFZTVCQgIcG/wGFeX/7+/lhVVfz8/CUiI/n5+eXl5S4qK+7t7fLy8vv7++Tk5CMfIOLh4f39/WViY/T09EA9PvJkMM7OzmZkZGJfYMPCwqakpdLR0fHx8URAQSgkJfz7+zEtLs7NzWZjZN7d3t3d3by7u9zc3Dw4OWtoaT46O7+/vu3s7VxZWtXU1FdUVUZCQ728vJiYmHZ0dJ6cndTT03Fub3x6erKwsTQxMW5sbNrZ2WdlZSomJzk2N09MTfPz87m4uMrJyVVSU9vb22BdXVlWVszLy+jo6EVBQoeEhVpXWLSys/X19fb29qqpqT88PUtHSOjn58jHxzg0NbW0tMnIyVRRUvf39/Dw8DMwMZORkeDf37++voOBgXt5eXNxcq6trbe2ttPS0pSSk29tbXh1dubl5v/8+3p4efR3Ss/Oz6+urkZDRFBNTuLi4jo3OMC/v/j4+CYiI/q3n6GgoOvr605LTCsnKP7z8F9cXHVzc6upqmBeXsfGxpyam4KAgcbFxd/e3piWloqIiPaVckdERfrDr/WNZl1aW0hFRltYWTUxMp2bnPJmMvehgv/+/TAsLfR6Tf718Ts4OOrq6oF/gP3i2F5bXPq+qGxpavR9UfvSw5KQkOzs7MvKym1ra/r7+358fIaDhDczNHRyctDP0P7v6v7x7ElGR/708Lq4uf/+/pCOjzk1
+        NkxISfX09Pece/JpNwAAAAAAAAAAAAAAAAAAAAAAACwAAAAAhwAtAAAI/wAJCBxIsKDBgwgTKlzIsKHDhw8BSJxIsaLFixgzatzIsaPHjyBDihxJsqTJkyhTqlzJsqXLlzBjypxJs6bNmzhz6tzJs6fPn0CDTrzmLJu4cSqZoOIC6Q8ToUDfPevSBd+rlPeWDBgwiAzUn97yUY0VL6WPN1vfuPjqExizLtWszTN7YysXDWx9utsFTptKH3UH1Fibt/BIwFsHG14MErFgwoxxoquC0cmCy5gzaz4j0bHiipY1ixb9VGOW0ZqhOJlYBfXo1RNLj2TiKFAfyBKnzGrFoAiD38CD/wajB69n3GRSwfItvDnwIl9EwKh08RCuY2qYO2ewxBReJXC0b//vzcAPIlASKZOMAmkrHSgTGyDZSr++/fpIoFgJ/BlAHUb3BSjgAIFYUZELDAwY4BeqXKKggMHUcRIfUmxVxhQSaXDLgwLWQ4Ur/BHmRg0ccijNHBONgkmJ+B2BBov21cCGSUGcsNUOPwDgxBcw1mfGMllgESIAC+jRo4LKPOWEH0eascoPcBxJHys02jgAjgC0Y2US4aTSxgNghikmmCx0sgAAxwGARYVbMcLJl2PGCSYew+xAHyY9AMAGF1tdQQcneMgZJiJpnEkFKfIIKmYbk4BxxVabJFNSjTfmOMkvWxmSiUhphkFfHI+INAaboSwCgCxDbBWHqTCNUsZWaGj/MqmVWIrxxFYMUMLpkErQpwZ8ITXA5gluAMCDlb5QEVMPkmw1hBGzVgrAEbcOsMQWuya2Vq9bqZELAFGIcQQJ5JZrbrmiNENfLTkeuxUReXJkyx9inGsvuWJYEgUAczThLLQkUXpljtRudW22jwHA7QBaZNHLEkkkAcLEFFdMsX3GZGGslfBu9MkqXBAiscUkg5CELk1Q0YO/Azwb7cDTVntwSGkurAUAaTwqZRHxujtAxxkt0IfOR5pDBssuB0wrwTJ
+        jSzOv9GnBhBVEHAnIKZtK5DPQGO2RhJQDlPHIyv++jGXB1joNkpDaKhw1fDyI0I0IdNdtd92liCIrRVvH/3sRKPNtVQg7kahz9+GlROIFv0gDPJLAZ1ebq0hsD8DFtm+n1HdGdWyzVSgPiMRs2UpLWwIhW3lSjkhhpCqYIAB4utUdh2jOsd8W8bBJWsWGZIWdA6BRjNk5puE6CKY04EUDzDfvvPM8hGEHfYp4xYYZfQrz/PbcM++IIJxt/C7uFUUBfBJgIMND99t7kcgpXw8wDW4hQZ7jGdCAHSA9En3Co/4+IseZNpeRdADQPmBQz0hUwaY7YAgAiXDdAT3BjYl4ARAHpI8U1gAAL2BjK9F4IEbWQIsMDqAQfDCJDxw0AENQRyIweBUAi8BBipACHiaMw740sI6tOABYGRkDy2T0Z49OnMQJD6ADMRwnESzsgQFIcIAUp0jFKjYCCecogbIsYgVqMMAOVQyjGB2giG/AQGNVQIUDBsGDjkzBEnBAQiPGKEYkfIEX+4qMHvfIxz768Y+ADKQgB0nIQhrykIhUSUAAADs=
+      </ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="sqldmlogoreportsheader">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>
+        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
+      </ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <PageWidth>11in</PageWidth>
+  <DataSets>
+    <DataSet Name="TopServersForCustomCounters">
+      <Fields>
+        <Field Name="SQLServerID">
+          <DataField>SQLServerID</DataField>
+          <rd:TypeName>System.Int</rd:TypeName>
+        </Field>
+        <Field Name="InstanceName">
+          <DataField>InstanceName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CounterName">
+          <DataField>CounterName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Value">
+          <DataField>Value</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>SQL diagnostic manager Data Source</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>p_GetTopServersForCustomCountersDataSet</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@NumServers">
+            <Value>=Parameters!NumServers.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@UTCStart">
+            <Value>=Code.GetStart(Parameters!Period.Value, Parameters!rsStart.Value, true)</Value>
+          </QueryParameter>
+          <QueryParameter Name="@UTCEnd">
+            <Value>=Code.GetEnd(Parameters!Period.Value, Parameters!rsEnd.Value, true)</Value>
+          </QueryParameter>
+          <QueryParameter Name="@reportName">
+
+            <Value>{Custom Report Title}</Value>
+            <!--Will be replaced by actual report name on runtime-->
+
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="GetTags">
+      <Fields>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>SQL diagnostic manager Data Source</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>p_GetTags</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@addSelectRequest">
+            <Value>=iif(Parameters!addSelectRequest.Value=true,1,0)</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="ReportPeriods">
+      <Fields>
+        <Field Name="value">
+          <DataField>Value</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Label">
+          <DataField>Label</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>SQL diagnostic manager Data Source</DataSourceName>
+        <CommandText>select Value, Label from ReportPeriods</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="GetHoursList">
+      <Fields>
+        <Field Name="hoursKey">
+          <DataField>hoursKey</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="hoursValue">
+          <DataField>hoursValue</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>SQL diagnostic manager Data Source</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>p_GetHoursList</CommandText>
+      </Query>
+    </DataSet>
+    <DataSet Name="GetServerXML">
+      <Fields>
+        <Field Name="ServerXML">
+          <DataField>XML_F52E2B61-18A1-11d1-B105-00805F49916B</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>SQL diagnostic manager Data Source</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>p_GetTagServersAsXML</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@TagID">
+            <Value>=iif(Parameters!Tags.Label="&lt; All &gt;",Nothing, Parameters!Tags.Value)</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Code>
+    ' ************************************************************************
+    ' Calculates the start time for the report
+    ' ************************************************************************
+    Function GetStartDate(period As Integer) As DateTime
+    Dim startDate As DateTime
+    Dim tmpStartDate as DateTime
+
+    ' Figure out the start date based on the period
+    Select Case period
+    Case 0  ' today
+    tmpStartDate = Date.Now()
+    Case 1  ' last 7 days
+    tmpStartDate = Date.Now.AddDays(-7)
+    Case 2  ' last 30 days
+    tmpStartDate = Date.Now.AddDays(-30)
+    Case 3  ' last 365 days
+    tmpStartDate = Date.Now.AddDays(-365)
+    Case 4  ' last 365 days
+    tmpStartDate = Date.Now.AddDays(-7)
+    End Select
+
+    startDate = new DateTime(tmpStartDate.Year, tmpStartDate.Month, tmpStartDate.Day)
+
+    Return startDate
+    End Function
+    ' ************************************************************************
+    ' Calculates the datePart of the datetime
+    ' ************************************************************************
+    Function GetDatePart(passedDateTime as DateTime) As DateTime
+    Return new DateTime(passedDateTime.Year, passedDateTime.Month, passedDateTime.Day)
+    End Function
+    ' ************************************************************************
+    ' Calculates the last second of the given day
+    ' ************************************************************************
+    Function GetEndOfDay(passedDateTime as DateTime) As DateTime
+    Return new DateTime(passedDateTime.Year, passedDateTime.Month, passedDateTime.Day, 23,59,59)
+    End Function
+
+    '************************************************************************
+    'Calculates UTC date time
+    '************************************************************************
+    Function GetUTCFromLocal(LocalTime as DateTime) As DateTime
+    Return DateAdd("n", -GetUTCOffset(), LocalTime)
+    End Function
+
+    '************************************************************************
+    'Calculates Local date time from UTC
+    '************************************************************************
+    Function GetLocalFromUTC(UTCTime as DateTime) As DateTime
+    Return DateAdd("n", GetUTCOffset(), UTCTime)
+    End Function
+
+    ' ************************************************************************
+    ' Gets the current UTC offset on the reporting services server
+    ' ************************************************************************
+    Function GetUTCOffset() As Integer
+    return DateDiff("n",Date.UtcNow,Date.Now)
+    End Function
+
+    ' ************************************************************************
+    ' Works out the execution time
+    ' ************************************************************************
+    Function GetExecutionTime(ExecTime As DateTime) as String
+    Dim ts As TimeSpan
+    ts = Now.Subtract(ExecTime)
+
+    return String.Format("Execution Time: {0} hours, {1} minutes, {2} seconds", ts.Hours, ts.Minutes, ts.Seconds)
+
+    End Function
+
+    ' ************************************************************************
+    ' How many minor tickmarks can we show?
+    ' ************************************************************************
+    Function GetTickMarks(rowcount as Integer) as Integer
+
+    If rowcount &gt;= 100 then
+    return CInt(rowcount/30)
+    Else if rowcount &gt;= 15 then
+    return 5
+    else
+    return 1
+    end if
+
+    End Function
+    ' ************************************************************************
+    '  get the time Label in UTC
+    ' ************************************************************************
+    Function getTimeLabelUTC(interval as integer, LastCollection as DateTime) as String
+
+    dim localCollectionTime as Datetime
+    localCollectionTime = DateAdd("n", -GetUTCOffset() , LastCollection)
+    if interval &lt; 2 then
+    return Format(localCollectionTime, "G")
+    else
+    return Format(localCollectionTime, "d")
+    end if
+
+    End Function
+    ' ************************************************************************
+    '  get the time Label in Local
+    ' ************************************************************************
+    Function getTimeLabelLocal(interval as integer, LastCollection as DateTime) as String
+
+    dim localCollectionTime as Datetime
+    localCollectionTime = DateAdd("n", 0 , LastCollection)
+    if interval &lt; 2 then
+    return Format(localCollectionTime, "G")
+    else
+    return Format(localCollectionTime, "d")
+    end if
+
+    End Function
+
+    ' ************************************************************************
+    '  get Start of report
+    ' ************************************************************************
+    Function GetStart(period as integer, rsStart as DateTime, isUTC as boolean) as DateTime
+    dim returnDate as DateTime
+
+    'if custom
+    if period = 4
+    returnDate =  CreateCustomDatetime(rsStart)
+    else
+    returnDate = GetStartDate(period)
+    end if
+
+    if isUTC then returnDate = GetUTCFromLocal(returnDate)
+
+    return returnDate
+
+    End Function
+    ' ************************************************************************
+    '  get Endof report
+    ' ************************************************************************
+    Function GetEnd(period as integer, rsEnd as DateTime, isUTC as boolean) as DateTime
+    dim returnDate as DateTime
+
+    'if custom
+    if period = 4
+    returnDate =  CreateCustomDatetime(rsEnd)
+    else
+    returnDate = GetEndOfDay(Date.Now())
+    end if
+
+    if isUTC then returnDate = GetUTCFromLocal(returnDate)
+
+    return returnDate
+
+    End Function
+
+    ' ************************************************************************
+    '  Creates a Custom DateTime with hours
+    ' ************************************************************************
+    Function CreateCustomDatetime(passedDateTime  as DateTime, hours as integer)
+    return new DateTime(passedDateTime.Year, passedDateTime.Month, passedDateTime.Day, hours, 0, 0)
+    End Function
+
+    ' ************************************************************************
+    '  Creates a Custom DateTime with hours
+    ' ************************************************************************
+    Function CreateCustomDatetime(passedDateTime  as DateTime)
+
+    return CreateCustomDatetime(passedDateTime, passedDateTime.Hour)
+
+    End Function
+
+    ' ************************************************************************
+    '  Returns a string containing the date ranges with hours
+    ' ************************************************************************'
+    Function GetRange(period as integer, rsStart as DateTime, rsStartHours as String, rsEnd as DateTime, rsEndHours as String) as String
+
+    return GetStart(period, rsStart, false) &amp; " to " &amp; GetDatePart(GetEnd(period, rsEnd, false))
+
+    End Function
+  </Code>
+  <Width>10in</Width>
+  <Body>
+    <ReportItems>
+      <Textbox Name="textboxHeaderInfo">
+        <rd:DefaultName>textboxHeaderInfo</rd:DefaultName>
+        <Top>0in</Top>
+        <Left>0.00in</Left>
+        <Height>0.54514in</Height>
+        <Width>6.345in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Value>The Top Servers report identifies your worst performing SQL Server instances based on the number of active alerts for the current monitored instances, response time, CPU usage, memory usage, and disk activity.  Use this report to compile a list of instances that need immediate attention.</Value>
+      </Textbox>
+      <Table Name="table6">
+        <ZIndex>2</ZIndex>
+        <DataSetName>TopServersForCustomCounters</DataSetName>
+        <Top>1.50794cm</Top>
+        <Width>6.375in</Width>
+        <Style>
+          <BorderColor>
+            <Default>#bbbbbb</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="txtServerName">
+                      <Style>
+                        <BackgroundColor>#e5e5e5</BackgroundColor>
+                        <BorderColor>
+                          <Default>#bbbbbb</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Tag:</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox53">
+                      <Style>
+                        <BorderColor>
+                          <Default>#bbbbbb</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=iif(Parameters!GUITags.Value.ToString()="", iif(Parameters!Tags.Value=0,"All Tags", Parameters!Tags.Label), Parameters!GUITags.Value.ToString())</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.63492cm</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox54">
+                      <Style>
+                        <BackgroundColor>#e5e5e5</BackgroundColor>
+                        <BorderColor>
+                          <Default>#bbbbbb</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Number of Servers:</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox55">
+                      <Style>
+                        <BorderColor>
+                          <Default>#bbbbbb</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Parameters!NumServers.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.63492cm</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox56">
+                      <Style>
+                        <BackgroundColor>#e5e5e5</BackgroundColor>
+                        <BorderColor>
+                          <Default>#bbbbbb</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Date Range:</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox57">
+                      <Style>
+                        <BorderColor>
+                          <Default>#bbbbbb</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=iif(Parameters!GUIDateRange.Value="", Code.GetRange(Parameters!Period.Value, Parameters!rsStart.Value, Parameters!rsStartHours.Label, Parameters!rsEnd.Value, Parameters!rsEndHours.Label), Parameters!GUIDateRange.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.63492cm</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>4.12698cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>12.06349cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>1.90476cm</Height>
+      </Table>
+      <Textbox Name="noDataTextBox">
+        <rd:DefaultName>noDataTextBox</rd:DefaultName>
+        <Visibility>
+          <Hidden>=(CountRows("TopServersForCustomCounters") &gt; 0)</Hidden>
+        </Visibility>
+        <Top>1.625in</Top>
+        <Width>6.375in</Width>
+        <Style>
+          <BorderColor>
+            <Default>Red</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.5in</Height>
+        <Value>NOTE: There isn't enough data in the repository to display useful information in this report.  Change the report filters or run the report later when SQLDM has collected more data.</Value>
+      </Textbox>
+      <Rectangle Name="rectangle1">
+        <ReportItems>
+          {Tables For Custom Counters}
+        </ReportItems>
+        <DataElementOutput>ContentsOnly</DataElementOutput>
+        <Top>1.375in</Top>
+        <Height>6.375in</Height>
+        <Width>10in</Width>
+        <ZIndex>3</ZIndex>
+        <Style />
+      </Rectangle>
+      <!--<Table Name="table1">
+        <DataSetName>TopServersForCustomCounters</DataSetName>            
+        <Top>0.4in</Top>
+        <Width>26.0445cm</Width>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Visibility>
+                <Hidden>=iif(Fields!CounterName.Value = "DiskQueueLength",false,true)</Hidden>
+              </Visibility>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox8">
+                      <rd:DefaultName>textbox8</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber("table1") Mod 2 = 0, "#f0f0f0", "White")</BackgroundColor>
+                        <BorderColor>
+                          <Default>#dddddd</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!InstanceName.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox9">
+                      <rd:DefaultName>textbox9</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber("table1") Mod 2 = 0, "#f0f0f0", "White")</BackgroundColor>
+                        <BorderColor>
+                          <Default>#dddddd</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <Format>N2</Format>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Value.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <rd:DefaultName>textbox5</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>#e5e5e5</BackgroundColor>
+                        <BorderColor>
+                          <Default>#bbbbbb</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>                          
+                      <Value>Server Name</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox6">
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>#e5e5e5</BackgroundColor>
+                        <BorderColor>
+                          <Default>#bbbbbb</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>                          
+                      <Value>Metric Name</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>1.63002in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.875in</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>-->
+      <Rectangle Name="FooterPadding">
+        <ZIndex>3</ZIndex>
+        <Top>6.751in</Top>
+        <Width>1in</Width>
+      </Rectangle>
+      <Textbox Name="textboxForFooter">
+        <rd:DefaultName>textboxForFooter</rd:DefaultName>
+        <Width>6.37501in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.575in</Height>
+        <Top>13in</Top>
+        <Value>NOTE: The 'Top Servers for Custom Counters' report identifies your worst performing SQL Server instances.  Use this report to compile a list of instances that need immediate attention.</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>13.5in</Height>
+  </Body>
+  <Language>=User!Language</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox4">
+        <rd:DefaultName>textbox4</rd:DefaultName>
+        <Top>0.25in</Top>
+        <Width>3.12501in</Width>
+        <Style>
+          <Color>DimGray</Color>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>3.25in</Left>
+        <Height>0.175in</Height>
+        <Value>=Code.GetExecutionTime(Iif(Parameters!executionStart.Value is nothing, Globals!ExecutionTime, Parameters!executionStart.Value))</Value>
+      </Textbox>
+      <Textbox Name="textbox3">
+        <rd:DefaultName>textbox3</rd:DefaultName>
+        <Top>0.425in</Top>
+        <Width>3.12501in</Width>
+        <Style>
+          <Color>DimGray</Color>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>3.25in</Left>
+        <Height>0.25in</Height>
+        <Value>="Page " &amp; Globals!PageNumber &amp; " of " &amp; Globals!TotalPages</Value>
+      </Textbox>
+      <Textbox Name="generatedby">
+        <Top>0.05in</Top>
+        <Width>4.62501in</Width>
+        <Style>
+          <Color>DimGray</Color>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>1.75in</Left>
+        <Height>0.2in</Height>
+        <Value>="Generated by " + User!UserID + " on " + DateTime.Now.ToString()</Value>
+      </Textbox>
+      <Textbox Name="copyright">
+        <Top>0.425in</Top>
+        <Action>
+          <!-- Replaced the old link with the correct copyright link. Aditya Shukla SQLdm 8.6 -->
+          <Hyperlink>http://www.idera.com/legal/trademarkscopyright</Hyperlink>
+        </Action>
+        <Width>2.5in</Width>
+        <Style>
+          <Color>Blue</Color>
+          <FontSize>8pt</FontSize>
+          <TextDecoration>Underline</TextDecoration>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.25417in</Height>
+        <Value>Copyright © 2003-2020 Idera, Inc., all rights reserved.</Value>
+      </Textbox>
+      <Line Name="line2">
+        <Width>6.37501in</Width>
+        <Style>
+          <BorderColor>
+            <Default>#666666</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <BorderWidth>
+            <Default>4pt</Default>
+          </BorderWidth>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Height>0in</Height>
+      </Line>
+      <Image Name="image3">
+        <Sizing>AutoSize</Sizing>
+        <Top>0.05in</Top>
+        <Width>1.25in</Width>
+        <Source>Embedded</Source>
+        <Style />
+        <Height>0.375in</Height>
+        <Value>idera_1</Value>
+      </Image>
+    </ReportItems>
+    <Height>0.75in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+  <PageHeight>14in</PageHeight>
+  <TopMargin>1in</TopMargin>
+</Report>

@@ -1,0 +1,25 @@
+<?taglib uri="http://sqldm/taglib" prefix="sqldmidera"?>
+
+<zk>
+	<timer id="timerKeepAliveSession" repeats="true" delay="600000" onTimer=""/>
+	<div vflex="1">
+		
+
+		<hlayout vflex="1" spacing="0">
+
+			<vlayout vflex="1" hflex="1" spacing="0">
+
+				<div visible="${idera:isLoggedIn()}">
+					<include src="~./com/idera/sqldm/ui/basepage/navigation-bar.zul" />
+				</div>
+
+				<div vflex="1" hflex="1" sclass="vertical-overflow"
+					self="@insert(sqldmmaincontent)" />
+
+			</vlayout>
+
+		</hlayout>
+
+	</div>
+
+</zk>

@@ -1,0 +1,69 @@
+<zk>
+	<div id="sessionsListView" apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.idera.sqldm.ui.dashboard.instances.resources.SessionsIOWidgetComposer')">
+		<div fulfill="self.onCreate"><!-- workaround -->
+			<hlayout id="sessionsListWidgetLayout">
+				<div style="height: 148px">
+					<grid id="sessionsList" vflex="1"
+						sclass="styled-list" model="@load(vm.instancesModel)"
+						emptyMessage="@bind(vm.displayMessageForGrid)">
+						<columns sizable="true">
+							<extcolumn
+								label="${idera:getLabel('SQLdm.Labels.sessionID')}" width="30%"
+								sort="auto(sessionId)" />
+							<extcolumn
+								label="${idera:getLabel('SQLdm.Labels.physical-io')}"
+								width="40%" sort="auto(physicalIO)" align="right"
+								sclass="numbers-position-header-topten" />
+						</columns>
+						<template name="model">
+							<row
+								style="word-wrap:break-word; cursor:pointer;" value="${each}">
+								<label value="@load(each.sessionId)" />
+								<label
+									value="@load(each.physicalIO) @converter('com.idera.sqldm.ui.converter.CommaSeparatedNumberLabelForMVVMConverter')"
+									sclass="numbers-position-topten" />
+								<zk choose="">
+									<zk when="${each.severity == 8}">
+										<div class="critical-progress"
+											style="float:right">
+											<progressmeter
+												value="${each.relativeSeverityValue}" width="60px" />
+										</div>
+									</zk>
+									<zk when="${each.severity == 4}">
+										<div class="warning-progress"
+											style="float:right">
+											<progressmeter
+												value="${each.relativeSeverityValue}" width="60px" />
+										</div>
+									</zk>
+									<zk when="${each.severity == 2}">
+										<div class="ok-progress"
+											style="float:right">
+											<progressmeter
+												value="${each.relativeSeverityValue}" width="60px" />
+										</div>
+									</zk>
+									<zk when="${each.severity == 1}">
+										<div class="ok-progress"
+											style="float:right">
+											<progressmeter
+												value="${each.relativeSeverityValue}" width="60px" />
+										</div>
+									</zk>
+									<zk><!-- default -->
+										<div class="ok-progress">
+											<progressmeter
+												value="${each.relativeSeverityValue}" width="60px" />
+										</div>
+									</zk>
+								</zk>
+							</row>
+						</template>
+					</grid>
+				</div>
+			</hlayout>
+		</div>
+	</div>
+</zk>

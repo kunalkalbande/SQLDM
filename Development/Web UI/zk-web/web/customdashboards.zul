@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/basepage/basepage.zul"?>
+<?meta http-equiv="X-UA-Compatible" content="${idera:browserVersionContentString()}"?>
+<?page title="${idera:productHeaderString()}"?>
+<?taglib uri="http://sqldm/taglib" prefix="sqldmidera"?>
+
+<?style src="com/idera/sqldm/css/customDashboard/custom-dashboard.css.dsp" ?>
+<?style src="com/idera/sqldm/css/dashboard/heatmap.css.dsp" ?>
+<?style src="/css/action-item.css.dsp" ?>
+<?style src="/css/input.css.dsp" ?>
+<?style src="com/idera/sqldm/css/sqldm-list.css.dsp" ?>
+<?style src="/css/listbox.css.dsp" ?>
+<?style src="/css/menupopup.css.dsp" ?>
+<?style src="/css/main.css.dsp" ?>
+<?style src="/css/tags.css.dsp" ?>
+<?style src="/css/basepage/header.css.dsp" ?>
+<?style src="com/idera/sqldm/css/modalDialogTemplate.css.dsp" ?>
+<?style src="com/idera/sqldm/css/dashboard/dashboard.css.dsp" ?>
+<?style src="com/idera/sqldm/css/dashboard/dashboardRightNavigation.css.dsp" ?>
+<?style src="com/idera/sqldm/css/sqldm.css.dsp" ?>
+<?style src="/css/error/error.css.dsp" ?>
+<?style src="/css/login/login.css.dsp" ?>
+<?style src="/css/explorer/explorer.css.dsp" ?>
+<?style src="com/idera/sqldm/css/chart.css.dsp" ?>
+<?style src="com/idera/sqldm/css/grouped-list.css.dsp" ?>
+<?style src="com/idera/sqldm/css/widget-panel.css.dsp" ?>
+<?style src="com/idera/sqldm/css/application.css.dsp" ?>
+<?style src="/css/widgets/welcomeWizard.css.dsp" ?>
+<?style src="com/idera/sqldm/css/CWF_Components.css.dsp" ?>
+<?script type="text/javascript" src="com/idera/sqldm/js/idera-resize.js"?>
+<?script type="text/javascript" src="com/idera/sqldm/js/jquery-1.11.1.min.js"?>
+<?style src="com/idera/sqldm/css/navigation-bar_new.css.dsp" ?>
+
+<zk>	
+<div id = "mainContent" self="@define(maincontent)" sclass="cwf-overview-wrapper" style="padding: 0;">
+	<vlayout>
+		<div>
+			<include src="navigation-bar.zul" />
+		</div>
+		<div>
+			<include src="com/idera/sqldm/ui/customDashboard/customdashboardcontent.zul" view = "${param.view}"/>
+		</div>
+	</vlayout>
+</div>
+</zk>

@@ -1,0 +1,2055 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Properties" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Properties.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="collapse_tree_icon_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\collapse-tree-icon_4.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lowered_to_info_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lowered-to-info-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="home_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TestConnectionUnknown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\QuestionBubble.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\Logs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grid_view_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grid-view-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="calendar_icon_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendar-icon_2.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="session_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\session-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Calendar16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Calendar16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pause32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pause32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AppSecurity16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AppSecurity16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lock_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="trialcentergraphic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trialcentergraphic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Information32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Information32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoweredToOK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoweredToOK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogsWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\LogsWarning16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alerts_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alerts-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RibbonRadioButtonChecked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RibbonRadioButtonChecked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StatusOKSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StatusOKSmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StatusMainentanceModeSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StatusMainentanceModeSmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NavigationPaneReportsSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NavigationPaneReportsSmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddPermission32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddPermission32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minimize_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimize-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MoveDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MoveDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tempdb_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tempdb_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Unfollow32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unfollow32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PanelCache" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PanelCache.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="data_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\data_edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ToolbarRefresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ToolbarRefresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="down_arrow_icon_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\down-arrow-icon_2.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TasksFeature" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TasksFeature.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CustomCounterWizardBannerImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CustomCounterWizardBannerImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StatusUnknown16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StatusUnknown16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="collapse_tree_icon_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\collapse-tree-icon_2.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="calendar_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendar-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="calendar_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendar-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="QueriesWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\QueriesWarning16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tag32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tag32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="up_arrow_wht_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\up-arrow-wht-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Help_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Print16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Print16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pin_wht_icon_copy_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pin-wht-icon-copy-3.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DatabasesFilesView16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DatabasesFilesView16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="up_arrow_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\up-arrow-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="arrow_up_blue_16x16_plain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow_up_blue_16x16_plain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnableAppSecurity32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EnableAppSecurity32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SessionsLocksView16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SessionsLocksView16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NotificationCaptionBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Notification_CaptionBar.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewCounter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewCounter.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Refresh24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Refresh24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SessionsCritical16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\SessionsCritical16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reamined_info_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reamined-info-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MaintenanceMode16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\MaintenanceMode16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DatabasesInfoThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\databasesinfothumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AppImage16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AppIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExportCounter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CustomCounterExport32x32.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cloud_database_icon_normal_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cloud_database_icon_normal_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FlagEnabled16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Analysis\FlagEnabled16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sort_alpha_za_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sort-alpha-za-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cloud_database_icon_critical_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cloud_database_icon_critical_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HistoryModeSnapshotDoesNotExistAnalyzeView" xml:space="preserve">
+    <value>Data for the selected historical snapshot does not exist for this view. Select another historical snapshot or click on run analysis to switch to real-time mode.</value>
+  </data>
+  <data name="DownArrow_Gray_7w_4h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DownArrow_Gray_7w_4h.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeployReport_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeployReport_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ServerGroupDetailsView" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ServerGroupDetailsView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StatusSummaryInformationLarge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StatusSummaryInformationLarge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ToolbarPause" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ToolbarPause.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KeyType_Production" xml:space="preserve">
+    <value>Production</value>
+  </data>
+  <data name="NotificationCaptionBarGrip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Notification_CaptionBarGrip.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MoveUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MoveUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="prev_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\prev-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="OK32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OK32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grid_view_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grid-view-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DownArrow_Gray_6h_11w" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DownArrow_Gray_6h_11w.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="critical_icon_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\critical-icon_7.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="expand_icon_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\expand-icon_2.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AddServersWizardFeaturesImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddServersWizardFeaturesImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OptionsGlyph" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OptionsGlyph.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lightbulb_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lightbulb-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="user_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="QueriesCriticalThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QueriesCriticalThumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeletePermission32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeletePermission32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DateRangeInverted" xml:space="preserve">
+    <value>The 'From' date must not be greater than the 'To' date.</value>
+  </data>
+  <data name="copy_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\copy-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AlarmClockStart32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AlarmClockStart32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogsCritical16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\LogsCritical16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddPermission48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddPermission48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="down_arrow_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\down-arrow-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="arrow_up_green_16x16_plain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\arrow_up_green_16x16_plain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RestoreDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RestoreDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DatabasesWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\DatabasesWarning16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Critical_Dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\critical-lt-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="card_view_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\card-view-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="filter_add_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filter-add-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HomeTabMonitorView" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomeTabMonitorView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SortAscending" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SortAscending.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GenericView16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GenericView16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Follow32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Follow32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Filter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="collapse_tree_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\collapse-tree-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ExceptionUnhandled" xml:space="preserve">
+    <value>An unhandled exception occurred while running the SQL Diagnostic Manager Desktop Client.</value>
+  </data>
+  <data name="admin_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\admin-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ServersIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Servers.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="down_arrow_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\down-arrow-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="arrow_down_blue_16x16_plain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow_down_blue_16x16_plain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChangeLog16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChangeLog16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Database32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Database32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="admin_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\admin-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GeneralProperties" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GeneralProperties.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="twitter_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\twitter_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="services_critical_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\services-critical-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="reamined_warning_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reamined-warning-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="navigate_open" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\navigate_open.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DatabasesCritical16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\DatabasesCritical16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HistoryModeSnapshotDoesNotExistViewLabel" xml:space="preserve">
+    <value>Data for the selected historical snapshot does not exist for this view. Select another historical snapshot or click here to switch to Real Time Mode.</value>
+  </data>
+  <data name="critical_icon_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\critical-icon_5.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Provider_icon_49x49" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Provider_icon_49x49.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ResourcesFileActivity32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourcesFileActivity32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cloud_database_icon_disabled_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cloud_database_icon_disabled_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExceptionUnableToGetLicense" xml:space="preserve">
+    <value>Unable to load the SQL Diagnostic Manager license.</value>
+  </data>
+  <data name="heat_map_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\heat-map-hover.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AddServersManagerDialogHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddServersManagerDialogHeader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RightArrow_Gray_4w_7h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RightArrow_Gray_4w_7h.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExceptionInvalidLicense" xml:space="preserve">
+    <value>The SQL Diagnostic Manager license is invalid.</value>
+  </data>
+  <data name="DBmirroring_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DBmirroring_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PeriodTypeDays" xml:space="preserve">
+    <value>Days:</value>
+  </data>
+  <data name="FilterLarge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FilterLarge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ok_wht_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ok-wht-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Database_Dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\db-wht-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="heat_map_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\heat-map-disabled.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DeleteCounter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeleteCounter.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="down_arrow_wht_icon_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\down-arrow-wht-icon_2.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="collapse_tree_icon_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\collapse-tree-icon_6.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GotoNextError" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Analysis\GotoNextError.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="time_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\time-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Queries" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\Queries.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TaskNotStarted2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\TaskNotStarted2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reamined_critical_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reamined-critical-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="next_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="screen_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\screen-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Recommendations_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Recommendations_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="App16Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\app16.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Server" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\Server.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeployReportsWizardMargin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeployReportsWizardMargin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConfigurationView16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ConfigurationView16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="scrollbar_thumb_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\scrollbar_thumb_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="raised_warning_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\raised-warning-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="reverted_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Analysis\reverted_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warning_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warning-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SWA_Icon24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SWA_Icon24.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="check_circle_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check-circle-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="StatusSummaryOKLarge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StatusSummaryOKLarge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close_circle_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close-circle-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="UserDefinedPermission16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UserDefinedPermission16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FilterIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Filter.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="collapse_tree_icon_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\collapse-tree-icon_7.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="minimize_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimize-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="heat_map1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\heat-map.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ok_wht_icon_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ok-wht-icon_2.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Critical32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Critical32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaintenanceMode_Dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\maint-icon-wht.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="expand_list_view_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\expand-list-view-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AddServersFeature" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddServersFeature.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectedTabBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SelectedTabBackground.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PopularProperties" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PopularProperties.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info_wht_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info-wht-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ServerCritical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ServerCritical.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Table" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\Table.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ServerInformation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ServerInformation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="help_icon_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\help-icon_2.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HistoryModeUnsupportedViewLabel" xml:space="preserve">
+    <value>This view does not support History Mode. Click here to switch to Real Time Mode.</value>
+  </data>
+  <data name="AddServersWizardBannerImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddServersWizardBannerImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TestConnectionSuccess" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\OK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TablesViewCritical16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TablesViewCritical16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PanelNetwork" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PanelNetwork.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background_gradient_gold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background gradient gold.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SortDescending" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SortDescending.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stop24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stop24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="help_disabled_icon_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\help-disabled-icon_2.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Import16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Import16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="time_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\time-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Information16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Information16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Remove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ResourcesCpuView16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourcesCpuView16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="raised_to_critical_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\raised-to-critical-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dm_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dm-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Services" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\Services.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TrialLicenseHasExpired" xml:space="preserve">
+    <value>The trial license for SQL Diagnostic Manager has expired.  Please contact Idera for a valid license.</value>
+  </data>
+  <data name="SystemSession" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SystemSession.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Export16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Export16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bullet_ball_glass_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bullet_ball_glass_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ResourcesDiskSizeView16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourcesDiskSizeView16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KeyLimit_Unlimited" xml:space="preserve">
+    <value>Unlimited</value>
+  </data>
+  <data name="SessionsDetailsViewSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SessionsDetailsViewSmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="collapse_tree_icon_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\collapse-tree-icon_5.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ChartGridHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChartGridHeader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="App16CriticalIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\App16Critical.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="critical_icon_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\critical-icon_10.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="critical_icon_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\critical-icon_11.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="card_view_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\card-view-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="copy_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\copy-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SessionTraceIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SessionTrace.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PanelTempDB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PanelTempDB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UserSession" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UserSession.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="admin_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\admin-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="critical_icon_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\critical-icon_8.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="expand_list_view_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\expand-list-view-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TestConnectionFailed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\ErrorStop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unlock_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unlock-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ok_icon_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ok-icon_2.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LeftArrow_Light" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\left-arrow-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SelectedRowBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SelectedRowBackground.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warning_wht_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warning-wht-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SessionsThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SessionsThumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddServersWizardWelcomePageMarginImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddServersWizardWelcomePageMarginImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CustomCounterCritical16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CustomCounterCritical16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="scrollbar_arrowup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\scrollbar_arrowup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cloud_database_icon_disabled_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cloud_database_icon_disabled_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Maximize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Maximize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="services_warning_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\services-warning-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ExceptionUnableToSetLicense" xml:space="preserve">
+    <value>Unable to set the new SQL Diagnostic Manager license.</value>
+  </data>
+  <data name="CheckBoxBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Analysis\CheckBoxBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="expandtree" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\16x16\expandtree.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ResourcesMemoryView16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourcesMemoryView16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="card_view_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\card-view-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GroupByBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GroupByBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SQLdmToday_6Things_Dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SQLdmToday_6Things_Dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SessionsWarningThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SessionsWarningThumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DiskDriveNoActivity_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dm disk drive no activity icon 16 x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="up_arrow_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\up-arrow-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="expand_icon_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\expand-icon_6.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ImportExport32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImportExport32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="trialcentergraphic_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\trialcentergraphic_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="maint_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\maint-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="critical_icon_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\critical-icon_3.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="critical_icon_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\critical-icon_6.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="UpArrow_Gray_7w_4h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UpArrow_Gray_7w_4h.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NavigationPaneServersLarge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NavigationPaneServersLarge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="power_off_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\power-off-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PanelCustom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PanelCustom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TrialLicenseWillExpireToday" xml:space="preserve">
+    <value>SQL Diagnostic Manager has a trial license that will expire today.</value>
+  </data>
+  <data name="NavigationPaneAlertsSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NavigationPaneAlertsSmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pause_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pause-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="warning_icon_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warning-icon_3.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SessionStatusOther" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SessionStatusOther.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ResourcesCriticalThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourcesCriticalThumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SystemDiagnosticsView16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SystemDiagnosticsView16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TablesViewWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TablesViewWarning16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sort_alpha_az_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sort-alpha-az-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ServersUsingCounter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ServersUsingCounter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="help_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\help-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ServicesSqlAgentJobsView16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ServicesSqlAgentJobsView16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ext_link" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ext-link.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="expand_list_view_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\expand-list-view-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="health_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\health-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="heat_map" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\heat-map.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AlarmClockPause32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AlarmClockPause32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="folder_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="warning_wht_icon_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warning-wht-icon_2.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Database" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\Database.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Resources_server_waits_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\server_waits_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SessionsWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\SessionsWarning16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="left_arrow_wht_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\left-arrow-wht-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="user_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PanelLockWaits" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PanelLockWaits.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="expand_icon_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\expand-icon_3.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FolderClosed16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FolderClosed16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogsSqlServerFilter16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogsSqlServerFilter16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QueriesInfoThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\queriesinfothumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConnectionIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RepositoryConnectionDialog.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChangeLog32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChangeLog32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refresh_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DownArrows" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DownArrows.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background_gradient_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background gradient blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GroupByThisColumn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GroupByThisColumn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InvalidRepositoryVersionMessageWithMetadata" xml:space="preserve">
+    <value>The specified repository (version {0}) is not valid for this version of the SQLdm Desktop Client. Please specify a valid repository (version {1}) or upgrade the appropriate SQLdm component in order to continue.</value>
+  </data>
+  <data name="next_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alerts_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alerts-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="screen_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\screen-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Tags_Dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\tags-wht-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ServicesFullTextSearchView16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ServicesFullTextSearchView16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DownArrow_Light" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\down-arrow-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PanelServerWaits" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PanelServerWaits.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alerts_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alerts-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="App16WarningIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\App16Warning.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="help_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\help-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="QMWebUI16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QMWebUI16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HistoryModeStatusBarLabel" xml:space="preserve">
+    <value>History Mode</value>
+  </data>
+  <data name="right_arrow_wht_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\right-arrow-wht-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="block32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Analysis\block32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="collapse_tree_icon_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\collapse-tree-icon_9.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lowered_to_okay_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lowered-to-okay-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CellBorder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CellBorder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SessionsCriticalThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SessionsCriticalThumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ApplicationSecurityGettingStartedImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ApplicationSecurityGettingStartedImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tag_Dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\tag-wht-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="StatusSummaryCriticalLarge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StatusSummaryCriticalLarge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InvalidRepositoryVersionMessage" xml:space="preserve">
+    <value>The specified repository is not a valid version. Please specify a valid repository in order to continue.</value>
+  </data>
+  <data name="scrollbar_thumb_box_endcap_bottom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\scrollbar_thumb_box_endcap_bottom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RightArrow_White_9h_5w" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RightArrow_White_9h_5w.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cloud_database_icon_warning_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cloud_database_icon_warning_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ServicesCriticalThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ServicesCriticalThumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CustomCounter32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CustomCounter32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Resources_query_waits_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\query_waits_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SQLdmToday_ProductName" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SQLdmToday_ProductName.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RemainedInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RemainedInfo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Download32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Download32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PeriodTypeRange" xml:space="preserve">
+    <value>Range:</value>
+  </data>
+  <data name="list_view_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\list-view-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Connected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Connected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Back24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Back24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NavigationPaneTasksSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NavigationPaneTasksSmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SQLdmTodayWebConsole" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SQLdmTodayWebConsole.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ResourcesInfoThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\resourcesinfothumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="server_properties_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\server-properties-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ok_icon_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ok-icon_3.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReportsFeature" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReportsFeature.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="App16OKIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\App16OK.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddUserPermissionsWizardMarginImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddUserPermissionsWizardMarginImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OK16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Analysis\OK16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogsInfoThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\logsinfothumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="copy_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\copy-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PanelDatabases" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PanelDatabases.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AdministrationArea16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AdministrationArea16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ok_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ok-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FolderClosedWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\FolderClosedWarning16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chart32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Chart32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ReportEmail32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReportEmail32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LeftLink16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LeftLink16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ServicesCritical16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\ServicesCritical16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="analyze_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\analyze-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Splash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sessions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\Sessions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TodayPageHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TodayPageHeader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pin_wht_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pin-wht-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Pulse16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pulse16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SessionsLocksViewSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SessionsLocksViewSmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MyViews_Dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\my-views-wht-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Summation9x9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Summation9x9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TableWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\TableWarning16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lowered_to_warning_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lowered-to-warning-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ColumnChooser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ColumnChooser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logs_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logs-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TableCritical16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\TableCritical16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cloud_database_icon_critical_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cloud_database_icon_critical_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="next_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="critical_icon_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\critical-icon_2.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="time_icon_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\time-icon_2.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Analyze16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Analysis\Analyze16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="facebook_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facebook_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refresh_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ImportCounter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CustomCounterImport32x32.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="expand_icon_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\expand-icon_4.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SessionsInfoThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\sessionsinfothumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RibbonCheckboxChecked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RibbonCheckboxChecked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="remove_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\remove-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="EditPermission32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditPermission32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="critical_icon_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\critical-icon_4.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="warning_icon_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warning-icon_5.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="critical_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\critical-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sort_alpha_za_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sort-alpha-za-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="StatusInfoSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StatusInfoSmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sort_alpha_az_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sort-alpha-az-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TaskCompleted" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\TaskCompleted.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checkbox_checked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checkbox_checked.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PanelMemory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PanelMemory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RightArrows" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RightArrows.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ServicesWarningThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ServicesWarningThumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AlertsFeature1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AlertsFeature1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExportChartImage16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExportChartImage16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="scrollbar_thumb_grip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\scrollbar_thumb_grip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background_gradient_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background gradient gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="scrollbar_thumb_box" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\scrollbar_thumb_box.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UpArrow_Gray_6h_11w" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UpArrow_Gray_6h_11w.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tags_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tags-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="add_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="calendar_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendar-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HistoryModeSnapshotLoadErrorViewLabel" xml:space="preserve">
+    <value>An error occurred while loading the historical snapshot. Click here for details.</value>
+  </data>
+  <data name="critical_icon_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\critical-icon_9.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="server_properties_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\server-properties-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Documents_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Documents 32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mail_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mail_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SessionStatusSuspended" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SessionStatusSuspended.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KillProcess" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KillProcess.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DiskDriveReadActivity_12x12_pulsing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dm disk drive read activity icon 12 x 12 pulsing.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cog_icon_wht" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cog-icon-wht.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="KeyExpires_Never" xml:space="preserve">
+    <value>Never</value>
+  </data>
+  <data name="DisableAppSecurity32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DisableAppSecurity32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GettingStartedWizardFooter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GettingStartedWizardFooter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info_icon_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info-icon-hover.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TaskInProgress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\TaskInProgress.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reamined_ok_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reamined-ok-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="StopTrace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StopTrace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="scrollbar_thumb_box_endcap_top" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\scrollbar_thumb_box_endcap_top.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SessionStatusBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SessionStatusBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ResourcesCritical16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\ResourcesCritical16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="left_arrow_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\left-arrow-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bullet_ball_glass_grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bullet_ball_glass_grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QMWebUI16x16gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QMWebUI16x16gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PanelCPU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PanelCPU.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Forward24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Forward24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tag_icon_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tag-icon_2.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Hide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="screen_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\screen-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DownArrow_Dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\down-arrow-wht-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LoweredToInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoweredToInfo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImportExport16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImportExport16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaintenanceModeLarge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MaintenanceModeLarge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Last365Days" xml:space="preserve">
+    <value>Last 365 days</value>
+  </data>
+  <data name="help_hover_icon_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\help-hover-icon_2.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="warning_icon_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warning-icon_2.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ResourcesThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourcesThumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ResourcesWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\ResourcesWarning16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DatabasesThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DatabasesThumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NavigationPaneAlertsLarge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NavigationPaneAlertsLarge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TaskOnHold2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\TaskOnHold2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ResourcesWarningThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourcesWarningThumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StatusSummaryWarningLarge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StatusSummaryWarningLarge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FlagClear16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Analysis\FlagClear16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="collapse_tree_icon_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\collapse-tree-icon_3.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Analyze32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Analysis\Analyze32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RibbonRadioButtonUnchecked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RibbonRadioButtonUnchecked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Servers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\Servers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="QueriesCritical16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\QueriesCritical16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DatabaseIndex32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DatabaseIndex32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sort_alpha_za_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sort-alpha-za-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TestCustomCounter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TestCustomCounter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Analysis\Error16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogsThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogsThumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DatabasesWarningThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DatabasesWarningThumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeleteSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeleteSmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="critical_wht_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\critical-wht-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="left_arrow_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\left-arrow-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CloseHelpPopupHotTracked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CloseHelpPopupHotTracked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="my_views_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\my-views-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="delete_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SQLServerPhysicalIO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SQLServerPhysicalIO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PeriodTypeYears" xml:space="preserve">
+    <value>Years:</value>
+  </data>
+  <data name="search_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HistoryModeOperationalStatusLabel" xml:space="preserve">
+    <value>You are currently viewing a historical snapshot. Click here to switch to Real Time Mode.</value>
+  </data>
+  <data name="LogsSqlAgentFilter16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogsSqlAgentFilter16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ToolbarHome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ToolbarHome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="collapse_tree_icon_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\collapse-tree-icon_8.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="EditCounter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditCounter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QueriesSignature" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QueriesSignature.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="down_arrow_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\down-arrow-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SessionStatusSleeping" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SessionStatusSleeping.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StartTrace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StartTrace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DatabasesBackupRestoreView16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DatabasesBackupRestoreView16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ServicesWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\ServicesWarning16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SystemDefinedPermission16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SystemDefinedPermission16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="folder_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ResourcesDiskView16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourcesDiskView16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="prev_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\prev-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="KeyType_Trial" xml:space="preserve">
+    <value>Trial</value>
+  </data>
+  <data name="list_view_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\list-view-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Office2007Close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Office2007Close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="filter_off_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filter-off-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PanelDisk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PanelDisk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ReportsDeploymentWizardBanner48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReportsDeploymentWizardBanner48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ServerGroupCritical16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ServerGroupCritical16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RefreshError" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RefreshError.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HeaderStripSmallExpand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HeaderStripSmallExpand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grid_view_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grid-view-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="canceled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\canceled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="time_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\time-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GroomingOptions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GroomingOptions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Provider_Wizard_164x477" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Provider_Wizard_164x477.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SessionsBlockingView16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SessionsBlockingView16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConfigureLogs32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ConfigureLogs32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tag_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tag-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ServerMaintenanceMode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\ServerMaintenanceMode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DataCollectionInterval" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DataCollectionInterval.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ServerWarning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ServerWarning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pause_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pause-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="QueriesThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QueriesThumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SQLdmToday_buttonbackgrnd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SQLdmToday_buttonbackgrnd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="server_properties_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\server-properties-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="communitysite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\communitysite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewFilter16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewFilter16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Warning_Dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\warning-lt-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Block16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Analysis\Block16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PanelSessions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PanelSessions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="raised_info_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\raised-info-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RaisedToInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RaisedToInfo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SessionStatusRunnable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SessionStatusRunnable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warning_icon_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warning-icon_4.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="expand_tree_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\expand-tree-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sort_alpha_az_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sort-alpha-az-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="arrow_down_green_16x16_plain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\arrow_down_green_16x16_plain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="right_arrow_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\right-arrow-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ServerWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\ServerWarning16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SQLdm_Default_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SQLdm_Default_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cog_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cog-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LogsWarningThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logswarningThumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="up_arrow_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\up-arrow-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SessionStatusRunning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SessionStatusRunning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="expand_icon_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\expand-icon_5.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="expand_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\expand-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DatabasesCriticalThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DatabasesCriticalThumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PanelFileActivity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PanelFileActivity.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="navigate_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\navigate_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TrialLicenseWillExpire" xml:space="preserve">
+    <value>SQL Diagnostic Manager has a trial license that will expire in {0} day(s) on {1}.</value>
+    <comment>int daysUntilExpiration, string expirationDate</comment>
+  </data>
+  <data name="ServicesInfoThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\servicesinfothumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InstanceThumbnailMarginImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InstanceThumbnailMarginImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TriangleRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TriangleRight.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cog_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cog-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FolderClosedCritical16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\FolderClosedCritical16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UserPermission32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UserPermission32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RaisedToWarning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RaisedToWarning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExceptionManagementServiceUnavailable" xml:space="preserve">
+    <value>A connection could not be established to the SQLdm Management Service. Make sure the service is running and a network connection can be established to the host machine.</value>
+  </data>
+  <data name="DiskDriveWriteActivity_12x12_pulsing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dm disk drive write activity icon 12 x 12 pulsing.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SQLdmToday_6Things" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SQLdmToday_6Things.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloseHelpPopup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CloseHelpPopup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GotoPreviousError" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Analysis\GotoPreviousError.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Warning32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Warning32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExceptionInvalidLicenseString" xml:space="preserve">
+    <value>The SQL Diagnostic Manager license string is invalid.</value>
+  </data>
+  <data name="folder_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="QATPause" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QATPause.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="list_view_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\list-view-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ResourcesProcedureCacheView16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourcesProcedureCacheView16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SQLdm_Default_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SQLdm_Default_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QueriesWarningThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QueriesWarningThumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="queries_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\queries-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="services_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\services-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CustomCounter16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CustomCounter16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="down_arrow_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\down-arrow-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PeriodTypeMonths" xml:space="preserve">
+    <value>Months:</value>
+  </data>
+  <data name="RaisedToCritical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RaisedToCritical.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CustomCounterWizardWelcomePageMarginImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CustomCounterWizardWelcomePageMarginImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RepositoryConnectionDialogHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RepositoryConnectionDialogHeader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="run_time" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\run-time.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="expandribbon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\16x16\expandribbon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AppIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\App.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LeftArrow_Dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\left-arrow-wht-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="funnel_delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\funnel_delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HeaderStripSmallCollapse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HeaderStripSmallCollapse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogsCriticalThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logsCriticalThumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minimize_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimize-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cloud_database_icon_warning_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cloud_database_icon_warning_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ServerGroupThumbnailView" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ServerGroupThumbnailView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="prev_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\prev-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PanelVirtual" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PanelVirtual.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ServicesThumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ServicesThumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LeftArrows" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LeftArrows.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tag_icon_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tag-icon_3.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="right_arrow_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\right-arrow-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="scrollbar_arrowdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\scrollbar_arrowdown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="power_on_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\power-on-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="down_arrow_wht_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\down-arrow-wht-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="QueryHistory16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QueryHistory16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StatusCriticalSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StatusCriticalSmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SQLRecommendationScript" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Analysis\SQLRecommendationScript.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ServersMaintenanceMode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\ServersMaintenanceMode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HotTrackTabBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HotTrackTabBackground.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Home24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refresh_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ClearTrace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClearTrace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InformationSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\InformationSmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ServerGroupOK16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ServerGroupOK16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="databases_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\databases-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="resources_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\resources-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ok_Dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkTheme\ok-lt-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SelectedItem16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SelectedItem16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="help_disabled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\help-disabled-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ServerGroupWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ServerGroupWarning16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AppSecurity32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AppSecurity32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cloud_database_icon_normal_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cloud_database_icon_normal_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pause_hover_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pause-hover-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Tag16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tag16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ok_wht_icon_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ok-wht-icon_3.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ToolbarHelp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ToolbarHelp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="History16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\History16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GettingStartedWizardHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GettingStartedWizardHeader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SQLdmLogoHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SQLdmLogoHeader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Databases" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\Databases.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UpArrows" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UpArrows.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AlertsFeature" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AlertsFeature.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cog_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cog-icon.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ServerOK16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\ServerOK16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SQLdm_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SQLdm_Default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoweredToWarning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoweredToWarning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CustomCounterWarning16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CustomCounterWarning16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NavigationPaneServersSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NavigationPaneServersSmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ServicesReplicationView16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ServicesReplicationView16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ResourcesSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\Resources.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OptionsGlyphUp16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OptionsGlyphUp16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RibbonCheckboxUnchecked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RibbonCheckboxUnchecked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RemainedWarning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RemainedWarning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StatusWarningSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StatusWarningSmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloudDialogHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CloudDialogHeader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  
+  <data name="CloudServerNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\CloudServer\cloud_database_icon_normal_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloudServerOk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\CloudServer\cloud_database_icon_ok_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloudServerWarning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\CloudServer\cloud_database_icon_warning_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloudServerCritical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\CloudServer\cloud_database_icon_critical_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloudServerDisabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\CloudServer\cloud_database_icon_disabled_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloudServerHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\CloudServer\cloud_database_icon_hover_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloudServerInformation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\CloudServer\cloud_database_icon_information_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloudServerMaintenance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16\CloudServer\cloud_database_icon_maintenance_mode_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Views16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Views16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Grid_2x2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Grid_2x2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StatusMainentanceModeSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StatusMainentanceModeSmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Grid_2x3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Grid_2x3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Grid_2x4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Grid_2x4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Grid_2x5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Grid_2x5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Grid_3x2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Grid_3x2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Grid_3x3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Grid_3x3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Grid_3x4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Grid_3x4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Grid_4x2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Grid_4x2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Grid_4x3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Grid_4x3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Customize16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Customize16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="forward16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\forward16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RemainedCritical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RemainedCritical.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaintenanceMode32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MaintenanceMode32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ErrorStop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ErrorStop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DatabaseMirrorFailover16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DatabaseMirrorFailover16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PanelAzureDisk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PanelDisk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

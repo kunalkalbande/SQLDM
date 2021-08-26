@@ -1,0 +1,24 @@
+<zk>
+<div apply="com.idera.sqldm.ui.dashboard.instances.databases.TempDbPageComposer">
+	<vlayout>
+    	<space height="10px"/>
+		 <div>
+			 <hlayout>
+				 <div sclass="chart-border" hflex="1">
+					<sqldm-idera-linechart id="tempdbUsedByTime"  width="540px" height="270px" leftMargin="50px" rightMargin="0px" topMargin="5px" bottomMargin="68px" />
+			     </div>
+				 <div sclass="chart-border"  hflex="1">
+					<sqldm-idera-linechart id="versionStoreChart"  width="540px" height="270px" leftMargin="30px" rightMargin="0px" topMargin="10px" bottomMargin="70px" />
+			     </div>
+		     </hlayout>
+	     </div>
+		<hlayout>
+	        <div id="tempDbChartDiv" sclass="chart-border"  style="height:260px" width="540px" hflex="1">
+        		<sqldm-idera-barchart id="tempdbUsedByFile"  width="540px" height="250px" leftMargin="50px" rightMargin="0px" topMargin="20px" bottomMargin="25px" />
+		 	</div>
+			<div style="width:540px;" hflex="1">
+     		</div>
+  	 	</hlayout>
+	</vlayout>
+</div>
+</zk>

@@ -1,0 +1,17 @@
+<zk>
+
+	<div>
+		<label id="mc_titleLabel" value="${arg.title}" sclass="H4" />
+	</div>
+
+	<div id="mc_containerDiv" sclass="padding-l-12">
+		<areachart height="90%" width="90%" id="mc_chart"
+			animationDelay="${arg.animationDelay}" 
+			plotMarginLeft="${arg.leftMargin}" plotMarginRight="${arg.rightMargin}" plotMarginTop="${arg.topMargin}" plotMarginBottom="${arg.bottomMargin}" />
+
+			<div sclass="padding-t-12 padding-l-24">
+				<label id="mc_errorLabel" visible="false" sclass="H5 darker-gray-text italic" />
+			</div>
+	</div>
+
+</zk>

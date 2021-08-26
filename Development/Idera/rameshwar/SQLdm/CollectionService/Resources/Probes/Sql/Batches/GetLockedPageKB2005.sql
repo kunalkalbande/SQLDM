@@ -1,0 +1,1 @@
+select SUM(awe_allocated_kb) from sys.dm_os_memory_clerks;

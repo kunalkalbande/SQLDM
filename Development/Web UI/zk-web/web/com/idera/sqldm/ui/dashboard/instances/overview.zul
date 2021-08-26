@@ -1,0 +1,624 @@
+<zk xmlns:h="native">
+	<style>
+		.idera-alert-timeline .idera-timeline-hlayout :last-child {
+		display: block; float: right; }
+		.datetimepicker-scale.idera-dropdownlist .idera-dropdownlist-inp
+		{ width: 150px !important; } .idera-alert-timeline
+		.idera-datetimepicker-hlayout:last-child { margin-right: -20px;
+		} .idera-timeline-hlayout .datetimepicker-scale { width: 222px;
+		margin-left: -20px; }.idera-card .z-panel-body { padding: 0rem;
+		}.light-panel-color-shade { background-color: #e3ded4; }
+		div.z-grid-header tr.z-columns, div.z-grid-header tr.z-auxhead {
+		background-image: none; }div.z-grid-header th.z-column,
+		div.z-grid-header th.z-auxheader { border:none; }
+		.z-grid-header-bg{ background:none}.z-vlayout-inner {
+		padding-bottom: 0px !important; }
+	</style>
+
+	<div
+		apply="com.idera.sqldm.ui.dashboard.instances.overview.SingleInstanceOverviewComposer">
+		<div style="height:800px;overflow:auto">
+		 <borderlayout height="100%" vflex="min">
+		 	<center autoscroll="true" vflex="min">
+		 	<vlayout hflex="1" vflex="1" style="background-color:#e3ded4">
+			<hlayout
+				style="margin-left: 0px;min-height: 410px;max-height: 550px;padding:0px;">
+				<vlayout
+					style="padding-right:0px;border-right:1px solid #999;">
+					<hlayout
+						style="padding-top:5px;border-top:1px solid #999; min-height: 420px;max-height: 530px;padding-top:20px;">
+						<div>
+						<idera-cwf-card title="ALERT AND HEALTH SUMMARY"
+							id="healthAlertCard" 
+							style="margin-left: 45px;margin-right:15px;cursor:pointer;">
+							<panelchildren>
+								<div id="launchAlertScreen">
+								<hlayout
+									style="background-color: orange;border: 6px solid orange;margin-bottom: 20px;cursor:pointer;">
+									<vlayout
+										style="width:100%;text-align:center;margin-left: 100px;">
+										<div
+											style="width:100%;text-align:center;">
+											<label id="lblHealthIndex"
+												value=""
+												style="width:100%;text-align:center; font-size: 27px;background-color:orange">
+											</label>
+										</div>
+										<div>
+											<label value="HEALTH"
+												style="width:100%;text-align:center; font-size: 10px;background-color:orange">
+											</label>
+										</div>
+									</vlayout>
+								</hlayout>
+								<hlayout sclass="label-font">
+									<separator height="0.94rem" />
+									<vlayout
+										style="padding: 0em .3em;margin-left:1em">
+										<div style="height:40px">
+											<label id="lblCriticalAlert"
+												value=""
+												style="font-size:50px;width: 100%;text-align:center;color:#d22;padding-top: 10px; float: left;">
+											</label>
+										</div>
+										<hlayout>
+											<div
+												style="float:left;padding-top:1px;">
+												<image
+													style="height:14px"
+													src="~./sqldm/com/idera/sqldm/images/critical16x16.png" />
+											</div>
+											<label
+												style="font-size:.9rem;">
+												CRITICAL
+											</label>
+										</hlayout>
+									</vlayout>
+									<vlayout
+										style="padding: 0em .3em;">
+										<div style="height:40px">
+											<label id="lblWarningAlert"
+												value=""
+												style="font-size:50px;width: 100%;text-align:center;padding-top: 10px;color: #fff101; float: left;">
+											</label>
+										</div>
+										<hlayout>
+											<div
+												style="float:left;padding-top:1px;">
+												<image
+													style="height:14px"
+													src="~./sqldm/com/idera/sqldm/images/warning-16x16.png" />
+											</div>
+											<label
+												style="font-size:.9rem;">
+												WARNING
+											</label>
+										</hlayout>
+									</vlayout>
+									<vlayout
+										style="padding: 0em .3em;">
+										<div style="height:40px">
+											<label
+												id="lblInformationalAlert" value=""
+												style="font-size:50px;width: 100%;text-align:center;padding-top: 10px;color:#00b0ff; float: left;">
+											</label>
+										</div>
+										<hlayout>
+											<div
+												style="float:left;padding-top:1px;">
+												<image
+													style="height:14px"
+													src="~./sqldm/com/idera/sqldm/images/Information16x16.png" />
+											</div>
+											<label
+												style="font-size:.9rem;">
+												INFORMATIONAL
+											</label>
+										</hlayout>
+									</vlayout>
+								</hlayout>
+								<hlayout
+									style="text-align:center;margin: 10px;">
+									<label style="">
+										SERVER STATUS
+									</label>
+								</hlayout>
+								<hlayout
+									style="border-top:.1em solid black;">
+										<label
+											style="font-size:.9rem;float:left">
+											USER SESSIONS :
+										</label>
+										<label id="lblUserSession"
+											value=""
+											style="font-size:.9rem;width: 100%;text-align:center;padding-top: 0px; float: right">
+										</label>
+								</hlayout>
+								</div>
+								<hlayout
+									style="height:36px;background-color:#b7afa7">
+									<div style="float:left;padding-top:1px;" tooltiptext="Sessions">
+										<image id="launchToSession" style="height: 22px;padding-left: 10px;padding-top:8px;" src="~./sqldm/com/idera/sqldm/images/refresh-icon@3x.png" />
+									</div>
+									<div style="float:left;padding-top:1px;" tooltiptext="Queries">
+										<image id="launchToQueries" style="height: 22px;padding-left: 10px;padding-top:8px;" src="~./sqldm/com/idera/sqldm/images/queries-icon@3x.png" />
+									</div>
+									<div style="float:left;padding-top:1px;" tooltiptext="Resources">
+										<image id="launchToResources" style="height: 22px;padding-left: 10px;padding-top:8px;" src="~./sqldm/com/idera/sqldm/images/resources-icon@3x.png" />
+									</div>
+									<div style="float:left;padding-top:1px;" tooltiptext="Databases">
+										<image id="launchToDatabases" style="height: 22px;padding-left: 10px;padding-top:8px;" src="~./sqldm/com/idera/sqldm/images/databases-icon@3x.png" />
+									</div>
+									<div style="float:left;padding-top:1px;" visible="false">
+										<image id="launchToServices" style="height: 22px;padding-left: 10px;padding-top:8px;" src="~./sqldm/com/idera/sqldm/images/services-critical-icon@3x.png" />
+									</div>
+									<div style="float:left;padding-top:1px;" visible="false">
+										<image id="launchToLogs" style="height: 22px;padding-left: 10px;padding-top:8px;" src="~./sqldm/com/idera/sqldm/images/logs-icon@3x.png" />
+									</div>
+								</hlayout>
+							</panelchildren>
+						</idera-cwf-card>
+						</div>
+						<div style="width:450px" >
+						<div id="launchDMConsole">
+						<idera-cwf-card
+							title="PRESCRIPTIVE ANALYSIS SUMMARY"
+							style="padding: 0rem;margin-left:25px;margin-right:45px;cursor:pointer;">
+							<panelchildren>
+								<hlayout
+									style="padding-left: 10px;margin: 10px;">
+									<vlayout>
+										<label
+											style="width:100%;text-align:center;font-weight: bold;">
+											Previous Analysis Information
+										</label>
+									</vlayout>
+								</hlayout>
+								<hlayout
+									style="padding-left: 10px;margin: 10px;">
+									<h:table id="html-table"
+										width="100%" style="min-width:340px">
+										<h:tr>
+											<h:td width="30%"
+												style="">
+												<label
+													style="text-align: center;color:grey;font-size: .9rem;margin:0px 2px;">
+													Analysis Type:
+												</label>
+											</h:td>
+											<h:td width="70%"
+												style="vertical-align:top;">
+												<label value=""
+													id="lblAnalysisType"
+													style="text-align: center;color:grey;font-size: .9rem;margin:0px 2px;">
+
+												</label>
+											</h:td>
+										</h:tr>
+										<h:tr>
+											<h:td width="40%">
+												<label
+													style="text-align: center;color:grey;font-size: .9rem;margin:0px 2px;">
+													Started on:
+												</label>
+											</h:td>
+											<h:td width="60%"
+												style="vertical-align:top;">
+												<label value=""
+													id="lblStartupTime"
+													style="text-align: center;color:grey;font-size: .9rem;margin:0px 2px;">
+
+												</label>
+												<!-- <label
+													style="text-align: center;color:grey">
+													Wed, Apr 15, 2015
+													11:33:00 AM
+													</label> -->
+											</h:td>
+										</h:tr>
+										<h:tr>
+											<h:td width="40%">
+												<label
+													style="text-align: center;color:grey;font-size: .9rem;margin:0px 2px;">
+													Duration:
+												</label>
+											</h:td>
+											<h:td width="60%"
+												style="vertical-align:top;">
+												<label value=""
+													id="lblDuration"
+													style="text-align: center;color:grey;font-size: .9rem;margin:0px 2px;">
+												</label>
+											</h:td>
+										</h:tr>
+									</h:table>
+								</hlayout>
+								<hlayout
+									style="padding-left: 10px;margin: 10px;">
+									<vlayout>
+										<label
+											style="width:100%;text-align:center;font-weight: bold;">
+											Recommendation Summary
+										</label>
+									</vlayout>
+								</hlayout>
+								<hlayout sclass="label-font"
+									style="padding-left: 10px;margin: 10px;">
+									<grid id="recommendationSummaryGrid"
+										sclass="styled-list single-instance-styled-grid"
+										sizedByContent="true" span="true" width="340px">
+										<columns>
+											<column align="left"
+												style="padding-bottom:3px;font-size: .95rem"
+												label="Category" width="35%" />
+											<column align="left"
+												style="padding-bottom:3px;font-size: .95rem"
+												label="Recommendations" width="40%" />
+											<column align="left"
+												style="padding-bottom:3px;font-size: .95rem"
+												label="Priority" width="25%" />
+										</columns>
+										<template name="model">
+											<row>
+												<label
+													value="${each.category}"
+													style="word-wrap:break-word;font-size:.9rem;color:#00b0ff" />
+												<label
+													value="${each.recommendations}"
+													style="word-wrap:break-word;font-size:.9rem" />
+												<div
+													class="critical-progress">
+													<progressmeter
+														value="${each.priority}" width="70px"
+														style="margin:5px 0px;" />
+												</div>
+											</row>
+										</template>
+									</grid>
+								</hlayout>
+							</panelchildren>
+						</idera-cwf-card>
+						</div>
+						</div>
+					</hlayout>
+				</vlayout>
+				<vlayout>
+					<label value="Server Properties"
+						style="word-wrap:break-word;font-weight: bold;margin:8px;padding-top:10px" />
+					<label />
+
+					<grid id="serverPropertiesGrid"
+						sclass="styled-list single-instance-styled-grid"
+						sizedByContent="true" span="true" style="margin-top:10px">
+						<columns visible="false">
+							<column valign="top" />
+							<column valign="top" />
+						</columns>
+						<rows style="font-size:.95rem">
+							<row>
+								<label id="lblInstanceName" value=""
+									style="word-wrap:break-word;font-size:.95rem" />
+								<label />
+							</row>
+							<row>
+								<label id="lblSqlVersion" value=""
+									style="word-wrap:break-word;font-size:.95rem" />
+							</row>
+							<row>
+								<label id="lblSqlEdition" value=""
+									style="word-wrap:break-word;font-size:.95rem" />
+							</row>
+						</rows>
+					</grid>
+
+					<vlayout style="color: #636363;">
+						<div style="margin:8px;">
+							<label style="font-weight:600">
+								Running :
+							</label>
+							<label id="lblRunningSince" value=""
+								style="word-wrap:break-word;font-size:.95rem" />
+						</div>
+						<div style="margin:8px;">
+							<label style="font-weight:600">
+								Clustered:
+							</label>
+							<label id="lblClustered" value=""
+								style="word-wrap:break-word;font-size:.95rem" />
+						</div>
+						<div style="margin:8px;">
+							<label style="font-weight:600">
+								Processors:
+							</label>
+							<label id="lblProcessors" value=""
+								style="word-wrap:break-word;font-size:.95rem" />
+						</div>
+						<div style="margin:8px;">
+							<label style="font-weight:600">Host:</label>
+							<label id="lblHost" value="" tooltip="popupHost"
+								style="word-wrap:break-word;font-size:.95rem" />
+							<popup id="popupHost">
+								<label id="divHost" value=""></label>
+							</popup>
+						</div>
+						<div style="margin:8px;">
+							<label style="font-weight:600">
+								Host Memory:
+							</label>
+							<label id="lblHostMemory" value=""
+								style="word-wrap:break-word;font-size:.95rem" />
+						</div>
+						<div style="margin:8px;">
+							<label style="font-weight:600">
+								Host OS:
+							</label>
+							<label id="lblHostOS" value=""
+								style="word-wrap:break-word;font-size:.95rem" tooltip="popupHostOS" />
+							<popup id="popupHostOS" >
+								<label id="divHostOS" value=""></label>
+							</popup>
+
+						</div>
+						<div style="margin:8px;">
+							<label style="font-weight:600">
+								Data Size:
+							</label>
+							<label id="lblUsedDataFile" value=""
+								style="word-wrap:break-word;font-size:.95rem" />
+						</div>
+						<div style="margin:8px;">
+							<label style="font-weight:600">
+								Log Size:
+							</label>
+							<label id="lblUsedLogFile" value=""
+								style="word-wrap:break-word;font-size:.95rem" />
+						</div>
+					</vlayout>
+
+				</vlayout>
+			</hlayout>
+			
+			<hlayout style="padding:0px;box-shadow: 0px 0px 4px 0px #969696;-webkit-box-shadow: 0px 0px 4px 0px #969696;-moz-box-shadow: 0px 0px 4px 0px #969696;" width="100%">
+				<div id="paSummaryDiv">
+					<idera-cwf-card title="PRESCRIPTIVE ANALYSIS">
+							<panelchildren id="panelChild">
+							<listbox id="paListboxId" emptyMessage="Data not available"
+								sclass="paListBoxClass" autopaging="true"
+								mold="paging" multiple="true" pageSize="10">
+								<listhead>
+									<listheader label="Started" align="center"
+										sort="auto(analysisStartTime)" />
+									<listheader label="Duration" align="center"
+										sort="auto(analysisDuration)" />
+									<listheader label="Task Type" align="center"
+										sort="auto(type)" />
+									<listheader label="Recommendations" align="center"
+										sort="auto(totalRecommendationCount)" />
+									<listheader label="Priority" align="center"
+										sort="auto(computedRankFactor)" />
+									<listheader label="" align="center" />
+								</listhead>
+								<template name="model">
+									<listitem>
+										<!-- <listcell /> -->
+										<listcell label="${each.analysisStartTime}" />
+										<listcell label="${each.analysisDuration}" />
+										<listcell label="${each.type}" />
+										<listcell label="${each.totalRecommendationCount}" />
+										<listcell>
+											<div>
+												<zk choose="">
+													<zk><!-- default -->
+														<div class="critical-progress">
+															<progressmeter
+																value="${each.computedRankFactor}" width="60px" />
+														</div>
+													</zk>
+												</zk>
+											</div>
+										</listcell>
+										<listcell>
+											<a sclass="wrap-word" tooltiptext="Show Recommendations"
+											label="Show Recommendations" 
+											forward="paListboxId.onClickSelectedAnalysis(${each.analysisID})" />
+										</listcell>
+									</listitem>
+								</template>
+							</listbox>
+						</panelchildren>
+					</idera-cwf-card>
+				</div>
+			</hlayout>
+
+			<hlayout style="padding:0px;box-shadow: 0px 0px 4px 0px #969696;-webkit-box-shadow: 0px 0px 4px 0px #969696;-moz-box-shadow: 0px 0px 4px 0px #969696;" width="100%">
+				<div id="TimelineChartContainerDiv"
+					sclass="chart-border" style="height:140px" hflex="1">
+					<vlayout>
+						<space height="5px" />
+						<hlayout>
+							<label value="Alert Timeline"
+								sclass="padding-l-12 padding-t-8"
+								style="font-weight:bold;float:left">
+							</label>
+							<div id="filtersDiv"
+								style="margin-left:900px">
+								<idera-cwf-button label="Edit"
+									style="float:right;margin:0px;padding: 0px;background: none;color: #00b0ff;height: 20px;"
+									sclass="smBtn" popup="manageGraphPopup,position=end_before">
+								</idera-cwf-button>
+								<popup id="manageGraphPopup"
+										sclass="black-shade" zclass="change-this-to-a-valid-class"
+										width="250px">
+										<hlayout
+											sclass="padding-l-12 padding-t-12">
+											<grid sclass="black-shade"
+												id="categoryList" >
+												<columns>
+													<column
+														label="Order" style="color:black"
+														sclass="padding-lr-12"
+														width="50px">
+													</column>
+													<column
+														label="Visible" style="color:black" width="55px"/>
+													<column
+														label="Alert Category" style="color:black"
+														sclass="padding-lr-12" />
+												</columns>
+												<template
+													name="model">
+													<row>
+														<idera-cwf-textbox
+															
+															style="padding-left:4px"
+															value="${each.tempPosition}"
+															constraint="@bind(orderConstraint)" width="35px"
+															maxlength="2" xmlns:w="client">
+															<attribute w:name="doKeyDown_">
+								<![CDATA[ function (evt) { var keyCode =
+								event.keyCode; if( keyCode == 8 // backspace 
+								|| keyCode == 9 // tab 
+								|| keyCode == 13 // enter 
+								|| keyCode == 16 // enter
+								|| (keyCode >= 35 && keyCode <= 40) //home, end, arrows 
+								|| keyCode == 46 //Delete
+								|| (!evt.shiftKey && keyCode == 190)
+								&& (keyCode != 222)
+								) { 
+									this.$doKeyDown_(evt); 
+									} else if (!evt.shiftKey && // only do withoutshift key 
+											(keyCode >= 48 && keyCode <=
+								57) || (keyCode >= 96 && keyCode <= 105) 
+								 ) // number range
+									{ 
+								this.$doKeyDown_(evt); }
+								else {
+								evt.stop(); return; } 
+								system.out.print("pressed key code:"+keyCode);
+								}
+								
+								]]>
+							</attribute>
+														</idera-cwf-textbox>
+														<idera-cwf-checkbox
+														
+															style="color: white" sclass="padding-l-24"
+															checked="${each.visible}" />
+														<label
+															value="${each.category.categoryName}"
+															sclass="padding-l-24" style="color: black" />
+													</row>
+												</template>
+
+											</grid>
+											
+										</hlayout>
+										<hlayout
+											sclass="padding-l-24 padding-t-12">
+											<idera-cwf-button
+												id="applyButton" label="Save"
+												sclass="white-text-orange-button">
+											</idera-cwf-button>
+											<idera-cwf-button
+												id="cancelButton" label="Cancel"
+												sclass="white-text-orange-button">
+											</idera-cwf-button>
+										</hlayout>
+									</popup>
+							</div>
+						</hlayout>
+						<sqldm-idera-timelinechart id="timelineChart"
+							width="1300px" height="70px" leftMargin="95px" style="cursor:pointer;"
+							rightMargin="150px" topMargin="20px" bottomMargin="20px" />
+					</vlayout>
+				</div>
+			</hlayout>
+			<hlayout style="width:100%;">
+				<div id="CategoryChartsContainerDiv" 
+					sclass="chart-border padding-b-12" vflex="1" hflex="1">
+					<vlayout>
+						<space height="5px" />
+						<label value="Alert Categories"
+							sclass="padding-l-12 padding-t-8" style="font-weight:bold;">
+						</label>
+						<space height="10px" />
+						<vlayout id="categoryChartsVlayout" style="cursor:pointer;" height="300px">
+							<!-- 					<template name="children" var="node">
+								<sqldm-idera-timelinechart
+								id="@load(node.category.categoryName.concat('Chart'))" width="1500px" height="25px"
+								leftMargin="70px" rightMargin="150px" topMargin="20px"
+								bottomMargin="20px" />
+								</template> -->
+						</vlayout>
+						<hlayout style="padding-bottom:20px">
+							<image style="height:20px;padding-left:20px" src="~./sqldm/com/idera/sqldm/images/greenAlert.png"/>
+							<div style="padding-top: 2px;"><label value="OK"></label></div>
+							<image style="height:20px;padding-left:20px" src="~./sqldm/com/idera/sqldm/images/yellowAlert.png"/>
+							<div style="padding-top: 2px;"><label value="Warning"></label></div>
+							<image style="height:20px;padding-left:20px" src="~./sqldm/com/idera/sqldm/images/redAlert.png"/>
+							<div style="padding-top: 2px;"><label value="Critical" ></label></div>
+						</hlayout>
+					</vlayout>
+				</div>
+			</hlayout>
+			<hlayout>
+				<vlayout>
+					<space height="5px" />
+					<div id="processorTimeChartWidget">
+						<label
+							value="Total in DB Trending"
+							sclass="padding-l-12 padding-t-8" style="font-weight:bold;">
+						</label>
+						<space height="20px" />
+						<!-- <portallayout id="widgets1"
+							maximizedMode="whole" style="padding-left: 20px">
+							<portalchildren style="padding: 5px"
+								width="100%">
+								<panel
+									title="Total in DB Trending"
+									draggable="false" droppable="false" border="normal"
+									collapsible="false" closable="false" sclass="widget-panel"
+									maximizable="false" style="margin-bottom:10px">
+									<caption
+										style="margin:3px;width:99%">
+									</caption>
+									<panelchildren> -->
+										<div id="queryChartDiv">
+											<sqldm-idera-stackedbarchart
+												style="cursor:pointer;" id="queryChart" width="1200px" 
+												height="380px" leftMargin="98px" rightMargin="150px" 
+												topMargin="20px" bottomMargin="15px" />
+										</div>
+									<!-- </panelchildren>
+								</panel>
+							</portalchildren>
+						</portallayout> -->
+					</div>
+					<div id="showQueryWaitGraph" style="cursor:pointer;" width="100%">
+						<vlayout>
+							<label
+								value="Query Waits by Category"
+								sclass="padding-l-12 padding-t-8" style="font-weight:bold;">
+							</label>
+							<space height="20px" />
+							<!--<include
+								src="~./sqldm/com/idera/sqldm/ui/dashboard/instances/queryWaits/waitCategory.zul" />
+								-->
+								<include
+								src="~./sqldm/com/idera/sqldm/ui/dashboard/instances/overview/overviewQueryWaits.zul" />
+						</vlayout>
+					</div>
+				</vlayout>
+			</hlayout>
+			<vlayout style="width:100%; min-height:400px; max-height:8000px">
+				<div>
+					<include
+						src="com/idera/sqldm/ui/dashboard/instances/overviewCustomization.zul" />
+			</div>
+			</vlayout>
+		</vlayout>
+		 	</center>
+		 </borderlayout>
+		</div>
+	</div>
+</zk>

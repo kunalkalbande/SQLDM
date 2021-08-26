@@ -1,0 +1,58 @@
+<window id="queryDetailsWindow" border="none" height="600px" width="900px" apply="com.idera.sqldm.ui.dashboard.instances.queries.QueryDetailsViewModel"
+	position="center,center" closable="true" contentSclass="modal-dialog-window margin-all-0 padding-all-0" style="border-radius: 0">
+	<style>
+		.highcharts-button { display:none; }
+
+	</style>
+	<zk>
+
+		<vlayout>
+			<div hflex="1" sclass="idera-grey" height="8px" />
+			<hlayout>
+				<div hflex="1">
+					<vlayout>
+						<separator height="4px" />
+						<!-- REPLACE MODAL DIALOG TITLE HERE -->
+						<label id="titleLabel" sclass="modal-dialog-title padding-l-8" value="Query Details" />
+					</vlayout>
+				</div>
+				<div hflex="min">
+					<a id="closeLink" sclass="modal-dialog-close-link margin-r-8" label="X" />
+				</div>
+			</hlayout>
+			<separator height="2px" />
+			<space height="2px"/>
+		</vlayout>
+		<div sclass="padding-tb-0 padding-lr-8">
+			<tabbox id="queryDetailsTabbox">
+				<tabs>
+					<tab id="planDiagramTab" label="Plan Diagram"></tab>
+					<tab id="planXmlTab" label="Plan XML"></tab>
+					<tab id="sqlTextTab" label="SQL Text"></tab>
+					<tab id="queryColumnsTab" label="Query Columns"></tab>
+				</tabs>
+				<tabpanels>
+					<tabpanel fulfill="planDiagramTab.onSelect">
+						<include src="~./sqldm/com/idera/sqldm/ui/dashboard/instances/queries/queryPlanDiagram.zul" />
+					</tabpanel>
+					
+					<tabpanel fulfill="planXmlTab.onSelect">
+						<include src="~./sqldm/com/idera/sqldm/ui/dashboard/instances/queries/queryXMLPlan.zul" />
+					</tabpanel>
+					
+					<tabpanel fulfill="sqlTextTab.onSelect">
+						<include src="~./sqldm/com/idera/sqldm/ui/dashboard/instances/queries/querySQLText.zul" />
+					</tabpanel>
+					
+					<tabpanel fulfill="queryColumnsTab.onSelect">
+						<include src="~./sqldm/com/idera/sqldm/ui/dashboard/instances/queries/queryDetailsColumns.zul" />
+					</tabpanel>
+				</tabpanels>
+			</tabbox>
+		</div>
+
+		<div sclass="modal-dialog-close-link margin-r-8" style="padding-top: 5px">
+			<idera-cwf-button id="closeBtn" label="${idera:getLabel('Messages.close')}" width="75px" sclass="orange-text-light-gray-button" style="float: right;height:28px;margin-top:0px;" />
+		</div>
+	</zk>
+</window>

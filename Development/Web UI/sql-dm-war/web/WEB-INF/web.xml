@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         id="WebApp_ID" version="3.0" metadata-complete="true">
+
+  <display-name>Sample Product</display-name>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/error/error.zul</location>
+  </error-page>
+  <error-page>
+   <error-code>401</error-code>
+    <location>/error/401.zul</location>
+  </error-page>
+  <error-page>
+   <error-code>403</error-code>
+    <location>/error/403.zul</location>
+  </error-page>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/error/404.zul</location>
+  </error-page>
+  <error-page>
+    <exception-type>java.lang.Throwable</exception-type>
+    <location>/error/error.zul</location>
+  </error-page>
+
+  <welcome-file-list>
+    <welcome-file>overview.zul</welcome-file>
+  </welcome-file-list>
+
+  <jsp-config>
+    <taglib>
+      <taglib-uri>/WEB-INF/tld/idera.tld</taglib-uri>
+      <taglib-location>/WEB-INF/tld/idera.tld</taglib-location>
+    </taglib>
+  </jsp-config>
+
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/applicationContext-security.xml</param-value>
+  </context-param>
+
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+  <listener>
+    <description>Used to cleanup when a session is destroyed</description>
+    <display-name>ZK Session Cleaner</display-name>
+    <listener-class>org.zkoss.zk.ui.http.HttpSessionListener</listener-class>
+  </listener>
+
+  <listener>
+    <listener-class>org.springframework.security.ui.session.HttpSessionEventPublisher</listener-class>
+  </listener>
+
+  <listener>
+    <listener-class>org.ocpsoft.rewrite.servlet.impl.RewriteServletRequestListener</listener-class>
+  </listener>
+
+  <mime-mapping>
+       <extension>svg</extension>
+       <mime-type>image/svg+xml</mime-type>
+   </mime-mapping>
+
+  <filter>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>loginRedirectFilter</filter-name>
+    <filter-class>com.idera.server.web.servlet.LoginRedirectFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>loginRedirectFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>noCacheFilter</filter-name>
+    <filter-class>com.idera.server.web.servlet.NoCacheFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>noCacheFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>autoRefreshFilter</filter-name>
+    <filter-class>com.idera.server.web.servlet.AutoRefreshFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>autoRefreshFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>productInstanceFilter</filter-name>
+    <filter-class>com.idera.server.web.servlet.ProductInstanceFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>productInstanceFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>accessControlFilter</filter-name>
+    <filter-class>com.idera.server.web.servlet.AccessControlFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>accessControlFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>OCPsoft Rewrite Filter</filter-name>
+    <filter-class>org.ocpsoft.rewrite.servlet.RewriteFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>OCPsoft Rewrite Filter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>INCLUDE</dispatcher>
+  </filter-mapping>
+  <absolute-ordering />
+
+  <!-- FIXME: This filter doesn't have any associated filter mapping. Check if it is required-->
+  <!--<filter>-->
+    <!--<filter-name>indexRedirectFilter</filter-name>-->
+    <!--<filter-class>com.idera.server.web.servlet.IndexRedirectFilter</filter-class>-->
+  <!--</filter>-->
+
+  <!-- FIXME: Check if this filter is still required. As per code it is not doing
+    any useful work.
+  -->
+  <filter>
+    <filter-name>ProductUninstallRedirectFilter</filter-name>
+    <filter-class>com.idera.server.web.servlet.ProductUninstallRedirectFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>ProductUninstallRedirectFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+
+  <servlet>
+    <description>Servlet to render static files from the classpath</description>
+    <servlet-name>AssetServlet</servlet-name>
+    <servlet-class>com.idera.server.web.servlet.AssetServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AssetServlet</servlet-name>
+    <url-pattern>*.svg</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AssetServlet</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
+  <!-- Servlet for loading dsp pages -->
+  <servlet>
+    <description>The servlet loads the DSP pages.</description>
+    <servlet-name>dspLoader</servlet-name>
+    <servlet-class>org.zkoss.web.servlet.dsp.InterpreterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>dspLoader</servlet-name>
+    <url-pattern>*.dsp</url-pattern>
+  </servlet-mapping>
+
+  <!-- Servlet for loading zuml pages -->
+  <servlet>
+    <description>ZK loader for ZUML pages</description>
+    <servlet-name>zkLoader</servlet-name>
+    <servlet-class>org.zkoss.zk.ui.http.DHtmlLayoutServlet</servlet-class>
+    <init-param>
+      <param-name>update-uri</param-name>
+      <param-value>/zkau</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>zkLoader</servlet-name>
+    <url-pattern>*.zul</url-pattern>
+  </servlet-mapping>
+
+  <!-- Servlet for serving ZKOSS Ajax calls -->
+  <servlet>
+    <description>The asynchronous update engine for ZK</description>
+    <servlet-name>auEngine</servlet-name>
+    <servlet-class>org.zkoss.zk.au.http.DHtmlUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>auEngine</servlet-name>
+    <url-pattern>/zkau/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+      <servlet-name>RedirectorServlet</servlet-name>
+      <servlet-class>com.idera.server.web.servlet.RedirectorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RedirectorServlet</servlet-name>
+    <url-pattern>/redirector/*</url-pattern>
+  </servlet-mapping>
+
+  <session-config>
+     <tracking-mode>COOKIE</tracking-mode>
+  </session-config>
+</web-app>

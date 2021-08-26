@@ -1,0 +1,28 @@
+<zk>
+	<div apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.idera.sqldm.ui.dashboard.instances.queries.SingleInstanceQueryComposer')"
+		xmlns:w="http://www.zkoss.org/2005/zk/client">
+		<div style="height:800px;overflow:auto">
+		 <borderlayout height="100%" vflex="min">
+		 	<center autoscroll="true" vflex="min">
+		<div style="height:800px;overflow:auto">
+			<borderlayout height="100%">
+				<west maxsize="315" size="24%" flex="true" border="1"
+					vflex="1" sclass="light-panel-color-shade">
+					<include
+						src="~./sqldm/com/idera/sqldm/ui/dashboard/instances/queries/queriesSideBar.zul" />
+				</west>
+				<center border="1" vflex="1" hflex="true" autoscroll="true" >
+					<vlayout id="mainArea" vflex="1" hflex="1"
+						style="padding:0 5px 0 10px; overflow-y:hidden; overflow-x:hidden">
+						<include
+							src="~./sqldm/com/idera/sqldm/ui/dashboard/instances/queries/queriesDataView.zul" />
+					</vlayout>
+				</center>
+			</borderlayout>
+		</div>
+		</center>
+		 </borderlayout>
+</div>
+	</div>
+</zk>

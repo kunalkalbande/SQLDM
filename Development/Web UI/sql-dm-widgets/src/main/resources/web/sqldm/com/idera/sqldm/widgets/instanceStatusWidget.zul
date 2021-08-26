@@ -1,0 +1,68 @@
+<zk>
+	<panel use="com.idera.dashboard.ui.widget.DashboardWidget" 
+		 apply="com.idera.sqldm_10_3.ui.widgetComposers.InstanceStatusComposer"
+		 sclass="top-x-resource-by-count-panel"
+		 border="normal">
+		<caption sclass="main-caption" hflex="1" vflex="1">
+			<hlayout sclass="z-toolbar" style="padding:3px; margin-left:0px" hflex="1"
+				vflex="1">
+				<idera-cwf-dropdownlist id="productListCombobox" readonly="true"
+					width="90px">
+					<template name="model">
+						<comboitem label="${each.name}"></comboitem>
+					</template>
+				</idera-cwf-dropdownlist>
+			</hlayout>
+		</caption>
+
+		<panelchildren sclass="panel-main-content" style="background: white;">
+			<hbox  hflex="1" vflex="1" id="errorContainer" align="center" pack="center">
+				<label sclass="error-message" value="@{message}"/>
+			</hbox>
+			<hbox width="100%" id="mainContainer">
+				<div hflex="1" align="center">
+					<div visible="false" sclass="padding-t-48 padding-l-24">
+						<label id="mc_errorLabel" sclass="H5 darker-gray-text italic" />
+					</div>
+					<sqldm-piechart sclass="instance-status-pie-chart"/>
+				</div>
+				<div hflex="1">
+				<vbox  vflex="1" pack="center" style="margin:20px;">
+					<div id="totalInstancesDiv" vflex="max" sclass="padding-l-4 heading" align="left" style="font-size:15px;cursor:pointer">
+				    	<label value="Total Monitored Instances:" style="font-size:15px"/>
+			            <label value="@{status.totalMonitoredInstances}" style="font-size:15px"/>
+			        </div>
+					<div align="left">
+						<div sclass="padding-l-4">
+	    					<div sclass="instance-status-div1" style="display:inline-block;width:15px;height:10px;"></div>
+				        	<label value="@{status.totalCriticalInstances}"/>
+					        <label value=" Critical"/>
+	    				</div>
+	    				<div sclass="padding-l-4">
+	    					<div sclass="instance-status-div2" style="display:inline-block;width:15px;height:10px;"></div>
+				        	<label value="@{status.totalWarningInstances}"/>
+					        <label value=" Warning"/>
+	    				</div>
+	    				<div sclass="padding-l-4">
+	    					<div sclass="instance-status-div3" style="display:inline-block;width:15px;height:10px;"></div>
+				        	<label value="@{status.totalInformationalInstances}"/>
+					        <label value=" Informational"/>
+	    				</div>
+	    				<div sclass="padding-l-4">
+	    					<div sclass="instance-status-div4" style="display:inline-block;width:15px;height:10px;"></div>
+				        	<label value="@{status.totalOkInstances}"/>
+					        <label value=" Ok"/>
+	    				</div>
+						<div sclass="padding-l-4">
+			    			<div sclass="instance-status-div5" style="display:inline-block;width:15px;height:10px;"></div>
+				        	<label value="@{status.totalDisabledInstances}"/>
+					        <label value=" Disabled"/>
+				    	</div>
+					</div>
+				</vbox>
+				</div>
+			</hbox>
+		</panelchildren>
+	</panel>
+</zk>
+	

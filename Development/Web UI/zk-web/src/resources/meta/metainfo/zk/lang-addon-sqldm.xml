@@ -1,0 +1,76 @@
+<language-addon>
+
+	<addon-name>idera</addon-name>
+	<language-name>xul/html</language-name>
+
+	<version>
+		<version-class>com.idera.server.web.component.Version</version-class>
+		<version-uid>0.0.1</version-uid>
+		<zk-version>5.0.0</zk-version>
+	</version>
+
+	<component>
+		<component-name>sqldm-idera-barchart</component-name>
+		<component-class>com.idera.sqldm.ui.components.charts.bar.IderaBarChart
+		</component-class>
+	</component>
+	
+	<component>
+		<component-name>sqldm-idera-heatmapchart</component-name>
+		<component-class>com.idera.sqldm.ui.components.charts.heatmap.IderaHeatmapChart
+		</component-class>
+	</component>
+
+	<component>
+		<component-name>sqldm-idera-stackedbarchart</component-name>
+		<component-class>com.idera.sqldm.ui.components.charts.bar.IderaStackedBarChart
+		</component-class>
+	</component>
+
+	<component>
+		<component-name>sqldm-idera-linechart</component-name>
+		<component-class>com.idera.sqldm.ui.components.charts.line.IderaLineChart
+		</component-class>
+	</component>
+
+	<component>
+		<component-name>sqldm-idera-areachart</component-name>
+		<component-class>com.idera.sqldm.ui.components.charts.area.IderaAreaChart
+		</component-class>
+	</component>
+
+	<component>
+		<component-name>sqldm-idera-timelinechart</component-name>
+		<component-class>com.idera.sqldm.ui.components.charts.bar.IderaTimelineChart
+		</component-class>
+	</component>
+
+	<component>
+		<component-name>sqldm-idera-tagcloud</component-name>
+		<component-class>com.idera.sqldm.ui.components.TagCloud
+		</component-class>
+	</component>
+
+	<component>
+		<component-name>sqldm-idera-visualtag</component-name>
+		<component-class>com.idera.sqldm.ui.components.VisualTag
+		</component-class>
+	</component>
+
+	<component>
+		<component-name>extcolumn</component-name>
+		<component-class>com.idera.server.web.component.zul.grid.ExtColumn
+		</component-class>
+		<widget-class>com.idera.server.web.component.zul.grid.ExtColumn
+		</widget-class>
+		<extend>column</extend>
+		<mold>
+			<mold-name>default</mold-name>
+			<mold-uri>mold/extcolumn.js</mold-uri>
+		</mold>
+	</component>
+
+	<stylesheet href="/css/spacing.css.dsp"
+		type="text/css" />
+
+</language-addon>

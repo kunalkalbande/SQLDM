@@ -1,0 +1,5 @@
+
+
+ALTER EVENT SESSION {0}
+ON SERVER
+STATE = start;

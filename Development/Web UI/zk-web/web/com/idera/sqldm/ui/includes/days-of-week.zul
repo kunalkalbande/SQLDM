@@ -1,0 +1,21 @@
+<vbox>
+	<hbox>
+		<idera-cwf-checkbox id="SUN" label="${idera:getLabel('Labels.UI.sunday')}" 
+			value="1"/>
+		<idera-cwf-checkbox id="MON" label="${idera:getLabel('Labels.UI.monday')}" 
+			value="2"/>
+		<idera-cwf-checkbox id="TUE" label="${idera:getLabel('Labels.UI.tuesday')}" 
+			value="4"/>
+		<idera-cwf-checkbox id="WED" label="${idera:getLabel('Labels.UI.wednesday')}" 
+			value="8"/>
+	</hbox>
+	<hbox>
+		<idera-cwf-checkbox id="THU" label="${idera:getLabel('Labels.UI.thursday')}" 
+			value="16"/>
+		<idera-cwf-checkbox id="FRI" label="${idera:getLabel('Labels.UI.friday')}" 
+			value="32"/>
+		<idera-cwf-checkbox id="SAT" label="${idera:getLabel('Labels.UI.saturday')}" 
+			value="64"/>
+		<space />
+	</hbox>
+</vbox>

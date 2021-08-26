@@ -1,0 +1,93 @@
+<zk>
+	<div apply="com.idera.sqldm.ui.dashboard.instances.databases.SummaryPageComposer">
+		<vlayout>	
+		<div style="height:30px; text-align:right; padding-top: 10px" hflex="1" sclass="padding-b-4">
+      			<label id="titleLabel" sclass="H4" value= "${idera:getLabel('SQLdm.Labels.databases')}" style="float:left;"/>
+		</div>
+		<grid id="dbSummaryGrid" 
+			  span = "true"
+			  model="@{databasesModel}"
+			  emptyMessage="${idera:getLabel('SQLdm.Labels.no-database-information-available')}"
+			  mold="paging" 
+			  paginal="${databaseSummaryListPgId}" 
+			  sclass="styled-list styled-cwf-list table_header selectable-styled-list" hflex="1" >
+			<columns sizable = "true">
+				<extcolumn hflex="1" width="10px"/>
+				<extcolumn label="${idera:getLabel('SQLdm.Labels.database-name')}" hflex="3"
+							sortAscending="@{nameSortAsc}" sortDescending="@{nameSortDesc}" width="16%"/>
+				<extcolumn id="statusColumn" label="${idera:getLabel('SQLdm.Labels.status')}" hflex="1" sort="auto(LOWER(CurrentDatabaseStatus))" width="12%"/>
+				<extcolumn label="${idera:getLabel('SQLdm.Labels.database.datecreated')}" hflex="2"  sort="auto(CreationDateTimeUtc)" width="28%"/>
+				<extcolumn label="${idera:getLabel('SQLdm.Labels.database.lastbackup')}" hflex="2"  sort="auto(LastBackUpdate)" width="28%"/>
+				<extcolumn label="${idera:getLabel('SQLdm.Labels.database.files')}" hflex="1" sort="auto(noOfFiles)"  sclass="numbers-position-header"/>
+				<extcolumn label="${idera:getLabel('SQLdm.Labels.database.file.size')}" hflex="2"  sort="auto(CurrentDataFileSizeInMb)"  sclass="numbers-position-header"/>
+				<extcolumn label="${idera:getLabel('SQLdm.Labels.database.data.unused.size')}" hflex="2" sort="auto(UnusedDataSizeInMb)"  sclass="numbers-position-header" />
+				<extcolumn label="${idera:getLabel('SQLdm.Labels.database.log.file.size')}" hflex="2" sort="auto(CurrentLogFileSizeInMb)" sclass="numbers-position-header" />
+				<extcolumn label="${idera:getLabel('SQLdm.Labels.database.log.used.size')}" hflex="2" sort="auto(CurrentLogSizeInMb)"  sclass="numbers-position-header"/>
+			</columns>
+			<rows>
+				<row id="selectedRowDatabase" 
+					 self="@{each='db'}" 
+					 value="@{db}" sclass="clickable_row">
+					 	<idera-cwf-checkbox width="10px"/>
+						<label pre="true" value="@{db.databaseName}" sclass="wrap-word" />
+						<label value="@{db, converter='com.idera.sqldm.ui.dashboard.instances.overview.DatabaseStatusLabelConverter'}" sclass="wrap-word"/>
+						<label value="@{db.creationDateTimeUtc, converter='com.idera.sqldm.ui.converter.DateLabelConverter'}" />
+						<label value="@{db.LastBackUpdate, converter='com.idera.sqldm.ui.converter.DateLabelConverter'}" />
+						<label value="@{db.noOfFiles}" sclass="numbers-position"/>
+						<label value="@{db.CurrentDataFileSizeInMb, converter='com.idera.sqldm.ui.converter.SizeLabelConverter'}" sclass="numbers-position"/>						
+						<label value="@{db.UnusedDataSizeInMb, converter='com.idera.sqldm.ui.converter.SizeLabelConverter'}" sclass="numbers-position"/>
+						<label value="@{db.CurrentLogFileSizeInMb, converter='com.idera.sqldm.ui.converter.SizeLabelConverter'}" sclass="numbers-position"/>
+						<label value="@{db.CurrentLogSizeInMb, converter='com.idera.sqldm.ui.converter.SizeLabelConverter'}" sclass="numbers-position"/>
+				</row>
+			</rows>
+	        <foot>
+				<footer span="9" align="left">
+					<hbox align="left">
+					   <paging id="databaseSummaryListPgId"/>
+						<span>
+							<intbox zclass="z-paging-inp" id="databaseSummaryListRowsBox" 
+							constraint="no empty,no negative, no zero: ${idera:getLabel('SQLdm.Messages.page-size-error')}"  
+							width="30px" placeholder="#" maxlength="3"></intbox>
+							<label value="${idera:getLabel('SQLdm.Labels.pagination-items-per-page')}" />
+						</span>
+					</hbox>
+				</footer>
+			</foot>
+ 		</grid>
+		<hlayout>
+			<div hflex="true"  style="text-align:center;">
+				<label id="errorLabel" sclass="idera-bold-red" value="${idera:getLabel('Labels.failed-to-fetch-databases')}" />
+			</div>	
+		</hlayout>
+		<!-- div style="height:30px; text-align:right; padding-top: 10px" hflex="1" sclass="padding-b-4">
+      			<label id="chartLabel" sclass="H4" value= "" style="float:left;"/>
+		</div>
+		<hlayout>
+			<div id="barChartContainerDiv" sclass="chart-border" style="height:260px" hflex="1">
+				<sqldm-idera-barchart id="barChart" width="850px" height="250px" leftMargin="150px" rightMargin="20px" topMargin="20px" bottomMargin="0px" />
+			</div>
+		</hlayout -->
+		<hlayout>
+			<idera-cwf-dropdownlist id="comboBox" sclass="selected-text-color" readonly="true" width="240px" height="25px">
+				<!-- comboitem label="Data Megabytes" />
+				<comboitem label="Data Percent" />
+				<comboitem label="Log Megabytes" />
+				<comboitem label="Log percent" /-->
+				<template name="model">
+					<comboitem label="${each}" />
+				</template>
+			</idera-cwf-dropdownlist>
+		</hlayout>
+		<hlayout>
+			<div id="StackedBarChartContainerDiv" sclass="chart-border" style="height:260px" hflex="1">
+				<sqldm-idera-stackedbarchart id="stackedBarChart" width="950px" height="250px" leftMargin="170px" rightMargin="150px" topMargin="20px" bottomMargin="20px" />
+			</div>
+		</hlayout>
+		<hlayout>
+			<div hflex="true"  style="text-align:center;">
+				<label id="infoLabel" sclass="idera-bold-red" value="${idera:getLabel('Labels.no-database-selected')}" />
+			</div>	
+ 		</hlayout>
+	</vlayout>
+</div>
+</zk>
